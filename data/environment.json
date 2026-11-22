@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "scope": "Project-relevant variable names and public build settings only",
+  "observedAt": "2026-11-21",
+  "requestedFilename": "ws.env",
+  "requestedFileFound": false,
+  "workspaceFilenameObserved": ".env",
+  "credentialValuesIncluded": false,
+  "variables": [
+    {"name":"SEARCH_MCP_BRAVE_API_KEY","origin":"workspace-name-inventory","example":"<redacted>","requiredByTracker":false,"note":"Optional search-service credential name. Keyless research does not require it; its value and service usage were not inspected."},
+    {"name":"SEARCH_MCP_SERPBASE_API_KEY","origin":"workspace-name-inventory","example":"<redacted>","requiredByTracker":false,"note":"Optional search-service credential name; value not inspected or published."},
+    {"name":"SEARCH_MCP_SERPER_API_KEY","origin":"workspace-name-inventory","example":"<redacted>","requiredByTracker":false,"note":"Optional search-service credential name; value not inspected or published."},
+    {"name":"SEARCH_MCP_TAVILY_API_KEY","origin":"workspace-name-inventory","example":"<redacted>","requiredByTracker":false,"note":"Optional search-service credential name; value not inspected or published."},
+    {"name":"DEPOT_TOOLS_WIN_TOOLCHAIN","origin":"documented-build-setting","example":"0","requiredByTracker":false,"note":"Public prescribed value for using the local Windows toolchain during an external-contributor Chromium build; not an environment readback."}
+  ],
+  "limitations": ["This is an allowlisted project metadata catalogue, not a dump of workspace configuration.", "The tracker validator needs no environment file or API key.", "Some early research requests used the search service's default engine pool, including an auxiliary Codex lane. Reports record that caveat; subsequent applicable discovery used explicitly keyless engines."]
+}

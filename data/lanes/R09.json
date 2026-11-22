@@ -1,0 +1,1546 @@
+{
+  "schemaVersion": 1,
+  "id": "R09",
+  "title": "Chromium desktop toolbar menus and customization: source-only audit",
+  "agentSessionId": "ses_e018c785affemZYsrUmX82PrxF",
+  "scope": "Bounded inspection of toolbar button context-menu construction and enablement, responsive overflow-menu identity and state, and Customize Toolbar pinning/settings, with selected menu, preference, action and test dependencies.",
+  "status": "complete",
+  "sourceRevision": "04d6a2d2bd0626ad343da0ef33e812e1360b44bd",
+  "revisionMetadata": {
+    "sourceIds": [
+      "R09-S00"
+    ],
+    "committedAt": "2026-11-21T14:04:56Z",
+    "retrievedAt": "2026-11-21T14:13:08.318Z",
+    "dateMeaning": "Upstream source commit date, not a Chrome release date or the original publication date of each file. The research retained this snapshot rather than substituting later HEAD revisions."
+  },
+  "confirmationBoundary": "Source-confirmed means the inspected code establishes an interface or fixture inconsistency. It does not establish a local reproduction, released-version impact, measured accessibility behavior, or novelty. Every issue still needs validation.",
+  "coverage": {
+    "sourceFileCount": 30,
+    "testFileCount": 7,
+    "sourceIds": [
+      "R09-S01",
+      "R09-S02",
+      "R09-S03",
+      "R09-S04",
+      "R09-S05",
+      "R09-S06",
+      "R09-S07",
+      "R09-S08",
+      "R09-S09",
+      "R09-S10",
+      "R09-S11",
+      "R09-S12",
+      "R09-S13",
+      "R09-S14",
+      "R09-S15",
+      "R09-S16",
+      "R09-S17",
+      "R09-S18",
+      "R09-S19",
+      "R09-S20",
+      "R09-S21",
+      "R09-S22",
+      "R09-S23",
+      "R09-S24",
+      "R09-S25",
+      "R09-S26",
+      "R09-S27",
+      "R09-S28",
+      "R09-S29",
+      "R09-S30"
+    ],
+    "testSourceIds": [
+      "R09-S02",
+      "R09-S05",
+      "R09-S09",
+      "R09-S13",
+      "R09-S14",
+      "R09-S18",
+      "R09-S19"
+    ],
+    "lastSourceBodyRetrievedAt": "2026-11-21T14:33:31.242Z",
+    "chromeReproductionsRun": 0,
+    "chromiumTestRuns": 0,
+    "method": "Official upstream source bodies read through public HTTP using pinned Gitiles and GitHub raw endpoints. Permalink URLs identify the same snapshot; not every permalink HTML page was separately fetched. Full coverage means the displayed body was inspected; focused coverage does not imply review of the remaining lines. Directory listings are not audited files."
+  },
+  "findingCounts": {
+    "sourceConfirmedInconsistencies": 2,
+    "unverifiedProductHypotheses": 3,
+    "runtimeConfirmedDefects": 0
+  },
+  "childAgents": [],
+  "sources": [
+    {
+      "id": "R09-S00",
+      "title": "Chromium source snapshot metadata",
+      "url": "https://github.com/chromium/chromium/commit/04d6a2d2bd0626ad343da0ef33e812e1360b44bd",
+      "retrievedAt": "2026-11-21T14:13:08.318Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "sourceRevision": "04d6a2d2bd0626ad343da0ef33e812e1360b44bd",
+      "committedAt": "2026-11-21T14:04:56Z",
+      "limitations": [
+        "Public HTTP HEAD metadata supplied the revision and commit timestamp. Commit time is not a release date; an independent publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S01",
+      "title": "Pinned toolbar button context-menu model",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/pinned_action_toolbar_button_menu_model.cc",
+      "retrievedAt": "2026-11-21",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/views/toolbar/pinned_action_toolbar_button_menu_model.cc",
+      "lineCount": 327,
+      "coverage": "Full body: pin state, visibility, enablement and dispatch.",
+      "limitations": [
+        "Only date-level retrieval precision was retained. Source inspection only; original file publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S02",
+      "title": "Pinned toolbar context-menu model browser tests",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/pinned_action_toolbar_button_menu_model_browsertest.cc",
+      "retrievedAt": "2026-11-21T14:15:26.382Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/views/toolbar/pinned_action_toolbar_button_menu_model_browsertest.cc",
+      "lineCount": 102,
+      "coverage": "Full body: defaults and child actions.",
+      "limitations": [
+        "Tests were read, not run. An earlier HTTP 503 was followed by this successful pinned read. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S03",
+      "title": "Responsive toolbar overflow-menu implementation",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu.cc",
+      "retrievedAt": "2026-11-21",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/views/toolbar/overflow_menu.cc",
+      "lineCount": 555,
+      "coverage": "Full body: ordering, model creation, dispatch and live status-indicator changes.",
+      "limitations": [
+        "Only date-level retrieval precision was retained. Menu survival and platform behavior were not tested. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S04",
+      "title": "Responsive overflow-menu delegate and observer declarations",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu.h",
+      "retrievedAt": "2026-11-21T14:15:56.366Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/views/toolbar/overflow_menu.h",
+      "lineCount": 244,
+      "coverage": "Full body: delegate/observer API and stored state.",
+      "limitations": [
+        "Declarations were inspected without executing a menu. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S05",
+      "title": "Responsive overflow-menu unit tests",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu_unittest.cc",
+      "retrievedAt": "2026-11-21",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/views/toolbar/overflow_menu_unittest.cc",
+      "lineCount": 813,
+      "coverage": "Full body across initial response and retained output: order, separators, enabled state, invocation and indicators.",
+      "limitations": [
+        "Only date-level retrieval precision was retained. Tests were read, not run; coverage statements are limited to this file. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S06",
+      "title": "Toolbar controller overflow delegation",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/toolbar_controller.cc",
+      "retrievedAt": "2026-11-21T14:15:56.356Z",
+      "additionalRetrievedAt": [
+        "2026-11-21T14:17:25.202Z"
+      ],
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/views/toolbar/toolbar_controller.cc",
+      "lineCount": 636,
+      "coverage": "Focused constructor, overflow detection, dispatch and enabled delegation; especially lines 112-191 and 433-634.",
+      "limitations": [
+        "Focused excerpts, not a complete controller or cancellation-path audit. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S07",
+      "title": "Pinned toolbar actions container",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/pinned_toolbar_actions_container.cc",
+      "retrievedAt": "2026-11-21T14:18:02.982Z",
+      "additionalRetrievedAt": [
+        "2026-11-21T14:22:44.328Z"
+      ],
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/views/toolbar/pinned_toolbar_actions_container.cc",
+      "lineCount": 929,
+      "coverage": "Focused observers, model changes, pinning, overflow and ordering; portions through line 789.",
+      "limitations": [
+        "The entire drag, layout and lifetime behavior was not traced. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S08",
+      "title": "Native Home button implementation",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/home_button.cc",
+      "retrievedAt": "2026-11-21T14:15:56.378Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/views/toolbar/home_button.cc",
+      "lineCount": 217,
+      "coverage": "Full body: context-model wiring and Home/undo handling.",
+      "limitations": [
+        "Native source behavior was inspected without runtime or platform validation. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S09",
+      "title": "Home button browser tests",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/home_button_browsertest.cc",
+      "retrievedAt": "2026-11-21T14:23:14.761Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/views/toolbar/home_button_browsertest.cc",
+      "lineCount": 83,
+      "coverage": "Full body: UI invocation and ordinary context-menu pin/unpin behavior.",
+      "limitations": [
+        "Tests were read, not run; absence of a managed test here is not repository-wide absence. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S10",
+      "title": "Customize Toolbar browser-side handler",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc",
+      "retrievedAt": "2026-11-21T14:16:41.724Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc",
+      "lineCount": 519,
+      "coverage": "Full body: mappings, enumeration, subscriptions, mutation and reset.",
+      "limitations": [
+        "No live policy, eligibility or WebUI behavior was tested. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S11",
+      "title": "Customize Toolbar handler observation ownership",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.h",
+      "retrievedAt": "2026-11-21T14:28:28.212Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.h",
+      "lineCount": 77,
+      "coverage": "Full body: handler interface and subscriptions.",
+      "limitations": [
+        "Declaration inspection does not establish all external notification paths. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S12",
+      "title": "Customize Toolbar Mojo data and callback contract",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar.mojom",
+      "retrievedAt": "2026-11-21T14:20:00.741Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar.mojom",
+      "lineCount": 107,
+      "coverage": "Full body: action metadata, pinning methods and notifications.",
+      "limitations": [
+        "Interface contract, not observed UI behavior. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S13",
+      "title": "Customize Toolbar handler unit tests",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler_unittest.cc",
+      "retrievedAt": "2026-11-21T14:16:42.089Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler_unittest.cc",
+      "lineCount": 404,
+      "coverage": "Focused pinning, notification, reset and detached-browser test bodies in lines 164-403.",
+      "limitations": [
+        "Tests were read, not run; some setup and surrounding lines were omitted from the displayed excerpts. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S14",
+      "title": "Customize Toolbar handler browser tests",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler_browsertest.cc",
+      "retrievedAt": "2026-11-21T14:17:25.271Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler_browsertest.cc",
+      "lineCount": 348,
+      "coverage": "Full body: listing, visibility, icon size and initial feature-dependent listing tests.",
+      "limitations": [
+        "Tests were read, not run. No production hidden-to-visible transition was established. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S15",
+      "title": "Pinned toolbar actions preference model",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.cc",
+      "retrievedAt": "2026-11-21T14:16:42.104Z",
+      "additionalRetrievedAt": [
+        "2026-11-21T14:17:25.207Z"
+      ],
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.cc",
+      "lineCount": 285,
+      "coverage": "Focused initialization, update guards, movement, preference notification, reset/default and migration paths.",
+      "limitations": [
+        "No live synchronization or policy reset was exercised. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S16",
+      "title": "Customize Toolbar WebUI state and callbacks",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/resources/side_panel/customize_chrome/customize_toolbar/toolbar.ts",
+      "retrievedAt": "2026-11-21T14:20:00.740Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/resources/side_panel/customize_chrome/customize_toolbar/toolbar.ts",
+      "lineCount": 144,
+      "coverage": "Full body: rendering state, callbacks, icon invariant and reset announcement.",
+      "limitations": [
+        "Source assertions were not executed; generated or optimized resource behavior was not inspected. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S17",
+      "title": "Customize Toolbar interactive and managed row template",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/resources/side_panel/customize_chrome/customize_toolbar/toolbar.html.ts",
+      "retrievedAt": "2026-11-21T14:20:00.671Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/resources/side_panel/customize_chrome/customize_toolbar/toolbar.html.ts",
+      "lineCount": 78,
+      "coverage": "Full body: editable/managed branches and labels.",
+      "limitations": [
+        "Rendered output and accessibility tree were not measured. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S18",
+      "title": "Customize Toolbar WebUI test fixtures and tests",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/test/data/webui/side_panel/customize_chrome/toolbar_test.ts",
+      "retrievedAt": "2026-11-21T14:23:14.615Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/test/data/webui/side_panel/customize_chrome/toolbar_test.ts",
+      "lineCount": 182,
+      "coverage": "Full body: data fixtures, structure, icons, toggle invocation and callbacks.",
+      "limitations": [
+        "Tests were not run. An earlier filtered response was empty and was not counted as inspection. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S19",
+      "title": "Customize Chrome WebUI Toolbar test registration",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/test/data/webui/side_panel/customize_chrome/customize_chrome_browsertest.cc",
+      "retrievedAt": "2026-11-21T14:27:53.842Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/test/data/webui/side_panel/customize_chrome/customize_chrome_browsertest.cc",
+      "lineCount": 134,
+      "coverage": "Focused lines 75-92, including Toolbar test registration.",
+      "limitations": [
+        "Test wiring was read; no test binary was built or run. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S20",
+      "title": "ShowHomeButton policy-to-preference mapping",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/policy/configuration_policy_handler_list_factory.cc",
+      "retrievedAt": "2026-11-21T14:20:00.712Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "chrome/browser/policy/configuration_policy_handler_list_factory.cc",
+      "lineCount": 3807,
+      "coverage": "Focused lines 784-799; Home policy mapping only.",
+      "limitations": [
+        "This is not a general enterprise-policy audit. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S21",
+      "title": "Checked-in ShowHomeButton policy definition",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/components/policy/resources/templates/policy_definitions/Startup/ShowHomeButton.yaml",
+      "retrievedAt": "2026-11-21T14:28:28.215Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "file": "components/policy/resources/templates/policy_definitions/Startup/ShowHomeButton.yaml",
+      "lineCount": 32,
+      "coverage": "Full body: upstream policy description and schema.",
+      "limitations": [
+        "Describes intended policy semantics, not measured UI behavior. A guessed alternative path returned 404 before directory discovery located this file. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S22",
+      "title": "Preference service effective reads and user-store writes",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/components/prefs/pref_service.cc",
+      "retrievedAt": "2026-11-21T14:21:39.909Z",
+      "additionalRetrievedAt": [
+        "2026-11-21T14:22:43.700Z"
+      ],
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "components/prefs/pref_service.cc",
+      "lineCount": 725,
+      "coverage": "Focused getters, modifiability, setters and user-store writes; supplemental lines 568-640.",
+      "limitations": [
+        "Only supporting preference paths were reviewed. No real profile or managed configuration was accessed. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S23",
+      "title": "Preference value-store resolution and notifications",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/components/prefs/pref_value_store.cc",
+      "retrievedAt": "2026-11-21T14:22:44.350Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "components/prefs/pref_value_store.cc",
+      "lineCount": 314,
+      "coverage": "Full body: priority resolution and preference notifications.",
+      "limitations": [
+        "Source inspection, not a live policy test. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S24",
+      "title": "Preference store priority contract",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/components/prefs/pref_value_store.h",
+      "retrievedAt": "2026-11-21T14:23:14.907Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "components/prefs/pref_value_store.h",
+      "lineCount": 299,
+      "coverage": "Focused lines 35-135: precedence enum and lookup contract.",
+      "limitations": [
+        "Only the priority contract was inspected. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S25",
+      "title": "Simple menu model stored identity and activation",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/menus/simple_menu_model.cc",
+      "retrievedAt": "2026-11-21T14:21:41.422Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "ui/menus/simple_menu_model.cc",
+      "lineCount": 713,
+      "coverage": "Focused stored command/label, dynamic state and activation paths.",
+      "limitations": [
+        "This does not establish platform-specific menu cancellation behavior. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S26",
+      "title": "Menu model adapter view copying and delegation",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/views/controls/menu/menu_model_adapter.cc",
+      "retrievedAt": "2026-11-21T14:18:02.745Z",
+      "additionalRetrievedAt": [
+        "2026-11-21T14:21:38.163Z"
+      ],
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "ui/views/controls/menu/menu_model_adapter.cc",
+      "lineCount": 406,
+      "coverage": "Focused type/label/view copying, dispatch, enablement and checked queries; supplemental lines 112-186.",
+      "limitations": [
+        "Not all menu-controller or accessibility code was inspected. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S27",
+      "title": "Views menu delegate default enablement",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/views/controls/menu/menu_delegate.cc",
+      "retrievedAt": "2026-11-21T14:28:28.215Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "ui/views/controls/menu/menu_delegate.cc",
+      "lineCount": 176,
+      "coverage": "Focused lines 52-88: default enablement and dispatch.",
+      "limitations": [
+        "Defaults alone do not prove a runtime menu-state defect. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S28",
+      "title": "cr-toggle state, ARIA and event handling",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/webui/resources/cr_elements/cr_toggle/cr_toggle.ts",
+      "retrievedAt": "2026-11-21T14:21:39.204Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "ui/webui/resources/cr_elements/cr_toggle/cr_toggle.ts",
+      "lineCount": 237,
+      "coverage": "Focused state/ARIA updates, click propagation, pointer and keyboard activation.",
+      "limitations": [
+        "No actual keyboard or screen-reader session was run. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S29",
+      "title": "WebUI assertion implementation",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/webui/resources/js/assert.ts",
+      "retrievedAt": "2026-11-21T14:26:06.757Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "ui/webui/resources/js/assert.ts",
+      "lineCount": 85,
+      "coverage": "Full body, including the false-assertion throw.",
+      "limitations": [
+        "Build transformations and test-harness rejection handling were not investigated. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S30",
+      "title": "ActionItem notifications and invocation guard",
+      "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/actions/actions.cc",
+      "retrievedAt": "2026-11-21T14:29:23.445Z",
+      "additionalRetrievedAt": [
+        "2026-11-21T14:33:31.242Z"
+      ],
+      "publishedAt": null,
+      "kind": "source-code",
+      "file": "ui/actions/actions.cc",
+      "lineCount": 727,
+      "coverage": "Focused base/list notifications and ActionItem state/dispatch, portions of lines 1-471.",
+      "limitations": [
+        "Not all action producers or coupled eligibility transitions were traced. Original publication date was not established."
+      ]
+    },
+    {
+      "id": "R09-S31",
+      "title": "Chromium issue 359863838: inaccessible overflow overlap lead",
+      "url": "https://issues.chromium.org/359863838",
+      "retrievedAt": "2026-11-21",
+      "publishedAt": null,
+      "kind": "issue-tracker",
+      "bodyVerified": false,
+      "retrievalOutcome": "Normal fetch returned only a Chromium sign-in shell after discovery through free search.",
+      "limitations": [
+        "The issue body, comments, status, resolution and exact relationship to R09-H1 were not verified. This is an overlap lead, not a confirmed duplicate or a submission by this project. Only date-level precision was retained for the body-fetch attempt."
+      ]
+    },
+    {
+      "id": "R09-S32",
+      "title": "Bounded Customize Toolbar handler history at the audited revision",
+      "url": "https://api.github.com/repos/chromium/chromium/commits?sha=04d6a2d2bd0626ad343da0ef33e812e1360b44bd&path=chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc&per_page=6",
+      "retrievedAt": "2026-11-21T14:24:01.464Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "coverage": "Six recent handler history entries, primarily feature, icon and panel changes.",
+      "limitations": [
+        "A bounded history response is not a complete duplicate or regression search. Original publication dates for the aggregate response were not established."
+      ]
+    }
+  ],
+  "browsers": [],
+  "features": [],
+  "issues": [
+    {
+      "id": "R09-C1",
+      "title": "Managed Home-button state is exposed through editable customization controls",
+      "kind": "source-inconsistency",
+      "status": "needs-validation",
+      "sourceRevision": "04d6a2d2bd0626ad343da0ef33e812e1360b44bd",
+      "component": "Desktop toolbar context menu and Customize Toolbar policy metadata",
+      "sourceIds": [
+        "R09-S20",
+        "R09-S10",
+        "R09-S12",
+        "R09-S17",
+        "R09-S08",
+        "R09-S01",
+        "R09-S22",
+        "R09-S24",
+        "R09-S23",
+        "R09-S21",
+        "R09-S09",
+        "R09-S13",
+        "R09-S15"
+      ],
+      "upstreamUrl": null,
+      "upstreamStatus": "unknown",
+      "reportedVersions": [],
+      "testedVersions": [],
+      "reproduction": "source-only",
+      "steps": [
+        "Proposed, not executed: in an isolated test profile, set mandatory ShowHomeButton=true and call CustomizeToolbarHandler::ListActions(). Inspect Home's management field and effective pin state.",
+        "Construct the Home context-menu model in a regular profile and inspect Unpin enablement. Activate it and compare the effective preference and visibility with the requested user value.",
+        "Repeat mandatory ShowHomeButton=false through Customize Toolbar; use recommended true as the editable control case.",
+        "After source-level assertions are validated, use an authorized disposable runtime profile to inspect keyboard activation and announcements."
+      ],
+      "expected": "The management field should describe the effective policy-controlled Home state, and pin/unpin controls should reflect preference modifiability while preserving recommended-policy editability.",
+      "observed": "At the pinned revision, ListActions reads Home's effective preference but supplies false for its enterprise-controlled field. The WebUI chooses an editable row when that field is false. Native pin/unpin enablement checks regular-profile status and pinnability, and preference-backed Home is treated as pinnable without checking policy management. SetBoolean writes the user store, which remains lower priority than mandatory managed values.",
+      "inferredFailureScenario": "Mandatory true can leave an enabled Unpin command and editable Home toggle that write a shadowed user value while effective visibility remains policy-controlled. Mandatory false similarly exposes an editable Customize Toolbar toggle. The exact visible or announced effect was not observed.",
+      "evidenceType": "source-inspected",
+      "confidence": "high",
+      "confirmationScope": "Source-confirmed metadata/enablement inconsistency only; no policy bypass or local runtime defect is established.",
+      "codeEvidence": [
+        {
+          "sourceIds": [
+            "R09-S20"
+          ],
+          "file": "chrome/browser/policy/configuration_policy_handler_list_factory.cc",
+          "startLine": 791,
+          "endLine": 793,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/policy/configuration_policy_handler_list_factory.cc#L791-L793",
+          "quote": "{ key::kShowHomeButton,",
+          "observation": "This entry maps ShowHomeButton to prefs::kShowHomeButton as a boolean."
+        },
+        {
+          "sourceIds": [
+            "R09-S10"
+          ],
+          "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc",
+          "startLine": 268,
+          "endLine": 280,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc#L268-L280",
+          "quote": "prefs()->GetBoolean(prefs::kShowHomeButton), false,",
+          "observation": "The effective Home preference is followed by an unconditional false management field."
+        },
+        {
+          "sourceIds": [
+            "R09-S12"
+          ],
+          "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar.mojom",
+          "startLine": 49,
+          "endLine": 62,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar.mojom#L49-L62",
+          "quote": "bool has_enterprise_controlled_pinned_state;",
+          "observation": "The interface explicitly defines whether the pinned state is currently enterprise controlled."
+        },
+        {
+          "sourceIds": [
+            "R09-S17"
+          ],
+          "file": "chrome/browser/resources/side_panel/customize_chrome/customize_toolbar/toolbar.html.ts",
+          "startLine": 34,
+          "endLine": 60,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/resources/side_panel/customize_chrome/customize_toolbar/toolbar.html.ts#L34-L60",
+          "quote": "${!action.hasEnterpriseControlledPinnedState ? html`",
+          "observation": "False selects the clickable row/cr-toggle branch; the other branch displays managed explanatory text."
+        },
+        {
+          "sourceIds": [
+            "R09-S08"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/home_button.cc",
+          "startLine": 143,
+          "endLine": 151,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/home_button.cc#L143-L151",
+          "quote": "std::make_unique<PinnedActionToolbarButtonMenuModel>(",
+          "observation": "Home wires the shared pinned-action context-menu model with kActionHome."
+        },
+        {
+          "sourceIds": [
+            "R09-S01"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/pinned_action_toolbar_button_menu_model.cc",
+          "startLine": 163,
+          "endLine": 184,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/pinned_action_toolbar_button_menu_model.cc#L163-L184",
+          "quote": "return browser_->GetProfile()->IsRegularProfile() && is_pinnable;",
+          "observation": "The pin/unpin branch omits a preference-management check."
+        },
+        {
+          "sourceIds": [
+            "R09-S01"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/pinned_action_toolbar_button_menu_model.cc",
+          "startLine": 43,
+          "endLine": 58,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/pinned_action_toolbar_button_menu_model.cc#L43-L58",
+          "quote": "action_id == kActionHome;",
+          "observation": "Home belongs to the preference-backed pin-state group and maps to kShowHomeButton."
+        },
+        {
+          "sourceIds": [
+            "R09-S01"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/pinned_action_toolbar_button_menu_model.cc",
+          "startLine": 289,
+          "endLine": 313,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/pinned_action_toolbar_button_menu_model.cc#L289-L313",
+          "quote": "pref_service->SetBoolean(GetPrefForActionId(action_id_), should_pin);",
+          "observation": "Preference-backed actions satisfy IsPinnable and write their preference on activation."
+        },
+        {
+          "sourceIds": [
+            "R09-S22"
+          ],
+          "file": "components/prefs/pref_service.cc",
+          "startLine": 388,
+          "endLine": 390,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/components/prefs/pref_service.cc#L388-L390",
+          "quote": "SetUserPrefValue(path, base::Value(value));",
+          "observation": "SetBoolean delegates to a user-preference write."
+        },
+        {
+          "sourceIds": [
+            "R09-S22"
+          ],
+          "file": "components/prefs/pref_service.cc",
+          "startLine": 568,
+          "endLine": 595,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/components/prefs/pref_service.cc#L568-L595",
+          "quote": "user_pref_store_->SetValue(path, std::move(new_value), GetWriteFlags(pref));",
+          "observation": "The write targets the user store rather than mandatory managed values."
+        },
+        {
+          "sourceIds": [
+            "R09-S24"
+          ],
+          "file": "components/prefs/pref_value_store.h",
+          "startLine": 38,
+          "endLine": 63,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/components/prefs/pref_value_store.h#L38-L63",
+          "quote": "MANAGED_STORE = 0,",
+          "observation": "Mandatory managed values precede user values in the highest-to-lowest priority enum."
+        },
+        {
+          "sourceIds": [
+            "R09-S23"
+          ],
+          "file": "components/prefs/pref_value_store.cc",
+          "startLine": 114,
+          "endLine": 137,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/components/prefs/pref_value_store.cc#L114-L137",
+          "quote": "for (size_t i = 0; i < DEFAULT_STORE; ++i) {",
+          "observation": "Effective-value lookup selects the first matching non-default store in priority order."
+        }
+      ],
+      "vendorStatements": [
+        {
+          "sourceIds": [
+            "R09-S21"
+          ],
+          "file": "components/policy/resources/templates/policy_definitions/Startup/ShowHomeButton.yaml",
+          "startLine": 1,
+          "endLine": 11,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/components/policy/resources/templates/policy_definitions/Startup/ShowHomeButton.yaml#L1-L11",
+          "evidenceType": "vendor-documented",
+          "statement": "The checked-in policy description says a configured policy determines Home-button visibility and users cannot change it; the definition also advertises recommended-policy support. This describes intended semantics, not measured UX."
+        }
+      ],
+      "existingTests": [
+        {
+          "name": "HomeButtonUiTest.ShowMenu",
+          "sourceIds": [
+            "R09-S09"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/home_button_browsertest.cc",
+          "startLine": 49,
+          "endLine": 82,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/home_button_browsertest.cc#L49-L82",
+          "observation": "Tests ordinary pin/unpin visibility and writes without setting policy management."
+        },
+        {
+          "name": "CustomizeToolbarHandlerTest.PinHome",
+          "sourceIds": [
+            "R09-S13"
+          ],
+          "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler_unittest.cc",
+          "startLine": 204,
+          "endLine": 214,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler_unittest.cc#L204-L214",
+          "observation": "Tests ordinary Home preference changes."
+        },
+        {
+          "name": "CustomizeToolbarHandlerTest.HomePrefUpdated",
+          "sourceIds": [
+            "R09-S13"
+          ],
+          "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler_unittest.cc",
+          "startLine": 248,
+          "endLine": 264,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler_unittest.cc#L248-L264",
+          "observation": "Tests ordinary preference-change notification."
+        }
+      ],
+      "duplicateLookup": {
+        "queryIds": [
+          "R09-Q1"
+        ],
+        "outcome": "No exact duplicate verified in the completed free-search queries.",
+        "boundary": "Search results and the selected test files do not establish repository-wide test absence or issue novelty."
+      },
+      "recommendationCandidates": [
+        "Expose authoritative management and effective pin state, and gate native pin/unpin on preference modifiability while preserving recommended-policy editability.",
+        "Represent a managed-off Home setting with accurate locked-off wording instead of blindly reusing the existing enterprise-enabled branch."
+      ],
+      "followUpTest": {
+        "sourceIds": [
+          "R09-S15"
+        ],
+        "file": "chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.cc",
+        "startLine": 217,
+        "endLine": 234,
+        "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.cc#L217-L234",
+        "quote": "pref_service_->ClearPref(prefs::kShowHomeButton);",
+        "proposal": "Add a managed-state Reset test: Reset clears user preferences while IsDefault compares effective values. Reset-button and announcement behavior under policy is an unverified follow-up, not an additional confirmed issue."
+      },
+      "limitations": [
+        "Source-only inconsistency; no browser build, live policy matrix, screen-reader result or test execution was observed.",
+        "No policy bypass is claimed: mandatory managed values retain priority over these user-store writes.",
+        "No managed-Home coverage was found in the inspected tests; a full repository test search was not performed.",
+        "Affected released versions, feature rollout state and exact user-visible behavior are unknown."
+      ],
+      "submission": {
+        "status": "not-submitted",
+        "url": null,
+        "reason": "Needs isolated validation and a verified duplicate check; no issue was submitted by this project."
+      }
+    },
+    {
+      "id": "R09-C2",
+      "title": "Toolbar WebUI test fixtures contradict the production data: icon invariant",
+      "kind": "source-inconsistency",
+      "status": "needs-validation",
+      "sourceRevision": "04d6a2d2bd0626ad343da0ef33e812e1360b44bd",
+      "component": "Customize Toolbar WebUI test data contract",
+      "sourceIds": [
+        "R09-S16",
+        "R09-S18",
+        "R09-S29",
+        "R09-S10",
+        "R09-S19"
+      ],
+      "upstreamUrl": null,
+      "upstreamStatus": "unknown",
+      "reportedVersions": [],
+      "testedVersions": [],
+      "reproduction": "source-only",
+      "steps": [
+        "Proposed, not executed: verify that the generated resources in an isolated Chromium test build correspond to the pinned revision.",
+        "Run the existing --gtest_filter=SidePanelCustomizeChromeTest.Toolbar in its appropriate upstream test binary.",
+        "Capture assertion and promise-rejection reporting for tests using createToolbarElementWithBasicData; distinguish a fixture assertion from an end-user product failure."
+      ],
+      "expected": "Normal fixture icons and their expected values should satisfy the production data: URL invariant, so ordinary structure and pinning tests do not introduce an unrelated asynchronous assertion.",
+      "observed": "The production list-actions callback asserts that each iconUrl starts with data:. The shared WebUI fixture supplies the same HTTPS example icon twice, and the icon test expects that HTTPS URL. The inspected assert implementation throws on false, while the real browser handler encodes PNG data URIs.",
+      "inferredFailureScenario": "The fixture reaches a false assertion in the asynchronous list-actions callback when using the inspected assertion implementation. Whether the test harness fails, reports an unhandled rejection or uses transformed assertions was not established.",
+      "evidenceType": "source-inspected",
+      "confidence": "high",
+      "confirmationScope": "Source-confirmed fixture/production contract mismatch, not a demonstrated test-run failure or end-user Chrome defect.",
+      "codeEvidence": [
+        {
+          "sourceIds": [
+            "R09-S16"
+          ],
+          "file": "chrome/browser/resources/side_panel/customize_chrome/customize_toolbar/toolbar.ts",
+          "startLine": 117,
+          "endLine": 121,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/resources/side_panel/customize_chrome/customize_toolbar/toolbar.ts#L117-L121",
+          "quote": "assert(this.actions_.every(action => action.iconUrl.startsWith('data:')));",
+          "observation": "The production callback enforces a data: prefix for every icon URL."
+        },
+        {
+          "sourceIds": [
+            "R09-S18"
+          ],
+          "file": "chrome/test/data/webui/side_panel/customize_chrome/toolbar_test.ts",
+          "startLine": 33,
+          "endLine": 51,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/test/data/webui/side_panel/customize_chrome/toolbar_test.ts#L33-L51",
+          "quote": "iconUrl: 'https://example.com/foo_1.png',",
+          "observation": "Both basic fixture actions use an HTTPS icon rather than a data URI."
+        },
+        {
+          "sourceIds": [
+            "R09-S18"
+          ],
+          "file": "chrome/test/data/webui/side_panel/customize_chrome/toolbar_test.ts",
+          "startLine": 135,
+          "endLine": 144,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/test/data/webui/side_panel/customize_chrome/toolbar_test.ts#L135-L144",
+          "quote": "assertEquals('https://example.com/foo_1.png', iconUrl);",
+          "observation": "The icon test explicitly depends on the contract-invalid fixture URL."
+        },
+        {
+          "sourceIds": [
+            "R09-S29"
+          ],
+          "file": "ui/webui/resources/js/assert.ts",
+          "startLine": 11,
+          "endLine": 17,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/webui/resources/js/assert.ts#L11-L17",
+          "quote": "throw new Error('Assertion failed' + (message ? `: ${message}` : ''));",
+          "observation": "The inspected assertion implementation throws on a false value."
+        },
+        {
+          "sourceIds": [
+            "R09-S10"
+          ],
+          "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc",
+          "startLine": 366,
+          "endLine": 372,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc#L366-L372",
+          "quote": "GURL(webui::EncodePNGAndMakeDataURI(",
+          "observation": "Real handler output uses data-URI encoding, consistent with the production invariant."
+        }
+      ],
+      "existingTests": [
+        {
+          "name": "SidePanelCustomizeChromeTest.Toolbar",
+          "sourceIds": [
+            "R09-S19"
+          ],
+          "file": "chrome/test/data/webui/side_panel/customize_chrome/customize_chrome_browsertest.cc",
+          "startLine": 81,
+          "endLine": 83,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/test/data/webui/side_panel/customize_chrome/customize_chrome_browsertest.cc#L81-L83",
+          "quote": "RunTest(\"side_panel/customize_chrome/toolbar_test.js\", \"mocha.run()\");",
+          "observation": "Wires the existing WebUI toolbar suite."
+        },
+        {
+          "name": "CustomizerToolbarTest fixture consumers",
+          "sourceIds": [
+            "R09-S18"
+          ],
+          "file": "chrome/test/data/webui/side_panel/customize_chrome/toolbar_test.ts",
+          "startLine": 95,
+          "endLine": 180,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/test/data/webui/side_panel/customize_chrome/toolbar_test.ts#L95-L180",
+          "observation": "Structure, icon, toggle and callback tests use the basic fixture. These tests were not executed."
+        }
+      ],
+      "duplicateLookup": {
+        "queryIds": [
+          "R09-Q4"
+        ],
+        "outcome": "No verified fixture-contract duplicate was found. A broad Customize Toolbar context-menu-option search lead was not treated as this mismatch.",
+        "boundary": "Issue bodies and exhaustive test/history coverage were not verified; no novelty or CI-status claim follows."
+      },
+      "recommendationCandidates": [
+        "Replace the fixture icons and expected URL with a small valid data: image while preserving the production invariant.",
+        "Keep normal pinning tests contract-valid; add a separate explicitly expected-error invalid-data test only if that boundary warrants it."
+      ],
+      "limitations": [
+        "No test-run result was observed. Harness failure, unhandled rejection behavior and optimized assertion transformation remain unverified.",
+        "The production handler was not shown to supply an invalid URL; this is a test-fixture inconsistency.",
+        "No released Chrome version is implicated by a local reproduction, and duplicate research remains bounded."
+      ],
+      "submission": {
+        "status": "not-submitted",
+        "url": null,
+        "reason": "The existing test suite and generated-resource behavior need validation before a report is considered."
+      }
+    },
+    {
+      "id": "R09-H1",
+      "title": "A running overflow menu may dispatch a different action after pin-order changes",
+      "kind": "hypothesis",
+      "status": "needs-validation",
+      "sourceRevision": "04d6a2d2bd0626ad343da0ef33e812e1360b44bd",
+      "component": "Responsive toolbar overflow-menu command identity",
+      "sourceIds": [
+        "R09-S03",
+        "R09-S15",
+        "R09-S25",
+        "R09-S05",
+        "R09-S31"
+      ],
+      "upstreamUrl": null,
+      "upstreamStatus": "unknown",
+      "reportedVersions": [],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Proposed, not executed: extend the existing overflow unit fixture with two distinct action labels and callback counters, and mark both actions overflowed.",
+        "Create/show the menu and retain action A's displayed label and numeric command ID.",
+        "Call MovePinnedAction(B, 0), check whether the old menu survives, then activate the retained command.",
+        "Assert that either the old menu was invalidated or the invoked action still matches the retained label.",
+        "Only after fixture validation, test a controlled preference update with a real open overflow menu in an authorized disposable runtime profile."
+      ],
+      "expected": "A surviving menu command should continue to identify the action named by its displayed label, or the menu should be invalidated when the mapping changes.",
+      "observed": "Source inspection shows menu creation using responsive_elements_ indices as stored command IDs and snapshotting labels. OnActionsChanged reorders that vector, while execution resolves an existing numeric command against the current vector. The selected tests cover reordering and activation separately.",
+      "inferredFailureScenario": "If a menu stays alive while a model update swaps actions A and B, the old command for A can resolve to B while still displaying A's label. Synchronization is a plausible asynchronous trigger, not a demonstrated production path. Automatic menu closure on every relevant update would prevent the proposed user-facing failure.",
+      "evidenceType": "hypothesis",
+      "confidence": "medium",
+      "confidenceBasis": "High confidence in the conditional index/label mismatch; only medium confidence in production reachability because whole-UI cancellation behavior was not established.",
+      "codeEvidence": [
+        {
+          "sourceIds": [
+            "R09-S03"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/overflow_menu.cc",
+          "startLine": 360,
+          "endLine": 384,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu.cc#L360-L384",
+          "quote": "menu_model->AddItem(i, GetMenuText(element));",
+          "observation": "Creation stores a responsive-elements index as command ID with the current label; the icon branch also uses i."
+        },
+        {
+          "sourceIds": [
+            "R09-S03"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/overflow_menu.cc",
+          "startLine": 261,
+          "endLine": 263,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu.cc#L261-L263",
+          "quote": "responsive_elements_ = GetResponsiveElementsWithOrderedActions();",
+          "observation": "This observer reorders the vector without rebuilding the open menu in this method."
+        },
+        {
+          "sourceIds": [
+            "R09-S03"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/overflow_menu.cc",
+          "startLine": 387,
+          "endLine": 395,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu.cc#L387-L395",
+          "quote": "const auto& element_info = responsive_elements_.at(command_id);",
+          "observation": "Execution resolves the stored numeric command against the current vector."
+        },
+        {
+          "sourceIds": [
+            "R09-S15"
+          ],
+          "file": "chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.cc",
+          "startLine": 182,
+          "endLine": 214,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.cc#L182-L214",
+          "quote": "observer.OnActionsChanged();",
+          "observation": "The model refreshes preference-derived IDs before notifying observers."
+        },
+        {
+          "sourceIds": [
+            "R09-S25"
+          ],
+          "file": "ui/menus/simple_menu_model.cc",
+          "startLine": 474,
+          "endLine": 482,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/menus/simple_menu_model.cc#L474-L482",
+          "quote": "return items_[ValidateItemIndex(index)].label;",
+          "observation": "Non-dynamic labels and command IDs are retained in the menu model's stored items."
+        },
+        {
+          "sourceIds": [
+            "R09-S25"
+          ],
+          "file": "ui/menus/simple_menu_model.cc",
+          "startLine": 626,
+          "endLine": 639,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/menus/simple_menu_model.cc#L626-L639",
+          "quote": "delegate_->ExecuteCommand(GetCommandIdAt(index), event_flags);",
+          "observation": "Activation dispatches that stored command ID to the delegate."
+        }
+      ],
+      "existingTests": [
+        {
+          "name": "OverflowMenuTest.ResponsiveActionsRemainOrdered",
+          "sourceIds": [
+            "R09-S05"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/overflow_menu_unittest.cc",
+          "startLine": 510,
+          "endLine": 545,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu_unittest.cc#L510-L545",
+          "observation": "Checks vector order after moving an action without showing and activating a preexisting menu."
+        },
+        {
+          "name": "OverflowMenuTest.SupportActionIds",
+          "sourceIds": [
+            "R09-S05"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/overflow_menu_unittest.cc",
+          "startLine": 694,
+          "endLine": 719,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu_unittest.cc#L694-L719",
+          "observation": "Checks activation without an intervening reorder."
+        }
+      ],
+      "duplicateLookup": {
+        "queryIds": [
+          "R09-Q2",
+          "R09-Q5"
+        ],
+        "sourceIds": [
+          "R09-S31"
+        ],
+        "outcome": "Issue 359863838 is a priority unverified overlap lead, not a confirmed duplicate.",
+        "overlapLeads": [
+          {
+            "sourceIds": [
+              "R09-S31"
+            ],
+            "url": "https://issues.chromium.org/359863838",
+            "relationship": "unverified-overlap",
+            "bodyVerified": false,
+            "statusVerified": false
+          }
+        ],
+        "boundary": "The attempted issue fetch returned a sign-in shell. Issue status, resolution and exact overlap are unknown. Overflow history requests also failed, and no exhaustive test or duplicate search was completed."
+      },
+      "recommendationCandidates": [
+        "If reproduced, use stable action identity or an immutable command map for each open menu, or close/rebuild on reorder.",
+        "Keep label, activation, enabled-state and status-indicator lookups on the same identity mapping."
+      ],
+      "limitations": [
+        "No running menu or synchronization event was tested; menu cancellation could prevent the user-facing scenario.",
+        "The code observation is conditional evidence for a hypothesis, not a source-confirmed production defect.",
+        "Issue 359863838 could overlap, but its inaccessible body prevents any duplicate or novelty verdict.",
+        "Released-version impact and platform-specific behavior remain unknown."
+      ],
+      "submission": {
+        "status": "not-submitted",
+        "url": null,
+        "reason": "Needs an open-menu reproduction and a body-verified overlap check for issue 359863838 before escalation."
+      }
+    },
+    {
+      "id": "R09-H2",
+      "title": "Actions hidden at first enumeration may miss their first visibility-change notification",
+      "kind": "hypothesis",
+      "status": "needs-validation",
+      "sourceRevision": "04d6a2d2bd0626ad343da0ef33e812e1360b44bd",
+      "component": "Customize Toolbar action-list observation",
+      "sourceIds": [
+        "R09-S10",
+        "R09-S11",
+        "R09-S30",
+        "R09-S16",
+        "R09-S14",
+        "R09-S32"
+      ],
+      "upstreamUrl": null,
+      "upstreamStatus": "unknown",
+      "reportedVersions": [],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Proposed, not executed: in the existing handler browser-test fixture, make DevTools invisible before the first ListActions call.",
+        "Enumerate once and clear mock expectations, then set DevTools visible without changing another action, the model or the theme.",
+        "Verify a client update followed by DevTools appearing, without an unrelated refresh.",
+        "If the fixture shows the missed update, trace a genuine production eligibility transition before escalating a user-facing report."
+      ],
+      "expected": "For a live-updating customization list, an existing action that becomes visible after initial enumeration should trigger a refresh even if it was initially hidden.",
+      "observed": "ListActions returns for invisible actions before installing their change callbacks. The inspected handler stores per-ID subscriptions and model/preference observations. SetVisible triggers the changed action's callback, and the WebUI repopulates when notified. Existing visibility coverage begins with DevTools visible and already enumerated.",
+      "inferredFailureScenario": "An initially hidden action becomes visible with no other subscribed action, model or theme event. Its own missed subscription can leave the WebUI omitting it until another refresh. Coupled eligibility or visibility updates may mask this scenario; no production action making the independent transition was traced.",
+      "evidenceType": "hypothesis",
+      "confidence": "medium",
+      "confidenceBasis": "High confidence in the hidden-first subscription edge; medium confidence in observable production impact because other notifications can refresh the list.",
+      "codeEvidence": [
+        {
+          "sourceIds": [
+            "R09-S10"
+          ],
+          "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc",
+          "startLine": 314,
+          "endLine": 340,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc#L314-L340",
+          "quote": "if (!action_item || !action_item->GetVisible()) {",
+          "observation": "The invisible-action early return precedes subscription installation."
+        },
+        {
+          "sourceIds": [
+            "R09-S10"
+          ],
+          "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc",
+          "startLine": 326,
+          "endLine": 331,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc#L326-L331",
+          "quote": "action_item->AddActionChangedCallback(base::BindRepeating(",
+          "observation": "Only an action that reaches this block receives the per-ID callback subscription."
+        },
+        {
+          "sourceIds": [
+            "R09-S10"
+          ],
+          "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc",
+          "startLine": 495,
+          "endLine": 512,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc#L495-L512",
+          "quote": "client_->NotifyActionsUpdated();",
+          "observation": "Action/model callbacks notify the WebUI; preference callbacks update individual pin state."
+        },
+        {
+          "sourceIds": [
+            "R09-S11"
+          ],
+          "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.h",
+          "startLine": 64,
+          "endLine": 73,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.h#L64-L73",
+          "quote": "std::unordered_map<actions::ActionId, base::CallbackListSubscription>",
+          "observation": "The handler owns per-ID action subscriptions plus model and preference observations."
+        },
+        {
+          "sourceIds": [
+            "R09-S10"
+          ],
+          "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc",
+          "startLine": 219,
+          "endLine": 248,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc#L219-L248",
+          "quote": "model_observation_.Observe(model_);",
+          "observation": "Constructor observation covers the model and three pin preferences, not an action-tree-wide visibility observer."
+        },
+        {
+          "sourceIds": [
+            "R09-S30"
+          ],
+          "file": "ui/actions/actions.cc",
+          "startLine": 332,
+          "endLine": 342,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/actions/actions.cc#L332-L342",
+          "quote": "visible_ = visible;\n  ActionItemChanged();",
+          "observation": "A changed visible value emits that action's change callback."
+        },
+        {
+          "sourceIds": [
+            "R09-S16"
+          ],
+          "file": "chrome/browser/resources/side_panel/customize_chrome/customize_toolbar/toolbar.ts",
+          "startLine": 67,
+          "endLine": 75,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/resources/side_panel/customize_chrome/customize_toolbar/toolbar.ts#L67-L75",
+          "quote": "this.apiProxy_.callbackRouter.notifyActionsUpdated.addListener(",
+          "observation": "The WebUI binds action-update notifications to populateUi_; theme changes also repopulate."
+        }
+      ],
+      "existingTests": [
+        {
+          "name": "CustomizeToolbarHandlerBrowserTest.ActionsUpdatedOnVisibilityChange",
+          "sourceIds": [
+            "R09-S14"
+          ],
+          "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler_browsertest.cc",
+          "startLine": 177,
+          "endLine": 212,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler_browsertest.cc#L177-L212",
+          "observation": "Starts with DevTools visible, enumerates it, then hides it: the already-subscribed direction."
+        },
+        {
+          "name": "CustomizeToolbarHandlerSmartSelectionBrowserTest.ListedInToolsOnlyWithSmartSelection",
+          "sourceIds": [
+            "R09-S14"
+          ],
+          "file": "chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler_browsertest.cc",
+          "startLine": 314,
+          "endLine": 343,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler_browsertest.cc#L314-L343",
+          "observation": "Checks initial feature-dependent listing and pinning rather than a live hidden-first transition."
+        }
+      ],
+      "duplicateLookup": {
+        "queryIds": [
+          "R09-Q3"
+        ],
+        "sourceIds": [
+          "R09-S32"
+        ],
+        "outcome": "No exact hidden-first notification duplicate was verified. Six recent handler history entries were inspected.",
+        "boundary": "The limited history and search results are not comprehensive; coupled notification paths and a genuine production transition remain untraced."
+      },
+      "recommendationCandidates": [
+        "If reproduced, subscribe to existing actions independently of current list visibility, or provide a suitable broader change observer.",
+        "Cover both initially-hidden-to-visible and initially-visible-to-hidden transitions."
+      ],
+      "limitations": [
+        "The proposed test and a production eligibility transition were not run.",
+        "Other subscribed action, model or theme notifications may refresh the list and mask the edge case.",
+        "The selected tests and bounded history do not establish repository-wide absence or issue novelty.",
+        "Released-version impact remains unknown."
+      ],
+      "submission": {
+        "status": "not-submitted",
+        "url": null,
+        "reason": "Needs a hidden-first regression test and a genuine production transition before a user-facing report is considered."
+      }
+    },
+    {
+      "id": "R09-H3",
+      "title": "Open overflow menu enablement may remain stale while action enablement changes",
+      "kind": "hypothesis",
+      "status": "needs-validation",
+      "sourceRevision": "04d6a2d2bd0626ad343da0ef33e812e1360b44bd",
+      "component": "Responsive overflow-menu live enabled and accessible state",
+      "sourceIds": [
+        "R09-S03",
+        "R09-S04",
+        "R09-S27",
+        "R09-S30",
+        "R09-S06",
+        "R09-S25",
+        "R09-S05"
+      ],
+      "upstreamUrl": null,
+      "upstreamStatus": "unknown",
+      "reportedVersions": [],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Proposed, not executed: show a two-action overflow menu in the existing fixture, with one action enabled and the other disabled.",
+        "Change the underlying enabled action with SetEnabled(false) and the other with SetEnabled(true), and first check whether the menu survives or closes.",
+        "Compare model enabled state with MenuItemView::GetEnabled() for the surviving menu, then verify keyboard selectability and accessibility state in an authorized runtime test.",
+        "Establish whether live enabled-state updates or a deliberately frozen snapshot are intended before labeling the behavior a defect."
+      ],
+      "expected": "If the menu is intended to reflect live action state, its visible, keyboard and accessible enabled state should remain consistent with invocation availability, or it should close when that state becomes invalid. A deliberate snapshot contract must be evaluated separately.",
+      "observed": "PopulateMenu copies enabled state onto normal MenuItemViews. Its running ActionItemChanged path updates icon color and status-indicator visibility, not label or enabled state. The model's IsCommandIdEnabled reads current state, but the class does not override Views' distinct IsCommandEnabled, whose default is true. ActionItem invocation still refuses disabled execution.",
+      "inferredFailureScenario": "If the menu stays open, an action that becomes disabled may still appear or announce enabled while activation does nothing; an action that becomes enabled may remain unselectable until reopening. No accessibility tree or runtime event was observed.",
+      "evidenceType": "hypothesis",
+      "confidence": "medium",
+      "confidenceBasis": "Concrete partial-update paths support a consistency test, but menu cancellation and the intended live-state contract were not established.",
+      "codeEvidence": [
+        {
+          "sourceIds": [
+            "R09-S03"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/overflow_menu.cc",
+          "startLine": 498,
+          "endLine": 520,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu.cc#L498-L520",
+          "quote": "menu_item->SetEnabled(IsCommandIdEnabled(menu_item->GetCommand()));",
+          "observation": "Menu population copies current enabled state onto each normal view."
+        },
+        {
+          "sourceIds": [
+            "R09-S03"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/overflow_menu.cc",
+          "startLine": 445,
+          "endLine": 496,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu.cc#L445-L496",
+          "quote": "status_indicator->Hide();",
+          "observation": "The running-menu callback changes indicator visibility and icon color; its inspected body contains no enabled-state or label refresh."
+        },
+        {
+          "sourceIds": [
+            "R09-S03"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/overflow_menu.cc",
+          "startLine": 387,
+          "endLine": 390,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu.cc#L387-L390",
+          "quote": "return delegate_->IsEnabled(element.overflow_id);",
+          "observation": "The model delegate queries enabled state when asked."
+        },
+        {
+          "sourceIds": [
+            "R09-S04"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/overflow_menu.h",
+          "startLine": 205,
+          "endLine": 222,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu.h#L205-L222",
+          "quote": "bool IsCommandIdEnabled(int command_id) const override;",
+          "observation": "The class overrides the model delegate's IsCommandIdEnabled, not Views' differently named IsCommandEnabled."
+        },
+        {
+          "sourceIds": [
+            "R09-S27"
+          ],
+          "file": "ui/views/controls/menu/menu_delegate.cc",
+          "startLine": 56,
+          "endLine": 65,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/views/controls/menu/menu_delegate.cc#L56-L65",
+          "quote": "bool MenuDelegate::IsCommandEnabled(int id) const {\n  return true;\n}",
+          "observation": "Views' default command-enabled response is true."
+        },
+        {
+          "sourceIds": [
+            "R09-S30"
+          ],
+          "file": "ui/actions/actions.cc",
+          "startLine": 267,
+          "endLine": 277,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/actions/actions.cc#L267-L277",
+          "quote": "enabled_ = enabled;\n  ActionItemChanged();",
+          "observation": "Changing ActionItem enablement emits a change notification."
+        },
+        {
+          "sourceIds": [
+            "R09-S30"
+          ],
+          "file": "ui/actions/actions.cc",
+          "startLine": 376,
+          "endLine": 384,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/actions/actions.cc#L376-L384",
+          "quote": "if (enabled_) {",
+          "observation": "InvokeAction retains its enabled guard; this hypothesis does not claim an authorization bypass."
+        },
+        {
+          "sourceIds": [
+            "R09-S06"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/toolbar_controller.cc",
+          "startLine": 606,
+          "endLine": 624,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/toolbar_controller.cc#L606-L624",
+          "quote": "return pinned_actions_delegate_->GetActionItemFor(id)->GetEnabled();",
+          "observation": "The controller delegates action-ID enablement to the current ActionItem."
+        },
+        {
+          "sourceIds": [
+            "R09-S25"
+          ],
+          "file": "ui/menus/simple_menu_model.cc",
+          "startLine": 548,
+          "endLine": 558,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/ui/menus/simple_menu_model.cc#L548-L558",
+          "quote": "return delegate_->IsCommandIdEnabled(command_id) &&",
+          "observation": "Model IsEnabledAt consults the delegate as well as the stored item's enabled flag."
+        }
+      ],
+      "existingTests": [
+        {
+          "name": "OverflowMenuTest.MenuItemUsability",
+          "sourceIds": [
+            "R09-S05"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/overflow_menu_unittest.cc",
+          "startLine": 450,
+          "endLine": 480,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu_unittest.cc#L450-L480",
+          "observation": "Establishes enabled/disabled states before showing the menu and checks the model."
+        },
+        {
+          "name": "OverflowMenuTest.StatusIndicatorVisibilityUpdates",
+          "sourceIds": [
+            "R09-S05"
+          ],
+          "file": "chrome/browser/ui/views/toolbar/overflow_menu_unittest.cc",
+          "startLine": 721,
+          "endLine": 790,
+          "url": "https://github.com/chromium/chromium/blob/04d6a2d2bd0626ad343da0ef33e812e1360b44bd/chrome/browser/ui/views/toolbar/overflow_menu_unittest.cc#L721-L790",
+          "observation": "Changes live underline-indicator state rather than live enablement."
+        }
+      ],
+      "duplicateLookup": {
+        "queryIds": [
+          "R09-Q2",
+          "R09-Q5",
+          "R09-Q6"
+        ],
+        "outcome": "Shared overflow searches and the dedicated disabled-state query did not verify this exact scenario.",
+        "boundary": "Returned extension-menu, fullscreen and historical HiDPI snippets were not verified issue bodies. Issue status, exhaustive coverage and novelty remain unknown."
+      },
+      "recommendationCandidates": [
+        "If the mismatch is reproduced and conflicts with the intended contract, refresh enabled and accessible state on action changes or close the menu consistently.",
+        "Validate keyboard/accessibility state together with visual state rather than updating indicators alone."
+      ],
+      "limitations": [
+        "A deliberately frozen menu snapshot may be intentional; this has not been labeled a confirmed defect.",
+        "Menu survival, keyboard selectability and accessibility state were not measured.",
+        "The ActionItem execution guard remains, so no authorization bypass is established.",
+        "Only selected tests were inspected; duplicate coverage and released-version impact are incomplete."
+      ],
+      "submission": {
+        "status": "not-submitted",
+        "url": null,
+        "reason": "Needs a surviving-menu reproduction and confirmation of the intended live-state behavior before escalation."
+      }
+    }
+  ],
+  "limitations": [
+    "This shard converts completed source research; it adds no new Chromium research or runtime evidence.",
+    "Thirty files were inspected, some only in focused excerpts; this is not a general audit of all desktop menus.",
+    "App three-dot menu internals, tab-strip/renderer context menus, macOS native integration, complete feature gates, full policy-test inventory and platform-wide accessibility remain unaudited.",
+    "Chromium main at the pinned revision is the only source baseline. Installed/released Chrome versions and field-trial states were not inspected, so released-version impact is unknown.",
+    "No Chromium build, source execution, browser reproduction or Chromium test run was performed in this lane. Proposed reproduction steps are not test results.",
+    "Per-file publication dates were not established; copyright years are not publication dates. Some retrievals retain only date-level precision.",
+    "No candidate has a repository-wide test search or exhaustive body-verified duplicate search. Issue 359863838 remains an inaccessible overlap lead.",
+    "Null-active-tab, checkbox-role-transition and drag-edge leads were not traced far enough to promote. TODOs, nonfatal CHECK migration markers and intentional feature gates were not counted as defects.",
+    "No child agents or upstream submissions were made. All five issue records remain needs-validation with empty testedVersions."
+  ],
+  "recovery": {
+    "kind": "labelled-reconstruction-from-retained-evidence",
+    "byteExact": false,
+    "originalReviewedSha256": "e1ca891a31feaa4809c39fd825ae847b80c6c1dba602006f73d1f9ae12a84f8d",
+    "reconstructedAt": "2026-11-22T03:28:41.788Z",
+    "inputArtifacts": [
+      {
+        "label": "recovery-records/partial-shards/R09/sections.json",
+        "sha256": "f81cfe6e8718792a0eebd8dd82e09fd096ef1a31ed5b0dc9fdb38153acb9dbf6",
+        "bytes": 256863,
+        "purpose": "Complete extracted original fields and records; primary reconstruction input."
+      },
+      {
+        "label": "recovery-records/partial-shards/R09/projections/record-inventory.json",
+        "sha256": "f0ec9485076bcf510472527034575d6ad644b00f656bc3d5c2b59fbd87a808a1",
+        "bytes": 1068,
+        "purpose": "Historical core record inventory and exact optional-field names."
+      },
+      {
+        "label": "lane-09.md",
+        "sha256": "04757d347ed654107bf9a58a00003539193bc78b326a232602c0c42434280ef7",
+        "bytes": 38911,
+        "purpose": "Original source-only report; independent pin, source URL/date and finding-boundary cross-check."
+      },
+      {
+        "label": "renderer-20f-preview/ISSUES.md",
+        "sha256": "034ff75b0a97ffb60f51092bfb5c45e50951a4ee9707b7d16cb8fe61f302969d",
+        "bytes": 217798,
+        "purpose": "Saved generated issue preview; record/rendering comparison only."
+      },
+      {
+        "label": "renderer-20f-preview/AGENTS-LEDGER.md",
+        "sha256": "e88382a43890cf7eb5db983201a8d90ebb05fa215266a8042c45f452e8ee223a",
+        "bytes": 261359,
+        "purpose": "Saved generated ledger; missing required lane limitations and source/identity comparison."
+      },
+      {
+        "label": "publication/issue-payloads.ready.json",
+        "sha256": "15522027ec4047731dc0f521975e78ec7b8f996c5986e631bb796da386a9d118",
+        "bytes": 115067,
+        "purpose": "Retained R09 drafted references only; no research facts, submission receipts or remote state."
+      },
+      {
+        "label": "chrome-research-tracker/data/contract.json",
+        "sha256": "7ba74e98828e32c9ef8a1d3a1211c029af753223ae355566132ff5d665eebf0d",
+        "bytes": 4353,
+        "purpose": "Canonical dataset contract."
+      },
+      {
+        "label": "chrome-research-tracker/scripts/render.mjs",
+        "sha256": "2ef414075d5999e4884c27285bfd626745f455c6350244264d2cd8da7e501823",
+        "bytes": 30571,
+        "purpose": "Canonical renderer used only for in-memory retained-preview comparison."
+      },
+      {
+        "label": "chrome-research-tracker/scripts/validate.mjs",
+        "sha256": "23d019cf5dcd9cc79f644c7998b64554938a06a778855a0881e5a822393d95d5",
+        "bytes": 44752,
+        "purpose": "Canonical per-lane validateDataset implementation; read-only, no suite execution."
+      }
+    ],
+    "originalValues": "All 15 complete extracted top-level fields, all 33 source records and all five complete issue records are preserved as JSON values. Repeated R09-C2 extractions agree and were de-duplicated. Original agentSessionId and complete scope/status label are retained.",
+    "reconstructedRequiredMetadata": [
+      {
+        "field": "limitations",
+        "input": "renderer-20f-preview/AGENTS-LEDGER.md",
+        "location": "R09 assignment limitations (nine bullets)",
+        "method": "Decoded the saved renderer Markdown escaping using scripts/render.mjs; checked by exact normalized-block round trip."
+      }
+    ],
+    "omittedOptionalMetadata": [
+      "notPromoted",
+      "queryLog",
+      "lookupLimitations",
+      "validationOrder"
+    ],
+    "omissionDetails": {
+      "notPromoted": "No complete original structured value survives in the authorized extracted fields. The original report retains narrative leads, but the optional JSON representation was not invented.",
+      "queryLog": "No complete original structured query log survives in the authorized extracted fields. Existing issue duplicateLookup.queryIds remain unchanged historical references; Q1-Q6 narrative remains in lane-09.md.",
+      "lookupLimitations": "No complete original structured value survives in the authorized extracted fields. Original source, issue and lane limitations are preserved; report-level lookup narrative is retained in lane-09.md.",
+      "validationOrder": "No complete original structured value survives in the authorized extracted fields. Historical proposed validation order remains in lane-09.md; it does not authorize resuming the subsequently cancelled build."
+    },
+    "evidenceBoundary": "Labelled value-level reconstruction, not exact-byte recovery, fresh source research or a new runtime result. Original serialization and the four listed optional JSON values are not recovered. Complete reflects the historical bounded source-audit assignment, not runtime validation or complete original-file recovery.",
+    "laterBuildBoundary": "The retained BUILD-01 draft and coordinating reconstruction brief record that the separate build was later cancelled at historical source revision afcb797daa921994df0138a531569fb815886110, different from this audit pin 04d6a2d2bd0626ad343da0ef33e812e1360b44bd. No compiled browser artifact was produced, and that build supplies no reproduction for these findings. Saved proposed validation steps are historical unexecuted plans; build/source reacquisition or resumption is not authorized or performed."
+  }
+}

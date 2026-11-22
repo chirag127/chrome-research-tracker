@@ -1,0 +1,1706 @@
+{
+  "schemaVersion": 1,
+  "id": "R08",
+  "title": "Chrome/Chromium accessibility, performance and reliability regressions",
+  "agentSessionId": "ses_e018c785bffex5F5aBOcrx3IFH",
+  "scope": "Publicly documented accessibility, performance/memory, platform reliability, printing/PDF/download and extension-regression issues, investigated on 2026-11-21. Reuses completed documentary research; includes proposed verification but no local browser reproductions.",
+  "status": "complete",
+  "investigationDate": "2026-11-21",
+  "summary": {
+    "issueFamilies": 12,
+    "primaryUpstreamIssueIds": 13,
+    "consolidatedDuplicateReports": 1,
+    "upstreamOpenFamilies": 4,
+    "upstreamClosedFamilies": 8,
+    "fixedVerifiedFamilies": 4,
+    "fixedFamilies": 4,
+    "locallyReproducedFamilies": 0,
+    "projectSubmissions": 0,
+    "publicHistoryEventsRead": 1168,
+    "sourceIds": [
+      "R08-S001",
+      "R08-S002",
+      "R08-S003",
+      "R08-S004",
+      "R08-S005",
+      "R08-S006",
+      "R08-S007",
+      "R08-S008",
+      "R08-S009",
+      "R08-S010",
+      "R08-S011",
+      "R08-S012",
+      "R08-S013"
+    ]
+  },
+  "evidencePolicy": {
+    "observedFacts": "Direct observations are the retrieved public metadata, descriptions, comments, duplicate relationships and linked change descriptions. They establish what the public records say, not browser behavior observed by this project.",
+    "upstreamClaims": "Reproduction results, rollout announcements, causal explanations and telemetry assessments are attributed to upstream reporters, developers or testers. An upstream report is not a submission by this project.",
+    "hypotheses": "Possible shared causes and verification recommendations remain hypotheses or proposed work. None of the recommendations below was executed in this lane.",
+    "confidenceMeaning": "Confidence describes documentary support and attribution, not a probability that any current installation exhibits the defect.",
+    "statusMeaning": "Tracker status, upstream test outcome, landed change, verified build and release deployment are distinct. Later anecdotes do not automatically reopen a closed tracker record.",
+    "dateMeaning": "Issue publication dates are creation timestamps. Modification dates may include administrative activity. Retrieval dates are separate; ambiguous documentation date metadata is not used as an established publication date.",
+    "sourceIds": [
+      "R08-S017"
+    ]
+  },
+  "sources": [
+    {
+      "id": "R08-S001",
+      "title": "481634944: Regression: Ctrl+Plus/Ctrl+Minus zoom no longer announces percentage to screen readers",
+      "url": "https://issues.chromium.org/issues/481634944",
+      "retrievedAt": "2026-11-21T14:31:58Z",
+      "publishedAt": "2026-02-04T17:07:19Z",
+      "kind": "issue-tracker",
+      "metadataRetrievedAt": "2026-11-21T14:22:32Z",
+      "modifiedAt": "2026-05-26T21:59:56Z",
+      "discussionUrl": "https://issues.chromium.org/action/issues/481634944/updates",
+      "historyCoverage": {
+        "eventsRead": 124,
+        "totalAvailable": 124,
+        "hasNextPage": false
+      },
+      "limitations": [
+        "Anonymous public metadata and complete returned discussion were read; private or deleted material is outside coverage.",
+        "Runtime results and change descriptions are upstream evidence. Attachments were not executed or independently validated."
+      ]
+    },
+    {
+      "id": "R08-S002",
+      "title": "573260296: Regression M153: Browser hangs on focus change with web accessibility enabled, many form controls slotted into display:none containers in shadow DOM",
+      "url": "https://issues.chromium.org/issues/573260296",
+      "retrievedAt": "2026-11-21T14:25:50Z",
+      "publishedAt": "2026-10-14T11:42:34Z",
+      "kind": "issue-tracker",
+      "metadataRetrievedAt": "2026-11-21T14:22:32Z",
+      "modifiedAt": "2026-11-06T09:19:23Z",
+      "discussionUrl": "https://issues.chromium.org/action/issues/573260296/updates",
+      "historyCoverage": {
+        "eventsRead": 30,
+        "totalAvailable": 30,
+        "hasNextPage": false
+      },
+      "limitations": [
+        "Public report, follow-up verification and status were read; the ZIP fixture and recordings were not executed or independently validated.",
+        "Related issue records were not fully read. Reported version strings are retained without inferring channel or release equivalence."
+      ]
+    },
+    {
+      "id": "R08-S003",
+      "title": "568838775: Serious accessibility issues for screen reader users",
+      "url": "https://issues.chromium.org/issues/568838775",
+      "retrievedAt": "2026-11-21T14:30:29Z",
+      "publishedAt": "2026-10-03T17:49:09Z",
+      "kind": "issue-tracker",
+      "metadataRetrievedAt": "2026-11-21T14:23:55Z",
+      "modifiedAt": "2026-10-26T19:57:21Z",
+      "discussionUrl": "https://issues.chromium.org/action/issues/568838775/updates",
+      "historyCoverage": {
+        "eventsRead": 33,
+        "totalAvailable": 33,
+        "hasNextPage": false
+      },
+      "limitations": [
+        "Later comments narrow the initial claim to first-run behavior. Upstream testers did not reproduce the claimed failure.",
+        "The submitted video was discussed in the record but not independently reviewed here. The identity of the initial banner remains uncertain."
+      ]
+    },
+    {
+      "id": "R08-S004",
+      "title": "475536280: Large memory regression on Windows BETA/Stable",
+      "url": "https://issues.chromium.org/issues/475536280",
+      "retrievedAt": "2026-11-21T14:27:42Z",
+      "publishedAt": "2026-01-13T17:32:43Z",
+      "kind": "issue-tracker",
+      "metadataRetrievedAt": "2026-11-21T14:23:55Z",
+      "modifiedAt": "2026-02-11T21:49:55Z",
+      "discussionUrl": "https://issues.chromium.org/action/issues/475536280/updates",
+      "historyCoverage": {
+        "eventsRead": 45,
+        "totalAvailable": 45,
+        "hasNextPage": false
+      },
+      "limitations": [
+        "Closure depends on upstream nonpublic UMA telemetry, which was not accessed. No independently checkable population memory-growth amount was established.",
+        "The COM-reference fix description was read in public history; this was not a code review or local memory-soak test."
+      ]
+    },
+    {
+      "id": "R08-S005",
+      "title": "499717573: macOS PDF viewer scrolling performance regression in Chrome 146 (not present in 145)",
+      "url": "https://issues.chromium.org/issues/499717573",
+      "retrievedAt": "2026-11-21T14:30:29Z",
+      "publishedAt": "2026-04-05T22:28:23Z",
+      "kind": "issue-tracker",
+      "metadataRetrievedAt": "2026-11-21T14:23:55Z",
+      "modifiedAt": "2026-09-14T16:02:34Z",
+      "discussionUrl": "https://issues.chromium.org/action/issues/499717573/updates",
+      "historyCoverage": {
+        "eventsRead": 60,
+        "totalAvailable": 60,
+        "hasNextPage": false
+      },
+      "limitations": [
+        "The closing rationale is tentative and lacks an exact verified build. Reported frame-rate impressions are not local measurements.",
+        "PDF corruption and later high-resolution Windows scrolling reports were distinguished in the discussion; their related records were not fully investigated."
+      ]
+    },
+    {
+      "id": "R08-S006",
+      "title": "554057759: All Chromium windows freeze during fullscreen/multi-monitor transitions",
+      "url": "https://issues.chromium.org/issues/554057759",
+      "retrievedAt": "2026-11-21T14:30:29Z",
+      "publishedAt": "2026-08-29T11:23:21Z",
+      "kind": "issue-tracker",
+      "metadataRetrievedAt": "2026-11-21T14:23:55Z",
+      "modifiedAt": "2026-11-19T19:55:51Z",
+      "discussionUrl": "https://issues.chromium.org/action/issues/554057759/updates",
+      "historyCoverage": {
+        "eventsRead": 58,
+        "totalAvailable": 58,
+        "hasNextPage": false
+      },
+      "limitations": [
+        "The original intermittent freeze was not reproduced by upstream testers, although a related mixed-refresh-rate throttling defect was acknowledged.",
+        "Hardware and mitigation results belong to public reporters; no local GPU, display, browser flag or registry experiment was performed."
+      ]
+    },
+    {
+      "id": "R08-S007",
+      "title": "339313336: Browser Print API crops the content during PDF print",
+      "url": "https://issues.chromium.org/issues/339313336",
+      "retrievedAt": "2026-11-21T14:31:10Z",
+      "publishedAt": "2024-05-08T10:22:58Z",
+      "kind": "issue-tracker",
+      "metadataRetrievedAt": "2026-11-21T14:23:55Z",
+      "modifiedAt": "2025-12-15T23:13:53Z",
+      "discussionUrl": "https://issues.chromium.org/action/issues/339313336/updates",
+      "historyCoverage": {
+        "eventsRead": 42,
+        "totalAvailable": 42,
+        "hasNextPage": false
+      },
+      "limitations": [
+        "Public reproduction evidence is historical, from 2024. Current-version persistence is unknown despite the open tracker status.",
+        "The fixture was not executed. The thread mixes discussion of missing end content with a related background/overflow painting problem."
+      ]
+    },
+    {
+      "id": "R08-S008",
+      "title": "382394786: Printing only an iframe as PDF shows incorrect title as file name",
+      "url": "https://issues.chromium.org/issues/382394786",
+      "retrievedAt": "2026-11-21T14:31:10Z",
+      "publishedAt": "2024-12-05T13:38:40Z",
+      "kind": "issue-tracker",
+      "metadataRetrievedAt": "2026-11-21T14:23:55Z",
+      "modifiedAt": "2026-11-19T18:16:55Z",
+      "discussionUrl": "https://issues.chromium.org/action/issues/382394786/updates",
+      "historyCoverage": {
+        "eventsRead": 31,
+        "totalAvailable": 31,
+        "hasNextPage": false
+      },
+      "limitations": [
+        "The most recent update request is not a current-build reproduction. No merged or shipped fix was established.",
+        "Sample code and linked change descriptions were read as documentary evidence only."
+      ]
+    },
+    {
+      "id": "R08-S009",
+      "title": "500975618: Extension iframe causes Promises to stall in all extension pages after navigation",
+      "url": "https://issues.chromium.org/issues/500975618",
+      "retrievedAt": "2026-11-21T14:27:42Z",
+      "publishedAt": "2026-04-09T14:18:35Z",
+      "kind": "issue-tracker",
+      "metadataRetrievedAt": "2026-11-21T14:22:32Z",
+      "modifiedAt": "2026-06-16T22:37:53Z",
+      "discussionUrl": "https://issues.chromium.org/action/issues/500975618/updates",
+      "historyCoverage": {
+        "eventsRead": 109,
+        "totalAvailable": 109,
+        "hasNextPage": false
+      },
+      "limitations": [
+        "The first remote kill-switch announcement was corrected later in the discussion; it must not be treated as proof of a successful rollout.",
+        "The minimal extension was not installed or executed here. Test and release results are upstream claims."
+      ]
+    },
+    {
+      "id": "R08-S010",
+      "title": "521708068: DevTools is blocked by policy unexpectedly - main bug",
+      "url": "https://issues.chromium.org/issues/521708068",
+      "retrievedAt": "2026-11-21T14:31:57Z",
+      "publishedAt": "2026-06-09T09:48:06Z",
+      "kind": "issue-tracker",
+      "metadataRetrievedAt": "2026-11-21T14:23:55Z",
+      "modifiedAt": "2026-10-19T08:48:40Z",
+      "discussionUrl": "https://issues.chromium.org/action/issues/521708068/updates",
+      "historyCoverage": {
+        "eventsRead": 186,
+        "totalAvailable": 186,
+        "hasNextPage": false
+      },
+      "limitations": [
+        "The description was not present in the retrieved metadata; the available public discussion supplies the reproduction and fix history.",
+        "Some status changes were administrative. PDF-only verification does not establish that every managed-extension inspection scenario is fixed.",
+        "No actual enterprise policy export, account, authentication data or local browser configuration was inspected for this lane."
+      ]
+    },
+    {
+      "id": "R08-S011",
+      "title": "519243472: Can't open downloaded file when Downloads folder is a UNC path (malformed \\?\\ path on open)",
+      "url": "https://issues.chromium.org/issues/519243472",
+      "retrievedAt": "2026-11-21T14:31:57Z",
+      "publishedAt": "2026-06-03T08:19:31Z",
+      "kind": "issue-tracker",
+      "metadataRetrievedAt": "2026-11-21T14:24:34Z",
+      "modifiedAt": "2026-11-02T20:12:37Z",
+      "discussionUrl": "https://issues.chromium.org/action/issues/519243472/updates",
+      "historyCoverage": {
+        "eventsRead": 130,
+        "totalAvailable": 130,
+        "hasNextPage": false
+      },
+      "limitations": [
+        "The record was reopened and fixed again; a November follow-up is not upstream-confirmed recurrence of the identical malformed-path defect.",
+        "Some upstream test attempts lacked a working writable share, limiting their value as negative tests. No share or download workflow was tested locally.",
+        "The metadata's Verified In field includes the original reported bad build, so dated comments are used to qualify verification."
+      ]
+    },
+    {
+      "id": "R08-S012",
+      "title": "522564418: current window freeze and no mouse/keyboard action allowed",
+      "url": "https://issues.chromium.org/issues/522564418",
+      "retrievedAt": "2026-11-21T14:33:06Z",
+      "publishedAt": "2026-06-11T17:39:51Z",
+      "kind": "issue-tracker",
+      "metadataRetrievedAt": "2026-11-21T14:33:06Z",
+      "modifiedAt": "2026-11-13T14:25:30Z",
+      "discussionUrl": "https://issues.chromium.org/action/issues/522564418/updates",
+      "historyCoverage": {
+        "eventsRead": 235,
+        "totalAvailable": 235,
+        "hasNextPage": false
+      },
+      "limitations": [
+        "The canonical record contains two separately described drag defects and fixes. Later general freezing reports are not automatically recurrence of either one.",
+        "The broad OS field was expanded automatically for a Blink release blocker; it is not evidence of testing every platform.",
+        "Public minimal-reproduction descriptions were read, but fixtures, diagnostic dumps and recordings were not executed or independently validated."
+      ]
+    },
+    {
+      "id": "R08-S013",
+      "title": "559795247: The web app freezes when repeatedly dragging and dropping items.",
+      "url": "https://issues.chromium.org/issues/559795247",
+      "retrievedAt": "2026-11-21T14:31:10Z",
+      "publishedAt": "2026-09-11T09:45:07Z",
+      "kind": "issue-tracker",
+      "metadataRetrievedAt": "2026-11-21T14:23:55Z",
+      "modifiedAt": "2026-09-21T08:33:36Z",
+      "discussionUrl": "https://issues.chromium.org/action/issues/559795247/updates",
+      "historyCoverage": {
+        "eventsRead": 85,
+        "totalAvailable": 85,
+        "hasNextPage": false
+      },
+      "limitations": [
+        "This is a formal duplicate of 522564418, not a separately counted defect family.",
+        "Upstream reports differ on symptoms and mitigations; the canonical discussion is needed to separate the two drag fixes from residual freezes."
+      ]
+    },
+    {
+      "id": "R08-S014",
+      "title": "Chrome Releases: Stable Channel Update for Desktop, November 9, 2026",
+      "url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_018223192.html",
+      "retrievedAt": "2026-11-21T14:33:56Z",
+      "publishedAt": "2026-11-09",
+      "kind": "release-note",
+      "limitations": [
+        "The article establishes that dated release announcement, not the newest available release on the investigation date or deployment on any particular device.",
+        "Reader-mode extraction returned only a date/footer at 14:33:06Z; direct anonymous HTTP reading recovered the substantive article body at the recorded retrieval time.",
+        "Security items in the release note were outside this reliability lane and were not investigated."
+      ]
+    },
+    {
+      "id": "R08-S015",
+      "title": "Known issues when migrating to Manifest V3",
+      "url": "https://developer.chrome.com/docs/extensions/develop/migrate/known-issues",
+      "retrievedAt": "2026-11-21T14:17:55Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "pageDateMetadata": "2026-09-09",
+      "limitations": [
+        "The fetcher's date metadata does not distinguish original publication from an update, so publishedAt remains null.",
+        "The page documents resolved platform gaps and intentional lifecycle design; it is not an inventory of current open regressions.",
+        "Memory-efficiency rationale is a vendor design claim, not a benchmark performed here."
+      ]
+    },
+    {
+      "id": "R08-S016",
+      "title": "Chrome Enterprise and Education release notes: Chrome browser notes moved",
+      "url": "https://support.google.com/chrome/a/answer/7679408?hl=en&co=CHROME_ENTERPRISE._Product%3DChromeBrowser",
+      "retrievedAt": "2026-11-21T14:26:22Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "pageDateMetadata": "2026-11-11",
+      "limitations": [
+        "Original publication versus update date was not established; the fetcher-supplied page date is retained separately.",
+        "The relocation notice was read, but the destination's full release/fix list was not read in this lane."
+      ]
+    },
+    {
+      "id": "R08-S017",
+      "title": "Google Issue Tracker: Issues, issue types and status definitions",
+      "url": "https://developers.google.com/issue-tracker/concepts/issues",
+      "retrievedAt": "2026-11-21T14:21:58Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "pageDateMetadata": "2025-02-04",
+      "limitations": [
+        "The original publication date was not independently established from the page-date metadata.",
+        "General tracker definitions explain status semantics; they do not prove a particular browser defect is fixed on a particular installation."
+      ]
+    }
+  ],
+  "browsers": [],
+  "features": [],
+  "issues": [
+    {
+      "id": "R08-01",
+      "title": "Regression: Ctrl+Plus/Ctrl+Minus zoom no longer announces percentage to screen readers",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "sourceIds": [
+        "R08-S001"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/481634944",
+      "upstreamStatus": "Fixed (Verified)",
+      "upstreamIds": [
+        "481634944"
+      ],
+      "upstreamType": "Bug",
+      "statusObservedAt": "2026-11-21T14:22:32Z",
+      "category": "accessibility",
+      "platforms": [
+        "Windows 10 Home/Pro",
+        "Windows 11 Pro",
+        "macOS",
+        "Linux Debian"
+      ],
+      "reportedVersions": [
+        "144.0.7559.110",
+        "144.0.7559.133",
+        "145.0.7632.45",
+        "146.0.7655.3",
+        "146.0.7671.0"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Reported workflow: open Chrome and any webpage, then enable a screen reader; the original Windows report names NVDA, JAWS and Narrator.",
+        "Press Ctrl+Plus and Ctrl+Minus repeatedly and compare the announced percentage with the actual new zoom value.",
+        "Distinguish no percentage announcement from the intermediate failure that announces the previous percentage."
+      ],
+      "expected": "The screen reader announces the new zoom percentage, such as 110% or 120%, after each keyboard zoom change.",
+      "observed": "Upstream reporters and testers heard menu labels such as Normal or Reset instead of the percentage. An intermediate fix could announce the previous zoom value. Later upstream tests reported the correct percentages on specific fixed builds; this project ran no browser test.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "regressionAssessment": "Upstream testing reported cross-platform reproduction and a bisect boundary of 144.0.7546.0 good versus 144.0.7547.0 bad.",
+      "quotations": [
+        {
+          "text": "Observed screen reader announcing \"110%”, “120%\"",
+          "attribution": "Upstream tester, comment 31, verifying 145.0.7632.109",
+          "publishedAt": "2026-02-18T06:37:02Z",
+          "url": "https://issues.chromium.org/issues/481634944#comment31",
+          "sourceIds": [
+            "R08-S001"
+          ]
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-02-06",
+          "event": "Initial changes disabled the zoom page-action migration parameter and updated the accessible name with the current percentage.",
+          "changeUrls": [
+            "https://chromium-review.googlesource.com/7548730",
+            "https://chromium-review.googlesource.com/7551672"
+          ],
+          "sourceIds": [
+            "R08-S001"
+          ]
+        },
+        {
+          "date": "2026-02-12",
+          "event": "An earlier Fixed (Verified) state was reopened after reports that changing from X% to Y% announced X%. A test on 145.0.7632.67 was also clarified as a mini-branch build without the merged fix.",
+          "url": "https://issues.chromium.org/issues/481634944#comment18",
+          "sourceIds": [
+            "R08-S001"
+          ]
+        },
+        {
+          "date": "2026-02-13",
+          "event": "The follow-up updated zoom page-action properties before bubble visibility; backports and version-specific tests followed.",
+          "changeUrls": [
+            "https://chromium-review.googlesource.com/7573545"
+          ],
+          "sourceIds": [
+            "R08-S001"
+          ]
+        },
+        {
+          "date": "2026-02-20",
+          "event": "Final displayed transition to Fixed (Verified). The original Settings > Appearance workaround is historical rather than proof of the corrected keyboard path.",
+          "sourceIds": [
+            "R08-S001"
+          ]
+        }
+      ],
+      "upstreamVerification": [
+        {
+          "versions": [
+            "146.0.7678.0",
+            "147.0.7692.0",
+            "145.0.7632.109",
+            "146.0.7680.16"
+          ],
+          "platforms": [
+            "Windows 11",
+            "macOS",
+            "Linux Debian"
+          ],
+          "outcome": "Upstream comments report the expected percentage announcements; the earlier verification preceded an additional stale-value fix.",
+          "sourceIds": [
+            "R08-S001"
+          ]
+        },
+        {
+          "versions": [
+            "144.0.7559.225"
+          ],
+          "platforms": [
+            "Windows 11",
+            "macOS 15.7.4"
+          ],
+          "outcome": "Comment 35 reports successful verification and explicitly says the Extended Stable build was unavailable for Linux verification.",
+          "url": "https://issues.chromium.org/issues/481634944#comment35",
+          "sourceIds": [
+            "R08-S001"
+          ]
+        }
+      ],
+      "verificationStillNeeded": [
+        "On a current supported build, compare the exact spoken/Braille value with the new zoom value for both increasing and decreasing zoom.",
+        "Test the keyboard path itself; the presence of speech or a working settings control is insufficient."
+      ],
+      "limitations": [
+        "Historical upstream-fixed regression; no present-day local failure is established.",
+        "All testedVersions remain empty because verification was performed upstream, not by this project.",
+        "Linked change descriptions were read from issue history, not independently built or reviewed."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/481634944",
+        "reason": "Existing upstream report reviewed as evidence; this project did not submit or modify it."
+      }
+    },
+    {
+      "id": "R08-02",
+      "title": "Regression M153: Browser hangs on focus change with web accessibility enabled, many form controls slotted into display:none containers in shadow DOM",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "sourceIds": [
+        "R08-S002"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/573260296",
+      "upstreamStatus": "Fixed (Verified)",
+      "upstreamIds": [
+        "573260296"
+      ],
+      "upstreamType": "Bug",
+      "statusObservedAt": "2026-11-21T14:22:32Z",
+      "category": "accessibility-performance",
+      "platforms": [
+        "Windows Server 2022",
+        "Windows Server 2025",
+        "Windows 11 in an upstream negative test"
+      ],
+      "reportedVersions": [
+        "153.0.8010.47 and later, according to the original report"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Reported fixture: reproducer.zip supplies a server for a parent page on localhost port 8000 and a cross-site iframe on 127.0.0.1.",
+        "Enable Web accessibility; the report also lists native accessibility API support, text metrics and extended properties.",
+        "In the fixture, select Tab1, focus an input outside the iframe, then select Tab0.",
+        "Retain many form controls with closed shadow roots, nested slots and display:none containers; the reporter varies hidden-control count to change failure frequency."
+      ],
+      "expected": "Focus moves normally between the cross-site iframe and top page without a browser-wide stall.",
+      "observed": "The reporter described all tabs and windows hanging for 15 to 60 seconds and stated that enabling web accessibility alone was sufficient. A tester initially could not reproduce; the reporter later reported successful operation on specific newer builds. No local reproduction was run.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "regressionAssessment": "Reporter identified Chrome 152 as good and 153.0.8010.47 as affected. Exact applicability to other platforms or all later builds is not established.",
+      "quotations": [
+        {
+          "text": "Tested with 157.0.8101.39, where i can't reproduce it as well.",
+          "attribution": "Reporter, comment 12",
+          "publishedAt": "2026-11-06T09:19:23Z",
+          "url": "https://issues.chromium.org/issues/573260296#comment12",
+          "sourceIds": [
+            "R08-S002"
+          ]
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-10-14",
+          "event": "Reporter said Windows UI Automation can enable accessibility without a screen reader. Suppressing platform accessibility integration was described as a mitigation, but was explicitly unsuitable for screen-reader users.",
+          "sourceIds": [
+            "R08-S002"
+          ]
+        },
+        {
+          "date": "2026-10-16",
+          "event": "An upstream tester did not observe a hang on Windows 11 with 155.0.8059.85. Written steps used port 9000 rather than the report's port 8000; equivalence of the test conditions is not established here.",
+          "url": "https://issues.chromium.org/issues/573260296#comment4",
+          "sourceIds": [
+            "R08-S002"
+          ]
+        },
+        {
+          "date": "2026-10-26",
+          "event": "A developer stated related issue 568011891 was fixed in 158.0.8122.0 and requested verification of this report. This was a proposed relationship, not a demonstrated duplicate.",
+          "url": "https://issues.chromium.org/issues/573260296#comment7",
+          "sourceIds": [
+            "R08-S002"
+          ]
+        },
+        {
+          "date": "2026-11-02",
+          "event": "After the reporter could not reproduce on 159.0.8130.0, the tracker moved to Fixed (Verified). The later 157.0.8101.39 result is retained exactly as reported, without inferring a release channel.",
+          "sourceIds": [
+            "R08-S002"
+          ]
+        }
+      ],
+      "upstreamVerification": [
+        {
+          "versions": [
+            "159.0.8130.0"
+          ],
+          "outcome": "Reporter could not reproduce in comment 10; the verifier thanked the reporter and closed the issue.",
+          "publishedAt": "2026-11-02",
+          "url": "https://issues.chromium.org/issues/573260296#comment10",
+          "sourceIds": [
+            "R08-S002"
+          ]
+        },
+        {
+          "versions": [
+            "157.0.8101.39"
+          ],
+          "outcome": "Reporter also could not reproduce in comment 12.",
+          "publishedAt": "2026-11-06",
+          "url": "https://issues.chromium.org/issues/573260296#comment12",
+          "sourceIds": [
+            "R08-S002"
+          ]
+        }
+      ],
+      "relatedIssues": [
+        {
+          "upstreamId": "568011891",
+          "url": "https://issues.chromium.org/issues/568011891",
+          "relationship": "Developer-linked potentially relevant fix; full related record not read.",
+          "upstreamStatus": null,
+          "sourceIds": [
+            "R08-S002"
+          ]
+        },
+        {
+          "upstreamId": "571186731",
+          "url": "https://issues.chromium.org/issues/571186731",
+          "relationship": "Reporter-linked possibly related issue, not a demonstrated duplicate; full record not read.",
+          "upstreamStatus": null,
+          "sourceIds": [
+            "R08-S002"
+          ]
+        },
+        {
+          "upstreamId": "566049730",
+          "url": "https://issues.chromium.org/issues/566049730",
+          "relationship": "Commenter suggested the same problem; full record and shared cause not established.",
+          "upstreamStatus": null,
+          "sourceIds": [
+            "R08-S002"
+          ]
+        }
+      ],
+      "verificationStillNeeded": [
+        "Retain cross-site focus changes, hidden nested slots, high control counts and enabled accessibility when validating the target build.",
+        "Confirm inclusion of the relevant fix rather than assuming all higher-looking version strings or channels are equivalent.",
+        "Use accessible operation as the acceptance condition rather than turning accessibility off."
+      ],
+      "limitations": [
+        "The fixture was not downloaded or executed; the scaling and stall-duration observations belong to the reporter.",
+        "The precise common cause with linked issues and the exact release/channel mapping of reported fixed builds were not established."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/573260296",
+        "reason": "Existing upstream report and later verification were reviewed; no report was submitted by this project."
+      }
+    },
+    {
+      "id": "R08-03",
+      "title": "Serious accessibility issues for screen reader users: narrowed Linux first-run/Orca report",
+      "kind": "upstream-report",
+      "status": "upstream-open",
+      "sourceIds": [
+        "R08-S003"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/568838775",
+      "upstreamStatus": "Assigned",
+      "upstreamIds": [
+        "568838775"
+      ],
+      "upstreamType": "Bug",
+      "statusObservedAt": "2026-11-21T14:23:55Z",
+      "category": "accessibility",
+      "platforms": [
+        "Linux with Orca",
+        "Linux Debian in upstream testing"
+      ],
+      "reportedVersions": [
+        "154.0.0.0 (build field)",
+        "153 onward (later reporter claim)"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Reported workflow: start Orca, then launch Chrome/Chromium for the first time.",
+        "Inspect whether the initial banner is announced and can be operated, and whether a browser window actually launches.",
+        "The reporter said Space or Enter dismissed the banner; subsequent normal browsing was accessible. This workaround was not verified here."
+      ],
+      "expected": "First-run UI is announced and operable with Orca, allowing users to enter the browser without discovering an unannounced dismissal by chance.",
+      "observed": "The original reporter described complete screen-reader silence but then narrowed the failure to a first-run banner. Upstream testers could read normal pages and could not reproduce the reported failure. The latest substantive developer comment questioned whether the video instead showed a browser-launch problem.",
+      "evidenceType": "upstream-reported",
+      "confidence": "medium",
+      "regressionAssessment": "Reporter labels it a regression from version 153; upstream reproduction and the actual defective component remain unconfirmed.",
+      "quotations": [
+        {
+          "text": "When you start chromium/chrome for first time it appears a banner that Orca can't read. After this all is regularly usable and accessible.",
+          "attribution": "Reporter, comment 9",
+          "publishedAt": "2026-10-16T07:42:38Z",
+          "url": "https://issues.chromium.org/issues/568838775#comment9",
+          "sourceIds": [
+            "R08-S003"
+          ]
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-10-05",
+          "event": "Reporter narrowed the initial global-silence claim to the initial banner; normal browser operation reportedly worked afterward.",
+          "url": "https://issues.chromium.org/issues/568838775#comment4",
+          "sourceIds": [
+            "R08-S003"
+          ]
+        },
+        {
+          "date": "2026-10-05",
+          "event": "Upstream test on Debian with 154.0.8037.92 found that Orca read Chrome pages. This did not resolve the narrowed first-run question.",
+          "url": "https://issues.chromium.org/issues/568838775#comment3",
+          "sourceIds": [
+            "R08-S003"
+          ]
+        },
+        {
+          "date": "2026-10-26",
+          "event": "Developer said the supplied video did not show the browser launching and asked whether this was a launch issue rather than a screen-reader issue. Final metadata remains Assigned, not fixed or closed.",
+          "url": "https://issues.chromium.org/issues/568838775#comment14",
+          "sourceIds": [
+            "R08-S003"
+          ]
+        }
+      ],
+      "hypotheses": [
+        {
+          "claim": "The reporter guessed that the banner concerns license/conditions acceptance and that a GTK gtk-modules warning might be related.",
+          "assessment": "Neither banner identity nor the warning's causal role was established.",
+          "sourceIds": [
+            "R08-S003"
+          ]
+        }
+      ],
+      "verificationStillNeeded": [
+        "Prioritize an isolated first-run Orca scenario, recording the initial UI's accessible role/name, focus and keyboard behavior.",
+        "Determine whether the browser actually launches before attributing silence to accessibility.",
+        "Do not present this report as a confirmed Chrome 154 browser-wide screen-reader outage."
+      ],
+      "limitations": [
+        "Confirmed public report, but an upstream-unconfirmed runtime defect with no fix or duplicate relationship established.",
+        "Normal-page speech is not sufficient to validate the narrowed first-run scenario.",
+        "No local browser or screen-reader actions were performed."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/568838775",
+        "reason": "Existing public report, not a project submission; further reproduction is still needed."
+      }
+    },
+    {
+      "id": "R08-04",
+      "title": "Large memory regression on Windows BETA/Stable",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "sourceIds": [
+        "R08-S004"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/475536280",
+      "upstreamStatus": "Fixed (Verified)",
+      "upstreamIds": [
+        "475536280"
+      ],
+      "upstreamType": "Bug",
+      "statusObservedAt": "2026-11-21T14:23:55Z",
+      "category": "performance-memory",
+      "platforms": [
+        "Windows"
+      ],
+      "reportedVersions": [
+        "143 (upstream Beta/Stable telemetry assessment)"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "No public minimal step-by-step reproduction was supplied by this telemetry-focused record.",
+        "The upstream investigation compared Windows Beta/Stable private memory footprint around the M142-to-M143 transition and investigated accessibility-related COM references.",
+        "A relevant public fixture or code-derived scenario is still needed before executing a meaningful local memory-soak test."
+      ],
+      "expected": "Accessibility-related COM references are eventually released and the relevant workload does not leak memory without bound.",
+      "observed": "Upstream reported a private-memory-footprint regression not visible in UMA heap-profiler metrics. A linked fix description identifies three AccessibleObjectFromWindow callers failing to release returned COM references. The developer closed the regression based on nonpublic UMA graphs after backports; no local memory measurements were taken.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "regressionAssessment": "Upstream telemetry assessment points to the M142-to-M143 transition. This is not a claim that all Chrome workloads leak memory.",
+      "quotations": [
+        {
+          "text": "Three callers were failing to do so, leading to unbounded memory leaks.",
+          "attribution": "Change description embedded in upstream comment 15",
+          "publishedAt": "2026-01-27",
+          "url": "https://issues.chromium.org/issues/475536280#comment15",
+          "sourceIds": [
+            "R08-S004"
+          ]
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-01-15",
+          "event": "Developer identified issue 471578422 and change 7486667 as a suspected cause/fix, pending deployment assessment.",
+          "changeUrls": [
+            "https://chromium-review.googlesource.com/c/chromium/src/+/7486667"
+          ],
+          "sourceIds": [
+            "R08-S004"
+          ]
+        },
+        {
+          "date": "2026-01-27",
+          "event": "The M144 backport described retaining returned COM references in objects that eventually release them.",
+          "changeUrls": [
+            "https://chromium-review.googlesource.com/7520927"
+          ],
+          "sourceIds": [
+            "R08-S004"
+          ]
+        },
+        {
+          "date": "2026-02-10",
+          "event": "Closing comment says the change landed in 144.0.7559.114 and 145.0.7632.20 and the bug is fixed based on UMA graphs. Retrieved metadata is Fixed (Verified); the telemetry itself is not public evidence available to this lane.",
+          "url": "https://issues.chromium.org/issues/475536280#comment21",
+          "changeUrls": [
+            "https://chromium-review.googlesource.com/c/chromium/src/+/7520927",
+            "https://chromium-review.googlesource.com/c/chromium/src/+/7507489"
+          ],
+          "sourceIds": [
+            "R08-S004"
+          ]
+        }
+      ],
+      "upstreamVerification": [
+        {
+          "versions": [
+            "144.0.7559.114",
+            "145.0.7632.20"
+          ],
+          "outcome": "Developer identified these as landed backport builds and assessed field improvement using nonpublic telemetry. This is not a locally reproduced pass or a public minimal-fixture result.",
+          "url": "https://issues.chromium.org/issues/475536280#comment21",
+          "sourceIds": [
+            "R08-S004"
+          ]
+        }
+      ],
+      "relatedIssues": [
+        {
+          "upstreamId": "471578422",
+          "url": "https://issues.chromium.org/issues/471578422",
+          "relationship": "Linked accessibility/COM leak report; full related record was not investigated here.",
+          "upstreamStatus": null,
+          "sourceIds": [
+            "R08-S004"
+          ]
+        }
+      ],
+      "hypotheses": [
+        {
+          "claim": "The discussion also explored pending IndexedDB transactions.",
+          "assessment": "Do not present that separate investigative observation as the proven cause of this accessibility-related regression.",
+          "sourceIds": [
+            "R08-S004"
+          ]
+        }
+      ],
+      "verificationStillNeeded": [
+        "Obtain a small relevant public reproduction or derive one from the actual code in a separately scoped engineering task.",
+        "For an accessibility/caret/focus soak, observe process private memory as well as managed or JavaScript heap; a heap-only check may miss the described allocation category."
+      ],
+      "limitations": [
+        "No public, independently checkable memory-growth amount or tested acceptance threshold was established.",
+        "The fix mechanism and population-level improvement are upstream claims of different kinds; linked code was not built or locally tested.",
+        "Nonpublic telemetry and diagnostics were not accessed or included."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/475536280",
+        "reason": "Existing upstream telemetry investigation reviewed as documentary evidence; no project submission."
+      }
+    },
+    {
+      "id": "R08-05",
+      "title": "macOS PDF viewer scrolling performance regression in Chrome 146 (not present in 145)",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "sourceIds": [
+        "R08-S005"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/499717573",
+      "upstreamStatus": "Fixed",
+      "upstreamIds": [
+        "499717573"
+      ],
+      "upstreamType": "Bug",
+      "statusObservedAt": "2026-11-21T14:23:55Z",
+      "category": "pdf-performance",
+      "platforms": [
+        "macOS 15.7.4 on an M1 Max MacBook Pro",
+        "Windows in a separately scoped later comment"
+      ],
+      "reportedVersions": [
+        "Google Chrome 146.0.7680.178",
+        "Ungoogled Chromium 146.0.7680.80",
+        "Helium 0.10.7.1 / Chromium 146.0.7680.164",
+        "Helium 0.10.8.1 / Chromium 146.0.7680.177",
+        "Chrome 152.0.7977.64 (later high-resolution Windows report, not established as the same defect)"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Reported workflow: open a PDF in the built-in viewer and scroll with the trackpad, comparing otherwise equivalent versions and conditions.",
+        "Original sample: https://arxiv.org/pdf/2604.02315 .",
+        "A later image-heavy sample uses pages 7 to 9 of https://pages.cs.wisc.edu/~bart/542-s2026/exercises/CORS.pdf .",
+        "Evaluate frame pacing and input responsiveness separately from the distinct rendering-corruption reports."
+      ],
+      "expected": "PDF scrolling and trackpad response retain their prior smoothness under comparable document, display, zoom and browser conditions.",
+      "observed": "The reporter perceived approximately 120-fps-like scrolling before the change and 30-fps-like scrolling afterward, with more trackpad latency. Upstream testers initially could not reproduce. The record was later closed with a tentative improvement assessment and no exact verified build; these impressions are not local measurements.",
+      "evidenceType": "upstream-reported",
+      "confidence": "medium",
+      "regressionAssessment": "Reporter comparisons described Chromium-based 144/145 builds as good and 146 builds as bad. Bisect builds behaved differently, so build/feature-state dependence remained relevant.",
+      "quotations": [
+        {
+          "text": "I never managed to reproduce the problem, but since then, things seem to have stabilized to a faster framerate across all percentiles, so it likely is fixed now.",
+          "attribution": "Closing comment 19",
+          "publishedAt": "2026-09-14T16:02:30Z",
+          "url": "https://issues.chromium.org/issues/499717573#comment19",
+          "sourceIds": [
+            "R08-S005"
+          ]
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-06",
+          "event": "Upstream test on macOS 15.7.5 with 146.0.7680.178 did not observe choppiness; the reporter disputed whether the comparison captured the difference from 145.",
+          "sourceIds": [
+            "R08-S005"
+          ]
+        },
+        {
+          "date": "2026-04-08",
+          "event": "A separate rendering-corruption report was filed as 500769392 to avoid conflating image/text corruption with the original performance complaint.",
+          "url": "https://issues.chromium.org/issues/499717573#comment12",
+          "sourceIds": [
+            "R08-S005"
+          ]
+        },
+        {
+          "date": "2026-05-19",
+          "event": "History links a change titled pdf: Fix blending issues in PdfBufferedPaintManager experiment. That association alone does not prove the original performance issue's cause or fix shipment.",
+          "changeUrls": [
+            "https://chromium-review.googlesource.com/7842713"
+          ],
+          "sourceIds": [
+            "R08-S005"
+          ]
+        },
+        {
+          "date": "2026-09-14",
+          "event": "Status moved from Assigned to Fixed following the tentative closing assessment; no exact verified version was established.",
+          "sourceIds": [
+            "R08-S005"
+          ]
+        }
+      ],
+      "relatedIssues": [
+        {
+          "upstreamId": "500769392",
+          "url": "https://issues.chromium.org/issues/500769392",
+          "relationship": "Separate PDF rendering-corruption report; not established as the same defect and full record not read.",
+          "upstreamStatus": null,
+          "sourceIds": [
+            "R08-S005"
+          ]
+        },
+        {
+          "upstreamId": "40545405",
+          "url": "https://issues.chromium.org/issues/40545405",
+          "relationship": "Suggested destination for a later high-resolution Windows scrolling complaint; full record not read.",
+          "upstreamStatus": null,
+          "sourceIds": [
+            "R08-S005"
+          ]
+        }
+      ],
+      "verificationStillNeeded": [
+        "Compare identical PDFs, zoom, window size, display refresh rate, power state and browser feature configuration, measuring frame pacing and input latency.",
+        "Check image corruption as a separate outcome rather than assuming the blending fix resolves every PDF performance complaint."
+      ],
+      "limitations": [
+        "Historically closed record with a weakly specified verification basis, not proof all present-day PDF performance issues are resolved.",
+        "No PDFs were opened in a local browser and no frame-rate measurements were made.",
+        "Related records and the linked change were not independently tested."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/499717573",
+        "reason": "Existing upstream report; closure and uncertainty are retained without claiming project testing or submission."
+      }
+    },
+    {
+      "id": "R08-06",
+      "title": "All Chromium windows freeze during fullscreen/multi-monitor transitions",
+      "kind": "upstream-report",
+      "status": "upstream-open",
+      "sourceIds": [
+        "R08-S006"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/554057759",
+      "upstreamStatus": "New",
+      "upstreamIds": [
+        "554057759"
+      ],
+      "upstreamType": "Bug",
+      "statusObservedAt": "2026-11-21T14:23:55Z",
+      "category": "platform-reliability",
+      "platforms": [
+        "Windows with high-refresh-rate/multiple displays",
+        "NVIDIA RTX 5070 Ti in the original report",
+        "NVIDIA RTX 5080 in later reports"
+      ],
+      "reportedVersions": [
+        "Brave / Chromium 152.0.7977.64",
+        "Windows build 26200.9278",
+        "NVIDIA driver 596.49 and other tested driver versions"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Reported setup: a 2560x1440 240-Hz primary display and a 1920x1200 60-Hz secondary display.",
+        "Play a YouTube video on the primary display, enter fullscreen, then exit fullscreen; some reports say watching longer before exiting makes failure more likely.",
+        "Alternatively, keep the video on the primary display while detaching another tab and moving the new window to the secondary display.",
+        "Repeat sufficiently to observe the intermittent problem, distinguishing all-window visual updates, input responsiveness, audio and cursor behavior."
+      ],
+      "expected": "All windows remain responsive and continue rendering through fullscreen and cross-display transitions.",
+      "observed": "The original reporter described all windows in one browser instance stopping visual updates, with video freezing and audio sometimes continuing briefly. Large window resizing sometimes restored rendering. Upstream testers did not reproduce this freeze, but later acknowledged a related mixed-refresh-rate/independent-flip throttling defect.",
+      "evidenceType": "upstream-reported",
+      "confidence": "medium",
+      "regressionAssessment": "Reporter labels this a regression across multiple Chromium-based browsers and drivers. A specific introductory build or universal GPU/platform scope is not established.",
+      "quotations": [
+        {
+          "text": "Although I haven't been able to reproduce the freeze described, we have discovered a bug in the interaction between chrome, mixed refresh rate monitors and hardware iflip.",
+          "attribution": "Developer, comment 27",
+          "publishedAt": "2026-11-19T06:49:19Z",
+          "url": "https://issues.chromium.org/issues/554057759#comment27",
+          "sourceIds": [
+            "R08-S006"
+          ]
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-08-31",
+          "event": "Upstream testing with a different GPU/display configuration did not reproduce. Reporter said disabling DirectComposition prevented the freeze on their system but was not an ideal long-term workaround.",
+          "sourceIds": [
+            "R08-S006"
+          ]
+        },
+        {
+          "date": "2026-10-28",
+          "event": "A developer explicitly separated the NVIDIA whole-window freeze from AMD reports where the browser remained responsive but the cursor disappeared.",
+          "url": "https://issues.chromium.org/issues/554057759#comment21",
+          "sourceIds": [
+            "R08-S006"
+          ]
+        },
+        {
+          "date": "2026-11-13",
+          "event": "Even an upstream test on a 320-Hz monitor did not reproduce the original freeze.",
+          "url": "https://issues.chromium.org/issues/554057759#comment25",
+          "sourceIds": [
+            "R08-S006"
+          ]
+        },
+        {
+          "date": "2026-11-18",
+          "event": "Reporter said disabling MPO appeared to help but explicitly had not used that configuration long enough to be certain.",
+          "url": "https://issues.chromium.org/issues/554057759#comment26",
+          "sourceIds": [
+            "R08-S006"
+          ]
+        },
+        {
+          "date": "2026-11-19",
+          "event": "Developer acknowledged related video/rendering throttling and hoped its fix would also resolve the original freeze. Linked changes are not evidence of a shipped or verified freeze fix.",
+          "changeUrls": [
+            "https://chromium-review.googlesource.com/8817659",
+            "https://chromium-review.googlesource.com/8841560"
+          ],
+          "sourceIds": [
+            "R08-S006"
+          ]
+        }
+      ],
+      "hypotheses": [
+        {
+          "claim": "DirectComposition/hardware independent-flip involvement has supporting reporter experiments.",
+          "assessment": "The original freeze's root cause and responsibility across Chromium, Windows/DWM and GPU drivers remain unresolved; the related throttling defect is not proof of identity.",
+          "sourceIds": [
+            "R08-S006"
+          ]
+        }
+      ],
+      "verificationStillNeeded": [
+        "Use a high-refresh multi-monitor Windows scenario, including longer video viewing before transitions and enough attempts for an intermittent failure.",
+        "Track paint, input, audio and cursor separately; preserve the distinction between a frozen browser and an invisible cursor.",
+        "Validate any candidate fix on the original symptom before treating the related throttling change as a solution."
+      ],
+      "limitations": [
+        "Original freeze remains upstream-unconfirmed despite a public report and related engineering finding.",
+        "DirectComposition/MPO workarounds are reporter observations, not validated general recommendations.",
+        "No local GPU/display testing, flag changes or registry changes occurred."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/554057759",
+        "reason": "Existing public upstream report reviewed; no project submission or local reproduction."
+      }
+    },
+    {
+      "id": "R08-07",
+      "title": "Browser Print API crops the content during PDF print",
+      "kind": "upstream-report",
+      "status": "upstream-open",
+      "sourceIds": [
+        "R08-S007"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/339313336",
+      "upstreamStatus": "New",
+      "reportedVersions": [
+        "124.0.0.0 (build field)",
+        "124.0.6367.207",
+        "125.0.6422.60",
+        "126.0.6478.8",
+        "126.0.6468.2",
+        "127.0.6490.0"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Reported fixture: use the attached ZIP/README and open the root HTML for its multi-page selected canvas layout.",
+        "Focus the iframe document, enable CSS print-media emulation and invoke window.print().",
+        "Select landscape orientation; this essential condition was added in comment 7.",
+        "Compare generated PDF content with the expected page, specifically the final yellow note numbered 10."
+      ],
+      "expected": "All selected content, including the final numbered note, appears in the generated landscape PDF.",
+      "observed": "Upstream testing in 2024 reproduced missing end content in landscape PDFs even though print-media emulation showed the expected content. The tracker remains open, but no current-build persistence was established by this research.\n\nRecovered context from retained lane-08.md, R08-07 (upstream documentary evidence):\nDates: Filed 2024-05-08; metadata modified 2025-12-15; last substantive displayed comment 2024-09-12. Metadata retrieved 2026-11-21 14:23:55Z; full discussion retrieved 14:31:10Z.\nClassification / status: Bug; New, open, but current-release persistence is unknown. Regression classification is disputed/ambiguous in the thread: the reporter distinguishes newly missing content from older painting artifacts, while triage labels it non-regression.\nPlatform/version: Build field 124.0.0.0. Upstream reproduced in Windows 10, macOS 14.4.1, and Debian on Stable 125.0.6422.60, Beta 126.0.6478.8, Dev 126.0.6468.2, and Canary 127.0.6490.0.\nFix/duplicate: No fix, fixed build, or formal duplicate is established. Related painting issue https://issues.chromium.org/issues/339322841 is referenced but not established as the same defect.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "limitations": [
+        "Open upstream status is current documentary evidence; all runtime reproduction evidence preserved here is historical.",
+        "No fix, fixed release or formal duplicate was established, and no local print test was run."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/339313336",
+        "reason": "Existing upstream printing report; no project submission or claim of current local reproduction."
+      },
+      "platforms": [
+        "Windows 10",
+        "macOS 14.4.1",
+        "Linux Debian"
+      ],
+      "category": "printing-pdf",
+      "statusObservedAt": "2026-11-21T14:23:55Z",
+      "regressionAssessment": "Disputed: the reporter distinguished newly missing note 10 from older background/overflow artifacts, while triage treated the problem as non-regression based on older-version behavior.",
+      "verificationStillNeeded": [
+        "Recheck the exact fixture on a current supported build before prioritizing a code fix.",
+        "Verify last-page content markers in the generated PDF; page count and print-media emulation alone cannot prove complete output.",
+        "Keep clipping separate from background and overflow painting artifacts."
+      ],
+      "upstreamIds": [
+        "339313336"
+      ],
+      "upstreamType": "Bug"
+    },
+    {
+      "id": "R08-08",
+      "title": "Printing only an iframe as PDF shows incorrect title as file name",
+      "kind": "upstream-report",
+      "status": "upstream-open",
+      "sourceIds": [
+        "R08-S008"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/382394786",
+      "upstreamStatus": "In Progress (Accepted)",
+      "reportedVersions": [
+        "131.0.6778.85",
+        "131.0.6778.87",
+        "132.0.6834.32",
+        "133.0.6847.2",
+        "133.0.6878.0",
+        "121 (upstream older-version comparison)",
+        "144.0.7559.109"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Reported sample: https://jsfiddle.net/6jt3kzgw/ creates an iframe whose srcdoc document has a title distinct from the parent page.",
+        "Focus the iframe and invoke iframe.contentWindow.print().",
+        "Choose Save as PDF and compare the suggested filename with the iframe and parent titles.",
+        "Inspect the print-preview header separately, because it may already use the correct frame title."
+      ],
+      "expected": "When printing a titled iframe, the suggested PDF filename uses that iframe's title; the report proposes falling back to the parent title when no frame title is present.",
+      "observed": "Upstream reproduction found that the parent/tab title becomes the suggested PDF filename even when the print-preview header has the iframe's correct title. A later reporter still saw the behavior in Chrome 144.0.7559.109. November's update request is not a new current-build reproduction.\n\nRecovered context from retained lane-08.md, R08-08 (upstream documentary evidence):\nDates: Filed 2024-12-05; modified 2026-11-19. Metadata retrieved 2026-11-21 14:23:55Z; full discussion retrieved 14:31:10Z.\nClassification / status: Bug, upstream triaged as non-regression; In Progress (Accepted) since 2026-02-12. A desired behavior is stated, but the actual tracker type is Bug, not Feature Request.\nPlatform/version: Original build field 131.0.6778.85; upstream reproduced 131.0.6778.87 on macOS 14.7, Windows 11, and Debian, as well as Beta/Dev/Canary 132–133 and older M121. A reporter still observed it on 144.0.7559.109 in February 2026. November's update request is not a new current-build reproduction.\nFix/history: A proposed change is linked at https://chromium-review.googlesource.com/7567300; its presence is not evidence of merge or shipment. Comment 6 identifies PrintPreviewDialogController::SaveInitiatorTitle() using tab-level WebContents rather than frame-level RenderFrameHost as relevant. Related https://issues.chromium.org/issues/41028611 addressed print-preview title behavior, not necessarily all filename paths.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "limitations": [
+        "No confirmed current workaround or fixed release was established.",
+        "The linked proposal and code explanation are documentary evidence; no code build or printing action occurred here."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/382394786",
+        "reason": "Existing upstream bug, not a proposal or submission created by this project."
+      },
+      "platforms": [
+        "Windows 11",
+        "macOS 14.7",
+        "Linux Debian"
+      ],
+      "category": "printing-pdf",
+      "statusObservedAt": "2026-11-21T14:23:55Z",
+      "regressionAssessment": "Upstream triaged as non-regression after reproducing on older M121. The tracker type is Bug despite the requested behavior improvement; it is not counted as a feature request.",
+      "verificationStillNeeded": [
+        "Test frame title present, absent and changed immediately before printing.",
+        "Check filename selection separately for Save as PDF and the system print dialog, and separately from preview headers.",
+        "Establish current-build behavior and actual change status before claiming a fix or workaround."
+      ],
+      "upstreamIds": [
+        "382394786"
+      ],
+      "upstreamType": "Bug"
+    },
+    {
+      "id": "R08-09",
+      "title": "Extension iframe causes Promises to stall in all extension pages after navigation",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "sourceIds": [
+        "R08-S009"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/500975618",
+      "upstreamStatus": "Fixed",
+      "reportedVersions": [
+        "147.0.7727.56",
+        "148.0.7778.5",
+        "149.0.7779.3",
+        "149.0.7781.0",
+        "149.0.7783.0"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Reported fixture: https://github.com/Coxxs/content-script-iframe-crbug supplies an extension whose content script injects an extension iframe.",
+        "With that fixture installed in the reported test, open https://example.com and follow Learn more to IANA.",
+        "Open the extension popup or options page and observe whether promises complete.",
+        "If they still complete, use Back to restore the original page from BFCache, then retry the popup/options operation."
+      ],
+      "expected": "Extension popup and options-page promise microtasks continue to execute after host-page navigation and BFCache restoration.",
+      "observed": "Upstream reports and cross-platform tests found extension-page promises stalling after host navigation. Multiple extension vendors reported broken workflows. Later upstream tests passed on specific fixed versions. No extension was installed or executed by this project.\n\nRecovered context from retained lane-08.md, R08-09 (upstream documentary evidence):\nDates: Filed 2026-04-09; modified 2026-06-16. Metadata retrieved 2026-11-21 14:22:32Z; full discussion retrieved 14:27:42Z.\nClassification / status: Bug, regression; Fixed, closed 2026-04-22. Upstream comments contain fix verification even though the current status is not Fixed (Verified).\nPlatform/version: Original: Windows 11 25H2, Chrome Stable 147.0.7727.56 and Canary 149.0.7781.0; 146.0.7680.178 reported good. Upstream reproduced on Windows, macOS 15.7.5, and Debian and narrowed the branch break to 147.0.7727.45 good / 147.0.7727.46 bad.\nFix/history: https://chromium-review.googlesource.com/7747043 disabled BackForwardCachePauseMicrotasks; backports are 7756901 (M147) and 7757083 (M148). Upstream verified 149.0.7789.0, 147.0.7727.101, and 148.0.7778.40. A developer initially announced a remote kill switch, then corrected that claim: rollout had failed and it was not live. https://issues.chromium.org/issues/500975618#comment22",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "limitations": [
+        "Upstream-confirmed historical regression, not a newly reproduced defect in this project.",
+        "No broader claim that all service-worker suspension or extension timeouts are browser bugs is supported.",
+        "Change titles and rollout statements come from public issue history; no fix was locally built or deployed."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/500975618",
+        "reason": "Existing upstream report with historical fix and correction evidence; this project submitted nothing."
+      },
+      "platforms": [
+        "Windows 11 25H2",
+        "Windows 10 in upstream testing",
+        "macOS 15.7.5",
+        "Linux Debian"
+      ],
+      "category": "extension-regression",
+      "statusObservedAt": "2026-11-21T14:22:32Z",
+      "regressionAssessment": "The reporter considered 146.0.7680.178 good. Upstream testing narrowed the branch break to 147.0.7727.45 good versus 147.0.7727.46 bad.",
+      "upstreamVerification": [
+        {
+          "outcome": "No broken promises observed by the upstream tester.",
+          "platforms": [
+            "macOS 15.7.5",
+            "Windows 11",
+            "Linux Debian"
+          ],
+          "publishedAt": "2026-04-13",
+          "sourceIds": [
+            "R08-S009"
+          ],
+          "url": "https://issues.chromium.org/issues/500975618#comment12",
+          "versions": [
+            "149.0.7789.0"
+          ]
+        },
+        {
+          "outcome": "No broken promises observed by the upstream tester.",
+          "platforms": [
+            "macOS 15.7.5",
+            "Windows 11",
+            "Linux Debian"
+          ],
+          "publishedAt": "2026-04-15",
+          "sourceIds": [
+            "R08-S009"
+          ],
+          "url": "https://issues.chromium.org/issues/500975618#comment23",
+          "versions": [
+            "147.0.7727.101"
+          ]
+        },
+        {
+          "outcome": "No broken promises observed by the upstream tester.",
+          "platforms": [
+            "macOS 15.7.5",
+            "Windows 11",
+            "Linux Debian"
+          ],
+          "publishedAt": "2026-04-16",
+          "sourceIds": [
+            "R08-S009"
+          ],
+          "url": "https://issues.chromium.org/issues/500975618#comment28",
+          "versions": [
+            "148.0.7778.40"
+          ]
+        }
+      ],
+      "verificationStillNeeded": [
+        "Retain the entire extension iframe, navigation, BFCache and popup/options lifecycle sequence in regression verification.",
+        "Prefer version-specific observed behavior over assuming a restart applies a remote mitigation.",
+        "Distinguish this promise-queue defect from expected Manifest V3 service-worker suspension."
+      ],
+      "upstreamIds": [
+        "500975618"
+      ],
+      "upstreamType": "Bug"
+    },
+    {
+      "id": "R08-10",
+      "title": "DevTools is blocked by policy unexpectedly - main bug",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "sourceIds": [
+        "R08-S010"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/521708068",
+      "upstreamStatus": "Fixed",
+      "reportedVersions": [
+        "149 (introduced-in metadata)",
+        "149.0.7827.103",
+        "149.0.7827.197",
+        "151.0.7922.138",
+        "151.0.7922.139"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Reported PDF scenario: use a managed test configuration where DeveloperToolsAvailability is unset/default or 0.",
+        "Open a simple HTML page containing an iframe pointing to an actual PDF, then attempt to inspect the main page.",
+        "A separate scenario in the discussion uses an enterprise-installed extension injecting its iframe into a normal webpage; attempt host-page inspection there too.",
+        "Keep host-page inspection distinct from direct inspection of a policy-restricted extension."
+      ],
+      "expected": "Host-page DevTools availability follows the intended managed policy without unintended whole-tab blocking solely because the page embeds a component PDF viewer or an affected extension frame.",
+      "observed": "Upstream users and testers saw an organization-blocked DevTools message on otherwise ordinary pages containing PDFs or managed-extension frames. An initial PDF exception, subsequent rollback and incomplete rollback behavior led to further fixes. Later upstream PDF-scenario verification passed on 152.0.7977.64.\n\nRecovered context from retained lane-08.md, R08-10 (upstream documentary evidence):\nDates: Filed 2026-06-09; metadata modified 2026-10-19. Metadata retrieved 2026-11-21 14:23:55Z; full discussion retrieved 14:31:57Z.\nClassification / status: Bug, regression; Fixed. The final displayed status changed from Verified to Fixed on 2026-08-26 because an automated check found missing “Found In” metadata, not because it demonstrated a new runtime failure.\nPlatform/version: Managed Chrome; metadata says introduced in 149. Public reproductions include macOS/arm64 149.0.7827.103 and later 151.0.7922.138/.139; PDF embedding and managed-extension iframe cases appear in the same umbrella record.\nFix/history: The first PDF exception/refactor, https://chromium-review.googlesource.com/7951817, was verified in 150.0.7871.46. The July rollback was followed by a fresh report that removing the exception had not removed all relevant frame checks. The later change https://chromium-review.googlesource.com/8256505 and M152 backport https://chromium-review.googlesource.com/8278595 allowed DevTools on pages embedding component extensions. The later 152.0.7977.64 verification is stronger evidence for that scenario than the earlier rollback announcement alone.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "limitations": [
+        "Current tracker status is Fixed, not an assertion that every enterprise-extension scenario was independently verified.",
+        "No managed account, credentials, policy exports or local extension installations were accessed.",
+        "The later PDF-only test is stronger evidence for that scenario than the earlier general rollback announcement."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/521708068",
+        "reason": "Existing upstream umbrella report reviewed; this project did not submit it or alter enterprise policy."
+      },
+      "platforms": [
+        "Managed Chrome",
+        "macOS/arm64 in public reports",
+        "macOS 15.7.7 in upstream verification"
+      ],
+      "category": "extension-policy-regression",
+      "statusObservedAt": "2026-11-21T14:23:55Z",
+      "regressionAssessment": "The metadata says introduced in 149. This umbrella report includes multiple policy/embedding scenarios and a rollback-induced recurrence; intentional restrictions must not be counted as this regression.",
+      "upstreamVerification": [
+        {
+          "outcome": "Earlier upstream PDF-scenario passes preceded subsequent rollback complications; do not use them alone to claim all later branches were fixed.",
+          "sourceIds": [
+            "R08-S010"
+          ],
+          "versions": [
+            "150.0.7871.46",
+            "152.0.7940.0"
+          ]
+        },
+        {
+          "outcome": "Later PDF-embedding scenario passed after a reproduced failure on 151.0.7922.139. This does not cover every managed-extension iframe case.",
+          "platforms": [
+            "macOS 15.7.7"
+          ],
+          "sourceIds": [
+            "R08-S010"
+          ],
+          "url": "https://issues.chromium.org/issues/521708068#comment61",
+          "versions": [
+            "152.0.7977.64"
+          ]
+        }
+      ],
+      "verificationStillNeeded": [
+        "Use a matrix of host-page versus direct extension inspection, PDFs versus other extension iframes, and default/0 versus explicitly restrictive policies.",
+        "Confirm each scenario under its intended policy rather than using blanket policy relaxation as acceptance.",
+        "Distinguish actual runtime failures from administrative tracker status changes."
+      ],
+      "upstreamIds": [
+        "521708068"
+      ],
+      "upstreamType": "Bug"
+    },
+    {
+      "id": "R08-11",
+      "title": "Can't open downloaded file when Downloads folder is a UNC path (malformed \\?\\ path on open)",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "sourceIds": [
+        "R08-S011"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/519243472",
+      "upstreamStatus": "Fixed",
+      "reportedVersions": [
+        "149.0.7827.54",
+        "150.0.7871.129 (later no-op opening complaint)",
+        "Chrome/Edge 156 (unvalidated November HOMESHARE follow-up)"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Reported workflow: configure a genuinely writable ordinary test UNC share as the Downloads destination.",
+        "Download a harmless file and independently confirm that it exists on the share.",
+        "Open the completed file from Chrome's downloads UI and compare with opening it directly from File Explorer.",
+        "Test Show in folder separately: the initial description grouped it with failure, while a developer later described it as a workaround."
+      ],
+      "expected": "The completed file opens in its associated application from the browser, as it does from File Explorer; reveal-in-folder also resolves the intended location.",
+      "observed": "The original report said transfer succeeded but browser-initiated opening failed with a malformed extended-length UNC path. Later M150 complaints described clicks doing nothing, prompting another disablement and fix. A November Chrome/Edge 156 HOMESHARE comment remains unvalidated and does not change the observed Fixed status.\n\nRecovered context from retained lane-08.md, R08-11 (upstream documentary evidence):\nDates: Filed 2026-06-03; modified 2026-11-02. Metadata retrieved 2026-11-21 14:24:34Z; full discussion retrieved 14:31:57Z.\nClassification / status: Bug, regression; Fixed, after a July reopen and second fix. A November follow-up remains a public report, not an upstream-confirmed recurrence of the identical path bug.\nPlatform/version: Windows 11, Downloads redirected to a network UNC share. Reporter compared 148.0.7778.217 good with 149.0.7827.54 bad on the same machine. Subsequent no-op opening reports occur in M150; a 2026-11-02 comment mentions Chrome/Edge 156 and HOMESHARE redirection.\nFix/history: https://chromium-review.googlesource.com/7900033 corrected UNC handling in InvokeShellExecute. A developer verified 151.0.7875.0 with the feature both enabled and disabled; a reporter confirmed 149.0.7827.103 working. Later M150 complaints led to disabling the feature again, with M150/M151 backports. https://chromium-review.googlesource.com/8340810 removed LaunchShellExecuteViaExplorer on main in September. Duplicates 519243484 and 519440135 were recorded; follow-up implementation is linked as 434854508.\nHypotheses / limits: Later clicks that do nothing, and the November HOMESHARE report, may be different failure modes. The metadata's Verified In value includes the original bad build and is not sufficient evidence by itself; dated developer/test comments are more informative.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "limitations": [
+        "The metadata's Verified In value includes the original reported bad build; version-specific dated comments are more informative.",
+        "Later no-op opening and HOMESHARE reports may have different causes; closed status is preserved while follow-ups remain unresolved.",
+        "No local downloads, shares, browser restarts or flag changes were used to reproduce the issue."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/519243472",
+        "reason": "Existing upstream report with reopen/fix history and an unvalidated follow-up; no project submission."
+      },
+      "platforms": [
+        "Windows 11",
+        "Windows deployments with redirected Downloads on a network UNC share"
+      ],
+      "category": "downloads-platform-reliability",
+      "statusObservedAt": "2026-11-21T14:24:34Z",
+      "regressionAssessment": "The initial report said regression N/A, but comment 2 corrected that with a same-machine comparison: 148.0.7778.217 good versus 149.0.7827.54 bad.",
+      "upstreamVerification": [
+        {
+          "outcome": "Developer reported UNC opening working with the feature enabled and disabled.",
+          "sourceIds": [
+            "R08-S011"
+          ],
+          "url": "https://issues.chromium.org/issues/519243472#comment19",
+          "versions": [
+            "151.0.7875.0"
+          ]
+        },
+        {
+          "outcome": "Reporter confirmed operation after updating, before the later M150 complaints.",
+          "sourceIds": [
+            "R08-S011"
+          ],
+          "url": "https://issues.chromium.org/issues/519243472#comment31",
+          "versions": [
+            "149.0.7827.103"
+          ]
+        }
+      ],
+      "verificationStillNeeded": [
+        "Assert transfer completion, file existence, shell opening and folder reveal separately on a working writable test share.",
+        "Recheck the November HOMESHARE scenario on a current supported build before declaring the family universally resolved.",
+        "Do not use a test that lacks required share permissions as evidence of a successful fix."
+      ],
+      "upstreamIds": [
+        "519243472"
+      ],
+      "upstreamType": "Bug"
+    },
+    {
+      "id": "R08-12",
+      "title": "Drag/input freeze: current window freeze and no mouse/keyboard action allowed",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "sourceIds": [
+        "R08-S012",
+        "R08-S013"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/522564418",
+      "upstreamStatus": "Fixed (Verified)",
+      "reportedVersions": [
+        "149.0.0.0 (canonical build field)",
+        "148.0.7778.96 (first defect after a backport, according to upstream bisect discussion)",
+        "153.0.8010.37",
+        "154.0.8037.47 (missing-dragend repro)",
+        "155.0.8059.0 (residual missing-dragend report after first fix)",
+        "155.0.8059.5",
+        "155.0.8048.0",
+        "156.0.8061.0",
+        "156.0.8078.74 (later Salesforce freeze, identity unresolved)"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Reported reproduction A: use test-page.html attached at canonical comment 14 and repeatedly drag its red square into a neighboring text editor. The reporter estimated roughly 20 to 80 repetitions, sometimes fewer with faster dragging.",
+        "After the failure, use the browser toolbar to refresh and attempt another drag; record whether mouse/keyboard delivery stops even while rendering or scrolling continues.",
+        "Reported reproduction B: rapidly click and drag the draggable buttons/cells in the fixture at canonical comment 38; observe pairing of dragstart and dragend and whether elements become permanently undraggable.",
+        "The consolidated duplicate also uses https://sortablejs.github.io/Sortable/ with repeated dragging, refreshing and another attempt to interact."
+      ],
+      "expected": "Aborted or failed drag initialization clears browser drag state and delivers the necessary dragend cleanup, preserving mouse/keyboard input and application interaction.",
+      "observed": "Upstream first found whole-tab input suppression after repeated drag initialization failures. A first fix addressed that repro, but a second regression could omit dragend and strand application state while rendering remained alive. Both repros later passed upstream tests. Later Salesforce/general freeze reports were explicitly discussed as potentially unrelated rather than silently reopening the two fixed drag defects.\n\nRecovered context from retained lane-08.md, R08-12 (upstream documentary evidence):\nDates: Canonical filed 2026-06-11, modified 2026-11-13; metadata and full discussion retrieved 2026-11-21 14:33:06Z. Duplicate filed 2026-09-11, modified 2026-09-21; metadata retrieved 14:23:55Z and full discussion 14:31:10Z.\nClassification / status: Both type Bug. Canonical Fixed (Verified) since 2026-09-17; duplicate closed as Duplicate of 522564418 on 2026-09-14. One family, two separately described drag defects/fixes.\nPlatform/version: Public minimal repros on Windows and Linux; reports narrow an initial regression to a change cherry-picked into M148. The later missing-dragend regression was bisected to 153.0.7981.3 good / 153.0.7982.0 bad. The broad OS metadata was automatically expanded for a Blink release blocker; it does not mean every OS was tested.\nFix/history: First fix https://chromium-review.googlesource.com/8356989 cleared drag/drop state after initialization failure. Second fix https://chromium-review.googlesource.com/8410155 ensured dragend is sent when StartDragging() aborts. Upstream describes Stable 153.0.8010.52/.53 rollout; explicit tests cover 153.0.8010.55, 154.0.8037.60, 155.0.8059.15, and several M156 builds. A linked regression test is https://chromium-review.googlesource.com/8428359. \nLimits / later reports: In October, the developer states the missing-OnDragEnd issues are believed fixed and remaining Salesforce freezes appear unrelated. November links a possible different issue, https://issues.chromium.org/issues/519633688, which was not fully investigated here. Some residual reports remain anecdotal. Do not use them to silently reopen the two proven/fixed defects in a research summary.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "limitations": [
+        "One consolidated family contains two described drag defects/fixes and two primary upstream IDs; no independent additional count is assigned to the duplicate.",
+        "The original private application workflow was not accessed; public fixture descriptions provide the actionable reproduction basis.",
+        "Later anecdotes are preserved as unresolved follow-ups rather than evidence that the two verified fixes failed.",
+        "No local reproduction, downgrade, extension installation or runtime experiment occurred."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/522564418",
+        "reason": "Existing canonical upstream report; duplicate 559795247 is consolidated. Neither report was submitted by this project."
+      },
+      "platforms": [
+        "Windows in public minimal repros and upstream verification",
+        "Linux in public minimal repros",
+        "Other OS values in automatically expanded metadata are not proof of testing"
+      ],
+      "category": "input-platform-reliability",
+      "statusObservedAt": "2026-11-21T14:33:06Z",
+      "regressionAssessment": "The initial defect was linked through public bisection to a change backported into M148. The later missing-dragend regression was bisected separately: 153.0.7981.3 good versus 153.0.7982.0 bad.",
+      "upstreamVerification": [
+        {
+          "outcome": "Initial drag-to-editor fixture passed before the separate missing-dragend failure was resolved.",
+          "sourceIds": [
+            "R08-S012"
+          ],
+          "url": "https://issues.chromium.org/issues/522564418#comment30",
+          "versions": [
+            "153.0.8010.50"
+          ]
+        },
+        {
+          "outcome": "Upstream comments explicitly report both minimal repros passing on these builds after the two-stage fix.",
+          "platforms": [
+            "Windows 11"
+          ],
+          "sourceIds": [
+            "R08-S012"
+          ],
+          "versions": [
+            "153.0.8010.55",
+            "154.0.8037.60",
+            "155.0.8059.15",
+            "156.0.8063.1",
+            "156.0.8064.0",
+            "156.0.8072.0"
+          ]
+        },
+        {
+          "outcome": "Duplicate comment 50 reports successful operation; this is an additional reporter observation, not an independent project test.",
+          "publishedAt": "2026-09-21",
+          "sourceIds": [
+            "R08-S013"
+          ],
+          "url": "https://issues.chromium.org/issues/559795247#comment50",
+          "versions": [
+            "153.0.8010.53"
+          ]
+        }
+      ],
+      "verificationStillNeeded": [
+        "Retain both drag-initialization and missing-dragend fixtures instead of considering the first passing case sufficient.",
+        "Check real input delivery and paired drag-state cleanup, not merely animation, scrolling or synthetic DOM clicks.",
+        "Match a present-day freeze to its precise symptom and revision before treating it as recurrence of one of these fixed bugs."
+      ],
+      "upstreamIds": [
+        "522564418",
+        "559795247"
+      ],
+      "upstreamType": "Bug"
+    }
+  ],
+  "limitations": [
+    "Curated documentary sample, not an exhaustive Chromium audit, incidence estimate or guarantee that every user on a named milestone encounters a failure.",
+    "Zero independently reproduced defects: every issue has reproduction not-run and an empty testedVersions array. Upstream results are explicitly separate.",
+    "All 13 primary upstream records have type Bug. The duplicate is consolidated; intentional Manifest V3 design and resolved platform gaps are not added to the bug count.",
+    "Eight closed and four open families reflect observed tracker metadata. Closed families can retain unvalidated follow-ups; open historical records require current-version checks.",
+    "Complete history coverage means all returned public events, not deleted/redacted comments, private attachments, internal telemetry, hidden revisions or every linked issue.",
+    "Linked change titles/descriptions were read from issue history. Their source pages were not independently reviewed or built; a proposal or landed change alone does not prove shipment.",
+    "Related issue IDs are retained as cited cross-references with unknown independent current status unless explicitly consolidated from a fully read record.",
+    "Attachments, browser diagnostic dumps, HARs, crash/memory dumps and videos were not used as independently validated runtime evidence. This dataset omits personal/profile details and nonpublic evidence URLs.",
+    "The dated Stable announcement does not establish the newest release on 2026-11-21. Documentation publication dates remain null where original publication was not established.",
+    "No live browser actions, installations, browser-policy changes, local reproductions, credential/environment inspection or remote issue submissions were performed for this research.",
+    "Recovery qualification: this is a labelled, non-byte-exact reconstruction from retained sections, the original report and generated previews. The original complete status is preserved; omitted optional structures are listed in recovery.omittedOptionalFields. Report-only fix and follow-up qualifications are explicitly labelled in the reconstructed observations."
+  ],
+  "recovery": {
+    "kind": "labelled-reconstruction-from-retained-artifacts",
+    "byteExact": false,
+    "originalReviewedSha256": "47ac7e8d1f678193ed3af73615101f02aa66628c70efbbb7b4750e88e507902b",
+    "originalAgentSessionIdPreserved": true,
+    "retainedInputs": [
+      {
+        "label": "lane-08.md",
+        "bytes": 47028,
+        "sha256": "5e6a9c54a2d49d1d14d6c5ce55c39736311c25c91ecce34648a153eb200fe3ab"
+      },
+      {
+        "label": "recovery-records/partial-shards/R08/sections.json",
+        "bytes": 125709,
+        "sha256": "2489f7e78fb0898c0275bea03b7f8ee41a8ba5679ef70174ea30d4d13df017b8"
+      },
+      {
+        "label": "recovery-records/partial-shards/R08/projections/record-inventory.json",
+        "bytes": 2139,
+        "sha256": "3d2f5ef571386027b67b2859bac272e5e350a13ed6e9470a6841625063c1cd23"
+      },
+      {
+        "label": "renderer-20f-preview/ISSUES.md",
+        "bytes": 217798,
+        "sha256": "034ff75b0a97ffb60f51092bfb5c45e50951a4ee9707b7d16cb8fe61f302969d"
+      },
+      {
+        "label": "renderer-20f-preview/AGENTS-LEDGER.md",
+        "bytes": 261359,
+        "sha256": "e88382a43890cf7eb5db983201a8d90ebb05fa215266a8042c45f452e8ee223a"
+      }
+    ],
+    "retainedCompleteIssueRecords": [
+      "R08-01",
+      "R08-02",
+      "R08-03",
+      "R08-04",
+      "R08-05",
+      "R08-06"
+    ],
+    "reconstructedIssueRecords": [
+      "R08-07",
+      "R08-08",
+      "R08-09",
+      "R08-10",
+      "R08-11",
+      "R08-12"
+    ],
+    "omittedOptionalFields": [
+      {
+        "scope": "lane",
+        "field": "officialContext",
+        "originalPresence": "established by retained record-inventory.json",
+        "reason": "The original complete structured value is unavailable in the authorized retained sections and generated views; no substitute structure was invented."
+      },
+      {
+        "scope": "lane",
+        "field": "recommendationCandidates",
+        "originalPresence": "established by retained record-inventory.json",
+        "recordedCount": 4,
+        "reason": "The original complete structured value is unavailable in the authorized retained sections and generated views; no substitute structure was invented."
+      },
+      {
+        "scope": "lane",
+        "field": "queryLog",
+        "originalPresence": "established by retained record-inventory.json",
+        "reason": "The original complete structured value is unavailable in the authorized retained sections and generated views; no substitute structure was invented."
+      },
+      {
+        "scope": "lane",
+        "field": "methodology",
+        "originalPresence": "established by retained record-inventory.json",
+        "reason": "The original complete structured value is unavailable in the authorized retained sections and generated views; no substitute structure was invented."
+      },
+      {
+        "scope": "R08-07 through R08-12",
+        "fields": [
+          "quotations",
+          "history",
+          "relatedIssues",
+          "hypotheses"
+        ],
+        "originalPresence": "Unknown per missing record; these names occur in intact siblings, which do not establish missing-record field presence.",
+        "reason": "Unrendered optional structures were not guessed from sibling schemas. The required observed field instead carries explicitly labelled original-report fix, date, platform and follow-up context."
+      }
+    ],
+    "boundary": "The saved complete status and original research agent identity describe the original documentary assignment. This reconstruction preserves the core inventory, complete retained values and visible evidence, but does not recover the original file bytes or all optional structures. No source was refreshed and no browser reproduction or submission was performed during reconstruction.",
+    "observationContext": "For R08-07 through R08-12, the preview observation is preserved as a prefix and labelled paragraphs from the retained original report are appended to keep dates, platforms, fixes and qualifications. These paragraphs are documentary upstream evidence, not new observations or recovered original optional-field shapes."
+  }
+}

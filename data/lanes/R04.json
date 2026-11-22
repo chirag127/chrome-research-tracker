@@ -1,0 +1,3686 @@
+{
+  "schemaVersion": 1,
+  "id": "R04",
+  "title": "Productivity, workspaces, and AI-native browsers",
+  "agentSessionId": "ses_e018c7881ffdKxT3pUQi9j1u66",
+  "scope": [
+    "Arc",
+    "Dia",
+    "Zen Browser",
+    "Floorp",
+    "SigmaOS",
+    "Sidekick",
+    "Wavebox",
+    "Shift",
+    "Perplexity Comet",
+    "ChatGPT Atlas",
+    "Opera Neon"
+  ],
+  "status": "complete",
+  "researchCutoff": "2026-11-21",
+  "chromeParity": "unassessed",
+  "evidenceConventions": {
+    "documentaryFacts": "Availability, versions, restrictions and lifecycle are statements in retrieved documents, not installed-browser observations.",
+    "documentedBehavior": "Vendor-documented features describe the maker's procedures or offering; they have not been exercised by this project.",
+    "vendorClaims": "Performance, privacy, security effectiveness, integration counts and productivity claims remain attributed assertions.",
+    "recommendations": "Recommendation candidates are Chrome design hypotheses pending baseline and feasibility assessment, not endorsements of the source products.",
+    "dates": "Publication dates are null when not established. Specific article metadata dates retain their provenance. Effective dates, release-entry dates, relative updates and conflicting date indications are recorded separately.",
+    "lifecycle": "Product lifecycle is distinct from feature maturity, channel, platform and subscription availability. Historical or experimental evidence is not an active-product recommendation."
+  },
+  "conversion": {
+    "origin": "Completed R04 research report: Productivity, workspaces, and AI-native browsers",
+    "newResearchPerformed": false,
+    "runtimeReproduction": "not-run",
+    "childAgentIds": [],
+    "publicationStatus": "not-submitted",
+    "notes": [
+      "The conversion preserves the report's 11 product cards, 62 substantive feature entries, 65 cited URLs and 10 proposal candidates.",
+      "Combined entries remain combined so that the feature count maps one-to-one to the original numbered research entries.",
+      "Short quotations are drawn from previously retrieved public source bodies. Raw retrieval transcripts and private operating context are excluded.",
+      "Some source dates were conservatively changed to null rather than treating a template date, effective date or disputed metadata value as publication."
+    ]
+  },
+  "recommendationCandidates": [
+    {
+      "id": "R04-P01",
+      "title": "Identity-aware workspaces and link routing",
+      "target": "Chrome",
+      "status": "needs-validation",
+      "description": "Investigate whether workspace organization can expose active identity and route links predictably, drawing on Zen/Floorp container defaults, Dia profile rules and Wavebox's explicit hierarchy.",
+      "sourceIds": [
+        "R04-Z4",
+        "R04-F3",
+        "R04-D2",
+        "R04-W2"
+      ],
+      "featureIds": [
+        "R04-feature-zen-01",
+        "R04-feature-floorp-01",
+        "R04-feature-dia-01",
+        "R04-feature-wavebox-01"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "chromeParity": "unassessed",
+      "baselinePriority": "first-pass",
+      "acceptanceQuestions": [
+        "Can a user open the same service under two accounts in one organized window and clearly see which identity is active?",
+        "Can external links be routed predictably without conflating visual tab groups, cookie containers and full profiles?"
+      ],
+      "tradeoffs": [
+        "Identity convenience versus understandable isolation boundaries and routing precedence."
+      ],
+      "limitations": [
+        "No missing Chrome capability is established. Baseline must record browser version, operating system, account, region and rollout.",
+        "Floorp is temporarily stabilization-focused; source-browser examples are not installation recommendations."
+      ]
+    },
+    {
+      "id": "R04-P02",
+      "title": "Durable, disposable, and completed tab states",
+      "target": "Chrome",
+      "status": "needs-validation",
+      "description": "Investigate explicit saved-versus-temporary tab states and recoverable completion, using Arc resettable pins/archive, SigmaOS Done/locked pages and Dia nested organization as qualified precedents.",
+      "sourceIds": [
+        "R04-A3",
+        "R04-A1",
+        "R04-S1",
+        "R04-D2"
+      ],
+      "featureIds": [
+        "R04-feature-arc-02",
+        "R04-feature-arc-05",
+        "R04-feature-sigmaos-01",
+        "R04-feature-dia-01",
+        "R04-feature-dia-06"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "chromeParity": "unassessed",
+      "baselinePriority": "subsequent",
+      "acceptanceQuestions": [
+        "Can temporary work be closed or unloaded without deleting saved project structure?",
+        "Can users undo mistaken completion and restore a named project?",
+        "Does nesting provide value beyond Chrome's existing group model for representative workflows?"
+      ],
+      "tradeoffs": [
+        "Explicit state labels and recoverability versus surprising automatic deletion and added hierarchy."
+      ],
+      "limitations": [
+        "Arc is sunset-announced and its features are historical; SigmaOS maintenance remains unknown. Neither is recommended as an active replacement.",
+        "The candidate is a Chrome design question, not a demonstrated defect or missing feature."
+      ]
+    },
+    {
+      "id": "R04-P03",
+      "title": "Saved multitasking layouts with preview promotion",
+      "target": "Chrome",
+      "status": "needs-validation",
+      "description": "Compare preview-to-tab/split transitions and reusable layouts using Zen Glance, Floorp subdivisions/panels and Dia remembered splits.",
+      "sourceIds": [
+        "R04-Z5",
+        "R04-F4",
+        "R04-F5",
+        "R04-D1"
+      ],
+      "featureIds": [
+        "R04-feature-zen-02",
+        "R04-feature-floorp-02",
+        "R04-feature-floorp-03",
+        "R04-feature-floorp-04",
+        "R04-feature-dia-02"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "chromeParity": "unassessed",
+      "baselinePriority": "first-pass",
+      "acceptanceQuestions": [
+        "Can a transient link preview become a tab or split without losing context?",
+        "Can a two-to-four-pane project layout be saved and restored?",
+        "Are keyboard focus order, minimum pane sizes and narrow-screen behavior understandable?"
+      ],
+      "tradeoffs": [
+        "More simultaneous context versus small panes, resource cost and complex focus management."
+      ],
+      "limitations": [
+        "Floorp's four-pane statement is version-qualified; Dia's remembered layout is homepage documentation, not tested restoration.",
+        "Chrome split-view, preview and extension equivalents remain unassessed."
+      ]
+    },
+    {
+      "id": "R04-P04",
+      "title": "Discoverable command menu with intentional AI routing",
+      "target": "Chrome",
+      "status": "needs-validation",
+      "description": "Compare named browser actions and explicit search-versus-AI routing using Arc/SigmaOS/Zen command surfaces and Shift's Tab-for-AI interaction.",
+      "sourceIds": [
+        "R04-A3",
+        "R04-A1",
+        "R04-S2",
+        "R04-S1",
+        "R04-Z3",
+        "R04-H5"
+      ],
+      "featureIds": [
+        "R04-feature-arc-03",
+        "R04-feature-sigmaos-03",
+        "R04-feature-sigmaos-04",
+        "R04-feature-zen-04",
+        "R04-feature-shift-04"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "chromeParity": "unassessed",
+      "baselinePriority": "first-pass",
+      "acceptanceQuestions": [
+        "Can users discover organization actions by name and inspect shortcut conflicts?",
+        "Can users explicitly choose AI versus ordinary search without involuntary routing?",
+        "Do deterministic browser commands remain usable without AI latency or a subscription?"
+      ],
+      "tradeoffs": [
+        "A unified entry point versus modal/keybinding conflicts and ambiguous intent routing."
+      ],
+      "limitations": [
+        "Arc is a historical sunset precedent; SigmaOS support is unresolved. These are not active-browser endorsements.",
+        "Zen pre-release channels and historical entries require version-specific qualification; no Chrome gap is yet established."
+      ]
+    },
+    {
+      "id": "R04-P05",
+      "title": "Per-workspace app dock and account-aware notifications",
+      "target": "Chrome",
+      "status": "needs-validation",
+      "description": "Investigate account-labeled app presence, notifications and link rules based on Wavebox, Shift and historical Sidekick workflows.",
+      "sourceIds": [
+        "R04-W1",
+        "R04-W2",
+        "R04-H2",
+        "R04-K2"
+      ],
+      "featureIds": [
+        "R04-feature-wavebox-01",
+        "R04-feature-wavebox-02",
+        "R04-feature-shift-02",
+        "R04-feature-shift-03",
+        "R04-feature-sidekick-01",
+        "R04-feature-sidekick-02"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "chromeParity": "unassessed",
+      "baselinePriority": "subsequent",
+      "acceptanceQuestions": [
+        "Can two accounts of one service remain visible with unambiguous labels/badges and scoped notifications?",
+        "Do opened links consistently reach the intended account?",
+        "Which benefits require native browser integration rather than an app-catalog wrapper or an extension?"
+      ],
+      "tradeoffs": [
+        "Persistent app convenience versus notification overload, integration maintenance and account-boundary complexity."
+      ],
+      "limitations": [
+        "Sidekick is discontinued and distributor-documented; it is historical inspiration, not an actively recommended solution.",
+        "Service, subscription and platform parity remain untested; Chrome and web-app equivalents need baseline comparison."
+      ]
+    },
+    {
+      "id": "R04-P06",
+      "title": "Visible AI context and authority controls",
+      "target": "Chrome",
+      "status": "needs-validation",
+      "description": "Investigate inspectable context and separate read/action permissions, using Shift context chips, historical Atlas site visibility/ephemeral identity, Comet policy controls and Neon's task scope.",
+      "sourceIds": [
+        "R04-H5",
+        "R04-T2",
+        "R04-T3",
+        "R04-T1",
+        "R04-C4",
+        "R04-C6",
+        "R04-N4",
+        "R04-N6"
+      ],
+      "featureIds": [
+        "R04-feature-shift-05",
+        "R04-feature-shift-06",
+        "R04-feature-atlas-03",
+        "R04-feature-atlas-05",
+        "R04-feature-comet-04",
+        "R04-feature-neon-01",
+        "R04-feature-neon-06"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "chromeParity": "unassessed",
+      "baselinePriority": "first-pass-ai-controls",
+      "acceptanceQuestions": [
+        "Before execution, can users inspect selected tabs, history and connectors and choose Read Only versus Act?",
+        "Can users block sites or choose an ephemeral identity?",
+        "Does a global off control have unambiguous semantics, with policy precedence visible rather than silently overridden by domain exceptions?"
+      ],
+      "tradeoffs": [
+        "Convenient contextual automation versus understandable permission scope, identity separation and explicit controls."
+      ],
+      "limitations": [
+        "Atlas is retired; its formerly preview controls are historical evidence only. Neon task/security descriptions have Early Access history and unverified stable maturity.",
+        "Comet's documented domain-rule precedence is not a locally reproduced bypass or a Chrome vulnerability.",
+        "No enforcement or data-flow test was performed; source examples are not security guarantees."
+      ]
+    },
+    {
+      "id": "R04-P07",
+      "title": "Task-control view for concurrent browser agents",
+      "target": "Chrome",
+      "status": "needs-validation",
+      "description": "Compare visible scope/status, queued steering and confirmation handling using Dia chat controls, Comet Background Assistants and Neon planned-step views.",
+      "sourceIds": [
+        "R04-D2",
+        "R04-C7",
+        "R04-C8",
+        "R04-N2",
+        "R04-N3",
+        "R04-N6"
+      ],
+      "featureIds": [
+        "R04-feature-dia-05",
+        "R04-feature-comet-03",
+        "R04-feature-comet-06",
+        "R04-feature-neon-02",
+        "R04-feature-neon-05"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "chromeParity": "unassessed",
+      "baselinePriority": "first-pass-ai-controls",
+      "acceptanceQuestions": [
+        "Can users see task scope and status, pause/stop/take over, and edit queued requests?",
+        "Are foreground and background work clearly distinguished by platform?",
+        "Does the interface explain what Stop cancels, what has already committed and where completed outputs remain inspectable?"
+      ],
+      "tradeoffs": [
+        "Concurrent work versus state conflicts, confusing completion and incomplete cancellation."
+      ],
+      "limitations": [
+        "Comet Max access is dated entitlement evidence; Android foreground limits differ. Dia AI pricing is incomplete, and Neon agents are subscription-limited.",
+        "Neon Early Access history is not promoted into a production-ready agent recommendation.",
+        "No concurrent task or stop behavior was reproduced; Chrome parity is unassessed."
+      ]
+    },
+    {
+      "id": "R04-P08",
+      "title": "Inspectable reusable prompt recipes",
+      "target": "Chrome",
+      "status": "needs-validation",
+      "description": "Compare Comet Shortcuts, Dia Skills and Neon Cards as reusable, inspectable instruction bundles while keeping recipe composition separate from action authority.",
+      "sourceIds": [
+        "R04-C5",
+        "R04-D2",
+        "R04-D4",
+        "R04-N4",
+        "R04-N3"
+      ],
+      "featureIds": [
+        "R04-feature-comet-02",
+        "R04-feature-dia-04",
+        "R04-feature-neon-03"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "chromeParity": "unassessed",
+      "baselinePriority": "subsequent",
+      "acceptanceQuestions": [
+        "Can a recipe show the expanded prompt, selected sources, model and requested authority before submission?",
+        "Does importing or sharing a recipe avoid granting action permission?",
+        "Is there an explicit submission boundary after recipe composition?"
+      ],
+      "tradeoffs": [
+        "Repeatability and sharing versus opaque prompts, stale integrations and accidental authority transfer."
+      ],
+      "limitations": [
+        "An announced shortcut library is not assumed shipped. Dia integrations have separate GA/beta stages and Neon Cards have paid/early-access qualifications.",
+        "No recipe was executed or shared, and existing Chrome equivalents were not assessed."
+      ]
+    },
+    {
+      "id": "R04-P09",
+      "title": "Portable project/session artifacts and retirement-resilient recovery",
+      "target": "Chrome",
+      "status": "needs-validation",
+      "description": "Investigate inspectable exports and recovery independent of a vendor account or retired service, using Dia Markdown export, Zen structured continuity and Arc/Atlas lifecycle lessons.",
+      "sourceIds": [
+        "R04-D2",
+        "R04-Z3",
+        "R04-A1",
+        "R04-A3",
+        "R04-T1"
+      ],
+      "featureIds": [
+        "R04-feature-dia-06",
+        "R04-feature-zen-06",
+        "R04-feature-arc-02",
+        "R04-feature-arc-05"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "chromeParity": "unassessed",
+      "baselinePriority": "first-pass",
+      "acceptanceQuestions": [
+        "Can named groups, URLs, pin destinations and layout metadata be exported/imported in an inspectable format?",
+        "Can organization be recovered after service or account retirement?",
+        "Is portable project structure clearly separated from live cookies, passwords and signed-in sessions?"
+      ],
+      "tradeoffs": [
+        "Rich portable state versus interoperability, versioning and unintended sensitive-data inclusion."
+      ],
+      "limitations": [
+        "Arc is sunset-announced and Atlas is retired; they are lifecycle case studies, not recommended products.",
+        "Dia export and Zen backups do not by themselves prove lossless round trips or current stable cross-device recovery.",
+        "No personal data or profile was examined; Chrome portability gaps remain unassessed."
+      ]
+    },
+    {
+      "id": "R04-P10",
+      "title": "Task-oriented resource and attention overview",
+      "target": "Chrome",
+      "status": "needs-validation",
+      "description": "Compare resource explanations organized around user projects/apps, using Wavebox Navigator and Floorp panel-unloading controls.",
+      "sourceIds": [
+        "R04-W3",
+        "R04-F5",
+        "R04-F2"
+      ],
+      "featureIds": [
+        "R04-feature-wavebox-05",
+        "R04-feature-floorp-04"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "chromeParity": "unassessed",
+      "baselinePriority": "subsequent",
+      "acceptanceQuestions": [
+        "Can users identify which project or app consumes memory and CPU?",
+        "Can an inactive work context be suspended without losing its layout?",
+        "Does the grouping and explanation add actionable value beyond Chrome's existing performance surfaces?"
+      ],
+      "tradeoffs": [
+        "Actionable grouped information versus metric overhead, attribution ambiguity and unnecessary dashboard complexity."
+      ],
+      "limitations": [
+        "No resource measurements or state-preservation tests were performed.",
+        "Floorp's feature pause demonstrates a maintenance priority, not an independently measured cost model or abandonment.",
+        "The proposal remains conditional on a Chrome baseline assessment."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "R04-A1",
+      "title": "A farewell to Arc",
+      "url": "https://arc.net/",
+      "retrievedAt": "2026-11-21T14:13:58Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated live notice; December 22, 2026 is the announced sunset, not the publication date.",
+      "limitations": [
+        "Confirms the maker's sunset announcement, not an observed shutdown or account-deactivation test."
+      ]
+    },
+    {
+      "id": "R04-A2",
+      "title": "Download Arc",
+      "url": "https://arc.net/download",
+      "retrievedAt": "2026-11-21T14:34:00Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated current download page; generic extraction date rejected.",
+      "limitations": [
+        "Full public page was also read on the retrieval date; the recovery time was not captured.",
+        "Installer links and platform labels were inspected; no download, installation or sign-in was performed."
+      ]
+    },
+    {
+      "id": "R04-A3",
+      "title": "Command Bar (⌘ T) Actions",
+      "url": "https://start.arc.net/command-bar-actions",
+      "retrievedAt": "2026-11-21T14:23:40Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated legacy reference; extractor date 2021-02-19 was not accepted as feature currency.",
+      "limitations": [
+        "Historical action reference does not establish present Mac/Windows parity.",
+        "Obsolete Notes and Easels references were not converted into current features."
+      ]
+    },
+    {
+      "id": "R04-A4",
+      "title": "Arc Security",
+      "url": "https://arc.net/security",
+      "retrievedAt": "2026-11-21T14:33:57Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Page metadata reported 2024-09-27; no publication dateline was established for the living security page.",
+      "limitations": [
+        "Chromium lineage is documented; security effectiveness and the legacy 48-hour update promise were not independently verified.",
+        "Present lifecycle is qualified by the newer farewell and Chromium-only download notice."
+      ]
+    },
+    {
+      "id": "R04-D1",
+      "title": "Dia: More than a browser. A better workday.",
+      "url": "https://www.diabrowser.com/",
+      "retrievedAt": "2026-11-21T14:14:01Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated current offering; template metadata 2025-06-09 is not a feature-release date.",
+      "limitations": [
+        "Full page was also read on the same date; platform labels and feature descriptions are documentary, not runtime tests.",
+        "Performance and privacy language is vendor marketing."
+      ]
+    },
+    {
+      "id": "R04-D2",
+      "title": "Dia Browser Product Updates",
+      "url": "https://www.diabrowser.com/changelog",
+      "retrievedAt": "2026-11-21T14:16:13Z",
+      "publishedAt": null,
+      "kind": "release-note",
+      "dateEvidence": "Living changelog. Visible release entries used in this lane range from 2026-10-01 to 2026-11-19; generic page metadata 2025-08-21 was not applied to entries.",
+      "releaseEntries": [
+        {
+          "date": "2026-10-01",
+          "platform": "macOS",
+          "version": "1.51.0"
+        },
+        {
+          "date": "2026-10-06",
+          "platform": "Windows",
+          "version": "1.0"
+        },
+        {
+          "date": "2026-10-15",
+          "platform": "Windows",
+          "version": "1.2.0"
+        },
+        {
+          "date": "2026-10-29",
+          "platform": "Windows",
+          "version": "1.4.0"
+        },
+        {
+          "date": "2026-11-12",
+          "platform": "macOS",
+          "version": "1.57.0"
+        },
+        {
+          "date": "2026-11-12",
+          "platform": "Windows",
+          "version": "1.6.0"
+        },
+        {
+          "date": "2026-11-19",
+          "platform": "macOS",
+          "version": "1.58.0"
+        },
+        {
+          "date": "2026-11-19",
+          "platform": "Windows",
+          "version": "1.7.0"
+        }
+      ],
+      "limitations": [
+        "Initial extraction omitted many headings; a full public-page read on the same date recovered the dated entries.",
+        "Release notes establish documented shipment, not successful execution or complete cross-platform parity."
+      ]
+    },
+    {
+      "id": "R04-D3",
+      "title": "Dia Browser Security",
+      "url": "https://www.diabrowser.com/security",
+      "retrievedAt": "2026-11-21T14:27:30Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated living policy page; metadata 2025-06-09 was not accepted as a current publication date.",
+      "limitations": [
+        "Chromium lineage is explicit; security practices and update cadence are vendor statements, not audit results."
+      ]
+    },
+    {
+      "id": "R04-D4",
+      "title": "Dia Browser Privacy Policy",
+      "url": "https://www.diabrowser.com/privacy",
+      "retrievedAt": "2026-11-21T14:38:36Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "effectiveAt": "2026-04-09",
+      "dateEvidence": "The body states an April 9, 2026 effective date, which is not assumed to be publication. Older template metadata was rejected.",
+      "limitations": [
+        "Describes policy, paid-feature recognition and data controls; it does not independently establish actual processing, encryption implementation or current AI prices."
+      ]
+    },
+    {
+      "id": "R04-Z1",
+      "title": "Zen Browser",
+      "url": "https://zen-browser.app/",
+      "retrievedAt": "2026-11-21T14:14:04Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated homepage; metadata 2024-11-01 was not treated as a current feature date.",
+      "limitations": [
+        "Marketing overview is less specific than the Glance and workspace manuals; detailed manual behavior takes precedence."
+      ]
+    },
+    {
+      "id": "R04-Z2",
+      "title": "Download Zen",
+      "url": "https://zen-browser.app/download",
+      "retrievedAt": "2026-11-21T14:35:43Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated platform offering.",
+      "limitations": [
+        "Establishes advertised Mac, Windows and Linux availability, not installation or platform parity."
+      ]
+    },
+    {
+      "id": "R04-Z3",
+      "title": "Zen Release Notes",
+      "url": "https://zen-browser.app/release-notes",
+      "retrievedAt": "2026-11-21T14:19:25Z",
+      "publishedAt": null,
+      "kind": "release-note",
+      "dateEvidence": "Current header reports 1.24.3b. Individual entry dates were not reliably extracted; invalid 2010 metadata was rejected.",
+      "limitations": [
+        "Living log mixes current and historical release blocks; no precise first-ship date is inferred for features without a reliable block date.",
+        "Twilight is explicitly pre-release; early window-sync limitations do not establish their current resolution."
+      ]
+    },
+    {
+      "id": "R04-Z4",
+      "title": "Zen Workspaces",
+      "url": "https://docs.zen-browser.app/user-manual/workspaces",
+      "retrievedAt": "2026-11-21T14:16:40Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated user manual.",
+      "limitations": [
+        "Container isolation covers cookies and sessions, not browsing history and extensions; no runtime isolation test was run."
+      ]
+    },
+    {
+      "id": "R04-Z5",
+      "title": "Zen Glance",
+      "url": "https://docs.zen-browser.app/user-manual/glance",
+      "retrievedAt": "2026-11-21T14:16:42Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated user manual.",
+      "limitations": [
+        "Preview triggers, dismissal and promotion are documented procedures, not observed behavior."
+      ]
+    },
+    {
+      "id": "R04-F1",
+      "title": "Floorp Browser: Customization in everyone's hands",
+      "url": "https://floorp.app/en",
+      "retrievedAt": "2026-11-21T14:14:07Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Homepage metadata reported 2026-07-29; no publication date was established for the current offering.",
+      "limitations": [
+        "Vendor comparison with Chrome was not adopted as Chrome baseline evidence.",
+        "Free, open-source and platform descriptions were read; the product was not installed."
+      ]
+    },
+    {
+      "id": "R04-F2",
+      "title": "Floorp v12.21.2 Release Notes: Firefox 160",
+      "url": "https://blog.floorp.app/en/release/12.21.2/",
+      "retrievedAt": "2026-11-21T14:31:39Z",
+      "publishedAt": "2026-11-13",
+      "kind": "release-note",
+      "dateEvidence": "Specific release-article metadata supplies 2026-11-13; the body explicitly announces v12.21.2 and the stabilization policy.",
+      "limitations": [
+        "The temporary feature pause has no exact end date.",
+        "Firefox base and displayed runtime versions are the maker's build description, not local version measurements."
+      ]
+    },
+    {
+      "id": "R04-F3",
+      "title": "Floorp Workspaces",
+      "url": "https://docs.floorp.app/docs/features/workspaces/",
+      "retrievedAt": "2026-11-21T14:16:31Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Manual metadata reported 2026-10-10, without a reliable publication-versus-update distinction; the body qualifies behavior to 12.14.2.",
+      "limitations": [
+        "Shared workspace structures are not shared individual tabs.",
+        "The claim that background tabs preserve entered data was not tested."
+      ]
+    },
+    {
+      "id": "R04-F4",
+      "title": "Floorp Split View",
+      "url": "https://docs.floorp.app/docs/features/split-view/",
+      "retrievedAt": "2026-11-21T14:16:33Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Manual metadata reported 2026-10-10; publication is unresolved. The four-pane limit is explicitly qualified to 12.14.2.",
+      "limitations": [
+        "Floorp's enhancement is distinguished from upstream Firefox split view; no hands-on pane or accessibility test was run."
+      ]
+    },
+    {
+      "id": "R04-F5",
+      "title": "Floorp Panel Sidebar",
+      "url": "https://docs.floorp.app/docs/features/panel-sidebar/",
+      "retrievedAt": "2026-11-21T14:16:36Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Manual metadata reported 2026-10-10; publication is unresolved and the body contains version-specific qualifications.",
+      "limitations": [
+        "Some extensions do not support sidebar display, and a mobile user agent does not guarantee a mobile layout.",
+        "Notes sync, panel persistence and unloading are documented, not locally tested."
+      ]
+    },
+    {
+      "id": "R04-S1",
+      "title": "SigmaOS: The new home for your internet",
+      "url": "https://sigmaos.com/",
+      "retrievedAt": "2026-11-21T14:14:10Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated homepage; shared metadata 2025-02-04 does not establish a release or current maintenance.",
+      "limitations": [
+        "Full public page was subsequently read on the same date; the initial extraction omitted many features and the pricing table.",
+        "A live download/paid-plan page does not establish working account services or a maintained security cadence.",
+        "Homepage pricing conflicts with the legacy FAQ."
+      ]
+    },
+    {
+      "id": "R04-S2",
+      "title": "SigmaOS Common Questions",
+      "url": "https://docs.sigmaos.com/common-questions",
+      "retrievedAt": "2026-11-21T14:23:43Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated legacy FAQ; a 2023 footer is not a publication date.",
+      "limitations": [
+        "Old Pro pricing and workspace limits conflict with the current homepage and are not represented as current terms.",
+        "Procedures and extension support were not tested."
+      ]
+    },
+    {
+      "id": "R04-S3",
+      "title": "SigmaOS Workspaces Tutorial",
+      "url": "https://docs.sigmaos.com/tutorial/workspaces",
+      "retrievedAt": "2026-11-21T14:23:46Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated legacy tutorial; 2023 footer/metadata rejected as publication evidence.",
+      "limitations": [
+        "Optional separate cookies and private/shared workspace descriptions do not establish current backend availability."
+      ]
+    },
+    {
+      "id": "R04-S4",
+      "title": "SigmaOS Split Screen Tutorial",
+      "url": "https://docs.sigmaos.com/tutorial/split-screen",
+      "retrievedAt": "2026-11-21T14:23:49Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated legacy tutorial; no reliable publication dateline.",
+      "limitations": [
+        "Two-page and Shift-modifier behavior is historical documentation, not a current installation test."
+      ]
+    },
+    {
+      "id": "R04-S5",
+      "title": "SigmaOS Release Notes Index",
+      "url": "https://docs.sigmaos.com/release-notes",
+      "retrievedAt": "2026-11-21T14:22:07Z",
+      "publishedAt": null,
+      "kind": "release-note",
+      "dateEvidence": "Undated index; no usable current release dates were extracted.",
+      "limitations": [
+        "Retrieved body was primarily navigation; it cannot establish the last release, a maintained cadence or discontinuation."
+      ]
+    },
+    {
+      "id": "R04-S6",
+      "title": "Everything New in SigmaOS 1.17.0",
+      "url": "https://sigmaos.com/updates/1-17-0",
+      "retrievedAt": "2026-11-21T14:34:59Z",
+      "publishedAt": null,
+      "kind": "release-note",
+      "dateEvidence": "Extractor reported 2025-02-04, also used by other SigmaOS pages; no reliable publication dateline was established.",
+      "limitations": [
+        "Demonstrates a documented release, not that 1.17.0 is the latest or final version.",
+        "Future design/sync plans and AI performance claims are not shipment or benchmark evidence."
+      ]
+    },
+    {
+      "id": "R04-S7",
+      "title": "SigmaOS Blog: Picking up the Tab",
+      "url": "https://sigmaos.com/blog",
+      "retrievedAt": "2026-11-21T14:25:16Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated index; a 2022 retrospective is among visible links, not proof of the index's update date.",
+      "limitations": [
+        "Full page was also read on the same date; lack of a fresh announcement is not proof of abandonment."
+      ]
+    },
+    {
+      "id": "R04-K1",
+      "title": "Former Sidekick Official URL, Now Serving Comet",
+      "url": "https://www.meetsidekick.com/",
+      "retrievedAt": "2026-11-21T14:16:25Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Current response serves Comet content; no Sidekick publication or sunset date is present.",
+      "limitations": [
+        "Destination content does not prove acquisition terms, the precise shutdown date or preservation of Sidekick features."
+      ]
+    },
+    {
+      "id": "R04-K2",
+      "title": "AppSumo Sidekick Browser Listing and Sunset Notice",
+      "url": "https://appsumo.com/products/sidekick/",
+      "retrievedAt": "2026-11-21T14:25:28Z",
+      "publishedAt": null,
+      "kind": "third-party",
+      "dateEvidence": "Distributor notice names August 3, 2025 as the sunset. An old Posted Dec 04, 2024 header and 2024 listing metadata do not date the amended notice.",
+      "limitations": [
+        "Direct distributor notice, not the unrecovered original maker announcement.",
+        "Feature and lifetime-plan copy is historical sales material retained below the retirement notice, not a current offer."
+      ]
+    },
+    {
+      "id": "R04-K3",
+      "title": "Sidekick Browser: Microsoft Store Windows Listing",
+      "url": "https://apps.microsoft.com/detail/xp89dmjvg2wpz1?hl=en-GB&gl=MX",
+      "retrievedAt": "2026-11-21T14:34:59Z",
+      "publishedAt": null,
+      "kind": "third-party",
+      "dateEvidence": "Title-only retrieval; metadata 2026-11-02 was not accepted as a publication, update or release date.",
+      "limitations": [
+        "No descriptive body was recovered. A historical Windows listing title is not proof of current downloadability, maintenance or engine lineage."
+      ]
+    },
+    {
+      "id": "R04-W1",
+      "title": "Rethink the Web: Wavebox Productivity Browser",
+      "url": "https://wavebox.io/",
+      "retrievedAt": "2026-11-21T14:14:13Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated current marketing page; generic 2026-01-01 metadata rejected.",
+      "limitations": [
+        "Features and AI-disable option are vendor-documented; testimonials are not independent performance or price evidence."
+      ]
+    },
+    {
+      "id": "R04-W2",
+      "title": "Wavebox Platform: Built for Work",
+      "url": "https://wavebox.io/platform",
+      "retrievedAt": "2026-11-21T14:22:10Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated living product explanation; generic 2026 metadata rejected.",
+      "limitations": [
+        "Separates Spaces, Groups, Apps and full Profiles; these terms must not be treated as interchangeable isolation boundaries.",
+        "Always-up-to-date, zero-slowdown and certification-in-progress statements were not independently verified."
+      ]
+    },
+    {
+      "id": "R04-W3",
+      "title": "New in Wavebox: Smart Note Checklists, Navigator, Chat with Settings and More",
+      "url": "https://hub.wavebox.io/new-in-wavebox-smart-note-checklists-new-look-navigator-chat-with-settings-more/",
+      "retrievedAt": "2026-11-21T14:27:28Z",
+      "publishedAt": "2026-10-08",
+      "kind": "release-note",
+      "dateEvidence": "Specific article metadata supplies October 8, 2026; the body identifies release 155.3.12.",
+      "limitations": [
+        "Proves recent documented activity, not the latest available build on the research cutoff or measured resource accuracy."
+      ]
+    },
+    {
+      "id": "R04-W4",
+      "title": "Wavebox Pricing",
+      "url": "https://wavebox.io/pricing",
+      "retrievedAt": "2026-11-21T14:31:34Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated current plan terms; generic 2026 metadata rejected.",
+      "limitations": [
+        "Trial and Basic limits were readable, but an exact current paid price was not recovered from a price table.",
+        "Testimonials and productivity claims are not billing or measurement evidence."
+      ]
+    },
+    {
+      "id": "R04-W5",
+      "title": "Download Wavebox for macOS, Windows and Linux",
+      "url": "https://wavebox.io/download",
+      "retrievedAt": "2026-11-21T14:31:37Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated current platform offering.",
+      "limitations": [
+        "Onboarding instructions were read but not followed. No accounts, installers or personal profiles were accessed."
+      ]
+    },
+    {
+      "id": "R04-W6",
+      "title": "Wavebox Releases Index",
+      "url": "https://hub.wavebox.io/tag/releases/",
+      "retrievedAt": "2026-11-21T14:23:52Z",
+      "publishedAt": null,
+      "kind": "release-note",
+      "dateEvidence": "Undated index; entry links were used to locate the dated release article.",
+      "limitations": [
+        "Initial extraction was sparse; full page was also read on the same date. Index order is not a precise latest-build date."
+      ]
+    },
+    {
+      "id": "R04-H1",
+      "title": "Shift Browser: Build Your Custom Browser",
+      "url": "https://shift.com/",
+      "retrievedAt": "2026-11-21T14:16:28Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated living offering; metadata 2025-06-04 was not treated as a current publication date.",
+      "limitations": [
+        "Current Shift Browser branding must not be conflated with all older Shift v9 descriptions."
+      ]
+    },
+    {
+      "id": "R04-H2",
+      "title": "Create Spaces for Work and Personal: Shift Browser",
+      "url": "https://shift.com/spaces/",
+      "retrievedAt": "2026-11-21T14:25:19Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Living feature page metadata reported 2025-06-27; an actual publication dateline was not established.",
+      "limitations": [
+        "Space contents and account switching are vendor descriptions, not a tested session-isolation model."
+      ]
+    },
+    {
+      "id": "R04-H3",
+      "title": "Create a Custom Browser Layout: Shift Builder",
+      "url": "https://shift.com/builder/",
+      "retrievedAt": "2026-11-21T14:25:22Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Living feature page metadata reported 2025-06-26; publication remains unestablished.",
+      "limitations": [
+        "Layout flexibility is advertised; no interaction, accessibility or recoverability test was run."
+      ]
+    },
+    {
+      "id": "R04-H4",
+      "title": "Shift AI: Context-Aware and Optional",
+      "url": "https://shift.com/ai/",
+      "retrievedAt": "2026-11-21T14:25:24Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Living feature page metadata reported 2026-03-25; publication remains unestablished.",
+      "limitations": [
+        "Broad context and privacy marketing is qualified by the more specific launch article's opt-in context controls."
+      ]
+    },
+    {
+      "id": "R04-H5",
+      "title": "Shift AI: Intelligence That Meets You Where You Work",
+      "url": "https://shift.com/blog/shift-ai-intelligence-that-meets-you-where-you-work/",
+      "retrievedAt": "2026-11-21T14:35:43Z",
+      "publishedAt": "2026-04-28",
+      "kind": "vendor-documentation",
+      "dateEvidence": "Specific maker product-manager article metadata supplies April 28, 2026.",
+      "limitations": [
+        "Documents intentional AI routing, context chips and separate toggles; future proactive capabilities remain roadmap statements.",
+        "An on-device intent router does not establish on-device processing for all AI requests."
+      ]
+    },
+    {
+      "id": "R04-H6",
+      "title": "Shift Pricing",
+      "url": "https://shift.com/pricing/",
+      "retrievedAt": "2026-11-21",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated current table read through public webfetch; time was not captured.",
+      "limitations": [
+        "Displayed annual USD price and plan limits are a retrieval-time observation of the offering, not a purchase or guaranteed future quote."
+      ]
+    },
+    {
+      "id": "R04-H7",
+      "title": "Shift Browser Security",
+      "url": "https://shift.com/security/",
+      "retrievedAt": "2026-11-21T14:31:27Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Living security page metadata reported 2025-08-14; publication remains unestablished.",
+      "limitations": [
+        "Supports Chromium lineage and stated security features, not an exact current engine version or independently verified protection."
+      ]
+    },
+    {
+      "id": "R04-H8",
+      "title": "Download Shift Browser for Free",
+      "url": "https://shift.com/download/?platform=mac",
+      "retrievedAt": "2026-11-21",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated download page. Full HTML metadata, rather than a search snippet, explicitly names Mac and Windows.",
+      "limitations": [
+        "Reader-mode body omitted platform details; page HTML supplied the evidence. No installer was downloaded or tested."
+      ]
+    },
+    {
+      "id": "R04-H9",
+      "title": "All Your Web Apps in One: Shift Browser",
+      "url": "https://shift.com/app-integrated/",
+      "retrievedAt": "2026-11-21T14:31:31Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Living app-catalog page metadata reported 2025-06-24; publication remains unestablished.",
+      "limitations": [
+        "The 4,500+ app and any-Chrome-extension statements are vendor catalog/compatibility claims, not verified counts or universal support."
+      ]
+    },
+    {
+      "id": "R04-C1",
+      "title": "What Is Comet's Browser Engine?",
+      "url": "https://www.perplexity.ai/help-center/comet/en/articles/11583798-what-is-comet-s-browser-engine.md",
+      "retrievedAt": "2026-11-21T14:29:03Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated public Markdown manual.",
+      "limitations": [
+        "Chromium foundation is confirmed for the documented browser/desktop context, not independently for iOS or Android.",
+        "Most extensions excludes those altering the new-tab page; compatibility was not tested."
+      ]
+    },
+    {
+      "id": "R04-C2",
+      "title": "Comet Operating System Requirements",
+      "url": "https://www.perplexity.ai/help-center/comet/en/articles/11734730-operating-system-requirements.md",
+      "retrievedAt": "2026-11-21T14:29:06Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated manual.",
+      "limitations": [
+        "Desktop requirements are retained with attribution. Its iOS/Android exclusions conflict with explicit later mobile launch documentation.",
+        "No Linux or ChromeOS support was established."
+      ]
+    },
+    {
+      "id": "R04-C3",
+      "title": "Comet Assistant Panel",
+      "url": "https://www.perplexity.ai/help-center/comet/en/articles/11734688-assistant-panel.md",
+      "retrievedAt": "2026-11-21T14:29:09Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated manual.",
+      "limitations": [
+        "Context extraction and multitasking are vendor-documented. The broad parallel-errand wording does not establish free-plan concurrency or quotas."
+      ]
+    },
+    {
+      "id": "R04-C4",
+      "title": "Control What Comet Assistant Can Use",
+      "url": "https://www.perplexity.ai/help-center/comet/en/articles/12658082-control-what-comet-assistant-can-use.md",
+      "retrievedAt": "2026-11-21T14:29:12Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated manual.",
+      "limitations": [
+        "Access toggles and site blocks are documented, not tested enforcement.",
+        "Local storage, minimal context transfer and password/payment exclusions are attributed privacy claims."
+      ]
+    },
+    {
+      "id": "R04-C5",
+      "title": "Comet Query Shortcuts",
+      "url": "https://www.perplexity.ai/help-center/comet/en/articles/11906981-comet-query-shortcuts.md",
+      "retrievedAt": "2026-11-21T14:29:15Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated manual; screenshot filenames were not treated as publication dates.",
+      "limitations": [
+        "Shortcut library is described as coming soon; custom/default shortcut documentation does not establish library shipment.",
+        "Example prompts are untrusted source text, not permission to execute actions."
+      ]
+    },
+    {
+      "id": "R04-C6",
+      "title": "Managing Comet Assistant Permissions",
+      "url": "https://www.perplexity.ai/help-center/en/articles/13531023-managing-comet-assistant-permissions.md",
+      "retrievedAt": "2026-11-21T14:27:24Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated enterprise manual; screenshots named January 14, 2026 do not establish publication.",
+      "limitations": [
+        "Enterprise-only admin controls and rule precedence are documented; no policy enforcement or bypass was locally reproduced.",
+        "Security certifications and data-handling assurances are vendor assertions in this source."
+      ]
+    },
+    {
+      "id": "R04-C7",
+      "title": "Comet Available for Everyone and Background Assistants",
+      "url": "https://www.perplexity.ai/changelog/what-we-shipped-october-3rd",
+      "retrievedAt": "2026-11-21T14:29:22Z",
+      "publishedAt": null,
+      "kind": "release-note",
+      "dateEvidence": "October 2025 entry: metadata reports 2025-10-02 while the URL labels October 3. Exact publication day is left unresolved.",
+      "limitations": [
+        "Free-browser release and Max background-assistant entitlement are established at the entry's date, not as a fresh billing/quotas audit.",
+        "Other Perplexity product announcements on the page are not automatically Comet features."
+      ]
+    },
+    {
+      "id": "R04-C8",
+      "title": "Comet for Android: Quick Start and Key Features",
+      "url": "https://www.perplexity.ai/help-center/comet/en/articles/12875447-comet-for-android-quick-start-and-key-features.md",
+      "retrievedAt": "2026-11-21T14:31:18Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated Android manual.",
+      "limitations": [
+        "Specifies Android 12+ and foreground-only task execution; desktop background capability must not be generalized to mobile.",
+        "No task was executed; reliability and local-data claims remain vendor assertions."
+      ]
+    },
+    {
+      "id": "R04-C9",
+      "title": "Comet Is Now Available on iOS",
+      "url": "https://www.perplexity.ai/hub/blog/meet-comet-for-ios",
+      "retrievedAt": "2026-11-21T14:34:59Z",
+      "publishedAt": "2026-03-18",
+      "kind": "release-note",
+      "dateEvidence": "Specific iOS launch-article metadata reports 2026-03-18; its body announces shipment and links to the App Store. The subsequent weekly changelog has different date labels.",
+      "limitations": [
+        "Documents iPhone availability and described features, not iOS engine lineage or complete desktop parity.",
+        "Fastest-growing, most-powerful and task-performance wording is vendor marketing."
+      ]
+    },
+    {
+      "id": "R04-C10",
+      "title": "Comet iOS Launch and Computer Updates",
+      "url": "https://www.perplexity.ai/changelog/what-we-shipped--march-27-2026",
+      "retrievedAt": "2026-11-21T14:34:59Z",
+      "publishedAt": null,
+      "kind": "release-note",
+      "dateEvidence": "Metadata reports 2026-03-26 while the URL labels March 27, 2026. Exact publication day is unresolved.",
+      "limitations": [
+        "Explicitly confirms iOS, Android, Mac and Windows availability. Other sections concern Perplexity Computer and are not counted as Comet features."
+      ]
+    },
+    {
+      "id": "R04-C11",
+      "title": "Comet Mobile App: Older No-Mobile FAQ",
+      "url": "https://www.perplexity.ai/help-center/comet/en/articles/11734737-comet-mobile-app.md",
+      "retrievedAt": "2026-11-21T14:29:18Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated FAQ with no reliable update date.",
+      "limitations": [
+        "Its claim that there is no public iOS/Android app conflicts with explicit launch and platform guides; retained as source-inconsistency evidence, not current availability."
+      ]
+    },
+    {
+      "id": "R04-C12",
+      "title": "Comet Split-view Mode",
+      "url": "https://www.perplexity.ai/help-center/comet/en/articles/12324462-split-view-mode.md",
+      "retrievedAt": "2026-11-21T14:38:35Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated manual.",
+      "limitations": [
+        "Documents two-tab splits and controls; Mac-style Option-click notation does not prove an identical Windows shortcut."
+      ]
+    },
+    {
+      "id": "R04-C13",
+      "title": "Comet Browser: A Personal AI Assistant",
+      "url": "https://www.perplexity.ai/comet",
+      "retrievedAt": "2026-11-21T14:31:22Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Living marketing page metadata reports 2026-03-05; publication of the current contents is not established.",
+      "limitations": [
+        "Marketing demonstrations are not measured completion rates. More specific manuals and launch pages establish platform and control details."
+      ]
+    },
+    {
+      "id": "R04-T1",
+      "title": "ChatGPT Atlas Retirement",
+      "url": "https://help.openai.com/en/articles/20001371-chatgpt-atlas-retirement",
+      "retrievedAt": "2026-11-21",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Successful public-page read says Updated: 30 days ago. Relative update was not converted into an exact publication or retirement day.",
+      "limitations": [
+        "Retirement and lack of updates are maker-confirmed; the precise shutdown day is not present in the readable article.",
+        "Search-MCP retrieval failed with 403 before a direct public-page read succeeded. Data recovery was not attempted."
+      ]
+    },
+    {
+      "id": "R04-T2",
+      "title": "Introducing ChatGPT Atlas, Now Marked Deprecated",
+      "url": "https://openai.com/index/introducing-chatgpt-atlas/",
+      "retrievedAt": "2026-11-21",
+      "publishedAt": "2025-10-21",
+      "kind": "release-note",
+      "dateEvidence": "Visible October 21, 2025 launch dateline. The current deprecation banner is undated.",
+      "limitations": [
+        "Original platform, preview and plan descriptions are historical, not a currently supported offer.",
+        "Direct public-page read recovered the body after search-MCP 403 responses."
+      ]
+    },
+    {
+      "id": "R04-T3",
+      "title": "How OpenAI Built OWL for ChatGPT Atlas",
+      "url": "https://openai.com/index/building-chatgpt-atlas",
+      "retrievedAt": "2026-11-21",
+      "publishedAt": "2025-10-30",
+      "kind": "vendor-documentation",
+      "dateEvidence": "Visible October 30, 2025 engineering-article dateline.",
+      "limitations": [
+        "Historical maker architecture account; process isolation, input routing and performance were not locally inspected or benchmarked.",
+        "Atlas has since been retired."
+      ]
+    },
+    {
+      "id": "R04-N1",
+      "title": "Opera Neon: This Browser Is Built to Act",
+      "url": "https://www.operaneon.com/",
+      "retrievedAt": "2026-11-21T14:16:19Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Current product page carries metadata 2025-09-30, which is not taken as publication of every current feature.",
+      "limitations": [
+        "Concerns the agentic Neon product launched in 2025; high-level claims do not establish stable-channel maturity or performance."
+      ]
+    },
+    {
+      "id": "R04-N2",
+      "title": "Opera Neon Frequently Asked Questions",
+      "url": "https://www.operaneon.com/faq",
+      "retrievedAt": "2026-11-21T14:33:49Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated FAQ; invalid 1995 metadata rejected.",
+      "limitations": [
+        "Universal paid/account-required language conflicts with newer free-access and plan pages.",
+        "Model lists are volatile. Local execution, cloud inference, retention and permission descriptions are not independently verified enforcement."
+      ]
+    },
+    {
+      "id": "R04-N3",
+      "title": "Opera Neon Subscription: Free and Standard",
+      "url": "https://www.operaneon.com/subscription",
+      "retrievedAt": "2026-11-21T14:33:52Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "dateEvidence": "Undated current plan table; invalid 1995 metadata rejected.",
+      "limitations": [
+        "Observed Free/Standard terms and displayed $19.90 monthly rate are not a purchase or guarantee beyond retrieval.",
+        "Access breadth does not itself prove that every agentic feature has graduated from experimental maturity."
+      ]
+    },
+    {
+      "id": "R04-N4",
+      "title": "Opera Neon Ships: AI Agentic Browser",
+      "url": "https://www.operaneon.com/news/opera-ships-the-opera-neon-ai-agentic-browser",
+      "retrievedAt": "2026-11-21T14:33:55Z",
+      "publishedAt": "2025-09-30",
+      "kind": "release-note",
+      "dateEvidence": "Dated September 30, 2025 shipping announcement.",
+      "limitations": [
+        "Initial launch was invitation-based and paid. Newer access evidence supersedes those blanket restrictions.",
+        "Task boundaries, live actions and offline cloud creation are vendor descriptions, not tested guarantees."
+      ]
+    },
+    {
+      "id": "R04-N5",
+      "title": "Your AI Agents Can Use Opera Neon Free of Charge",
+      "url": "https://blogs.opera.com/news/2026/08/your-ai-agents-can-use-opera-neon-free-of-charge/",
+      "retrievedAt": "2026-11-21T14:16:22Z",
+      "publishedAt": "2026-08-14",
+      "kind": "release-note",
+      "dateEvidence": "Dated August 14, 2026 maker announcement.",
+      "limitations": [
+        "Distinguishes free browsing/CLI from account-required MCP and paid built-in AI capabilities; current plan page further specifies basic Chat.",
+        "No external agent was connected."
+      ]
+    },
+    {
+      "id": "R04-N6",
+      "title": "Protected with Opera Neon: Understanding Agentic Browser Security",
+      "url": "https://www.operaneon.com/news/opera-neon-understanding-agentic-browser-security",
+      "retrievedAt": "2026-11-21T14:34:59Z",
+      "publishedAt": "2025-10-21",
+      "kind": "vendor-documentation",
+      "dateEvidence": "Specific security-article metadata supplies October 21, 2025.",
+      "limitations": [
+        "Describes an Early Access period. Later access expansion does not establish a specific date of stable-channel graduation.",
+        "Separates existing safeguards, residual prompt-injection risk and defenses still being explored; none were penetration-tested in this lane."
+      ]
+    }
+  ],
+  "browsers": [
+    {
+      "id": "R04-browser-arc",
+      "name": "Arc",
+      "engine": "Chromium on documented desktop editions.",
+      "platforms": [
+        "Windows 10 19H1 or later",
+        "macOS 13 or later"
+      ],
+      "lifecycle": "sunset-announced",
+      "summary": "Desktop browser with durable sidebar organization. The maker announces a December 22, 2026 sunset and currently describes Chromium-only updates while download links remain visible.",
+      "sourceIds": [
+        "R04-A1",
+        "R04-A2",
+        "R04-A3",
+        "R04-A4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "lifecycleDetails": {
+        "sunsetAt": "2026-12-22",
+        "supportAtCutoff": "Chromium updates only, according to the download page.",
+        "sourceIds": [
+          "R04-A1",
+          "R04-A2"
+        ]
+      },
+      "platformQualifications": [
+        {
+          "description": "The download page separately links iOS Arc Search; this does not establish desktop-feature parity or the same engine.",
+          "sourceIds": [
+            "R04-A2"
+          ]
+        }
+      ],
+      "access": {
+        "description": "Download links remain visible; an Arc account is required according to the legacy security FAQ. Current download price or post-sunset usability was not tested.",
+        "sourceIds": [
+          "R04-A2",
+          "R04-A4"
+        ]
+      },
+      "quotations": [
+        {
+          "sourceId": "R04-A1",
+          "text": "We’ve decided to sunset Arc on December 22, 2026"
+        },
+        {
+          "sourceId": "R04-A2",
+          "text": "Arc receives Chromium updates only."
+        }
+      ],
+      "vendorClaims": [
+        {
+          "claim": "The farewell says Dia surpasses Arc in stability, speed and security; the older security page promises Chromium upgrades within 48 hours.",
+          "sourceIds": [
+            "R04-A1",
+            "R04-A4"
+          ],
+          "assessment": "Unmeasured claims; older update promises are qualified by the current lifecycle notices."
+        }
+      ],
+      "recommendationRole": "Historical design precedent and migration case; not a recommendation to adopt a sunset product.",
+      "limitations": [
+        "No current Mac/Windows feature-parity or onboarding test.",
+        "The five feature entries use a legacy action reference and are historical evidence.",
+        "Detailed account-deactivation behavior was not verified because the Help Center was blocked."
+      ]
+    },
+    {
+      "id": "R04-browser-dia",
+      "name": "Dia",
+      "engine": "Chromium; the November 5, 2026 changelog describes M157, not a locally measured engine version.",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "lifecycle": "active",
+      "summary": "Shipping on Mac and Windows, combining profiles, nested tab organization, live work context and steerable AI. Windows 1.0 is dated October 6, 2026; both platforms have November 19 release entries.",
+      "sourceIds": [
+        "R04-A1",
+        "R04-D1",
+        "R04-D2",
+        "R04-D3",
+        "R04-D4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "lifecycleDetails": {
+        "observedReleaseEntries": [
+          {
+            "date": "2026-11-19",
+            "platform": "Windows",
+            "version": "1.7.0"
+          },
+          {
+            "date": "2026-11-19",
+            "platform": "macOS",
+            "version": "1.58.0"
+          }
+        ],
+        "sourceIds": [
+          "R04-D2"
+        ],
+        "windowsLaunchAt": "2026-10-06"
+      },
+      "platformQualifications": [
+        {
+          "description": "An original Mac-only beta description is obsolete, but individual features and connectors retain their own platform and rollout qualifications.",
+          "sourceIds": [
+            "R04-D1",
+            "R04-D2"
+          ]
+        }
+      ],
+      "access": {
+        "description": "Browser downloads are advertised as free; the Arc transition notice says AI is optional. The privacy policy recognizes paid Dia Pro features, but current AI quotas and prices were not established. The policy excludes under-18 use.",
+        "sourceIds": [
+          "R04-A1",
+          "R04-D1",
+          "R04-D4"
+        ]
+      },
+      "recommendationRole": "Current documented design evidence; no product endorsement and no Chrome gap established.",
+      "limitations": [
+        "No hands-on tests or current entitlement audit.",
+        "Figma is marked GA on November 12; Ashby and Dropbox are marked beta on October 29, not universally GA.",
+        "Availability of Linux or mobile editions was not established."
+      ]
+    },
+    {
+      "id": "R04-browser-zen",
+      "name": "Zen Browser",
+      "engine": "Firefox-based, Gecko family; upstream-version updates are described in the release log.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "lifecycle": "active",
+      "summary": "Downloadable workspace-first browser with container defaults, Glance, splits, command actions and structure-aware continuity. The release page reports version 1.24.3b.",
+      "sourceIds": [
+        "R04-Z1",
+        "R04-Z2",
+        "R04-Z3",
+        "R04-Z4",
+        "R04-Z5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "lifecycleDetails": {
+        "documentedVersion": "1.24.3b",
+        "releaseDate": null,
+        "sourceIds": [
+          "R04-Z3"
+        ]
+      },
+      "channelQualifications": [
+        {
+          "description": "Twilight is explicitly pre-release and may contain unfinished features. The b suffix alone was not used to infer identical maturity for every channel.",
+          "sourceIds": [
+            "R04-Z3"
+          ]
+        }
+      ],
+      "access": {
+        "description": "Public downloads are documented. A Mozilla account is required for the described Spaces sync; exact pricing or other account entitlements were not part of the retained evidence.",
+        "sourceIds": [
+          "R04-Z2",
+          "R04-Z3"
+        ]
+      },
+      "recommendationRole": "Documented feature precedent; pre-release and earlier experimental sync behavior are not promoted to stable recommendations.",
+      "limitations": [
+        "Documentary coverage only; exact per-feature release dates were not reliably extracted.",
+        "Cookie containers do not separate history or extensions.",
+        "Initial Spaces sync merges state; earlier window sync was experimental. The research did not prove that every old limitation was resolved.",
+        "Little Zen is not one of the six counted features because its standalone ship date was unresolved."
+      ]
+    },
+    {
+      "id": "R04-browser-floorp",
+      "name": "Floorp",
+      "engine": "Firefox-based, Gecko family. Release 12.21.2 describes a Firefox 160.0 base with subsequent commits and runtime display 160.0.1.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "lifecycle": "maintenance",
+      "summary": "Maintained open-source browser in a temporary stabilization period. New-feature development and rollout are generally paused for several months while security updates and fixes continue.",
+      "sourceIds": [
+        "R04-F1",
+        "R04-F2",
+        "R04-F3",
+        "R04-F4",
+        "R04-F5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "lifecycleDetails": {
+        "documentedVersion": "12.21.2",
+        "maintenanceType": "Temporary stabilization, not discontinuation",
+        "pauseEndAt": null,
+        "releaseArticleDate": "2026-11-13",
+        "sourceIds": [
+          "R04-F2"
+        ]
+      },
+      "access": {
+        "description": "Free, open-source desktop browser with no account required for browsing; Notes synchronization uses Firefox Sync.",
+        "sourceIds": [
+          "R04-F1",
+          "R04-F5"
+        ]
+      },
+      "recommendationRole": "Documented functionality and a maintenance-cost case; temporary stabilization is not abandonment.",
+      "limitations": [
+        "No local version measurement or stability test.",
+        "Several manuals qualify behavior to 12.14.2 rather than the later release.",
+        "Vendor-authored comparisons were not used to decide Chrome parity."
+      ]
+    },
+    {
+      "id": "R04-browser-sigmaos",
+      "name": "SigmaOS",
+      "engine": "WebKit with a native SwiftUI macOS application, according to the maker.",
+      "platforms": [
+        "macOS"
+      ],
+      "lifecycle": "unknown",
+      "summary": "Historically shipped tabs-as-tasks browser still advertised by its maker. Current security cadence, account/AI service operation and formal maintenance or discontinuation status were not established.",
+      "sourceIds": [
+        "R04-S1",
+        "R04-S2",
+        "R04-S3",
+        "R04-S4",
+        "R04-S5",
+        "R04-S6",
+        "R04-S7"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "lifecycleDetails": {
+        "currentMaintenanceStatus": "Unresolved",
+        "documentedHistoricalVersion": "1.17.0",
+        "lastReleaseAt": null,
+        "sourceIds": [
+          "R04-S5",
+          "R04-S6",
+          "R04-S7"
+        ]
+      },
+      "platformQualifications": [
+        {
+          "description": "The homepage says macOS only. Windows and iOS are coming-soon statements, not verified shipments.",
+          "sourceIds": [
+            "R04-S1"
+          ]
+        }
+      ],
+      "access": {
+        "description": "The homepage lists free Basic with unlimited workspaces and limited Airis, Pro at $20/month and Max at $30/month, plus a student/educator discount. Currency is not explicitly established. The older FAQ's $10 Pro price and paid workspace limits conflict with the homepage and are not current verified terms.",
+        "sourceIds": [
+          "R04-S1",
+          "R04-S2"
+        ]
+      },
+      "recommendationRole": "Design precedent with unresolved lifecycle; not recommended as an actively maintained replacement.",
+      "limitations": [
+        "A live sales page is not proof of active maintenance; stale documentation is not proof of shutdown.",
+        "No account creation, backend call or binary test was performed.",
+        "Current support and subscription fulfillment remain unknown."
+      ]
+    },
+    {
+      "id": "R04-browser-sidekick",
+      "name": "Sidekick",
+      "engine": "Not established from readable maker evidence. Chromium appeared in discovery results and is not promoted to a verified engine claim.",
+      "platforms": [
+        "Windows (historical distributor listing; title-only evidence)"
+      ],
+      "lifecycle": "discontinued",
+      "summary": "Historical productivity browser. Its former official front door now serves Comet; AppSumo's distributor notice explicitly names August 3, 2025 as the sunset.",
+      "sourceIds": [
+        "R04-K1",
+        "R04-K2",
+        "R04-K3"
+      ],
+      "evidenceType": "secondary-reported",
+      "confidence": "medium",
+      "lifecycleDetails": {
+        "authority": "Distributor notice; original maker announcement not recovered",
+        "reportedSunsetAt": "2025-08-03",
+        "sourceIds": [
+          "R04-K1",
+          "R04-K2"
+        ]
+      },
+      "platformQualifications": [
+        {
+          "description": "A Windows listing title was retrieved; complete historical maker confirmation for Windows, Mac and Linux was not recovered.",
+          "sourceIds": [
+            "R04-K1",
+            "R04-K3"
+          ]
+        }
+      ],
+      "access": {
+        "description": "Historic Pro/Team and lifetime-plan text is retained on AppSumo alongside the sunset notice. It is not evidence of a current supported purchase or subscription.",
+        "sourceIds": [
+          "R04-K2"
+        ]
+      },
+      "recommendationRole": "Historical distributor-documented design evidence only; not an active-product recommendation.",
+      "limitations": [
+        "All five feature entries rely on historical distributor-hosted copy, not a recovered maker manual.",
+        "No proof that Comet preserves Sidekick Sessions or account isolation.",
+        "The unrelated sidekick.io extension is not this product.",
+        "No current download or support test."
+      ]
+    },
+    {
+      "id": "R04-browser-wavebox",
+      "name": "Wavebox",
+      "engine": "Chromium, according to official platform documentation.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "lifecycle": "active",
+      "summary": "Shipping work browser with separate Spaces, Groups, Apps and Profiles. An October 8, 2026 release article documents version 155.3.12 and new Navigator and settings-chat features.",
+      "sourceIds": [
+        "R04-W1",
+        "R04-W2",
+        "R04-W3",
+        "R04-W4",
+        "R04-W5",
+        "R04-W6"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "lifecycleDetails": {
+        "documentedVersion": "155.3.12",
+        "isLatestVersionEstablished": false,
+        "releaseArticleDate": "2026-10-08",
+        "sourceIds": [
+          "R04-W3"
+        ]
+      },
+      "access": {
+        "description": "Seven-day Pro trial without a payment card; Basic remains available with two groups and two spaces. Pro and Teams broaden capabilities. Exact current paid rates were not recovered from a price table. Chat with Settings is described as free and outside the Brainbox token allowance.",
+        "sourceIds": [
+          "R04-W3",
+          "R04-W4",
+          "R04-W5"
+        ]
+      },
+      "recommendationRole": "Current documentary workflow evidence, not a measured superiority or purchase recommendation.",
+      "limitations": [
+        "No runtime testing; enhanced web tabs are not necessarily native applications.",
+        "The organization hierarchy can add conceptual overhead; this is a design hypothesis, not measured usability.",
+        "AI, Sync and team deployment have distinct data and entitlement boundaries; AI-disable behavior is vendor-documented only."
+      ]
+    },
+    {
+      "id": "R04-browser-shift",
+      "name": "Shift",
+      "engine": "Chromium lineage supported by official security descriptions; exact current engine version not established.",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "lifecycle": "active",
+      "summary": "Currently offered customizable Shift Browser with app stacks, Spaces and opt-in AI. The April 28, 2026 maker article documents the AI interaction design; the latest release cadence was not recovered.",
+      "sourceIds": [
+        "R04-H1",
+        "R04-H2",
+        "R04-H3",
+        "R04-H4",
+        "R04-H5",
+        "R04-H6",
+        "R04-H7",
+        "R04-H8",
+        "R04-H9"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "platformQualifications": [
+        {
+          "description": "Mac and Windows are explicitly named in the downloaded page HTML metadata. No Linux or mobile shipment is established here.",
+          "sourceIds": [
+            "R04-H8"
+          ]
+        }
+      ],
+      "access": {
+        "description": "Free lists five Spaces, ten apps per Space, Builder/templates and limited Shift AI. Advanced displays $199.99 USD annually with unlimited Spaces/apps and expanded AI. Terms are those shown at retrieval, with no account or purchase verification.",
+        "sourceIds": [
+          "R04-H6"
+        ]
+      },
+      "recommendationRole": "Current offering and documented interaction precedent; Chrome equivalence remains unassessed.",
+      "limitations": [
+        "Blocked release-note host prevented establishing the latest browser/engine version and security cadence.",
+        "Current Shift Browser was not conflated with every older v9 feature description.",
+        "No runtime, account-isolation or AI privacy test."
+      ]
+    },
+    {
+      "id": "R04-browser-comet",
+      "name": "Perplexity Comet",
+      "engine": "Chromium confirmed for documented desktop/browser context; Android and iOS engine implementations were not independently established in this lane.",
+      "platforms": [
+        "Windows 10 or 11 (x64 and ARM64)",
+        "macOS 13 or later (Intel and Apple Silicon)",
+        "Android 12 or later",
+        "iOS"
+      ],
+      "lifecycle": "active",
+      "summary": "Shipped contextual AI browser across Mac, Windows, Android and iOS. Explicit March 2026 launch evidence supersedes older official help pages saying mobile apps are unavailable.",
+      "sourceIds": [
+        "R04-C1",
+        "R04-C10",
+        "R04-C11",
+        "R04-C13",
+        "R04-C2",
+        "R04-C4",
+        "R04-C6",
+        "R04-C7",
+        "R04-C8",
+        "R04-C9"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "lifecycleDetails": {
+        "freeDesktopReleasePeriod": "October 2025",
+        "iosLaunchEvidencePeriod": "March 2026",
+        "sourceIds": [
+          "R04-C10",
+          "R04-C7",
+          "R04-C9"
+        ]
+      },
+      "platformQualifications": [
+        {
+          "description": "Desktop docs exclude Linux and ChromeOS. Android automation requires the app to remain open. Mobile engines, detailed parity and iOS minimum version remain unestablished.",
+          "sourceIds": [
+            "R04-C2",
+            "R04-C8",
+            "R04-C9"
+          ]
+        }
+      ],
+      "access": {
+        "description": "A dated release note offers the browser free worldwide and assigns parallel Background Assistants to Max subscribers. Current exact AI quotas and billing terms were not audited; enterprise controls require enterprise access.",
+        "sourceIds": [
+          "R04-C6",
+          "R04-C7"
+        ]
+      },
+      "recommendationRole": "Current documented features with platform/plan qualifications; no product endorsement.",
+      "limitations": [
+        "No AI actions, accounts or browser sessions were tested.",
+        "Official mobile help pages are inconsistent and undated; explicit mobile launch and platform-specific documentation takes precedence.",
+        "New-tab-page replacement extensions are excluded from the documented extension support.",
+        "Background-assistant entitlement is dated evidence, not a fresh quota check."
+      ]
+    },
+    {
+      "id": "R04-browser-atlas",
+      "name": "ChatGPT Atlas",
+      "engine": "Chromium integrated through OWL with a native SwiftUI/AppKit macOS UI, according to the historical engineering account.",
+      "platforms": [
+        "macOS (historical shipping platform)"
+      ],
+      "lifecycle": "discontinued",
+      "summary": "Launched October 21, 2025 on macOS and subsequently retired. Current OpenAI help says it no longer receives updates; the launch page now carries a deprecation banner.",
+      "sourceIds": [
+        "R04-T1",
+        "R04-T2",
+        "R04-T3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "lifecycleDetails": {
+        "currentStatus": "Retirement confirmed; exact shutdown day not established from the readable maker article",
+        "launchedAt": "2025-10-21",
+        "retiredAt": null,
+        "sourceIds": [
+          "R04-T1",
+          "R04-T2"
+        ]
+      },
+      "platformQualifications": [
+        {
+          "description": "Windows, iOS and Android were announced as future work at launch. Their shipment was not established by this research.",
+          "sourceIds": [
+            "R04-T2"
+          ]
+        }
+      ],
+      "access": {
+        "description": "Historical launch access: macOS for Free, Plus, Pro and Go; Business beta; Enterprise/Edu if enabled by an administrator. Agent mode launched in preview for Plus, Pro and Business. These are not current supported entitlements.",
+        "sourceIds": [
+          "R04-T1",
+          "R04-T2"
+        ]
+      },
+      "recommendationRole": "Historical control and retirement-resilient data-portability precedent only; not an active browser recommendation.",
+      "limitations": [
+        "The precise August 2026 shutdown day appeared only in discovery material and is not asserted as verified.",
+        "All five feature entries are historical, including formerly preview-only agent mode.",
+        "Retired browser tabs/history do not transfer automatically and recovery is not guaranteed; no data recovery was attempted."
+      ]
+    },
+    {
+      "id": "R04-browser-neon",
+      "name": "Opera Neon",
+      "engine": "Chromium-based Opera foundation, according to the agentic security explainer.",
+      "platforms": [
+        "Windows",
+        "macOS"
+      ],
+      "lifecycle": "active",
+      "summary": "The agentic Neon product shipped on September 30, 2025 and remains offered with Free and Standard tiers. Active denotes the current offering, not a verified graduation of every Early Access feature to stable maturity.",
+      "sourceIds": [
+        "R04-N1",
+        "R04-N2",
+        "R04-N3",
+        "R04-N4",
+        "R04-N5",
+        "R04-N6"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "lifecycleDetails": {
+        "currentOffering": "Free browser/basic Chat and paid built-in agentic capabilities",
+        "initialAccess": "Paid invitations / Early Access",
+        "launchedAt": "2025-09-30",
+        "sourceIds": [
+          "R04-N3",
+          "R04-N4",
+          "R04-N5",
+          "R04-N6"
+        ],
+        "stableGraduationAt": null
+      },
+      "platformQualifications": [
+        {
+          "description": "Windows and Mac are verified in offering documentation; a mobile edition is future-facing in the FAQ, not established as shipped.",
+          "sourceIds": [
+            "R04-N2",
+            "R04-N3",
+            "R04-N5"
+          ]
+        }
+      ],
+      "channelQualifications": [
+        {
+          "description": "Retained 2025 sources describe invitations and Early Access. Broader 2026 access does not itself establish a stable-channel graduation date or production reliability.",
+          "sourceIds": [
+            "R04-N3",
+            "R04-N4",
+            "R04-N5",
+            "R04-N6"
+          ]
+        }
+      ],
+      "access": {
+        "description": "Current Free includes browsing, MCP/CLI setup and basic Chat. Standard displays $19.90/month for built-in agentic, research, generation, Cards and scheduled-task capabilities; currency is not independently specified in the retained table. The August 2026 announcement distinguishes accountless browsing/CLI from account-required MCP. Older universal paid/account-required FAQ wording is qualified by these newer sources.",
+        "sourceIds": [
+          "R04-N2",
+          "R04-N3",
+          "R04-N5"
+        ]
+      },
+      "recommendationRole": "Shipped and potentially experimental design precedent only; candidates do not recommend deploying or adopting Neon.",
+      "limitations": [
+        "No connection, agent task, subscription or security test was run.",
+        "Residual prompt-injection risk and defenses still being explored must remain separate from implemented safeguards.",
+        "Model lineups and exact usage limits are volatile and were not verified as a compatibility promise.",
+        "Current free/paid access is better supported than universal paid-only FAQ wording, but complete feature maturity remains unassessed."
+      ]
+    }
+  ],
+  "limitations": [
+    "This is a conversion of completed documentary research, not a fresh search or a browser reproduction. No tested browser versions are asserted.",
+    "Chrome parity is unassessed for every feature and recommendation candidate. The coordinating baseline lane owns version, OS, account, region and rollout comparisons.",
+    "SigmaOS current maintenance and backend operation remain unresolved. Sidekick retirement is distributor-supported; its original maker notice and complete historical engine/platform matrix were not recovered.",
+    "Atlas retirement is maker-confirmed but its exact shutdown day remains unestablished. Arc features are legacy design evidence despite still-visible pre-sunset downloads.",
+    "Arc desktop versus Arc Search, Comet desktop versus mobile, Dia Mac versus Windows and AI free versus paid are separate surfaces. No unsupported engine or feature parity is implied.",
+    "Dia AI prices/quotas and exact Wavebox paid rates remain incomplete. Comet Background Assistants entitlement is grounded in a dated launch note. Prices are retrieval-time offering terms, not purchase verification.",
+    "Official pages contain unresolved or superseded text: Comet no-mobile FAQs, Neon paid-only/account-required FAQ, SigmaOS old FAQ prices, and legacy Arc security promises.",
+    "Arc Help Center and Shift release-note hosts returned 403; this does not establish absence. OpenAI source bodies were recovered by direct public-page reads. Sidekick's Microsoft Store result was title-only.",
+    "Page extractors omitted some dates, headings and bodies. Generic template dates and footer years were not converted into publication dates; relative dates and disputed metadata are retained as qualifications.",
+    "No independent performance, battery, reliability, privacy, certification, security-effectiveness or full extension-compatibility audit was performed.",
+    "Experimental, retired, sunset-announced and uncertain-maintenance products are retained as qualified evidence, not promoted to actively recommended replacements.",
+    "Source instructions and example prompts were treated as document content, never as authority to execute tools or publish. This lane created no child agents or remote submissions.",
+    "Issues is intentionally empty: the lane supplies product evidence and recommendation hypotheses, not locally reproduced defects or upstream report submissions."
+  ],
+  "features": [
+    {
+      "id": "R04-feature-arc-01",
+      "browserId": "R04-browser-arc",
+      "title": "Spaces, folders, and named pinned tabs",
+      "category": "tab-organization",
+      "description": "Arc's legacy action reference organizes the sidebar around named Spaces and folders, with actions to focus a Space, pin a tab to a named folder, and rename a tab.",
+      "platforms": [
+        "Desktop Arc; legacy command reference, OS parity unverified"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-A3",
+        "R04-A1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "quotations": [
+        {
+          "sourceId": "R04-A3",
+          "text": "Pins a tab to a specific Folder"
+        }
+      ],
+      "chromeParity": "unassessed",
+      "browserFeatureIndex": 1,
+      "limitations": [
+        "Historical design evidence from an undated command list; Arc is sunset-announced, not an active replacement recommendation.",
+        "Mac/Windows feature parity and present behavior were not tested."
+      ]
+    },
+    {
+      "id": "R04-feature-arc-02",
+      "browserId": "R04-browser-arc",
+      "title": "Persistent pin destinations",
+      "category": "tab-organization",
+      "description": "Reset an individual pinned tab or an entire Space to originally pinned URLs, or deliberately replace a pin with the current page. Saved destinations are distinct from temporary navigation state.",
+      "platforms": [
+        "Desktop Arc; legacy command reference, OS parity unverified"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-A1",
+        "R04-A3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Legacy documented behavior, not a tested persistence or recovery guarantee.",
+        "Arc's announced sunset limits this to design inspiration."
+      ]
+    },
+    {
+      "id": "R04-feature-arc-03",
+      "browserId": "R04-browser-arc",
+      "title": "Unified command bar",
+      "category": "command-menu",
+      "description": "Navigation, tab and Space organization, settings, extension access and browser operations are collected in one action surface. The reference includes named extension lookup and organization commands.",
+      "platforms": [
+        "Desktop Arc; legacy command reference, OS parity unverified"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-A1",
+        "R04-A3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Reference includes obsolete actions; Notes/Easels were not counted as current functionality.",
+        "Historical command design is not evidence that Chrome lacks named actions or equivalent shortcuts."
+      ]
+    },
+    {
+      "id": "R04-feature-arc-04",
+      "browserId": "R04-browser-arc",
+      "title": "Split views and Little Arc",
+      "category": "multitasking",
+      "description": "The command list documents adding, removing and expanding split views, with split removal distinct from closing the underlying tab. Little Arc provides a separate small-window entry for transient browsing.",
+      "platforms": [
+        "Desktop Arc; legacy command reference, OS parity unverified"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-A1",
+        "R04-A3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Little Arc and split controls were not validated across operating systems.",
+        "Both are retained as historical interaction precedents for a sunset-announced product."
+      ]
+    },
+    {
+      "id": "R04-feature-arc-05",
+      "browserId": "R04-browser-arc",
+      "title": "Today/Archive and sidebar recovery",
+      "category": "sessions-and-portability",
+      "description": "The Today section distinguishes disposable tabs from persistent organization. The archive revisits manually and automatically closed tabs, while Restore Data brings back older sidebar states.",
+      "platforms": [
+        "Desktop Arc; legacy command reference, OS parity unverified"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-A1",
+        "R04-A3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "No archive retention, restore accuracy or post-retirement recovery test was performed.",
+        "Legacy documentation must not be treated as a current service-continuity guarantee."
+      ]
+    },
+    {
+      "id": "R04-feature-dia-01",
+      "browserId": "R04-browser-dia",
+      "title": "Profiles and hierarchy",
+      "category": "workspaces-and-identity",
+      "description": "Profiles separate tabs, logins and AI context, with link-routing rules for incoming URLs. November 12 Mac and Windows entries describe tab groups nested up to eight levels and controls for opening links inside groups.",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-D1",
+        "R04-D2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Profile isolation and rule enforcement were not tested; visual grouping is not automatically an identity boundary.",
+        "Routing is first explicitly described in the November 5 Mac entry; complete release-by-release Windows parity is not asserted."
+      ]
+    },
+    {
+      "id": "R04-feature-dia-02",
+      "browserId": "R04-browser-dia",
+      "title": "Remembered split layouts",
+      "category": "multitasking",
+      "description": "Dia advertises simultaneous meeting/document views and remembered split layouts that can be reused for recurring meetings or focused work.",
+      "platforms": [
+        "macOS",
+        "Windows; exact layout parity untested"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-D1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Homepage description does not establish the first ship date, maximum pane count or restoration fidelity.",
+        "No saved-layout interaction was exercised."
+      ]
+    },
+    {
+      "id": "R04-feature-dia-03",
+      "browserId": "R04-browser-dia",
+      "title": "Live Work and meeting context",
+      "category": "apps-and-context",
+      "description": "Live Work brings GitHub/Notion work surfaces and PR previews into tab organization; Better Meetings assembles meeting pages and related context. Morning Brief gathers work context, with November 19 entries adding estimated items read and contributing tools.",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-D1",
+        "R04-D2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Requires relevant connected services and permissions; connector rollout and AI entitlements differ.",
+        "The quality, completeness and accuracy of briefs or live previews were not measured."
+      ]
+    },
+    {
+      "id": "R04-feature-dia-04",
+      "browserId": "R04-browser-dia",
+      "title": "Contextual AI and reusable Skills",
+      "category": "ai-context-and-recipes",
+      "description": "Ask about the current page or explicitly mention tabs, and reuse custom Skills. The October 15 Windows release adds Skills matching the Mac experience. Connected applications have independent rollout stages.",
+      "platforms": [
+        "macOS",
+        "Windows; Skills documented from 1.2.0 on 2026-10-15"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-D2",
+        "R04-D4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Figma is marked GA on November 12; Ashby/Dropbox are marked beta on October 29. This is not a blanket GA claim for every integration.",
+        "Current paid AI quotas/prices were not established, and shared Skills may be hosted publicly if the user chooses to share them.",
+        "No prompt, connector or AI task was executed."
+      ]
+    },
+    {
+      "id": "R04-feature-dia-05",
+      "browserId": "R04-browser-dia",
+      "title": "Queue and steer ongoing chat",
+      "category": "ai-controls",
+      "description": "Queue, edit, reorder or redirect messages during ongoing work. Mac notes distinguish steering without cancelling in-flight tools from Send now interruption; Windows October 29 notes document queued and steerable messages while preserving generated work.",
+      "platforms": [
+        "macOS; documented in October 2026 entries",
+        "Windows; documented in 1.4.0 on 2026-10-29"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-D2",
+        "R04-D4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Chat access is subject to AI availability and unverified quotas.",
+        "Cancellation, pause and committed-action semantics were not tested; wording in release notes is not proof that every side effect can be stopped or undone."
+      ]
+    },
+    {
+      "id": "R04-feature-dia-06",
+      "browserId": "R04-browser-dia",
+      "title": "Organization portability and control",
+      "category": "sessions-and-portability",
+      "description": "November 19 Mac and Windows entries document exporting tabs, profiles and groups to Markdown. Windows notes also describe inactive-tab archiving and customizable shortcuts; both platforms document natural-language tab-group operations.",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-D2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Markdown export does not establish a complete round-trip importer, credential transfer or layout preservation.",
+        "Archiving thresholds and shortcut parity differ by documented entry; AI-driven organization has separate entitlement limits."
+      ]
+    },
+    {
+      "id": "R04-feature-zen-01",
+      "browserId": "R04-browser-zen",
+      "title": "Workspace-default containers",
+      "category": "workspaces-and-identity",
+      "description": "Assign cookie/session containers to a workspace, customize its identity, and optionally route new container tabs to the workspace using that default container.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-Z2",
+        "R04-Z4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Container separation is narrower than a full profile boundary.",
+        "No account-isolation or automatic-routing test was run."
+      ]
+    },
+    {
+      "id": "R04-feature-zen-02",
+      "browserId": "R04-browser-zen",
+      "title": "Glance previews",
+      "category": "multitasking",
+      "description": "Preview a linked website above the current tab, then dismiss it, promote it to a new tab or turn it into a split. Trigger modifiers are configurable, with special behavior for external links in Essentials and pinned tabs.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-Z2",
+        "R04-Z5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "No preview focus, form-state or keyboard-navigation test was performed.",
+        "Manual descriptions, rather than the less precise homepage summary, define the behavior here."
+      ]
+    },
+    {
+      "id": "R04-feature-zen-03",
+      "browserId": "R04-browser-zen",
+      "title": "Split interaction shortcuts",
+      "category": "multitasking",
+      "description": "Join tabs using modifier-click or drag interactions and separate them through explicit split/un-split commands, making the layout transition part of tab management.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-Z1",
+        "R04-Z2",
+        "R04-Z3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Living release log includes several iterations of shortcuts and layout behavior; a precise first-ship date was not established.",
+        "No current-platform interaction test or pane-limit claim."
+      ]
+    },
+    {
+      "id": "R04-feature-zen-04",
+      "browserId": "R04-browser-zen",
+      "title": "Command surface",
+      "category": "command-menu",
+      "description": "Search tabs and folders, scope search to a Space, and invoke actions such as new Space, reset pinned tab, duplicate tab or reopen closed tab from the command surface.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-Z2",
+        "R04-Z3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Documented command additions are not a measured discoverability or performance improvement.",
+        "No keybinding-conflict test or exact per-command release date was established."
+      ]
+    },
+    {
+      "id": "R04-feature-zen-05",
+      "browserId": "R04-browser-zen",
+      "title": "Live folders and link routing",
+      "category": "apps-and-context",
+      "description": "Populate folders from GitHub issues, pull requests or RSS feeds, and use Space Routing to send incoming links into a selected work context.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-Z2",
+        "R04-Z3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Release notes record fixes for changing GitHub interfaces; integration reliability was not tested.",
+        "Source account access and routing precedence require separate runtime assessment."
+      ]
+    },
+    {
+      "id": "R04-feature-zen-06",
+      "browserId": "R04-browser-zen",
+      "title": "Structure-aware continuity",
+      "category": "sessions-and-portability",
+      "description": "Sync Spaces, folders and tabs through a Mozilla account, optionally including normal tabs; share structured collections and split views by link; use documented cross-platform local profile backups.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-Z2",
+        "R04-Z3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "A Mozilla account and opt-in are required for the described sync; initial enablement merges local and cloud Spaces.",
+        "Earlier window sync was marked experimental. This conversion does not imply all sync features or old limitations are stable/resolved.",
+        "No backup, restore, sharing or conflict-resolution test was run."
+      ]
+    },
+    {
+      "id": "R04-feature-floorp-01",
+      "browserId": "R04-browser-floorp",
+      "title": "Container-linked workspaces with archives",
+      "category": "workspaces-and-identity",
+      "description": "Assign a Firefox container to a workspace, archive its tab set and recover it from an archive view. Only one workspace is displayed per window; the documentation distinguishes shared workspace structures from individual tabs.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-F1",
+        "R04-F2",
+        "R04-F3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Behavior is documented as of 12.14.2; no archive or cross-window restoration test.",
+        "The browser is in a temporary stabilization period, and background-tab data preservation is not independently guaranteed."
+      ]
+    },
+    {
+      "id": "R04-feature-floorp-02",
+      "browserId": "R04-browser-floorp",
+      "title": "Up to four simultaneous panes",
+      "category": "multitasking",
+      "description": "Extend upstream Firefox split view with further subdivisions, arrangement controls and directional drag targets. The documented limit is four tabs at once as of Floorp 12.14.2.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-F1",
+        "R04-F4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "The four-pane limit is version-qualified, not a claim about every future release.",
+        "No usability, focus-order, minimum-size or performance test."
+      ]
+    },
+    {
+      "id": "R04-feature-floorp-03",
+      "browserId": "R04-browser-floorp",
+      "title": "Any-site web panels",
+      "category": "apps-and-panels",
+      "description": "Register websites in a persistent sidebar for one-click compact split views. Individual web panels can use a chosen container, width, zoom level and mobile/desktop user-agent setting.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-F1",
+        "R04-F5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "A mobile user agent does not guarantee that a site changes layout.",
+        "Container enforcement, arbitrary-site compatibility and panel persistence were not tested."
+      ]
+    },
+    {
+      "id": "R04-feature-floorp-04",
+      "browserId": "R04-browser-floorp",
+      "title": "Overlay/floating and unload controls",
+      "category": "multitasking-and-resources",
+      "description": "Use sidebar panels as overlays or movable/resizable floating views, open them on hover, keep them resident or unload them when hidden. Internal tools and supported extension pages can also be exposed as panels.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-F1",
+        "R04-F5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Some extensions cannot be displayed in the sidebar.",
+        "Unloading requires a later reload; form-state preservation and resource savings were not measured."
+      ]
+    },
+    {
+      "id": "R04-feature-floorp-05",
+      "browserId": "R04-browser-floorp",
+      "title": "Integrated notes and desktop customization",
+      "category": "apps-and-panels",
+      "description": "Formatted notes and image attachments live in the Panel Sidebar and are documented to sync through Firefox Sync. The homepage also advertises web-app windows, UI customization and mouse gestures as desktop customization options.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-F1",
+        "R04-F5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Sync requires the relevant account setup; no cross-device synchronization or formatting test was run.",
+        "Homepage customization claims do not establish detailed per-platform web-app or gesture parity."
+      ]
+    },
+    {
+      "id": "R04-feature-sigmaos-01",
+      "browserId": "R04-browser-sigmaos",
+      "title": "Tabs as tasks",
+      "category": "tab-organization",
+      "description": "Treat vertical pages as tasks: mark them Done when complete, lock pages that should remain available, and undo accidental closures.",
+      "platforms": [
+        "macOS"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-S1",
+        "R04-S2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Advertised/documented behavior does not establish current maintenance or successful onboarding.",
+        "Not an actively maintained-product recommendation; closure/undo was not tested."
+      ]
+    },
+    {
+      "id": "R04-feature-sigmaos-02",
+      "browserId": "R04-browser-sigmaos",
+      "title": "Workspaces with optional separate cookies",
+      "category": "workspaces-and-identity",
+      "description": "Organize pages and web apps by project, optionally separate cookies to maintain multiple logins, create private workspaces and start from prefilled templates.",
+      "platforms": [
+        "macOS"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-S1",
+        "R04-S2",
+        "R04-S3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Current lifecycle is unresolved; no cookie-isolation or private-workspace test.",
+        "Homepage now advertises unlimited Basic workspaces, conflicting with the older FAQ's paid limit; no legacy limit is treated as current."
+      ]
+    },
+    {
+      "id": "R04-feature-sigmaos-03",
+      "browserId": "R04-browser-sigmaos",
+      "title": "Lazy Search and command filtering",
+      "category": "command-menu",
+      "description": "Space opens Lazy Search across pages, workspaces, tags and actions, while Cmd+K applies a commands-only filter. The same surface can jump to existing pages or create documents in supported tools.",
+      "platforms": [
+        "macOS"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-S1",
+        "R04-S2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Legacy documentation does not establish present integration availability or performance.",
+        "Current browser maintenance remains unresolved."
+      ]
+    },
+    {
+      "id": "R04-feature-sigmaos-04",
+      "browserId": "R04-browser-sigmaos",
+      "title": "Single-key and split semantics",
+      "category": "command-menu-and-multitasking",
+      "description": "Use single keys for Done and Focus, and a consistent Shift modifier to open links/searches or complete a page in the second pane. Shortcut priority can be changed when browser commands conflict with web apps.",
+      "platforms": [
+        "macOS"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-S2",
+        "R04-S4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "The tutorial specifies two pages, not arbitrary multi-pane tiling.",
+        "No keyboard-layout, accessibility or shortcut-conflict test; maintenance status is unresolved."
+      ]
+    },
+    {
+      "id": "R04-feature-sigmaos-05",
+      "browserId": "R04-browser-sigmaos",
+      "title": "Quick Search and previews",
+      "category": "multitasking",
+      "description": "A temporary Quick Search workspace returns to the prior work context after the page is completed. Command-hover previews the destination behind a link without fully opening it.",
+      "platforms": [
+        "macOS"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-S1",
+        "R04-S3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "No preview-state or return-navigation test was run.",
+        "Still-advertised features are not proof of current maintenance."
+      ]
+    },
+    {
+      "id": "R04-feature-sigmaos-06",
+      "browserId": "R04-browser-sigmaos",
+      "title": "Airis context interaction",
+      "category": "ai-context",
+      "description": "Airis advertises Ask Anything, natural-language page finding, contextual explanations, multi-page Look it up research and interactive Simplify summaries.",
+      "platforms": [
+        "macOS"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-S1",
+        "R04-S6"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Basic advertises limited Airis; homepage Pro/Max advertise greater usage at $20/$30 monthly, with currency and actual fulfillment unverified.",
+        "AI service operation, model availability, task quality and current maintenance remain unresolved.",
+        "Historical model mentions do not establish a current model catalog."
+      ]
+    },
+    {
+      "id": "R04-feature-sidekick-01",
+      "browserId": "R04-browser-sidekick",
+      "title": "Persistent app sidebar and multiple app accounts",
+      "category": "apps-and-notifications",
+      "description": "Historical distributor copy describes a persistent sidebar for web apps and extensions, multiple app accounts and custom web apps.",
+      "platforms": [
+        "Historical desktop product; feature-specific OS matrix not recovered"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-K1",
+        "R04-K2"
+      ],
+      "evidenceType": "secondary-reported",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Discontinued product; distributor marketing, not recovered maker documentation or a runtime test.",
+        "Does not establish continuity of app-account isolation in Comet."
+      ]
+    },
+    {
+      "id": "R04-feature-sidekick-02",
+      "browserId": "R04-browser-sidekick",
+      "title": "Named sessions/workspaces",
+      "category": "sessions-and-portability",
+      "description": "Historical Sessions/workspace copy describes grouping, saving, reopening and switching tab sets for personal, professional or project contexts.",
+      "platforms": [
+        "Historical desktop product; feature-specific OS matrix not recovered"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-K1",
+        "R04-K2"
+      ],
+      "evidenceType": "secondary-reported",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Unlimited sessions was a historical plan claim, not a current offer.",
+        "No saved-session fidelity, export or Comet migration test."
+      ]
+    },
+    {
+      "id": "R04-feature-sidekick-03",
+      "browserId": "R04-browser-sidekick",
+      "title": "Unified search",
+      "category": "command-menu-and-search",
+      "description": "Distributor-hosted product copy describes searching contacts, documents, mail and chats across work surfaces from one address bar.",
+      "platforms": [
+        "Historical desktop product; feature-specific OS matrix not recovered"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-K2"
+      ],
+      "evidenceType": "secondary-reported",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Search scope, indexing model, permissions and supported services were not independently verified.",
+        "Discontinued-product sales copy is design inspiration only."
+      ]
+    },
+    {
+      "id": "R04-feature-sidekick-04",
+      "browserId": "R04-browser-sidekick",
+      "title": "Split view",
+      "category": "multitasking",
+      "description": "Historical copy describes side-by-side documents, email and task lists in the browser's main screen.",
+      "platforms": [
+        "Historical desktop product; feature-specific OS matrix not recovered"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-K2"
+      ],
+      "evidenceType": "secondary-reported",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "No pane count, layout persistence or platform parity established.",
+        "Retained as historical distributor evidence, not supported current functionality."
+      ]
+    },
+    {
+      "id": "R04-feature-sidekick-05",
+      "browserId": "R04-browser-sidekick",
+      "title": "Focus tools",
+      "category": "focus-and-attention",
+      "description": "Historical productivity tools include muting notifications, redirecting distracting sites during work hours and keeping pinned tasks available across work surfaces.",
+      "platforms": [
+        "Historical desktop product; feature-specific OS matrix not recovered"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-K2"
+      ],
+      "evidenceType": "secondary-reported",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Scheduling, notification suppression and task persistence were not tested.",
+        "The discontinued product is not recommended as an active focus solution."
+      ]
+    },
+    {
+      "id": "R04-feature-wavebox-01",
+      "browserId": "R04-browser-wavebox",
+      "title": "Explicit organization layers",
+      "category": "workspaces-and-identity",
+      "description": "Cookie-isolated Spaces contain Groups with individual tab strips and persistent Apps. Separate full Profiles have their own webdock and settings, making the hierarchy distinguish grouping from stronger isolation.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-W2",
+        "R04-W4",
+        "R04-W5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Basic is limited to two groups and two spaces; broader use has paid-plan boundaries.",
+        "Actual isolation was not tested. Additional conceptual overhead is a hypothesis, not a measured usability result."
+      ]
+    },
+    {
+      "id": "R04-feature-wavebox-02",
+      "browserId": "R04-browser-wavebox",
+      "title": "Multi-account app presence",
+      "category": "apps-and-notifications",
+      "description": "Persistent app tabs expose unread badges, tooltips and custom notification sounds across multiple accounts. The Mini menu consolidates incoming work from webmail, messaging and collaboration tools.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-W1",
+        "R04-W2",
+        "R04-W4",
+        "R04-W5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "App integrations are enhanced web tabs, not necessarily native applications or complete service integrations.",
+        "Notification accuracy, isolation and delivery were not tested; Basic plan limits apply."
+      ]
+    },
+    {
+      "id": "R04-feature-wavebox-03",
+      "browserId": "R04-browser-wavebox",
+      "title": "Resizable splits and multiple windows",
+      "category": "multitasking",
+      "description": "Split apps or tabs into resizable pages and use multiple windows, including simultaneous work in two accounts of the same service, such as separate calendars.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-W1",
+        "R04-W5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Maximum pane count, saved-layout restoration and edition entitlements were not established.",
+        "Vendor productivity language is not a measured time saving."
+      ]
+    },
+    {
+      "id": "R04-feature-wavebox-04",
+      "browserId": "R04-browser-wavebox",
+      "title": "Brainbox and Chat with Settings",
+      "category": "ai-controls",
+      "description": "Brainbox offers contextual skills and selectable AI. Chat with Settings is a persistent setup conversation that can change browser settings and is available within Settings as well as chat history; it is described as free and outside Brainbox token allowances. The homepage says AI can be disabled.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-W1",
+        "R04-W2",
+        "R04-W3",
+        "R04-W5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "The free settings-chat exception does not establish unlimited general Brainbox use or a current model catalog.",
+        "Settings mutation authority, confirmations, rollback and AI-disable enforcement were not tested."
+      ]
+    },
+    {
+      "id": "R04-feature-wavebox-05",
+      "browserId": "R04-browser-wavebox",
+      "title": "Navigator resource overview",
+      "category": "resource-management",
+      "description": "Navigator provides Spaces, List and Map views, with memory-sized Space tiles, CPU/memory sorting, extension resource usage and time/resource insights by work context and date range.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-W3",
+        "R04-W5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Documented in release 155.3.12; metric correctness, overhead and current plan entitlement were not measured.",
+        "No conclusion about superiority to Chrome's existing performance tools."
+      ]
+    },
+    {
+      "id": "R04-feature-wavebox-06",
+      "browserId": "R04-browser-wavebox",
+      "title": "Work continuity and team templates",
+      "category": "sessions-and-portability",
+      "description": "Synced Profiles and Wavebox Live distribute prepared app/group setups and updates to teams. Dashboards and persistent Smart Note checklists supplement the browser's work context.",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-W2",
+        "R04-W3",
+        "R04-W4",
+        "R04-W5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Sync, Pro and team deployment have separate account/data/entitlement boundaries; exact paid rates were not recovered.",
+        "No template deployment, synchronization, permission or checklist-restart test."
+      ]
+    },
+    {
+      "id": "R04-feature-shift-01",
+      "browserId": "R04-browser-shift",
+      "title": "Builder and templates",
+      "category": "browser-customization",
+      "description": "Rearrange the browser shell or start from a template, remove unused controls and hide apps or bars during focused work.",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-H3",
+        "R04-H6",
+        "R04-H8"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Builder/templates are listed in Free, but no layout, accessibility or recovery test was performed.",
+        "This concerns the current Shift Browser offering, not every legacy v9 workflow."
+      ]
+    },
+    {
+      "id": "R04-feature-shift-02",
+      "browserId": "R04-browser-shift",
+      "title": "Per-Space app/tool stacks",
+      "category": "workspaces-and-identity",
+      "description": "Build separate app, tab and extension sets for projects or profiles, with account context switching that avoids repeatedly signing out.",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-H2",
+        "R04-H6",
+        "R04-H8"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Free lists five Spaces and ten apps per Space; Advanced lists unlimited Spaces/apps.",
+        "Documentation does not independently prove a complete isolation boundary or the behavior of external links."
+      ]
+    },
+    {
+      "id": "R04-feature-shift-03",
+      "browserId": "R04-browser-shift",
+      "title": "App-integrated work",
+      "category": "apps-and-notifications",
+      "description": "Keep app stacks and simultaneous inboxes available in a persistent sidebar, switching between accounts of the same service. The maker advertises a catalog exceeding 4,500 apps.",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-H2",
+        "R04-H3",
+        "R04-H6",
+        "R04-H8",
+        "R04-H9"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Catalog size and any-extension compatibility are vendor claims, not tested counts or universal support.",
+        "Free app-count limits apply; simultaneous inboxes do not establish every service's notification or identity behavior."
+      ]
+    },
+    {
+      "id": "R04-feature-shift-04",
+      "browserId": "R04-browser-shift",
+      "title": "Explicit omnibox AI choice",
+      "category": "command-menu-and-ai-routing",
+      "description": "An on-device intent router may suggest Ask AI, but the user selects the route: Tab starts AI while Enter continues to search or a URL. The launch article explains that automatic selection was rejected in favor of a hint.",
+      "platforms": [
+        "macOS",
+        "Windows; exact shortcut parity untested"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-H5",
+        "R04-H8"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "The on-device component is described as an intent router, not proof of local-only AI inference.",
+        "No intent-classification, accidental-routing or keybinding test was run."
+      ]
+    },
+    {
+      "id": "R04-feature-shift-05",
+      "browserId": "R04-browser-shift",
+      "title": "Visible, opt-in AI context",
+      "category": "ai-context",
+      "description": "Selected text or page content appears as removable context chips in the AI input. The side panel can sit left or right, or expand into a dedicated conversation view while context remains user-controlled.",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-H4",
+        "R04-H5",
+        "R04-H6",
+        "R04-H8"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "General AI usage is limited in Free and expanded in Advanced, without numeric quotas established here.",
+        "The specific opt-in explanation qualifies broad marketing about history-wide context; no data-flow or context-completeness test."
+      ]
+    },
+    {
+      "id": "R04-feature-shift-06",
+      "browserId": "R04-browser-shift",
+      "title": "Independent AI controls",
+      "category": "ai-controls",
+      "description": "Disable AI Chat and Intelligent Omnibox independently from settings. The launch article distinguishes these shipped choices from future proactive suggestions and broader context improvements.",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-H5",
+        "R04-H8"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "No persistence, re-enablement or enforcement test for either toggle.",
+        "Future proactive features mentioned by the author are not counted as shipped behavior."
+      ]
+    },
+    {
+      "id": "R04-feature-comet-01",
+      "browserId": "R04-browser-comet",
+      "title": "Sidecar context with explicit tab mentions",
+      "category": "ai-context",
+      "description": "Use the assistant alongside a page and add the current tab or tabs selected with @ mentions. The manual describes visible-text, headline and metadata extraction on each submitted request.",
+      "platforms": [
+        "Windows desktop",
+        "macOS desktop"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-C2",
+        "R04-C3",
+        "R04-C4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Extraction completeness, permission enforcement and request-level data flow were not tested.",
+        "Desktop panel documentation does not establish identical mobile UI or unlimited free concurrent work."
+      ]
+    },
+    {
+      "id": "R04-feature-comet-02",
+      "browserId": "R04-browser-comet",
+      "title": "Reusable query Shortcuts",
+      "category": "ai-recipes",
+      "description": "Create reusable prompts with sources, models and search modes, combine or share shortcuts, and invoke them through slash selection in search or the sidecar. Shortcut composition is separate from explicit submission.",
+      "platforms": [
+        "Windows desktop",
+        "macOS desktop; mobile parity unestablished"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-C2",
+        "R04-C5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "The manual still labels an expanded shortcut library coming soon; library shipment is not assumed.",
+        "Sharing or selecting a prompt is not authority to perform its actions. No shortcut was executed.",
+        "Model/source availability and plan quotas were not audited."
+      ]
+    },
+    {
+      "id": "R04-feature-comet-03",
+      "browserId": "R04-browser-comet",
+      "title": "Parallel Background Assistants",
+      "category": "ai-orchestration",
+      "description": "The October 2025 launch changelog assigns multiple simultaneous agentic tasks and one page for confirmations and follow-ups to Max subscribers.",
+      "platforms": [
+        "Windows desktop",
+        "macOS desktop"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-C2",
+        "R04-C7",
+        "R04-C8"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Max entitlement is supported at the dated announcement, not by a current quota or billing inspection.",
+        "Android's guide explicitly limits automation to foreground use; desktop background behavior is not generalized to mobile.",
+        "No concurrency, cancellation or completion test."
+      ]
+    },
+    {
+      "id": "R04-feature-comet-04",
+      "browserId": "R04-browser-comet",
+      "title": "Consumer and enterprise action controls",
+      "category": "ai-controls",
+      "description": "Consumer settings govern history/action access and site blocking. Enterprise admins can set Browser Control, Read Only or No Access by domain and control whether users may enable unconfirmed actions. Domain-specific rules are documented to override global assistant settings.",
+      "platforms": [
+        "Documented Comet desktop and enterprise deployments; mobile policy parity unverified"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-C4",
+        "R04-C6"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Granular admin controls require Perplexity Enterprise and are not a consumer-wide entitlement claim.",
+        "An allow/read domain exception can remain effective despite global disablement according to documentation; this is not a locally reproduced bypass.",
+        "An unambiguous global stop and clear precedence are recommendation hypotheses, not established Chrome defects."
+      ]
+    },
+    {
+      "id": "R04-feature-comet-05",
+      "browserId": "R04-browser-comet",
+      "title": "Two-tab split view",
+      "category": "multitasking",
+      "description": "Open two tabs side by side through a tab/menu action, swap pane positions and separate them back into normal tabs. The manual also describes an Option-click shortcut.",
+      "platforms": [
+        "Documented desktop UI; Windows/macOS shortcut parity unverified"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-C12",
+        "R04-C2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "No evidence for more than two panes or mobile split-view parity.",
+        "No focus, state-preservation or shortcut test was run."
+      ]
+    },
+    {
+      "id": "R04-feature-comet-06",
+      "browserId": "R04-browser-comet",
+      "title": "Mobile continuity and action visibility",
+      "category": "ai-controls-and-continuity",
+      "description": "The iOS launch describes voice across open tabs and a conversation tied to page context across devices. Android documentation describes a visible AI-control border, step-by-step action review and automation only while the app remains open.",
+      "platforms": [
+        "iOS",
+        "Android 12 or later"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-C10",
+        "R04-C11",
+        "R04-C8",
+        "R04-C9"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Features are platform-specific; the two mobile editions are not asserted to be identical.",
+        "Older no-mobile help text is superseded by explicit launches. iOS engine/minimum version remain unestablished.",
+        "No voice, synchronization, backgrounding or task-completion test."
+      ]
+    },
+    {
+      "id": "R04-feature-atlas-01",
+      "browserId": "R04-browser-atlas",
+      "title": "In-page Ask ChatGPT",
+      "category": "ai-context",
+      "description": "Historically, Ask ChatGPT supplied contextual assistance beside the current website, reducing the need to copy page material into a separate chat tab.",
+      "platforms": [
+        "macOS (historical)"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-T1",
+        "R04-T2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Atlas is retired; this is not currently supported functionality or a product recommendation.",
+        "No historical or current runtime behavior was tested."
+      ]
+    },
+    {
+      "id": "R04-feature-atlas-02",
+      "browserId": "R04-browser-atlas",
+      "title": "Optional browser memories",
+      "category": "ai-memory-controls",
+      "description": "The launch described optional browser memories that could be viewed or archived, with associated memories deleted through browsing-history deletion. The retirement article clarifies that Atlas browser memories are separate from ChatGPT memories and chat deletion does not remove Atlas-specific data.",
+      "platforms": [
+        "macOS (historical)"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-T1",
+        "R04-T2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Historical settings are not guaranteed accessible after retirement.",
+        "Deletion linkage and storage behavior are vendor statements, not a tested erasure guarantee."
+      ]
+    },
+    {
+      "id": "R04-feature-atlas-03",
+      "browserId": "R04-browser-atlas",
+      "title": "Per-site page visibility",
+      "category": "ai-controls",
+      "description": "An address-bar control historically excluded selected sites from ChatGPT page visibility and browser-memory creation, independently of globally enabling memories.",
+      "platforms": [
+        "macOS (historical)"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-T1",
+        "R04-T2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Retired-browser control is historical design evidence only.",
+        "No per-site isolation, persistence or enforcement test was performed."
+      ]
+    },
+    {
+      "id": "R04-feature-atlas-04",
+      "browserId": "R04-browser-atlas",
+      "title": "Agent mode in the browser",
+      "category": "ai-orchestration",
+      "description": "Agent mode launched in preview for Plus, Pro and Business with visible actions and pauses for certain sensitive sites. Business browser access was beta; Enterprise/Edu access required administrator enablement. Historical agent restrictions excluded browser code execution, downloads, extension installation and local filesystem or other-app access.",
+      "platforms": [
+        "macOS (historical preview)"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-T1",
+        "R04-T2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Both preview maturity and retirement apply; this is not a stable/current agent recommendation.",
+        "Launch-time plan entitlements and safeguards were not tested and do not guarantee error-free actions.",
+        "Windows, iOS and Android shipment was not established."
+      ]
+    },
+    {
+      "id": "R04-feature-atlas-05",
+      "browserId": "R04-browser-atlas",
+      "title": "Ephemeral logged-out agent contexts",
+      "category": "ai-identity-controls",
+      "description": "OWL's historical engineering account describes separate in-memory Chromium StoragePartitions for each logged-out agent session, discarded at completion instead of reusing the user's Incognito profile. It also describes routing agent input to web content rather than privileged browser shortcuts.",
+      "platforms": [
+        "macOS (historical Atlas architecture)"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R04-T1",
+        "R04-T3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Maker architecture prose, not source-code inspection or an isolation/erasure test.",
+        "Atlas is retired and formerly preview-only behavior is not promoted to an active recommendation."
+      ]
+    },
+    {
+      "id": "R04-feature-neon-01",
+      "browserId": "R04-browser-neon",
+      "title": "Tasks as context boundaries",
+      "category": "ai-context-and-workspaces",
+      "description": "Group related tabs, chats and requests into a self-contained Task. The shipping announcement describes an agent operating in that Task's context rather than accessing everything else in the browser.",
+      "platforms": [
+        "Windows",
+        "macOS"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-N2",
+        "R04-N3",
+        "R04-N4",
+        "R04-N6"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Context isolation is a vendor claim, not tested enforcement.",
+        "Built-in agentic capabilities are subscription-limited; exact free Task-management scope was not established.",
+        "Initial sources describe Early Access; no stable graduation date was established, and this is not a deployment recommendation."
+      ]
+    },
+    {
+      "id": "R04-feature-neon-02",
+      "browserId": "R04-browser-neon",
+      "title": "Neon Do control surface",
+      "category": "ai-controls",
+      "description": "Display planned steps and live page actions, with pause, stop, takeover and redirection controls. Neon Do interacts in the local browser session while relying on cloud models for plans and instructions.",
+      "platforms": [
+        "Windows",
+        "macOS"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-N2",
+        "R04-N3",
+        "R04-N4",
+        "R04-N6"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Neon Do is a paid capability in the retained plan table; usage limits were not quantified.",
+        "Stop/takeover and sensitive-action confirmations were not tested; already committed external actions may require separate treatment.",
+        "Early Access history and residual prompt-injection risk prevent treating documentation as a stable safety guarantee."
+      ]
+    },
+    {
+      "id": "R04-feature-neon-03",
+      "browserId": "R04-browser-neon",
+      "title": "Composable Cards/decks",
+      "category": "ai-recipes",
+      "description": "Create, combine and save reusable instruction Cards, organized into decks, to specify output formats or recurring workflows across Chat, Do and Research Agents.",
+      "platforms": [
+        "Windows",
+        "macOS"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-N2",
+        "R04-N3",
+        "R04-N4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Skill Cards are listed in Standard; free-tier parity and library-wide quality were not established.",
+        "Imported/shared instructions do not authorize actions. No Card was executed or published.",
+        "Broader access is not proof of stable maturity for all agentic workflows."
+      ]
+    },
+    {
+      "id": "R04-feature-neon-04",
+      "browserId": "R04-browser-neon",
+      "title": "Different research execution modes",
+      "category": "ai-research",
+      "description": "The FAQ distinguishes Deep Research, One-Minute Research and Local Research. Local Research uses logged-in browser context and location/preferences-informed search results rather than solely a remote research environment.",
+      "platforms": [
+        "Windows",
+        "macOS"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-N2",
+        "R04-N3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Research is listed in Standard; specific quotas and model choices are volatile.",
+        "Local browser context does not establish local-only inference or zero server retention.",
+        "Research accuracy, task duration and stable maturity were not tested."
+      ]
+    },
+    {
+      "id": "R04-feature-neon-05",
+      "browserId": "R04-browser-neon",
+      "title": "Background creation",
+      "category": "ai-orchestration",
+      "description": "The Make launch description uses a cloud virtual machine to continue creating while the user is offline and return editable source files and shareable output links. Current Standard also lists generation and scheduled-task capabilities.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Vendor-hosted cloud execution for Make"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R04-N2",
+        "R04-N3",
+        "R04-N4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "Paid cloud capability, not offline local inference; no source/output export or scheduled-task test.",
+        "Task success, ownership of generated material and current quota limits were not independently verified.",
+        "Initial invitation/Early Access maturity is not silently upgraded to stable production readiness."
+      ]
+    },
+    {
+      "id": "R04-feature-neon-06",
+      "browserId": "R04-browser-neon",
+      "title": "External-agent interface",
+      "category": "ai-controls-and-integration",
+      "description": "Expose the live Neon browser through an MCP server or Browser CLI. The FAQ describes read-only default MCP access with explicit permission for clicks/form filling. Current Free lists the browser, MCP/CLI setup and basic Chat; the August announcement distinguishes account-required MCP from accountless browsing/CLI.",
+      "platforms": [
+        "Windows",
+        "macOS"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R04-N2",
+        "R04-N3",
+        "R04-N5",
+        "R04-N6"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "chromeParity": "unassessed",
+      "limitations": [
+        "No external agent or personal browser session was connected; advertised defaults are not verified enforcement.",
+        "Older universal paid/account-required FAQ text conflicts with newer access evidence.",
+        "Free browser access does not make external models/services free or establish safe stable deployment of agentic actions."
+      ]
+    }
+  ],
+  "issues": [],
+  "recovery": {
+    "method": "retained-evidence-reconstruction",
+    "byteExact": false,
+    "originalReviewedSha256": "7fcd01fe94ebf6b3bcce1a5dd0b32b5483188ac4320d3f528a4a4b8923cd983a",
+    "reconstructedAt": "2026-11-22T03:26:51.203Z",
+    "newResearchPerformed": false,
+    "runtimeReproduction": "not-run",
+    "originalLaneStatus": "complete",
+    "coreInventoryRestored": true,
+    "statusMeaning": "Complete preserves the original documentary research lane status because all saved core inventory records and complete recommendation candidates are restored. It does not assert original-byte recovery, complete optional-metadata recovery, fresh product verification, runtime testing or full-project validation.",
+    "retainedInputs": [
+      {
+        "label": "recovery-records/six-shards-manifest.json",
+        "role": "bounded-recovery manifest",
+        "bytes": 96110,
+        "sha256": "64772d540afed3e34f13a0cbe07cf595653ec000ad3dd438f8cd788d5f26342a"
+      },
+      {
+        "label": "recovery-records/partial-shards/R04/sections.json",
+        "role": "complete extracted values and records",
+        "bytes": 110713,
+        "sha256": "fa4cfd5c1433f52ca2f3a463d9b6769a774efec0a5d95c7ff8dfe1fee3286558"
+      },
+      {
+        "label": "recovery-records/partial-shards/R04/projections/record-inventory.json",
+        "role": "saved core record inventory",
+        "bytes": 8920,
+        "sha256": "ff4ac0861ad454aa64a6fb5082903323481b7e6d07746cb034b43ebf8f28eb93"
+      },
+      {
+        "label": "lane-04.md",
+        "role": "original completed research report",
+        "bytes": 53643,
+        "sha256": "79cc26ee22c71f1e175c9ca640c2b7f320d09a9d69780932e4f628fc98dfed66"
+      },
+      {
+        "label": "renderer-20f-preview/CATALOG.md",
+        "role": "retained rendered evidence",
+        "bytes": 261226,
+        "sha256": "3008ce794d19fa60f17f71714d8258ecaccf35ade99250596f604f80fc168f26"
+      },
+      {
+        "label": "renderer-20f-preview/FEATURES.md",
+        "role": "retained rendered evidence",
+        "bytes": 493426,
+        "sha256": "b09d3de4c532112f3823202dd592951cd7ca03f7a903bf80b5d35f7ec781a5c8"
+      },
+      {
+        "label": "renderer-20f-preview/ISSUES.md",
+        "role": "retained rendered evidence",
+        "bytes": 217798,
+        "sha256": "034ff75b0a97ffb60f51092bfb5c45e50951a4ee9707b7d16cb8fe61f302969d"
+      },
+      {
+        "label": "renderer-20f-preview/AGENTS-LEDGER.md",
+        "role": "retained rendered evidence",
+        "bytes": 261359,
+        "sha256": "e88382a43890cf7eb5db983201a8d90ebb05fa215266a8042c45f452e8ee223a"
+      },
+      {
+        "label": "schema/data/contract.json",
+        "role": "canonical lane contract",
+        "bytes": 4353,
+        "sha256": "7ba74e98828e32c9ef8a1d3a1211c029af753223ae355566132ff5d665eebf0d"
+      },
+      {
+        "label": "implementation/scripts/render.mjs",
+        "role": "actual renderer and escaping semantics",
+        "bytes": 30571,
+        "sha256": "2ef414075d5999e4884c27285bfd626745f455c6350244264d2cd8da7e501823"
+      },
+      {
+        "label": "implementation/scripts/validate.mjs",
+        "role": "canonical per-lane validator",
+        "bytes": 44752,
+        "sha256": "23d019cf5dcd9cc79f644c7998b64554938a06a778855a0881e5a822393d95d5"
+      }
+    ],
+    "retainedCompleteFields": [
+      "schemaVersion",
+      "id",
+      "title",
+      "agentSessionId",
+      "scope",
+      "status",
+      "researchCutoff",
+      "chromeParity",
+      "evidenceConventions",
+      "conversion",
+      "recommendationCandidates"
+    ],
+    "retainedCompleteRecords": {
+      "sources": [
+        "R04-A1",
+        "R04-A2",
+        "R04-A3",
+        "R04-A4",
+        "R04-D1",
+        "R04-D2",
+        "R04-D3",
+        "R04-D4",
+        "R04-Z1"
+      ],
+      "browsers": [
+        "R04-browser-arc"
+      ],
+      "features": [
+        "R04-feature-arc-01"
+      ],
+      "issues": []
+    },
+    "unrecoveredOptionalMetadata": [
+      {
+        "path": "queryLog",
+        "status": "original-json-value-unrecovered",
+        "detail": "The original report retains six dated discovery-query windows and its query/retrieval log, but the original structured queryLog value was neither completely extracted nor rendered. It is not recreated under a guessed schema."
+      },
+      {
+        "path": "researchMethod",
+        "status": "original-json-value-unrecovered",
+        "detail": "The original report retains the tool-method and keyless-engine qualification, but the original structured researchMethod value was not completely extracted or rendered."
+      },
+      {
+        "path": "browsers[*].quotations / browsers[*].vendorClaims",
+        "except": [
+          "R04-browser-arc"
+        ],
+        "status": "unrendered-original-values-unrecovered",
+        "detail": "Arc retains its complete extracted quotations and vendorClaims. For other browsers, original optional field presence/shape and exact values cannot be inferred from rendered prose. Report-supported restrictions, source-boundary and vendor-claim paragraphs are retained separately in recovery.reportQualifications."
+      },
+      {
+        "path": "features[*].quotations / features[*].browserFeatureIndex / other unrendered extras",
+        "except": [
+          "R04-feature-arc-01"
+        ],
+        "status": "unrendered-original-values-unrecovered",
+        "detail": "The complete extracted Arc first-feature record retains these fields. Every other feature retains its full displayed core and chromeParity; original optional field presence and exact values remain unknown."
+      },
+      {
+        "path": "sources[*].unrenderedExtras",
+        "except": [
+          "R04-A1",
+          "R04-A2",
+          "R04-A3",
+          "R04-A4",
+          "R04-D1",
+          "R04-D2",
+          "R04-D3",
+          "R04-D4",
+          "R04-Z1"
+        ],
+        "status": "unrendered-original-values-unrecovered",
+        "detail": "Complete extracted source records retain all their fields, including Dia releaseEntries and the privacy effectiveAt date. For other sources, all displayed date evidence and limitations are recovered; unrendered optional field presence is unknown."
+      },
+      {
+        "path": "original serialization and projection-only structure",
+        "status": "unrecovered",
+        "detail": "Original whitespace/BOM/newline style, source-array/reference ordering not present in the saved inventory, scalar control characters removed by md(), and ambiguous nested array/object or null/string types cannot be established byte-for-byte. Known contract lists, report context and the complete Arc exemplar guide structural reconstruction; all displayed sections are checked against the actual renderer."
+      }
+    ],
+    "reportQualifications": [
+      {
+        "browserId": "R04-browser-arc",
+        "label": "Restrictions/tradeoffs",
+        "text": "Treat these as Arc design precedents, not guarantees of Mac/Windows parity. The legacy command list also mentions Notes/Easels; those were deliberately not counted as current features. Arc’s old security page claims a 48-hour Chromium-update guarantee; the current download/farewell pages are stronger evidence for present lifecycle. Account dependence and approaching EOL make export/migration especially relevant. [R04-A2][R04-A3][R04-A4]",
+        "sourceIds": [
+          "R04-A2",
+          "R04-A3",
+          "R04-A4"
+        ]
+      },
+      {
+        "browserId": "R04-browser-arc",
+        "label": "V",
+        "text": "The farewell’s claim that Dia surpasses Arc in speed, stability, and security is not a benchmark from this lane. [R04-A1]",
+        "sourceIds": [
+          "R04-A1"
+        ]
+      },
+      {
+        "browserId": "R04-browser-dia",
+        "label": "Restrictions/tradeoffs",
+        "text": "Do not carry its original Mac-only beta status forward. Conversely, do not declare every connector GA: Figma is marked GA on November 12; Ashby/Dropbox were marked beta October 29. Browsing is offered free and the Arc farewell calls AI optional, but paid AI entitlement details remain incomplete. [R04-D2][R04-A1][R04-D4]",
+        "sourceIds": [
+          "R04-D2",
+          "R04-A1",
+          "R04-D4"
+        ]
+      },
+      {
+        "browserId": "R04-browser-dia",
+        "label": "V",
+        "text": "E2E encryption describes Sync, not a proof that all AI processing stays on-device. The April 9 policy distinguishes account/content/Skills data and says content can be used to improve Dia unless the user opts out. Its policy also excludes under-18 use. [R04-D4]",
+        "sourceIds": [
+          "R04-D4"
+        ]
+      },
+      {
+        "browserId": "R04-browser-zen",
+        "label": "Source quote / boundary",
+        "text": "“Container Tabs separate your cookies/browsing sessions, but it doesn't separate your browsing history and extensions.” Workspace organization must not be marketed as complete profile isolation. [R04-Z4]",
+        "sourceIds": [
+          "R04-Z4"
+        ]
+      },
+      {
+        "browserId": "R04-browser-zen",
+        "label": "Restrictions/tradeoffs",
+        "text": "Source-only review; no claim that all historic window-sync limitations are fixed. Release notes explicitly describe initial Spaces-sync merging and earlier experimental window sync. The current release log also introduces Little Zen, but its placement among release blocks did not yield a reliable standalone ship date; it is not counted above. [R04-Z3]",
+        "sourceIds": [
+          "R04-Z3"
+        ]
+      },
+      {
+        "browserId": "R04-browser-floorp",
+        "label": "Restrictions/tradeoffs",
+        "text": "Panel extension support and mobile user-agent behavior are not universal. Temporary feature freeze is a concrete maintenance-cost signal, not abandonment. Workspace tabs remaining open is not an independently verified guarantee against form-data loss. Floorp’s vendor-authored Chrome comparison table was not adopted as Chrome baseline evidence. [R04-F1][R04-F3][R04-F5]",
+        "sourceIds": [
+          "R04-F1",
+          "R04-F3",
+          "R04-F5"
+        ]
+      },
+      {
+        "browserId": "R04-browser-sigmaos",
+        "label": "Restrictions/tradeoffs",
+        "text": "Homepage currently lists free Basic with unlimited workspaces/limited Airis, Pro at $20/month and Max at $30/month. Older FAQ instead describes $10/month Pro and paid unlimited workspaces; do not reuse that older table as current pricing. Windows/iOS “coming soon” is not a shipped-platform finding. Chrome-extension support is described for popular extensions, not every extension. Account/backend availability and current security updates were not tested. [R04-S1][R04-S2]",
+        "sourceIds": [
+          "R04-S1",
+          "R04-S2"
+        ]
+      },
+      {
+        "browserId": "R04-browser-sigmaos",
+        "label": "V",
+        "text": "Battery, performance, AI quality, and “first” claims are vendor assertions. [R04-S1][R04-S6]",
+        "sourceIds": [
+          "R04-S1",
+          "R04-S6"
+        ]
+      },
+      {
+        "browserId": "R04-browser-sidekick",
+        "label": "Restrictions/tradeoffs",
+        "text": "These are historical inspiration, not supported current functionality. AppSumo still retains “lifetime” purchase copy beneath the sunset notice; that is not evidence of a live offer. The Microsoft Store retrieval produced only a listing title, not usable current download/support proof. This lane does not promote unverified historic Chromium/Mac/Linux details into maker-confirmed facts. No evidence here establishes that Comet preserves Sidekick Sessions or app isolation. [R04-K1][R04-K2][R04-K3]",
+        "sourceIds": [
+          "R04-K1",
+          "R04-K2",
+          "R04-K3"
+        ]
+      },
+      {
+        "browserId": "R04-browser-wavebox",
+        "label": "Restrictions/tradeoffs",
+        "text": "App integrations are enhanced web tabs, not necessarily native app capabilities. The many organization layers add conceptual overhead (H). Team deployment, Sync, and AI have distinct subscription/data boundaries. “Always up-to-date,” productivity gains, and certification-in-progress language are vendor claims, not audits or current certifications established here. AI can be disabled according to the homepage. [R04-W1][R04-W2]",
+        "sourceIds": [
+          "R04-W1",
+          "R04-W2"
+        ]
+      },
+      {
+        "browserId": "R04-browser-shift",
+        "label": "Restrictions/tradeoffs",
+        "text": "Free currently lists five Spaces, ten apps per Space, Builder/templates, and limited AI. Advanced is shown as $199.99 USD annually with unlimited Spaces/apps and expanded AI. Those are observed page terms, not a quote guaranteed beyond retrieval. Broad marketing about cross-history context should not override the more specific opt-in explanation. “Strictly private” is a vendor claim; the on-device router does not prove all AI inference is on-device. [R04-H6][R04-H4][R04-H5]",
+        "sourceIds": [
+          "R04-H6",
+          "R04-H4",
+          "R04-H5"
+        ]
+      },
+      {
+        "browserId": "R04-browser-comet",
+        "label": "Restrictions/tradeoffs",
+        "text": "Current mobile launch evidence supersedes stale “no mobile” help pages. Android docs specify Android 12+ and no background work. Desktop docs exclude Linux/ChromeOS; iOS engine/parity remains unverified. Most Chrome extensions are supported except extensions replacing the new-tab page. [R04-C1][R04-C2][R04-C8][R04-C11]",
+        "sourceIds": [
+          "R04-C1",
+          "R04-C2",
+          "R04-C8",
+          "R04-C11"
+        ]
+      },
+      {
+        "browserId": "R04-browser-comet",
+        "label": "Important documented policy detail",
+        "text": "Enterprise domain rules can override global assistant settings, including making a domain readable/actionable despite globally disabled assistant access. This is an explicit documentation statement, not a tested bypass. A proposed Chrome control should make precedence obvious and offer an unambiguous global stop. [R04-C6]",
+        "sourceIds": [
+          "R04-C6"
+        ]
+      },
+      {
+        "browserId": "R04-browser-comet",
+        "label": "V",
+        "text": "Local default storage and “minimal context” transfer are privacy claims; the docs also acknowledge sending context to Perplexity to fulfill requests. Marketing demonstrations are not reliable task-completion measurements. [R04-C4][R04-C13]",
+        "sourceIds": [
+          "R04-C4",
+          "R04-C13"
+        ]
+      },
+      {
+        "browserId": "R04-browser-atlas",
+        "label": "Restrictions/tradeoffs",
+        "text": "Windows/iOS/Android were “coming soon” at launch; no shipment was verified here. The original agent mode was restricted from installing extensions, downloading files, running browser code, or accessing the local filesystem. Retired Atlas tabs/history do not automatically transfer, and recovery is not guaranteed. Exact final shutdown date remains unverified in the readable maker retirement article. [R04-T1][R04-T2]",
+        "sourceIds": [
+          "R04-T1",
+          "R04-T2"
+        ]
+      },
+      {
+        "browserId": "R04-browser-atlas",
+        "label": "V",
+        "text": "OWL’s startup/responsiveness and isolation benefits are engineering claims, not measured results from this lane. The architecture account says agent input is delivered to web content rather than privileged browser shortcuts. [R04-T3]",
+        "sourceIds": [
+          "R04-T3"
+        ]
+      },
+      {
+        "browserId": "R04-browser-neon",
+        "label": "Restrictions/tradeoffs",
+        "text": "Windows/Mac only verified; mobile is future work. Older FAQ says paid/account-required universally, whereas the newer free-access article distinguishes accountless browsing/CLI from account-required MCP. Current plan page is stronger for tier availability. Model lists are volatile and are not reproduced as a current compatibility promise. [R04-N2][R04-N3][R04-N5]",
+        "sourceIds": [
+          "R04-N2",
+          "R04-N3",
+          "R04-N5"
+        ]
+      },
+      {
+        "browserId": "R04-browser-neon",
+        "label": "V / data boundary",
+        "text": "Neon Do interacts locally but uses cloud LLMs. FAQ states server retention of 365 days for chats/workflows and provides deletion controls; “local” is not a zero-retention claim. Security article explicitly admits residual prompt-injection risk and describes confirmations, blocked high-risk pages, and proposed future defenses separately. [R04-N2][R04-N6]",
+        "sourceIds": [
+          "R04-N2",
+          "R04-N6"
+        ]
+      }
+    ],
+    "limitations": [
+      "This artifact is a reconstruction from retained report, projections and rendered evidence. Its SHA-256 must not be represented as a match for the reviewed original.",
+      "New reconstruction timestamps identify this conversion only. All source retrieval/publication and evidenced product dates retain their original values or explicit uncertainty.",
+      "Nested rendered objects are reconstructed using visible labels and report context. The renderer sorts reference IDs and flattens arrays; exact invisible original ordering and shapes are not guaranteed.",
+      "Optional unrendered metadata not supported by complete extraction remains explicitly unrecovered. Report qualifications are supplemental retained evidence, not invented original field values.",
+      "Per-lane validation with allowPartial and rendered-evidence equality checks cover this lane only. Integration, full checks and publication belong to the coordinating parent."
+    ]
+  }
+}

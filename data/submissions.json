@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-11-21",
+  "scope": "Publication and reporting receipts for this project. Existing upstream reports are recorded in the research lanes.",
+  "channels": [
+    {"id":"google-chromium","url":"https://crbug.com/new","purpose":"Chromium bugs and focused feature requests; search existing records before creating one.","sourceIds":["R01-S03","R01-S07"]},
+    {"id":"chrome-feedback","url":"https://support.google.com/chrome/answer/95315?hl=en&co=GENIE.Platform%3DDesktop","purpose":"Chrome More > Help > Report an issue. A feedback send is not necessarily a publicly retrievable issue.","sourceIds":["R01-S08"]},
+    {"id":"chromium-review","url":"https://chromium-review.googlesource.com/","purpose":"Upstream code review uses Gerrit and applicable contributor/CLA requirements.","sourceIds":["R01-S06"]},
+    {"id":"project-github","url":"https://github.com/chirag127/chrome-research-tracker/issues","purpose":"Public research backlog and proposal tracking owned by this project; not an official Google tracker.","sourceIds":[]}
+  ],
+  "accessChecks": [
+    {
+      "id":"ACCESS-GOOGLE-01",
+      "observedAt":"2026-11-21",
+      "requestedUrl":"https://issues.chromium.org/issues/new",
+      "result":"authentication-required",
+      "observation":"The in-app browser redirected to Google Accounts and displayed the title Sign in - Google Accounts.",
+      "redirectOrigin":"https://accounts.google.com",
+      "evidenceReference":"tool-result:call_77d14028-5874-4f2b-86b6-4b218c41e2af",
+      "limitations":["This records access in that browser session only, not every possible account or browser.","The full login URL and its session-specific query values are intentionally omitted."]
+    }
+  ],
+  "googleSubmission": {
+    "status":"blocked",
+    "receiptUrl":null,
+    "reason":"An authenticated Google reporting session is unavailable in the tested interface. Candidate-specific baseline, duplication and validation requirements also remain recorded with each proposal.",
+    "nextAction":"Sign in to the official Chromium issue tracker, then submit an individually reviewed report from the project's linked backlog with its evidence and reproduction limits.",
+    "newReportsSubmitted":0
+  },
+  "records": [],
+  "limitations":["Creating this file, a local draft, a GitHub issue, or opening the Google form is not a Google submission.","No existing upstream issue is counted as this project's newly submitted report.","No prediction of Google acceptance, prioritization or implementation is made."]
+}

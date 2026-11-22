@@ -1,0 +1,970 @@
+{
+  "schemaVersion": 1,
+  "id": "R06",
+  "title": "Independent, keyboard-first, lightweight, experimental, and text browsers",
+  "agentSessionId": "ses_e018c7860ffe0U1lgZ8j9Qiw6m",
+  "scope": ["Orion by Kagi", "GNOME Web / Epiphany", "Falkon", "qutebrowser", "Nyxt", "Ladybird", "Servo", "Dillo", "Lynx", "w3m"],
+  "status": "complete",
+  "researchCutoff": "2026-11-21",
+  "researchMethod": "Normalized from the completed R06 primary-source research. Free Search MCP located sources; public documentation, repository files and release records supplied evidence. Conversion made no new research queries.",
+  "evidenceScope": "Documentary observations only. No browser installation, execution, compatibility benchmark, accessibility audit or local reproduction underlies these records.",
+  "chromeBaseline": "Not established in this lane. Recommendations are evaluation hypotheses, not verified Chrome feature absences or defects.",
+  "quotationPolicy": "Short source excerpts preserve wording; presentation markup and line wrapping may be normalized. Release dates and document dates are distinguished from retrieval dates.",
+  "childAgentIds": [],
+  "sources": [
+    {
+      "id": "R06-O1", "title": "Orion 1.0: Browse Beyond", "url": "https://blog.kagi.com/orion",
+      "retrievedAt": "2026-11-21T14:14:19Z", "publishedAt": "2025-11-25", "kind": "release-note",
+      "quotations": ["Orion for MacOS 1.0 is here", "Focus Mode: Instantly transform any website into a distraction-free web app."],
+      "limitations": ["Kagi announcement, not an independent readiness, privacy or performance audit.", "Feature descriptions are scoped to the 1.0 announcement; its Linux/Windows roadmap is superseded by the October 2026 announcement."]
+    },
+    {
+      "id": "R06-O2", "title": "An Update on Orion for Linux and Windows", "url": "https://blog.kagi.com/update-orion-linux-windows",
+      "retrievedAt": "2026-11-21T14:14:15Z", "publishedAt": "2026-10-02", "kind": "vendor-documentation",
+      "quotations": ["We are ending development of Orion for Linux and Windows", "The current Linux Beta will keep working, but it will stop receiving updates from Kagi after October 2, 2026.", "Kagi won't be the core maintainer."],
+      "limitations": ["Establishes Kagi's support decision, not completion of the promised source release or the existence of a successor maintainer.", "The continued operation of the Linux beta was a publisher statement, not a runtime observation."]
+    },
+    {
+      "id": "R06-O3", "title": "Orion macOS release notes: 1.1.4 (153)", "url": "https://orionbrowser.com/updates/orion-release-notes",
+      "retrievedAt": "2026-11-21T14:17:19Z", "publishedAt": "2026-11-16", "kind": "release-note",
+      "dateScope": "The dated 1.1.4 entry, not the publication date of the entire rolling page.",
+      "quotations": ["Orion 1.1.4 (153)", "Nov 16, 2026", "Added support for `icon_variants` and `theme_icons` for action icons"],
+      "limitations": ["The long release history was truncated after relevant recent entries.", "A list of extension and website fixes does not establish universal extension or website compatibility.", "Automatic page metadata pointing to 2025-11-25 was not used for this entry's date."]
+    },
+    {
+      "id": "R06-O4", "title": "Installing Orion", "url": "https://help.kagi.com/orion/getting-started/installing-orion.html",
+      "retrievedAt": "2026-11-21T14:14:21Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["Orion is free, and no account or signup is required to use it.", "The open beta version of Orion for Linux is currently available to everyone."],
+      "limitations": ["Undated installation text continues to offer Linux beta; it does not supersede the dated cessation announcement.", "Download links were read, not installed or tested."]
+    },
+    {
+      "id": "R06-G1", "title": "GNOME Web README", "url": "https://raw.githubusercontent.com/GNOME/epiphany/main/README.md",
+      "retrievedAt": "2026-11-21T14:20:03Z", "publishedAt": null, "kind": "vendor-documentation",
+      "sourceRevision": "main at retrieval; immutable commit not recorded",
+      "quotations": ["Epiphany is designed for Linux systems.", "Epiphany's principles are simplicity, standards compliance, and software freedom.", "GNOME Web enables Intelligent Tracking Prevention by default."],
+      "limitations": ["Moving-branch project documentation, not runtime verification.", "The GNOME-owned GitHub mirror was used after GitLab raw-document requests returned HTTP 406.", "General statements about other browsers or distribution security were not independently established."]
+    },
+    {
+      "id": "R06-G2", "title": "GNOME Web NEWS: 51.2 and earlier release entries", "url": "https://raw.githubusercontent.com/GNOME/epiphany/main/NEWS",
+      "retrievedAt": "2026-11-21T14:20:03Z", "publishedAt": "2026-10-29", "kind": "release-note",
+      "dateScope": "51.2 release header; capabilities from earlier entries retain their version scope.",
+      "quotations": ["51.2 - October 29, 2026", "Adjust Reader Mode Line Spacing", "Allow web apps to run in the background, with configurable toggle and quit action, even when not sandboxed by flatpak"],
+      "limitations": ["Rolling source history was truncated beyond inspected recent entries.", "Release-note fixes do not constitute locally reproduced defects or an assessment of current security posture."]
+    },
+    {
+      "id": "R06-G3", "title": "Web: Apps for GNOME", "url": "https://apps.gnome.org/Epiphany/",
+      "retrievedAt": "2026-11-21T14:14:25Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["The web browser for GNOME, featuring tight integration with the desktop", "Web is often referred to by its code name, Epiphany."],
+      "limitations": ["App-page positioning, not a measured usability result.", "Extracted metadata dated 2026-09-24 was not accepted as a content-specific publication or release date."]
+    },
+    {
+      "id": "R06-F1", "title": "About Falkon", "url": "https://www.falkon.org/about/",
+      "retrievedAt": "2026-11-21T14:14:32Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["Falkon is a KDE web browser using QtWebEngine rendering engine", "it has by default enabled blocking ads with a built-in AdBlock plugin."],
+      "limitations": ["Broad platform and lightweight descriptions are project aims, not verified support or benchmarks.", "Extracted page metadata dated 2024-07-20 was not used as a verified publication date."]
+    },
+    {
+      "id": "R06-F2", "title": "Falkon official release feed", "url": "https://apps.kde.org/falkon/index.xml",
+      "retrievedAt": "2026-11-21T14:33:23.525Z", "publishedAt": null, "kind": "release-note",
+      "quotations": ["Release 26.08.3 of Falkon", "<pubDate/>"],
+      "limitations": ["Raw RSS inspection confirmed empty publication-date fields; 26.08.3's exact release date is not established.", "Feed entries establish listed versions, not their complete changes or binary behavior."]
+    },
+    {
+      "id": "R06-F3", "title": "Falkon CHANGELOG", "url": "https://raw.githubusercontent.com/KDE/falkon/master/CHANGELOG",
+      "retrievedAt": "2026-11-21T14:20:09Z", "publishedAt": null, "kind": "release-note",
+      "sourceRevision": "master at retrieval; top entry Version 25.08.0",
+      "quotations": ["Add permission management for unknown protocols", "KWallet: Store passwords in a map format", "Implement download integration with Plasma"],
+      "limitations": ["Recent entries are versioned but not dated; the top entry is older than the current official release feed.", "Historical plugin features were documented, not exercised on a 26.08.3 build."]
+    },
+    {
+      "id": "R06-F4", "title": "Falkon: KDE Applications", "url": "https://apps.kde.org/falkon/",
+      "retrievedAt": "2026-11-21T14:17:31Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["These versions are intended for testing purpose.", "Generated from the latest version of the development branch."],
+      "limitations": ["Linux Flatpak and Windows nightly links are not proof of equal stable-channel support on every platform.", "Legacy RSS, Flash and Click2Flash marketing copy was not certified as current functionality.", "Extracted 2026-11-05 metadata is not a verified release date."]
+    },
+    {
+      "id": "R06-F5", "title": "Falkon announcements", "url": "https://www.falkon.org/posts/",
+      "retrievedAt": "2026-11-21T14:14:32Z", "publishedAt": null, "kind": "release-note",
+      "quotations": ["Saturday, 2 September 2023", "New Falkon version 23.08.0 is being released as part of KDE Gear."],
+      "limitations": ["The newest visible announcement is dated 2023-09-02; an index has no single established publication date.", "An old announcements index does not establish project inactivity; the official feed lists newer releases."]
+    },
+    {
+      "id": "R06-Q1", "title": "qutebrowser change log", "url": "https://qutebrowser.org/doc/changelog.html",
+      "retrievedAt": "2026-11-21T14:17:36Z", "publishedAt": "2026-04-03", "kind": "release-note",
+      "dateScope": "Latest dated released entry inspected: v3.7.0. v3.8.0 is explicitly unreleased.",
+      "quotations": ["v3.7.0 (2026-04-03)", "v3.8.0 (unreleased)", "Windows and macOS releases now ship with Qt 6.11.0", "no official qutebrowser support yet"],
+      "limitations": ["The long history was truncated after relevant recent entries.", "Bundled Qt/Chromium versions apply to the described Windows/macOS releases, not every distribution package.", "The WebExtensions qualification occurs in 3.6.0 notes; no subsequent support announcement was established."]
+    },
+    {
+      "id": "R06-Q2", "title": "qutebrowser quickstart", "url": "https://qutebrowser.org/doc/quickstart.html",
+      "retrievedAt": "2026-11-21T14:17:37Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["To click on something without using the mouse, press f to show the hints", "Press : to show the commandline", "each command can be started with a --help flag to show its help."],
+      "limitations": ["Documented interaction instructions, not measured task efficiency or assistive-technology conformance.", "Generated-page metadata dated 2026-11-21 was not treated as publication."]
+    },
+    {
+      "id": "R06-Q3", "title": "Installing qutebrowser", "url": "https://qutebrowser.org/doc/install.html",
+      "retrievedAt": "2026-11-21T14:27:46Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["All other packaging is done by the community", "you'll need to upgrade to new versions manually", "The binary release ships with a QtWebEngine built without proprietary codec support."],
+      "limitations": ["Package and backend caveats are project documentation; no package was installed.", "Old distribution examples are not a November 2026 audit of every distribution.", "Generated-page metadata was not treated as a publication date."]
+    },
+    {
+      "id": "R06-N1", "title": "Nyxt README", "url": "https://raw.githubusercontent.com/atlas-engineer/nyxt/master/README.org",
+      "retrievedAt": "2026-11-21T14:22:42Z", "publishedAt": null, "kind": "vendor-documentation",
+      "sourceRevision": "master at retrieval; immutable commit not recorded",
+      "quotations": ["Nyxt is under active development.", "Commands can accept multiple inputs", "Search multiple tabs at the same time, and view all the results in a single window."],
+      "limitations": ["Moving-branch documentation, not tested behavior.", "Its macOS-in-development label is incomplete for 5.0.0, whose actual release includes a macOS ARM64 asset."]
+    },
+    {
+      "id": "R06-N2", "title": "Nyxt 5.0.0 developer manual", "url": "https://raw.githubusercontent.com/atlas-engineer/nyxt/5.0.0/developer-manual.org",
+      "retrievedAt": "2026-11-21T14:25:45Z", "publishedAt": null, "kind": "vendor-documentation",
+      "sourceRevision": "5.0.0",
+      "quotations": ["Nyxt is designed to be web engine agnostic so its dependencies vary.", "CEF is the default renderer.", "Using the latest WebKitGTK version is advised for security concerns."],
+      "limitations": ["Version-tagged documentation, not a build or backend-parity test.", "A file-specific publication date was not supplied; the release date is recorded separately."]
+    },
+    {
+      "id": "R06-N3", "title": "Nyxt 5.0.0 release announcement", "url": "https://nyxt-browser.com/article/release-5.0.0.org",
+      "retrievedAt": "2026-11-21T14:27:49Z", "publishedAt": "2026-11-15", "kind": "release-note",
+      "quotations": ["Add a CEF renderer and make it the default.", "Remove the Electron renderer.", "Load unpacked Chromium extensions (Manifest V2 and V3)", "The README no longer advertises history as a tree."],
+      "limitations": ["Source-backed release claims, not feature or extension compatibility tests.", "Full text was reused from a same-day cache approximately 334 seconds old.", "Removal of README advertising is not itself proof that every underlying history-tree implementation was removed."]
+    },
+    {
+      "id": "R06-N4", "title": "Nyxt 5.0.0 GitHub release metadata", "url": "https://api.github.com/repos/atlas-engineer/nyxt/releases/tags/5.0.0",
+      "retrievedAt": "2026-11-21T14:25:48Z", "publishedAt": "2026-11-15T18:20:30Z", "kind": "release-note",
+      "quotations": ["Nyxt 5.0.0. The default renderer is Chromium Embedded Framework.", "Nyxt-5.0.0-macOS-arm64.app.tar.gz", "Nyxt-5.0.0-x86_64.AppImage", "Nyxt-5.0.0-x86_64.flatpak"],
+      "limitations": ["Asset presence and prerelease:false are release metadata, not evidence of successful installation or broad production readiness.", "The observed assets establish Linux x86-64 and macOS ARM64 distribution only."]
+    },
+    {
+      "id": "R06-N5", "title": "Nyxt frequently asked questions", "url": "https://nyxt.atlas.engineer/faq",
+      "retrievedAt": "2026-11-21T14:20:16Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["Any variable, function, or class can be inspected at runtime.", "Nyxt supports a subset of the Web Extensions API.", "Windows (unofficial (via WSL))"],
+      "limitations": ["Undated FAQ differs from release-specific backend and platform evidence.", "Broad claims of full customizability and workflow suitability were not independently assessed."]
+    },
+    {
+      "id": "R06-L1", "title": "Ladybird project homepage", "url": "https://ladybird.org/",
+      "retrievedAt": "2026-11-21T14:22:22Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["Our first Alpha for macOS and Linux is coming later this year.", "Mobile platforms are not a current focus.", "Our CI already builds and tests the JavaScript engine on Windows."],
+      "limitations": ["Roadmap statements are not completed release evidence.", "JavaScript-engine Windows CI is not a native Windows browser release.", "Homepage metadata dated 2026-10-31 was not accepted as a verified publication date."]
+    },
+    {
+      "id": "R06-L2", "title": "Ladybird README", "url": "https://raw.githubusercontent.com/LadybirdBrowser/ladybird/master/README.md",
+      "retrievedAt": "2026-11-21T14:32:15Z", "publishedAt": null, "kind": "vendor-documentation",
+      "sourceRevision": "master at retrieval; immutable commit not recorded",
+      "quotations": ["Ladybird is in a pre-alpha state, and only suitable for use by developers", "Documents from different sites run in separate renderer processes, each sandboxed from the rest of the system."],
+      "limitations": ["Architecture and readiness descriptions were read, not security-tested or executed.", "Other Unix-like systems and Windows via WSL2 are documented runtime paths, not equivalent native release channels."]
+    },
+    {
+      "id": "R06-L3", "title": "Ladybird project FAQ", "url": "https://raw.githubusercontent.com/LadybirdBrowser/ladybird/master/Documentation/FAQ.md",
+      "retrievedAt": "2026-11-21T14:22:24Z", "publishedAt": null, "kind": "vendor-documentation",
+      "sourceRevision": "master at retrieval; immutable commit not recorded",
+      "quotations": ["Ladybird is not a Blink/Chromium shell, not a WebKit port, not a Firefox fork.", "Ladybird supports user-configured content blocker lists", "2028: stable release for general use"],
+      "limitations": ["Future 2026/2027/2028 milestones do not establish shipped alpha, beta or stable releases.", "The FAQ explicitly leaves real-site compatibility uncertain.", "Discussion of future uBlock extension support is not implemented extension compatibility."]
+    },
+    {
+      "id": "R06-S1", "title": "Servo project homepage", "url": "https://servo.org/",
+      "retrievedAt": "2026-11-21T14:22:27Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["Servo provides a WebView API so other applications can use it to embed web content.", "Servo is a web browser rendering engine written in Rust", "Windows, macOS, Linux, Android, and OpenHarmony"],
+      "limitations": ["Performance, efficiency and memory-safety benefit claims are publisher claims, not reproduced comparisons.", "Graphics support and platform names do not imply complete or default-enabled support on every build.", "Extracted homepage metadata dated 2026-08-31 was not used as publication."]
+    },
+    {
+      "id": "R06-S2", "title": "Servo README", "url": "https://raw.githubusercontent.com/servo/servo/main/README.md",
+      "retrievedAt": "2026-11-21T14:22:30Z", "publishedAt": null, "kind": "vendor-documentation",
+      "sourceRevision": "main at retrieval; immutable commit not recorded",
+      "quotations": ["Servo is a prototype web browser engine", "64-bit macOS, 64-bit Linux, 64-bit Windows, 64-bit OpenHarmony, and Android."],
+      "limitations": ["Build and development documentation is not a successful local build or end-user readiness result."]
+    },
+    {
+      "id": "R06-S3", "title": "Servo latest GitHub release metadata at cutoff", "url": "https://api.github.com/repos/servo/servo/releases/latest",
+      "retrievedAt": "2026-11-21T14:32:18Z", "publishedAt": "2026-11-09T12:29:13Z", "kind": "release-note",
+      "quotations": ["\"tag_name\": \"v0.8.0\"", "\"prerelease\": false", "\"published_at\": \"2026-11-09T12:29:13Z\""],
+      "limitations": ["Only visible version/channel/date metadata is relied upon; the response body was truncated.", "A failed parse of the truncated response was not treated as valid derived data.", "A non-prerelease GitHub flag does not make a prototype engine a consumer-ready browser."]
+    },
+    {
+      "id": "R06-S4", "title": "Servo v0.8.0 release", "url": "https://github.com/servo/servo/releases/tag/v0.8.0",
+      "retrievedAt": "2026-11-21T14:38:54Z", "publishedAt": "2026-11-09", "kind": "release-note",
+      "quotations": ["Trying out the Servo Tech Demo", "script: Implement beforeinput", "script: Map ARIA role for computed AccessKit role", "script/layout: Add support for double/triple click selection extension"],
+      "limitations": ["Generated notes were long and truncated; findings use visible entries only.", "Individual input/accessibility changes do not establish comprehensive assistive-technology conformance.", "The OpenHarmony artifact is explicitly not signed for HarmonyOS."]
+    },
+    {
+      "id": "R06-S5", "title": "March in Servo: keyboard navigation, better debugging, FreeBSD support", "url": "https://servo.org/blog/2026/04/30/march-in-servo/",
+      "retrievedAt": "2026-11-21T14:25:58Z", "publishedAt": "2026-04-30", "kind": "release-note",
+      "dateScope": "Publication in April describes March work and Servo 0.1.0.",
+      "quotations": ["keyboard navigation with Alt+Shift and the accesskey attribute", "keyboard scrolling with Space and Shift+Space", "we can now build Servo for FreeBSD!"],
+      "limitations": ["Version-scoped progress report, not a current all-platform feature test.", "The FreeBSD build milestone includes acknowledged issues and does not establish equal binary support."]
+    },
+    {
+      "id": "R06-S6", "title": "July in Servo: more platforms, faster canvas, web fonts in SVG", "url": "https://servo.org/blog/2026/08/31/july-in-servo/",
+      "retrievedAt": "2026-11-21T14:25:58Z", "publishedAt": "2026-08-31", "kind": "release-note",
+      "dateScope": "Publication in August describes July work and Servo 0.5.0.",
+      "quotations": ["under --pref dom_webgpu_enabled", "Interactive selection is coming soon!", "When using the Firefox DevTools, the Console tab now supports some basic autocomplete"],
+      "limitations": ["Flags and incomplete features describe 0.5.0; 0.8.0 contains subsequent selection/input work.", "Do not convert the historical interactive-selection statement into a current absence claim.", "No benchmarks, DevTools session or graphics tests were run."]
+    },
+    {
+      "id": "R06-D1", "title": "Dillo canonical project homepage", "url": "https://dillo-browser.org/",
+      "retrievedAt": "2026-11-21T14:34:08Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["Implements its own real-time rendering engine.", "Linux, BSD, MacOS, Windows (via Cygwin) and even Atari.", "latest release 3.3.0", "Plugins are written in any language and interact using the standard input and output."],
+      "limitations": ["Size, speed and low-memory descriptions are unbenchmarked project claims.", "Documented platform names were not validated on current OS versions.", "The project warns that dillo.org is no longer controlled by its developers."]
+    },
+    {
+      "id": "R06-D2", "title": "Dillo release 3.3.0", "url": "https://dillo-browser.org/release/3.3.0/",
+      "retrievedAt": "2026-11-21T14:34:10Z", "publishedAt": "2026-04-26", "kind": "release-note",
+      "quotations": ["Released on 2026-04-26", "A new dilloc program is now available to control Dillo from the command line or from a script.", "Add about:keys", "do not enable FLTK 1.4 support by default for all users"],
+      "limitations": ["Local control, page actions and keyboard functions were not executed.", "FLTK 1.4 is experimental with documented HiDPI/Wayland visual issues.", "Examples involving external programs are documentation, not recommended or performed actions in this research."]
+    },
+    {
+      "id": "R06-D3", "title": "Dillo user manual", "url": "https://dillo-browser.org/user_help.html",
+      "retrievedAt": "2026-11-21T14:24:04Z", "publishedAt": null, "kind": "vendor-documentation",
+      "sourceRevision": "Generated for v3.2.0-90-g29a46a2d",
+      "quotations": ["Dillo supports a subset of HTML 4.01 and CSS 2.1 but it doesn't support JavaScript", "cookies are disabled by default", "An image's alt text (or [IMG] placeholder) will appear in the page.", "It doesn't require a network connection."],
+      "limitations": ["Manual identifies an earlier development version; 3.3.0 changes are sourced separately.", "The extracted 2024-01-30 date occurs in a library-version example and is not a publication date.", "Privacy defaults and rendering limitations were read, not behaviorally tested."]
+    },
+    {
+      "id": "R06-D4", "title": "Dillo release 3.2.0", "url": "https://dillo-browser.org/release/3.2.0/",
+      "retrievedAt": "2026-11-21T14:24:01Z", "publishedAt": "2025-01-18", "kind": "release-note",
+      "quotations": ["A new scrollbar page navigation mode was introduced to help read websites as if they are books", "We added SVG support for math formulas and other simple SVG images", "optional support for WebP images"],
+      "limitations": ["Historical introduction of capabilities, not the latest Dillo release.", "SVG support is explicitly primitive/simple; image support depends on build options and libraries."]
+    },
+    {
+      "id": "R06-D5", "title": "Dillo canonical repository history", "url": "https://git.dillo-browser.org/dillo/",
+      "retrievedAt": "2026-11-21T14:33:30Z", "publishedAt": null, "kind": "source-code",
+      "quotations": ["2026-10-11 19:52", "Ensure form resource is set with no embed", "Release version 3.3.0"],
+      "limitations": ["Per-commit dates in the inspected history establish bounded activity, not the publication date of the repository index.", "No patch was executed or interpreted as a locally reproduced bug."]
+    },
+    {
+      "id": "R06-D6", "title": "Dillo former GitHub-hosted website", "url": "https://dillo-browser.github.io/",
+      "retrievedAt": "2026-11-21T14:22:33Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["We are moving Dillo from GitHub to our own self-hosted server", "latest release 3.2.0"],
+      "limitations": ["Stale version listing; the page points to the new canonical domain, which lists 3.3.0.", "Not a reliable sole source for current lifecycle or release version."]
+    },
+    {
+      "id": "R06-Y1", "title": "Lynx distribution homepage", "url": "https://lynx.invisible-island.net/",
+      "retrievedAt": "2026-11-21T14:22:37Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["Lynx is the text web browser.", "The most recent stable release is 2.9.3"],
+      "limitations": ["Copyright years and extracted page metadata were not used as release dates.", "Text-browser identity is not modern graphical application parity."]
+    },
+    {
+      "id": "R06-Y2", "title": "Lynx 2.9.3 release page", "url": "https://lynx.invisible-island.net/lynx2.9.3/index.html",
+      "retrievedAt": "2026-11-21T14:24:19Z", "publishedAt": "2026-05-27", "kind": "release-note",
+      "dateScope": "Release date stated in the body; the stale footer is not used.",
+      "quotations": ["This page contains links to the May 27, 2026 Lynx v2.9.3 release.", "Last Updated: 2024-04-15"],
+      "limitations": ["Body and footer dates conflict; the explicit version-specific release statement supplies the date.", "Historical port links do not establish current tested support on every platform."]
+    },
+    {
+      "id": "R06-Y3", "title": "Lynx current development", "url": "https://lynx.invisible-island.net/current/index.html",
+      "retrievedAt": "2026-11-21T14:24:06Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["We are currently working on Lynx 2.9.4."],
+      "limitations": ["Development toward 2.9.4 does not establish a released 2.9.4 build.", "Package pointers include historical resources and do not certify current OS-version compatibility."]
+    },
+    {
+      "id": "R06-Y4", "title": "Lynx users guide v2.9.3", "url": "https://lynx.invisible-island.net/lynx_help/Lynx_users_guide.html",
+      "retrievedAt": "2026-11-21T14:27:40Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["With Lynx almost all navigation can be accomplished with the arrow keys and the numeric keypad.", "Online help is available while viewing any document.", "having every link as well as every form field numbered"],
+      "limitations": ["Long guide was inspected through bounded topic excerpts.", "Historical 1996 metadata is not the guide's current publication date.", "Keyboard coverage does not establish screen-reader usability or WCAG conformance."]
+    },
+    {
+      "id": "R06-Y5", "title": "Lynx manual page", "url": "https://lynx.invisible-island.net/manpage/",
+      "retrievedAt": "2026-11-21T14:27:43Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["-dump dumps the formatted output", "-listonly", "for -dump, show only the list of links."],
+      "limitations": ["Long manual returned bounded excerpts; no commands were executed.", "Extracted document metadata dated 2026-05-30 was not accepted as a verified publication date.", "Compiled protocol and option support may vary by build."]
+    },
+    {
+      "id": "R06-Y6", "title": "Lynx maintainer's Windows distribution notes", "url": "https://invisible-island.net/lynx/",
+      "retrievedAt": "2026-11-21T14:33:30Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["With Lynx 2.9.3, installers are available for OpenSSL 4 and 3", "The other installers do not require OpenSSL", "will not connect to https URLs."],
+      "limitations": ["Build and OS-support statements belong to the maintainer, not local testing.", "Different Windows variants have different HTTPS dependencies; installer availability alone does not establish HTTPS capability."]
+    },
+    {
+      "id": "R06-W1", "title": "Debian-maintained w3m fork README", "url": "https://raw.githubusercontent.com/tats/w3m/master/README",
+      "retrievedAt": "2026-11-21T14:24:19Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["It IS a pager, but it can be used as a text-mode WWW browser.", "This package is maintained for Debian"],
+      "limitations": ["Identifies a downstream fork, not a verified current original-upstream maintenance state.", "Documentary product description, not runtime evidence."]
+    },
+    {
+      "id": "R06-W2", "title": "w3m documentation README", "url": "https://raw.githubusercontent.com/tats/w3m/master/doc/README",
+      "retrievedAt": "2026-11-21T14:29:45Z", "publishedAt": "2011-01-15", "kind": "vendor-documentation",
+      "dateScope": "Version 0.5.3 README header, not the date of latest maintenance.",
+      "quotations": ["w3m: WWW wo Miru Tool  version 0.5.3", "Jan 15, 2011", "When reading HTML document, you can follow links and view images"],
+      "limitations": ["Historical platform/version list; current native macOS/Windows support was not established.", "The old README date must not be treated as proof of abandonment."]
+    },
+    {
+      "id": "R06-W3", "title": "w3m manual source", "url": "https://raw.githubusercontent.com/tats/w3m/master/doc/w3m.1",
+      "retrievedAt": "2026-11-21T14:32:06Z", "publishedAt": "2016-08-06", "kind": "vendor-documentation",
+      "dateScope": "Manpage header date, not a current software release date.",
+      "quotations": ["it ignores JavaScript and Cascading Style Sheets.", "w3m organizes its content in buffers or tabs", "the target URL can be handed over to a graphical browser with a single command."],
+      "limitations": ["Capabilities describe the inspected maintained-fork manual; no executable was tested.", "Terminal configuration and build features affect graphics and interaction support."]
+    },
+    {
+      "id": "R06-W4", "title": "w3m tab browsing documentation", "url": "https://raw.githubusercontent.com/tats/w3m/master/doc/README.tab",
+      "retrievedAt": "2026-11-21T14:29:52Z", "publishedAt": null, "kind": "vendor-documentation",
+      "quotations": ["w3m tab browsing", "open tab selection menu", "No default keybinding for the following functions:"],
+      "limitations": ["Default key mappings are documentary; user overrides and terminal key handling were not tested."]
+    },
+    {
+      "id": "R06-W5", "title": "w3m sixel support documentation", "url": "https://raw.githubusercontent.com/tats/w3m/master/doc/README.sixel",
+      "retrievedAt": "2026-11-21T14:29:54Z", "publishedAt": "2014-11-05", "kind": "vendor-documentation",
+      "dateScope": "Date in the sixel extension document.",
+      "quotations": ["This is the extension for w3m to show inline images by sixel graphics.", "Install 'img2sixel' command provided by libsixel project."],
+      "limitations": ["Optional extension and external dependency; neither installed nor tested.", "Documented graphics support requires a compatible build and terminal, not text-only output alone."]
+    },
+    {
+      "id": "R06-W6", "title": "tats/w3m sampled default-branch commit metadata", "url": "https://api.github.com/repos/tats/w3m/commits?per_page=3",
+      "retrievedAt": "2026-11-21T14:27:36Z", "publishedAt": null, "kind": "source-code",
+      "sourceRevision": "ee66aabc3987000c2851bce6ade4dcbb0b037d81",
+      "quotations": ["2023-07-18T12:09:33Z", "Update ChangeLog"],
+      "limitations": ["A three-commit sample of one fork's default branch is not exhaustive project activity evidence.", "The timestamp is a commit date, not a verified package release/publication date.", "No abandonment conclusion is drawn."]
+    },
+    {
+      "id": "R06-W7", "title": "Debian package tracker: w3m", "url": "https://tracker.debian.org/pkg/w3m",
+      "retrievedAt": "2026-11-21T14:32:10Z", "publishedAt": null, "kind": "third-party",
+      "publisherRole": "Debian is the primary authority for its downstream package; it is not the original w3m upstream.",
+      "quotations": ["version 0.5.3+git20230121-2.3 of the package", "3 debian patches"],
+      "limitations": ["Package presence and patch metadata do not prove active original-upstream development in November 2026.", "Extracted metadata dated 2025-12-28 was not accepted as a verified package-upload date."]
+    },
+    {
+      "id": "R06-W8", "title": "tats/w3m GitHub Releases page", "url": "https://github.com/tats/w3m/releases",
+      "retrievedAt": "2026-11-21T14:25:55Z", "publishedAt": null, "kind": "release-note",
+      "quotations": ["There aren’t any releases here"],
+      "limitations": ["Absence of GitHub Releases entries is not absence of tags, distribution updates or overall maintenance.", "No original-upstream lifecycle conclusion follows from this page alone."]
+    }
+  ],
+  "browsers": [
+    {
+      "id": "R06-B-ORION", "name": "Orion by Kagi",
+      "engine": "WebKit; Apple releases remain Kagi's focus. Engine identity does not establish extension parity with Chromium or Firefox.",
+      "platforms": ["macOS", "iOS / iPadOS", "Linux beta: Kagi maintenance ended", "Windows: Kagi development and planned release ended"],
+      "lifecycle": "active", "lifecycleScope": "Apple products only; Linux/Windows require the per-platform discontinuation qualifiers.",
+      "productKind": "released-graphical-browser",
+      "summary": "Released end-user browser with focus/compact UI, link previews, isolated profiles and documented content blocking. Kagi ended Linux/Windows development on 2026-10-02 while continuing Apple development.",
+      "sourceIds": ["R06-O1", "R06-O2", "R06-O3", "R06-O4"], "evidenceType": "vendor-documented", "confidence": "high",
+      "latestRelease": {"version": "1.1.4 (153)", "platform": "macOS", "publishedAt": "2026-11-16", "sourceIds": ["R06-O3"]},
+      "platformLifecycle": [
+        {"platform": "macOS", "lifecycle": "active", "sourceIds": ["R06-O2", "R06-O3"]},
+        {"platform": "iOS / iPadOS", "lifecycle": "active", "sourceIds": ["R06-O1", "R06-O2"], "qualification": "Continued focus documented; latest mobile version was not established."},
+        {"platform": "Linux", "lifecycle": "discontinued", "effectiveDate": "2026-10-02", "sourceIds": ["R06-O2"], "qualification": "Kagi updates ended; community continuation remains unknown."},
+        {"platform": "Windows", "lifecycle": "discontinued", "effectiveDate": "2026-10-02", "sourceIds": ["R06-O2"], "qualification": "Kagi canceled its planned release; no completed successor handoff was verified."}
+      ],
+      "publisherClaims": [{"text": "Kagi describes Orion as native, fast, zero-telemetry and production-ready on Apple devices.", "sourceIds": ["R06-O1"], "qualification": "Attributed claims; no performance, telemetry or readiness audit."}],
+      "limitations": ["Documentary evidence only, not a runtime evaluation.", "Promise to open-source Linux/Windows is not proof that code release or successor stewardship occurred.", "Undated installation guidance still offers the Linux beta.", "macOS release-note fixes do not prove universal website or Chrome/Firefox extension compatibility.", "1.0 feature descriptions should not be assumed identical on every mobile release."]
+    },
+    {
+      "id": "R06-B-GNOME-WEB", "name": "GNOME Web / Epiphany",
+      "engine": "WebKitGTK / WebKit; browser UI and underlying engine/distribution versions have separate support implications.",
+      "platforms": ["Linux, primarily GNOME and similar desktops", "Stable Flatpak", "Technology Preview and Canary: explicitly unstable"],
+      "lifecycle": "active", "productKind": "released-graphical-browser",
+      "summary": "Linux-focused end-user browser with GNOME integration, optional Firefox Sync, reader mode, tracking prevention, ad blocking and installed-web-app lifecycle controls.",
+      "sourceIds": ["R06-G1", "R06-G2", "R06-G3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "latestRelease": {"version": "51.2", "publishedAt": "2026-10-29", "sourceIds": ["R06-G2"]},
+      "publisherClaims": [{"text": "The project prioritizes simplicity, standards compliance and software freedom.", "sourceIds": ["R06-G1", "R06-G3"], "qualification": "Design philosophy, not a comparative usability or security finding."}],
+      "limitations": ["No runtime tests were run.", "GNOME integration is intentional; broad native Windows/macOS portability was not established.", "Technology Preview and Canary must not inherit stable-channel readiness.", "WebExtension fixes in NEWS do not establish store or API parity with Chrome.", "Package and WebKitGTK freshness must be evaluated separately from the browser version."]
+    },
+    {
+      "id": "R06-B-FALKON", "name": "Falkon",
+      "engine": "QtWebEngine, in the Chromium engine family; a separate KDE browser UI rather than an independent new web engine.",
+      "platforms": ["Linux", "Windows: official nightly distribution documented; stable support not independently checked"],
+      "lifecycle": "active", "productKind": "released-graphical-browser",
+      "summary": "KDE browser formerly named QupZilla, with AdBlock, vertical-tab and extensibility options, per-site permissions, KWallet and Plasma integration. Its official feed lists 26.08.3 despite older standalone announcements.",
+      "sourceIds": ["R06-F1", "R06-F2", "R06-F3", "R06-F4", "R06-F5", "R06-Q1"], "evidenceType": "vendor-documented", "confidence": "high",
+      "latestRelease": {"version": "26.08.3", "publishedAt": null, "sourceIds": ["R06-F2"], "qualification": "Listed in official RSS; publication fields are empty."},
+      "publisherClaims": [{"text": "Very fast, lightweight, and intended for all major platforms.", "sourceIds": ["R06-F1", "R06-F4"], "qualification": "Unmeasured aims; not verified macOS support or a memory comparison."}],
+      "limitations": ["No binary was installed or tested.", "Capability detail comes from a CHANGELOG whose top entry is 25.08.0, not a complete 26.08.3 feature test.", "Nightly installers are explicitly unstable.", "Legacy RSS/Flash/Click2Flash copy is not certified as current functionality.", "Current macOS support and the exact 26.08.3 release date remain unverified."]
+    },
+    {
+      "id": "R06-B-QUTEBROWSER", "name": "qutebrowser",
+      "engine": "Python/Qt interface with default QtWebEngine (Chromium). Legacy QtWebKit is deprecated and untested in the inspected release history.",
+      "platforms": ["Linux: distribution or source packaging varies", "Windows: official prebuilt binaries", "macOS: official prebuilt binaries", "FreeBSD: documentation includes backend/package caveats"],
+      "lifecycle": "active", "productKind": "released-keyboard-first-graphical-browser",
+      "summary": "Vim-like graphical browser emphasizing keyboard navigation, element hints and an in-product command/help system. The inspected changelog's latest dated release is 3.7.0; 3.8.0 is unreleased.",
+      "sourceIds": ["R06-Q1", "R06-Q2", "R06-Q3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "latestRelease": {"version": "3.7.0", "publishedAt": "2026-04-03", "sourceIds": ["R06-Q1"]},
+      "engineVersionScope": {"text": "3.7.0 Windows/macOS bundles Qt 6.11.0, based on Chromium 140.0.7339.225 with security patches through 146.0.7680.80.", "sourceIds": ["R06-Q1"], "qualification": "Release-specific publisher metadata; not the engine version of every installation."},
+      "limitations": ["No task-efficiency or assistive-technology test was run.", "Official Windows/macOS binaries require manual updates and are documented without proprietary codecs.", "Community packages may have different engine versions and update policies.", "Partial QtWebEngine WebExtensions work does not establish official qutebrowser extension support.", "An accessibility-disabling workaround on affected Qt versions means keyboard-first must not be equated with comprehensive accessibility."]
+    },
+    {
+      "id": "R06-B-NYXT", "name": "Nyxt",
+      "engine": "Chromium Embedded Framework (CEF) is the default in 5.0.0; WebKitGTK remains documented as another backend. Electron was removed in 5.0.0.",
+      "platforms": ["Linux x86-64: 5.0.0 AppImage and Flatpak assets", "macOS ARM64: 5.0.0 app asset", "BSD: unofficial documentation", "Windows via WSL: unofficial; native release not established"],
+      "lifecycle": "active", "productKind": "released-specialist-graphical-browser",
+      "summary": "Lisp-extensible keyboard browser with fuzzy buffer selection, multi-object commands, cross-tab search and tagged bookmarks. Its 5.0.0 release materially changes renderer and platform evidence.",
+      "sourceIds": ["R06-N1", "R06-N2", "R06-N3", "R06-N4", "R06-N5"], "evidenceType": "vendor-documented", "confidence": "high",
+      "latestRelease": {"version": "5.0.0", "publishedAt": "2026-11-15T18:20:30Z", "sourceIds": ["R06-N3", "R06-N4"]},
+      "publisherClaims": [{"text": "Infinitely extensible and designed for power-user workflows.", "sourceIds": ["R06-N1", "R06-N5"], "qualification": "Project positioning; no learning-curve or efficiency measurement."}],
+      "limitations": ["Documentary and release-asset observations only; no Nyxt execution.", "README and FAQ platform/backend text differs from dated 5.0.0 sources; prefer version-specific evidence.", "Do not advertise WebKit-only or Electron-default behavior for 5.0.0.", "Command prediction was removed, and the README no longer advertises history as a tree.", "Extension loading does not prove complete WebExtensions compatibility.", "Lisp customization targets specialists; native Windows support remains unestablished."]
+    },
+    {
+      "id": "R06-B-LADYBIRD", "name": "Ladybird",
+      "engine": "Independent standards implementation: LibWeb rendering, LibJS JavaScript and LibWasm WebAssembly, with some SerenityOS-derived components and third-party libraries.",
+      "platforms": ["Linux: development focus", "macOS: development focus", "Other Unix-like systems: documented builds", "Windows via WSL2; native full browser planned", "Mobile: not a current focus"],
+      "lifecycle": "experimental", "productKind": "experimental-browser-and-engine",
+      "summary": "Actively developed full-browser project that its README labels pre-alpha and developer-only. The homepage still describes a future first alpha, not a released general-use replacement.",
+      "sourceIds": ["R06-L1", "R06-L2", "R06-L3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "roadmap": {"text": "FAQ targets alpha in 2026, beta in 2027 and stable in 2028; completion was not established.", "sourceIds": ["R06-L1", "R06-L3"], "evidenceType": "vendor-documented"},
+      "publisherClaims": [{"text": "No user monetization, unrestricted sponsorships and an independent technical roadmap.", "sourceIds": ["R06-L1", "R06-L3"], "qualification": "Project policies and intentions, not independently audited governance."}],
+      "limitations": ["No runtime, site-compatibility, performance or sandbox tests.", "The FAQ explicitly says particular sites may or may not be usable.", "Windows JavaScript-engine CI does not establish a native Windows browser.", "Engine independence does not mean absence of third-party libraries.", "Future alpha/beta/stable milestones must not be displayed as completed releases."]
+    },
+    {
+      "id": "R06-B-SERVO", "name": "Servo",
+      "engine": "Prototype Rust browser engine with a WebView embedding API; servoshell is the runnable tech demo, not a complete mainstream browser product.",
+      "platforms": ["Windows", "macOS", "Linux", "Android", "OpenHarmony", "FreeBSD: build milestone with qualifications"],
+      "lifecycle": "experimental", "productKind": "embeddable-engine-and-tech-demo",
+      "summary": "Active engine development aimed at embedding web technologies. Release 0.8.0 is published, while the README retains prototype status and release notes call the runnable application a Tech Demo.",
+      "sourceIds": ["R06-S1", "R06-S2", "R06-S3", "R06-S4", "R06-S5", "R06-S6"], "evidenceType": "vendor-documented", "confidence": "high",
+      "latestRelease": {"version": "0.8.0", "publishedAt": "2026-11-09T12:29:13Z", "sourceIds": ["R06-S3", "R06-S4"], "qualification": "GitHub prerelease:false does not imply consumer-browser readiness."},
+      "publisherClaims": [{"text": "Lightweight, high-performance, energy-efficient rendering with memory/concurrency benefits from Rust.", "sourceIds": ["R06-S1"], "qualification": "Architectural benefit claims, not reproduced Chrome comparisons."}],
+      "limitations": ["No runtime build, benchmark or application-compatibility assessment.", "Graphics, accessibility and other APIs are evolving; defaults and completeness differ by version/platform.", "Earlier selection limitations must be qualified against subsequent 0.8.0 work.", "OpenHarmony artifacts are not automatically signed for HarmonyOS.", "A FreeBSD build milestone does not establish equivalent release binaries.", "Treat as engine-diversity/interoperability research, not an unqualified migration option."]
+    },
+    {
+      "id": "R06-B-DILLO", "name": "Dillo",
+      "engine": "Own real-time HTML/CSS renderer with FLTK graphical UI; constrained web-platform coverage and no JavaScript in the inspected manual.",
+      "platforms": ["Linux", "BSD", "macOS", "Windows via Cygwin", "Atari: project-documented"],
+      "lifecycle": "active", "productKind": "constrained-graphical-browser",
+      "summary": "Released lightweight graphical browser for resource-constrained machines and simpler content. Canonical 3.3.0 release and October 2026 repository work supersede the stale former GitHub website.",
+      "sourceIds": ["R06-D1", "R06-D2", "R06-D3", "R06-D4", "R06-D5", "R06-D6"], "evidenceType": "vendor-documented", "confidence": "high",
+      "latestRelease": {"version": "3.3.0", "publishedAt": "2026-04-26", "sourceIds": ["R06-D1", "R06-D2"]},
+      "publisherClaims": [{"text": "Small size, low memory use and fast rendering even on older or smaller machines.", "sourceIds": ["R06-D1"], "qualification": "Unbenchmarked project claims; a reduced feature set changes comparison workloads."}],
+      "limitations": ["Not a text browser, but not a blanket replacement for JavaScript-dependent applications.", "Manual was generated for v3.2.0-90-g29a46a2d; newer controls are sourced to 3.3.0 notes.", "FLTK 1.4 support is experimental with HiDPI/Wayland problems.", "Windows means Cygwin, not a verified native Windows app release.", "No local-control commands, plugins or page actions were executed.", "Canonical domain is dillo-browser.org; the old GitHub surface and dillo.org must not be treated as current authoritative equivalents."]
+    },
+    {
+      "id": "R06-B-LYNX", "name": "Lynx",
+      "engine": "Character-cell HTML/text presentation for terminals; a text-browser rendering model rather than a modern graphical engine.",
+      "platforms": ["Unix/POSIX including Linux", "BSD and macOS package/port pointers", "Windows: maintainer-distributed variants", "Historical VMS, DOS and OS/2 ports: current version support unverified"],
+      "lifecycle": "active", "productKind": "terminal-text-browser",
+      "summary": "Mature terminal browser with numbered link/form navigation, key help, forms and text/link export. The 2.9.3 release page gives 2026-05-27 and current development targets 2.9.4.",
+      "sourceIds": ["R06-Y1", "R06-Y2", "R06-Y3", "R06-Y4", "R06-Y5", "R06-Y6"], "evidenceType": "vendor-documented", "confidence": "high",
+      "latestRelease": {"version": "2.9.3", "publishedAt": "2026-05-27", "sourceIds": ["R06-Y2"], "qualification": "Explicit release-body date takes precedence over the stale footer."},
+      "limitations": ["No runtime or screen-reader testing.", "The documentation's fully-featured description is scoped to a terminal client, not graphical modern-web parity.", "Rich graphical and JavaScript-dependent workflows were not qualified.", "Windows builds without OpenSSL are explicitly unable to connect to HTTPS URLs.", "Historical platform and protocol lists are not current tested OS/build matrices."]
+    },
+    {
+      "id": "R06-B-W3M", "name": "w3m",
+      "engine": "Built-in text HTML layout and pager; the inspected manual supports tables/frames but explicitly ignores JavaScript and CSS.",
+      "platforms": ["Unix-like systems", "Linux and BSD: historical documented platforms", "macOS: historical documentation; current packaging unverified", "Windows via Cygwin: historical documentation; current packaging unverified"],
+      "lifecycle": "unknown", "productKind": "terminal-text-browser-and-pager",
+      "summary": "Terminal browser/pager with buffers, tabs, HTML text layout, optional graphics and graphical-browser handoff. A Debian-maintained fork and downstream package are documented; current original-upstream activity remains unknown.",
+      "sourceIds": ["R06-W1", "R06-W2", "R06-W3", "R06-W4", "R06-W5", "R06-W6", "R06-W7", "R06-W8"], "evidenceType": "source-inspected", "confidence": "medium",
+      "maintenanceEvidence": [
+        {"text": "The sampled tats/w3m default-branch tip is dated 2023-07-18; no GitHub Releases entries were listed.", "sourceIds": ["R06-W6", "R06-W8"]},
+        {"text": "Debian tracker displays package 0.5.3+git20230121-2.3 and downstream patches.", "sourceIds": ["R06-W7"]}
+      ],
+      "limitations": ["Unknown is not active or abandoned; one fork's tip and empty release page cannot establish overall project lifecycle.", "Original SourceForge homepage returned HTTP 403.", "2011 README and 2016 manpage dates are historical document dates, not a complete maintenance timeline.", "Documentary evidence only; no build, browser or terminal tests.", "Optional graphics depend on build, external tools and terminal support.", "Current distribution-specific support and native platform packaging remain unverified."]
+    }
+  ],
+  "features": [
+    {
+      "id": "R06-F-ORION-FOCUS", "browserId": "R06-B-ORION", "title": "Focus Mode", "category": "focus-ui",
+      "description": "The Orion 1.0 announcement documents turning a website into a distraction-reduced, web-app-like window with Focus Mode.",
+      "platforms": ["macOS"], "availability": "documented",
+      "sourceIds": ["R06-O1"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Scoped to the macOS 1.0 announcement; iOS/iPadOS and other platform feature parity were not established.", "No runtime, task-efficiency or distraction-reduction measurement was performed."]
+    },
+    {
+      "id": "R06-F-ORION-LINK-PREVIEW", "browserId": "R06-B-ORION", "title": "Link Preview", "category": "link-navigation",
+      "description": "The 1.0 announcement describes previewing linked content, including links originating in other applications, before opening a full tab.",
+      "platforms": ["macOS"], "availability": "documented",
+      "sourceIds": ["R06-O1"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Announcement-level documentation, not a test of every application, link type or browser release.", "Mobile and other platform parity, preview behavior and any reduction in tab creation were not verified."]
+    },
+    {
+      "id": "R06-F-ORION-PROFILES-AS-APPS", "browserId": "R06-B-ORION", "title": "Profiles as Apps", "category": "profiles-and-identity",
+      "description": "Orion documents separate browsing profiles with their own extensions, cookies and settings, presented through its Profiles as Apps workflow.",
+      "platforms": ["macOS"], "availability": "documented",
+      "sourceIds": ["R06-O1"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Scoped to the 1.0 announcement; equivalent behavior on iOS/iPadOS or other platforms was not established.", "Profile boundaries and extension behavior were not runtime- or security-tested."]
+    },
+    {
+      "id": "R06-F-ORION-COMPACT-PAGE-UI", "browserId": "R06-B-ORION", "title": "Mini Toolbar, Overflow Menu and Page Tweak", "category": "interface-customization",
+      "description": "The 1.0 announcement documents user-selectable compact interface controls and per-page presentation controls through Mini Toolbar, Overflow Menu and Page Tweak.",
+      "platforms": ["macOS"], "availability": "documented",
+      "sourceIds": ["R06-O1"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["The announcement does not establish identical controls on every mobile or desktop edition.", "No usability, focus-visibility or resource-use comparison was run; compact UI is not a measured engine-performance advantage."]
+    },
+    {
+      "id": "R06-F-ORION-CONTENT-BLOCKING", "browserId": "R06-B-ORION", "title": "Built-in content blocking and privacy defaults", "category": "privacy-and-content-blocking",
+      "description": "Orion's 1.0 announcement documents built-in content-blocking controls and privacy-oriented defaults.",
+      "platforms": ["macOS"], "availability": "documented",
+      "sourceIds": ["R06-O1"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Control presence is documentary; blocking effectiveness and the publisher's zero-telemetry assertion were not independently audited.", "Defaults and feature parity across mobile, desktop and later releases were not tested."]
+    },
+    {
+      "id": "R06-F-GNOME-WEB-NATIVE-UI", "browserId": "R06-B-GNOME-WEB", "title": "GNOME-native interface", "category": "desktop-integration",
+      "description": "GNOME Web documents an interface following the GNOME Human Interface Guidelines, with desktop integration and limited exposed technical detail for nontechnical users.",
+      "platforms": ["Linux, primarily GNOME and similar desktops"], "availability": "documented",
+      "sourceIds": ["R06-G1", "R06-G3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Design intent and project documentation are not a measured usability result.", "Native portability to other operating systems and identical behavior across stable, Technology Preview and Canary channels were not established."]
+    },
+    {
+      "id": "R06-F-GNOME-WEB-FIREFOX-SYNC", "browserId": "R06-B-GNOME-WEB", "title": "Optional Firefox Sync integration", "category": "synchronization",
+      "description": "The README documents optional encrypted synchronization through Mozilla's Firefox Sync service and explicitly distinguishes GNOME Web from Firefox or Mozilla endorsement.",
+      "platforms": ["Linux"], "availability": "documented",
+      "sourceIds": ["R06-G1"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Service integration and encryption are documented claims, not a synchronization or cryptographic audit.", "Coverage across distribution packages, channels and engine versions was not tested."]
+    },
+    {
+      "id": "R06-F-GNOME-WEB-TRACKING-PREVENTION", "browserId": "R06-B-GNOME-WEB", "title": "Tracking prevention and filter-list ad blocking", "category": "privacy-and-content-blocking",
+      "description": "GNOME Web documents Intelligent Tracking Prevention enabled by default and filter-list-based advertisement blocking.",
+      "platforms": ["Linux"], "availability": "documented",
+      "sourceIds": ["R06-G1"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Documented defaults do not establish measured tracking prevention or blocking effectiveness.", "Distribution, channel and WebKitGTK differences were not tested; no cross-platform parity is claimed."]
+    },
+    {
+      "id": "R06-F-GNOME-WEB-READER", "browserId": "R06-B-GNOME-WEB", "title": "Reader mode", "category": "reading",
+      "description": "NEWS documents reader-mode presentation and correctness work, including line-spacing improvements.",
+      "platforms": ["Linux"], "availability": "documented",
+      "sourceIds": ["R06-G1", "R06-G2"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["The rolling release history supplies capability evidence, not a claim that reader mode was first introduced in 51.2.", "No page extraction, readability, accessibility or package-specific behavior was tested."]
+    },
+    {
+      "id": "R06-F-GNOME-WEB-APP-LIFECYCLE", "browserId": "R06-B-GNOME-WEB", "title": "Installed web-app background and quit controls", "category": "web-app-lifecycle",
+      "description": "The 50.0 NEWS entry documents a configurable background-running toggle and quit action for installed web apps, including operation outside Flatpak.",
+      "platforms": ["Linux"], "availability": "documented",
+      "sourceIds": ["R06-G1", "R06-G2"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Version-scoped release documentation, not a lifecycle or web-app compatibility test.", "The non-Flatpak statement does not establish equivalent behavior in every distribution package or channel."]
+    },
+    {
+      "id": "R06-F-FALKON-ADBLOCK", "browserId": "R06-B-FALKON", "title": "Built-in AdBlock plugin", "category": "content-blocking",
+      "description": "Falkon's About page documents a built-in AdBlock plugin enabled by default.",
+      "platforms": ["Linux", "Windows (nightly distribution documented; feature parity unverified)"], "availability": "documented",
+      "sourceIds": ["R06-F1", "R06-F4"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Project-level documentation was not verified against a binary or measured blocking workload.", "Windows nightly distribution is not proof of equal stable-channel support or per-platform defaults."]
+    },
+    {
+      "id": "R06-F-FALKON-VERTICAL-TABS", "browserId": "R06-B-FALKON", "title": "VerticalTabs plugin", "category": "tab-management",
+      "description": "Falkon's release history documents a VerticalTabs plugin with tree and collapse behavior, plus keyboard and tab-switching improvements.",
+      "platforms": ["Linux", "Windows (nightly distribution documented; plugin availability unverified)"], "availability": "documented",
+      "sourceIds": ["R06-F3", "R06-F4"], "evidenceType": "vendor-documented", "confidence": "medium",
+      "limitations": ["Capability evidence comes from a CHANGELOG whose top entry is 25.08.0; it is not a 26.08.3 feature test.", "Plugin availability, defaults and behavior across platforms or packages were not established by runtime testing."]
+    },
+    {
+      "id": "R06-F-FALKON-PLUGIN-EXTENSIBILITY", "browserId": "R06-B-FALKON", "title": "Userscripts, Python plugins and QML plugins", "category": "extensibility",
+      "description": "The CHANGELOG documents GreaseMonkey userscript support and Python and QML plugin mechanisms.",
+      "platforms": ["Linux", "Windows (nightly distribution documented; plugin availability unverified)"], "availability": "documented",
+      "sourceIds": ["R06-F3", "R06-F4"], "evidenceType": "vendor-documented", "confidence": "medium",
+      "limitations": ["These documented mechanisms do not establish complete Chrome Web Store or WebExtensions compatibility.", "Historical release entries were not exercised on current builds; dependency, package and OS-specific availability remain unverified."]
+    },
+    {
+      "id": "R06-F-FALKON-SITE-PERMISSIONS", "browserId": "R06-B-FALKON", "title": "Per-site settings and permissions", "category": "site-controls",
+      "description": "Falkon's release history documents per-site user-agent and cookie controls and later permission management for unknown protocols.",
+      "platforms": ["Linux", "Windows (nightly distribution documented; feature parity unverified)"], "availability": "documented",
+      "sourceIds": ["R06-F3", "R06-F4"], "evidenceType": "vendor-documented", "confidence": "medium",
+      "limitations": ["The inspected CHANGELOG ends at a top entry of 25.08.0, rather than providing complete 26.08.3 coverage.", "No permission enforcement, persistence, protocol handling or per-platform behavior was tested."]
+    },
+    {
+      "id": "R06-F-FALKON-KDE-INTEGRATION", "browserId": "R06-B-FALKON", "title": "KWallet and Plasma integration", "category": "desktop-integration",
+      "description": "Falkon's CHANGELOG documents KWallet password storage and Plasma download integration.",
+      "platforms": ["Linux (KDE / Plasma integration documented)"], "availability": "documented",
+      "sourceIds": ["R06-F3", "R06-F4"], "evidenceType": "vendor-documented", "confidence": "medium",
+      "limitations": ["Desktop-specific release-history evidence does not establish availability on Windows, macOS or every Linux desktop.", "No password-store, download workflow or current-package integration was exercised."]
+    },
+    {
+      "id": "R06-F-QUTEBROWSER-VIM-NAVIGATION", "browserId": "R06-B-QUTEBROWSER", "title": "Vim-style keyboard navigation", "category": "keyboard-navigation",
+      "description": "The quickstart documents hjkl navigation, history traversal, tab switching and keyboard URL or search entry.",
+      "platforms": ["Linux", "Windows", "macOS"], "availability": "documented",
+      "sourceIds": ["R06-Q2", "R06-Q3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Instructions were read, not timed or tested with international keyboard layouts or assistive technology.", "Documented distribution platforms do not establish identical bindings or behavior in every package; other community ports retain package/backend caveats."]
+    },
+    {
+      "id": "R06-F-QUTEBROWSER-ELEMENT-HINTS", "browserId": "R06-B-QUTEBROWSER", "title": "Link and element hints", "category": "keyboard-navigation",
+      "description": "The quickstart documents pressing f to show letter hints for mouse-free activation; 3.6.0 release notes add hints in open shadow DOMs.",
+      "platforms": ["Linux", "Windows", "macOS"], "availability": "documented",
+      "sourceIds": ["R06-Q1", "R06-Q2", "R06-Q3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["The shadow-DOM addition is version-scoped documentary evidence, not a test of all pages, elements or Qt builds.", "Input conflicts, focus restoration, keyboard layouts and assistive-technology behavior were not tested; keyboard operation alone does not establish accessibility conformance."]
+    },
+    {
+      "id": "R06-F-QUTEBROWSER-COMMAND-HELP", "browserId": "R06-B-QUTEBROWSER", "title": "Command line and contextual help", "category": "command-discovery",
+      "description": "The quickstart documents : to open the command line, :help for in-product documentation and per-command --help.",
+      "platforms": ["Linux", "Windows", "macOS"], "availability": "documented",
+      "sourceIds": ["R06-Q2", "R06-Q3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No command was executed and no discovery-time or learning-curve comparison was performed.", "Command availability can depend on release and package; per-platform equivalence was not established."]
+    },
+    {
+      "id": "R06-F-QUTEBROWSER-SESSION-CONTROL", "browserId": "R06-B-QUTEBROWSER", "title": "Keyboard tab and session control", "category": "session-management",
+      "description": "The quickstart documents closing and undo-closing tabs, saving open tabs on quit and configurable session saving through keyboard-oriented workflows.",
+      "platforms": ["Linux", "Windows", "macOS"], "availability": "documented",
+      "sourceIds": ["R06-Q2", "R06-Q3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No close, restore, quit or session-persistence behavior was exercised.", "Documentation does not establish identical session behavior across every platform, backend or package."]
+    },
+    {
+      "id": "R06-F-QUTEBROWSER-BOOKMARK-RELOAD", "browserId": "R06-B-QUTEBROWSER", "title": "File-oriented bookmark and quickmark reload", "category": "bookmark-workflows",
+      "description": "The 3.7.0 changelog adds :quickmark-reload and :bookmark-reload so externally changed collections can be reloaded.",
+      "platforms": ["Linux", "Windows", "macOS"], "availability": "documented",
+      "sourceIds": ["R06-Q1", "R06-Q3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["These commands are attributed to the released 3.7.0 entry, not the explicitly unreleased 3.8.0 entry.", "No collection files were changed or commands run; packaging and platform-specific behavior remain untested."]
+    },
+    {
+      "id": "R06-F-NYXT-COMMAND-ENVIRONMENT", "browserId": "R06-B-NYXT", "title": "Reconfigurable Lisp command environment", "category": "command-customization",
+      "description": "Nyxt documents Emacs, vi and CUA bindings together with runtime Lisp introspection and customization.",
+      "platforms": ["Linux x86-64 (5.0.0 release asset; feature parity unverified)", "macOS ARM64 (5.0.0 release asset; feature parity unverified)"], "availability": "documented",
+      "sourceIds": ["R06-N1", "R06-N2", "R06-N4", "R06-N5"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Command-layer descriptions come from README/FAQ documentation; CEF is the default in 5.0.0 and WebKitGTK remains an alternative, without tested backend parity.", "Assets establish distribution, not successful execution or identical features. Native Windows availability and learning-curve or efficiency benefits were not established."]
+    },
+    {
+      "id": "R06-F-NYXT-FUZZY-MULTISELECT", "browserId": "R06-B-NYXT", "title": "Fuzzy buffer switching and multi-object commands", "category": "selection-and-command-scope",
+      "description": "The README documents fuzzy buffer selection and commands accepting multiple inputs, such as several bookmarks or other objects for one operation.",
+      "platforms": ["Linux x86-64 (5.0.0 release asset; feature parity unverified)", "macOS ARM64 (5.0.0 release asset; feature parity unverified)"], "availability": "documented",
+      "sourceIds": ["R06-N1", "R06-N2", "R06-N4"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["README behavior was not executed on the 5.0.0 CEF default or alternate WebKitGTK backend.", "Release assets do not establish OS/backend parity, action-scope predictability or error recovery."]
+    },
+    {
+      "id": "R06-F-NYXT-MULTITAB-SEARCH", "browserId": "R06-B-NYXT", "title": "Multi-tab search with a unified results view", "category": "cross-tab-retrieval",
+      "description": "The README describes searching multiple open tabs at the same time and displaying all results in a single window.",
+      "platforms": ["Linux x86-64 (5.0.0 release asset; feature parity unverified)", "macOS ARM64 (5.0.0 release asset; feature parity unverified)"], "availability": "documented",
+      "sourceIds": ["R06-N1", "R06-N2", "R06-N4"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Search coverage and retrieval behavior were not exercised on the 5.0.0 CEF default or alternate WebKitGTK backend.", "Platform parity and the relationship to current Chrome tab-title/URL or content-search behavior were not established."]
+    },
+    {
+      "id": "R06-F-NYXT-TAGGED-BOOKMARKS", "browserId": "R06-B-NYXT", "title": "Tagged bookmarks and compound queries", "category": "bookmark-workflows",
+      "description": "Nyxt's README documents bookmark tags and compound queries for user-organized collections beyond a folder-only workflow.",
+      "platforms": ["Linux x86-64 (5.0.0 release asset; feature parity unverified)", "macOS ARM64 (5.0.0 release asset; feature parity unverified)"], "availability": "documented",
+      "sourceIds": ["R06-N1", "R06-N2", "R06-N4"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Bookmark and query behavior was not tested on either documented 5.0.0 platform or across CEF and WebKitGTK backends.", "No retrieval-efficiency comparison or claim about Chrome feature absence is established."]
+    },
+    {
+      "id": "R06-F-NYXT-CEF-EXTENSIONS-BLOCKING", "browserId": "R06-B-NYXT", "title": "5.0 CEF extension and request-blocking integration", "category": "renderer-extensibility",
+      "description": "The 5.0.0 release makes CEF the default and documents loading unpacked Chromium Manifest V2/V3 extensions, extension-management commands and request blocking using uBlock Origin default filter lists.",
+      "platforms": ["Linux x86-64 (5.0.0 CEF release; per-platform behavior unverified)", "macOS ARM64 (5.0.0 CEF release; per-platform behavior unverified)"], "availability": "limited",
+      "sourceIds": ["R06-N2", "R06-N3", "R06-N4"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Version- and renderer-scoped documentation; alternate WebKitGTK behavior is not assumed equivalent, and Electron was removed in 5.0.0.", "No extension was loaded or blocker tested. Manifest support and use of filter lists do not prove every Chromium extension or uBlock feature works."]
+    },
+    {
+      "id": "R06-F-LADYBIRD-INDEPENDENT-STACK", "browserId": "R06-B-LADYBIRD", "title": "Independent web-platform stack", "category": "engine-architecture",
+      "description": "Ladybird documents its own LibWeb rendering, LibJS JavaScript and LibWasm WebAssembly implementation rather than a Blink, Gecko or WebKit fork.",
+      "platforms": ["Linux (pre-alpha development focus)", "macOS (pre-alpha development focus)"], "availability": "limited",
+      "sourceIds": ["R06-L1", "R06-L2", "R06-L3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Pre-alpha architecture for developers, not complete standards conformance or consumer readiness; third-party libraries are still used.", "No build or site-compatibility test was run. Other Unix-like and WSL2 paths do not establish feature parity or a native Windows browser release."]
+    },
+    {
+      "id": "R06-F-LADYBIRD-SITE-RENDERERS", "browserId": "R06-B-LADYBIRD", "title": "Site-separated sandboxed renderer processes", "category": "security-architecture",
+      "description": "Ladybird's README describes a multi-process design in which documents from different sites run in separate renderer processes sandboxed from the rest of the system.",
+      "platforms": ["Linux (pre-alpha development focus)", "macOS (pre-alpha development focus)"], "availability": "limited",
+      "sourceIds": ["R06-L1", "R06-L2"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["A documented pre-alpha architecture, not an independently validated sandbox or security comparison.", "Per-platform isolation behavior, other documented build paths and native Windows browser support were not tested or established as equivalent."]
+    },
+    {
+      "id": "R06-F-LADYBIRD-HELPER-PROCESSES", "browserId": "R06-B-LADYBIRD", "title": "Out-of-process helper work", "category": "process-architecture",
+      "description": "The README documents out-of-process work for networking, image decoding, compositing and media.",
+      "platforms": ["Linux (pre-alpha development focus)", "macOS (pre-alpha development focus)"], "availability": "limited",
+      "sourceIds": ["R06-L1", "R06-L2"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["The project remains pre-alpha and developer-targeted; architecture descriptions do not establish complete media or website support.", "No process, performance or per-platform implementation behavior was inspected at runtime."]
+    },
+    {
+      "id": "R06-F-LADYBIRD-CONTENT-LISTS", "browserId": "R06-B-LADYBIRD", "title": "User-configured content-blocker lists", "category": "content-blocking",
+      "description": "Ladybird's FAQ documents user-configured content-blocker lists.",
+      "platforms": ["Linux (pre-alpha development focus)", "macOS (pre-alpha development focus)"], "availability": "limited",
+      "sourceIds": ["R06-L1", "R06-L2", "R06-L3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["A pre-alpha documented capability, not an effectiveness or per-platform test.", "Discussion of future uBlock extension support is not implemented extension compatibility or a released consumer-browser milestone."]
+    },
+    {
+      "id": "R06-F-SERVO-WEBVIEW", "browserId": "R06-B-SERVO", "title": "WebView embedding API", "category": "embedding",
+      "description": "Servo documents a WebView API for embedding web content in applications through its modular Rust-based engine.",
+      "platforms": ["Windows", "macOS", "Linux", "Android", "OpenHarmony"], "availability": "limited",
+      "sourceIds": ["R06-S1", "R06-S2"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Servo is a prototype engine; the listed project targets do not establish equal embedding API coverage or release-binary support.", "No embedding integration, build or performance comparison was run; embeddability is distinct from a complete end-user browser."]
+    },
+    {
+      "id": "R06-F-SERVO-WEB-GRAPHICS", "browserId": "R06-B-SERVO", "title": "WebGL and version-qualified WebGPU work", "category": "web-graphics",
+      "description": "Servo's homepage describes WebGL and WebGPU support. Its July progress report, covering 0.5.0, specifically documents WebGPU work behind dom_webgpu_enabled.",
+      "platforms": ["Windows", "macOS", "Linux", "Android", "OpenHarmony"], "availability": "limited",
+      "sourceIds": ["R06-S1", "R06-S2", "R06-S6"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Graphics completeness and current defaults were not established for each project platform; the historical flag statement is not an all-version default claim.", "Experimental engine documentation only; no graphics, GPU, compatibility or performance tests were run."]
+    },
+    {
+      "id": "R06-F-SERVO-KEYBOARD-NAVIGATION", "browserId": "R06-B-SERVO", "title": "Keyboard navigation milestones", "category": "keyboard-navigation",
+      "description": "The March progress update documents Tab navigation, accesskey activation with Alt+Shift and scrolling with Space or Shift+Space.",
+      "platforms": ["Windows (project target; keyboard parity unverified)", "macOS (project target; keyboard parity unverified)", "Linux (project target; keyboard parity unverified)"], "availability": "limited",
+      "sourceIds": ["R06-S2", "R06-S5"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Version-scoped prototype-engine progress, not complete browser keyboard support or assistive-technology conformance.", "No keyboard interaction was run; desktop equivalence, mobile behavior and the separate FreeBSD build milestone were not validated."]
+    },
+    {
+      "id": "R06-F-SERVO-DEVTOOLS-CONSOLE", "browserId": "R06-B-SERVO", "title": "Firefox DevTools Console autocomplete", "category": "developer-tools",
+      "description": "The July update, describing 0.5.0 work, documents basic Console autocomplete when Firefox DevTools is connected to Servo.",
+      "platforms": ["Windows (project target; tooling parity unverified)", "macOS (project target; tooling parity unverified)", "Linux (project target; tooling parity unverified)"], "availability": "limited",
+      "sourceIds": ["R06-S2", "R06-S6"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Basic autocomplete is one documented prototype capability, not complete DevTools compatibility.", "No debugger connection or Console session was run; availability across current builds and operating systems remains unverified."]
+    },
+    {
+      "id": "R06-F-SERVO-INPUT-ACCESSIBILITY", "browserId": "R06-B-SERVO", "title": "0.8.0 input and accessibility implementation milestones", "category": "input-and-accessibility",
+      "description": "Visible 0.8.0 release entries include beforeinput, double/triple-click selection extension, ARIA-to-AccessKit role mapping, focused-node work and WebDriver computed-role support.",
+      "platforms": ["Windows", "macOS", "Linux", "Android", "OpenHarmony"], "availability": "limited",
+      "sourceIds": ["R06-S2", "R06-S4"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["These are specific implementation milestones in a prototype/tech demo, not comprehensive input, screen-reader or accessibility conformance.", "Release notes were truncated to visible entries; no current-platform parity or runtime behavior was tested.", "OpenHarmony artifacts are not automatically signed for HarmonyOS, and later selection work supersedes earlier future-facing selection statements."]
+    },
+    {
+      "id": "R06-F-DILLO-SELECTIVE-IMAGES", "browserId": "R06-B-DILLO", "title": "Selective image loading and optional panel hiding", "category": "reading-and-resource-controls",
+      "description": "The manual documents images-off mode using alt text or placeholders, loading individual images on demand and hiding browser panels.",
+      "platforms": ["Linux", "BSD", "macOS", "Windows via Cygwin", "Atari (project-documented; feature parity unverified)"], "availability": "documented",
+      "sourceIds": ["R06-D1", "R06-D3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Manual evidence is from v3.2.0-90-g29a46a2d; platform names describe project scope, not per-platform feature tests.", "No image-loading, resource-saving or usability measurement was performed. The documented renderer has limited HTML/CSS and no JavaScript."]
+    },
+    {
+      "id": "R06-F-DILLO-READING-SCROLL", "browserId": "R06-B-DILLO", "title": "Reading-oriented scrolling", "category": "reading",
+      "description": "Dillo documents page-at-a-time scrollbar navigation, configurable page overlap and an optional left-side scrollbar; the 3.2.0 notes describe book-like scrolling.",
+      "platforms": ["Linux", "BSD", "macOS", "Windows via Cygwin", "Atari (project-documented; feature parity unverified)"], "availability": "documented",
+      "sourceIds": ["R06-D1", "R06-D3", "R06-D4"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Historical release and manual documentation, not a current all-platform behavior test.", "No readability, focus or scrolling-efficiency comparison was run; constrained web-platform coverage changes comparison workloads."]
+    },
+    {
+      "id": "R06-F-DILLO-LOCAL-KEY-HELP", "browserId": "R06-B-DILLO", "title": "Offline help and keyboard command discovery", "category": "command-discovery",
+      "description": "Dillo documents offline help, the 3.3.0 about:keys page, numbered tab shortcuts and copy, zoom and navigation controls.",
+      "platforms": ["Linux", "BSD", "macOS", "Windows via Cygwin", "Atari (project-documented; feature parity unverified)"], "availability": "documented",
+      "sourceIds": ["R06-D1", "R06-D2", "R06-D3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["The about:keys addition is sourced to 3.3.0; other controls come from the earlier generated manual.", "No key handling, offline operation or assistive-technology behavior was exercised on any listed platform."]
+    },
+    {
+      "id": "R06-F-DILLO-PROTOCOL-PLUGINS", "browserId": "R06-B-DILLO", "title": "Standard-input/output protocol plugins", "category": "protocol-extensibility",
+      "description": "The canonical site documents protocol plugins written in different languages and communicating through standard input/output, with examples including Gemini, Gopher, IPFS and man-page browsing.",
+      "platforms": ["Linux", "BSD", "macOS", "Windows via Cygwin", "Atari (project-documented; plugin parity unverified)"], "availability": "limited",
+      "sourceIds": ["R06-D1"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Examples do not establish that every plugin is installed, maintained or supported in each platform package.", "No plugin was installed or executed; protocol coverage, security and external dependencies were not tested."]
+    },
+    {
+      "id": "R06-F-DILLO-LOCAL-CONTROL", "browserId": "R06-B-DILLO", "title": "3.3.0 dilloc control and page actions", "category": "local-automation",
+      "description": "The 3.3.0 notes document dilloc commands over a local UNIX socket for open, reload, readiness and dump operations, plus configurable page-menu actions integrating external tools.",
+      "platforms": ["Linux (per-build availability unverified)", "BSD (per-build availability unverified)", "macOS (per-build availability unverified)"], "availability": "limited",
+      "sourceIds": ["R06-D1", "R06-D2"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No local-control command, socket or external-tool action was executed; the interface is not evidence of safe agent integration.", "Windows/Cygwin and Atari support for this specific interface was not established.", "The same release qualifies FLTK 1.4 as experimental with HiDPI/Wayland problems; no build configuration was validated."]
+    },
+    {
+      "id": "R06-F-LYNX-NUMBERED-NAVIGATION", "browserId": "R06-B-LYNX", "title": "Arrow and numbered-target navigation", "category": "keyboard-navigation",
+      "description": "The users guide documents arrow/numeric navigation and numbering links and form fields for direct selection.",
+      "platforms": ["Unix/POSIX (OS/build parity unverified)", "Windows (maintainer build variants)"], "availability": "documented",
+      "sourceIds": ["R06-Y4", "R06-Y6"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Guide instructions were read through bounded excerpts, not executed in any terminal or OS variant.", "Keyboard coverage does not establish screen-reader accessibility or graphical modern-web parity; historical port lists are not a current support matrix."]
+    },
+    {
+      "id": "R06-F-LYNX-KEYMAP-HELP", "browserId": "R06-B-LYNX", "title": "In-context help and keymap", "category": "command-discovery",
+      "description": "Lynx documents ? or H for help and K for current commands and key bindings while viewing a document.",
+      "platforms": ["Unix/POSIX (OS/build parity unverified)", "Windows (maintainer build variants)"], "availability": "documented",
+      "sourceIds": ["R06-Y4", "R06-Y6"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No help, keymap or discovery-time behavior was tested.", "Terminal key handling, configuration and build differences remain unverified across platforms."]
+    },
+    {
+      "id": "R06-F-LYNX-FORMS-EDITING", "browserId": "R06-B-LYNX", "title": "Forms and configurable text entry", "category": "forms-and-editing",
+      "description": "The users guide documents forms and text entry, including external textarea editing and configurable line-editing or key styles.",
+      "platforms": ["Unix/POSIX (OS/build parity unverified)", "Windows (maintainer build variants)"], "availability": "documented",
+      "sourceIds": ["R06-Y4", "R06-Y6"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No form, external editor or OS-specific integration was exercised.", "Documented terminal forms do not establish compatibility with JavaScript-dependent or rich graphical application workflows."]
+    },
+    {
+      "id": "R06-F-LYNX-TEXT-LINK-OUTPUT", "browserId": "R06-B-LYNX", "title": "Formatted text, source and link-list output", "category": "text-export",
+      "description": "The manual documents -dump formatted text output, source output, link-only output and configurable output width.",
+      "platforms": ["Unix/POSIX (OS/build parity unverified)", "Windows (maintainer build variants)"], "availability": "documented",
+      "sourceIds": ["R06-Y5", "R06-Y6"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["CLI documentation was inspected in bounded excerpts; no command or pipeline was run.", "Output, encoding and option availability were not verified for every build; text output is not pixel-equivalent rendering of a modern web application."]
+    },
+    {
+      "id": "R06-F-LYNX-FILES-PROTOCOLS-ENCODING", "browserId": "R06-B-LYNX", "title": "Local files, network protocols and character controls", "category": "content-access",
+      "description": "Lynx documentation covers local files and multiple network protocols alongside character-set and language controls.",
+      "platforms": ["Unix/POSIX (OS/build parity unverified)", "Windows (maintainer build variants)"], "availability": "limited",
+      "sourceIds": ["R06-Y4", "R06-Y5", "R06-Y6"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Historical protocol and platform lists do not establish support in every current build.", "The maintainer explicitly distinguishes Windows variants without OpenSSL that cannot connect to HTTPS URLs.", "No file, protocol, encoding or language behavior was tested."]
+    },
+    {
+      "id": "R06-F-W3M-BROWSER-PAGER", "browserId": "R06-B-W3M", "title": "Combined browser and pager workflow", "category": "text-and-pipeline-workflows",
+      "description": "The inspected maintained-fork documentation describes displaying files or standard input and rendering HTML to standard output with -dump.",
+      "platforms": ["Unix-like systems (historical maintained-fork documentation; current OS coverage unverified)"], "availability": "documented",
+      "sourceIds": ["R06-W2", "R06-W3"], "evidenceType": "source-inspected", "confidence": "medium",
+      "limitations": ["Documentary capability only; no terminal command or pipeline was executed.", "The README and manpage have historical dates. Overall upstream lifecycle and current distribution/platform support remain unknown."]
+    },
+    {
+      "id": "R06-F-W3M-BUFFERS-TABS", "browserId": "R06-B-W3M", "title": "Keyboard buffers and tabs", "category": "tab-management",
+      "description": "The maintained-fork manual and tab documentation describe buffers, tabs, tab-selection menus and user-overridable key bindings.",
+      "platforms": ["Unix-like systems (historical maintained-fork documentation; current OS coverage unverified)"], "availability": "documented",
+      "sourceIds": ["R06-W3", "R06-W4"], "evidenceType": "source-inspected", "confidence": "medium",
+      "limitations": ["No key binding, terminal interaction or tab workflow was tested; some documented functions have no default binding.", "Historical documentation does not settle current per-platform support or the project's unknown overall upstream lifecycle."]
+    },
+    {
+      "id": "R06-F-W3M-TABLES-FRAMES", "browserId": "R06-B-W3M", "title": "Text layout for HTML tables and frames", "category": "text-rendering",
+      "description": "The inspected manual documents text layout for HTML tables and frames rather than simply stripping all markup.",
+      "platforms": ["Unix-like systems (historical maintained-fork documentation; current OS coverage unverified)"], "availability": "documented",
+      "sourceIds": ["R06-W3"], "evidenceType": "source-inspected", "confidence": "medium",
+      "limitations": ["The same manual says JavaScript and CSS are ignored; this is not equivalent rendering of interactive graphical applications.", "No layout tests were run. Build/platform behavior and overall upstream lifecycle remain unverified or unknown."]
+    },
+    {
+      "id": "R06-F-W3M-OPTIONAL-GRAPHICS", "browserId": "R06-B-W3M", "title": "Optional inline graphics and external image viewing", "category": "terminal-graphics",
+      "description": "The inspected documentation describes optional inline graphics using w3m-img or a sixel-enabled setup, with external image viewers as another documented route.",
+      "platforms": ["Unix-like systems (compatible terminal, build and external tools required; current OS coverage unverified)"], "availability": "limited",
+      "sourceIds": ["R06-W2", "R06-W3", "R06-W5"], "evidenceType": "source-inspected", "confidence": "medium",
+      "limitations": ["Graphics depend on terminal support, build configuration and optional external dependencies; no dependency was installed or graphics path tested.", "Historical documentation establishes neither current native macOS/Windows packaging nor active overall upstream maintenance; lifecycle remains unknown."]
+    },
+    {
+      "id": "R06-F-W3M-GRAPHICAL-HANDOFF", "browserId": "R06-B-W3M", "title": "Explicit graphical-browser URL handoff", "category": "browser-handoff",
+      "description": "The maintained-fork manual documents sending the current target URL to a graphical browser with a command when text rendering is inadequate.",
+      "platforms": ["Unix-like systems (historical maintained-fork documentation; current OS coverage unverified)"], "availability": "documented",
+      "sourceIds": ["R06-W3"], "evidenceType": "source-inspected", "confidence": "medium",
+      "limitations": ["No handoff or external browser was launched; configuration, destination-browser and per-platform behavior were not tested.", "A URL handoff is a complementary workflow, not proof of shared session state or modern-web equivalence. Overall upstream lifecycle remains unknown."]
+    }
+  ],
+  "issues": [
+    {
+      "id": "R06-I-ORION-SUPPORT-DOCS", "title": "Orion installation guidance must be reconciled with Kagi's Linux/Windows cessation",
+      "kind": "source-inconsistency", "status": "needs-validation", "browserId": "R06-B-ORION",
+      "sourceIds": ["R06-O2", "R06-O4"], "upstreamUrl": null, "upstreamStatus": "not-established",
+      "reportedVersions": ["Linux beta as described on 2026-10-02", "Planned Windows late-2026 release"], "testedVersions": [], "reproduction": "source-only",
+      "steps": ["Compare the dated support announcement with the undated Linux installation section."],
+      "expected": "A tracker distinguishes available historical beta downloads from maintained releases and unverified community continuation.",
+      "observed": "Installation docs still offer the Linux beta, while Kagi's 2026-10-02 announcement ends Linux updates and cancels its Windows release.",
+      "evidenceType": "source-inspected", "confidence": "high",
+      "quotations": [{"sourceId": "R06-O2", "quote": "That release won't come from Kagi."}, {"sourceId": "R06-O4", "quote": "The open beta version of Orion for Linux is currently available to everyone."}],
+      "limitations": ["Documentary support distinction, not a reproduced application defect or a Chrome issue.", "Completion of the promised source handoff and successor maintenance were not verified."],
+      "submission": {"status": "not-submitted", "url": null, "reason": "Research-only source reconciliation; no upstream issue was submitted."}
+    },
+    {
+      "id": "R06-I-NYXT-VERSIONED-DOCS", "title": "Nyxt 5.0.0 renderer and macOS assets supersede incomplete generic documentation",
+      "kind": "source-inconsistency", "status": "needs-validation", "browserId": "R06-B-NYXT",
+      "sourceIds": ["R06-N1", "R06-N2", "R06-N3", "R06-N4", "R06-N5"], "upstreamUrl": null, "upstreamStatus": "not-established",
+      "reportedVersions": ["5.0.0", "README and FAQ as retrieved on 2026-11-21"], "testedVersions": [], "reproduction": "source-only",
+      "steps": ["Compare generic README/FAQ platform and backend text with the tagged 5.0.0 manual, dated announcement and release assets."],
+      "expected": "Descriptions of 5.0.0 identify CEF as default and acknowledge the actual macOS ARM64 release asset.",
+      "observed": "The README labels macOS in development; 5.0.0 has a macOS ARM64 asset. Its manual and announcement name CEF default and remove Electron.",
+      "evidenceType": "source-inspected", "confidence": "high",
+      "quotations": [{"sourceId": "R06-N1", "quote": "macOS (in development)"}, {"sourceId": "R06-N3", "quote": "Add a CEF renderer and make it the default."}, {"sourceId": "R06-N4", "quote": "Nyxt-5.0.0-macOS-arm64.app.tar.gz"}],
+      "limitations": ["Release assets were not executed; platform quality and renderer parity remain untested.", "This is a documentation-scope finding, not an existing upstream ticket or a new submission."],
+      "submission": {"status": "not-submitted", "url": null, "reason": "Recorded as a version-scoping finding only."}
+    },
+    {
+      "id": "R06-I-FALKON-RELEASE-SURFACES", "title": "Falkon release surfaces differ in freshness and omit the newest release date",
+      "kind": "source-inconsistency", "status": "needs-validation", "browserId": "R06-B-FALKON",
+      "sourceIds": ["R06-F2", "R06-F3", "R06-F5"], "upstreamUrl": null, "upstreamStatus": "not-established",
+      "reportedVersions": ["26.08.3 in RSS", "25.08.0 at top of CHANGELOG", "23.08.0 in latest visible announcement"], "testedVersions": [], "reproduction": "source-only",
+      "steps": ["Compare the official RSS release list, repository CHANGELOG and standalone announcements page.", "Inspect RSS publication fields rather than inferring dates from version numbers."],
+      "expected": "The tracker uses the newer official release listing while preserving an unknown publication date.",
+      "observed": "RSS lists 26.08.3 with empty pubDate; CHANGELOG and announcements present older top entries.",
+      "evidenceType": "source-inspected", "confidence": "high",
+      "quotations": [{"sourceId": "R06-F2", "quote": "Release 26.08.3 of Falkon"}, {"sourceId": "R06-F2", "quote": "<pubDate/>"}],
+      "limitations": ["No release date is inferred from the version number or app-page metadata.", "No claim of abandonment or runtime defect follows from stale documentation."],
+      "submission": {"status": "not-submitted", "url": null, "reason": "Source-quality finding for the dataset; no upstream issue submitted."}
+    },
+    {
+      "id": "R06-I-DILLO-CANONICAL-SOURCE", "title": "Dillo's migrated canonical website has a newer release than its former GitHub website",
+      "kind": "source-inconsistency", "status": "needs-validation", "browserId": "R06-B-DILLO",
+      "sourceIds": ["R06-D1", "R06-D2", "R06-D5", "R06-D6"], "upstreamUrl": null, "upstreamStatus": "not-established",
+      "reportedVersions": ["3.3.0 on canonical domain", "3.2.0 on former GitHub website"], "testedVersions": [], "reproduction": "source-only",
+      "steps": ["Follow the old website's explicit migration pointer.", "Compare current canonical release and repository activity with the old version listing."],
+      "expected": "The tracker sources lifecycle and releases from the project's current canonical domain.",
+      "observed": "The old site advertises 3.2.0; the canonical site lists 3.3.0 released 2026-04-26, and repository history includes October 2026 work.",
+      "evidenceType": "source-inspected", "confidence": "high",
+      "quotations": [{"sourceId": "R06-D6", "quote": "latest release 3.2.0"}, {"sourceId": "R06-D1", "quote": "latest release 3.3.0"}],
+      "limitations": ["Documentary freshness finding only; no browser execution or upstream ticket-state verification.", "Do not infer inactivity from the former GitHub surface."],
+      "submission": {"status": "not-submitted", "url": null, "reason": "Canonical-source correction recorded locally in the dataset only."}
+    },
+    {
+      "id": "R06-I-LYNX-DATE-CONFLICT", "title": "Lynx 2.9.3 release body conflicts with a stale page footer",
+      "kind": "source-inconsistency", "status": "needs-validation", "browserId": "R06-B-LYNX",
+      "sourceIds": ["R06-Y1", "R06-Y2"], "upstreamUrl": null, "upstreamStatus": "not-established",
+      "reportedVersions": ["2.9.3"], "testedVersions": [], "reproduction": "source-only",
+      "steps": ["Read the version-specific release statement and compare it with the footer."],
+      "expected": "The tracker preserves the explicit 2026-05-27 release statement and discloses the conflicting footer.",
+      "observed": "The body dates Lynx 2.9.3 to May 27, 2026; the footer says Last Updated: 2024-04-15.",
+      "evidenceType": "source-inspected", "confidence": "high",
+      "quotations": [{"sourceId": "R06-Y2", "quote": "May 27, 2026"}, {"sourceId": "R06-Y2", "quote": "Last Updated: 2024-04-15"}],
+      "limitations": ["An internal document inconsistency, not a locally reproduced product defect.", "No separate official correction or issue status was established."],
+      "submission": {"status": "not-submitted", "url": null, "reason": "No publication or upstream report was performed."}
+    }
+  ],
+  "recommendationCandidates": [
+    {
+      "id": "R06-REC-CLASSIFICATION", "title": "Separate product kind, engine, platform, channel and lifecycle", "priority": "P0",
+      "description": "Prevent prototype engines, terminal pagers and constrained browsers from appearing as unqualified drop-in Chrome replacements. Count engine families separately from browser brands.",
+      "sourceIds": ["R06-N3", "R06-Q1", "R06-L2", "R06-S2", "R06-S4", "R06-D3", "R06-W1"], "evidenceType": "hypothesis", "confidence": "high",
+      "verificationNeeded": ["Check that experimental, unofficial, discontinued and released platform states remain visible in comparison views.", "Check that backend changes are scoped to versions."],
+      "limitations": ["A tracker-design proposal, not evidence that Chrome lacks a feature."]
+    },
+    {
+      "id": "R06-REC-PROVENANCE", "title": "Preserve dates, short quotes, claim types and version scope per fact", "priority": "P0",
+      "description": "Keep retrieval dates separate from release dates, retain null for unknown publication dates, and surface source conflicts rather than silently selecting generic metadata.",
+      "sourceIds": ["R06-O2", "R06-O4", "R06-F2", "R06-D1", "R06-D6", "R06-Y2"], "evidenceType": "hypothesis", "confidence": "high",
+      "verificationNeeded": ["Verify citations against the decisive body text.", "Prevent a roadmap, copyright year, repository creation date or empty RSS date from becoming a release claim."],
+      "limitations": ["Data-governance recommendation derived from this lane's documentary findings."]
+    },
+    {
+      "id": "R06-REC-KEYBOARD-DISCOVERY", "title": "Evaluate keyboard task completion and command discoverability", "priority": "P1",
+      "description": "Compare in-product command/key references and searchable actions using qutebrowser help, Nyxt introspection, Lynx keymaps and Dillo about:keys as documented design examples.",
+      "sourceIds": ["R06-Q2", "R06-N5", "R06-Y4", "R06-D2"], "evidenceType": "hypothesis", "confidence": "medium",
+      "verificationNeeded": ["Establish current Chrome native and explicitly disclosed extension baselines.", "Measure discovery time, completion time and recovery errors for URL entry, tab switching, close/undo-close and finding commands.", "Evaluate assistive technology separately from keyboard shortcut coverage."],
+      "limitations": ["No current Chrome feature absence or speed advantage was established."]
+    },
+    {
+      "id": "R06-REC-HINTS-MULTISELECT", "title": "Evaluate opt-in target hints and multi-object commands", "priority": "P1",
+      "description": "Use qutebrowser letter hints, Lynx numbered targets and Nyxt multiple marking as alternative interaction models, with explicit action scope and predictable escape behavior.",
+      "sourceIds": ["R06-Q1", "R06-Q2", "R06-N1", "R06-Y4"], "evidenceType": "hypothesis", "confidence": "medium",
+      "verificationNeeded": ["Compare against current Chrome and disclosed extension configurations.", "Test inputs, dialogs, shadow DOM, page shortcut conflicts, focus restoration, zoom and international keyboard layouts.", "Measure errors and task completion rather than shortcut counts alone."],
+      "limitations": ["Untested proposal; keyboard-first is not proof of accessibility compliance or a missing Chrome capability."]
+    },
+    {
+      "id": "R06-REC-READING-UX", "title": "Evaluate lightweight reading controls with matched workloads", "priority": "P1",
+      "description": "Compare focus/compact interfaces, clear profile identity, selective image loading and page-overlap scrolling. Keep UI density, rendering feature coverage and resource use as separate measures.",
+      "sourceIds": ["R06-O1", "R06-G1", "R06-G2", "R06-D3", "R06-D4"], "evidenceType": "hypothesis", "confidence": "medium",
+      "verificationNeeded": ["Establish current Chrome reading, profile and app-window behavior first.", "Measure task completion, readability, retained functions, CPU/RAM/network use and restore/exit behavior on matching content.", "Make background-running state and active identity understandable."],
+      "limitations": ["No lighter-than-Chrome measurement exists here.", "A browser that omits JavaScript does not provide an equivalent workload for a modern web application."]
+    },
+    {
+      "id": "R06-REC-TEXT-FRIENDLY-TRACKER", "title": "Provide semantic HTML and a useful text/no-JavaScript reading path", "priority": "P1",
+      "description": "Keep the research readable with headings, descriptive links, linear reading order and text-oriented export, drawing on Lynx and w3m's documented workflows.",
+      "sourceIds": ["R06-Y4", "R06-Y5", "R06-W3"], "evidenceType": "hypothesis", "confidence": "medium",
+      "verificationNeeded": ["Verify meaningful navigation and source citations without JavaScript.", "Check tables and reading order in a text-oriented view and with assistive technology."],
+      "limitations": ["Recommendation for the tracker, not an assertion that terminal browsers replace Chrome for interactive applications.", "No frontend build or browser QA was conducted in this lane."]
+    },
+    {
+      "id": "R06-REC-INTEROPERABILITY", "title": "Maintain a versioned engine-diversity and interoperability watchlist", "priority": "P2",
+      "description": "Track independent implementations and WebKit-based products alongside shared-Chromium shells. Separate standards conformance, embedding APIs, security architecture and consumer readiness.",
+      "sourceIds": ["R06-G1", "R06-L2", "R06-L3", "R06-S1", "R06-S4", "R06-D1"], "evidenceType": "hypothesis", "confidence": "medium",
+      "verificationNeeded": ["Collect dated standards/compatibility results and small reproducible cases before asserting interoperability gaps.", "Compare performance only on matching tasks with equivalent enabled functionality."],
+      "limitations": ["No WPT run or current Chrome comparison was performed.", "Experimental readiness is preserved even when a repository publishes a non-prerelease version tag."]
+    },
+    {
+      "id": "R06-REC-PLATFORM-LIFECYCLE", "title": "Version platform support independently of product-wide health", "priority": "P0",
+      "description": "Keep a dated support history per platform and channel, independently of the overall product lifecycle. Orion's continuing Apple development coexists with ended Kagi Linux/Windows work; native releases, unofficial ports, WSL/Cygwin paths and experimental targets need distinct support states.",
+      "sourceIds": ["R06-O2", "R06-O3", "R06-O4", "R06-N4", "R06-N5", "R06-L1", "R06-L2", "R06-D1", "R06-W6", "R06-W7"], "evidenceType": "hypothesis", "confidence": "high", "chromeParity": "unknown",
+      "verificationNeeded": ["Check that a product-wide active label cannot erase Orion's platform-specific Kagi cessation and unknown successor stewardship.", "Retain effective dates, version/channel scope and citations for each support transition; distinguish native releases from WSL/Cygwin or unofficial paths.", "Verify that experimental or unknown platform support stays visible without inferring readiness from a release asset, future roadmap or downstream package.", "Establish a current Chrome platform/channel baseline before making any comparative support claim."],
+      "limitations": ["Tracker-design proposal grounded in documentary lifecycle differences; no current Chrome support or feature-parity assessment was performed.", "Orion's successor handoff, Nyxt native Windows readiness and w3m overall upstream lifecycle remain unresolved in the saved evidence."]
+    },
+    {
+      "id": "R06-REC-LINK-PREVIEW", "title": "Evaluate link-preview effort and tab proliferation", "priority": "P1",
+      "description": "Use Orion's documented Link Preview, including links originating in other applications, as a design example for measuring the effort to inspect linked content before opening a full tab.",
+      "sourceIds": ["R06-O1"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unknown",
+      "verificationNeeded": ["Establish current Chrome native, platform-specific and explicitly disclosed extension preview behavior before classifying a gap.", "Compare inspection time, actions and tabs created on matched in-browser and external-application link tasks.", "Check dismiss/escape behavior, focus restoration and the transition from preview to full tab on each evaluated platform."],
+      "limitations": ["Orion's 1.0 announcement supplies the design example; mobile parity and later-version behavior were not established.", "No runtime preview test, tab-count measurement or current Chrome parity assessment was performed."]
+    },
+    {
+      "id": "R06-REC-CROSS-TAB-CONTENT-SEARCH", "title": "Evaluate cross-tab content retrieval separately from title and URL search", "priority": "P1",
+      "description": "Use Nyxt's documented multi-tab search and unified results view to evaluate retrieval across open-page content. Keep this task distinct from finding a tab by its title or URL and from selecting multiple objects for a command.",
+      "sourceIds": ["R06-N1", "R06-N2", "R06-N3", "R06-N4"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unknown",
+      "verificationNeeded": ["Establish the content actually searched by Nyxt and the current Chrome native/extension baseline, separately from tab-title/URL search.", "Measure completion time and retrieval errors on tasks whose answers occur in page content but not in tab titles or URLs.", "Check result-to-page navigation, highlighted context, escape behavior and disclosed scope when tabs are unloaded or page content changes.", "Record the tested platform, Nyxt release and CEF or WebKitGTK backend rather than assuming 5.0.0 backend or platform parity."],
+      "limitations": ["The saved README documents searching multiple tabs, but indexing scope, result coverage and runtime behavior were not tested.", "This is a retrieval-evaluation hypothesis; no current Chrome feature absence or measured advantage was established."]
+    },
+    {
+      "id": "R06-REC-PLUGIN-DESKTOP-INTEGRATION", "title": "Evaluate plugin and desktop workflows with engine-update awareness", "priority": "P1",
+      "description": "Use Falkon's documented plugin options, KWallet storage and Plasma download integration as examples for comparing coherent UI and desktop workflows. Record the actual QtWebEngine/Chromium backend version and update channel alongside the product version; a smaller toolbar does not establish a smaller engine footprint.",
+      "sourceIds": ["R06-F1", "R06-F2", "R06-F3", "R06-F4", "R06-Q1", "R06-Q3"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unknown",
+      "verificationNeeded": ["Establish current Chrome native and disclosed-extension behavior for the same plugin, password-store and download tasks on the same desktop.", "Verify which documented Falkon plugins and desktop integrations are supplied by each evaluated package; distinguish KDE/Plasma integration from Windows nightly distribution.", "Record actual browser and engine versions, package provenance, update responsibility and channel before comparing update freshness or support.", "Measure UI workflow effort separately from CPU, memory and retained page functionality; do not infer engine resource use from toolbar density."],
+      "limitations": ["Falkon capability details come from release history topped by 25.08.0, while its feed lists 26.08.3 without a verified publication date.", "No plugin, desktop integration, engine update or resource benchmark was exercised; current Chrome parity is unknown.", "qutebrowser bundle/update documentation illustrates package-specific engine boundaries and does not establish Falkon's installed engine version."]
+    },
+    {
+      "id": "R06-REC-TEXT-PIPELINE-HANDOFF", "title": "Evaluate text and pipeline export with graceful graphical handoff", "priority": "P1",
+      "description": "Use w3m's browser/pager, standard-input/output and explicit graphical-browser URL handoff workflows, alongside Lynx text/link output, as complementary browser-workflow evaluation ideas. Assess moving useful content through a text pipeline and opening a target graphically when text rendering is inadequate.",
+      "sourceIds": ["R06-W2", "R06-W3", "R06-Y5"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unknown",
+      "verificationNeeded": ["Establish current Chrome native and explicitly disclosed extension behavior for text/link export and browser handoff before proposing a missing capability.", "Check meaningful text, links, encoding and source context on matched export/pipeline tasks, including disclosure of omitted interactive content.", "Verify target URL fidelity, explicit destination choice and graceful fallback to graphical viewing when text is insufficient; measure effort and errors.", "Record terminal, package, OS and destination-browser conditions, and test session/authentication behavior rather than assuming state transfers with a URL."],
+      "limitations": ["This browser-workflow proposal is distinct from the existing semantic-HTML recommendation for the research site.", "The inspected w3m documentation ignores JavaScript and CSS; text output is not an equivalent modern interactive application workload.", "No pipeline or handoff was executed, current Chrome parity is unknown, and w3m's overall upstream lifecycle remains unknown."]
+    }
+  ],
+  "queryLog": [
+    {"query": "Orion browser Kagi release notes WebKit macOS iOS Linux", "retrievedAt": "2026-11-21T14:13:17Z", "sourceIds": ["R06-O1", "R06-O2", "R06-O3", "R06-O4"]},
+    {"query": "GNOME Web Epiphany release 2026 WebKitGTK features", "retrievedAt": "2026-11-21T14:13:18Z", "sourceIds": ["R06-G1", "R06-G2", "R06-G3"]},
+    {"query": "Falkon browser release 2026 QtWebEngine features", "retrievedAt": "2026-11-21T14:13:17Z", "sourceIds": ["R06-F1", "R06-F2", "R06-F3", "R06-F4", "R06-F5"]},
+    {"query": "qutebrowser releases 2026 keyboard QtWebEngine documentation", "retrievedAt": "2026-11-21T14:13:17Z", "sourceIds": ["R06-Q1", "R06-Q2", "R06-Q3"]},
+    {"query": "Nyxt browser release 2026 manual supported platforms WebKit", "retrievedAt": "2026-11-21T14:13:18Z", "sourceIds": ["R06-N1", "R06-N2", "R06-N3", "R06-N4", "R06-N5"]},
+    {"query": "Ladybird browser status 2026 supported platforms alpha", "retrievedAt": "2026-11-21T14:13:18Z", "sourceIds": ["R06-L1", "R06-L2", "R06-L3"]},
+    {"query": "Servo browser engine 2026 release servoshell status", "retrievedAt": "2026-11-21T14:13:18Z", "sourceIds": ["R06-S1", "R06-S2", "R06-S3", "R06-S4", "R06-S5", "R06-S6"]},
+    {"query": "Dillo browser latest release features 2026", "retrievedAt": "2026-11-21T14:13:18Z", "sourceIds": ["R06-D1", "R06-D2", "R06-D3", "R06-D4", "R06-D5", "R06-D6"]},
+    {"query": "Lynx text browser current release 2026 supported platforms", "retrievedAt": "2026-11-21T14:13:18Z", "sourceIds": ["R06-Y1", "R06-Y2", "R06-Y3", "R06-Y4", "R06-Y5", "R06-Y6"]},
+    {"query": "w3m browser official releases maintenance 2026", "retrievedAt": "2026-11-21T14:13:18Z", "sourceIds": ["R06-W1", "R06-W2", "R06-W3", "R06-W4", "R06-W5", "R06-W6", "R06-W7", "R06-W8"]}
+  ],
+  "limitations": [
+    "All research is documentary. Sources and release metadata are not runtime, security, performance or accessibility evidence.",
+    "The ten projects include released graphical browsers, specialist interfaces, a constrained graphical browser, experimental browser/engine work and terminal text tools; they are not interchangeable Chrome replacements.",
+    "No current Chrome baseline was inspected, so no Chrome feature absence, locally reproduced defect or measured inferiority is claimed.",
+    "Original discovery had benched/refused search engines and duplicate returned batches; duplicates were not counted as independent corroboration. Conversion reused completed research without new queries.",
+    "Long source histories and some reader-mode responses were truncated. Claims are limited to inspected passages; generic extraction metadata was not silently promoted to publication dates.",
+    "Unresolved: Orion Linux/Windows source-handoff completion and successor stewardship; Nyxt native Windows readiness; exact Falkon 26.08.3 release date; w3m original-upstream activity and distribution-specific support.",
+    "Ladybird's first alpha remained future-facing in inspected sources. Servo's 0.8.0 release remains a tech demo/prototype despite its GitHub channel flag.",
+    "Failed reads included the Orion extension-document URL (404), GNOME GitLab raw documents (406), w3m SourceForge homepage (403), an incorrect w3m README.md path (404), Lynx CHANGES URL (404), and Qt overview (403). Failure is not feature or project absence.",
+    "Source-linked recommendations are proposals requiring a current Chrome baseline and appropriate measurement. No upstream reports were submitted and no local reproductions were performed."
+  ]
+}

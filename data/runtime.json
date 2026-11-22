@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "id": "R11-runtime",
+  "title": "Chrome 158 Windows native toolbar baseline and blocked menu verification",
+  "category": "supplemental-runtime-evidence",
+  "status": "partial",
+  "agentSessionId": "ses_e014a4de6ffeD13d17DmK2qBgQ",
+  "observedOn": "2026-11-21",
+  "evidenceType": "locally-observed",
+  "contractScope": "Supplemental record; not an R01-R10 lane shard governed by data/contract.json.",
+  "testedArtifact": {
+    "product": "Google Chrome",
+    "executable": "chrome.exe",
+    "fileVersion": "158.0.8127.37",
+    "productVersion": "158.0.8127.37",
+    "lengthBytes": 4723864,
+    "sha256": "254f2d9b3e3b260e3eec3890a437598dddc553eba2bcfd411028716359ee492a",
+    "identityMethod": "Installed executable file metadata and SHA-256 recorded at launch; owned PID, process start and executable path checked before native-tree capture.",
+    "sourceIds": ["R11-E01", "R11-E02"]
+  },
+  "environment": {
+    "platform": "Microsoft Windows NT 10.0.26200.0",
+    "automation": "Windows PowerShell 5.1.26100.9711 and existing .NET UIAutomationClient/Windows Forms assemblies",
+    "profile": "One newly created disposable user-data directory; no sign-in action performed",
+    "initialPage": "about:blank",
+    "windowBounds": [80, 80, 1100, 850],
+    "launchArguments": ["--user-data-dir=<new-temporary-profile>", "--no-first-run", "--no-default-browser-check", "--new-window", "--window-position=80,80", "--window-size=1100,850", "about:blank"],
+    "policyAndRolloutState": "Not inventoried or changed; a fresh profile does not establish an unmanaged or rollout-free environment.",
+    "sourceIds": ["R11-E01", "R11-E02"]
+  },
+  "counts": {
+    "nativeChecklist": {"total": 7, "pass": 3, "fail": 0, "unrun": 4},
+    "sourceFollowups": {"total": 5, "pass": 0, "fail": 0, "unrun": 5},
+    "combined": {"total": 12, "pass": 3, "fail": 0, "unrun": 9},
+    "runtimeConfirmedDefects": 0,
+    "nativeMenuItemsObserved": 0,
+    "screenshotsTaken": 0,
+    "countingRule": "Baseline checks share one native snapshot; these are not independent browser trials. Unrun means the product assertion was not exercised, including input rejected before delivery. Automation errors are not Chrome test failures. Five source-followup checks are counted separately from the seven native checks."
+  },
+  "nativeChecks": [
+    {
+      "id": "R11-T01", "title": "Owned blank-window native toolbar is inspectable", "status": "pass",
+      "steps": ["Launch the installed executable once with the recorded disposable-profile arguments.", "Validate the recorded PID, process start and executable path; enumerate ControlView descendants of its visible top-level windows."],
+      "expected": "An owned about:blank window and native toolbar controls are exposed without traversal errors.",
+      "observed": "A window named 'about:blank - Google Chrome' and native toolbar controls were recorded: 41 nodes, no reported truncation or errors, 2740 ms traversal.",
+      "sourceIds": ["R11-E01", "R11-E02"]
+    },
+    {
+      "id": "R11-T02", "title": "History navigation is disabled on the initial blank tab", "status": "pass",
+      "steps": ["Read Back and Forward from the saved initial native toolbar snapshot before performing navigation."],
+      "expected": "Back and Forward are disabled for the initial tab with no traversable navigation history.",
+      "observed": "Back and Forward both had role ControlType.Button, Enabled=false and Offscreen=false.",
+      "sourceIds": ["R11-E02"]
+    },
+    {
+      "id": "R11-T03", "title": "Reload is labeled and enabled on the blank tab", "status": "pass",
+      "steps": ["Read the reload control from the same native toolbar snapshot."],
+      "expected": "The settled blank tab exposes an enabled Reload control.",
+      "observed": "Reload had role ControlType.Button, Enabled=true and Offscreen=false. Activation was not tested.",
+      "sourceIds": ["R11-E02"]
+    },
+    {
+      "id": "R11-T04", "title": "Alt+F opens the native Chrome menu", "status": "unrun",
+      "steps": ["Attempt to foreground the verified owned window before sending Alt+F.", "Stop if foreground ownership cannot be established."],
+      "expected": "After delivered Alt+F, native menu entries become visible; Google documents this shortcut.",
+      "observed": "The helper stopped with 'Foreground ownership unavailable; no input sent.' Alt+F was not delivered; no product assertion was exercised.",
+      "blockerIds": ["R11-B01", "R11-B02"], "sourceIds": ["R11-S01", "R11-E03", "R11-E04"]
+    },
+    {
+      "id": "R11-T05", "title": "Escape dismisses the opened native menu", "status": "unrun",
+      "steps": ["Planned: after a verified menu open, send Escape to the owned window and compare the native tree."],
+      "expected": "The opened menu is dismissed; the owned browser window remains.",
+      "observed": "No verified open menu was available. Escape was not sent.",
+      "blockerIds": ["R11-B01", "R11-B02"], "sourceIds": ["R11-E03", "R11-E04"]
+    },
+    {
+      "id": "R11-T06", "title": "Native menu labels and enabled states are internally consistent", "status": "unrun",
+      "steps": ["Planned: enumerate native menu items and compare their labels, roles and enabled states in the blank-window context."],
+      "expected": "A native menu tree provides the actual item labels and enablement for bounded comparison.",
+      "observed": "No post-open native menu tree was acquired. Toolbar observations do not establish menu-item behavior.",
+      "blockerIds": ["R11-B02"], "sourceIds": ["R11-E02", "R11-E04"]
+    },
+    {
+      "id": "R11-T07", "title": "Toolbar customization command is discoverable in native menus", "status": "unrun",
+      "steps": ["Planned: inspect the opened native menu and relevant submenu for the toolbar-customization command, recording exact UIA names and roles."],
+      "expected": "Record whether and where the command is exposed in this installed build; do not infer absence from unavailable automation.",
+      "observed": "The owned process was unavailable before menu inspection. Command presence, wording, location and activation remain unknown.",
+      "blockerIds": ["R11-B02"], "sourceIds": ["R11-E04"]
+    }
+  ],
+  "nativeObservation": {
+    "id": "R11-O01", "title": "Selected native controls from the initial blank-window snapshot", "status": "observed",
+    "recordedAt": "2026-11-21T21:55:58.9541866+05:30",
+    "treeCoverage": {"nodeCount": 41, "truncated": false, "errors": [], "elapsedMs": 2740, "maxNodes": 600, "maxDepth": 14, "traversalTimeBudgetSeconds": 18, "timeBudgetEnforcement": "Elapsed traversal time checked between UIA calls; no interruptible per-provider-call deadline."},
+    "controls": [
+      {"index": 0, "name": "about:blank - Google Chrome", "role": "ControlType.Window", "enabled": true, "offscreen": false},
+      {"index": 21, "name": "Back", "role": "ControlType.Button", "enabled": false, "offscreen": false},
+      {"index": 22, "name": "Forward", "role": "ControlType.Button", "enabled": false, "offscreen": false},
+      {"index": 23, "name": "Reload", "role": "ControlType.Button", "enabled": true, "offscreen": false},
+      {"index": 24, "name": "Home", "role": "ControlType.Button", "enabled": true, "offscreen": false},
+      {"index": 29, "name": "Action required", "role": "ControlType.Button", "enabled": true, "offscreen": false, "expandState": "Collapsed", "bounds": [1043, 126, 122, 34], "patterns": ["ExpandCollapsePatternIdentifiers.Pattern", "ScrollItemPatternIdentifiers.Pattern"]}
+    ],
+    "limitations": ["Home visibility/enablement does not establish whether its preference is managed.", "The right-edge button's observed name is 'Action required'; its cause and opened menu were not inspected. It is not evidence of a menu-label defect.", "Traversal was scoped to the owned window, not the desktop. The time bound was checked between UIA calls, not an enforced timeout on each provider call."],
+    "sourceIds": ["R11-E02"]
+  },
+  "blockers": [
+    {"id": "R11-B01", "title": "Foreground precondition rejected input", "status": "observed", "observed": "The input helper could not establish foreground ownership and sent no keys. It did not bypass that check.", "sourceIds": ["R11-E03"]},
+    {"id": "R11-B02", "title": "Owned Chrome instance unavailable during recovery", "status": "observed", "observed": "Recovery could no longer find the recorded browser root. The later bounded cleanup inventory found zero matching candidates. Exit time and cause were not observed; no crash is diagnosed. No replacement browser was launched.", "sourceIds": ["R11-E04"]}
+  ],
+  "unrunSourceFollowups": [
+    {"id": "R11-U01", "sourceReportLabel": "R09-C1", "title": "Managed Home customization metadata/enablement", "status": "unrun", "reason": "No mandatory/recommended policy matrix was established; machine-wide policies and registry were not changed."},
+    {"id": "R11-U02", "sourceReportLabel": "R09-C2", "title": "Toolbar WebUI fixture icon invariant", "status": "unrun", "reason": "Requires the separately owned matching Chromium source build/test binary; an installed-Chrome toolbar snapshot cannot validate a test fixture."},
+    {"id": "R11-U03", "sourceReportLabel": "R09-H1", "title": "Open overflow-menu action identity after pin-order change", "status": "unrun", "reason": "No open overflow menu, controlled model reorder or cross-window synchronization was exercised."},
+    {"id": "R11-U04", "sourceReportLabel": "R09-H2", "title": "Initially hidden action visibility notification", "status": "unrun", "reason": "No controlled hidden-to-visible action transition was available or triggered."},
+    {"id": "R11-U05", "sourceReportLabel": "R09-H3", "title": "Open overflow-menu enabled-state updates", "status": "unrun", "reason": "No controlled action-enable change while an overflow menu remained open was exercised."}
+  ],
+  "sourceFollowupBoundary": "R09 labels identify candidates in the source investigation, not runtime-confirmed defects. Its source pin 04d6a2d2bd0626ad343da0ef33e812e1360b44bd was not established as this installed build's revision. This supplement does not change R09 reproduction or submission statuses.",
+  "cleanup": {
+    "status": "no-matching-processes-observed",
+    "recordedAt": "2026-11-21T22:26:33.1004467+05:30",
+    "matchingCandidates": 0,
+    "terminationActions": 0,
+    "scope": "Chrome processes matching the assigned runtime-directory marker, the recorded root PID, ParentProcessId equal to that root PID, or PIDs observed in the owned native tree.",
+    "profileRetainedLocalOnly": true,
+    "exitTime": null,
+    "exitCause": null,
+    "limitations": ["This is a bounded historical inventory, not proof of every possible detached descendant. No complete process-tree history was captured.", "The process had already disappeared; this lane did not observe or perform a successful graceful close."],
+    "sourceIds": ["R11-E04"]
+  },
+  "sources": [
+    {"id": "R11-E01", "title": "Owned Chrome launch and executable identity", "kind": "local-runtime-evidence", "url": null, "retrievedAt": "2026-11-21T21:38:22.3172723+05:30", "publishedAt": null, "artifact": "01-launch.json", "sha256": "1b91ba6622e7eefe5b48e792e91b687ce57f7b758c436dccfb055e2a970ea6a9", "retention": "local-only", "limitations": ["A shell transport timeout occurred, but this durable record confirms the launch completed; no relaunch was needed.", "The hash identifies chrome.exe, not every loaded module."]},
+    {"id": "R11-E02", "title": "Owned blank-window native UIA ControlView", "kind": "local-runtime-evidence", "url": null, "retrievedAt": "2026-11-21T21:55:58.9541866+05:30", "publishedAt": null, "artifact": "02-baseline.json", "sha256": "e96a14e541152b0ae32104384c9c631b14dc653e2225974f17f94e906da800af", "retention": "local-only", "limitations": ["One native snapshot; no open-menu or action-dispatch evidence."]},
+    {"id": "R11-E03", "title": "Alt+F attempt stopped before input", "kind": "local-runtime-evidence", "url": null, "retrievedAt": "2026-11-21T22:08:20.0032623+05:30", "publishedAt": null, "artifact": "03-alt-f.json", "sha256": "bcda1d0ce5a9a8dbc23e925706cc945eff54e0c5f485fc39d82e0cc233aae4af", "retention": "local-only", "limitations": ["Automation precondition failure; not a failed Chrome shortcut."]},
+    {"id": "R11-E04", "title": "Bounded owned-process cleanup inventory", "kind": "local-runtime-evidence", "url": null, "retrievedAt": "2026-11-21T22:26:33.1004467+05:30", "publishedAt": null, "artifact": "04-cleanup-state.json", "sha256": "b01ce88c715745ade6f58e50e4c869641de6010bb4775a3c879a25179c480ed2", "retention": "local-only", "limitations": ["Zero matching candidates; process exit cause/time and detached descendants remain unknown."]},
+    {"id": "R11-S01", "title": "Google Chrome Help: Chrome keyboard shortcuts", "kind": "vendor-documentation", "url": "https://support.google.com/chrome/answer/157179?hl=en", "retrievedAt": "2026-11-21", "publishedAt": null, "limitations": ["Documents Alt+F and Alt+E for opening the Windows/Linux Chrome menu; documentation is not a local execution result."]}
+  ],
+  "confidence": "high for recorded native properties and input rejection; menu behavior and source-hypothesis release impact are unknown",
+  "limitations": [
+    "No native menu items were captured. Toolbar evidence and a blank page do not establish native menu behavior or customization availability.",
+    "The three passing checks are a baseline from one disposable profile, not a full menu/accessibility audit or an independent reproduction of any R09 candidate.",
+    "No screen-reader announcements, keyboard navigation, menu activation, visual screenshots, managed-policy matrix, or cross-window synchronization were verified.",
+    "Raw evidence and the disposable profile remain local. Public evidence hashes identify retained files but do not make those files publicly retrievable.",
+    "Further runtime checks require a separately recorded authorized run with a live owned window and usable input/UIA access; the stale process identity must not be reused."
+  ],
+  "submission": {"status": "not-submitted", "url": null, "reason": "No runtime-confirmed defect established. Publication and any external reporting are owned by the coordinating parent."}
+}

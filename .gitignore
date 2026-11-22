@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+ws.env
+*.raw.json
+*.log
+node_modules/
+local/
+coverage/

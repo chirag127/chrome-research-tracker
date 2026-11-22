@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "description": "Contract for original evidence-backed research shards. Each lane owns one JSON file. Required keys are listed below; additional descriptive fields are permitted.",
+  "lane": {
+    "required": ["schemaVersion", "id", "title", "agentSessionId", "scope", "status", "sources", "browsers", "features", "issues", "limitations"],
+    "idPattern": "^R(0[1-9]|10)$",
+    "status": ["complete", "partial"],
+    "recordIdRule": "Each source/browser/feature/issue id starts with the owning lane id and a hyphen; IDs are globally unique."
+  },
+  "source": {
+    "required": ["id", "title", "url", "retrievedAt", "publishedAt", "kind", "limitations"],
+    "kind": ["vendor-documentation", "source-code", "issue-tracker", "release-note", "third-party"],
+    "dateRule": "retrievedAt is a real YYYY-MM-DD or ISO-8601 timestamp; publishedAt is a real date/timestamp or null. Timestamps require Z or an explicit +/-HH:mm or +/-HHmm offset; timezone-less timestamps are invalid. When both values are timestamps, publication must not follow retrieval as an absolute instant, retaining all fractional-second digits. If either value is date-only, compare the written YYYY-MM-DD values without assuming midnight or the host timezone. Never use fabricated generic dates from extraction metadata."
+  },
+  "browser": {
+    "required": ["id", "name", "engine", "platforms", "lifecycle", "summary", "sourceIds", "evidenceType", "confidence", "limitations"],
+    "lifecycle": ["active", "maintenance", "sunset-announced", "discontinued", "experimental", "unknown"],
+    "engineRule": "String; qualify OS/edition differences and unknowns. platforms is a nonempty array of strings."
+  },
+  "feature": {
+    "required": ["id", "browserId", "title", "category", "description", "platforms", "availability", "sourceIds", "evidenceType", "confidence", "limitations"],
+    "availability": ["documented", "limited", "staged", "explicitly-unsupported", "not-established", "historical"],
+    "browserIdRule": "References a browser in the same lane. Chrome baseline features belong to R01."
+  },
+  "issue": {
+    "required": ["id", "title", "kind", "status", "sourceIds", "upstreamUrl", "upstreamStatus", "reportedVersions", "testedVersions", "reproduction", "steps", "expected", "observed", "evidenceType", "confidence", "limitations", "submission"],
+    "kind": ["upstream-report", "source-inconsistency", "hypothesis", "feature-proposal"],
+    "status": ["upstream-open", "upstream-closed", "needs-validation", "proposal"],
+    "reproduction": ["not-run", "source-only", "local-reproduced"],
+    "submission": {
+      "required": ["status", "url", "reason"],
+      "status": ["existing-upstream", "not-submitted", "blocked", "submitted"],
+      "urlRule": "null unless a real existing-upstream URL or verified new submission receipt exists. An upstream-report kind, upstream-open/upstream-closed status, or upstream-reported evidence makes a record ineligible to count as a new project submission, including existing feature requests. Genuine project-origin proposals remain eligible with verified receipts; retaining the new receipt's upstream URL/status metadata alone does not make it an existing report."
+    },
+    "reproductionRule": "local-reproduced requires nonempty testedVersions and evidence references for an actual test; otherwise testedVersions must be empty. Source inspection is source-only, never a browser reproduction."
+  },
+  "runtime": {
+    "unrunSourceFollowupsRule": "Entries in unrunSourceFollowups accept only unrun. Counter changes do not establish execution. Executed nativeChecks require expected/observed results and concrete local runtime evidence."
+  },
+  "common": {
+    "evidenceType": ["vendor-documented", "upstream-reported", "source-inspected", "locally-observed", "secondary-reported", "hypothesis"],
+    "confidence": ["high", "medium", "low"],
+    "sourceIdsRule": "Nonempty array of IDs referring to sources in the same lane.",
+    "limitationsRule": "Array of strings. Be explicit about documentary versus hands-on coverage.",
+    "emptyCollections": "Use empty arrays for record types outside a lane's assignment.",
+    "extraFields": "Useful fields such as sourceRevision, component, recommendationCandidates, quotations and queryLog are allowed. Source-backed facts in them retain citation IDs."
+  }
+}

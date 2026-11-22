@@ -1,0 +1,2061 @@
+{
+  "schemaVersion": 1,
+  "id": "R01",
+  "title": "Chrome–Chromium source, reporting channels, release, and feature baseline",
+  "agentSessionId": "ses_e018c78a9ffd4jJDnb3INRrctI",
+  "scope": "Primary-source research on Chrome versus Chromium source availability and licensing, the official source mirror, contribution and reporting routes, Stable release evidence, and Chrome features relevant to competitor-derived improvement requests.",
+  "status": "complete",
+  "asOf": "2026-11-21",
+  "researchWindow": {
+    "startedAt": "2026-11-21T14:13:04Z",
+    "endedAt": "2026-11-21T14:30:13Z"
+  },
+  "methodology": {
+    "basis": "Conversion of the completed primary-source research snapshot; no additional web searches or retrievals were performed for this conversion.",
+    "sourceInspection": "Search snippets located sources. Findings use the returned official page bodies, license and contribution documents, or official release API responses. Reader extraction failures are recorded as coverage limitations.",
+    "vendorClaims": "Documented functionality and eligibility establish the vendor-published baseline, not hands-on success on every device, account, region, rollout cohort, or website. Productivity, privacy, security, and performance benefits were not independently measured.",
+    "hypotheses": "Unsettled feature comparisons and recommendation candidates are explicitly marked as hypotheses or not established. Silence in documentation is not evidence of absence.",
+    "datePolicy": "Retrieval dates, explicit publication dates, explicit update dates, and unverified page-metadata dates are separate. Unknown publication dates are null. Generic extractor dates and repository creation dates are not substituted for document publication dates.",
+    "handsOnValidation": false,
+    "upstreamSubmissions": false
+  },
+  "childAgents": [],
+  "sources": [
+    {
+      "id": "R01-S01",
+      "title": "Chrome and Chromium",
+      "url": "https://developer.chrome.com/docs/web-platform/chrome-chromium",
+      "retrievedAt": "2026-11-21T14:13:35Z",
+      "publishedAt": null,
+      "reportedMetadataDate": "2026-11-11",
+      "dateEvidence": "The captured page metadata reported this date; the extracted body did not establish whether it was publication or update.",
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Chrome is built on Chromium, an open-source web browser project.",
+          "sourceIds": [
+            "R01-S01"
+          ]
+        },
+        {
+          "text": "Chrome adds proprietary software for decoding audio and video files, known as codecs.",
+          "sourceIds": [
+            "R01-S01"
+          ]
+        }
+      ],
+      "limitations": [
+        "This is Google's product explanation, not an audit of all Chrome components or every platform-specific engine.",
+        "The recorded metadata date is not promoted to a verified publication date."
+      ]
+    },
+    {
+      "id": "R01-S02",
+      "title": "Chrome additional terms of service",
+      "url": "https://www.google.com/chrome/terms/",
+      "retrievedAt": "2026-11-21T14:18:23Z",
+      "publishedAt": null,
+      "updatedAt": "2025-09-30",
+      "dateEvidence": "The body states: Last modified: 30 September, 2025.",
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Most source code for Chrome is available free of charge under open source software license agreements at chrome://credits.",
+          "sourceIds": [
+            "R01-S02"
+          ]
+        }
+      ],
+      "limitations": [
+        "The explicit date is a modification date, not an established original publication date.",
+        "Terms for the executable distribution do not establish that every Chrome component is open source or that every dependency has the Chromium root license."
+      ]
+    },
+    {
+      "id": "R01-S03",
+      "title": "Official GitHub mirror of the Chromium source and README",
+      "url": "https://github.com/chromium/chromium",
+      "retrievedAt": "2026-11-21T14:13:37Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "sourceRevision": "Moving main reference; no commit hash captured.",
+      "alsoRead": [
+        {
+          "url": "https://raw.githubusercontent.com/chromium/chromium/main/README.md",
+          "retrievedAt": "2026-11-21T14:13:04Z",
+          "description": "README body for the same source-ledger entry."
+        }
+      ],
+      "quotations": [
+        {
+          "text": "The official GitHub mirror of the Chromium source",
+          "context": "Repository page title.",
+          "sourceIds": [
+            "R01-S03"
+          ]
+        },
+        {
+          "text": "If you found a bug, please file it at https://crbug.com/new.",
+          "context": "README body.",
+          "sourceIds": [
+            "R01-S03"
+          ]
+        }
+      ],
+      "limitations": [
+        "The repository and its README are moving references. A repository creation date is not a README publication or revision date.",
+        "Reading the mirror does not constitute an upstream contribution, checkout, or build."
+      ]
+    },
+    {
+      "id": "R01-S04",
+      "title": "Chromium root LICENSE",
+      "url": "https://raw.githubusercontent.com/chromium/chromium/main/LICENSE",
+      "retrievedAt": "2026-11-21T14:13:04Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "sourceRevision": "Moving main reference; no commit hash captured.",
+      "quotations": [
+        {
+          "text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:",
+          "sourceIds": [
+            "R01-S04"
+          ]
+        }
+      ],
+      "limitations": [
+        "The text has the three-clause BSD structure. This is a finding about the root license, not every bundled dependency.",
+        "The copyright year is not a verified publication date for the retrieved revision."
+      ]
+    },
+    {
+      "id": "R01-S05",
+      "title": "Adding third-party libraries to Chromium",
+      "url": "https://chromium.googlesource.com/chromium/src.git/+/HEAD/docs/adding_to_third_party.md",
+      "retrievedAt": "2026-11-21T14:30:04Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "sourceRevision": "Moving HEAD reference; no commit hash captured.",
+      "quotations": [
+        {
+          "text": "what is Chromium licensed and what is covered by other licenses",
+          "context": "Explanation of tracking third-party attribution and license compliance.",
+          "sourceIds": [
+            "R01-S05"
+          ]
+        }
+      ],
+      "limitations": [
+        "The body does not establish a publication date; a generic extractor date was discarded.",
+        "The policy explains distinct dependency licenses and credit generation. No inventory or compliance audit of a particular build was performed."
+      ]
+    },
+    {
+      "id": "R01-S06",
+      "title": "Contributing to Chromium",
+      "url": "https://chromium.googlesource.com/chromium/src/+/main/docs/contributing.md",
+      "retrievedAt": "2026-11-21",
+      "publishedAt": null,
+      "kind": "source-code",
+      "sourceRevision": "Moving main reference; no commit hash captured.",
+      "quotations": [
+        {
+          "text": "the Chromium workflow is not the same as the GitHub pull request workflow.",
+          "sourceIds": [
+            "R01-S06"
+          ]
+        },
+        {
+          "text": "All contributors must have valid Gerrit/Google accounts",
+          "sourceIds": [
+            "R01-S06"
+          ]
+        }
+      ],
+      "limitations": [
+        "The retained research ledger establishes the retrieval day but not an exact retrieval time for this source.",
+        "The long guide was partially truncated in the captured output; the cited Gerrit, CLA, feature-discussion, testing, and OWNERS requirements were visible.",
+        "A conventional root CONTRIBUTING.md URL returned 404; the actual docs/contributing.md guide was found and read. No contribution was attempted."
+      ]
+    },
+    {
+      "id": "R01-S07",
+      "title": "Bug Life Cycle and Reporting Guidelines",
+      "url": "https://www.chromium.org/for-testers/bug-reporting-guidelines/",
+      "retrievedAt": "2026-11-21T14:13:04Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Make sure the bug is verified with the latest Chromium (or Chrome canary) build.",
+          "sourceIds": [
+            "R01-S07"
+          ]
+        },
+        {
+          "text": "Include the expected behavior.",
+          "sourceIds": [
+            "R01-S07"
+          ]
+        }
+      ],
+      "limitations": [
+        "The page body is undated.",
+        "The guide was read; no individual upstream issue, reporting form submission, or browser reproduction was verified."
+      ]
+    },
+    {
+      "id": "R01-S08",
+      "title": "Report an issue or send feedback on Chrome",
+      "url": "https://support.google.com/chrome/answer/95315?hl=en&co=GENIE.Platform%3DDesktop",
+      "retrievedAt": "2026-11-21T14:23:31Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "We probably won't be able to send you an individual response",
+          "sourceIds": [
+            "R01-S08"
+          ]
+        }
+      ],
+      "limitations": [
+        "The body is undated; generic help-page extractor dates were not accepted.",
+        "Instructions describe the computer feedback route. No feedback was sent and no receipt exists."
+      ]
+    },
+    {
+      "id": "R01-S09",
+      "title": "Reporting Security Bugs",
+      "url": "https://www.chromium.org/Home/chromium-security/reporting-security-bugs",
+      "retrievedAt": "2026-11-21T14:30:07Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Submit bugs through the Vulnerability Rewards Program.",
+          "sourceIds": [
+            "R01-S09"
+          ]
+        }
+      ],
+      "linkedReportingUrl": "https://g.co/ChromeBugRewards",
+      "limitations": [
+        "The body is undated. The page establishes the security-specific reporting route, not any particular vulnerability, reward eligibility, or submitted report."
+      ]
+    },
+    {
+      "id": "R01-S10",
+      "title": "Stable Channel Update for Desktop — November 17, 2026",
+      "url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html",
+      "retrievedAt": "2026-11-21T14:19:19.839Z",
+      "publishedAt": "2026-11-17",
+      "dateEvidence": "The page date heading states Tuesday, November 17, 2026.",
+      "kind": "release-note",
+      "quotations": [
+        {
+          "text": "the promotion of Chrome 158 to the stable channel for Windows, Mac and Linux",
+          "sourceIds": [
+            "R01-S10"
+          ]
+        },
+        {
+          "text": "This will roll out over the coming days/weeks.",
+          "sourceIds": [
+            "R01-S10"
+          ]
+        }
+      ],
+      "limitations": [
+        "Reader extraction at 2026-11-21T14:17:58Z returned only the date and footer. A read-only HTTP retrieval recovered the actual post body at the recorded retrievedAt time.",
+        "The announcement establishes promotion and staged rollout, not installation on every Stable client.",
+        "The November archive returned HTTP 429; the month was not exhaustively enumerated."
+      ]
+    },
+    {
+      "id": "R01-S11",
+      "title": "VersionHistory API reference",
+      "url": "https://developer.chrome.com/docs/web-platform/versionhistory/reference",
+      "retrievedAt": "2026-11-21T14:18:01Z",
+      "publishedAt": null,
+      "reportedMetadataDate": "2021-03-04",
+      "dateEvidence": "The captured metadata reported this date; original publication versus update was not established from the body.",
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "endtime=none filters for releases that are currently live and do not have an end time yet.",
+          "sourceIds": [
+            "R01-S11"
+          ]
+        }
+      ],
+      "limitations": [
+        "The reference documents live-release filtering and numerical version ordering, but this lane did not establish the full population semantics of every fractionGroup returned by the API.",
+        "A serving interval timestamp is not an article publication date or a feature-enablement timestamp."
+      ]
+    },
+    {
+      "id": "R01-S12",
+      "title": "VersionHistory — live Windows 64-bit Stable releases",
+      "url": "https://versionhistory.googleapis.com/v1/chrome/platforms/win64/channels/stable/versions/all/releases?filter=endtime%3Dnone&order_by=version%20desc",
+      "retrievedAt": "2026-11-21T14:19:19.889Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "format": "official-release-json-api",
+      "limitations": [
+        "This is a dated live API readback, not an article with a publication date.",
+        "Distinct fraction groups, rollout/control entries, and zero-fraction records coexist. Their fractions must not be pooled into one global user population.",
+        "The response does not prove which version any particular client had installed or which features were enabled."
+      ]
+    },
+    {
+      "id": "R01-S13",
+      "title": "VersionHistory — live macOS ARM64 Stable releases",
+      "url": "https://versionhistory.googleapis.com/v1/chrome/platforms/mac_arm64/channels/stable/versions/all/releases?filter=endtime%3Dnone&order_by=version%20desc",
+      "retrievedAt": "2026-11-21T14:19:19.889Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "format": "official-release-json-api",
+      "limitations": [
+        "This is a dated live API readback; publication does not apply.",
+        "Distinct fraction groups prevent treating all returned fractions as one global distribution.",
+        "Intel macOS was not independently queried and feature enablement was not tested."
+      ]
+    },
+    {
+      "id": "R01-S14",
+      "title": "VersionHistory — live Linux Stable releases",
+      "url": "https://versionhistory.googleapis.com/v1/chrome/platforms/linux/channels/stable/versions/all/releases?filter=endtime%3Dnone&order_by=version%20desc",
+      "retrievedAt": "2026-11-21T14:19:19.881Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "format": "official-release-json-api",
+      "limitations": [
+        "One live release was returned at retrieval. This is not proof that every Linux installation was updated or that every feature was enabled.",
+        "The serving timestamp is retained as release data, not a publication date."
+      ]
+    },
+    {
+      "id": "R01-S15",
+      "title": "VersionHistory — live Android Stable releases",
+      "url": "https://versionhistory.googleapis.com/v1/chrome/platforms/android/channels/stable/versions/all/releases?filter=endtime%3Dnone&order_by=version%20desc",
+      "retrievedAt": "2026-11-21T14:19:19.888Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "format": "official-release-json-api",
+      "limitations": [
+        "Multiple M157, M158, and M159 records were live. Selecting only the highest version would erase the rollout qualification.",
+        "No Android installation, Play Store delivery, or feature enablement was inspected.",
+        "The API supplies serving intervals, not a publication date."
+      ]
+    },
+    {
+      "id": "R01-S16",
+      "title": "VersionHistory — live iOS Stable releases",
+      "url": "https://versionhistory.googleapis.com/v1/chrome/platforms/ios/channels/stable/versions/all/releases?filter=endtime%3Dnone&order_by=version%20desc",
+      "retrievedAt": "2026-11-21T14:19:19.887Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "format": "official-release-json-api",
+      "limitations": [
+        "One live version was returned at retrieval. This does not establish the installed version or enabled features on a particular iPhone or iPad.",
+        "The API does not establish iOS rendering-engine details."
+      ]
+    },
+    {
+      "id": "R01-S17",
+      "title": "Get more done with new vertical tabs and immersive reading mode in Chrome",
+      "url": "https://blog.google/products-and-platforms/products/chrome/new-chrome-productivity-features",
+      "retrievedAt": "2026-11-21T14:13:43Z",
+      "publishedAt": null,
+      "reportedMetadataDate": "2026-04-07",
+      "dateEvidence": "The research capture recorded this page-metadata date. The extracted body says rollout is beginning but does not independently display a publication date.",
+      "kind": "release-note",
+      "quotations": [
+        {
+          "text": "Today we are beginning to roll out two new features",
+          "sourceIds": [
+            "R01-S17"
+          ]
+        },
+        {
+          "text": "You now have the option to use vertical tabs in Chrome",
+          "sourceIds": [
+            "R01-S17"
+          ]
+        }
+      ],
+      "limitations": [
+        "The launch wording describes a staged rollout, not a guarantee for every user.",
+        "The recorded metadata date is preserved without asserting a separately verified publication date.",
+        "Productivity benefits are vendor claims, not measured results from this lane."
+      ]
+    },
+    {
+      "id": "R01-S18",
+      "title": "Manage tabs in Chrome — computer",
+      "url": "https://support.google.com/chrome/answer/2391819?hl=en&co=GENIE.Platform%3DDesktop",
+      "retrievedAt": "2026-11-21T14:15:13Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Under “Tab position,” select Vertical or Horizontal.",
+          "sourceIds": [
+            "R01-S18"
+          ]
+        },
+        {
+          "text": "A closed group isn't deleted and is saved in the bookmarks bar or in the menu.",
+          "sourceIds": [
+            "R01-S18"
+          ]
+        }
+      ],
+      "limitations": [
+        "The help body is undated and does not pin all instructions to one Chrome version or rollout cohort.",
+        "Desktop tab groups, vertical tabs, named windows, and tab search are documented; richer workspace or collaboration semantics are not thereby established.",
+        "No local operation of these controls was tested."
+      ]
+    },
+    {
+      "id": "R01-S19",
+      "title": "New features in Chrome for work, life and everything in between",
+      "url": "https://blog.google/products-and-platforms/products/chrome/chrome-productivity-improvements",
+      "retrievedAt": "2026-11-21T14:13:46Z",
+      "publishedAt": null,
+      "reportedMetadataDate": "2026-02-19",
+      "dateEvidence": "The captured page metadata reported 2026-02-19. A discovery snippet reported a different date and was not used. The body did not independently establish publication.",
+      "kind": "release-note",
+      "quotations": [
+        {
+          "text": "It allows you to view two tabs at the same time",
+          "context": "Description of built-in split view.",
+          "sourceIds": [
+            "R01-S19"
+          ]
+        }
+      ],
+      "limitations": [
+        "The announcement also covers PDF annotations and Save to Google Drive, but this lane's requested baseline focuses on split view.",
+        "Claims about time saved or tester productivity were not independently measured.",
+        "The metadata date is retained separately from publication."
+      ]
+    },
+    {
+      "id": "R01-S20",
+      "title": "Use split view for multitasking in Chrome — computer",
+      "url": "https://support.google.com/chrome/answer/16971124?hl=en&co=GENIE.Platform%3DDesktop",
+      "retrievedAt": "2026-11-21T14:13:50Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "You can display 2 websites simultaneously within a single Chrome window.",
+          "sourceIds": [
+            "R01-S20"
+          ]
+        }
+      ],
+      "limitations": [
+        "The undated help body documents computer use and platform-specific shortcuts, not identical phone support.",
+        "The documented two-view workflow does not alone prove that every richer multi-pane configuration is impossible.",
+        "Side-panel and active-view behavior was not tested locally."
+      ]
+    },
+    {
+      "id": "R01-S21",
+      "title": "Use reading mode in Chrome — default computer body",
+      "url": "https://support.google.com/chrome/answer/14218344?hl=en",
+      "retrievedAt": "2026-11-21T14:15:16Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "This will open an immersive, full screen reading view of the page.",
+          "sourceIds": [
+            "R01-S21"
+          ]
+        },
+        {
+          "text": "Reading mode is not yet available on Googlebook.",
+          "sourceIds": [
+            "R01-S21"
+          ]
+        }
+      ],
+      "limitations": [
+        "The body is undated. It documents both full-page and optional side-panel modes, not universal compatibility with every website.",
+        "The explicit Googlebook exception is retained; it must not be generalized to all ChromeOS devices.",
+        "Read-aloud quality, accessibility behavior, and site extraction were not tested."
+      ]
+    },
+    {
+      "id": "R01-S22",
+      "title": "Use reading mode in Chrome — Android",
+      "url": "https://support.google.com/chrome/answer/14218344?hl=en&co=GENIE.Platform%3DAndroid",
+      "retrievedAt": "2026-11-21T14:30:10Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The undated Android body documents a reading-mode command and font, size, and background controls.",
+        "The page can report reading mode unavailable for a website. Computer-only read-aloud and spacing features must not be inferred for Android from the shared introduction."
+      ]
+    },
+    {
+      "id": "R01-S23",
+      "title": "Use reading mode in Chrome — iPhone and iPad",
+      "url": "https://support.google.com/chrome/answer/14218344?hl=en&co=GENIE.Platform%3DiOS",
+      "retrievedAt": "2026-11-21T14:30:13Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The undated iOS body documents on/off commands and typography/background controls.",
+        "The source explicitly allows page failures; equivalent computer-only features or universal site coverage were not established."
+      ]
+    },
+    {
+      "id": "R01-S24",
+      "title": "Manage tabs in Chrome — Android",
+      "url": "https://support.google.com/chrome/answer/2391819?hl=en&co=GENIE.Platform%3DAndroid",
+      "retrievedAt": "2026-11-21T14:23:34Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Chrome automatically saves and syncs changes across devices where you're signed in with the same Google Account.",
+          "sourceIds": [
+            "R01-S24"
+          ]
+        }
+      ],
+      "limitations": [
+        "The undated page combines phone, tablet, and keyboard/mouse instructions. Tablet multiwindow and split-screen descriptions do not establish the same in-window split view on phones.",
+        "Sharing selected tab links is not proof of a live cross-account collaborative workspace.",
+        "Same-account syncing, deletion propagation, and inactive-tab behavior were not reproduced locally."
+      ]
+    },
+    {
+      "id": "R01-S25",
+      "title": "Manage tabs in Chrome — iPhone and iPad",
+      "url": "https://support.google.com/chrome/answer/2391819?hl=en&co=GENIE.Platform%3DiOS",
+      "retrievedAt": "2026-11-21T14:23:37Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The undated body explicitly describes saved and synced tab-group changes, but parts of the action table were incompletely extracted.",
+        "iPad windows and OS Split View are distinct from the desktop Chrome in-window split-view feature.",
+        "A shared split-view help link in the introduction is not evidence of phone support for that feature."
+      ]
+    },
+    {
+      "id": "R01-S26",
+      "title": "Manage Chrome with multiple profiles",
+      "url": "https://support.google.com/chrome/answer/2364824?hl=en&co=GENIE.Platform%3DDesktop",
+      "retrievedAt": "2026-11-21T14:28:03Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "With profiles, you can keep all your Chrome info separate, like bookmarks, history, passwords, and other settings.",
+          "sourceIds": [
+            "R01-S26"
+          ]
+        }
+      ],
+      "limitations": [
+        "The body is undated and describes profile separation, not a locked security boundary against other users of the same device.",
+        "Profiles do not by themselves establish persistent project-workspace or cross-account collaboration semantics."
+      ]
+    },
+    {
+      "id": "R01-S27",
+      "title": "Customize the Chrome toolbar — computer",
+      "url": "https://support.google.com/chrome/answer/14835450?hl=en&co=GENIE.Platform%3DDesktop",
+      "retrievedAt": "2026-11-21T14:18:04Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "You can press and drag the pinned buttons in the toolbar to change their position.",
+          "sourceIds": [
+            "R01-S27"
+          ]
+        }
+      ],
+      "limitations": [
+        "The undated documentation concerns offered toolbar buttons and pinned controls; it does not establish arbitrary relocation of every browser control or a full menu editor.",
+        "No per-platform toolbar behavior was tested locally."
+      ]
+    },
+    {
+      "id": "R01-S28",
+      "title": "Customize the Chrome toolbar — Android",
+      "url": "https://support.google.com/chrome/answer/14835450?hl=en&co=GENIE.Platform%3DAndroid",
+      "retrievedAt": "2026-11-21T14:26:55Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "On some web pages, you may find a relevant action in the toolbar instead of your preferred shortcut.",
+          "sourceIds": [
+            "R01-S28"
+          ]
+        }
+      ],
+      "limitations": [
+        "The undated Android instructions cover a selected or adaptive shortcut rather than full desktop-style toolbar rearrangement.",
+        "The attempted iOS variant returned Android instructions; it was not used to establish iOS menu or toolbar support."
+      ]
+    },
+    {
+      "id": "R01-S29",
+      "title": "4 ways to capture screenshots with DevTools",
+      "url": "https://developer.chrome.com/blog/devtools-tips-33",
+      "retrievedAt": "2026-11-21T14:21:52Z",
+      "publishedAt": null,
+      "updatedAt": "2024-08-09",
+      "dateEvidence": "The body explicitly states Last updated 2024-08-09 UTC; original publication was not independently established.",
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Capture a full-page screenshot.",
+          "sourceIds": [
+            "R01-S29"
+          ]
+        },
+        {
+          "text": "Screenshot an area of a page.",
+          "sourceIds": [
+            "R01-S29"
+          ]
+        }
+      ],
+      "limitations": [
+        "This establishes developer-tool capture, not a consumer-facing browser capture, annotation, or redaction workflow.",
+        "The linked video was not independently assessed and capture was not performed locally."
+      ]
+    },
+    {
+      "id": "R01-S30",
+      "title": "Take a screenshot or record your screen on Android",
+      "url": "https://support.google.com/android/answer/9075928?hl=en",
+      "retrievedAt": "2026-11-21T14:27:58Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The undated source describes Android OS capture, not a Chrome-specific screenshot command.",
+        "Scrolling capture is documented for Android 12 and later on most screens that allow scrolling; support on every Chrome page or device was not established."
+      ]
+    },
+    {
+      "id": "R01-S31",
+      "title": "Delete, allow, and manage cookies in Chrome",
+      "url": "https://support.google.com/chrome/answer/95647?hl=en&co=GENIE.Platform%3DDesktop",
+      "retrievedAt": "2026-11-21T14:21:41Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "By default, third-party cookies are blocked in Incognito mode.",
+          "sourceIds": [
+            "R01-S31"
+          ]
+        }
+      ],
+      "limitations": [
+        "The body is undated. Allow/block controls and Incognito's default do not establish default blocking for every ordinary session or comprehensive anti-tracking.",
+        "The body retains ad-privacy and related-site cross-links despite the later-read retirement-plan source. Two linked ad-privacy help URLs returned generic introductory content.",
+        "Exact shipped states of the older Privacy Sandbox controls were not established."
+      ]
+    },
+    {
+      "id": "R01-S32",
+      "title": "Turn Do Not Track on or off",
+      "url": "https://support.google.com/chrome/answer/2790761?hl=en&co=GENIE.Platform%3DDesktop",
+      "retrievedAt": "2026-11-21T14:21:43Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "It's turned off by default.",
+          "context": "The Do Not Track request setting.",
+          "sourceIds": [
+            "R01-S32"
+          ]
+        },
+        {
+          "text": "Most websites and web services, including Google's, don't change their behavior when they receive a \"Do Not Track\" request.",
+          "sourceIds": [
+            "R01-S32"
+          ]
+        }
+      ],
+      "limitations": [
+        "The body is undated and describes a request signal, not enforced tracker blocking.",
+        "The page distinguishes DNT from a separate opt-out setting. Website compliance was not measured."
+      ]
+    },
+    {
+      "id": "R01-S33",
+      "title": "Send an opt-out request regarding use of your data",
+      "url": "https://support.google.com/chrome/answer/18797212?hl=en&co=GENIE.Platform%3DDesktop",
+      "retrievedAt": "2026-11-21T14:23:26Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Eligible region(s): California",
+          "sourceIds": [
+            "R01-S33"
+          ]
+        },
+        {
+          "text": "Chrome is currently rolling this feature out, it may not be available to all users yet.",
+          "sourceIds": [
+            "R01-S33"
+          ]
+        },
+        {
+          "text": "global privacy control or opt-out preference signal",
+          "context": "Names the help page gives for this type of request.",
+          "sourceIds": [
+            "R01-S33"
+          ]
+        }
+      ],
+      "limitations": [
+        "The body is undated and expressly describes a regional staged rollout. It does not establish universal availability.",
+        "Residency is evaluated per profile and location signals can affect eligibility. No account or residency was inspected.",
+        "Sites determine responses subject to applicable law; signal delivery and compliance were not tested."
+      ]
+    },
+    {
+      "id": "R01-S34",
+      "title": "Browse in Incognito mode",
+      "url": "https://support.google.com/chrome/answer/95464?hl=en&co=GENIE.Platform%3DDesktop",
+      "retrievedAt": "2026-11-21T14:26:58Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "While Incognito can help keep your browsing private on your device, it doesn’t make you invisible.",
+          "sourceIds": [
+            "R01-S34"
+          ]
+        }
+      ],
+      "limitations": [
+        "The body is undated. Local-session retention limits are distinct from anonymity against websites or network operators.",
+        "No privacy effectiveness, network behavior, or local retention behavior was independently tested."
+      ]
+    },
+    {
+      "id": "R01-S35",
+      "title": "Choose your Safe Browsing protection level in Chrome",
+      "url": "https://support.google.com/chrome/answer/9890866?hl=en&co=GENIE.Platform%3DDesktop",
+      "retrievedAt": "2026-11-21T14:27:55Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "When you use Chrome, Standard protection is on by default",
+          "sourceIds": [
+            "R01-S35"
+          ]
+        }
+      ],
+      "limitations": [
+        "The undated source documents protection modes and associated data handling; their security efficacy and performance were not independently measured.",
+        "Safe Browsing and its security-lookup privacy servers are not evidence of comprehensive ad/tracker blocking or a general browsing relay."
+      ]
+    },
+    {
+      "id": "R01-S36",
+      "title": "Get your bookmarks, passwords, and more on all your devices",
+      "url": "https://support.google.com/chrome/answer/165139?hl=en&co=GENIE.Platform%3DDesktop",
+      "retrievedAt": "2026-11-21T14:21:46Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Your payment methods and addresses from Google Wallet aren't encrypted by a passphrase.",
+          "sourceIds": [
+            "R01-S36"
+          ]
+        },
+        {
+          "text": "Only web addresses that you enter in Chrome's address bar are synced.",
+          "context": "History-sync limitation when using a passphrase.",
+          "sourceIds": [
+            "R01-S36"
+          ]
+        }
+      ],
+      "limitations": [
+        "The undated documentation describes Google Account-based data saving and optional passphrase trade-offs, not a hands-on interoperability or cryptographic audit.",
+        "An extension appearing in synced information does not establish extension execution on mobile.",
+        "Self-hosted or account-free synchronization was not established."
+      ]
+    },
+    {
+      "id": "R01-S37",
+      "title": "Extension Side Panel API",
+      "url": "https://developer.chrome.com/docs/extensions/reference/api/sidePanel",
+      "retrievedAt": "2026-11-21T14:25:43Z",
+      "publishedAt": null,
+      "reportedMetadataDate": "2026-10-29",
+      "dateEvidence": "The captured metadata reported this date; publication versus update was not established from the body.",
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Use the chrome.sidePanel API to host content in the browser's side panel alongside the main content of a webpage.",
+          "sourceIds": [
+            "R01-S37"
+          ]
+        }
+      ],
+      "limitations": [
+        "An extension API for extension-hosted content is not proof of a built-in arbitrary-website sidebar or multiple simultaneous independent panels.",
+        "The availability heading was incompletely extracted. Method/version details do not establish universal platform support.",
+        "No extension was installed or executed."
+      ]
+    },
+    {
+      "id": "R01-S38",
+      "title": "Use Gemini in Chrome — computer",
+      "url": "https://support.google.com/chrome/answer/16283624?hl=en&co=GENIE.Platform%3DDesktop",
+      "retrievedAt": "2026-11-21T14:18:07Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Gemini in Chrome is not available to all users at this time.",
+          "sourceIds": [
+            "R01-S38"
+          ]
+        },
+        {
+          "text": "You’ll need to opt in the first time you use Gemini in Chrome.",
+          "sourceIds": [
+            "R01-S38"
+          ]
+        }
+      ],
+      "limitations": [
+        "The undated body expressly describes gradual rollout, supported devices, region/language/account/age requirements, and feature-specific permissions.",
+        "Supported region and language tables were empty or partially stripped; their entries were not invented.",
+        "Hiding the Gemini icon, changing tab sharing, and disabling all AI are not interchangeable. No runtime behavior or universal consumer all-AI-off control was established."
+      ]
+    },
+    {
+      "id": "R01-S39",
+      "title": "Manage on-device Generative AI models in Chrome",
+      "url": "https://support.google.com/chrome/answer/16961953?hl=en",
+      "retrievedAt": "2026-11-21T14:26:46Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Chrome will delete the on-device Generative AI model files from your device.",
+          "sourceIds": [
+            "R01-S39"
+          ]
+        },
+        {
+          "text": "Chrome will not download these models again while the setting is off",
+          "sourceIds": [
+            "R01-S39"
+          ]
+        }
+      ],
+      "limitations": [
+        "The undated source describes a supported setting on eligible computers, with per-user and per-device scope.",
+        "The approximately 20 GB figure is a minimum free-disk-space condition, not a claimed download or model-file size.",
+        "Turning off local generative models does not disable every other AI feature. No model download, deletion, or prevention of re-download was tested locally."
+      ]
+    },
+    {
+      "id": "R01-S40",
+      "title": "Gemini in Chrome — administrator documentation",
+      "url": "https://support.google.com/chrome/a/answer/16291696?hl=en",
+      "retrievedAt": "2026-11-21T14:25:37Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Access to this feature requires both to be enabled.",
+          "context": "The Gemini app setting and Chrome's GeminiSettings policy.",
+          "sourceIds": [
+            "R01-S40"
+          ]
+        }
+      ],
+      "limitations": [
+        "The undated administrator page has different age, account, device, and regional conditions from consumer help. These scopes must remain distinct.",
+        "Region and language tables were incompletely extracted. Android availability was explicitly scoped to the U.S.; other supported regions were not reconstructed.",
+        "Enterprise data-use assurances are vendor statements under the stated account/edition terms, not consumer guarantees or an independent audit.",
+        "No administrator settings or policies were applied."
+      ]
+    },
+    {
+      "id": "R01-S41",
+      "title": "Fix problems with apps, extensions, or themes — Chrome Web Store",
+      "url": "https://support.google.com/chrome_webstore/answer/1698338?hl=en",
+      "retrievedAt": "2026-11-21T14:21:49Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "You can only use extensions and themes on computers.",
+          "sourceIds": [
+            "R01-S41"
+          ]
+        },
+        {
+          "text": "You can't install extensions and themes when you're using a mobile device, even if you set it in desktop mode.",
+          "sourceIds": [
+            "R01-S41"
+          ]
+        }
+      ],
+      "limitations": [
+        "The body is undated but contains an explicit mobile exclusion, rather than merely omitting mobile instructions.",
+        "This supports a Chrome Web Store/mobile Chrome limitation; it is not a finding about all other Chromium-derived browsers.",
+        "Installation was not attempted. Managed-device and Incognito/Guest installation restrictions are separate qualifications."
+      ]
+    },
+    {
+      "id": "R01-S42",
+      "title": "Update on Plans for Privacy Sandbox Technologies",
+      "url": "https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies",
+      "retrievedAt": "2026-11-21T14:26:49Z",
+      "publishedAt": "2025-10-17",
+      "dateEvidence": "The body displays Oct 17, 2025 and names Anthony Chavez, VP, Privacy Sandbox.",
+      "kind": "release-note",
+      "quotations": [
+        {
+          "text": "we've decided to retire the following Privacy Sandbox technologies",
+          "sourceIds": [
+            "R01-S42"
+          ]
+        },
+        {
+          "text": "We will follow Chrome and Android processes for phasing out these technologies",
+          "sourceIds": [
+            "R01-S42"
+          ]
+        }
+      ],
+      "limitations": [
+        "This is a retirement decision and transition plan. It does not establish the removal milestone or current enablement of every listed API or UI control.",
+        "Some named Android technologies are broader than the Chrome browser; platform scope must not be flattened.",
+        "The source says CHIPS and FedCM continue to be supported; it is not an announcement that every Privacy Sandbox-related capability is gone."
+      ]
+    }
+  ],
+  "browsers": [
+    {
+      "id": "R01-BROWSER-CHROME",
+      "name": "Google Chrome",
+      "engine": "Chromium-based foundation documented by Google; exact rendering-engine details and the current iOS engine were not independently established in this lane.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Android",
+        "iOS",
+        "ChromeOS"
+      ],
+      "lifecycle": "active",
+      "summary": "Google's actively released browser distribution is built on Chromium and adds proprietary and account-backed components under additional executable terms. The research snapshot documents the Chrome 158 desktop Stable promotion and small Chrome 159 records also present in the Stable release API. Feature records describe the vendor-published baseline, not a locally tested browser configuration.",
+      "sourceIds": [
+        "R01-S01",
+        "R01-S02",
+        "R01-S03",
+        "R01-S10",
+        "R01-S12",
+        "R01-S13",
+        "R01-S14",
+        "R01-S15",
+        "R01-S16",
+        "R01-S20",
+        "R01-S38"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "The listed platforms describe the browser family, not availability of every feature on each platform or edition.",
+        "No browser installation, local source build, profile, or runtime feature was inspected by this lane.",
+        "Version rollout and feature enablement are separate. Account, region, language, hardware, policy, and website conditions can affect functionality.",
+        "The rendering-engine field deliberately avoids an uncited blanket Blink or iOS-engine claim."
+      ]
+    }
+  ],
+  "recommendationCandidates": [
+    {
+      "id": "R01-RECOMMENDATION-MOBILE-EXTENSIONS",
+      "title": "Investigate a supported mobile extension experience",
+      "description": "The documented mobile extension exclusion supports a concrete capability proposal. Investigate a mobile runtime, supported API set, permission UX, update behavior, resource limits, and extension compatibility.",
+      "baselineFeatureIds": [
+        "R01-FEATURE-MOBILE-EXTENSIONS",
+        "R01-FEATURE-SYNC"
+      ],
+      "sourceIds": [
+        "R01-S41",
+        "R01-S36"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "medium",
+      "validationNeeded": [
+        "Define target mobile platforms and supported extension capabilities.",
+        "Assess feasibility, security, usability, and resource cost separately from the documented limitation."
+      ],
+      "limitations": [
+        "This is a source-linked candidate, not an established upstream issue or implementation-feasibility verdict."
+      ]
+    },
+    {
+      "id": "R01-RECOMMENDATION-WORKSPACES",
+      "title": "Evaluate persistent multiwindow project workspaces",
+      "description": "Credit saved/synced groups, named windows, and profiles, then test whether a named project can reliably restore its windows, groups, and layout. Keep cross-account collaboration separate from same-account sync.",
+      "baselineFeatureIds": [
+        "R01-FEATURE-PROJECT-WORKSPACES",
+        "R01-FEATURE-TAB-GROUPS",
+        "R01-FEATURE-SYNC"
+      ],
+      "sourceIds": [
+        "R01-S18",
+        "R01-S24",
+        "R01-S25",
+        "R01-S26",
+        "R01-S36"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "validationNeeded": [
+        "Establish what current supported builds can save and restore.",
+        "Describe a specific failed or unmet project workflow before framing a missing capability."
+      ],
+      "limitations": [
+        "A richer workspace's presence or absence was not settled. No current workflow failure was reproduced."
+      ]
+    },
+    {
+      "id": "R01-RECOMMENDATION-SCREENSHOTS",
+      "title": "Evaluate a discoverable consumer capture and annotation workflow",
+      "description": "Credit DevTools full-page/area/node capture and Android OS capture. Determine whether supported Chrome builds expose a suitable non-DevTools path and identify any specific annotation or redaction shortfall.",
+      "baselineFeatureIds": [
+        "R01-FEATURE-DEVTOOLS-SCREENSHOTS",
+        "R01-FEATURE-CONSUMER-SCREENSHOT-WORKFLOW"
+      ],
+      "sourceIds": [
+        "R01-S29",
+        "R01-S30"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "validationNeeded": [
+        "Check supported desktop and mobile consumer UI independently.",
+        "Measure discoverability and steps for a concrete capture/edit task."
+      ],
+      "limitations": [
+        "The consumer workflow is unresolved, not confirmed absent. No capture or usability test was performed."
+      ]
+    },
+    {
+      "id": "R01-RECOMMENDATION-AI-CONTROLS",
+      "title": "Evaluate a coherent AI controls dashboard",
+      "description": "Distinguish local model storage/download controls from remote Gemini access, UI visibility, tab sharing, and enterprise policies. Evaluate whether users can understand each control's actual scope and whether a broader consumer switch is useful.",
+      "baselineFeatureIds": [
+        "R01-FEATURE-GEMINI-CONTROLS",
+        "R01-FEATURE-ON-DEVICE-AI-CONTROL"
+      ],
+      "sourceIds": [
+        "R01-S38",
+        "R01-S39",
+        "R01-S40"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "validationNeeded": [
+        "Verify control visibility and effects for specific eligible accounts and builds.",
+        "Evaluate user understanding of icon hiding, default tab sharing, local-model removal, and remote integration independently."
+      ],
+      "limitations": [
+        "Do not claim Chrome lacks model-removal or prevent-redownload controls; they are documented. A universal consumer all-AI-off control remains not established."
+      ]
+    },
+    {
+      "id": "R01-RECOMMENDATION-MENUS-SIDEBARS",
+      "title": "Investigate specific menu and sidebar customization outcomes",
+      "description": "Credit reorderable offered toolbar buttons and built-in/extension side panels. Specify the exact menu item, control, arbitrary-site panel, or simultaneous-panel workflow users want before proposing changes.",
+      "baselineFeatureIds": [
+        "R01-FEATURE-DESKTOP-TOOLBAR",
+        "R01-FEATURE-ANDROID-TOOLBAR-SHORTCUT",
+        "R01-FEATURE-MENU-CUSTOMIZATION",
+        "R01-FEATURE-SIDE-PANELS"
+      ],
+      "sourceIds": [
+        "R01-S27",
+        "R01-S28",
+        "R01-S37",
+        "R01-S20",
+        "R01-S21"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "validationNeeded": [
+        "Verify the requested control on the specified platform/channel.",
+        "Settle iOS menu behavior and arbitrary-site/multiple-panel behavior with direct evidence."
+      ],
+      "limitations": [
+        "Comprehensive menu editing and richer sidebar behavior were not established as present or absent."
+      ]
+    },
+    {
+      "id": "R01-RECOMMENDATION-PRIVACY-SIGNALS",
+      "title": "Evaluate broader privacy preference reach and clearer status",
+      "description": "Credit cookie controls, DNT, and the staged California opt-out setting. Investigate supported regions/builds, user-visible signal status, and whether expanding scope or clarifying the difference between signals and blocking would meet a concrete need.",
+      "baselineFeatureIds": [
+        "R01-FEATURE-THIRD-PARTY-COOKIES",
+        "R01-FEATURE-DO-NOT-TRACK",
+        "R01-FEATURE-REGIONAL-OPT-OUT",
+        "R01-FEATURE-PRIVACY-SANDBOX-TRANSITION"
+      ],
+      "sourceIds": [
+        "R01-S31",
+        "R01-S32",
+        "R01-S33",
+        "R01-S42"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "validationNeeded": [
+        "Establish actual eligibility and emitted signals for specified builds and regions.",
+        "Measure site responses separately from Chrome setting availability.",
+        "Verify relevant retirement milestones before comparing Privacy Sandbox-era controls."
+      ],
+      "limitations": [
+        "A regional signal must not be described as globally absent or universally available. Comprehensive anti-fingerprinting, ad blocking, and post-retirement relay behavior remain unresolved."
+      ]
+    },
+    {
+      "id": "R01-RECOMMENDATION-MULTIPANE",
+      "title": "Evaluate multi-pane and layout-persistence refinements",
+      "description": "Credit two-page split view, stacked orientation, swap/separate actions, and pinning. Identify a concrete task requiring more panes, persistence, or different interaction before filing a refinement proposal.",
+      "baselineFeatureIds": [
+        "R01-FEATURE-SPLIT-VIEW",
+        "R01-FEATURE-PROJECT-WORKSPACES"
+      ],
+      "sourceIds": [
+        "R01-S19",
+        "R01-S20",
+        "R01-S18",
+        "R01-S24",
+        "R01-S25"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "validationNeeded": [
+        "Reproduce the target multitasking workflow on a specified supported build.",
+        "Determine whether the richer layout is already supported and what concrete outcome remains unmet."
+      ],
+      "limitations": [
+        "Documentation of two views does not prove every richer configuration is impossible. No persistence or interaction defect was reproduced."
+      ]
+    }
+  ],
+  "issues": [],
+  "features": [
+    {
+      "id": "R01-FEATURE-VERTICAL-TABS",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Vertical tabs",
+      "category": "tab-management",
+      "description": "Current computer help documents Show Tabs Vertically and Settings → Appearance → Tab position → Vertical or Horizontal. It also describes resizing the tab strip, viewing full titles, collapsed hover expansion, and tab-group controls. The launch announcement described a staged rollout; its captured metadata date is 2026-04-07, with publication not independently established.",
+      "platforms": [
+        "Desktop"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R01-S17",
+        "R01-S18"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Ordinary usage documentation is not proof of enablement on every desktop build or cohort.",
+        "Mobile vertical-tab-strip equivalence was not established.",
+        "This was not tested locally; a request simply to add vertical tabs would fail to credit the documented baseline."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-SPLIT-VIEW",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Two-page split view",
+      "category": "multitasking",
+      "description": "Computer help documents two websites within one Chrome window, in side-by-side or stacked orientation. Users can switch the active view, swap positions, separate or close views, pin the split-view control, and disable edge drag-to-split. Toolbar and tab-specific commands apply to the active view; general side panels can remain open, while tab-specific reading panels collapse on a view switch.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "ChromeOS"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R01-S19",
+        "R01-S20",
+        "R01-S24",
+        "R01-S25"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "platformQualifications": [
+        {
+          "description": "Computer help provides shortcuts for Windows/Linux, Mac, and Chromebook.",
+          "sourceIds": [
+            "R01-S20"
+          ]
+        },
+        {
+          "description": "Android tablet split-screen and iPad multiwindow are separately documented window/OS workflows. They are not proof of identical in-window split view on phones.",
+          "sourceIds": [
+            "R01-S24",
+            "R01-S25"
+          ]
+        }
+      ],
+      "limitations": [
+        "No runtime validation or rollout-cohort check was performed.",
+        "The documented two-view design is not evidence that every richer multi-pane configuration is absent."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-TAB-GROUPS",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Saved and synced tab groups",
+      "category": "tab-management",
+      "description": "Desktop, Android, and iOS help describe named/color tab groups, saving, closing, and reopening groups, and syncing changes across devices using the same Google Account. Desktop supports collapse/expand. Deleting or ungrouping a synced group can remove the group on other devices; closing a saved group is a different operation. Mobile interfaces have their own commands and settings.",
+      "platforms": [
+        "Desktop",
+        "Android",
+        "iOS"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R01-S18",
+        "R01-S24",
+        "R01-S25"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Same-account sync is not the same capability as cross-account live collaboration.",
+        "iOS action-table extraction was partial, although the surrounding body explicitly documents group creation and syncing.",
+        "Delete propagation, save/reopen behavior, and cross-device consistency were not locally tested."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-PROJECT-WORKSPACES",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Persistent project workspaces and collaborative contexts",
+      "category": "workspaces",
+      "description": "Documented building blocks include saved/synced groups, named windows, and separate profiles for bookmarks, history, passwords, and settings. This research did not establish a distinct persistent multiwindow project model, layout-preserving workspace restore, or universal cross-account live collaborative groups beyond those building blocks.",
+      "platforms": [
+        "Desktop",
+        "Android",
+        "iOS"
+      ],
+      "availability": "not-established",
+      "sourceIds": [
+        "R01-S18",
+        "R01-S24",
+        "R01-S25",
+        "R01-S26"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "limitations": [
+        "This is an unresolved comparison dimension, not a confirmed Chrome omission.",
+        "The tab-group-sharing policy page returned only a promotional banner; its title and snippet were not treated as proof of rollout or supported collaboration behavior.",
+        "Profile separation does not imply a security boundary against someone with access to the same device."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-READING-MODE",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Reading mode, including immersive full-page reading",
+      "category": "reading",
+      "description": "Desktop help documents an immersive full-page reading view and an optional side-panel view, adjustable fonts/themes/spacing, read aloud, voice and speed selection, and line focus. Android and iOS help document their own reading-mode commands and typography/background controls. Chrome should not be described as having only a side-panel reader.",
+      "platforms": [
+        "Desktop",
+        "Android",
+        "iOS"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R01-S17",
+        "R01-S21",
+        "R01-S22",
+        "R01-S23"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "platformQualifications": [
+        {
+          "description": "The computer body explicitly says reading mode is not yet available on Googlebook. It also describes Windows/Linux/ChromeOS and macOS shortcuts; the Googlebook exclusion must not be generalized to all ChromeOS.",
+          "sourceIds": [
+            "R01-S21"
+          ]
+        },
+        {
+          "description": "Mobile pages have distinct commands and controls. Computer-specific read-aloud and spacing features are not automatically established on mobile.",
+          "sourceIds": [
+            "R01-S22",
+            "R01-S23"
+          ]
+        }
+      ],
+      "limitations": [
+        "Reading mode is site/content dependent; some pages produce unavailable or failure messages.",
+        "The original immersive-reader announcement described rollout beginning. Current help is not a per-user enablement test.",
+        "No readability, accessibility, voice quality, or extraction accuracy was measured."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-DEVTOOLS-SCREENSHOTS",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "DevTools screenshot capture",
+      "category": "capture",
+      "description": "Official DevTools guidance documents node screenshots, nodes larger than the screen, full-page capture, selected-area capture, and device-emulated screenshots. Chrome therefore has documented screenshot capabilities through its developer tools.",
+      "platforms": [
+        "Desktop DevTools"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R01-S29"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Developer-tool availability does not establish a discoverable consumer capture command, annotation editor, or redaction workflow.",
+        "No screenshots were captured or quality-tested by this lane."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-CONSUMER-SCREENSHOT-WORKFLOW",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Consumer screenshot, scrolling capture, and annotation workflow",
+      "category": "capture",
+      "description": "The established baseline is desktop DevTools capture plus Android OS screenshot and supported scrolling-capture workflows. A native Chrome consumer path combining discoverable capture, annotation, and redaction was not established, and neither was its absence.",
+      "platforms": [
+        "Desktop",
+        "Android",
+        "iOS"
+      ],
+      "availability": "not-established",
+      "sourceIds": [
+        "R01-S29",
+        "R01-S30"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "platformQualifications": [
+        {
+          "description": "Android's OS documentation supports scrolling capture on Android 12 and later on most scrollable screens; it is not a Chrome-specific command or a guarantee for every page.",
+          "sourceIds": [
+            "R01-S30"
+          ]
+        }
+      ],
+      "limitations": [
+        "No primary source in this snapshot settles consumer screenshot UI on iOS or all desktop/Android Chrome builds.",
+        "Any proposal must identify a specific unmet workflow rather than claim Chrome cannot take screenshots."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-THIRD-PARTY-COOKIES",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Third-party-cookie controls",
+      "category": "privacy",
+      "description": "Computer help documents allowing or blocking third-party cookies, website exceptions, and temporary site overrides. Third-party cookies are blocked by default in Incognito. These controls are an existing baseline for privacy comparisons.",
+      "platforms": [
+        "Desktop"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R01-S31",
+        "R01-S34"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Incognito's documented default is not proof of universal default blocking in ordinary browsing.",
+        "Cookie settings are not equivalent to comprehensive tracker blocking, ad blocking, or anti-fingerprinting.",
+        "Older ad-privacy/related-site cross-links do not establish current shipped Privacy Sandbox controls. No network behavior was tested."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-DO-NOT-TRACK",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Do Not Track request",
+      "category": "privacy",
+      "description": "Chrome documents a Do Not Track request setting for computers and Android devices, turned off by default. The help page says many sites, including Google's services, do not change their behavior in response. The setting is distinct from Chrome's regional opt-out request.",
+      "platforms": [
+        "Desktop",
+        "Android"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R01-S32",
+        "R01-S33"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "DNT is a request, not enforced blocking or proof of website compliance.",
+        "The exact request headers and site responses were not observed locally."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-REGIONAL-OPT-OUT",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Regional opt-out request / GPC-style privacy signal",
+      "category": "privacy",
+      "description": "Official computer help documents a separate opt-out setting, describing this type of request as global privacy control or an opt-out preference signal. At retrieval, California is the listed eligible region, residency is assessed per Chrome profile, and the feature is explicitly still rolling out. Sites decide how to respond subject to regional law.",
+      "platforms": [
+        "Desktop"
+      ],
+      "availability": "staged",
+      "sourceIds": [
+        "R01-S33",
+        "R01-S32"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "eligibility": {
+        "regions": [
+          "California"
+        ],
+        "assessment": "Per-profile residency; location masking, use in another region, or a recently changed account region can affect eligibility.",
+        "sourceIds": [
+          "R01-S33"
+        ]
+      },
+      "limitations": [
+        "This is neither a documented global rollout nor a confirmed absence of opt-out signaling.",
+        "Mobile availability, actual wire behavior, and website/legal compliance were not established.",
+        "Availability was read from the source, not from a user's profile or account."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-INCOGNITO",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Incognito local-session privacy",
+      "category": "privacy",
+      "description": "Incognito starts a separate browsing session and removes the session's retained site data and browsing record when all Incognito windows close. Downloaded files, saved bookmarks, and reading-list items can remain. Third-party cookies are blocked by default. The documentation expressly says Incognito does not make activity invisible to sites or network operators.",
+      "platforms": [
+        "Desktop"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R01-S34",
+        "R01-S31"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "The source establishes documented session behavior, not an anonymity guarantee or independent privacy measurement.",
+        "No local data-retention or network tests were performed."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-SAFE-BROWSING",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Safe Browsing protection levels",
+      "category": "security",
+      "description": "Chrome documents Standard protection as the default, Enhanced protection as an option, and a no-protection setting. Enhanced protection sends URLs and samples of page content, extension activity, and system information for security checks. Standard protection uses obfuscated URL portions through privacy servers and can send additional information for suspicious behavior.",
+      "platforms": [
+        "Desktop"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R01-S35"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Security effectiveness, data-use assurances, and performance claims are vendor statements, not measurements from this lane.",
+        "Safe Browsing is not evidence of comprehensive anti-tracking, ad blocking, or a general browsing VPN/relay."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-SYNC",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Google Account sync and optional passphrase",
+      "category": "sync",
+      "description": "Chrome documents saving bookmarks, reading list, passwords, settings, and other information in a Google Account, with data-type controls and a separately controllable History and tabs option. Tab-group changes can sync between signed-in desktop, Android, and iOS devices. An optional passphrase has documented exclusions and trade-offs: Google Wallet payment methods and addresses are not covered, full history is not synced, and only web addresses entered in the address bar are synced under that history limitation.",
+      "platforms": [
+        "Desktop",
+        "Android",
+        "iOS"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R01-S36",
+        "R01-S18",
+        "R01-S24",
+        "R01-S25",
+        "R01-S41"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Extension-related information in sync is not evidence that mobile Chrome can execute those extensions.",
+        "With a passphrase, the documentation also limits password access through passwords.google.com; this is not an all-data, all-service equivalence claim.",
+        "Self-hosted or account-free browser sync was not established. No account data, encryption, or cross-device synchronization was tested."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-DESKTOP-TOOLBAR",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Desktop toolbar customization",
+      "category": "customization",
+      "description": "The Customize Chrome toolbar panel lets users turn offered toolbar buttons on or off. Pinned buttons can be dragged to change order and unpinned through their context menu. Some buttons open a side panel, some a new tab, and some an address-bar bubble. This is an existing customization capability.",
+      "platforms": [
+        "Desktop"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R01-S27"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "The source says a disabled button cannot be reordered.",
+        "This does not establish arbitrary relocation of every control or full menu/context-menu editing.",
+        "No platform-specific toolbar operation was tested locally."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-ANDROID-TOOLBAR-SHORTCUT",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Android toolbar shortcut selection",
+      "category": "customization",
+      "description": "Android help documents enabling or disabling the toolbar shortcut and choosing an adaptive action or a preferred New tab, Share, Voice search, Bookmark, Translate, or Delete browsing data shortcut. A relevant contextual action can replace the selected shortcut on some pages.",
+      "platforms": [
+        "Android"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R01-S28"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "This is narrower than the documented desktop pin/reorder model.",
+        "The attempted iOS variant of the page returned Android instructions and cannot establish iOS support.",
+        "No actual device or contextual override was tested."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-MENU-CUSTOMIZATION",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Comprehensive menu and context-menu customization",
+      "category": "customization",
+      "description": "The captured primary documentation establishes desktop toolbar customization and an Android toolbar shortcut. It does not settle a comprehensive browser menu/context-menu editor or iOS menu customization. Secondary reports were not promoted to primary-source verification.",
+      "platforms": [
+        "Desktop",
+        "Android",
+        "iOS"
+      ],
+      "availability": "not-established",
+      "sourceIds": [
+        "R01-S27",
+        "R01-S28"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "limitations": [
+        "This is not a claim that menu customization is absent.",
+        "The iOS-targeted toolbar help URL returned Android content. A specific control and platform need direct verification before a proposal is framed as a gap."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-SIDE-PANELS",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Built-in and extension side panels",
+      "category": "sidebar",
+      "description": "Chrome documents built-in side panels for content such as bookmarks, history, reading list, and reading mode. The Side Panel API lets extensions host their own UI alongside webpage content, keep it open across tabs when configured, scope it to sites, and respect left/right placement settings.",
+      "platforms": [
+        "Desktop"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R01-S20",
+        "R01-S21",
+        "R01-S27",
+        "R01-S37"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Arbitrary-website pinning and multiple simultaneous independent sidebars were not established.",
+        "Extension-hosted panel content and a built-in website sidebar are distinct capabilities.",
+        "API and user-interface behavior were not locally exercised."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-GEMINI-CONTROLS",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Gemini availability and granular controls",
+      "category": "ai-controls",
+      "description": "Consumer computer help says Gemini in Chrome is gradually released and requires first-use opt-in. It documents hiding or showing the browser icon and desktop integration, stopping or selecting tab sharing, changing Share current tab by default, and managing location, microphone, and auto-browse permissions. Current-tab content is shared by default when opening a chat unless that default is changed; up to ten open tabs can be shared. Enterprise settings can disallow Gemini integration, but hiding an icon, limiting permissions, and disabling integration have different effects.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Chromebook Plus",
+        "iOS (administrator documentation)",
+        "Android (administrator documentation, U.S.)"
+      ],
+      "availability": "staged",
+      "sourceIds": [
+        "R01-S38",
+        "R01-S40"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "eligibility": [
+        {
+          "scope": "Consumer computer help",
+          "description": "Age 13 or the applicable local age, a supported region and language, a Windows or Mac computer or Chromebook Plus, current Chrome, and sign-in are required. Incognito and signed-out profiles are excluded. Work/school access and supervised-user controls have additional conditions; Live and auto browse have under-18 restrictions.",
+          "sourceIds": [
+            "R01-S38"
+          ]
+        },
+        {
+          "scope": "Administrator help",
+          "description": "This page specifies age 18 or older, an Android device in the U.S. or a supported-region computer/iOS device, supported language, current Chrome, and sign-in. Both the Gemini app setting and GeminiSettings must allow access. The documented GeminiSettings value 1 disallows integrations; GenAiDefaultSettings value 2 defaults GeminiSettings to that disallowed state.",
+          "sourceIds": [
+            "R01-S40"
+          ]
+        }
+      ],
+      "limitations": [
+        "Consumer and managed eligibility are separately scoped and must not be merged into a single age/platform rule.",
+        "Supported-region and language tables were incompletely extracted; missing entries were not reconstructed.",
+        "A universal consumer disable-all-AI switch was not established. These controls are distinct from on-device generative-model removal.",
+        "No Gemini session, data sharing, policy application, or AI task was run by this lane."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-ON-DEVICE-AI-CONTROL",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "On-device generative-model removal and download control",
+      "category": "ai-controls",
+      "description": "Official help documents Settings → AI Innovations → On-device AI on eligible computers. Turning it off deletes on-device generative-model files, disables dependent features, and prevents those models from downloading again while the setting remains off. The setting is per user and per device. Eligible devices may receive background model downloads; the documented download conditions include an unmetered connection, approximately 20 GB of free disk space, and sufficient device performance.",
+      "platforms": [
+        "Eligible computers"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R01-S39"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Eligibility requirements can change, and the setting/features are not available on every device.",
+        "The free-disk requirement is not a model download-size claim.",
+        "Some other AI features may still run after local generative models are removed or disabled. This is not an all-AI-off control.",
+        "The documented setting's deletion and re-download prevention were not locally tested."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-MOBILE-EXTENSIONS",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Chrome Web Store extensions on mobile",
+      "category": "extensions",
+      "description": "Official Chrome Web Store help explicitly says extensions and themes can only be used on computers and cannot be installed from a mobile device, even in desktop mode. This is an evidence-backed unsupported capability, rather than a conclusion from missing documentation.",
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "availability": "explicitly-unsupported",
+      "sourceIds": [
+        "R01-S41",
+        "R01-S36"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "The finding is scoped to the documented Chrome Web Store/mobile Chrome experience, not all Chromium-based mobile browsers.",
+        "Syncing extension-related information does not imply mobile extension execution.",
+        "No mobile installation or implementation feasibility test was performed."
+      ]
+    },
+    {
+      "id": "R01-FEATURE-PRIVACY-SANDBOX-TRANSITION",
+      "browserId": "R01-BROWSER-CHROME",
+      "title": "Privacy Sandbox retirement-plan qualification",
+      "category": "privacy",
+      "description": "The official October 17, 2025 update announces retirement plans for technologies including Topics, Protected Audience, Attribution Reporting, IP Protection, and Related Website Sets, with Chrome/Android phase-out processes to follow. It says CHIPS and FedCM continue to be supported. Older cookie-help cross-links and historical launch material must not be used as a current feature inventory.",
+      "platforms": [
+        "Chrome platforms covered by the announcement",
+        "Android technologies explicitly named by the announcement"
+      ],
+      "availability": "historical",
+      "sourceIds": [
+        "R01-S42",
+        "R01-S31"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Historical marks the sourced transition announcement, not a finding that every listed capability is currently absent.",
+        "Exact removal milestones, the Chrome 158 enabled state, and post-retirement private-relay behavior were not independently established.",
+        "Two ad-privacy help URLs returned generic getting-started content; those retrievals cannot establish current controls.",
+        "Android system technologies and Chrome browser functionality must remain separately scoped."
+      ]
+    }
+  ],
+  "releaseBaseline": {
+    "id": "R01-RELEASE-BASELINE",
+    "browserId": "R01-BROWSER-CHROME",
+    "label": "Chrome 158 announced Stable on 2026-11-17; VersionHistory checked on 2026-11-21; partial Chrome 159 Stable cohorts observed.",
+    "evidenceType": "source-inspected",
+    "confidence": "high",
+    "sourceIds": [
+      "R01-S10",
+      "R01-S11",
+      "R01-S12",
+      "R01-S13",
+      "R01-S14",
+      "R01-S15",
+      "R01-S16"
+    ],
+    "announcedDesktopRelease": {
+      "milestone": 158,
+      "announcedAt": "2026-11-17",
+      "versions": {
+        "Linux": [
+          "158.0.8127.36"
+        ],
+        "Windows": [
+          "158.0.8127.36",
+          "158.0.8127.37"
+        ],
+        "macOS": [
+          "158.0.8127.36",
+          "158.0.8127.37"
+        ]
+      },
+      "rollout": "The post says the release will roll out over the coming days/weeks.",
+      "sourceIds": [
+        "R01-S10"
+      ]
+    },
+    "apiReadbacks": [
+      {
+        "id": "R01-RELEASE-WIN64",
+        "platform": "Windows 64-bit",
+        "channel": "stable",
+        "retrievedAt": "2026-11-21T14:19:19.889Z",
+        "sourceIds": [
+          "R01-S12"
+        ],
+        "selectedLiveRecords": [
+          {
+            "version": "158.0.8127.37",
+            "fraction": 1,
+            "fractionGroup": "155",
+            "pinnable": true,
+            "servingStartedAt": "2026-11-17T19:07:25.418313Z"
+          },
+          {
+            "version": "159.0.8154.13",
+            "fraction": 0.005,
+            "fractionGroup": "156",
+            "pinnable": false,
+            "servingStartedAt": "2026-11-18T18:53:23.819135Z",
+            "rolloutTag": "rollout"
+          }
+        ],
+        "interpretation": "M158's promotion is corroborated; M159 is also present in a small recorded rollout cohort. Neither should be flattened into one universal installed version.",
+        "limitations": [
+          "Selected records are summarized, not the full response. Other rollout, control, and zero-fraction records were present. 32-bit Windows was not queried."
+        ]
+      },
+      {
+        "id": "R01-RELEASE-MAC-ARM64",
+        "platform": "macOS ARM64",
+        "channel": "stable",
+        "retrievedAt": "2026-11-21T14:19:19.889Z",
+        "sourceIds": [
+          "R01-S13"
+        ],
+        "selectedLiveRecords": [
+          {
+            "version": "158.0.8127.37",
+            "fraction": 1,
+            "fractionGroup": "199",
+            "pinnable": true,
+            "servingStartedAt": "2026-11-17T19:07:20.796603Z"
+          },
+          {
+            "version": "159.0.8154.13",
+            "fraction": 0.005,
+            "fractionGroup": "200",
+            "pinnable": false,
+            "servingStartedAt": "2026-11-18T18:53:47.121342Z",
+            "rolloutTag": "rollout"
+          }
+        ],
+        "interpretation": "The M158 announcement and partial M159 record coexist in distinct fraction groups.",
+        "limitations": [
+          "Selected records omit other rollout, control, and zero-fraction entries. Intel macOS was not independently queried."
+        ]
+      },
+      {
+        "id": "R01-RELEASE-LINUX",
+        "platform": "Linux",
+        "channel": "stable",
+        "retrievedAt": "2026-11-21T14:19:19.881Z",
+        "sourceIds": [
+          "R01-S14"
+        ],
+        "selectedLiveRecords": [
+          {
+            "version": "158.0.8127.36",
+            "fraction": 1,
+            "fractionGroup": "1",
+            "pinnable": true,
+            "servingStartedAt": "2026-11-17T18:56:40.005685Z"
+          }
+        ],
+        "interpretation": "The endpoint returned one live release, corroborating the Linux announcement.",
+        "limitations": [
+          "The API result is not evidence that every installation or distribution had updated."
+        ]
+      },
+      {
+        "id": "R01-RELEASE-ANDROID",
+        "platform": "Android",
+        "channel": "stable",
+        "retrievedAt": "2026-11-21T14:19:19.888Z",
+        "sourceIds": [
+          "R01-S15"
+        ],
+        "selectedLiveRecords": [
+          {
+            "version": "159.0.8154.18",
+            "fraction": 0.0025,
+            "fractionGroup": "61",
+            "servingStartedAt": "2026-11-18T18:58:56.799321Z"
+          },
+          {
+            "version": "158.0.8127.43",
+            "fraction": 0.0025,
+            "fractionGroup": "61",
+            "servingStartedAt": "2026-11-18T18:58:56.799321Z"
+          },
+          {
+            "version": "158.0.8127.42",
+            "fraction": 0.24875,
+            "fractionGroup": "61",
+            "servingStartedAt": "2026-11-19T19:29:00Z"
+          },
+          {
+            "version": "157.0.8103.80",
+            "fraction": 0.24875,
+            "fractionGroup": "61",
+            "servingStartedAt": "2026-11-19T19:29:00Z"
+          },
+          {
+            "version": "157.0.8103.78",
+            "fraction": 0.4975,
+            "fractionGroup": "61",
+            "servingStartedAt": "2026-11-19T19:29:00Z"
+          }
+        ],
+        "interpretation": "The snapshot has live M157, M158, and M159 cohorts. The highest version is not a universal Android baseline.",
+        "limitations": [
+          "These are recorded serving intervals and fractions, not an observation of any particular Android device."
+        ]
+      },
+      {
+        "id": "R01-RELEASE-IOS",
+        "platform": "iOS",
+        "channel": "stable",
+        "retrievedAt": "2026-11-21T14:19:19.887Z",
+        "sourceIds": [
+          "R01-S16"
+        ],
+        "selectedLiveRecords": [
+          {
+            "version": "158.0.8127.35",
+            "fraction": 1,
+            "fractionGroup": "0",
+            "pinnable": true,
+            "servingStartedAt": "2026-11-12T17:35:33.184890Z"
+          }
+        ],
+        "interpretation": "One live iOS record was returned, with a serving start distinct from the desktop announcement date.",
+        "limitations": [
+          "No specific iPhone or iPad installation or feature set was inspected."
+        ]
+      }
+    ],
+    "limitations": [
+      "Fraction groups have distinct populations whose complete semantics were not established. Do not add fractions across groups or call them global market share.",
+      "Stable channel membership, the highest numerical version, general availability, installed version, and feature enablement are different concepts.",
+      "Serving start times are release data, not article publication dates. All readbacks describe the stated retrieval time.",
+      "Individual reproductions must record their own exact brand, version, platform, and channel."
+    ]
+  },
+  "findings": [
+    {
+      "id": "R01-FINDING-SOURCE-AVAILABILITY",
+      "title": "Chromium source is open; the Chrome distribution has additional terms and components",
+      "description": "Google describes Chrome as built on open-source Chromium, with proprietary codecs and additional services. Chrome's executable terms say most source code is available under open-source agreements. This supports describing Chromium source and Chrome behavior separately, rather than labeling the entire Chrome distribution BSD-licensed.",
+      "sourceIds": [
+        "R01-S01",
+        "R01-S02"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "No proprietary-component or complete dependency audit was performed."
+      ]
+    },
+    {
+      "id": "R01-FINDING-LICENSING",
+      "title": "Root license and third-party licenses must be distinguished",
+      "description": "The root license has the three-clause BSD structure: source notices must be retained, binary redistribution must reproduce notices and disclaimers, and Google/contributor names may not endorse derived products without permission. Chromium's third-party policy separately tracks dependencies, their licenses, and credit generation. A root license is not a license inventory for the entire build.",
+      "sourceIds": [
+        "R01-S04",
+        "R01-S05"
+      ],
+      "evidenceType": "source-inspected",
+      "confidence": "high",
+      "limitations": [
+        "The inspected files used moving main/HEAD references. No specific distributed build or trademark permission was assessed."
+      ]
+    },
+    {
+      "id": "R01-FINDING-OFFICIAL-MIRROR",
+      "title": "The official GitHub mirror is not the upstream pull-request workflow",
+      "description": "The official mirror is https://github.com/chromium/chromium. Its README directs bug reports to https://crbug.com/new, and the contribution guide explicitly distinguishes Chromium's Gerrit workflow from GitHub pull requests. A fork or pull request in a mirror must not be represented as an upstream Chromium submission.",
+      "sourceIds": [
+        "R01-S03",
+        "R01-S06"
+      ],
+      "evidenceType": "source-inspected",
+      "confidence": "high",
+      "limitations": [
+        "No fork, pull request, Gerrit change, or upstream issue was created by this lane."
+      ]
+    }
+  ],
+  "limitations": [
+    "All feature claims are documentary. No feature, defect, browser installation, local build, account, policy, or website behavior was hands-on validated by this lane.",
+    "Vendor documentation may describe staged features without pinning every instruction to a version. Documented availability is not universal enablement and must not be relabeled locally tested.",
+    "Main/HEAD source documents were read at moving references without commit hashes. Later source implementation work should establish its own revision.",
+    "Publication and update dates were not recoverable for many Help pages. Generic extractor dates, repository creation dates, and search snippets were not used as publication evidence.",
+    "Several free-search engines timed out, were rate-limited, or were benched. Working results led to the official bodies cited here, but exhaustive discovery is not claimed.",
+    "Reader extraction omitted content on release and policy sites and stripped parts of some region/language/action tables. Successful alternatives and unresolved gaps are recorded explicitly.",
+    "Comprehensive anti-fingerprinting or ad blocking, post-retirement private-relay behavior, consumer screenshot/editor UI, advanced workspaces, universal collaborative groups, arbitrary-site sidebars, comprehensive menu editing, universal consumer all-AI-off, and self-hosted/account-free sync remain not established.",
+    "No actual upstream issue was established or submitted. Recommendation candidates are conditional proposals, not accepted reports, reproduced defects, implementation commitments, or predictions of upstream acceptance.",
+    "This baseline contains no competitor ranking or benchmark. It supplies source-qualified Chrome findings for later comparison and report preparation."
+  ],
+  "recovery": {
+    "kind": "labelled-reconstruction-from-retained-artifacts",
+    "byteExact": false,
+    "originalReviewedSha256": "74cdcaab94c7b8b0d016ecd8aa8a2119db498b3791d884f38f95874ff8c65f58",
+    "reconstructedAt": "2026-11-22T04:48:04.432Z",
+    "reconstructionSessionId": "ses_e018f667affelthDYS6ST26upX",
+    "method": "Complete retained JSON values supply all core collections and sixteen top-level fields. The nine original lane limitations are decoded from the saved agent-ledger preview. Three complete optional finding records are retained as an explicitly partial collection.",
+    "retainedInputs": [
+      {
+        "label": "recovery-records/partial-shards/R01/sections.json",
+        "bytes": 409628,
+        "sha256": "d4d0cbdd8d341407bfebd5930928b7f1e2770653ee58b1d1be7135b548e0ff44"
+      },
+      {
+        "label": "recovery-records/partial-shards/R01/projections/record-inventory.json",
+        "bytes": 3489,
+        "sha256": "e736ec45f3e846dc69cdf4ebb850ec0c9f7f1fd1280906fe58009ff95b35b23d"
+      },
+      {
+        "label": "recovery-records/partial-shards/R01/projections/header-and-first-records.json",
+        "bytes": 3973,
+        "sha256": "5f2cd231ebb744c3a88f72de67a55317370a605688616633ed2f38e7750e6112"
+      },
+      {
+        "label": "lane-01.md",
+        "bytes": 38555,
+        "sha256": "0ff371d1a7c68f5dcc0ea44296a99f604dd1020da9ddfa79b82ffb46ec33f1ac"
+      },
+      {
+        "label": "renderer-20f-preview/CATALOG.md",
+        "bytes": 261226,
+        "sha256": "3008ce794d19fa60f17f71714d8258ecaccf35ade99250596f604f80fc168f26"
+      },
+      {
+        "label": "renderer-20f-preview/FEATURES.md",
+        "bytes": 493426,
+        "sha256": "b09d3de4c532112f3823202dd592951cd7ca03f7a903bf80b5d35f7ec781a5c8"
+      },
+      {
+        "label": "renderer-20f-preview/AGENTS-LEDGER.md",
+        "bytes": 261359,
+        "sha256": "e88382a43890cf7eb5db983201a8d90ebb05fa215266a8042c45f452e8ee223a"
+      }
+    ],
+    "retainedCompleteFields": [
+      "schemaVersion",
+      "id",
+      "title",
+      "agentSessionId",
+      "scope",
+      "status",
+      "asOf",
+      "researchWindow",
+      "methodology",
+      "childAgents",
+      "sources",
+      "browsers",
+      "recommendationCandidates",
+      "issues",
+      "features",
+      "releaseBaseline"
+    ],
+    "partialOptionalCollections": [
+      {
+        "field": "findings",
+        "retainedRecordIds": [
+          "R01-FINDING-SOURCE-AVAILABILITY",
+          "R01-FINDING-LICENSING",
+          "R01-FINDING-OFFICIAL-MIRROR"
+        ],
+        "originalCollectionComplete": false,
+        "reason": "Only three whole finding objects survived; original collection length and any remaining optional findings are not established."
+      }
+    ],
+    "omittedOptionalFields": [
+      {
+        "field": "reportingRequirements",
+        "reason": "Original complete structured value was not recovered. The completed research report retains related narrative; its JSON representation is not invented."
+      },
+      {
+        "field": "retrievalLimitations",
+        "reason": "Original complete structured value was not recovered. The completed research report retains related narrative; its JSON representation is not invented."
+      },
+      {
+        "field": "conversionLimitations",
+        "reason": "Original complete structured value was not recovered. The completed research report retains related narrative; its JSON representation is not invented."
+      }
+    ],
+    "boundary": "The original complete status describes documentary research and its restored core inventory. Reconstruction is not byte-exact recovery, fresh source retrieval, a local browser test, or a submission. Original source dates, rollout qualifications and researcher identity are retained."
+  }
+}

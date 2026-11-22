@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "R10",
+  "title": "Installed Chrome executable: bounded static evidence",
+  "agentSessionId": "ses_e018c7858ffeeCboat9Enku581",
+  "scope": "One installed Windows chrome.exe: identity, five target-free REA inspections, and cache-only Windows Authenticode verification.",
+  "status": "complete",
+  "sources": [
+    {"id":"R10-S01","title":"WINTRUST_DATA structure","url":"https://learn.microsoft.com/en-us/windows/win32/api/wintrust/ns-wintrust-wintrust_data","retrievedAt":"2026-11-21","publishedAt":null,"kind":"vendor-documentation","contentDate":"2018-12-05","updatedAt":"2024-11-20T01:20:00Z","limitations":["Publisher content date and update timestamp are metadata; original publication date was not independently established."]},
+    {"id":"R10-S02","title":"WinVerifyTrust function","url":"https://learn.microsoft.com/en-us/windows/win32/api/wintrust/nf-wintrust-winverifytrust","retrievedAt":"2026-11-21","publishedAt":null,"kind":"vendor-documentation","contentDate":"2018-12-05","updatedAt":"2025-08-15T19:07:00Z","limitations":["Explains the Windows API contract; not a vendor attestation about this Chrome artifact."]},
+    {"id":"R10-S03","title":"Verifying the signature of a PE file","url":"https://learn.microsoft.com/en-us/windows/win32/seccrypto/example-c-program--verifying-the-signature-of-a-pe-file","retrievedAt":"2026-11-21","publishedAt":null,"kind":"vendor-documentation","contentDate":"2018-05-31","updatedAt":"2025-08-15T20:20:00Z","limitations":["Embedded-signature coverage differs from full-file SHA-256 coverage."]},
+    {"id":"R10-S04","title":"WINTRUST_FILE_INFO structure","url":"https://learn.microsoft.com/en-us/windows/win32/api/wintrust/ns-wintrust-wintrust_file_info","retrievedAt":"2026-11-21","publishedAt":null,"kind":"vendor-documentation","contentDate":"2018-12-05","updatedAt":"2024-02-22T19:54:00Z","limitations":["Describes the file-handle verification interface, not the acquisition provenance of the inspected artifact."]}
+  ],
+  "browsers": [],
+  "features": [],
+  "issues": [],
+  "artifacts": [
+    {
+      "id": "R10-A01",
+      "filename": "chrome.exe",
+      "product": "Google Chrome",
+      "fileVersion": "158.0.8127.37",
+      "productVersion": "158.0.8127.37",
+      "architecture": "AMD64 / x86-64, PE32+, little-endian",
+      "sizeBytes": 4723864,
+      "sha256": "254f2d9b3e3b260e3eec3890a437598dddc553eba2bcfd411028716359ee492a",
+      "observedAt": "2026-11-21T14:23:01.2365350Z",
+      "evidenceType": "locally-observed",
+      "scope": "Static inspection of this executable only; no launch, attach, decompilation, source build, or companion-DLL inspection.",
+      "sourceIds": ["R10-S01", "R10-S02", "R10-S03", "R10-S04"],
+      "signature": {
+        "structuralSigner": "Google LLC",
+        "issuer": "DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1",
+        "certificateTableEntries": 1,
+        "pkcs7EntryBytes": 10392,
+        "decodedCertificates": 5,
+        "structuralCoverage": "partial",
+        "windowsVerificationRecord": "R10-AUTH-01",
+        "winVerifyTrustResult": "0x00000000",
+        "cleanupResult": "0x00000000",
+        "flags": "0x00001010",
+        "cacheOnlyRetrieval": true,
+        "revocationChecked": false,
+        "limitations": ["Trust depends on host policy, stores, cache and clock.", "REA did not verify cryptographic signatures; Windows independently performed the recorded policy check.", "Unsigned-attribute contents, nested signatures and timestamps are not fully decoded."]
+      },
+      "staticDeclarations": {
+        "headerBitsSet": ["DYNAMIC_BASE", "HIGH_ENTROPY_VA", "NX_COMPAT", "GUARD_CF"],
+        "headerBitsClear": ["FORCE_INTEGRITY", "NO_SEH"],
+        "loadConfigurationBytes": 320,
+        "guardFlags": "0x00010500",
+        "cfgFunctionTableEntries": 2520,
+        "tlsCallbackAddresses": 6,
+        "standardImports": 248,
+        "standardDllDescriptors": 4,
+        "delayImports": 118,
+        "delayDllDescriptors": 12,
+        "resourceTreeEntries": 190,
+        "resourcePayloads": 92,
+        "iconResources": 74,
+        "iconGroups": 14,
+        "limitations": ["Header bits and linker claims do not establish runtime enforcement.", "Import tables do not establish API reachability or network activity.", "Resource presence does not establish displayed features or release channel."]
+      },
+      "evidence": [
+        {"operation":"inspect_binary_hardening","id":"ev_b40b3325999093dfae4276901b6cd1d4b76a117a3d7caddd05ee1618497b14b8"},
+        {"operation":"inspect_pe_resources","id":"ev_b47c8ea02a63ddd6ef3367dfbbcb8cafc17b33adee388787ff2dc070bcd71312"},
+        {"operation":"inspect_pe_load_config","id":"ev_ed4308cc1f8c7576a94c0f71651fd5c9d7c77c18d7429d0d9985104eaf34a7eb"},
+        {"operation":"inspect_pe_certificates","id":"ev_f922e504debaf3fbd6cb138c704f8ce39209920382e4044e19deadf36843649e"},
+        {"operation":"inspect_pe_imports","id":"ev_fce0ee6b1f807648b40e09bae223ad0a33e7daf00d153dedbd8cf6ac6ea03bfd"}
+      ],
+      "localEvidenceDigests": [
+        {"label":"Complete selected REA records, retained locally","sizeBytes":162396,"sha256":"65a949ac38d56e01866d0387fb567f69d0967228ba65273b30b626b78b281e92"},
+        {"label":"Windows verification result, retained locally","sizeBytes":1566,"sha256":"9ac0f03e72188e2e55b3dd2c9088d98f17d10d38c6f9e96d99f670f01990c0ee"}
+      ],
+      "limitations": ["No vulnerability conclusion follows from this inventory.", "Release channel, acquisition provenance, fresh revocation status, update status, source equivalence and runtime behavior remain unknown.", "Raw evidence remains local because it contains machine paths and certificate details. Public evidence IDs are references, not downloadable attachments."]
+    }
+  ],
+  "limitations": ["This is not a full reverse engineering of Chrome or a completed Chromium source build.", "Feature, menu and runtime behavior cannot be inferred from these static declarations.", "Discovery examined three standard executable locations, not the entire computer."]
+}

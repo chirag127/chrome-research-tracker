@@ -1,0 +1,2799 @@
+{
+  "schemaVersion": 1,
+  "recommendationCandidates": [
+    {
+      "id": "R03-C01",
+      "title": "Scope-aware privacy reset",
+      "description": "Evaluate a reset control that separately names local data, site sessions, open tabs, permissions, downloads and any actual network-path change.",
+      "sourceIds": [
+        "R03-S-T3",
+        "R03-S-M3",
+        "R03-S-D4"
+      ],
+      "featureIds": [
+        "R03-F-T03",
+        "R03-F-M02",
+        "R03-F-D03"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "medium",
+      "chromeStatus": "not-established",
+      "acceptanceQuestion": "Can users predict what changes and what persists, and do controlled-origin storage tests match the displayed scope?",
+      "limitations": [
+        "Baseline Chrome behavior must be checked first.",
+        "Avoid accidental data loss and terminology implying IP rotation or anonymity when neither occurs."
+      ]
+    },
+    {
+      "id": "R03-C02",
+      "title": "Generic operating-system window titles",
+      "description": "Evaluate an opt-in setting to suppress page-derived OS window names while retaining usable window identification and assistive-technology behavior.",
+      "sourceIds": [
+        "R03-S-T1",
+        "R03-S-M3"
+      ],
+      "featureIds": [
+        "R03-F-T05",
+        "R03-F-M06"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "medium",
+      "chromeStatus": "not-established",
+      "acceptanceQuestion": "Does the mode suppress the intended title channel without breaking screen readers, task switchers and multi-window workflows?",
+      "limitations": [
+        "No present Chrome gap is established.",
+        "This is one local disclosure control, not protection against all local observation."
+      ]
+    },
+    {
+      "id": "R03-C03",
+      "title": "Coherent fingerprint-resistance preset",
+      "description": "Evaluate a defined, internally consistent preset rather than independent cosmetic spoofing toggles.",
+      "sourceIds": [
+        "R03-S-T4",
+        "R03-S-M2",
+        "R03-S-L2"
+      ],
+      "featureIds": [
+        "R03-F-T04",
+        "R03-F-M01",
+        "R03-F-L02"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "chromeStatus": "not-established",
+      "acceptanceQuestion": "Across a representative population, does the preset reduce distinguishability while avoiding inconsistent signals and unacceptable site or accessibility breakage?",
+      "limitations": [
+        "Requires population-based measurement and a threat model; no anonymity claim follows from a settings list.",
+        "Locale, media, graphics, accessibility and small-population uniqueness are material trade-offs."
+      ]
+    },
+    {
+      "id": "R03-C04",
+      "title": "Background-service transparency and controls",
+      "description": "Expose purpose, recipient and trigger for optional browser-initiated connections, with understandable controls distinct from update and security-check delivery.",
+      "sourceIds": [
+        "R03-S-M2",
+        "R03-S-L2",
+        "R03-S-U1"
+      ],
+      "featureIds": [
+        "R03-F-M04",
+        "R03-F-L05",
+        "R03-F-U01",
+        "R03-F-U02"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "medium",
+      "chromeStatus": "not-established",
+      "acceptanceQuestion": "Can a controlled network trace verify the described optional requests and their controls without silently disabling essential update or threat-protection flows?",
+      "limitations": [
+        "Existing Chrome disclosures and controls require baseline verification.",
+        "Removing a service is not automatically a security improvement; update and malicious-download protection requirements remain explicit."
+      ]
+    },
+    {
+      "id": "R03-C05",
+      "title": "Consent automation with truthful outcome reporting",
+      "description": "Evaluate cookie-consent automation that distinguishes rejection, partial configuration, cosmetic hiding and unhandled cases.",
+      "sourceIds": [
+        "R03-S-D3"
+      ],
+      "featureIds": [
+        "R03-F-D02"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "medium",
+      "chromeStatus": "not-established",
+      "acceptanceQuestion": "Across consent-manager fixtures, do the consent state and site behavior agree with the reported outcome, including iframe and regional variants?",
+      "limitations": [
+        "A hidden banner is not evidence of rejected consent.",
+        "Baseline checks, explicit user intent, site overrides and changing consent-manager behavior require evaluation."
+      ]
+    },
+    {
+      "id": "R03-C06",
+      "title": "Clear storage-lifetime boundaries and private tabs",
+      "description": "Evaluate mixed regular/private tab workflows with visible shared-state boundaries, deletion triggers and named persistent exceptions.",
+      "sourceIds": [
+        "R03-S-L2",
+        "R03-S-W1",
+        "R03-S-D4"
+      ],
+      "featureIds": [
+        "R03-F-L03",
+        "R03-F-W01",
+        "R03-F-D03"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "medium",
+      "chromeStatus": "not-established",
+      "acceptanceQuestion": "Can users identify which tabs share ephemeral state, and do controlled login/storage tests confirm isolation and last-tab-close deletion?",
+      "limitations": [
+        "Mixed UI can mislead users about session boundaries.",
+        "Private storage controls are not a network anonymity guarantee and must not be presented as one."
+      ]
+    },
+    {
+      "id": "R03-C07",
+      "title": "Transparent URL and search interpretation",
+      "description": "Evaluate full-destination visibility, inspectable cleaned-link copying, suggestion-endpoint control and an explicit opt-out from automatic search interpretation.",
+      "sourceIds": [
+        "R03-S-U1",
+        "R03-S-W1",
+        "R03-S-D2"
+      ],
+      "featureIds": [
+        "R03-F-U04",
+        "R03-F-U05",
+        "R03-F-W04"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "medium",
+      "chromeStatus": "not-established",
+      "acceptanceQuestion": "Can users inspect the original destination and copy a cleaned alternative without silent loss of functional parameters or unintended searches?",
+      "limitations": [
+        "Signed URLs, authentication links, intranet addresses and meaningful query parameters need fixtures.",
+        "A manual clean-link action and automatic navigation-time protection are different capabilities."
+      ]
+    },
+    {
+      "id": "R03-C08",
+      "title": "Accountless device-paired encrypted sync",
+      "description": "Evaluate user-held-key pairing and recovery without requiring a vendor identity account.",
+      "sourceIds": [
+        "R03-S-D5"
+      ],
+      "featureIds": [
+        "R03-F-D04"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "chromeStatus": "not-established",
+      "acceptanceQuestion": "Can devices pair, recover, revoke and delete supported sync data with understandable key-loss and already-local-copy behavior?",
+      "limitations": [
+        "Requires cryptographic and metadata analysis, not inference from another vendor's policy.",
+        "Device compromise, recovery-code loss and data-type scope are separate concerns."
+      ]
+    },
+    {
+      "id": "R03-C09",
+      "title": "One supported optional-AI control",
+      "description": "Evaluate a single supported control for enumerated browser AI entry points, proactive surfaces and related background requests.",
+      "sourceIds": [
+        "R03-S-D2"
+      ],
+      "featureIds": [
+        "R03-F-D05"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "medium",
+      "chromeStatus": "not-established",
+      "acceptanceQuestion": "Does disabling the control consistently affect the declared surfaces and traffic on each supported platform?",
+      "limitations": [
+        "Chrome's existing controls and rollouts must be checked before identifying a gap.",
+        "The scope cannot promise removal of arbitrary AI-generated website content."
+      ]
+    },
+    {
+      "id": "R03-C10",
+      "title": "Tree tabs and a feed side panel",
+      "description": "Evaluate research workflows using hierarchical tabs, subtree actions and searchable feed/unread controls with export and recovery.",
+      "sourceIds": [
+        "R03-S-W1",
+        "R03-S-W4",
+        "R03-S-P1"
+      ],
+      "featureIds": [
+        "R03-F-W03",
+        "R03-F-W05",
+        "R03-F-P03"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "medium",
+      "chromeStatus": "not-established",
+      "acceptanceQuestion": "Do these controls reduce task time in representative research sessions while remaining keyboard-accessible and usable at large tree/feed sizes?",
+      "limitations": [
+        "Added interface complexity and accessible hierarchy need measurement.",
+        "Existing Chrome and extension workflows must be checked; no missing native feature is asserted here."
+      ]
+    },
+    {
+      "id": "R03-C11",
+      "title": "Stable customization and extension contracts",
+      "description": "Investigate legitimate browser-UI customization and long-lived workflow needs behind classic extension systems, then evaluate supported APIs that retain contemporary permission and process boundaries.",
+      "sourceIds": [
+        "R03-S-P1",
+        "R03-S-B1",
+        "R03-S-B2"
+      ],
+      "featureIds": [
+        "R03-F-P01",
+        "R03-F-B01",
+        "R03-F-B02"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "low",
+      "chromeStatus": "not-established",
+      "acceptanceQuestion": "Which concrete tasks need deeper UI affordances, and can stable APIs satisfy them without granting unbounded browser or native-plugin access?",
+      "limitations": [
+        "Legacy XUL/NPAPI power is not a drop-in modern security design.",
+        "Measured demand and a compatibility corpus should precede any legacy protocol/plugin proposal."
+      ]
+    },
+    {
+      "id": "R03-C12",
+      "title": "Public protection and lifecycle matrix",
+      "description": "Publish or improve a versioned matrix of platform/package-specific protections, exceptions, engine versions and automatic-update behavior, with source evidence and review dates.",
+      "sourceIds": [
+        "R03-S-D3",
+        "R03-S-L3",
+        "R03-S-B4",
+        "R03-S-M3"
+      ],
+      "featureIds": [
+        "R03-F-D06",
+        "R03-F-M05"
+      ],
+      "evidenceType": "hypothesis",
+      "confidence": "medium",
+      "chromeStatus": "not-established",
+      "acceptanceQuestion": "Can a user determine which controls are actually shipped for an OS/channel/package, which exceptions apply, and how updates are delivered?",
+      "limitations": [
+        "Documentation can drift; each matrix row needs release/configuration evidence and an explicit review date.",
+        "A project's active label alone does not establish every package's update support or security coverage."
+      ]
+    }
+  ],
+  "id": "R03",
+  "title": "Privacy, anonymity, and independent-browser workflows",
+  "status": "complete",
+  "agentSessionId": "ses_e018c78a4ffegz3KgWfZpI1xs2",
+  "scope": [
+    "Tor Browser",
+    "Mullvad Browser",
+    "LibreWolf",
+    "ungoogled-chromium",
+    "Waterfox",
+    "Pale Moon",
+    "Basilisk",
+    "DuckDuckGo Browser"
+  ],
+  "researchCutoff": "2026-11-21",
+  "sources": [
+    {
+      "id": "R03-S-T1",
+      "title": "New Release: Tor Browser 16.0",
+      "url": "https://blog.torproject.org/new-release-tor-browser-160",
+      "retrievedAt": "2026-11-21T14:13:35Z",
+      "publishedAt": null,
+      "kind": "release-note",
+      "limitations": [
+        "The cleaned body did not establish an exact announcement day; extraction metadata was not accepted as a publication date.",
+        "The long changelog was truncated, but the sections used here were present.",
+        "Future circuit-display work is a roadmap statement, not a shipped capability."
+      ]
+    },
+    {
+      "id": "R03-S-T2",
+      "title": "Tor Browser: About Tor Browser",
+      "url": "https://support.torproject.org/tor-browser/getting-started/about-tor-browser",
+      "retrievedAt": "2026-11-21T14:18:23Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "Undated first-party documentation; describes design and intended protections rather than a measured anonymity result."
+      ]
+    },
+    {
+      "id": "R03-S-T3",
+      "title": "Tor Browser: Managing identities",
+      "url": "https://support.torproject.org/tor-browser/features/managing-identities",
+      "retrievedAt": "2026-11-21T14:18:23Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "Undated user documentation; UI availability must be distinguished from network behavior and qualified by platform.",
+        "No circuit, identity-reset, or application-routing behavior was exercised locally."
+      ]
+    },
+    {
+      "id": "R03-S-T4",
+      "title": "Tor Browser: Fingerprinting protections",
+      "url": "https://support.torproject.org/tor-browser/features/fingerprinting-protections",
+      "retrievedAt": "2026-11-21T14:18:23Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "Describes normalization and bucketing; explicitly does not establish identical fingerprints across every user.",
+        "No population-level fingerprinting or compatibility experiment was run."
+      ]
+    },
+    {
+      "id": "R03-S-T5",
+      "title": "New Release: Tor Browser 16.0.1",
+      "url": "https://blog.torproject.org/new-release-tor-browser-1601",
+      "retrievedAt": "2026-11-21T14:33:03Z",
+      "publishedAt": null,
+      "kind": "release-note",
+      "limitations": [
+        "Exact announcement day was not established from the cleaned body.",
+        "The changelog establishes the advertised engine update, not installation on every release channel."
+      ]
+    },
+    {
+      "id": "R03-S-T6",
+      "title": "New Release (Android Only): Tor Browser 16.0.2",
+      "url": "https://blog.torproject.org/new-release-tor-browser-1602",
+      "retrievedAt": "2026-11-21T14:32:31Z",
+      "publishedAt": null,
+      "kind": "release-note",
+      "limitations": [
+        "Exact announcement day was not established from the cleaned body.",
+        "The body explicitly limits this release to Android; it must not be labeled a desktop update."
+      ]
+    },
+    {
+      "id": "R03-S-T7",
+      "title": "Tor Project blog index",
+      "url": "https://blog.torproject.org/",
+      "retrievedAt": "2026-11-21T14:30:15Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "Mutable, multi-entry index; there is no single publication date.",
+        "Used to locate release announcements, not as an exhaustive distribution inventory."
+      ]
+    },
+    {
+      "id": "R03-S-M1",
+      "title": "Free the internet with Mullvad Browser",
+      "url": "https://mullvad.net/en/browser",
+      "retrievedAt": "2026-11-21T14:13:35Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "Product positioning and efficacy statements are vendor claims, not comparative measurements.",
+        "The page explicitly describes operation without the Tor network."
+      ]
+    },
+    {
+      "id": "R03-S-M2",
+      "title": "The Mullvad Browser hard facts: list of settings and modifications",
+      "url": "https://mullvad.net/en/browser/hard-facts",
+      "retrievedAt": "2026-11-21T14:18:28Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The last-updated value was not established from the body.",
+        "Mullvad DoH defaults and New Identity terminology are superseded by the 16.0 release announcement.",
+        "Other settings are documented defaults, not an audit of every shipped build."
+      ]
+    },
+    {
+      "id": "R03-S-M3",
+      "title": "Mullvad Browser 16.0",
+      "url": "https://mullvad.net/en/blog/mullvad-browser-160",
+      "retrievedAt": "2026-11-21T14:18:25Z",
+      "publishedAt": "2026-11-06T09:51:23.319Z",
+      "kind": "release-note",
+      "dateVerification": {
+        "method": "Source HTML time element explicitly contained the publication timestamp.",
+        "retrievedAt": "2026-11-21T14:27:48Z"
+      },
+      "limitations": [
+        "Release-specific evidence takes precedence over older generic DNS and reset-button documentation.",
+        "No accessibility or DNS-routing behavior was tested."
+      ]
+    },
+    {
+      "id": "R03-S-M4",
+      "title": "Official Mullvad Browser repository README",
+      "url": "https://github.com/mullvad/mullvad-browser",
+      "retrievedAt": "2026-11-21T14:18:31Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The inspected README supplies platform and project information; the source code was not audited.",
+        "Repository creation time is not the README publication/update time."
+      ]
+    },
+    {
+      "id": "R03-S-M5",
+      "title": "Mullvad Browser official latest-release API: 16.0.2",
+      "url": "https://api.github.com/repos/mullvad/mullvad-browser/releases/latest",
+      "retrievedAt": "2026-11-21T14:32:33Z",
+      "publishedAt": "2026-11-17T13:03:22Z",
+      "kind": "release-note",
+      "limitations": [
+        "Latest-release endpoint is mutable; version and publication time describe the retrieved record.",
+        "The record is not a verification of the binary engine patch level or all platform delivery channels."
+      ]
+    },
+    {
+      "id": "R03-S-L1",
+      "title": "LibreWolf homepage",
+      "url": "https://librewolf.net/",
+      "retrievedAt": "2026-11-21T14:20:46Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The statement about always following Firefox stable is a maintenance policy claim, not a measured update-lag result."
+      ]
+    },
+    {
+      "id": "R03-S-L2",
+      "title": "LibreWolf features and default settings",
+      "url": "https://librewolf.net/docs/features/",
+      "retrievedAt": "2026-11-21T14:13:35Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "A date associated with linked material was not accepted as this page's publication date.",
+        "Settings were not verified in a binary or clean profile.",
+        "Certificate-revocation bullets are insufficiently clear for a present-day TLS assessment.",
+        "Claims such as best-in-class resistance and no data collection are not measured comparative findings."
+      ]
+    },
+    {
+      "id": "R03-S-L3",
+      "title": "LibreWolf Windows installation",
+      "url": "https://librewolf.net/installation/windows/",
+      "retrievedAt": "2026-11-21T14:20:49Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The body offered 160.0-1 downloads; this does not establish the newest release across all channels or its publication date.",
+        "Scheduled WinUpdater is an optional setup path; automatic updating cannot be assumed for every installation."
+      ]
+    },
+    {
+      "id": "R03-S-L4",
+      "title": "LibreWolf macOS installation",
+      "url": "https://librewolf.net/installation/macos/",
+      "retrievedAt": "2026-11-21T14:20:52Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "Intel and ARM64 160.0-1 download links were observed, without a verified release publication date or channel-lag measurement."
+      ]
+    },
+    {
+      "id": "R03-S-L5",
+      "title": "LibreWolf other Linux installation",
+      "url": "https://librewolf.net/installation/linux/",
+      "retrievedAt": "2026-11-21T14:20:55Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The page describes different package routes and Flatpak sandbox/process-isolation differences; no packaging-specific security outcome was tested.",
+        "The observed 160.0-1 AppImage link is not an exhaustive latest-release check."
+      ]
+    },
+    {
+      "id": "R03-S-U1",
+      "title": "Official ungoogled-chromium repository README",
+      "url": "https://github.com/ungoogled-software/ungoogled-chromium",
+      "retrievedAt": "2026-11-21T14:13:35Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "README inspection is not a patch audit, build verification, or network measurement.",
+        "The common repository is distinct from platform build repositories and contributor binaries.",
+        "The README says almost all additional privacy/control tweaks need manual activation."
+      ]
+    },
+    {
+      "id": "R03-S-U2",
+      "title": "ungoogled-chromium official latest-release API: 158.0.8127.36-1",
+      "url": "https://api.github.com/repos/ungoogled-software/ungoogled-chromium/releases/latest",
+      "retrievedAt": "2026-11-21T14:21:00Z",
+      "publishedAt": "2026-11-19T19:22:08Z",
+      "kind": "release-note",
+      "limitations": [
+        "The non-prerelease common-repository record had an empty body and no binary assets.",
+        "It establishes a source release record, not availability, authenticity, update behavior, or patch completeness of platform binaries.",
+        "The latest-release endpoint is mutable."
+      ]
+    },
+    {
+      "id": "R03-S-W1",
+      "title": "Waterfox homepage and product FAQ",
+      "url": "https://www.waterfox.com/",
+      "retrievedAt": "2026-11-21T14:15:25Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The inspected page describes desktop workflows; Android parity is not established for them.",
+        "No-telemetry, no-collection, privacy, and compatibility statements are first-party claims, not measurements."
+      ]
+    },
+    {
+      "id": "R03-S-W2",
+      "title": "Waterfox changelog index",
+      "url": "https://www.waterfox.com/releases",
+      "retrievedAt": "2026-11-21T14:15:28Z",
+      "publishedAt": null,
+      "kind": "release-note",
+      "limitations": [
+        "The extracted index showed a 6.7.8 summary but did not expose a trustworthy publication date; the official release API establishes the release date."
+      ]
+    },
+    {
+      "id": "R03-S-W3",
+      "title": "Download Waterfox: desktop requirements and downloads",
+      "url": "https://www.waterfox.com/download/",
+      "retrievedAt": "2026-11-21T14:22:55Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "A 6.7.8 download and desktop requirements were observed; exact page publication time was not exposed.",
+        "Desktop system requirements do not establish Android requirements."
+      ]
+    },
+    {
+      "id": "R03-S-W4",
+      "title": "Waterfox 6.7.8: iCloud Passwords and a Feeds sidebar",
+      "url": "https://www.waterfox.com/releases/6.7.8",
+      "retrievedAt": "2026-11-21T14:26:03Z",
+      "publishedAt": null,
+      "kind": "release-note",
+      "limitations": [
+        "The release publication date is independently established by the official API, but the inspected page body did not expose its own publication timestamp.",
+        "The security-advisory grouping is not reliable evidence of the desktop browser's exact built Gecko version."
+      ]
+    },
+    {
+      "id": "R03-S-W5",
+      "title": "Waterfox official latest-release API: desktop 6.7.8",
+      "url": "https://api.github.com/repos/BrowserWorks/Waterfox/releases/latest",
+      "retrievedAt": "2026-11-21T14:28:24Z",
+      "publishedAt": "2026-11-07T13:03:57Z",
+      "kind": "release-note",
+      "limitations": [
+        "The non-prerelease record provides a release timestamp and change body, not a tested desktop engine version.",
+        "The latest-release endpoint is mutable."
+      ]
+    },
+    {
+      "id": "R03-S-W6",
+      "title": "Waterfox Android official latest-release API: 1.2.11-2026445488",
+      "url": "https://api.github.com/repos/BrowserWorks/Waterfox-Android/releases/latest",
+      "retrievedAt": "2026-11-21T14:30:18Z",
+      "publishedAt": "2026-11-06T11:35:13Z",
+      "kind": "release-note",
+      "limitations": [
+        "Android has a separate app and engine release line; desktop features and requirements cannot be inferred from this record.",
+        "The latest-release endpoint is mutable; behavior was not exercised on a device."
+      ]
+    },
+    {
+      "id": "R03-S-P1",
+      "title": "Pale Moon homepage",
+      "url": "https://www.palemoon.org/",
+      "retrievedAt": "2026-11-21T14:15:31Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The news body dates release 35.0.3 to 2026-10-27; that is not the page's publication date.",
+        "Claims that single-process design is safer or uses fewer resources were not independently measured.",
+        "The page explicitly acknowledges website compatibility limitations."
+      ]
+    },
+    {
+      "id": "R03-S-P2",
+      "title": "Pale Moon release notes: 35.0.3 and earlier 35.0 releases",
+      "url": "https://www.palemoon.org/releasenotes.shtml",
+      "retrievedAt": "2026-11-21T14:15:34Z",
+      "publishedAt": "2026-10-27",
+      "kind": "release-note",
+      "publicationDateScope": "Date explicitly attached to the latest entry, v35.0.3, rather than to the entire multi-release page.",
+      "limitations": [
+        "Release notes distinguish applicable security fixes and defense-in-depth changes; CVE counts were not used as a security ranking.",
+        "No exhaustive build/channel inventory or patch-latency comparison was performed."
+      ]
+    },
+    {
+      "id": "R03-S-B1",
+      "title": "Basilisk homepage and system requirements",
+      "url": "https://www.basilisk-browser.org/",
+      "retrievedAt": "2026-11-21T14:15:37Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "Application support for an old operating system is not evidence of that operating system's vendor security support.",
+        "The page establishes independent UXP lineage, not current Firefox parity."
+      ]
+    },
+    {
+      "id": "R03-S-B2",
+      "title": "Basilisk features",
+      "url": "https://www.basilisk-browser.org/features.html",
+      "retrievedAt": "2026-11-21T14:22:49Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "Describes Goanna/UXP architecture and design goals; no broad modern-web compatibility or usability result was measured."
+      ]
+    },
+    {
+      "id": "R03-S-B3",
+      "title": "Basilisk release notes: 2026.11.01",
+      "url": "https://www.basilisk-browser.org/releasenotes.html",
+      "retrievedAt": "2026-11-21T14:15:39Z",
+      "publishedAt": "2026-11-01",
+      "kind": "release-note",
+      "sourceRevision": "UXP commit 6b18be917d, as identified in the release body",
+      "limitations": [
+        "The body explicitly says Published 2026-11-01.",
+        "The linked UXP commit was not separately audited; the listed fixes and polyfills remain documentary evidence."
+      ]
+    },
+    {
+      "id": "R03-S-B4",
+      "title": "Download Basilisk: 2026.11.01 artifacts and update limitations",
+      "url": "https://www.basilisk-browser.org/download.html",
+      "retrievedAt": "2026-11-21T14:22:52Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The current-release label is 2026.11.01; the release-notes body separately establishes the release date.",
+        "Download filenames establish offered platforms, not verified execution or automatic-update behavior on those platforms."
+      ]
+    },
+    {
+      "id": "R03-S-D1",
+      "title": "Does DuckDuckGo make a browser?",
+      "url": "https://duckduckgo.com/duckduckgo-help-pages/get-duckduckgo/does-duckduckgo-make-a-browser",
+      "retrievedAt": "2026-11-21T14:15:45Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "Establishes four platform apps, not identical protection coverage or measured superiority over Chrome."
+      ]
+    },
+    {
+      "id": "R03-S-D2",
+      "title": "What's New in DuckDuckGo: Q3 2026",
+      "url": "https://duckduckgo.com/updates",
+      "retrievedAt": "2026-11-21T14:15:43Z",
+      "publishedAt": null,
+      "kind": "release-note",
+      "publicationPeriod": "Q3 2026, explicitly stated in the body; exact publication day unknown",
+      "limitations": [
+        "Quarterly product updates do not establish the newest version of each app.",
+        "Feature availability and rollouts must retain platform qualifiers; the video-ad-blocking statement says most users, not everyone.",
+        "Search and Duck.ai service features are distinct from browser-engine capabilities."
+      ]
+    },
+    {
+      "id": "R03-S-D3",
+      "title": "DuckDuckGo Web Tracking Protections",
+      "url": "https://duckduckgo.com/duckduckgo-help-pages/privacy/web-tracking-protections",
+      "retrievedAt": "2026-11-21T14:23:16Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The long extraction was truncated; cited later sections were recovered from the saved retrieval.",
+        "Platform-specific tables include roadmap entries and limitations; the full list is not uniformly shipped.",
+        "Historical Chrome/Topics comparisons may be stale and are not a current Chrome baseline.",
+        "Coverage percentages, relative protection, and policy promises were not independently verified."
+      ]
+    },
+    {
+      "id": "R03-S-D4",
+      "title": "The Fire Button, Fire Windows, and Fire Tabs",
+      "url": "https://duckduckgo.com/duckduckgo-help-pages/privacy/fire-tabs",
+      "retrievedAt": "2026-11-21T14:25:06Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "Describes local storage and session controls, not network anonymity.",
+        "Erasure and Fireproof exceptions were not tested against actual browser storage."
+      ]
+    },
+    {
+      "id": "R03-S-D5",
+      "title": "DuckDuckGo Sync & Backup Privacy Policy",
+      "url": "https://duckduckgo.com/sync_and_backup/privacy",
+      "retrievedAt": "2026-11-21T14:26:06Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The last-updated value was absent from the inspected body; extraction metadata was not accepted.",
+        "Encryption architecture, retention, and access statements are policy/documentation claims, not an independent cryptographic or server audit."
+      ]
+    },
+    {
+      "id": "R03-S-D6",
+      "title": "DuckDuckGo's Windows browser now in public beta: architecture article",
+      "url": "https://spreadprivacy.com/windows-browser-open-beta/",
+      "retrievedAt": "2026-11-21T14:26:19Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "Historical launch article; exact publication date was not independently established from the body.",
+        "Its WebView2/Blink description is historical architecture evidence, not a current runtime inspection.",
+        "Old beta, extension-roadmap, comparative performance, and feature-parity statements are not treated as current facts."
+      ]
+    },
+    {
+      "id": "R03-S-D7",
+      "title": "DuckDuckGo for Mac beta now open to the public: architecture article",
+      "url": "https://spreadprivacy.com/duckduckgo-for-mac-open-beta/",
+      "retrievedAt": "2026-11-21T14:33:03Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "Historical article that explicitly says it was edited after initial publication; exact publication/edit dates were not established from the body.",
+        "The WKWebView-linked rendering API is architecture evidence, not a current engine-version audit.",
+        "Old roadmap and relative data-use claims are not current comparative findings."
+      ]
+    },
+    {
+      "id": "R03-S-D8",
+      "title": "Official DuckDuckGo Apple browsers repository README",
+      "url": "https://github.com/duckduckgo/apple-browsers",
+      "retrievedAt": "2026-11-21T14:26:13Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "README only; no build or code audit was performed.",
+        "The README identifies a proprietary font dependency and an external-contributor fallback, so it does not support a claim that every distributed asset is open source."
+      ]
+    },
+    {
+      "id": "R03-S-D9",
+      "title": "Official DuckDuckGo Android repository README",
+      "url": "https://github.com/duckduckgo/Android",
+      "retrievedAt": "2026-11-21T14:26:16Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "Repository documentation establishes a public Android source project, not a tested app version or an implementation audit."
+      ]
+    },
+    {
+      "id": "R03-S-D10",
+      "title": "How to get the DuckDuckGo Browser on Windows",
+      "url": "https://duckduckgo.com/duckduckgo-help-pages/get-duckduckgo/get-duckduckgo-browser-on-windows",
+      "retrievedAt": "2026-11-21T14:30:22Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The x86 update cutoff is version-based, after 0.170.0; the body supplies no calendar end-of-support date.",
+        "The page does not establish the newest Windows app release or every supported CPU architecture."
+      ]
+    },
+    {
+      "id": "R03-S-D11",
+      "title": "How to get the DuckDuckGo Browser on Mac",
+      "url": "https://duckduckgo.com/duckduckgo-help-pages/get-duckduckgo/get-duckduckgo-browser-on-mac",
+      "retrievedAt": "2026-11-21T14:30:24Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "The App Store and direct-download editions have different documented capabilities; neither was installed or tested."
+      ]
+    },
+    {
+      "id": "R03-S-D12",
+      "title": "Chromium Android WebView implementation README",
+      "url": "https://chromium.googlesource.com/chromium/src/+/HEAD/android_webview/README.md",
+      "retrievedAt": "2026-11-21T14:36:06Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": [
+        "HEAD is mutable; this repository documentation establishes WebView implementation provenance, not a particular installed engine version or DuckDuckGo runtime build."
+      ]
+    }
+  ],
+  "browsers": [
+    {
+      "id": "R03-B-TOR",
+      "name": "Tor Browser",
+      "engine": "Firefox ESR-derived Gecko on desktop and GeckoView on Android; the 16.0.1 changelog names 153.7.0esr.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Android"
+      ],
+      "lifecycle": "active",
+      "summary": "A browser modified for Tor-network routing, site-keyed circuits, state isolation, and fingerprint resistance. Its network-anonymity design is distinct from ordinary private browsing or tracker blocking.",
+      "sourceIds": [
+        "R03-S-T1",
+        "R03-S-T2",
+        "R03-S-T3",
+        "R03-S-T4",
+        "R03-S-T5",
+        "R03-S-T6",
+        "R03-S-T7"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "maintenanceEvidence": "The inspected blog index and release bodies show 16.0.1 with Firefox security updates and Android-only 16.0.2 fixing a zlib-related breakage.",
+      "observedReleases": [
+        {
+          "edition": "Desktop",
+          "version": "16.0.1",
+          "engineVersion": "153.7.0esr",
+          "publishedAt": null,
+          "observation": "Newest desktop-targeting announcement located in the inspected index.",
+          "sourceIds": [
+            "R03-S-T5",
+            "R03-S-T7"
+          ]
+        },
+        {
+          "edition": "Android",
+          "version": "16.0.2",
+          "engineVersion": null,
+          "publishedAt": null,
+          "observation": "Explicitly Android-only; the preceding 16.0.1 announcement names GeckoView 153.7.0esr.",
+          "sourceIds": [
+            "R03-S-T5",
+            "R03-S-T6",
+            "R03-S-T7"
+          ]
+        }
+      ],
+      "platformBoundaries": [
+        "16.0 adds stable Linux AArch64 support and ends Linux x86 32-bit support.",
+        "The desktop offline manual and OS window-title option are not automatically Android features.",
+        "Only Tor Browser traffic is automatically routed through Tor; other applications are outside that scope."
+      ],
+      "quotations": [
+        {
+          "sourceId": "R03-S-T6",
+          "text": "This is an Android-only release"
+        },
+        {
+          "sourceId": "R03-S-T5",
+          "text": "Updated Firefox to 153.7.0esr"
+        }
+      ],
+      "limitations": [
+        "Announcement dates remain unknown because cleaned bodies did not establish them.",
+        "Minimum OS versions and every distribution channel were not checked.",
+        "Logging into an identifying account still identifies that account; Tor does not erase information deliberately supplied to a site.",
+        "No anonymity-set size, privacy effectiveness, runtime behavior, or relative security result was measured."
+      ]
+    },
+    {
+      "id": "R03-B-MULLVAD",
+      "name": "Mullvad Browser",
+      "engine": "Firefox ESR-derived browser developed with the Tor Project, without Tor-network patches; the 16.0 announcement names ESR 153. Exact engine patch level of 16.0.2 was not checked.",
+      "platforms": [
+        "Windows 10+ (64-bit)",
+        "macOS Sonoma 14+",
+        "Linux (64-bit, including AArch64 in 16.0)"
+      ],
+      "lifecycle": "active",
+      "summary": "A fingerprint-resistance and private-session browser usable with or without a VPN. It omits the Tor network, and clearing its session does not change the user's IP address.",
+      "sourceIds": [
+        "R03-S-M1",
+        "R03-S-M2",
+        "R03-S-M3",
+        "R03-S-M4",
+        "R03-S-M5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "maintenanceEvidence": "The official latest-release API returned non-prerelease 16.0.2, updating uBlock Origin and the Mullvad extension and fixing DNS UI/error handling.",
+      "observedReleases": [
+        {
+          "edition": "Desktop",
+          "prerelease": false,
+          "publishedAt": "2026-11-17T13:03:22Z",
+          "sourceIds": [
+            "R03-S-M5"
+          ],
+          "version": "16.0.2"
+        }
+      ],
+      "limitations": [
+        "No mobile release was established.",
+        "The older hard-facts page is superseded on default DNS and reset-button terminology by the 16.0 announcement.",
+        "Documented build options disable EME/DRM and phishing/malware-protection functionality; restrictive fingerprint settings can affect sites.",
+        "These choices do not establish a net security ranking or Tor-equivalent anonymity."
+      ]
+    },
+    {
+      "id": "R03-B-LIBREWOLF",
+      "name": "LibreWolf",
+      "engine": "Custom Firefox-derived browser; Gecko-family classification follows documented lineage rather than runtime inspection. The project says it follows Firefox stable.",
+      "platforms": [
+        "Windows x86_64 and ARM64",
+        "macOS x86_64 and ARM64",
+        "Linux (distribution packages and x86_64 AppImage documented)"
+      ],
+      "lifecycle": "unknown",
+      "summary": "A community Firefox derivative with privacy-oriented defaults and patches. Official installation pages supply current-looking download evidence, but release chronology and latest overall release could not be verified.",
+      "sourceIds": [
+        "R03-S-L1",
+        "R03-S-L2",
+        "R03-S-L3",
+        "R03-S-L4",
+        "R03-S-L5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "maintenanceEvidence": "The three inspected installation pages offered 160.0-1. The official release endpoints were inaccessible, so active-release cadence, exact date, and latest overall version remain unknown.",
+      "observedReleases": [
+        {
+          "edition": "Inspected Windows, macOS and Linux download pages",
+          "observation": "Download-link version only; not a verified latest release.",
+          "publishedAt": null,
+          "sourceIds": [
+            "R03-S-L3",
+            "R03-S-L4",
+            "R03-S-L5"
+          ],
+          "version": "160.0-1"
+        }
+      ],
+      "latestOverallRelease": null,
+      "limitations": [
+        "The homepage update statement is a vendor policy, not measured timely delivery to every package channel.",
+        "The source/releases and bsys6/releases endpoints returned HTTP 403; a newer version appearing only in search results was not accepted.",
+        "Windows scheduled updating has optional setup paths; Linux packaging has documented sandbox/process-isolation differences.",
+        "Safe Browsing, DRM and the built-in password manager are documented as disabled; no net-security conclusion follows.",
+        "No Tor-network anonymity or runtime privacy effectiveness was established."
+      ]
+    },
+    {
+      "id": "R03-B-UNGOOGLED",
+      "name": "ungoogled-chromium",
+      "engine": "Chromium-derived common patches and configuration; Blink-family lineage. Platform-specific repositories supply additional build and packaging configuration.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "FreeBSD (package route)",
+        "OpenBSD (ports route)"
+      ],
+      "lifecycle": "active",
+      "summary": "A narrow Chromium de-integration project prioritizing removal of Google web-service dependencies while retaining the Chromium experience. Most additional privacy/control tweaks require manual activation.",
+      "sourceIds": [
+        "R03-S-U1",
+        "R03-S-U2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "maintenanceEvidence": "The official common-repository API returned non-prerelease 158.0.8127.36-1 with a publication timestamp, but an empty change body and no attached binary assets.",
+      "observedReleases": [
+        {
+          "binaryAssetCount": 0,
+          "edition": "Common source repository",
+          "prerelease": false,
+          "publishedAt": "2026-11-19T19:22:08Z",
+          "sourceIds": [
+            "R03-S-U2"
+          ],
+          "version": "158.0.8127.36-1"
+        }
+      ],
+      "limitations": [
+        "Latest source release is not proof of available, current, signed, or reproducible binaries for every platform.",
+        "Per-platform updater behavior and current Android support were not established.",
+        "The README documents Safe Browsing removal, impaired captive-portal detection, and a Windows change that does not set downloaded files' Zone Identifier.",
+        "Contributor binaries are not necessarily reproducible; the project qualifies their authenticity rather than guaranteeing it.",
+        "Service removal is not Tor anonymity or a measured security/privacy superiority claim."
+      ]
+    },
+    {
+      "id": "R03-B-WATERFOX",
+      "name": "Waterfox",
+      "engine": "Desktop uses Gecko with a stated Firefox ESR maintenance model; its exact built engine version is unknown. The separate Android release body explicitly names Gecko 160.0, up from 159.0.",
+      "platforms": [
+        "Windows 10+",
+        "macOS 10.15+",
+        "Linux",
+        "Android (separate app)"
+      ],
+      "lifecycle": "active",
+      "summary": "A Gecko-based browser combining privacy-oriented defaults with private tabs, tree tabs, persistent status information, and feed workflows. Desktop and Android release lines are distinct.",
+      "sourceIds": [
+        "R03-S-W1",
+        "R03-S-W2",
+        "R03-S-W3",
+        "R03-S-W4",
+        "R03-S-W5",
+        "R03-S-W6"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "platformBoundaries": [
+        "Desktop download requirements include SSE4.2 for Windows/Linux and glibc 2.17 for Linux.",
+        "Firefox WebExtensions are documented as supported; Chrome-only extensions do not automatically transfer.",
+        "Current Waterfox must not be conflated with Waterfox Classic; Classic's lifecycle was not investigated."
+      ],
+      "maintenanceEvidence": "Official release APIs provide substantive desktop 6.7.8 and Android 1.2.11-2026445488 changes with separate publication timestamps.",
+      "observedReleases": [
+        {
+          "edition": "Desktop",
+          "engineVersion": null,
+          "prerelease": false,
+          "publishedAt": "2026-11-07T13:03:57Z",
+          "sourceIds": [
+            "R03-S-W4",
+            "R03-S-W5"
+          ],
+          "version": "6.7.8"
+        },
+        {
+          "edition": "Android",
+          "engineVersion": "Gecko 160.0",
+          "prerelease": false,
+          "publishedAt": "2026-11-06T11:35:13Z",
+          "sourceIds": [
+            "R03-S-W6"
+          ],
+          "version": "1.2.11-2026445488"
+        }
+      ],
+      "limitations": [
+        "The release page's Gecko 115.45 ESR advisory grouping is not reliable evidence of the desktop binary's engine version.",
+        "Desktop feature parity on Android is not established unless specifically cited.",
+        "OHTTP DNS separates documented relay/resolver knowledge; it does not establish anonymous browsing or a non-collusion guarantee.",
+        "No telemetry, memory, speed, privacy, or update-integrity measurement was performed."
+      ]
+    },
+    {
+      "id": "R03-B-PALEMOON",
+      "name": "Pale Moon",
+      "engine": "Independently maintained Goanna rendering engine and Unified XUL Platform (UXP); not current Firefox or Chromium.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Other community-supported systems (FreeBSD build options are discussed)"
+      ],
+      "lifecycle": "active",
+      "summary": "An independent browser emphasizing deep customization, classic extensions, retained formats/protocols, and control. Its inclusion here is not a privacy or security endorsement.",
+      "sourceIds": [
+        "R03-S-P1",
+        "R03-S-P2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "maintenanceEvidence": "The release notes explicitly identify 35.0.3 (2026-10-27) as a security release with certificate-store, crash, JAR-loading, and JavaScript fixes.",
+      "observedReleases": [
+        {
+          "edition": "Inspected release-notes series",
+          "publishedAt": "2026-10-27",
+          "sourceIds": [
+            "R03-S-P2"
+          ],
+          "version": "35.0.3"
+        }
+      ],
+      "limitations": [
+        "The homepage acknowledges sites requiring special consideration or another browser.",
+        "35.0.2 disabled CSS :has() by default for performance; inspected later notes did not establish re-enablement.",
+        "Single-process safety/resource-efficiency claims were not independently measured.",
+        "Old plugin/protocol support does not establish maintenance or safety of a particular plugin or implementation.",
+        "No complete platform/update-channel inventory, patch-latency comparison, or modern-site test corpus was performed."
+      ]
+    },
+    {
+      "id": "R03-B-BASILISK",
+      "name": "Basilisk",
+      "engine": "Goanna / Unified XUL Platform (UXP), an independent pre-Servo Mozilla lineage. UXP originated from Firefox 52; Basilisk explicitly does not track current Firefox releases.",
+      "platforms": [
+        "Windows 7+",
+        "macOS (Intel, Apple Silicon and PowerPC builds listed)",
+        "Linux (multiple architectures)",
+        "FreeBSD"
+      ],
+      "lifecycle": "active",
+      "summary": "A classic-interface desktop browser focused on customization and long-lived workflows, with independently maintained compatibility changes and classic extension/plugin support.",
+      "sourceIds": [
+        "R03-S-B1",
+        "R03-S-B2",
+        "R03-S-B3",
+        "R03-S-B4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "platformBoundaries": [
+        "Windows automatic updates are documented as supported; macOS downloads explicitly require manual updates; the FreeBSD archive also has no automatic updates.",
+        "The release introduces Intel 32-bit macOS builds and enables MIPS64EL Linux automatic updates.",
+        "Supporting an old OS means the app is offered there, not that the OS receives vendor security fixes."
+      ],
+      "maintenanceEvidence": "The release body says Published 2026-11-01, the download page labels 2026.11.01 current, and the notes identify UXP commit 6b18be917d with security and compatibility changes.",
+      "observedReleases": [
+        {
+          "edition": "Desktop release",
+          "publishedAt": "2026-11-01",
+          "sourceIds": [
+            "R03-S-B3",
+            "R03-S-B4"
+          ],
+          "sourceRevision": "UXP 6b18be917d",
+          "version": "2026.11.01"
+        }
+      ],
+      "limitations": [
+        "No telemetry policy or Tor-like anonymity was established; neither is inferred from engine independence.",
+        "Compatibility is selective: :has() is disabled by default and the listed Intl.ListFormat polyfill is en-US-only.",
+        "Platform downloads and release notes were read, but execution, plugin behavior and update mechanisms were not tested."
+      ]
+    },
+    {
+      "id": "R03-B-DUCKDUCKGO",
+      "name": "DuckDuckGo Browser",
+      "engine": "Windows: WebView2/Blink in a historical first-party architecture article. macOS/iOS: WebKit per platform documentation, with a WKWebView-linked macOS design. Android: Android WebView, with Chromium implementation provenance. Current engine-runtime versions were not inspected.",
+      "platforms": [
+        "Windows 10 May 2020+",
+        "macOS",
+        "iOS/iPadOS",
+        "Android"
+      ],
+      "lifecycle": "active",
+      "summary": "Four platform applications using platform rendering components with a common privacy/product layer. Feature coverage, distribution constraints, and underlying engine behavior vary by platform.",
+      "sourceIds": [
+        "R03-S-D1",
+        "R03-S-D10",
+        "R03-S-D11",
+        "R03-S-D12",
+        "R03-S-D2",
+        "R03-S-D3",
+        "R03-S-D4",
+        "R03-S-D5",
+        "R03-S-D6",
+        "R03-S-D7",
+        "R03-S-D8",
+        "R03-S-D9"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "platformBoundaries": [
+        "The Windows help page says x86 updates end after version 0.170.0; it supplies no calendar cutoff.",
+        "The Mac App Store edition lacks the documented Bitwarden integration and local-file access of direct distribution.",
+        "The protection tables include platform-specific limitations and roadmap entries; uniform feature parity is not established."
+      ],
+      "maintenanceEvidence": "The Q3 2026 update body documents ongoing product work, including Android Fire Tabs and AI-disable controls. Public Apple and Android repository documentation was also read.",
+      "observedReleases": [],
+      "latestOverallRelease": null,
+      "limitations": [
+        "Exact latest app builds and engine versions remain unknown. Historical launch articles do not establish continued beta status or current extension availability.",
+        "A guessed Windows repository URL returned 404; this does not establish Windows source availability or licensing.",
+        "The Apple README identifies a proprietary font dependency, so not every distributed asset can be called open source.",
+        "The policy documents a bat.bing.com conversion exception after DuckDuckGo ad clicks, not a blanket Microsoft-tracker exemption.",
+        "Tracker blocking, private sessions and encryption do not establish Tor-equivalent anonymity; no runtime effectiveness or comparative data-use result was measured."
+      ]
+    }
+  ],
+  "features": [
+    {
+      "id": "R03-F-T01",
+      "browserId": "R03-B-TOR",
+      "title": "Integrated Tor-network routing",
+      "category": "network-anonymity",
+      "description": "Tor Browser is modified for use with Tor and routes its browser traffic through the Tor network. This network-identity property is distinct from merely deleting local history or blocking trackers.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Android"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-T2",
+        "R03-S-T3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-T2",
+          "text": "heavily modified for use with the Tor network"
+        }
+      ],
+      "limitations": [
+        "Other applications are not automatically routed through Tor.",
+        "Identifying accounts or supplied personal information can identify the user to a site.",
+        "No anonymity effectiveness or traffic behavior was measured."
+      ]
+    },
+    {
+      "id": "R03-F-T02",
+      "browserId": "R03-B-TOR",
+      "title": "Site-keyed circuit isolation and circuit visualization",
+      "category": "network-anonymity",
+      "description": "Different first-party sites use different Tor circuits even when they embed the same tracker. A desktop site-information control visualizes the current circuit; same-site tabs can share a circuit.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Android (routing; visualization not established)"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R03-S-T1",
+        "R03-S-T3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "This is site-keyed isolation, not an independent identity for every tab.",
+        "The 16.0 announcement describes Android circuit display and a redesigned multi-path display as forthcoming; they are not counted as shipped here.",
+        "No routing or visualization test was performed."
+      ]
+    },
+    {
+      "id": "R03-F-T03",
+      "browserId": "R03-B-TOR",
+      "title": "Separate New Identity and New Tor Circuit controls",
+      "category": "session-control",
+      "description": "New Identity closes tabs/windows, clears private state and uses new circuits. New Tor Circuit for this Site instead reloads the site through another circuit without clearing its private state or unlinking activity.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-T3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "New Identity stops current activity and downloads.",
+        "Changing circuits is a connection-recovery operation, not a substitute for identity reset.",
+        "Equivalent Android UI and actual clearing behavior were not established by a local test."
+      ]
+    },
+    {
+      "id": "R03-F-T04",
+      "browserId": "R03-B-TOR",
+      "title": "Fingerprint normalization and desktop letterboxing",
+      "category": "fingerprinting-resistance",
+      "description": "The documentation describes reducing distinguishable fingerprint buckets through normalized attributes, font restrictions, user-agent normalization and window-size letterboxing on desktop.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Android (fingerprinting defenses; letterboxing not established)"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R03-S-T4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-T4",
+          "text": "it is practically impossible to make all Tor Browser users identical"
+        }
+      ],
+      "limitations": [
+        "The goal is reduced distinguishability, not perfect hiding of OS or device attributes.",
+        "Cross-platform behavior and fingerprint population effects were not measured.",
+        "Independent customization can alter the coherence of a fingerprint-resistance configuration."
+      ]
+    },
+    {
+      "id": "R03-F-T05",
+      "browserId": "R03-B-TOR",
+      "title": "Opt-in generic OS window titles",
+      "category": "local-disclosure-control",
+      "description": "Tor Browser 16.0 adds a setting replacing page-derived operating-system window titles with the browser name, limiting that particular disclosure channel to other local applications.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "defaultState": "Opt-in in the 16.0 announcement.",
+      "sourceIds": [
+        "R03-S-T1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-T1",
+          "text": "this option is strictly opt-in"
+        }
+      ],
+      "limitations": [
+        "The release warns about screen-reader, window-manager and application-switcher usability.",
+        "This addresses window titles, not every form of local observation or device compromise.",
+        "No accessibility or OS-level behavior was tested."
+      ]
+    },
+    {
+      "id": "R03-F-T06",
+      "browserId": "R03-B-TOR",
+      "title": "Bundled offline desktop manual",
+      "category": "offline-support",
+      "description": "The 16.0 desktop release bundles revised support content in its manual so connection troubleshooting remains available without network access.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-T1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-T1",
+          "text": "bundled with Tor Browser for Desktop so it can be read offline"
+        }
+      ],
+      "limitations": [
+        "The release says Android package-size limits prevented bundling the manual there.",
+        "Offline help content and accessibility were not exercised."
+      ]
+    },
+    {
+      "id": "R03-F-M01",
+      "browserId": "R03-B-MULLVAD",
+      "title": "Coherent fingerprint-resistance defaults",
+      "category": "fingerprinting-resistance",
+      "description": "The hard-facts page documents RFP, letterboxing, normalized fonts/timezone and other attribute/API restrictions intended to make users less distinguishable.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-M2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-M2",
+          "text": "privacy.resistFingerprinting"
+        },
+        {
+          "sourceId": "R03-S-M2",
+          "text": "Your timezone is reported to be UTC"
+        }
+      ],
+      "limitations": [
+        "Nearly identical fingerprints are a stated objective, not an independently established result.",
+        "API restrictions and suppressed site-specific preferences can affect compatibility.",
+        "No fingerprint-population or per-build settings test was performed."
+      ]
+    },
+    {
+      "id": "R03-F-M02",
+      "browserId": "R03-B-MULLVAD",
+      "title": "Private browsing by default and Clear Private Session",
+      "category": "session-control",
+      "description": "The browser documents private browsing as the default. In 16.0, the older New Identity broom becomes a Clear Private Session flame control for clearing the current session.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-M1",
+        "R03-S-M2",
+        "R03-S-M3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-M1",
+          "text": "Private mode is enabled by default"
+        },
+        {
+          "sourceId": "R03-S-M2",
+          "text": "Clicking this button will not change your IP address."
+        }
+      ],
+      "limitations": [
+        "Bookmarks and extension settings persist according to the documentation.",
+        "The older reset-button name is superseded; session clearing is not network-identity rotation.",
+        "Erasure behavior was not inspected at runtime."
+      ]
+    },
+    {
+      "id": "R03-F-M03",
+      "browserId": "R03-B-MULLVAD",
+      "title": "Bundled uBlock Origin and NoScript-backed security levels",
+      "category": "content-and-script-control",
+      "description": "The documented bundle includes uBlock Origin and uses NoScript for Standard, Safer and Safest levels. Higher levels disable or constrain scripts, fonts and media features.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-M2",
+        "R03-S-M5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-M2",
+          "text": "NoScript is used as the back-end of the Security Level feature"
+        }
+      ],
+      "limitations": [
+        "Safer/Safest can break or reduce website functionality.",
+        "Presence of blockers or stricter levels is not a measured net-security or privacy ranking.",
+        "No filter coverage or compatibility test was run."
+      ]
+    },
+    {
+      "id": "R03-F-M04",
+      "browserId": "R03-B-MULLVAD",
+      "title": "Documented compile-time telemetry and crash-report removal",
+      "category": "background-services",
+      "description": "The hard-facts page describes compile-time telemetry/crash-report disabling and removal of the telemetry sender, while listing remaining browser-initiated service connections.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-M2",
+        "R03-S-M3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-M2",
+          "text": "Telemetry and crash reporting are entirely disabled in the browser at compile time."
+        }
+      ],
+      "limitations": [
+        "This is not a zero-network-requests claim: updates, filter lists, certificates and DNS remain relevant.",
+        "The older connection list's Mullvad DNS entry is superseded by the 16.0 resolver change.",
+        "No build or network-egress audit was performed."
+      ]
+    },
+    {
+      "id": "R03-F-M05",
+      "browserId": "R03-B-MULLVAD",
+      "title": "Explicit encrypted-DNS settings and Quad9 migration",
+      "category": "dns-privacy",
+      "description": "The 16.0 announcement migrates users of discontinued Mullvad encrypted DNS to Quad9, preserves customized DoH settings, and describes settings for always using DoH or using the operating system resolver.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-M3",
+        "R03-S-M5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-M3",
+          "text": "will automatically be migrated to Quad9"
+        },
+        {
+          "sourceId": "R03-S-M3",
+          "text": "If you have customized your DoH settings, we will not change them."
+        }
+      ],
+      "limitations": [
+        "The release recommends OS DNS when using a VPN; this is context-specific guidance, not proof of any tested routing setup.",
+        "16.0.2 adds Cloudflare as an available provider and fixes Quad9 error handling; availability is different from the default.",
+        "Encrypted DNS is not Tor anonymity, and fallback or leak behavior was not measured."
+      ]
+    },
+    {
+      "id": "R03-F-M06",
+      "browserId": "R03-B-MULLVAD",
+      "title": "Opt-in generic OS window titles",
+      "category": "local-disclosure-control",
+      "description": "The 16.0 settings can replace page-derived window names with Mullvad Browser to limit disclosure through operating-system window titles.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "defaultState": "Opt-in in the 16.0 announcement.",
+      "sourceIds": [
+        "R03-S-M3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-M3",
+          "text": "this option is strictly opt-in"
+        }
+      ],
+      "limitations": [
+        "The announcement warns about screen readers and customized window-management tools.",
+        "No OS integration or accessibility test was performed; protection is limited to this disclosure channel."
+      ]
+    },
+    {
+      "id": "R03-F-L01",
+      "browserId": "R03-B-LIBREWOLF",
+      "title": "Bundled uBlock Origin and strict tracking protection",
+      "category": "content-and-script-control",
+      "description": "The feature list documents uBlock Origin with custom default filter lists and strict tracking protection, including dynamic first-party isolation / Total Cookie Protection.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-L2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-L2",
+          "text": "Tracking Protection in strict mode"
+        }
+      ],
+      "limitations": [
+        "Feature-list defaults were not checked in each platform binary.",
+        "Tracker-blocking coverage and site breakage were not measured."
+      ]
+    },
+    {
+      "id": "R03-F-L02",
+      "browserId": "R03-B-LIBREWOLF",
+      "title": "RFP, normalized language and disabled WebGL",
+      "category": "fingerprinting-resistance",
+      "description": "The project documents RFP, reporting en-US to websites, and disabling WebGL as parts of its fingerprint-resistance configuration.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-L2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-L2",
+          "text": "Always display user language as"
+        },
+        {
+          "sourceId": "R03-S-L2",
+          "text": "Disable WebGL"
+        }
+      ],
+      "limitations": [
+        "Language and graphics restrictions can affect localization and web applications.",
+        "The project's best-in-class wording is not adopted as a comparative finding.",
+        "No fingerprint or compatibility test was performed."
+      ]
+    },
+    {
+      "id": "R03-F-L03",
+      "browserId": "R03-B-LIBREWOLF",
+      "title": "Ephemeral site data and reduced persistent caching",
+      "category": "session-control",
+      "description": "Documented defaults delete cookies and website data on close, disable disk cache and clear temporary files, reducing persistent local browsing state.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-L2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-L2",
+          "text": "Delete cookies and website data on close."
+        }
+      ],
+      "limitations": [
+        "Closing a session can end website logins.",
+        "Local deletion does not establish network anonymity or deletion of information already held by a site.",
+        "No storage-level erasure verification was performed."
+      ]
+    },
+    {
+      "id": "R03-F-L04",
+      "browserId": "R03-B-LIBREWOLF",
+      "title": "Tracking-parameter removal and reduced speculative networking",
+      "category": "link-and-network-control",
+      "description": "The feature list describes stripping tracking elements from URLs, trimming cross-origin referrers, and disabling link prefetching and speculative connections.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-L2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "quotations": [
+        {
+          "sourceId": "R03-S-L2",
+          "text": "Strip tracking elements from URLs, both natively and through uBO."
+        },
+        {
+          "sourceId": "R03-S-L2",
+          "text": "Disable link prefetching and speculative connections."
+        }
+      ],
+      "limitations": [
+        "Parameter removal can interact with functional URLs; disabling speculation can affect loading behavior.",
+        "Neither effects nor compatibility were measured, and no Chrome default comparison is implied."
+      ]
+    },
+    {
+      "id": "R03-F-L05",
+      "browserId": "R03-B-LIBREWOLF",
+      "title": "Quiet telemetry, suggestion and sponsored-content defaults",
+      "category": "background-services",
+      "description": "LibreWolf documents disabling telemetry, crash reporting, studies, search suggestions, recommendations, and distracting or sponsored home-page content.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-L1",
+        "R03-S-L2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "No data collection is a project policy claim, not an independently verified zero-egress result.",
+        "No current binary defaults or service traffic were inspected."
+      ]
+    },
+    {
+      "id": "R03-F-L06",
+      "browserId": "R03-B-LIBREWOLF",
+      "title": "Dedicated UI for privacy and security choices",
+      "category": "settings-and-control",
+      "description": "A LibreWolf-specific UI exposes important privacy/security settings. The feature list separately describes an optional extension firewall and user-enabled Firefox Sync.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-L2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "The extension firewall is documented as manually enabled and Sync disabled unless explicitly enabled; they are not unqualified default protections.",
+        "UI discoverability and effectiveness were not evaluated."
+      ]
+    },
+    {
+      "id": "R03-F-U01",
+      "browserId": "R03-B-UNGOOGLED",
+      "title": "Removal of Google-service-specific functionality",
+      "category": "background-services",
+      "description": "The common project's primary objective is removal of dependency on Google web services, including disabling service-specific functionality, while remaining close to Chromium's user experience.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "FreeBSD/OpenBSD (packaging-dependent)"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-U1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "This describes an objective and patch design, not a verified absence of every browser network request.",
+        "Safe Browsing is among removed functions, so service removal cannot be treated as a blanket security improvement.",
+        "Binary behavior and package-specific differences were not tested."
+      ]
+    },
+    {
+      "id": "R03-F-U02",
+      "browserId": "R03-B-UNGOOGLED",
+      "title": "Fail-safe blocking of substituted internal domains",
+      "category": "background-services",
+      "description": "The README describes replacing certain internal Google domains with non-existent qjz9zk alternatives and blocking the browser's own requests to those alternatives at runtime.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "FreeBSD/OpenBSD (packaging-dependent)"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-U1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "The mechanism targets substituted internal requests, not arbitrary third-party web content.",
+        "The patch implementation and runtime network behavior were not audited."
+      ]
+    },
+    {
+      "id": "R03-F-U03",
+      "browserId": "R03-B-UNGOOGLED",
+      "title": "Source binary pruning",
+      "category": "build-provenance",
+      "description": "The common build approach removes pre-made binaries from source and uses user-provided alternatives where possible, as described in the repository's objectives and feature list.",
+      "platforms": [
+        "Shared source/build workflow; platform packaging varies"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-U1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Source pruning is not proof that a contributor binary is reproducible or authentic.",
+        "No build was performed; the common release itself contained no binary assets."
+      ]
+    },
+    {
+      "id": "R03-F-U04",
+      "browserId": "R03-B-UNGOOGLED",
+      "title": "Explicit address-bar search and suggestion controls",
+      "category": "address-bar-control",
+      "description": "The README documents a No Search omnibox provider to disable searching and a Suggestions URL field in the search-engine editor for custom suggestion endpoints.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-U1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Availability and defaults can vary by build and version.",
+        "No address-versus-search behavior, suggestion network request, or BSD package was tested."
+      ]
+    },
+    {
+      "id": "R03-F-U05",
+      "browserId": "R03-B-UNGOOGLED",
+      "title": "Additional configuration flags and transparent URL display",
+      "category": "address-bar-control",
+      "description": "The project documents new command-line switches and flags, along with disabling automatic omnibox URL formatting such as protocol stripping and hidden parameters.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-U1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "The README says many added features require manual activation; this record does not assert every option is enabled by default.",
+        "Flags are not necessarily stable, supported user-facing contracts.",
+        "Specific builds and URL-rendering behavior were not exercised."
+      ]
+    },
+    {
+      "id": "R03-F-U06",
+      "browserId": "R03-B-UNGOOGLED",
+      "title": "Popup-to-tab behavior",
+      "category": "tab-workflows",
+      "description": "The common feature overview documents forcing pop-up windows into tabs as a browser-control choice.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-U1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Default activation and exact behavior in particular packages were not established.",
+        "Compatibility with authentication pop-ups and application-style windows needs testing."
+      ]
+    },
+    {
+      "id": "R03-F-W01",
+      "browserId": "R03-B-WATERFOX",
+      "title": "Private tabs alongside regular tabs",
+      "category": "session-control",
+      "description": "Desktop private tabs sit alongside regular tabs, share a separate private container, and clear that container's site data when the last private tab closes while the normal session continues.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-W1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Private tabs share that container with one another; this is not per-tab identity isolation.",
+        "Private-tab storage is not network anonymity.",
+        "Erasure, UI clarity and Android parity were not tested."
+      ]
+    },
+    {
+      "id": "R03-F-W02",
+      "browserId": "R03-B-WATERFOX",
+      "title": "DNS over Oblivious HTTP",
+      "category": "dns-privacy",
+      "description": "The product page describes encrypting DNS queries and sending them through an OHTTP relay, separating the relay's view of the connecting client from the resolver's view of the query.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-W1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Relay/resolver separation is a documented mechanism, not a verified non-collusion or retention guarantee.",
+        "DNS privacy is not anonymous browsing; site traffic and identifying accounts remain separate concerns.",
+        "Fallback behavior, traffic flow and Android support were not tested."
+      ]
+    },
+    {
+      "id": "R03-F-W03",
+      "browserId": "R03-B-WATERFOX",
+      "title": "Tree-structured tabs and subtree actions",
+      "category": "tab-workflows",
+      "description": "The product page describes nesting pages under their opener, collapsing branches and moving entire subtrees to organize related browsing tasks.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-W1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Keyboard access, assistive-technology behavior and large-tree scaling were not evaluated.",
+        "Android parity and productivity gains were not established."
+      ]
+    },
+    {
+      "id": "R03-F-W04",
+      "browserId": "R03-B-WATERFOX",
+      "title": "Persistent status-bar URL display",
+      "category": "address-bar-control",
+      "description": "A desktop status bar exposes the full destination when hovering over links, alongside loading progress and keyboard-shortcut information, rather than using a transient overlay.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-W1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Screen-space, accessibility and destination-disclosure usability were not evaluated.",
+        "This is a desktop description, not established mobile behavior or a Chrome gap."
+      ]
+    },
+    {
+      "id": "R03-F-W05",
+      "browserId": "R03-B-WATERFOX",
+      "title": "Feeds sidebar with search, unread counts and recovery",
+      "category": "feeds-and-reading",
+      "description": "Desktop 6.7.8 adds a feed sidebar with search and unread counts, a refresh-all action, and feed-subscription backup/recovery and import/export fixes.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-W4",
+        "R03-S-W5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Active bug fixing and recovery features do not establish complete feed-format compatibility.",
+        "No subscription, recovery or usability workflow was tested."
+      ]
+    },
+    {
+      "id": "R03-F-W06",
+      "browserId": "R03-B-WATERFOX",
+      "title": "Built-in ad blocking and documented telemetry removal",
+      "category": "background-services",
+      "description": "The product page describes built-in ad blocking, removal of browser telemetry and a no-data-collection policy as parts of its default product design.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-W1",
+        "R03-S-W4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Collection and efficacy statements are vendor claims, not a network audit.",
+        "6.7.8 fixes external links failing with the content blocker, demonstrating a documented compatibility interaction.",
+        "Android parity and net privacy or performance effects were not established."
+      ]
+    },
+    {
+      "id": "R03-F-W07",
+      "browserId": "R03-B-WATERFOX",
+      "title": "Optional Android sensitive-screen overlay protection",
+      "category": "local-disclosure-control",
+      "description": "The separate Android release adds Protect sensitive screens on Android 12+, hiding other apps' floating windows while password, payment-card or saved-address editing screens are displayed.",
+      "platforms": [
+        "Android 12+"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R03-S-W6"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "defaultState": "Off by default according to the Android release body.",
+      "limitations": [
+        "This is an Android-only documented control for named sensitive screens, not a general guarantee against local observation or compromise.",
+        "No overlay or device test was performed."
+      ]
+    },
+    {
+      "id": "R03-F-W08",
+      "browserId": "R03-B-WATERFOX",
+      "title": "Experimental iCloud Passwords integration",
+      "category": "password-integration",
+      "description": "Desktop 6.7.8 documents experimental integration with Apple's password software for filling passwords and verification codes; enabling it also selects iCloud for new password saves.",
+      "platforms": [
+        "Windows",
+        "macOS Sonoma 14+"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R03-S-W4",
+        "R03-S-W5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Requires Apple's password software and explicit enablement.",
+        "Experimental support is not guaranteed parity with every password-manager integration.",
+        "No credential data was accessed and no integration was exercised."
+      ]
+    },
+    {
+      "id": "R03-F-P01",
+      "browserId": "R03-B-PALEMOON",
+      "title": "Deep XUL extension customization",
+      "category": "extensibility",
+      "description": "Pale Moon documents XUL extensions capable of changing browser functions and interface behavior beyond web-content-only customization.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-P1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "This is a different extension ecosystem from current Chrome/Firefox WebExtensions.",
+        "Extension power is not itself evidence of a desirable security boundary or a verified Chrome API gap.",
+        "No extension was installed or audited."
+      ]
+    },
+    {
+      "id": "R03-F-P02",
+      "browserId": "R03-B-PALEMOON",
+      "title": "Legacy NPAPI plugin support",
+      "category": "legacy-compatibility",
+      "description": "The homepage documents support for legacy native plugins through NPAPI; release notes discuss packaging choices for plugin dependencies.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "FreeBSD (build-dependent)"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R03-S-P1",
+        "R03-S-P2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Plugin availability depends on OS, architecture, build and plugin dependencies.",
+        "Browser support does not mean an old plugin is maintained or safe.",
+        "No plugin runtime testing or proposal to restore NPAPI in Chrome is implied."
+      ]
+    },
+    {
+      "id": "R03-F-P03",
+      "browserId": "R03-B-PALEMOON",
+      "title": "Native RSS and Atom feed support",
+      "category": "feeds-and-reading",
+      "description": "The product page lists native RSS/Atom feed support as part of retained browser content handling.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-P1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Feed parsing, subscriptions and reader usability were not exercised.",
+        "No feed feature comparison with Chrome was performed."
+      ]
+    },
+    {
+      "id": "R03-F-P04",
+      "browserId": "R03-B-PALEMOON",
+      "title": "Retained FTP and XSLT functionality",
+      "category": "legacy-compatibility",
+      "description": "The homepage lists native FTP and XML transformations through XSLT among supported browser capabilities.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-P1",
+        "R03-S-P2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Retention may serve long-lived workflows but is not a blanket recommendation to restore legacy implementations in Chrome.",
+        "The publisher's claims about Chrome removal schedules were not used as Chrome baseline evidence.",
+        "No protocol, parser or compatibility test was performed."
+      ]
+    },
+    {
+      "id": "R03-F-P05",
+      "browserId": "R03-B-PALEMOON",
+      "title": "Deliberately minimal telemetry and product integrations",
+      "category": "background-services",
+      "description": "The project states that the browser contains no ads, telemetry, data gathering, DRM or AI integration, describing a deliberate product and service policy.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-P1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "This is a vendor policy/design statement, not a verified zero-egress claim.",
+        "No runtime audit, privacy-effectiveness measure or net-security comparison was performed."
+      ]
+    },
+    {
+      "id": "R03-F-P06",
+      "browserId": "R03-B-PALEMOON",
+      "title": "Built-in compatibility shims and overrides",
+      "category": "web-compatibility",
+      "description": "35.0.0 adds default compatibility shims/polyfills for selected APIs and documents adjustable compatibility behavior, including form parsing and user-agent compatibility settings.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R03-S-P2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "The notes warn that strict content security policies can interfere and shims do not work universally.",
+        "35.0.2 disables :has() by default for performance, illustrating a compatibility trade-off.",
+        "No modern-site corpus or performance benchmark was run."
+      ]
+    },
+    {
+      "id": "R03-F-B01",
+      "browserId": "R03-B-BASILISK",
+      "title": "Traditional customizable desktop interface",
+      "category": "interface-customization",
+      "description": "Basilisk documents a traditional desktop interface with extensive customization and an emphasis on stable, long-lived workflows rather than following current Firefox interface changes.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "FreeBSD"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-B1",
+        "R03-S-B2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Predictability and long-term usability are design goals, not measured user outcomes.",
+        "No UI or accessibility testing was performed."
+      ]
+    },
+    {
+      "id": "R03-F-B02",
+      "browserId": "R03-B-BASILISK",
+      "title": "Classic XUL and overlay-based extensions",
+      "category": "extensibility",
+      "description": "The project explicitly preserves classic XUL and overlay-based extension capabilities on its independently maintained UXP platform.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "FreeBSD"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-B1",
+        "R03-S-B2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Chrome Web Store or current Firefox extension compatibility is not implied.",
+        "The power or longevity of an extension system does not establish its security properties.",
+        "No extension was installed or audited."
+      ]
+    },
+    {
+      "id": "R03-F-B03",
+      "browserId": "R03-B-BASILISK",
+      "title": "NPAPI plugin support",
+      "category": "legacy-compatibility",
+      "description": "Basilisk documents retained native plugin support through NPAPI as part of its classic desktop compatibility surface.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "FreeBSD"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-B1"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "An individual plugin must match its platform and architecture; compatible plugins were not inventoried.",
+        "Legacy support is distinct from plugin maintenance or safety and is not a blanket Chrome recommendation."
+      ]
+    },
+    {
+      "id": "R03-F-B04",
+      "browserId": "R03-B-BASILISK",
+      "title": "Integrated compatibility polyfills and explicit switches",
+      "category": "web-compatibility",
+      "description": "The 2026.11.01 notes list Intl, Streams and other polyfills, a Microsoft-specific WebAuthn shim, and preferences for CSS :has() and strict form-element parsing.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "FreeBSD"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R03-S-B3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "The listed Intl.ListFormat polyfill is en-US-only and :has() is off by default because of documented performance problems.",
+        "A shim or compatibility preference does not establish complete API conformance.",
+        "No compatibility or performance experiment was run."
+      ]
+    },
+    {
+      "id": "R03-F-D01",
+      "browserId": "R03-B-DUCKDUCKGO",
+      "title": "Tracker-request blocking with public lists and local surrogates",
+      "category": "content-and-script-control",
+      "description": "DuckDuckGo describes identifying tracker requests with public lists and preventing their loading. Local surrogate scripts can replicate expected APIs without the tracking calls to reduce tracker-dependent breakage.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "iOS/iPadOS",
+        "Android"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-D3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "Most is a vendor coverage claim, not a measured result here.",
+        "The documentation includes temporary compatibility exceptions and separate treatment of infrastructure domains.",
+        "The bat.bing.com conversion exception applies after DuckDuckGo ad clicks; it is not a blanket Microsoft-tracker exemption.",
+        "The described protection does not establish Tor anonymity or native Chrome absence."
+      ]
+    },
+    {
+      "id": "R03-F-D02",
+      "browserId": "R03-B-DUCKDUCKGO",
+      "title": "Automatic cookie-consent handling with limited coverage",
+      "category": "consent-control",
+      "description": "The documentation describes attempting to minimize consented cookies and close a detected pop-up. Where preference management is unavailable it may only hide the pop-up using filter or cosmetic rules.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "iOS/iPadOS",
+        "Android"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R03-S-D3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "defaultState": "Documented as enabled by default on supported app platforms.",
+      "limitations": [
+        "Cosmetic hiding is not proof that consent was rejected or cookies were prevented.",
+        "Android iframe script-injection limits prevent handling some sites; coverage is incomplete and changes over time.",
+        "Support for the DuckDuckGo extension is distinct from the host Chrome browser's native capabilities.",
+        "No consent-manager corpus or consent-state test was performed."
+      ]
+    },
+    {
+      "id": "R03-F-D03",
+      "browserId": "R03-B-DUCKDUCKGO",
+      "title": "Fire Button, Fireproof exceptions and isolated Fire sessions",
+      "category": "session-control",
+      "description": "The Fire Button exposes scoped deletion of browsing data. Fireproof sites retain selected state, while Fire Windows on desktop and Fire Tabs on mobile isolate activity from regular sessions and delete their session data on closing.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "iOS/iPadOS",
+        "Android"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-D2",
+        "R03-S-D4"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "The Fire Button does not delete Fireproof first-party state, bookmarks, downloaded files or some app/search settings.",
+        "The isolated-session and erasure statements are documented semantics, not forensic guarantees verified here.",
+        "These local/session controls do not change the network-identity model or establish anonymity."
+      ]
+    },
+    {
+      "id": "R03-F-D04",
+      "browserId": "R03-B-DUCKDUCKGO",
+      "title": "Accountless end-to-end encrypted Sync & Backup",
+      "category": "sync-and-portability",
+      "description": "The policy describes syncing supported data with encryption on devices and decryption keys held on connected devices. Pairing uses recovery/QR codes without requiring a personal identity account.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "iOS/iPadOS",
+        "Android"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-D5"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "The architecture and access promises were not independently cryptographically audited.",
+        "Recovery-code custody and device access matter; supported data types and optional restore behavior need platform-specific verification.",
+        "The policy says data not accessed for 18 months is deleted from servers; deleting server data does not remove already-local copies.",
+        "Accountless synchronization is not Tor anonymity."
+      ]
+    },
+    {
+      "id": "R03-F-D05",
+      "browserId": "R03-B-DUCKDUCKGO",
+      "title": "Consolidated optional-AI opt-out",
+      "category": "optional-ai-control",
+      "description": "Q3 2026 updates document a Use DuckDuckGo Without AI control that disables Duck.ai, hides AI-assisted search answers and applies a filter for known AI spam sites in image search results.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "iOS/iPadOS",
+        "Android"
+      ],
+      "availability": "documented",
+      "sourceIds": [
+        "R03-S-D2"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "limitations": [
+        "The scope is the vendor's enumerated browser/service surfaces, not removal of arbitrary AI-generated web content.",
+        "The exact first app version and all network effects were not established.",
+        "No Chrome absence or comparable-control default is asserted."
+      ]
+    },
+    {
+      "id": "R03-F-D06",
+      "browserId": "R03-B-DUCKDUCKGO",
+      "title": "Layered tracking controls with platform-specific coverage",
+      "category": "tracking-protection",
+      "description": "The protection matrix separately documents CNAME handling, fingerprint API changes, link/referrer controls, cookie restrictions, HTTPS upgrading and Global Privacy Control. These are different mechanisms with different platform coverage, not a single uniform guarantee.",
+      "platforms": [
+        "Windows",
+        "macOS",
+        "iOS/iPadOS",
+        "Android"
+      ],
+      "availability": "limited",
+      "sourceIds": [
+        "R03-S-D3"
+      ],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "platformCoverage": [
+        {
+          "capability": "CNAME handling",
+          "documentedScope": "Windows/Android list-based handling; macOS/iOS coverage is a subset with a stated roadmap for usability limitations.",
+          "sourceIds": [
+            "R03-S-D3"
+          ]
+        },
+        {
+          "capability": "Fingerprint API overrides",
+          "documentedScope": "The Android table excludes iframe overrides because of WebView script-injection limitations.",
+          "sourceIds": [
+            "R03-S-D3"
+          ]
+        },
+        {
+          "capability": "Automatic link tracking removal",
+          "documentedScope": "The inspected table lists Windows as unsupported/on the roadmap; macOS/iOS cover the first navigation rather than later automatic redirects. Android lists removal of tracked parameters.",
+          "sourceIds": [
+            "R03-S-D3"
+          ]
+        },
+        {
+          "capability": "Referrer controls",
+          "documentedScope": "The table describes macOS/iOS WebKit-based and Windows handling, with Android unsupported because of WebView limitations.",
+          "sourceIds": [
+            "R03-S-D3"
+          ]
+        },
+        {
+          "capability": "First-party cookie expiry",
+          "documentedScope": "Platform tables distinguish implemented expiry from Windows and Android roadmap items; the generic introduction is not proof of uniform coverage.",
+          "sourceIds": [
+            "R03-S-D3"
+          ]
+        },
+        {
+          "capability": "Global Privacy Control",
+          "documentedScope": "Header and/or JavaScript opt-out signaling has platform qualifications. Legal effect depends on jurisdiction and site obligations, not merely sending the signal.",
+          "sourceIds": [
+            "R03-S-D3"
+          ]
+        }
+      ],
+      "limitations": [
+        "The matrix is mutable and may contain stale entries; exact present binary behavior was not verified.",
+        "A manual Copy Clean Link control is distinct from automatic link protection and does not establish parity with the automatic-navigation table.",
+        "Chrome extension limitations and historical Topics comparisons do not establish native Chrome gaps or current lifecycle facts.",
+        "No tracking effectiveness, GPC compliance, HTTPS coverage or cookie-expiry test was run."
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "R03-I01",
+      "title": "Mullvad hard-facts documentation retains superseded DNS and session-reset descriptions",
+      "kind": "source-inconsistency",
+      "status": "needs-validation",
+      "sourceIds": [
+        "R03-S-M2",
+        "R03-S-M3"
+      ],
+      "upstreamUrl": null,
+      "upstreamStatus": "not-checked",
+      "reportedVersions": [
+        "Mullvad Browser 16.0"
+      ],
+      "testedVersions": [],
+      "reproduction": "source-only",
+      "steps": [
+        "Compare the retrieved hard-facts sections about New Identity and Mullvad DoH with the 16.0 release announcement.",
+        "Keep the release-specific resolver migration and Clear Private Session naming separate from the older generic descriptions."
+      ],
+      "expected": "Current documentation should identify release-specific DNS defaults and the session-reset control consistently, including that local session clearing does not rotate the user's IP address.",
+      "observed": "At retrieval, the hard-facts page still described Mullvad DoH and a New Identity button. The dated 16.0 announcement instead described migration to Quad9, preservation of customized DoH settings, and replacement of the broom by Clear Private Session.",
+      "evidenceType": "source-inspected",
+      "confidence": "high",
+      "limitations": [
+        "This is a document inconsistency, not a locally reproduced browser defect.",
+        "The hard-facts update date was not established; live documentation may change.",
+        "No existing upstream report was investigated and no issue was submitted."
+      ],
+      "submission": {
+        "status": "not-submitted",
+        "url": null,
+        "reason": "Research finding only; any publication or upstream submission is owned by the coordinating session."
+      }
+    }
+  ],
+  "limitations": [
+    "This lane records primary-source documentation and release metadata, not hands-on browser results. No local reproduction, install, network capture, source-code audit, performance benchmark or fingerprint-population experiment was performed.",
+    "Chrome absence, parity, defaults, rollout and platform coverage remain not established for every candidate; the dedicated baseline lane must determine them.",
+    "Tor-network anonymity, ordinary tracker resistance, local data retention, DNS privacy, security and compatibility are distinct properties. No blanket browser ranking or unmeasured superiority is claimed.",
+    "Latest observed records are retrieval snapshots, not guarantees that every distribution channel is current. LibreWolf's latest overall release and date, DuckDuckGo's latest app versions, and several exact engine patch levels remain unknown.",
+    "LibreWolf release endpoints returned HTTP 403, as did the raw Tor build changelog; public installation pages and release-announcement bodies supplied the narrower evidence retained here.",
+    "A guessed DuckDuckGo Windows repository returned HTTP 404 and a guessed sync-help path returned generic text; neither failure establishes absence. The actual Sync & Backup policy was read instead.",
+    "Sources are mutable. The older Mullvad hard-facts DNS/reset descriptions conflict with the newer 16.0 announcement; release-specific evidence is used for those fields.",
+    "Unverified extraction dates were discarded rather than converted into publication facts. Quarterly update periods and release dates are explicitly distinguished from unknown page publication dates.",
+    "Vendor claims about zero telemetry, no collection, nearly identical fingerprints, stronger protection or relative resource usage were not independently audited. Documentation is evidence of the claim or mechanism, not proof of effectiveness.",
+    "Recommendation candidates are unsubmitted hypotheses with proposed acceptance questions. The single issue is a source inconsistency, not a reproduced browser defect or an upstream report submitted by this project.",
+    "The 48 feature records preserve all 46 substantive feature-table rows from the completed research and separately retain two documented Waterfox capabilities from its release discussion. No additional research or cross-lane build work was performed."
+  ],
+  "recovery": {
+    "method": "labelled-reconstruction",
+    "byteExact": false,
+    "newResearchPerformed": false,
+    "originalReviewedSha256": "6cf1374809918663e5e90bf65164ddd2f030243afbdf859c001f47ca2b99158b",
+    "originalSavedStatus": "complete",
+    "status": "all-core-records-reconstructed-with-explicit-optional-field-loss",
+    "inputArtifacts": [
+      {
+        "label": "original-report",
+        "path": "lane-03.md",
+        "root": "retained-task",
+        "bytes": 52287,
+        "sha256": "764b40b762d1343ccd0f0e7cc29bc98f0d728a1f4dda1b459f2d3f8ee4f7db39"
+      },
+      {
+        "label": "catalog-preview",
+        "path": "renderer-20f-preview/CATALOG.md",
+        "root": "retained-task",
+        "bytes": 261226,
+        "sha256": "3008ce794d19fa60f17f71714d8258ecaccf35ade99250596f604f80fc168f26"
+      },
+      {
+        "label": "features-preview",
+        "path": "renderer-20f-preview/FEATURES.md",
+        "root": "retained-task",
+        "bytes": 493426,
+        "sha256": "b09d3de4c532112f3823202dd592951cd7ca03f7a903bf80b5d35f7ec781a5c8"
+      },
+      {
+        "label": "issues-preview",
+        "path": "renderer-20f-preview/ISSUES.md",
+        "root": "retained-task",
+        "bytes": 217798,
+        "sha256": "034ff75b0a97ffb60f51092bfb5c45e50951a4ee9707b7d16cb8fe61f302969d"
+      },
+      {
+        "label": "agents-preview",
+        "path": "renderer-20f-preview/AGENTS-LEDGER.md",
+        "root": "retained-task",
+        "bytes": 261359,
+        "sha256": "e88382a43890cf7eb5db983201a8d90ebb05fa215266a8042c45f452e8ee223a"
+      },
+      {
+        "label": "extracted-sections",
+        "path": "recovery-records/partial-shards/R03/sections.json",
+        "root": "retained-task",
+        "bytes": 89350,
+        "sha256": "6687f12cfac2ed2421eea5ca37ecffe4d01eda27aa9c44ef2863a4c1daf54091"
+      },
+      {
+        "label": "record-inventory",
+        "path": "recovery-records/partial-shards/R03/projections/record-inventory.json",
+        "root": "retained-task",
+        "bytes": 7154,
+        "sha256": "4adc7f3a01847b3f671853966542c35c1a7ae8a185760a834ff654dc6780c020"
+      },
+      {
+        "label": "selected-original-projection",
+        "path": "recovery-records/partial-shards/R03/projections/header-and-first-records.json",
+        "root": "retained-task",
+        "bytes": 5464,
+        "sha256": "5fdf39b07cfe33d11baebe7f4f73ef6fd846507993047f7e82e39275e8b525b3"
+      },
+      {
+        "label": "recovery-manifest",
+        "path": "recovery-records/six-shards-manifest.json",
+        "root": "retained-task",
+        "bytes": 96110,
+        "sha256": "64772d540afed3e34f13a0cbe07cf595653ec000ad3dd438f8cd788d5f26342a"
+      },
+      {
+        "label": "data-contract",
+        "path": "data/contract.json",
+        "root": "canonical-repository",
+        "bytes": 4353,
+        "sha256": "7ba74e98828e32c9ef8a1d3a1211c029af753223ae355566132ff5d665eebf0d"
+      },
+      {
+        "label": "report-renderer",
+        "path": "scripts/render.mjs",
+        "root": "canonical-repository",
+        "bytes": 30571,
+        "sha256": "2ef414075d5999e4884c27285bfd626745f455c6350244264d2cd8da7e501823"
+      }
+    ],
+    "converter": {
+      "path": "conversion-R03/reconstruct.mjs",
+      "bytes": 32910,
+      "sha256": "e6a8acb32c3497b281b966c24d3ecb19b6e9a768b8ccd96ae137c4d9ff676fa5"
+    },
+    "precedence": [
+      "complete extracted original fields and elements",
+      "selected original issue fields",
+      "decoded generated report fields using the actual renderer",
+      "exact source URL definitions in the original report",
+      "contract-required schemaVersion structural value"
+    ],
+    "preservedExtractedFields": [
+      "recommendationCandidates",
+      "id",
+      "title",
+      "status",
+      "agentSessionId",
+      "scope"
+    ],
+    "preservedCompleteCoreRecords": [
+      "R03-F-T04",
+      "R03-F-T05",
+      "R03-F-T06",
+      "R03-F-M01",
+      "R03-F-M02",
+      "R03-F-M03",
+      "R03-F-M04",
+      "R03-F-M05",
+      "R03-F-M06",
+      "R03-F-L01",
+      "R03-F-L02",
+      "R03-F-L03",
+      "R03-F-L04",
+      "R03-S-T1",
+      "R03-B-TOR",
+      "R03-F-T01"
+    ],
+    "unrecoveredOptionalFields": [
+      {
+        "selector": "methodology",
+        "presence": "confirmed-in-original-top-level-key-inventory",
+        "status": "unrecovered",
+        "reason": "No complete retained value or renderer output for this field. The original report was consulted, but its prose was not relabeled as the original structured methodology."
+      },
+      {
+        "selector": "features[*].quotations outside complete extracted elements",
+        "records": [
+          "R03-F-T02",
+          "R03-F-T03",
+          "R03-F-L05",
+          "R03-F-L06",
+          "R03-F-U01",
+          "R03-F-U02",
+          "R03-F-U03",
+          "R03-F-U04",
+          "R03-F-U05",
+          "R03-F-U06",
+          "R03-F-W01",
+          "R03-F-W02",
+          "R03-F-W03",
+          "R03-F-W04",
+          "R03-F-W05",
+          "R03-F-W06",
+          "R03-F-W07",
+          "R03-F-W08",
+          "R03-F-P01",
+          "R03-F-P02",
+          "R03-F-P03",
+          "R03-F-P04",
+          "R03-F-P05",
+          "R03-F-P06",
+          "R03-F-B01",
+          "R03-F-B02",
+          "R03-F-B03",
+          "R03-F-B04",
+          "R03-F-D01",
+          "R03-F-D02",
+          "R03-F-D03",
+          "R03-F-D04",
+          "R03-F-D05",
+          "R03-F-D06"
+        ],
+        "presence": "unknown-per-record",
+        "status": "not-reconstructed",
+        "reason": "The renderer omits quotations. Original report quotes cannot establish the lost original JSON field membership, wording or structure. All 14 complete extracted feature quotation fields are preserved."
+      },
+      {
+        "selector": "browsers[*].quotations outside R03-B-TOR",
+        "records": [
+          "R03-B-MULLVAD",
+          "R03-B-LIBREWOLF",
+          "R03-B-UNGOOGLED",
+          "R03-B-WATERFOX",
+          "R03-B-PALEMOON",
+          "R03-B-BASILISK",
+          "R03-B-DUCKDUCKGO"
+        ],
+        "presence": "unknown-per-record",
+        "status": "not-reconstructed",
+        "reason": "The renderer omits quotations. R03-B-TOR is preserved in full, including its quotations; no quotation field is invented for other browsers."
+      },
+      {
+        "selector": "other non-rendered optional per-record fields",
+        "records": [
+          "R03-S-T2",
+          "R03-S-T3",
+          "R03-S-T4",
+          "R03-S-T5",
+          "R03-S-T6",
+          "R03-S-T7",
+          "R03-S-M1",
+          "R03-S-M2",
+          "R03-S-M3",
+          "R03-S-M4",
+          "R03-S-M5",
+          "R03-S-L1",
+          "R03-S-L2",
+          "R03-S-L3",
+          "R03-S-L4",
+          "R03-S-L5",
+          "R03-S-U1",
+          "R03-S-U2",
+          "R03-S-W1",
+          "R03-S-W2",
+          "R03-S-W3",
+          "R03-S-W4",
+          "R03-S-W5",
+          "R03-S-W6",
+          "R03-S-P1",
+          "R03-S-P2",
+          "R03-S-B1",
+          "R03-S-B2",
+          "R03-S-B3",
+          "R03-S-B4",
+          "R03-S-D1",
+          "R03-S-D2",
+          "R03-S-D3",
+          "R03-S-D4",
+          "R03-S-D5",
+          "R03-S-D6",
+          "R03-S-D7",
+          "R03-S-D8",
+          "R03-S-D9",
+          "R03-S-D10",
+          "R03-S-D11",
+          "R03-S-D12",
+          "R03-B-MULLVAD",
+          "R03-B-LIBREWOLF",
+          "R03-B-UNGOOGLED",
+          "R03-B-WATERFOX",
+          "R03-B-PALEMOON",
+          "R03-B-BASILISK",
+          "R03-B-DUCKDUCKGO",
+          "R03-F-T02",
+          "R03-F-T03",
+          "R03-F-L05",
+          "R03-F-L06",
+          "R03-F-U01",
+          "R03-F-U02",
+          "R03-F-U03",
+          "R03-F-U04",
+          "R03-F-U05",
+          "R03-F-U06",
+          "R03-F-W01",
+          "R03-F-W02",
+          "R03-F-W03",
+          "R03-F-W04",
+          "R03-F-W05",
+          "R03-F-W06",
+          "R03-F-W07",
+          "R03-F-W08",
+          "R03-F-P01",
+          "R03-F-P02",
+          "R03-F-P03",
+          "R03-F-P04",
+          "R03-F-P05",
+          "R03-F-P06",
+          "R03-F-B01",
+          "R03-F-B02",
+          "R03-F-B03",
+          "R03-F-B04",
+          "R03-F-D01",
+          "R03-F-D02",
+          "R03-F-D03",
+          "R03-F-D04",
+          "R03-F-D05",
+          "R03-F-D06",
+          "R03-I01"
+        ],
+        "presence": "unknown",
+        "status": "unrecoverable-from-authorized-retained-projections",
+        "reason": "Only extracted full values, selected issue fields and fields exposed by the actual renderer are recoverable here. Absence from this reconstruction is not evidence that an optional field was absent originally."
+      }
+    ],
+    "limitations": [
+      "This is a reconstruction, not the original reviewed file or byte-exact recovery. The original complete status is retained as the historical lane scope label, not a claim of complete byte or optional-field recovery.",
+      "Generated citations are sorted and deduplicated. For records without complete extracted values, original citation order and duplicate multiplicity are not recoverable; the source-ID set is preserved.",
+      "Generated object/list presentation loses some type and nesting information. observedReleases and platformCoverage use record arrays; platformBoundaries uses string arrays; dateVerification uses an object. Null, boolean and numeric choices follow explicit labels, retained Tor structure and original report qualifications.",
+      "The renderer strips certain control characters and normalizes line breaks. Original JSON formatting, object-key order, BOM, terminal newline, discarded controls and original line-ending style are not reconstructed.",
+      "No sources were refreshed and no browser, build, benchmark, network, upstream submission or cryptographic result was newly observed."
+    ]
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-11-21",
+  "scope": "Editorial synthesis of the saved browser research into testable Chrome improvement proposals.",
+  "methodology": {
+    "evidence": "Source and feature IDs resolve across data/lanes. Vendor documentation establishes a documented capability, not a measured outcome.",
+    "priority": "P1 means investigate first because the user outcome is concrete; P2 means a broader design or measurement effort. Priorities are editorial judgments, not measured impact scores.",
+    "parity": "documented-gap requires an explicit Chrome limitation. partial-baseline credits related Chrome functionality but does not prove the proposed refinement is absent. unassessed makes no Chrome absence claim.",
+    "submission": "These are proposals for evaluation, not reports submitted to Google or commitments by Chrome. Receipt records live separately in data/submissions.json.",
+    "coverage": "This synthesis draws on a bounded catalogue. It is not an exhaustive list of browsers, features, issues, or implementation requirements."
+  },
+  "recommendations": [
+    {
+      "id": "REC-01", "title": "A supported Android extension experience", "priority": "P1", "category": "mobile-extensions", "target": "Chrome for Android", "status": "needs-validation",
+      "chromeParity": "documented-gap", "chromeBaselineFeatureIds": ["R01-FEATURE-MOBILE-EXTENSIONS", "R01-FEATURE-SYNC"],
+      "chromeBaseline": "Chrome Web Store help explicitly excludes installation on mobile, even in desktop mode; syncing an extension is not executing it on a phone.",
+      "comparatorFeatureIds": ["R05-F-quetta-android-extensions", "R05-F-yandex-android-extensions", "R05-F-cromite-experimental-extensions"],
+      "sourceIds": ["R01-S41", "R01-S36", "R05-Q02", "R05-Y02", "R05-C06"],
+      "proposal": "Evaluate a supported Android extension runtime with a declared API subset, compatibility reporting, mobile permission controls and reliable updates.",
+      "acceptanceCriteria": ["Publish supported APIs and unsupported cases for a representative extension corpus.", "Test install, update, disable and uninstall, including permission revocation and background-resource limits.", "Measure battery, memory, touch-target and accessibility effects on representative Android devices."],
+      "tradeoffs": ["Desktop extension assumptions conflict with mobile interaction and resource budgets.", "Experimental default-off Cromite source is not proof of a production-compatible implementation."],
+      "limitations": ["Implementation feasibility and Chrome's Android roadmap are unassessed.", "This proposal does not imply equivalent iOS support or permission to reuse another browser's code without its license."]
+    },
+    {
+      "id": "REC-02", "title": "Identity-aware workspaces and predictable link routing", "priority": "P1", "category": "workspaces", "target": "Chrome desktop", "status": "needs-validation",
+      "chromeParity": "partial-baseline", "chromeBaselineFeatureIds": ["R01-FEATURE-PROJECT-WORKSPACES", "R01-FEATURE-TAB-GROUPS"],
+      "chromeBaseline": "Chrome documents separate profiles, named windows and saved groups. Visual grouping, per-site cookie containers and full-profile isolation are different boundaries.",
+      "comparatorFeatureIds": ["R04-feature-zen-01", "R04-feature-floorp-01", "R04-feature-dia-01", "R02-FF-02"],
+      "sourceIds": ["R01-S26", "R01-S18", "R04-Z4", "R04-F3", "R04-D2", "R02-F6"],
+      "proposal": "Evaluate named workspaces that visibly identify account context and explain which context receives an external or cross-workspace link.",
+      "acceptanceCriteria": ["Compare the same two-account workflow against existing Chrome profiles and groups.", "Verify cookie and storage boundaries with controlled test origins.", "Make routing precedence inspectable, reversible and keyboard-accessible."],
+      "tradeoffs": ["Convenient identity switching can obscure isolation boundaries.", "Container or profile rules need explicit conflict and fallback behavior."],
+      "limitations": ["No current Chrome routing defect was reproduced.", "Firefox's cited container announcement is historical add-on evidence; current version/default availability needs checking."]
+    },
+    {
+      "id": "REC-03", "title": "Portable project and session structures", "priority": "P1", "category": "portability", "target": "Chrome desktop and mobile", "status": "needs-validation",
+      "chromeParity": "partial-baseline", "chromeBaselineFeatureIds": ["R01-FEATURE-PROJECT-WORKSPACES", "R01-FEATURE-TAB-GROUPS", "R01-FEATURE-SYNC"],
+      "chromeBaseline": "Saved/synced groups and account-based synchronization already preserve some organization; lossless export of richer project structure was not established.",
+      "comparatorFeatureIds": ["R04-feature-dia-06", "R04-feature-zen-06", "R02-VI-01"],
+      "sourceIds": ["R01-S18", "R01-S36", "R04-D2", "R04-Z3", "R02-V4", "R04-A1", "R04-T1"],
+      "proposal": "Evaluate inspectable, versioned exports for names, URLs, groups, pin destinations and layouts that remain useful when an account or browser service is retired.",
+      "acceptanceCriteria": ["Round-trip representative projects while preserving declared structure.", "Show unsupported fields and recovery choices rather than silently discarding them.", "Exclude live credentials and authenticated session material from the project interchange format."],
+      "tradeoffs": ["Rich layout semantics are harder to exchange between browsers.", "Publicly shareable structure and private browsing state need different handling."],
+      "limitations": ["The Arc and Atlas lifecycle records are historical case studies, not recommendations to install those products.", "No exporter/importer interoperability was tested."]
+    },
+    {
+      "id": "REC-04", "title": "Saved multi-pane layouts and preview promotion", "priority": "P1", "category": "multitasking", "target": "Chrome desktop and tablets", "status": "needs-validation",
+      "chromeParity": "partial-baseline", "chromeBaselineFeatureIds": ["R01-FEATURE-SPLIT-VIEW", "R01-FEATURE-PROJECT-WORKSPACES"],
+      "chromeBaseline": "Chrome already documents two-page split view, stacked orientation, swap/separate controls and a toolbar button.",
+      "comparatorFeatureIds": ["R02-VI-03", "R04-feature-floorp-02", "R04-feature-dia-02", "R04-feature-zen-02"],
+      "sourceIds": ["R01-S20", "R02-V6", "R04-F4", "R04-D1", "R04-Z5"],
+      "proposal": "Evaluate two-to-four-pane research layouts, explicit persistence and transitions from a temporary preview into a normal tab or split.",
+      "acceptanceCriteria": ["Demonstrate a concrete task that benefits beyond Chrome's existing two-view workflow.", "Restore a saved layout after restart and report unavailable pages.", "Verify keyboard focus order, minimum pane sizes, narrow-window fallback and screen-reader context."],
+      "tradeoffs": ["Extra panes increase memory use and interaction complexity.", "Tablet OS multiwindow support is not equivalent to browser in-window tiling."],
+      "limitations": ["Layout persistence and current Chrome preview parity remain unverified.", "Vendor descriptions are not measured productivity improvements."]
+    },
+    {
+      "id": "REC-05", "title": "Discoverable deterministic browser commands", "priority": "P1", "category": "commands", "target": "Chrome desktop", "status": "needs-validation",
+      "chromeParity": "unassessed", "chromeBaselineFeatureIds": ["R01-FEATURE-DESKTOP-TOOLBAR", "R01-FEATURE-GEMINI-CONTROLS"],
+      "chromeBaseline": "Chrome exposes toolbar controls and optional Gemini surfaces. Existing omnibox actions and command-search coverage need a task-specific baseline.",
+      "comparatorFeatureIds": ["R04-feature-zen-04", "R04-feature-sigmaos-03", "R06-F-QUTEBROWSER-COMMAND-HELP", "R06-F-NYXT-FUZZY-MULTISELECT"],
+      "sourceIds": ["R01-S27", "R01-S38", "R04-Z3", "R04-S2", "R06-Q2", "R06-N1", "R06-N2", "R04-H5"],
+      "proposal": "Evaluate searchable named browser actions with contextual help, visible shortcuts and an explicit choice between ordinary commands, search and AI.",
+      "acceptanceCriteria": ["Discover and execute a defined set of navigation, organization and settings tasks by keyboard.", "Keep deterministic commands usable offline and without an AI subscription.", "Explain shortcut conflicts and confirm destructive actions with appropriate undo semantics."],
+      "tradeoffs": ["A unified entry point can create ambiguous intent or modal-key conflicts.", "A power-user surface still needs clear localization and assistive-technology support."],
+      "limitations": ["No claim that Chrome lacks command or omnibox actions.", "SigmaOS maintenance is unknown; its workflow is a documentary precedent only."]
+    },
+    {
+      "id": "REC-06", "title": "Consistent, accessible menu and toolbar customization", "priority": "P1", "category": "menus", "target": "Chrome desktop and mobile", "status": "needs-validation",
+      "chromeParity": "partial-baseline", "chromeBaselineFeatureIds": ["R01-FEATURE-DESKTOP-TOOLBAR", "R01-FEATURE-ANDROID-TOOLBAR-SHORTCUT", "R01-FEATURE-MENU-CUSTOMIZATION"],
+      "chromeBaseline": "Chrome already supports offered toolbar buttons and desktop reordering. Comprehensive menu editing is unresolved. R09 separately records managed-state and command-identity concerns in pinned source.",
+      "comparatorFeatureIds": ["R05-F-samsung-ergonomics", "R06-F-ORION-COMPACT-PAGE-UI"],
+      "sourceIds": ["R01-S27", "R01-S28", "R05-S01", "R05-S02", "R06-O1"],
+      "relatedIssueIds": ["R09-C1", "R09-H1", "R09-H3"],
+      "proposal": "Evaluate targeted hide/reorder/reset controls while ensuring labels, stable action identity, effective policy state and accessible enablement agree.",
+      "acceptanceCriteria": ["Credit existing toolbar customization and identify the exact menu outcome still unmet.", "Test mandatory-on, mandatory-off, recommended and unmanaged settings separately.", "Verify displayed labels invoke the same action across asynchronous state changes and keyboard navigation."],
+      "tradeoffs": ["Personalization can reduce supportability and command discoverability.", "Reset must not imply that mandatory policy can be overridden."],
+      "limitations": ["Source inconsistencies and runtime menu defects remain different claims.", "No machine policy or user profile was changed to test this proposal."]
+    },
+    {
+      "id": "REC-07", "title": "Hierarchical tabs with recoverable bulk actions", "priority": "P2", "category": "tab-organization", "target": "Chrome desktop", "status": "needs-validation",
+      "chromeParity": "partial-baseline", "chromeBaselineFeatureIds": ["R01-FEATURE-VERTICAL-TABS", "R01-FEATURE-TAB-GROUPS"],
+      "chromeBaseline": "Vertical tabs and named/color saved groups are documented Chrome features. A hierarchy-specific workflow needs comparison with those controls.",
+      "comparatorFeatureIds": ["R03-F-W03", "R02-VI-02", "R04-feature-sigmaos-01"],
+      "sourceIds": ["R01-S18", "R03-S-W1", "R02-V5", "R04-S1"],
+      "proposal": "Evaluate parent/child organization, subtree selection and explicit temporary, saved and completed states with reliable undo.",
+      "acceptanceCriteria": ["Compare search and reorganization tasks across flat groups and nested projects.", "Test bulk move/close/restore without silent data loss.", "Expose hierarchy and selection through keyboard and screen-reader semantics."],
+      "tradeoffs": ["Nesting can make small sessions unnecessarily complex.", "Automatic completion or archiving can surprise users."],
+      "limitations": ["No demonstrated Chrome deficiency or measured task-time benefit.", "SigmaOS's lifecycle remains qualified in the source catalogue."]
+    },
+    {
+      "id": "REC-08", "title": "User-selected web panels and account-labeled app presence", "priority": "P2", "category": "side-panels", "target": "Chrome desktop", "status": "needs-validation",
+      "chromeParity": "partial-baseline", "chromeBaselineFeatureIds": ["R01-FEATURE-SIDE-PANELS", "R01-FEATURE-PROJECT-WORKSPACES"],
+      "chromeBaseline": "Built-in panels and the extension Side Panel API already exist. Arbitrary-site pinning, simultaneous panels and account-scoped notifications were not established.",
+      "comparatorFeatureIds": ["R02-VI-05", "R04-feature-floorp-03", "R04-feature-wavebox-02"],
+      "sourceIds": ["R01-S37", "R01-S27", "R02-V8", "R04-F5", "R04-W1", "R04-W2"],
+      "proposal": "Evaluate a bounded panel/app model with visible account labels, notification scope and predictable links back to full tabs.",
+      "acceptanceCriteria": ["Test selected sites in narrow panels and provide a full-tab fallback.", "Distinguish duplicate service accounts and their notifications.", "Explain suspension, background activity and panel permissions."],
+      "tradeoffs": ["Panels can consume resources and multiply notifications.", "Site compatibility and identity rules add maintenance burden."],
+      "limitations": ["Existing extension and installed-web-app equivalents must be assessed first.", "No cross-account or notification behavior was exercised."]
+    },
+    {
+      "id": "REC-09", "title": "Citation-preserving notes and research capture", "priority": "P1", "category": "research-workflows", "target": "Chrome desktop and mobile", "status": "needs-validation",
+      "chromeParity": "unassessed", "chromeBaselineFeatureIds": ["R01-FEATURE-READING-MODE", "R01-FEATURE-DEVTOOLS-SCREENSHOTS"],
+      "chromeBaseline": "Chrome offers reading and capture building blocks. An integrated source-linked notes/export workflow was not assessed.",
+      "comparatorFeatureIds": ["R02-VI-06", "R04-feature-floorp-05", "R04-feature-dia-06"],
+      "sourceIds": ["R01-S21", "R01-S29", "R02-V9", "R04-F5", "R04-D2"],
+      "proposal": "Evaluate notes that retain source URL, capture date, selected text and optional images, with open-format export and clear stale-source handling.",
+      "acceptanceCriteria": ["Export notes with working source references and explicit capture timestamps.", "Preserve user edits through sync/export/import and report unsupported content.", "Make selective capture and deletion understandable on authenticated pages."],
+      "tradeoffs": ["Automatic capture can retain sensitive page content.", "Offline copies and later source revisions need distinct dates and provenance."],
+      "limitations": ["No current Chrome notes capability is claimed absent.", "Export fidelity and productivity benefits remain untested."]
+    },
+    {
+      "id": "REC-10", "title": "Discoverable capture, annotation and redaction", "priority": "P1", "category": "screenshots", "target": "Chrome desktop and mobile", "status": "needs-validation",
+      "chromeParity": "partial-baseline", "chromeBaselineFeatureIds": ["R01-FEATURE-DEVTOOLS-SCREENSHOTS", "R01-FEATURE-CONSUMER-SCREENSHOT-WORKFLOW"],
+      "chromeBaseline": "DevTools already captures full pages, regions and nodes; Android also has OS capture. A non-DevTools editing workflow remains unresolved.",
+      "comparatorFeatureIds": ["R05-F-quetta-ios-reading-capture", "R02-FF-06"],
+      "sourceIds": ["R01-S29", "R01-S30", "R05-Q03", "R05-A01", "R02-F11"],
+      "proposal": "Evaluate a simple user-facing capture path with preview, annotation and genuinely destructive pixel redaction before export.",
+      "acceptanceCriteria": ["Measure steps for full-page, region and accessible document capture against existing Chrome paths.", "Verify redacted pixels and text cannot be recovered from the exported artifact.", "Test long pages, sticky elements, zoom and screen-reader labels."],
+      "tradeoffs": ["Visual redaction overlays are not necessarily irreversible removal.", "Complex pages and lazy loading can make a full-page image incomplete."],
+      "limitations": ["Firefox PDF annotation is a related editing precedent, not evidence of screenshot redaction.", "No capture/editing defect was reproduced."]
+    },
+    {
+      "id": "REC-11", "title": "Explicit local-processing choices for translation", "priority": "P2", "category": "translation", "target": "Chrome desktop and mobile", "status": "needs-validation",
+      "chromeParity": "unassessed", "chromeBaselineFeatureIds": ["R01-FEATURE-ON-DEVICE-AI-CONTROL", "R01-FEATURE-READING-MODE"],
+      "chromeBaseline": "Chrome's local generative-model control is documented. Translation-specific local/remote processing and offline behavior were not researched in the baseline.",
+      "comparatorFeatureIds": ["R02-FF-03", "R05-F-yandex-android-translation", "R05-F-yandex-iphone-translation"],
+      "sourceIds": ["R01-S39", "R02-F7", "R02-F8", "R05-Y03", "R05-Y04"],
+      "proposal": "Evaluate clear local-versus-remote processing indicators, downloadable language resources and explicit upload choices for image translation.",
+      "acceptanceCriteria": ["Document supported languages, storage requirements and offline limitations.", "Use controlled network tests to verify the advertised local processing mode.", "Evaluate translation quality and accessibility independently from privacy claims."],
+      "tradeoffs": ["Local models trade storage and compute for reduced network dependence.", "OCR or image-upload workflows have different disclosure boundaries from page translation."],
+      "limitations": ["No statement that Chrome lacks local translation or translation APIs.", "No language-quality, privacy or performance benchmark was performed."]
+    },
+    {
+      "id": "REC-12", "title": "Offline, contextual help and keyboard discovery", "priority": "P2", "category": "accessibility", "target": "Chrome desktop", "status": "needs-validation",
+      "chromeParity": "unassessed", "chromeBaselineFeatureIds": ["R01-FEATURE-READING-MODE", "R01-FEATURE-DESKTOP-TOOLBAR"],
+      "chromeBaseline": "Chrome provides help and user-facing reading controls; offline troubleshooting and contextual shortcut coverage need direct examination.",
+      "comparatorFeatureIds": ["R03-F-T06", "R06-F-DILLO-LOCAL-KEY-HELP", "R06-F-QUTEBROWSER-ELEMENT-HINTS", "R06-F-LYNX-KEYMAP-HELP"],
+      "sourceIds": ["R01-S21", "R03-S-T1", "R06-D2", "R06-D3", "R06-Q2", "R06-Y4"],
+      "proposal": "Evaluate compact offline troubleshooting, in-context key help and optional link hints that remain compatible with assistive technology.",
+      "acceptanceCriteria": ["Complete basic recovery/help tasks with networking disabled.", "Test key collisions, localization, zoom and screen-reader interaction.", "Measure task success rather than counting keyboard commands."],
+      "tradeoffs": ["Bundled content increases package size and must stay current.", "Keyboard hints can conflict with page shortcuts and screen-reader modes."],
+      "limitations": ["Terminal and experimental browser patterns are inspiration, not feature-parity claims.", "Offline support across Chrome platforms was not tested."]
+    },
+    {
+      "id": "REC-13", "title": "One understandable view of optional AI controls", "priority": "P1", "category": "ai-controls", "target": "Chrome desktop and managed deployments", "status": "needs-validation",
+      "chromeParity": "partial-baseline", "chromeBaselineFeatureIds": ["R01-FEATURE-ON-DEVICE-AI-CONTROL", "R01-FEATURE-GEMINI-CONTROLS"],
+      "chromeBaseline": "Chrome can already remove local generative models and prevent re-download. Gemini visibility, tab sharing, feature eligibility and enterprise disabling are separate controls.",
+      "comparatorFeatureIds": ["R03-F-D05", "R04-feature-shift-06", "R02-BR-06"],
+      "sourceIds": ["R01-S38", "R01-S39", "R01-S40", "R03-S-D2", "R04-H5", "R02-B6"],
+      "proposal": "Evaluate a consolidated dashboard explaining local assets, remote processing, UI prompts and policy scope, including an optional broad off setting with precisely enumerated effects.",
+      "acceptanceCriteria": ["Verify controls against every declared AI entry point and download trigger.", "Show managed restrictions and account/device differences.", "Test whether users understand that hiding an icon is different from revoking sharing or deleting models."],
+      "tradeoffs": ["A global switch can mislead if some features are outside its scope.", "Consumer, enterprise and website-provided AI have different control boundaries."],
+      "limitations": ["A comprehensive Chrome all-AI-off setting is not established as present or absent.", "The recommendation does not remove arbitrary AI content from websites."]
+    },
+    {
+      "id": "REC-14", "title": "Visible AI context, action scope and cancellation", "priority": "P1", "category": "ai-controls", "target": "Chrome AI-assisted workflows", "status": "needs-validation",
+      "chromeParity": "partial-baseline", "chromeBaselineFeatureIds": ["R01-FEATURE-GEMINI-CONTROLS"],
+      "chromeBaseline": "Gemini help already documents opt-in and feature-specific sharing/permissions. Current auto-browse and task-stop semantics need their own assessment.",
+      "comparatorFeatureIds": ["R04-feature-shift-05", "R04-feature-comet-04", "R04-feature-dia-05", "R04-feature-comet-03", "R04-feature-neon-02"],
+      "sourceIds": ["R01-S38", "R01-S40", "R04-H5", "R04-C4", "R04-C6", "R04-C7", "R04-D2", "R04-N6"],
+      "proposal": "Evaluate explicit context selection, read-versus-act scope and a task view showing pause, stop, takeover, queued steering and already-completed actions.",
+      "acceptanceCriteria": ["Inspect the pages, accounts and data sources in scope before an action.", "Test cancellation during reads, navigation and committed external actions with honest outcome reporting.", "Keep concurrent tasks from silently sharing or overwriting incompatible state."],
+      "tradeoffs": ["Powerful automation creates state conflicts and partial cancellation.", "Foreground/background behavior and subscription entitlements differ by platform."],
+      "limitations": ["No vendor permission enforcement or stop behavior was tested.", "No security bypass is alleged in Chrome or its comparators."]
+    },
+    {
+      "id": "REC-15", "title": "Scope-aware private sessions and incoming links", "priority": "P1", "category": "privacy-workflows", "target": "Chrome desktop and mobile", "status": "needs-validation",
+      "chromeParity": "partial-baseline", "chromeBaselineFeatureIds": ["R01-FEATURE-INCOGNITO", "R01-FEATURE-THIRD-PARTY-COOKIES"],
+      "chromeBaseline": "Incognito limits retained local session data and has distinct cookie defaults. It does not make a user invisible to sites or networks.",
+      "comparatorFeatureIds": ["R03-F-T03", "R03-F-M02", "R03-F-D03", "R03-F-W01", "R05-F-focus-erase", "R05-F-samsung-private-links"],
+      "sourceIds": ["R01-S34", "R01-S31", "R03-S-T3", "R03-S-M3", "R03-S-D4", "R03-S-W1", "R05-F01", "R05-S02"],
+      "proposal": "Evaluate clear temporary-session entry/reset controls and incoming-link choices with explicit explanations of shared state, retained exceptions and deletion triggers.",
+      "acceptanceCriteria": ["Use controlled origins to test cookies, storage, permissions and the last-private-tab boundary.", "Make retained downloads/bookmarks/exceptions visible before clearing.", "Do not imply that local clearing changes the user's IP address or provides Tor anonymity."],
+      "tradeoffs": ["Mixed regular/private tabs can obscure session boundaries.", "Reset actions can discard ongoing work and need clear scope."],
+      "limitations": ["Current Chrome private-link and per-platform reset parity remains unassessed.", "Tor circuit changes and Mullvad session clearing are intentionally distinguished."]
+    },
+    {
+      "id": "REC-16", "title": "Account-independent encrypted synchronization", "priority": "P2", "category": "synchronization", "target": "Chrome desktop and mobile", "status": "needs-validation",
+      "chromeParity": "partial-baseline", "chromeBaselineFeatureIds": ["R01-FEATURE-SYNC"],
+      "chromeBaseline": "Chrome documents Google Account sync and an optional passphrase with data-type limitations. Accountless pairing and self-hosted sync were not established.",
+      "comparatorFeatureIds": ["R03-F-D04", "R02-BR-02"],
+      "sourceIds": ["R01-S36", "R03-S-D5", "R02-B2"],
+      "proposal": "Evaluate user-held-key device pairing with understandable recovery, device revocation, data-type selection and local-copy behavior.",
+      "acceptanceCriteria": ["Test device enrollment, lost-device revocation and key-loss recovery for each supported data type.", "Explain what revocation cannot delete from an already compromised device.", "Independently review cryptographic and metadata properties before making privacy claims."],
+      "tradeoffs": ["Account independence can make recovery harder.", "Provider metadata and device compromise remain relevant even with encrypted payloads."],
+      "limitations": ["No cryptographic implementation was audited.", "Comparator privacy policies do not prove equivalent end-to-end protection for every data type."]
+    },
+    {
+      "id": "REC-17", "title": "Truthful consent automation and privacy-signal status", "priority": "P2", "category": "privacy-controls", "target": "Chrome desktop and mobile", "status": "needs-validation",
+      "chromeParity": "partial-baseline", "chromeBaselineFeatureIds": ["R01-FEATURE-DO-NOT-TRACK", "R01-FEATURE-REGIONAL-OPT-OUT", "R01-FEATURE-THIRD-PARTY-COOKIES"],
+      "chromeBaseline": "DNT, cookie settings and the staged California opt-out/GPC-style setting are distinct. A signal does not prove that a site honored it.",
+      "comparatorFeatureIds": ["R03-F-D02", "R03-F-D06"],
+      "sourceIds": ["R01-S31", "R01-S32", "R01-S33", "R03-S-D3"],
+      "proposal": "Evaluate opt-in consent automation that reports rejection, partial configuration, cosmetic hiding and unsupported cases separately; show emitted privacy signals without claiming universal enforcement.",
+      "acceptanceCriteria": ["Verify consent-state changes on controlled consent-manager fixtures and regional variants.", "Expose per-site exceptions and failure outcomes.", "Keep banner hiding, storage blocking and legally recognized preference signals distinguishable."],
+      "tradeoffs": ["Consent interfaces and jurisdictional rules change.", "Automation that only hides a banner can misrepresent a user's choice."],
+      "limitations": ["Chrome's current consent automation is unassessed.", "The regional Chrome opt-out feature must not be presented as globally absent or universally available."]
+    },
+    {
+      "id": "REC-18", "title": "Measured, coherent fingerprint-resistance options", "priority": "P2", "category": "privacy-controls", "target": "Chrome privacy evaluation", "status": "needs-validation",
+      "chromeParity": "unassessed", "chromeBaselineFeatureIds": ["R01-FEATURE-INCOGNITO", "R01-FEATURE-THIRD-PARTY-COOKIES"],
+      "chromeBaseline": "Incognito and cookie controls do not by themselves establish comprehensive fingerprint resistance. Chrome's complete protection profile is outside this baseline.",
+      "comparatorFeatureIds": ["R03-F-T04", "R03-F-M01", "R03-F-L02"],
+      "sourceIds": ["R01-S34", "R01-S31", "R03-S-T4", "R03-S-M2", "R03-S-L2"],
+      "proposal": "Evaluate an internally consistent privacy preset against a defined threat model and representative population, rather than independently changing cosmetic attributes.",
+      "acceptanceCriteria": ["Measure distinguishability, signal consistency and web compatibility across a representative population.", "Evaluate locale, graphics, media and accessibility effects.", "Publish limitations and avoid equating a settings list with anonymity."],
+      "tradeoffs": ["Unusual configurations can make a smaller user group more distinctive.", "API restrictions can break legitimate sites and assistive workflows."],
+      "limitations": ["No comparative privacy or anonymity benchmark was conducted.", "LibreWolf lifecycle and package-level update evidence remain qualified."]
+    },
+    {
+      "id": "REC-19", "title": "Transparent destinations and reversible clean-link copying", "priority": "P1", "category": "navigation", "target": "Chrome desktop and mobile", "status": "needs-validation",
+      "chromeParity": "unassessed", "chromeBaselineFeatureIds": ["R01-FEATURE-DESKTOP-TOOLBAR", "R01-FEATURE-THIRD-PARTY-COOKIES"],
+      "chromeBaseline": "Chrome destination display, copy-link variants and query-cleaning coverage require a separate navigation baseline.",
+      "comparatorFeatureIds": ["R03-F-U04", "R03-F-U05", "R03-F-W04", "R03-F-L04"],
+      "sourceIds": ["R01-S27", "R03-S-U1", "R03-S-W1", "R03-S-L2"],
+      "proposal": "Evaluate inspectable full destinations, explicit search interpretation and a clean-link copy preview that preserves access to the original URL.",
+      "acceptanceCriteria": ["Test signed links, authentication URLs, intranet names and functional query parameters.", "Show exactly which parameters are removed and allow copying the original.", "Distinguish navigation-time filtering from a user-initiated copy action."],
+      "tradeoffs": ["Removing a parameter can break a working link.", "Permanent URL visibility competes with available interface space."],
+      "limitations": ["No missing Chrome action or default is asserted.", "No URL-cleaning correctness corpus was executed."]
+    },
+    {
+      "id": "REC-20", "title": "Explainable project-level resource controls", "priority": "P2", "category": "performance", "target": "Chrome desktop", "status": "needs-validation",
+      "chromeParity": "unassessed", "chromeBaselineFeatureIds": ["R01-FEATURE-PROJECT-WORKSPACES", "R01-FEATURE-TAB-GROUPS"],
+      "chromeBaseline": "Chrome's existing task manager, memory and energy features must be measured before proposing a gap; this baseline concentrated on organization and UI controls.",
+      "comparatorFeatureIds": ["R04-feature-wavebox-05", "R04-feature-floorp-04", "R02-ED-04"],
+      "sourceIds": ["R01-S18", "R04-W3", "R04-F5", "R02-E7", "R02-G3", "R02-G2"],
+      "proposal": "Evaluate resource explanations and suspend/resume controls organized around a user's projects or apps, with clear attribution and state-loss boundaries.",
+      "acceptanceCriteria": ["Compare task completion and resource use against current Chrome controls.", "Preserve declared project layout when suspending a context.", "Explain exclusions such as active media, unsaved work or background tasks."],
+      "tradeoffs": ["Per-project attribution can be ambiguous across shared processes.", "Hard limits can harm responsiveness or lose state; metrics also have overhead."],
+      "limitations": ["No speed, memory or battery superiority ranking is supported.", "Opera GX Linux CPU-limiter parity was not established by Linux-specific evidence."]
+    },
+    {
+      "id": "REC-21", "title": "Reversible abuse protection with visible explanations", "priority": "P2", "category": "abuse-protection", "target": "Chrome desktop and mobile", "status": "needs-validation",
+      "chromeParity": "unassessed", "chromeBaselineFeatureIds": ["R01-FEATURE-SAFE-BROWSING"],
+      "chromeBaseline": "Safe Browsing is documented. Existing Chrome notification revocation and clipboard/ClickFix interventions need targeted comparison.",
+      "comparatorFeatureIds": ["R02-ED-07"],
+      "sourceIds": ["R01-S35", "R02-E1", "R02-O5"],
+      "proposal": "Evaluate explanations and recovery paths for abusive-notification revocation and suspicious clipboard instructions, preserving legitimate user actions.",
+      "acceptanceCriteria": ["Use benign controlled fixtures to measure correct detections and false positives.", "Explain the intervention and allow appropriate per-site recovery.", "Verify local-versus-remote processing claims and accessibility of notices."],
+      "tradeoffs": ["Excessive prompts can undermine attention to genuine warnings.", "Protection effectiveness and user control can pull in different directions."],
+      "limitations": ["Opera's Paste Protect behavior is vendor-documented, not independently measured.", "No vulnerability or missing Chrome defense is claimed."]
+    },
+    {
+      "id": "REC-22", "title": "Versioned feature, protection and lifecycle information", "priority": "P1", "category": "documentation", "target": "Chrome help and release information", "status": "needs-validation",
+      "chromeParity": "partial-baseline", "chromeBaselineFeatureIds": ["R01-FEATURE-REGIONAL-OPT-OUT", "R01-FEATURE-GEMINI-CONTROLS", "R01-FEATURE-PRIVACY-SANDBOX-TRANSITION"],
+      "chromeBaseline": "Chrome help, release announcements and VersionHistory already exist. Feature eligibility and rollout are not the same as the highest available version number.",
+      "comparatorFeatureIds": ["R03-F-D06", "R03-F-M05", "R06-F-NYXT-CEF-EXTENSIONS-BLOCKING"],
+      "sourceIds": ["R01-S10", "R01-S11", "R01-S12", "R01-S33", "R01-S38", "R01-S42", "R03-S-D3", "R03-S-M3", "R06-N3", "R06-O2"],
+      "proposal": "Evaluate a user-visible matrix linking platform, channel, region, edition, engine version and feature rollout, with clear retirement and documentation-review dates.",
+      "acceptanceCriteria": ["Distinguish documented, staged, experimental, unsupported and retired states.", "Tie a displayed capability to an actual release/eligibility source and review date.", "Explain why a feature may differ between two installations with the same version."],
+      "tradeoffs": ["A matrix can drift unless maintained from authoritative release data.", "Not every field-trial detail may be publicly available."],
+      "limitations": ["Comparator documentation conflicts illustrate a maintenance problem, not Chrome defects.", "Population fractions from different VersionHistory groups must not be summed as market share."]
+    },
+    {
+      "id": "REC-23", "title": "Honest offline-media and reading states", "priority": "P2", "category": "media", "target": "Chrome mobile and desktop", "status": "needs-validation",
+      "chromeParity": "unassessed", "chromeBaselineFeatureIds": ["R01-FEATURE-READING-MODE"],
+      "chromeBaseline": "Chrome reading mode and read-aloud are documented. Saved-media, offline queue and multi-picture-in-picture parity were not assessed.",
+      "comparatorFeatureIds": ["R02-BR-04", "R02-FF-05", "R05-F-quetta-media", "R05-F-samsung-video"],
+      "sourceIds": ["R01-S21", "R02-B4", "R02-F10", "R05-Q06", "R05-Q07", "R05-S01"],
+      "proposal": "Evaluate explicit saved-link, downloaded, expired and unavailable states for supported media/reading queues, with accessible playback controls.",
+      "acceptanceCriteria": ["Test offline access separately from merely saving a playlist link.", "Explain provider restrictions and unsupported media without promising universal downloading.", "Verify captions, keyboard controls, queue recovery and background-playback limits by platform."],
+      "tradeoffs": ["Storage, battery and provider availability vary.", "Streaming links can expire or require authentication."],
+      "limitations": ["No media provider restrictions were bypassed or download functionality tested.", "Brave Playlist evidence is platform-qualified, not universal across Brave editions."]
+    },
+    {
+      "id": "REC-24", "title": "Optional generic operating-system window titles", "priority": "P2", "category": "local-disclosure-control", "target": "Chrome desktop", "status": "needs-validation",
+      "chromeParity": "unassessed", "chromeBaselineFeatureIds": ["R01-FEATURE-INCOGNITO"],
+      "chromeBaseline": "Incognito's local-history scope does not by itself describe what operating-system window titles expose. Existing Chrome title controls were not assessed.",
+      "comparatorFeatureIds": ["R03-F-T05", "R03-F-M06"],
+      "sourceIds": ["R01-S34", "R03-S-T1", "R03-S-M3"],
+      "proposal": "Evaluate an opt-in generic window-title mode for users who want to reduce page-title disclosure to local window listings.",
+      "acceptanceCriteria": ["Measure title visibility through the supported operating-system interfaces.", "Preserve usable multiwindow identification and screen-reader navigation.", "Explain the exact disclosure channel covered and its limitations."],
+      "tradeoffs": ["Generic names can impair task switching and accessibility.", "This does not prevent screenshots, device compromise or other local observation."],
+      "limitations": ["No current Chrome absence or local disclosure vulnerability is established.", "Comparator releases explicitly qualify this as opt-in."]
+    }
+  ]
+}

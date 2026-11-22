@@ -1,0 +1,1182 @@
+{
+  "schemaVersion": 1,
+  "id": "R05",
+  "title": "Mobile and regional browsers: documented capabilities and Chrome investigation candidates",
+  "agentSessionId": "ses_e018c7878ffermgsE7dkTi4Cmi",
+  "conversionAgentSessionId": "ses_e0137e213ffe9WxsdHhzmVOfIz",
+  "scope": "Samsung Browser, Cromite, GrapheneOS Vanadium, Firefox Focus, Via, Quetta, Kiwi Browser, Aloha, Yandex Browser, and UC Browser. Documentary snapshot of mobile capabilities, regional editions, engine evidence, distribution and lifecycle. Chrome Android and iOS baseline comparison belongs to R01 and has not been performed in this lane.",
+  "status": "complete",
+  "asOf": "2026-11-21",
+  "provenance": {
+    "method": "Conversion of the completed R05 research handoff and its source ledger; no new source retrieval or browser testing during conversion.",
+    "researchRetrievalWindow": "2026-11-21, approximately 14:13-14:57 UTC",
+    "runtimeTesting": "not-run",
+    "testedVersions": [],
+    "chromeBaselineStatus": "parity-unknown",
+    "confidenceMeaning": "Confidence concerns the bounded documentary or source observation, not measured runtime correctness, security or Chrome feature absence."
+  },
+  "sources": [
+    {
+      "id": "R05-S01", "title": "Samsung Browser Android publisher listing",
+      "url": "https://play.google.com/store/apps/details?id=com.sec.android.app.sbrowser&hl=en",
+      "retrievedAt": "2026-11-21T14:22:46Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Listing revision date was not reliably extracted. Feature descriptions and tablet/watch restrictions are publisher documentation, not application tests."]
+    },
+    {
+      "id": "R05-S02", "title": "Samsung Browser Android release history",
+      "url": "https://developer.samsung.com/browser/release-note/android-release-note.html",
+      "retrievedAt": "2026-11-21T14:27:25Z", "publishedAt": null, "kind": "release-note",
+      "limitations": ["Initial retrieval was at 14:26:25 UTC; the later direct HTML read recovered the relevant content. Latest visible entry was version 25.0.0.41 dated 2024-05-11, not a verified current Android release. Entry dates and historical Android 8+ wording do not establish the page revision or current minimum OS."]
+    },
+    {
+      "id": "R05-S03", "title": "Samsung Browser Windows release history and rename",
+      "url": "https://developer.samsung.com/browser/release-note/windows-release-note.html",
+      "retrievedAt": "2026-11-21T14:26:28Z", "publishedAt": null, "kind": "release-note",
+      "limitations": ["Extractor date 2026-11-19 was not mapped reliably to an entry. Windows offering, rename and geography qualifications must not be generalized to Android or iOS."]
+    },
+    {
+      "id": "R05-S04", "title": "Samsung Android extension-app development overview",
+      "url": "https://developer.samsung.com/browser/android/extensions-dev-overview.html",
+      "retrievedAt": "2026-11-21T14:56:55Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Initial retrieval was at 14:54:07 UTC; the later HTML read recovered the guide. No reliable publication date. Describes Samsung-validated extension apps, not an unrestricted desktop Chrome extension host."]
+    },
+    {
+      "id": "R05-C01", "title": "Cromite README: platforms, lineage and limitations",
+      "url": "https://raw.githubusercontent.com/uazo/cromite/master/README.md",
+      "retrievedAt": "2026-11-21T14:23:10Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Undated mutable document. Anti-fingerprinting is expressly incomplete; supported-platform and license statements do not establish tested binary behavior."]
+    },
+    {
+      "id": "R05-C02", "title": "Cromite documented features and defaults",
+      "url": "https://raw.githubusercontent.com/uazo/cromite/master/docs/FEATURES.md",
+      "retrievedAt": "2026-11-21T14:24:48Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Undated mutable feature list. Android-specific tools and disabled integrations require edition/default qualification; no installed build was tested."]
+    },
+    {
+      "id": "R05-C03", "title": "Cromite FAQ and Android-extension documentation conflict",
+      "url": "https://raw.githubusercontent.com/uazo/cromite/master/docs/FAQ.md",
+      "retrievedAt": "2026-11-21T14:24:51Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Undated mutable FAQ. Its categorical Android-extension answer conflicts with the pinned experimental source patch; do not use the FAQ alone to infer absence or compatibility."]
+    },
+    {
+      "id": "R05-C04", "title": "Cromite repository metadata snapshot",
+      "url": "https://api.github.com/repos/uazo/cromite",
+      "retrievedAt": "2026-11-21T14:33:45Z", "publishedAt": null, "kind": "source-code",
+      "limitations": ["API returned archived:false and pushed_at 2026-11-21T10:36:42Z. A source push is not a binary release or evidence of current security-patch completeness."]
+    },
+    {
+      "id": "R05-C05", "title": "Cromite latest-release API snapshot",
+      "url": "https://api.github.com/repos/uazo/cromite/releases/latest",
+      "retrievedAt": "2026-11-21T14:31:10Z", "publishedAt": "2026-09-15T11:51:14Z", "kind": "release-note",
+      "sourceRevision": "11507ac1061b5ea227806f5e84db5a57df6ccf6a",
+      "limitations": ["Publication timestamp belongs to the returned release v153.0.8010.37-11507ac1061b5ea227806f5e84db5a57df6ccf6a. The latest endpoint is mutable; artifacts and extension compatibility were not tested."]
+    },
+    {
+      "id": "R05-C05a", "title": "Cromite observed release permalink",
+      "url": "https://github.com/uazo/cromite/releases/tag/v153.0.8010.37-11507ac1061b5ea227806f5e84db5a57df6ccf6a",
+      "retrievedAt": "2026-11-21T14:31:10Z", "publishedAt": "2026-09-15T11:51:14Z", "kind": "release-note",
+      "sourceIds": ["R05-C05"],
+      "limitations": ["Permalink and date were returned by the release API, not independently re-fetched as a second evidence source."]
+    },
+    {
+      "id": "R05-C06", "title": "Pinned experimental Android-extension patch in Cromite",
+      "url": "https://raw.githubusercontent.com/uazo/cromite/11507ac1061b5ea227806f5e84db5a57df6ccf6a/build/patches/Experimental-support-for-extensions-on-Android.patch",
+      "retrievedAt": "2026-11-21T14:34:31Z", "publishedAt": null, "kind": "source-code",
+      "patchHeaderDate": "2025-11-06",
+      "sourceRevision": "11507ac1061b5ea227806f5e84db5a57df6ccf6a",
+      "limitations": ["The known 2025-11-06 date is the patch-header date; public publication, feature rollout and app release dates are not established by that header. The release-pinned source describes an experimental, disabled-by-default feature; patch presence does not prove artifact coverage or extension compatibility."]
+    },
+    {
+      "id": "R05-C07", "title": "Cromite release-linked maintainer changelog comment",
+      "url": "https://api.github.com/repos/uazo/cromite/issues/comments/5679359966",
+      "retrievedAt": "2026-11-21T14:32:59Z", "publishedAt": "2026-09-15T11:23:17Z", "kind": "issue-tracker",
+      "updatedAt": "2026-09-15T11:55:36Z",
+      "limitations": ["Maintainer change description includes extension fixes; it is not a local reproduction, a compatibility matrix, or a report submitted by this project."]
+    },
+    {
+      "id": "R05-C07a", "title": "Cromite maintainer changelog comment permalink",
+      "url": "https://github.com/uazo/cromite/issues/3040#issuecomment-5679359966",
+      "retrievedAt": "2026-11-21T14:32:59Z", "publishedAt": "2026-09-15T11:23:17Z", "kind": "issue-tracker",
+      "sourceIds": ["R05-C07"],
+      "limitations": ["Permalink was returned by the comment API; not a separate independent retrieval or project submission receipt."]
+    },
+    {
+      "id": "R05-G01", "title": "GrapheneOS technical documentation: Vanadium",
+      "url": "https://grapheneos.org/features#vanadium",
+      "retrievedAt": "2026-11-21T14:23:10Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Undated rolling technical documentation includes both implemented and future work. Browser versus WebView defaults and OS/hardware prerequisites differ; no runtime security measurements were made."]
+    },
+    {
+      "id": "R05-G02", "title": "Vanadium latest-release API and official distribution boundary",
+      "url": "https://api.github.com/repos/GrapheneOS/Vanadium/releases/latest",
+      "retrievedAt": "2026-11-21T14:31:10Z", "publishedAt": "2026-11-19T15:52:47Z", "kind": "release-note",
+      "limitations": ["Snapshot returned 158.0.8127.42.0 and Chromium 158.0.8127.42. Official availability is GrapheneOS-only; a future outside-GrapheneOS edition is not an observed shipped product."]
+    },
+    {
+      "id": "R05-G02a", "title": "Vanadium 158.0.8127.42.0 release permalink",
+      "url": "https://github.com/GrapheneOS/Vanadium/releases/tag/158.0.8127.42.0",
+      "retrievedAt": "2026-11-21T14:31:10Z", "publishedAt": "2026-11-19T15:52:47Z", "kind": "release-note",
+      "sourceIds": ["R05-G02"],
+      "limitations": ["Permalink was returned by the release API, not independently fetched; no release binary was executed."]
+    },
+    {
+      "id": "R05-F01", "title": "Mozilla Firefox Focus product page",
+      "url": "https://www.firefox.com/en-US/mobile/focus/",
+      "retrievedAt": "2026-11-21T14:20:24Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Undated page; an inferred 1998 date was rejected. Erase, tracking-protection and shortcut claims were not runtime-tested."]
+    },
+    {
+      "id": "R05-F02", "title": "Focus with GeckoView: historical Android engine migration",
+      "url": "https://hacks.mozilla.org/2018/09/focus-with-geckoview/",
+      "retrievedAt": "2026-11-21T14:25:01Z", "publishedAt": "2018-09-13", "kind": "vendor-documentation",
+      "limitations": ["Historical Android migration article, not a current engine-version inventory, iOS implementation claim or current performance measurement."]
+    },
+    {
+      "id": "R05-F03", "title": "Focus Android repository migration notice",
+      "url": "https://github.com/mozilla-mobile/focus-android",
+      "retrievedAt": "2026-11-21T14:28:28Z", "publishedAt": null, "kind": "source-code",
+      "limitations": ["Exact notice date not established. Archived repository directs development to firefox-android; archiving is not product discontinuation."]
+    },
+    {
+      "id": "R05-F04", "title": "Firefox Android repository migration to Mozilla Central",
+      "url": "https://github.com/mozilla-mobile/firefox-android",
+      "retrievedAt": "2026-11-21T14:32:22Z", "publishedAt": null, "kind": "source-code",
+      "limitations": ["Notice says releases from Firefox 128 are managed in Mozilla Central. It establishes repository migration, not the installed Focus Android version."]
+    },
+    {
+      "id": "R05-F05", "title": "Focus iOS repository migration notice",
+      "url": "https://github.com/mozilla-mobile/focus-ios",
+      "retrievedAt": "2026-11-21T14:28:31Z", "publishedAt": null, "kind": "source-code",
+      "limitations": ["Notice publication date unknown. Repository archive directs development to the combined firefox-ios repository, not a product EOL announcement."]
+    },
+    {
+      "id": "R05-F06", "title": "Firefox and Focus iOS monorepo README",
+      "url": "https://github.com/mozilla-mobile/firefox-ios",
+      "retrievedAt": "2026-11-21T14:30:31Z", "publishedAt": null, "kind": "source-code",
+      "limitations": ["Undated mutable README establishes the combined project location. Repository presence alone does not map every store binary to a commit."]
+    },
+    {
+      "id": "R05-F07", "title": "Pinned Focus iOS browsing controller using WebKit",
+      "url": "https://raw.githubusercontent.com/mozilla-mobile/firefox-ios/9e923b05c99b2b0e19c6cadf198b222acf1ddb5b/focus-ios/Blockzilla/Modules/WebView/LegacyWebViewController.swift",
+      "retrievedAt": "2026-11-21T14:33:44Z", "publishedAt": null, "kind": "source-code",
+      "sourceRevision": "9e923b05c99b2b0e19c6cadf198b222acf1ddb5b",
+      "limitations": ["Commit date was not retrieved. Observed lines 6, 65, 151, 171 and 202 include WebKit, WKWebView and WKContentRuleList. This is source inspection, not proof of the commit shipped in every App Store edition."]
+    },
+    {
+      "id": "R05-F08", "title": "Firefox Focus US iOS publisher listing",
+      "url": "https://apps.apple.com/us/app/firefox-focus-privacy-browser/id1055677337",
+      "retrievedAt": "2026-11-21T14:51:10Z", "publishedAt": "2026-08-30", "kind": "release-note",
+      "sourceIds": ["R05-A01"],
+      "limitations": ["Record and current-version release date were obtained through the publisher lookup API. Date is for version 155.0, not initial app publication; not an installed-version measurement."]
+    },
+    {
+      "id": "R05-F09", "title": "Firefox Focus iOS support page: unusable retrieval",
+      "url": "https://support.mozilla.org/en-US/kb/firefox-focus-ios",
+      "retrievedAt": "2026-11-21T14:24:58Z", "publishedAt": null, "kind": "vendor-documentation",
+      "usableForFeatureEvidence": false,
+      "limitations": ["Returned a challenge page. No feature claim, including current Safari integration, was accepted from this retrieval or its search snippet."]
+    },
+    {
+      "id": "R05-V01", "title": "Via localization repository README and FAQ",
+      "url": "https://github.com/tuyafeng/Via",
+      "retrievedAt": "2026-11-21T14:24:59Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Undated mutable documentation describes Android system WebView, site settings and Android autofill. A localization repository does not establish that the whole app is open source or identify the iOS engine."]
+    },
+    {
+      "id": "R05-V02", "title": "Via Android publisher listing",
+      "url": "https://play.google.com/store/apps/details?id=mark.via.gp&hl=en",
+      "retrievedAt": "2026-11-21T14:34:32Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Initial read at 14:28:34 UTC; structured publisher identity retrieved at the recorded later time. Current release date was not established; reviews were not feature evidence."]
+    },
+    {
+      "id": "R05-V03", "title": "Via US iOS publisher listing",
+      "url": "https://apps.apple.com/us/app/via-browser/id1639085829",
+      "retrievedAt": "2026-11-21T14:26:31Z", "publishedAt": "2025-09-12", "kind": "vendor-documentation",
+      "sourceIds": ["R05-A01"],
+      "limitations": ["The later 14:51:10 UTC lookup supplied the fuller record and current-version release date for 1.9.0. Apple-silicon Mac compatibility is marked Not verified for macOS, not proof of a separate desktop edition."]
+    },
+    {
+      "id": "R05-Q01", "title": "Quetta Android publisher listing and data disclosure",
+      "url": "https://play.google.com/store/apps/details?id=net.quetta.browser&hl=en",
+      "retrievedAt": "2026-11-21T14:56:55Z", "publishedAt": "2026-11-20", "kind": "vendor-documentation",
+      "limitations": ["Date is the visible Updated on Nov 20, 2026 label, not initial publication. Android-specific capabilities and Chromium 154.0.8037.127 text cannot identify the iOS engine. Publisher data disclosure is not a network audit."]
+    },
+    {
+      "id": "R05-Q02", "title": "Quetta Android extension installation and compatibility guide",
+      "url": "https://www.quetta.net/features/extensions",
+      "retrievedAt": "2026-11-21T14:23:10Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Initial read at 14:17:43 UTC; full relevant HTML read at the recorded time. Site metadata reported 2026-11-16 without establishing publication or revision. Guide explicitly scopes extension hosting to Android and warns of compatibility limits."]
+    },
+    {
+      "id": "R05-Q03", "title": "Quetta iOS product page",
+      "url": "https://www.quetta.net/products/ios",
+      "retrievedAt": "2026-11-21T14:27:24Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Initial read at 14:25:04 UTC; full relevant HTML read at the recorded time. Site metadata date 2026-11-16 was not established as publication. Broad privacy claims and iOS advertising do not resolve runtime data practices or engine identity."]
+    },
+    {
+      "id": "R05-Q04", "title": "Quetta iOS publisher listing",
+      "url": "https://apps.apple.com/app/quetta-private-browser/id6504077999",
+      "retrievedAt": "2026-11-21T14:34:33Z", "publishedAt": "2026-11-09", "kind": "vendor-documentation",
+      "sourceIds": ["R05-A01"],
+      "limitations": ["Later US publisher lookup at 14:51:10 UTC supplied fuller version 1.5.1, release-date and iOS 17 minimum information. No iOS binary or desktop package was inspected."]
+    },
+    {
+      "id": "R05-Q05", "title": "Quetta advertised downloads and platform routes",
+      "url": "https://www.quetta.net/downloads",
+      "retrievedAt": "2026-11-21T14:23:10Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Initial read at 14:20:28 UTC; full relevant HTML read at the recorded time. Metadata date 2026-11-16 is not an established release date. Windows/macOS routes advertise products; package, channel and feature parity were not verified."]
+    },
+    {
+      "id": "R05-Q06", "title": "Quetta video download guide",
+      "url": "https://www.quetta.net/features/video-downloader",
+      "retrievedAt": "2026-11-21T14:52:14Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Site metadata date 2026-11-16 was not independently established as publication. Availability depends on media site, account, format and region; supported downloads were not tested."]
+    },
+    {
+      "id": "R05-Q07", "title": "Quetta playlists and qualified offline access",
+      "url": "https://www.quetta.net/features/playlist",
+      "retrievedAt": "2026-11-21T14:52:14Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Site metadata date 2026-11-16 was not established as publication. Playlist membership is distinct from a compatible, permitted offline media file; per-build playback behavior was not tested."]
+    },
+    {
+      "id": "R05-Q08", "title": "Quetta FAQ with over-broad cross-platform wording",
+      "url": "https://www.quetta.net/faq",
+      "retrievedAt": "2026-11-21T14:30:40Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Site metadata date 2026-11-16 was not established as publication. Broad Android/iOS Chromium and Chrome-extension language conflicts in scope with the Android-specific guide and is insufficient to establish an iOS engine or extension host."]
+    },
+    {
+      "id": "R05-K01", "title": "Kiwi successor repository: maintenance ending and Edge code integration",
+      "url": "https://github.com/kiwibrowser/src.next",
+      "retrievedAt": "2026-11-21T14:17:46Z", "publishedAt": null, "kind": "source-code",
+      "limitations": ["Notice says maintenance ends after January 2025; exact notice publication and end day are not established. Partnership and extension-code integration into a development Edge version are not evidence of acquisition or current stable Edge capabilities."]
+    },
+    {
+      "id": "R05-K02", "title": "Historical Kiwi Android source repository and feature README",
+      "url": "https://github.com/kiwibrowser/src",
+      "retrievedAt": "2026-11-21T14:30:28Z", "publishedAt": null, "kind": "source-code",
+      "limitations": ["Historical README includes 2018-2020 milestones and 2021 plans. Its up-to-date wording is superseded by the later maintenance-ending notice; extension support, night mode and bottom address bar are historical evidence."]
+    },
+    {
+      "id": "R05-L01", "title": "Aloha product features and Premium boundaries",
+      "url": "https://alohabrowser.com/",
+      "retrievedAt": "2026-11-21T14:17:49Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Extractor date 2026-06-09 was not established as page revision. Free versus paid VPN scope differs; anonymity, no-log, audit and speed claims were not independently verified."]
+    },
+    {
+      "id": "R05-L02", "title": "AlohaCore engineering history for Android",
+      "url": "https://alohabrowser.com/posts-aloha-core-i-love-and-hate-you",
+      "retrievedAt": "2026-11-21T14:26:34Z", "publishedAt": "2025-01-08", "kind": "vendor-documentation",
+      "limitations": ["Article is expressly Android-only. Chromium 130 is historical to the article, not the November 2026 engine version; an open-source core does not establish whole-app or iOS source availability."]
+    },
+    {
+      "id": "R05-L03", "title": "Aloha US iOS publisher listing",
+      "url": "https://apps.apple.com/us/app/aloha-browser-private-vpn/id1105317682",
+      "retrievedAt": "2026-11-21T14:20:40Z", "publishedAt": "2026-11-16", "kind": "vendor-documentation",
+      "sourceIds": ["R05-A01"],
+      "limitations": ["Later US lookup at 14:51:10 UTC supplied the fuller version 8.13.2 release record, iOS 16 minimum and plan distinctions. Date denotes current-version release; no application or VPN test was performed."]
+    },
+    {
+      "id": "R05-L04", "title": "Aloha mobile and desktop download offerings",
+      "url": "https://alohabrowser.com/download.html",
+      "retrievedAt": "2026-11-21T14:56:55Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Initial read at 14:32:59 UTC; full relevant HTML read at the recorded time. Extractor date 2026-06-09 was not established as publication. Windows 64-bit, Intel/Apple-silicon macOS, Linux deb/rpm and mobile links are advertised offerings, not tested packages."]
+    },
+    {
+      "id": "R05-Y01", "title": "Yandex Browser Android publisher listing",
+      "url": "https://play.google.com/store/apps/details?id=com.yandex.browser&hl=en",
+      "retrievedAt": "2026-11-21T14:32:25Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Current release date/version not established. Reader Mode and optional account synchronization are documented rather than tested."]
+    },
+    {
+      "id": "R05-Y02", "title": "Yandex Android-phone extension management guide",
+      "url": "https://yandex.com/support/browser-mobile-android-phone/en/personal-settings/extensions",
+      "retrievedAt": "2026-11-21T14:30:35Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Undated current help; generic extractor year 2012 rejected. Android catalog, options, developer-loading and deletion rules do not establish iOS support or compatibility with every desktop extension."]
+    },
+    {
+      "id": "R05-Y02a", "title": "Yandex Android-tablet extension management guide",
+      "url": "https://yandex.com/support/browser-mobile-android-tablet/en/personal-settings/extensions",
+      "retrievedAt": "2026-11-21T14:26:38Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Undated tablet-specific help. Documentation is not a measured tablet extension compatibility matrix and is not iOS evidence."]
+    },
+    {
+      "id": "R05-Y03", "title": "Yandex Android translation, image OCR and subtitles",
+      "url": "https://yandex.com/support/browser-mobile-android-phone/en/navigation/translation",
+      "retrievedAt": "2026-11-21T14:20:39Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Undated help. Image clarity, size, handwriting, supported-video and language limits apply. Subtitle setup requires leaving fullscreen/PiP before configuring, although playback may subsequently return to those modes."]
+    },
+    {
+      "id": "R05-Y04", "title": "Yandex iPhone translation and subtitle workflows",
+      "url": "https://yandex.com/support/browser-mobile-iphone/en/navigation/translation",
+      "retrievedAt": "2026-11-21T14:33:00Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Undated help; inferred 1999 date rejected. Image upload in the iPhone workflow is distinct from Android in-page image translation. Supported-video/language and fullscreen/PiP setup restrictions apply."]
+    },
+    {
+      "id": "R05-Y05", "title": "Yandex iPhone installation and OS minimum",
+      "url": "https://yandex.com/support/browser-mobile-iphone/en/install/install",
+      "retrievedAt": "2026-11-21T14:32:28Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Undated help documents iOS 15+. Inferred 2023 date was not treated as revision; no current mobile binary-version audit was completed."]
+    },
+    {
+      "id": "R05-Y06", "title": "Yandex browser security-program architecture description",
+      "url": "https://yandex.com/bugbounty/i/browser",
+      "retrievedAt": "2026-11-21T14:33:00Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Undated program page provides Chromium-family architecture evidence, not an exact Android build or iOS engine identification. No security testing or submission was performed."]
+    },
+    {
+      "id": "R05-U01", "title": "UC Browser international Android publisher listing",
+      "url": "https://play.google.com/store/apps/details?id=com.UCMobile.intl&hl=en",
+      "retrievedAt": "2026-11-21T14:28:37Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Unrelated or unconfirmed reader date 2026-04-29 was rejected. International Android features, cloud allowance, VPN and AI claims cannot be applied to Chinese iOS. Performance, privacy and accuracy claims were not measured."]
+    },
+    {
+      "id": "R05-U02", "title": "UC U4 mobile engine architecture offering",
+      "url": "https://open-uc.uc.cn/solution/u4",
+      "retrievedAt": "2026-11-21T14:54:09Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Extractor date 2022-09-16 was not established as publication. Vendor describes a U4 engine/app split and WebView-style layers, but mapping to every current international or iOS package, Chromium ancestry and build version remain unresolved."]
+    },
+    {
+      "id": "R05-U03", "title": "Alibaba announcement of full UCWeb acquisition",
+      "url": "https://www.alibabagroup.com/en-US/document-1489318545857708032",
+      "retrievedAt": "2026-11-21T14:28:43Z", "publishedAt": "2014-06-11", "kind": "vendor-documentation",
+      "limitations": ["Explicit historical acquisition announcement, not a current browser-feature, platform or engine-version inventory."]
+    },
+    {
+      "id": "R05-U04", "title": "Chinese storefront publisher API: UC Browser iOS",
+      "url": "https://itunes.apple.com/search?term=UC%E6%B5%8F%E8%A7%88%E5%99%A8&country=cn&entity=software&limit=10",
+      "retrievedAt": "2026-11-21T14:54:07Z", "publishedAt": "2026-11-20T02:36:07Z", "kind": "release-note",
+      "limitations": ["Date is the UC Browser record's current-version release for 19.3.0.3121, not publication of the search response or initial app release. A separately named speed edition also appeared; only the identified UCWeb product supports the cited iOS claims."]
+    },
+    {
+      "id": "R05-U04a", "title": "UC Browser Chinese iOS listing permalink",
+      "url": "https://apps.apple.com/cn/app/uc%E6%B5%8F%E8%A7%88%E5%99%A8-%E9%9A%8F%E5%BF%83%E6%90%9C-%E7%95%85%E5%BF%AB%E7%9C%8B/id586871187",
+      "retrievedAt": "2026-11-21T14:54:07Z", "publishedAt": "2026-11-20T02:36:07Z", "kind": "release-note",
+      "sourceIds": ["R05-U04"],
+      "limitations": ["Listing URL and current-version date were returned in the Chinese publisher API response, not independently fetched. This regional edition does not establish international Android feature parity."]
+    },
+    {
+      "id": "R05-U05", "title": "UC Browser PC marketing landing page",
+      "url": "https://www.ucweb.com/download/pc",
+      "retrievedAt": "2026-11-21T14:27:26Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Initial read at 14:26:43 UTC; fuller HTML at the recorded time. Extractor date 2025-08-26 was not a verified package release date. Landing-page presence proves neither a maintained distributable desktop build nor global discontinuation."]
+    },
+    {
+      "id": "R05-P01", "title": "Apple EU alternative browser-engine entitlement policy",
+      "url": "https://developer.apple.com/support/alternative-browser-engines/",
+      "retrievedAt": "2026-11-21T14:30:37Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Undated policy; inferred 2026-01-01 date rejected. Describes specific EU entitlements with minimum iOS 17.4/iPadOS 18, not proof that a named browser has shipped an alternative-engine edition."]
+    },
+    {
+      "id": "R05-A01", "title": "US publisher API records for Aloha, Via, Quetta and Firefox Focus",
+      "url": "https://itunes.apple.com/lookup?id=1105317682,1639085829,6504077999,1055677337&country=us",
+      "retrievedAt": "2026-11-21T14:51:10Z", "publishedAt": null, "kind": "vendor-documentation",
+      "limitations": ["Four independent publisher records in one response, not a single publication. Current-version dates known to day precision in the handoff: Aloha 2026-11-16, Via 2025-09-12, Quetta 2026-11-09, Focus 2026-08-30. US storefront descriptions, minimum OS and advertised capabilities are not runtime measurements or worldwide availability guarantees."]
+    }
+  ],
+  "browsers": [
+    {
+      "id": "R05-B-samsung", "name": "Samsung Internet / Samsung Browser",
+      "engine": "Android: Chromium lineage documented in historical release notes; exact current milestone not established. Windows engine/build not independently identified; no iOS edition established.",
+      "platforms": ["Android phones", "Android tablets", "Selected Galaxy Watch Wear OS devices", "Windows offering"],
+      "lifecycle": "active",
+      "summary": "Current Android publisher listing uses Samsung Browser; Windows notes explicitly record the Samsung Internet rename. Mobile workflows include Video Assistant, tablet-only split browsing, configurable controls, Secret Mode and approved content-blocker integrations.",
+      "sourceIds": ["R05-S01", "R05-S02", "R05-S03", "R05-S04"],
+      "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No installed release tested. Android developer changelog's latest visible 2024-05-11 entry is stale relative to the current listing; historical Android 8+ wording is not a current minimum-version assertion.", "Watch claims are limited to supported Galaxy Watch 4-series or later Wear OS devices. Windows AI/geography notes and extension-app behavior are edition-specific; no iOS offering was established."],
+      "quotations": [{"text": "All 3rd party extension apps are validated and approved by Samsung.", "sourceIds": ["R05-S04"]}]
+    },
+    {
+      "id": "R05-B-cromite", "name": "Cromite",
+      "engine": "Chromium fork based on Bromite. Latest-release API returned Chromium-versioned tag v153.0.8010.37-11507ac1061b5ea227806f5e84db5a57df6ccf6a; no binary engine test performed.",
+      "platforms": ["Android 10+ ARM32", "Android 10+ ARM64", "Android 10+ x86-64", "Windows 64-bit", "Linux 64-bit"],
+      "lifecycle": "active",
+      "summary": "Repository was unarchived with a source push on 2026-11-21, while the latest-release snapshot was published 2026-09-15. Filtering, site controls, disposable sessions and local-data tools are documented. Experimental Android-extension code is present in release-pinned source and described as default-off despite a contradictory FAQ.",
+      "sourceIds": ["R05-C01", "R05-C02", "R05-C03", "R05-C04", "R05-C05", "R05-C06", "R05-C07"],
+      "evidenceType": "source-inspected", "confidence": "high",
+      "limitations": ["Active source development does not establish binary patch timeliness or extension compatibility; no installed version tested. No iOS/macOS build established.", "Docs disable Google Sync/Translate, DRM, Safe Browsing and other cloud-backed capabilities; those tradeoffs are not universal improvements. Fingerprinting mitigations are incomplete; JIT-off may affect compatibility/performance.", "Patch licenses vary. The Bromite lineage is documented, but this lane did not establish an original Bromite EOL date."],
+      "quotations": [{"text": "The feature is disabled by default", "sourceIds": ["R05-C06"]}, {"text": "anti-fingerprinting mitigations (which are not comprehensive)", "sourceIds": ["R05-C01"]}]
+    },
+    {
+      "id": "R05-B-vanadium", "name": "GrapheneOS Vanadium",
+      "engine": "Chromium variant; observed release 158.0.8127.42.0 documents updating to Chromium 158.0.8127.42.",
+      "platforms": ["GrapheneOS Android devices; official distribution only"],
+      "lifecycle": "active",
+      "summary": "Release dated 2026-11-19 documents current GrapheneOS-only official availability. Browser features include default-off per-site JIT policy, filtering, platform-integrated hardening, native credential paths and incoming-link privacy controls.",
+      "sourceIds": ["R05-G01", "R05-G02"],
+      "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No binary or security behavior tested. A prospective outside-GrapheneOS release would lack system WebView and some hardening/features; it is not a current distribution claim.", "User-installed apps' WebViews have different JIT defaults and OS controls; not all browser settings apply there. Documentation describes incomplete cookie partitioning and future cosmetic-filtering work; extensions are not planned.", "Hardening depends on the actual OS, build and hardware; no anonymity or cross-browser security ranking is established."],
+      "quotations": [{"text": "JavaScript JIT disabled by default with per-site toggle", "sourceIds": ["R05-G01"]}, {"text": "Vanadium isn't yet officially available for users outside GrapheneOS", "sourceIds": ["R05-G02"]}]
+    },
+    {
+      "id": "R05-B-focus", "name": "Firefox Focus",
+      "engine": "Android migrated to Gecko/GeckoView in the cited historical engineering article; current installed Android engine/version not inspected. Pinned iOS browsing-controller source imports WebKit and constructs WKWebView and WKContentRuleList; do not classify Focus iOS as Gecko-based.",
+      "platforms": ["Android", "iPhone and iPad; US publisher record requires iOS 15+"],
+      "lifecycle": "active",
+      "summary": "A deliberately disposable browsing workflow with erase, default tracking protection and limited shortcuts. Archived standalone repositories were migrated, not product-EOL notices: Android moved through firefox-android into Mozilla Central, and iOS into firefox-ios. The US iOS record reports version 155.0 released 2026-08-30.",
+      "sourceIds": ["R05-F01", "R05-F02", "R05-F03", "R05-F04", "R05-F05", "R05-F06", "R05-F07", "R05-F08", "R05-A01"],
+      "evidenceType": "source-inspected", "confidence": "high",
+      "limitations": ["Source and publisher observations only; neither installed release nor erase completeness was tested. The inspected iOS commit was not mapped to each store binary.", "Full Firefox extensions, synchronization and desktop tabs must not be attributed to Focus. The challenged iOS support page supplied no verified Safari-integration feature evidence.", "Deleting local session data does not delete server records or hide a network address. iOS minimal-UI wording must not be substituted for Android tab behavior."],
+      "quotations": [{"text": "Just tap the erase button", "sourceIds": ["R05-F01"]}, {"text": "This is a monolithic-repository, containing both the Firefox and Focus iOS projects.", "sourceIds": ["R05-F06"]}]
+    },
+    {
+      "id": "R05-B-via", "name": "Via",
+      "engine": "Android uses the device's built-in WebView provider. iOS engine implementation is not established by the cited publisher sources.",
+      "platforms": ["Android", "iPhone and iPad; US publisher record requires iOS 11+", "Apple-silicon Mac compatibility listing; not verified for macOS"],
+      "lifecycle": "unknown",
+      "summary": "Official mobile distribution remains listed, with lightweight site controls on Android and scripts, reading utilities and iCloud synchronization advertised on iOS. The iOS publisher record reports version 1.9.0 released 2025-09-12; current Android release and ongoing maintenance cadence were not established, and no formal EOL was found in the consulted sources.",
+      "sourceIds": ["R05-V01", "R05-V02", "R05-V03", "R05-A01"],
+      "evidenceType": "vendor-documented", "confidence": "medium",
+      "limitations": ["No installed app or memory/speed benchmark. Android footprint depends on an external system WebView; comparisons must account for that dependency.", "The repository is for localization and is not evidence that the whole app is open source. Android autofill apps are documented on Android 8+; that is not the current app's minimum OS or a WebView saved-password guarantee.", "Apple compatibility metadata is not evidence of a separately engineered desktop version. Android/iOS script, sync and feature parity remain untested."],
+      "quotations": [{"text": "Via uses the built-in WebView renderer included on the Android platform.", "sourceIds": ["R05-V01"]}, {"text": "User-script support", "sourceIds": ["R05-A01"]}, {"text": "iCloud sync", "sourceIds": ["R05-A01"]}]
+    },
+    {
+      "id": "R05-B-quetta", "name": "Quetta",
+      "engine": "Android publisher text identifies Chromium and release text names 154.0.8037.127. iOS engine is unresolved: generalized FAQ wording does not override the platform-specific extension guide or identify the shipped iOS engine.",
+      "platforms": ["Android", "iPhone and iPad; US publisher record requires iOS 17+", "Windows advertised product route", "macOS advertised product route"],
+      "lifecycle": "active",
+      "summary": "Android listing reports an update on 2026-11-20; iOS record reports version 1.5.1 released 2026-11-09. Android extension management, mobile filtering/media workflows and iOS private storage/reading tools are documented with edition-specific qualifications.",
+      "sourceIds": ["R05-Q01", "R05-Q02", "R05-Q03", "R05-Q04", "R05-Q05", "R05-Q06", "R05-Q07", "R05-Q08", "R05-A01"],
+      "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No runtime tests; desktop links are advertising, not inspected packages or parity evidence. iOS Chrome Web Store hosting is not established.", "Android extension compatibility depends on layout, browser APIs, companion apps and background behavior. Saved media links and playable offline files are distinct states.", "Broad no-personal-data copy and Android Play disclosures differ; runtime collection was not adjudicated. AI filtering superiority and vault cryptography were not audited."],
+      "quotations": [{"text": "Compatibility can vary", "sourceIds": ["R05-Q02"]}, {"text": "Offline access requires a compatible, permitted media resource.", "sourceIds": ["R05-Q07"]}]
+    },
+    {
+      "id": "R05-B-kiwi", "name": "Kiwi Browser",
+      "engine": "Historical Android Chromium-based browser; current supported engine build is not asserted after maintenance ended.",
+      "platforms": ["Android; historical discontinued product"],
+      "lifecycle": "discontinued",
+      "summary": "Maintainer's archived successor repository says no maintenance after January 2025. Android Chrome-extension support, night mode and a bottom address bar are historical implementation references. Extension-code integration into a development Edge version is described as a partnership, not an acquisition.",
+      "sourceIds": ["R05-K01", "R05-K02"],
+      "evidenceType": "source-inspected", "confidence": "high",
+      "limitations": ["No installed Kiwi binary or current Edge edition tested. Historical up-to-date language and build instructions do not establish a maintained current product.", "Exact notice-publication date and final maintenance day were not established. No iOS product or portability evidence was found in the cited sources; licensing and maintenance costs require separate review before source reuse."],
+      "quotations": [{"text": "It will no longer be maintained after January 2025.", "sourceIds": ["R05-K01"]}]
+    },
+    {
+      "id": "R05-B-aloha", "name": "Aloha",
+      "engine": "Android AlohaCore evolved from Chromium/WebView after earlier system-WebView and CrossWalk implementations. Chromium 130 is historical to the 2025-01-08 Android-only article, not the current version. iOS and desktop implementation details remain unestablished here.",
+      "platforms": ["Android", "iPhone and iPad; US publisher record requires iOS 16+", "Windows 64-bit advertised download", "macOS Intel and Apple silicon advertised downloads", "Linux deb/rpm advertised downloads"],
+      "lifecycle": "active",
+      "summary": "Aloha documents browser VPN, content controls, access locks, media/download tools and account-linked sync, with separate Premium entitlements. The iOS record reports 8.13.2 released 2026-11-16; the website lists multiple desktop offerings.",
+      "sourceIds": ["R05-L01", "R05-L02", "R05-L03", "R05-L04", "R05-A01"],
+      "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No application, network routing, cryptography, no-log or claimed audit verification. Desktop/mobile feature boundaries, region availability and free-tier server selection are not fully resolved.", "Paid device-wide VPN scope differs from free browser-integrated access. Incognito and network routing are different mechanisms.", "An open-source Android core does not establish that the entire browser or its iOS implementation is open source."],
+      "quotations": [{"text": "This post will focus solely on the Aloha Browser for Android.", "sourceIds": ["R05-L02"]}, {"text": "device-wide VPN protection", "context": "Listed among Premium upgrades in the Aloha iOS publisher record.", "sourceIds": ["R05-A01"]}]
+    },
+    {
+      "id": "R05-B-yandex", "name": "Yandex Browser",
+      "engine": "Vendor security-program documentation establishes Chromium-family architecture, but exact Android build and iOS implementation are unresolved; Chromium evidence is not applied indiscriminately to iOS.",
+      "platforms": ["Android phones", "Android tablets", "iPhone; help specifies iOS 15+", "Desktop browser referenced; exact current OS matrix not established"],
+      "lifecycle": "active",
+      "summary": "Current publisher/help sources describe Android extension management, platform-specific translation/OCR, subtitle language tools, Reader Mode and optional account sync. No cessation was established, but the latest mobile release versions were not audited.",
+      "sourceIds": ["R05-Y01", "R05-Y02", "R05-Y02a", "R05-Y03", "R05-Y04", "R05-Y05", "R05-Y06"],
+      "evidenceType": "vendor-documented", "confidence": "medium",
+      "limitations": ["Documentation only; no installed builds, extension compatibility or language accuracy tested. Android extension help is not iOS evidence.", "Android in-page image OCR differs from iPhone image upload. Image quality and supported-video/language restrictions apply; fullscreen/PiP setup restrictions are not a categorical playback prohibition.", "Account sync and translation have service/data-flow dependencies; offline operation and privacy guarantees were not established."],
+      "quotations": [{"text": "from the third-party catalogs Google Chrome or Opera", "sourceIds": ["R05-Y02"]}]
+    },
+    {
+      "id": "R05-B-uc", "name": "UC Browser",
+      "engine": "UC's U4 page describes a mobile engine used by UC Browser and WebView-style layers. Exact engine/version, Chromium ancestry and U4 mapping for each current international Android and Chinese iOS package remain unresolved.",
+      "platforms": ["International Android edition: com.UCMobile.intl", "Chinese iOS edition: App Store 586871187; iOS 13+", "PC landing page only; current distributable desktop build not established"],
+      "lifecycle": "active",
+      "summary": "International Android documentation advertises media/download tools, UC Drive, VPN, filtering and AI services. The distinct Chinese UCWeb iOS record reports version 19.3.0.3121 released 2026-11-20T02:36:07Z and emphasizes news, search, video and novels. Alibaba announced full acquisition of UCWeb on 2014-06-11.",
+      "sourceIds": ["R05-U01", "R05-U02", "R05-U03", "R05-U04", "R05-U04a", "R05-U05"],
+      "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No runtime, cloud entitlement, VPN, AI or engine measurement. International Android features are not transferred to Chinese iOS; a separately named speed edition returned by the API is not merged with this record.", "Current Chinese iOS distribution disproves a blanket Android-only conclusion for the observed date, but does not establish global storefront availability.", "The PC landing page is insufficient to establish a current binary or global desktop EOL. Older U4 performance/patch-speed claims are not current package measurements.", "Incognito local-state isolation does not itself hide an IP address; vendor wording must not be repeated as an observed network property."],
+      "quotations": [{"text": "Alibaba has fully acquired UCWeb", "sourceIds": ["R05-U03"]}, {"text": "与最新UC浏览器同款的移动浏览器内核", "context": "Vendor U4 page describes the mobile engine used by the latest UC Browser; current package mapping remains unresolved.", "sourceIds": ["R05-U02"]}]
+    }
+  ],
+  "features": [
+    {
+      "id": "R05-F-samsung-video", "browserId": "R05-B-samsung",
+      "title": "Video Assistant", "category": "media",
+      "description": "The Android publisher listing describes Video Assistant as a dedicated in-browser video-control workflow. This is a concrete media interaction feature rather than evidence of faster playback or broader codec support.",
+      "platforms": ["Android phones", "Android tablets"], "availability": "documented",
+      "sourceIds": ["R05-S01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Documentary evidence only; supported sites, formats and behavior were not tested. No corresponding Windows, Wear OS or iOS capability is inferred."]
+    },
+    {
+      "id": "R05-F-samsung-tabs", "browserId": "R05-B-samsung",
+      "title": "Tablet split browsing and open-tab search", "category": "tabs-and-windows",
+      "description": "The current Android listing describes side-by-side Split view specifically for tablets. It also describes using address-bar search to switch directly to a page that is already open. These workflows must retain their different device scopes.",
+      "platforms": ["Android tablets: Split view and open-tab search", "Android phones: open-tab search only in this record"], "availability": "limited",
+      "sourceIds": ["R05-S01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Split view is explicitly tablet-only in the cited listing; rotation, keyboard interaction and narrow-layout behavior were not tested. Current Chrome large-screen behavior has not been compared."]
+    },
+    {
+      "id": "R05-F-samsung-ergonomics", "browserId": "R05-B-samsung",
+      "title": "Customizable menus, dark mode and control placement", "category": "interface",
+      "description": "The current listing documents customizable menus and dark mode. Historical Android release notes additionally describe moving tab/bookmark bars and the tablet URL bar to the bottom. Those release notes establish historical introduction rather than an audited current minimum-version matrix.",
+      "platforms": ["Android phones", "Android tablets; historical tablet URL-bar placement"], "availability": "documented",
+      "sourceIds": ["R05-S01", "R05-S02"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["The retrieved Android changelog ends with a 2024-05-11 entry. Current placement combinations, accessibility and one-handed usability were not tested; historical controls are not automatically claims about every current device."]
+    },
+    {
+      "id": "R05-F-samsung-private-links", "browserId": "R05-B-samsung",
+      "title": "Secret Mode, incoming private links and tracking controls", "category": "privacy-and-sessions",
+      "description": "Publisher and release documentation describe Secret Mode and an option to open links from other applications in Secret Mode. Smart Anti-Tracking describes restricting cookie and storage access for domains capable of tracking. Incoming-link policy and tracking protection are documented mechanisms, not measured anonymity guarantees.",
+      "platforms": ["Android phones", "Android tablets"], "availability": "documented",
+      "sourceIds": ["R05-S01", "R05-S02"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Historical release notes do not establish a current per-version availability matrix. External-link dispatch, storage isolation, erase/relaunch behavior and tracking coverage were not tested; local private state does not itself establish network anonymity."]
+    },
+    {
+      "id": "R05-F-samsung-blockers", "browserId": "R05-B-samsung",
+      "title": "Approved extension apps and content-filter providers", "category": "content-filtering-and-extensions",
+      "description": "Third-party applications can supply content-blocking filters to Samsung Browser. The developer guide describes a Samsung-validated and approved extension-app mechanism. This integration model is distinct from arbitrary desktop Chrome Web Store extension installation.",
+      "platforms": ["Android"], "availability": "limited",
+      "sourceIds": ["R05-S01", "R05-S04"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No provider was installed or tested, and filtering completeness was not measured. Approval, app integration and platform boundaries remain part of the documented capability; no equivalent iOS plug-in mechanism is established."]
+    },
+    {
+      "id": "R05-F-cromite-filtering", "browserId": "R05-B-cromite",
+      "title": "Integrated filtering with CNAME and worker coverage", "category": "content-filtering",
+      "description": "Cromite documents built-in ad blocking. Its FAQ describes CNAME-related filtering and worker coverage, and says Acceptable Ads was removed. These are filtering-design statements; they do not establish that every advertisement or tracker is blocked.",
+      "platforms": ["Android; mobile scope of this record"], "availability": "documented",
+      "sourceIds": ["R05-C01", "R05-C03"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No filter coverage, breakage or release-binary behavior was measured. Current desktop parity and list-update behavior are not established by this mobile record."]
+    },
+    {
+      "id": "R05-F-cromite-site-controls", "browserId": "R05-B-cromite",
+      "title": "Per-site execution and privacy controls", "category": "site-controls-and-execution",
+      "description": "Documented controls include JIT disabled by default with exceptions, plus scripting, autoplay, cookie and blocking settings. The project explicitly describes its anti-fingerprinting mitigations as incomplete. Execution policy and ordinary site preferences have different compatibility and implementation costs.",
+      "platforms": ["Android; mobile scope of this record"], "availability": "documented",
+      "sourceIds": ["R05-C01", "R05-C02", "R05-C03"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["JIT-off performance, WebAssembly behavior, exception persistence and site compatibility were not tested. Disabled Safe Browsing, Google Sync/Translate, DRM and other integrations are documented tradeoffs, not uniformly beneficial privacy or security changes."]
+    },
+    {
+      "id": "R05-F-cromite-sessions", "browserId": "R05-B-cromite",
+      "title": "Always-incognito and session-retention controls", "category": "privacy-and-sessions",
+      "description": "The feature list documents Android always-incognito behavior together with data-clearing and session-retention controls. These settings make session lifetime an explicit product choice rather than merely an individual private-tab action.",
+      "platforms": ["Android"], "availability": "documented",
+      "sourceIds": ["R05-C02"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No erase, restart, crash recovery, cookie isolation or thumbnail/previews test was performed. Documentation does not establish server-side deletion or network-address concealment."]
+    },
+    {
+      "id": "R05-F-cromite-local-data", "browserId": "R05-B-cromite",
+      "title": "Local bookmark portability and Android integration", "category": "data-portability-and-interface",
+      "description": "Android features include bookmark import/export, bookmarking all open tabs, native Android autofill and configurable navigation placement. Local bookmark movement is distinct from a mandatory account-backed synchronization service.",
+      "platforms": ["Android"], "availability": "documented",
+      "sourceIds": ["R05-C02"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No import/export round-trip, format-fidelity, autofill-provider or layout test was run. The cited list is mutable and is not a verified version-by-version compatibility matrix."]
+    },
+    {
+      "id": "R05-F-cromite-scripts", "browserId": "R05-B-cromite",
+      "title": "Android user scripts", "category": "programmability",
+      "description": "The Cromite feature list separately documents Android user-script support. User scripts and a general browser-extension host are different capabilities; the script listing alone does not establish browser-wide extension APIs or native messaging.",
+      "platforms": ["Android"], "availability": "documented",
+      "sourceIds": ["R05-C02"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Execution timing, permissions, update behavior and script compatibility were not tested. No iOS implementation or automatic Chrome installation route is established."]
+    },
+    {
+      "id": "R05-F-cromite-experimental-extensions", "browserId": "R05-B-cromite",
+      "title": "Experimental default-off Android-extension implementation", "category": "extensions",
+      "description": "The source pinned to the observed September 2026 release contains an experimental Android-extension patch whose description says the feature is disabled by default. The release-linked maintainer changelog also discusses extension fixes. The mutable FAQ still says Android extensions are unsupported, so the defensible result is qualified source-evidenced experimentation.",
+      "platforms": ["Android; release-pinned source implementation"], "availability": "limited",
+      "sourceIds": ["R05-C03", "R05-C05", "R05-C06", "R05-C07"], "evidenceType": "source-inspected", "confidence": "high",
+      "sourceRevision": "11507ac1061b5ea227806f5e84db5a57df6ccf6a", "featureLifecycle": "experimental", "defaultEnabled": false,
+      "limitations": ["Patch presence is not proof that every release artifact exposes a working host or supports every extension. No binary, popup, permissions, private-mode isolation or background-resume test was run.", "The patch-header date is 2025-11-06; it is not a verified rollout date. The FAQ conflict remains unresolved, and individual patch licenses require review before reuse."]
+    },
+    {
+      "id": "R05-F-vanadium-jit", "browserId": "R05-B-vanadium",
+      "title": "Default-off browser JIT with per-site exceptions", "category": "site-controls-and-execution",
+      "description": "Vanadium documents JavaScript JIT disabled by default in the browser, per-site exceptions and a WebAssembly interpreter for execution without JIT. These are browser policies within the supported GrapheneOS environment.",
+      "platforms": ["GrapheneOS Android browser"], "availability": "limited",
+      "sourceIds": ["R05-G01", "R05-G02"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["User-installed apps' WebViews have JIT enabled by default with OS controls; the browser default must not be generalized to them. No performance, WebAssembly, compatibility or exception-recovery test was performed; official distribution remains GrapheneOS-only."]
+    },
+    {
+      "id": "R05-F-vanadium-filtering", "browserId": "R05-B-vanadium",
+      "title": "Integrated filter lists and per-site recovery toggle", "category": "content-filtering",
+      "description": "Technical documentation describes standard filter lists, language-dependent regional lists and a per-site filtering toggle. The toggle is a documented compatibility escape hatch; planned cosmetic-filtering work must remain separate from currently described mechanisms.",
+      "platforms": ["GrapheneOS Android browser"], "availability": "limited",
+      "sourceIds": ["R05-G01", "R05-G02"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No network/cosmetic coverage, regional-list selection or site-breakage recovery was tested. Rolling documentation includes future work, and incomplete cookie partitioning is not a claim of comprehensive tracking prevention."]
+    },
+    {
+      "id": "R05-F-vanadium-hardening", "browserId": "R05-B-vanadium",
+      "title": "OS-integrated browser hardening", "category": "platform-hardening",
+      "description": "Documented mechanisms include strict site isolation, sandboxed frames, compiler and memory protections, and restrictions on dynamic code execution. Their applicability depends on the actual browser build, GrapheneOS configuration and supported hardware rather than a transferable UI label.",
+      "platforms": ["GrapheneOS Android; build and hardware dependent"], "availability": "limited",
+      "sourceIds": ["R05-G01", "R05-G02"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No security reproduction, exploit-resistance measurement or cross-browser ranking was performed. A prospective outside-GrapheneOS version would lack some hardening/features and would not supply the system WebView; it is not an observed current edition."]
+    },
+    {
+      "id": "R05-F-vanadium-credentials", "browserId": "R05-B-vanadium",
+      "title": "Native autofill and passkey integration", "category": "credentials",
+      "description": "Vanadium documents Android autofill and credential-manager/passkey integration designed to avoid requiring sandboxed Google Play for those paths. This is a specific credential integration claim, not a statement that every unrelated service is independent of Google Play.",
+      "platforms": ["GrapheneOS Android browser"], "availability": "limited",
+      "sourceIds": ["R05-G01", "R05-G02"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No credential provider, passkey enrollment or sign-in was tested. Provider, OS and build prerequisites remain relevant; browser settings and WebView integration cannot be assumed identical."]
+    },
+    {
+      "id": "R05-F-vanadium-navigation-privacy", "browserId": "R05-B-vanadium",
+      "title": "Incoming Incognito links and reduced referrer information", "category": "privacy-and-sessions",
+      "description": "The documentation describes options to open incoming links in Incognito and reduce cross-origin referrer information. Both expose concrete navigation privacy choices within the browser's supported platform.",
+      "platforms": ["GrapheneOS Android browser"], "availability": "limited",
+      "sourceIds": ["R05-G01", "R05-G02"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Link dispatch, actual request headers and session cleanup were not observed at runtime. Neither setting establishes comprehensive anonymity or equivalent behavior in application WebViews or on iOS."]
+    },
+    {
+      "id": "R05-F-focus-erase", "browserId": "R05-B-focus",
+      "title": "One-action local session disposal", "category": "privacy-and-sessions",
+      "description": "Mozilla describes a conspicuous erase control for browsing history, cookies and related local session data. The iOS publisher record reinforces this disposable-session workflow.",
+      "platforms": ["Android", "iPhone and iPad"], "availability": "documented",
+      "sourceIds": ["R05-F01", "R05-A01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No test checked cookies, storage, restoration, previews or relaunch after erase. Local deletion does not delete server records or hide the device's network address; Android and iOS engine/session implementations differ."]
+    },
+    {
+      "id": "R05-F-focus-tracking", "browserId": "R05-B-focus",
+      "title": "Tracking protection enabled by default", "category": "content-filtering",
+      "description": "The product page documents default blocking of common tracking categories and associated advertising resources. The documented capability is tracking protection, not a guarantee to block all advertisements or identifiers.",
+      "platforms": ["Android", "iPhone and iPad"], "availability": "documented",
+      "sourceIds": ["R05-F01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Blocking coverage, website compatibility and network behavior were not measured. The challenged iOS support-page retrieval establishes no current Safari-integration feature."]
+    },
+    {
+      "id": "R05-F-focus-search-first", "browserId": "R05-B-focus",
+      "title": "Search-first minimal iOS interface", "category": "interface",
+      "description": "The US iOS publisher description emphasizes opening directly to the address/search field and keyboard without a normal persistent-tab workspace. This is an iOS product description rather than a statement about Android tab behavior or full Firefox.",
+      "platforms": ["iPhone and iPad; US publisher record"], "availability": "documented",
+      "sourceIds": ["R05-A01", "R05-F08"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No launch, keyboard or restoration behavior was tested. Full Firefox synchronization, extensions and desktop-style tabs must not be attributed to Focus from shared branding or a shared repository."]
+    },
+    {
+      "id": "R05-F-focus-shortcuts", "browserId": "R05-B-focus",
+      "title": "Up to four pinned shortcuts", "category": "navigation",
+      "description": "Mozilla's product page and the iOS publisher description document up to four pinned shortcuts for quick access within Focus's limited browsing workspace. This is a bounded shortcut feature rather than a full bookmark/session-management claim.",
+      "platforms": ["Android", "iPhone and iPad"], "availability": "documented",
+      "sourceIds": ["R05-F01", "R05-A01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Shortcut persistence, deletion semantics and exact per-build behavior were not tested. Source documents do not establish parity with full Firefox bookmarks or account synchronization."]
+    },
+    {
+      "id": "R05-F-via-site-controls", "browserId": "R05-B-via",
+      "title": "Android per-site browser configuration", "category": "site-controls",
+      "description": "Via's Android documentation describes setting user agent, JavaScript and ad-blocking choices for an individual site. Its rendering depends on the device's built-in WebView provider, a separate engine dependency from the browser shell.",
+      "platforms": ["Android"], "availability": "documented",
+      "sourceIds": ["R05-V01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Site/origin scope, persistence, provider-version differences and recovery from a broken page were not tested. This Android record does not establish matching iOS controls or an independent bundled engine."]
+    },
+    {
+      "id": "R05-F-via-ios-scripts", "browserId": "R05-B-via",
+      "title": "iOS user-script support", "category": "programmability",
+      "description": "The Via iOS publisher description explicitly lists user-script support, and release notes mention improvements to scripting. This establishes a documented app-level scripting capability, not a general Chrome/Firefox WebExtensions host.",
+      "platforms": ["iPhone and iPad; US publisher record"], "availability": "documented",
+      "sourceIds": ["R05-A01", "R05-V03"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No script was executed. Permissions, browser-wide tab APIs, native messaging and extension compatibility are not established; Via's iOS engine remains unresolved in this lane."]
+    },
+    {
+      "id": "R05-F-via-ios-reading", "browserId": "R05-B-via",
+      "title": "Saved pages and lightweight iOS reading utilities", "category": "reading-and-offline",
+      "description": "The iOS publisher description and release notes cover saved webpages, reader-mode work, desktop-site requests, translation and find-in-page. Together they describe a lightweight reading workflow without proving offline fidelity for every page type.",
+      "platforms": ["iPhone and iPad; US publisher record"], "availability": "documented",
+      "sourceIds": ["R05-A01", "R05-V03"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Saved-page assets, interactive content, reader extraction and translation accuracy were not tested. Release-note mentions are not a current minimum-version matrix, and Android parity is not inferred."]
+    },
+    {
+      "id": "R05-F-via-icloud", "browserId": "R05-B-via",
+      "title": "iOS iCloud synchronization", "category": "synchronization",
+      "description": "Via's iOS publisher description explicitly lists iCloud sync. This is a platform-specific synchronization path with an iCloud service dependency, distinct from local import/export or Chrome-account synchronization.",
+      "platforms": ["iPhone and iPad; iCloud-dependent"], "availability": "limited",
+      "sourceIds": ["R05-A01", "R05-V03"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No account was accessed and no data synchronized. Exact field coverage, conflict handling, encryption and Android-to-iOS parity were not established."]
+    },
+    {
+      "id": "R05-F-via-quiet-interface", "browserId": "R05-B-via",
+      "title": "Configurable iOS interface without pushed news", "category": "interface",
+      "description": "The iOS publisher promises a quiet interface without pushed news feeds and offers personalization. Memory and speed superlatives remain vendor assertions; this record preserves the concrete interface promise rather than turning marketing into a benchmark.",
+      "platforms": ["iPhone and iPad; US publisher description"], "availability": "documented",
+      "sourceIds": ["R05-A01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No interface, notification behavior or resource use was observed. The publisher's promise is not independently validated and is not generalized to every Android release or region."]
+    },
+    {
+      "id": "R05-F-quetta-android-extensions", "browserId": "R05-B-quetta",
+      "title": "Android Chrome and Edge extension installation and management", "category": "extensions",
+      "description": "Quetta's Android-specific guide documents Chrome Web Store and Edge Add-ons installation and management, including extension popups. It expressly warns that desktop layouts, unavailable browser APIs, companion apps and background behavior can limit compatibility.",
+      "platforms": ["Android"], "availability": "limited",
+      "sourceIds": ["R05-Q01", "R05-Q02"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No extension was installed or exercised. Broad FAQ wording is insufficient to establish iOS Chrome Web Store support, universal compatibility or the shipped iOS engine."]
+    },
+    {
+      "id": "R05-F-quetta-filtering", "browserId": "R05-B-quetta",
+      "title": "Edition-specific ad, tracker and interruption controls", "category": "content-filtering",
+      "description": "Android publisher text describes ad/tracker controls. The iOS publisher description additionally calls out intrusive overlays and autoplay interruptions. These are separately attributed edition claims; AI labels do not establish superior coverage.",
+      "platforms": ["Android: ad/tracker controls", "iOS: publisher-described overlay and autoplay controls"], "availability": "documented",
+      "sourceIds": ["R05-Q01", "R05-Q03", "R05-A01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No rule coverage, network capture or site-breakage test was performed. The two editions' mechanisms and defaults were not shown to be identical, and publisher privacy statements were not independently audited."]
+    },
+    {
+      "id": "R05-F-quetta-media", "browserId": "R05-B-quetta",
+      "title": "Media queues with qualified downloads and offline access", "category": "media-and-downloads",
+      "description": "Official guides describe playlist organization, supported downloads, picture-in-picture and background playback where available. Offline access requires compatible, permitted media; saving a playlist entry does not itself make the referenced media playable offline.",
+      "platforms": ["Android mobile offering", "iOS mobile offering; edition-specific availability"], "availability": "limited",
+      "sourceIds": ["R05-Q06", "R05-Q07", "R05-Q01", "R05-A01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Site, account, format, region and media permissions constrain availability. No download, interruption recovery, PiP, background or offline playback test was run; general guides are not a per-build cross-platform compatibility matrix."]
+    },
+    {
+      "id": "R05-F-quetta-vault", "browserId": "R05-B-quetta",
+      "title": "iOS Data Vault with biometric access", "category": "local-storage-and-access",
+      "description": "The iOS publisher describes a Data Vault with biometric access and encryption for private local storage. The observable evidence is the publisher's specified workflow, not an audit of cryptographic implementation or storage isolation.",
+      "platforms": ["iPhone and iPad; US publisher record"], "availability": "documented",
+      "sourceIds": ["R05-A01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No vault, key-management, biometric-fallback, backup or data-remanence test was performed. Android and desktop equivalents are not established by this iOS claim."]
+    },
+    {
+      "id": "R05-F-quetta-android-power-tools", "browserId": "R05-B-quetta",
+      "title": "Android control placement, tab behavior and DevTools", "category": "interface-and-developer-tools",
+      "description": "The Android listing advertises toolbar/address-bar customization, tab-behavior controls and DevTools. These are Android-specific power tools rather than evidence that every Quetta edition exposes an identical browser UI or developer surface.",
+      "platforms": ["Android"], "availability": "documented",
+      "sourceIds": ["R05-Q01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No developer-tools connection, API coverage or layout behavior was tested. The listing's Android Chromium version does not identify the iOS engine or establish desktop parity."]
+    },
+    {
+      "id": "R05-F-quetta-ios-reading-capture", "browserId": "R05-B-quetta",
+      "title": "iOS reader layout and webpage image/PDF capture", "category": "reading-and-capture",
+      "description": "The iOS product and publisher descriptions advertise a reader-oriented layout and capturing webpages as images or PDFs. These edition-specific reading and export tools are distinct from Android's advertised DevTools and tab controls.",
+      "platforms": ["iPhone and iPad"], "availability": "documented",
+      "sourceIds": ["R05-Q03", "R05-A01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Reader extraction, pagination, image/PDF fidelity, accessibility and offline viewing were not tested. Advertising does not establish identical Android or desktop functionality."]
+    },
+    {
+      "id": "R05-F-kiwi-extensions", "browserId": "R05-B-kiwi",
+      "title": "Historical Android Chrome-extension host", "category": "extensions",
+      "description": "Kiwi's historical repository documents Chrome-extension support in an Android Chromium browser. The later maintainer notice says maintenance ended after January 2025, so this is an implementation reference rather than a recommendation to install a maintained current binary.",
+      "platforms": ["Android; historical Kiwi releases"], "availability": "historical",
+      "sourceIds": ["R05-K02", "R05-K01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No historical or current extension compatibility was tested. Code integration into an Edge development version is not evidence of current stable Edge capabilities, acquisition or iOS support; licensing and maintenance burden require separate assessment."]
+    },
+    {
+      "id": "R05-F-kiwi-night-mode", "browserId": "R05-B-kiwi",
+      "title": "Historical browser night mode", "category": "interface",
+      "description": "The historical Kiwi README describes a night-mode implementation distinct from the contemporary Chromium implementation. Its significance is a documented historical interface choice, not a current comparative quality result.",
+      "platforms": ["Android; historical Kiwi releases"], "availability": "historical",
+      "sourceIds": ["R05-K02", "R05-K01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Maintenance ended after January 2025. Contrast, rendering fidelity and compatibility were not tested; the comparison is historical and says nothing about current Chrome behavior."]
+    },
+    {
+      "id": "R05-F-kiwi-bottom-bar", "browserId": "R05-B-kiwi",
+      "title": "Historical bottom address bar", "category": "interface",
+      "description": "Kiwi's historical Android feature list documents a bottom address bar, a touch-oriented control-placement choice. The discontinued product can inform design investigation without being treated as an active distribution recommendation.",
+      "platforms": ["Android; historical Kiwi releases"], "availability": "historical",
+      "sourceIds": ["R05-K02", "R05-K01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No usability, accessibility, keyboard-inset or current Chrome parity test was run. Old build instructions and up-to-date language are superseded by the maintenance-ending notice."]
+    },
+    {
+      "id": "R05-F-aloha-vpn", "browserId": "R05-B-aloha",
+      "title": "Browser-integrated VPN with a separate Premium scope", "category": "network-services",
+      "description": "Aloha advertises a free browser-integrated VPN tier. Its paid-plan description adds device-wide protection, richer location selection and automatic start. These plan boundaries matter independently of the shared VPN label.",
+      "platforms": ["Android mobile offering", "iOS mobile offering; US publisher plan description"], "availability": "limited",
+      "sourceIds": ["R05-L01", "R05-A01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Routing scope, connection failures, regions, free-tier server choice and every platform/plan boundary were not tested. No-log, anonymity, audit and speed claims remain unverified vendor assertions; Incognito is not a VPN."]
+    },
+    {
+      "id": "R05-F-aloha-navigation-controls", "browserId": "R05-B-aloha",
+      "title": "Ad blocking, HTTPS lock and redirect controls", "category": "content-filtering-and-navigation",
+      "description": "Aloha's mobile product offering advertises ad blocking, tracking-related controls, HTTPS lock and redirect blocking. These are specific navigation and filtering controls, without independently measured effectiveness.",
+      "platforms": ["Android mobile offering", "iOS mobile offering"], "availability": "documented",
+      "sourceIds": ["R05-L01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Per-edition defaults, exception handling and protection coverage were not tested. General product copy is not a complete version/platform compatibility matrix or proof of anonymity."]
+    },
+    {
+      "id": "R05-F-aloha-access-locks", "browserId": "R05-B-aloha",
+      "title": "Passcode and biometric access controls", "category": "local-storage-and-access",
+      "description": "Product and iOS publisher descriptions document locking tabs or the application and access to sensitive stored files using passcode/biometric workflows. The exact protected surface and edition are relevant to the scope of each lock.",
+      "platforms": ["Android mobile offering", "iOS mobile offering; publisher-described biometric/passcode workflows"], "availability": "documented",
+      "sourceIds": ["R05-L01", "R05-A01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Authentication fallback, storage encryption, backup behavior and app-switcher previews were not tested. Documentation does not establish identical lock surfaces on every desktop and mobile edition."]
+    },
+    {
+      "id": "R05-F-aloha-media", "browserId": "R05-B-aloha",
+      "title": "Download and media workspace with iPad controls", "category": "media-and-downloads",
+      "description": "Aloha documents downloads, background playback and file organization. The iOS publisher record also describes a movable iPad video toolbar. Wi-Fi sharing and archive-related facilities appear in its paid-plan description rather than being assumed part of every free edition.",
+      "platforms": ["Android mobile offering", "iPhone and iPad; movable toolbar specifically iPad"], "availability": "limited",
+      "sourceIds": ["R05-L01", "R05-A01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Downloads, offline playback, sharing, archive support and plan entitlements were not tested. Media-site restrictions and exact desktop/mobile boundaries remain unresolved; a saved link is not proof of an offline media file."]
+    },
+    {
+      "id": "R05-F-aloha-sync", "browserId": "R05-B-aloha",
+      "title": "Account-linked bookmark and tab synchronization", "category": "synchronization",
+      "description": "The iOS publisher description advertises bookmark and tab synchronization between devices linked to an Aloha account. This documents an account/service dependency rather than local-file portability or account-free data transfer.",
+      "platforms": ["iOS; synchronization with Aloha-account-linked devices"], "availability": "limited",
+      "sourceIds": ["R05-A01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No account or sync test was performed. Exact supported device pairings, fields, conflicts, retention and cryptographic guarantees were not established; complete Android/iOS/desktop data parity is not inferred."]
+    },
+    {
+      "id": "R05-F-yandex-android-extensions", "browserId": "R05-B-yandex",
+      "title": "Android extension catalogs and lifecycle controls", "category": "extensions",
+      "description": "Yandex documents Android-phone and tablet extensions from vendor and third-party catalogs including Chrome and Opera. Help covers enable/disable, options, updates and developer-mode unpacked loading. It says only extensions in the From other sources section can be deleted.",
+      "platforms": ["Android phones", "Android tablets"], "availability": "limited",
+      "sourceIds": ["R05-Y02", "R05-Y02a"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No extension was installed, updated or tested. Catalog availability and management documentation do not guarantee compatibility with every desktop extension or establish an iOS host."]
+    },
+    {
+      "id": "R05-F-yandex-android-translation", "browserId": "R05-B-yandex",
+      "title": "Android page, text and in-page image translation", "category": "translation-and-reading",
+      "description": "Android help documents page/text translation and translated image text displayed over the original image, including automatic image translation alongside a page. This in-page image workflow is separate from the iPhone upload flow.",
+      "platforms": ["Android phones; cited navigation guide"], "availability": "limited",
+      "sourceIds": ["R05-Y03"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Image clarity, size and handwriting restrict OCR. Translation quality, offline operation, service requests and supported content were not measured; the phone guide is not a universal device/build compatibility matrix."]
+    },
+    {
+      "id": "R05-F-yandex-iphone-translation", "browserId": "R05-B-yandex",
+      "title": "iPhone translation with image upload", "category": "translation-and-reading",
+      "description": "The iPhone translation guide documents page/text language tools and uploading an image through the translation interface. This must not be flattened into a claim that iPhone supports Android's in-page image-text overlay in the same way.",
+      "platforms": ["iPhone"], "availability": "limited",
+      "sourceIds": ["R05-Y04"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No image was uploaded or translated. Accuracy, remote processing, data retention and offline operation were not verified; Android and iOS engine/API equivalence is not established."]
+    },
+    {
+      "id": "R05-F-yandex-subtitles", "browserId": "R05-B-yandex",
+      "title": "Subtitle generation, translation and word-level interaction", "category": "media-and-translation",
+      "description": "Both mobile help pages describe automatic subtitle generation/translation for eight languages, translation of existing subtitles from more than 90 languages and tapping a word for its meaning. The documented flow leaves fullscreen or PiP for setup and then permits reopening that playback mode.",
+      "platforms": ["Android phones", "iPhone"], "availability": "limited",
+      "sourceIds": ["R05-Y03", "R05-Y04"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Supported-video and language restrictions apply; the stated counts are publisher documentation rather than verified accuracy or universal language-pair coverage. No subtitle, fullscreen/PiP, accessibility or playback test was run."]
+    },
+    {
+      "id": "R05-F-yandex-reader", "browserId": "R05-B-yandex",
+      "title": "Android Reader Mode", "category": "reading",
+      "description": "The Android publisher listing describes Reader Mode removing peripheral interface elements while preserving article text and associated images. This is a documented reading view rather than proof of correct extraction on every page.",
+      "platforms": ["Android"], "availability": "documented",
+      "sourceIds": ["R05-Y01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No extraction, accessibility, image retention or offline test was run. Equivalent iPhone behavior is not established by the Android listing alone."]
+    },
+    {
+      "id": "R05-F-yandex-sync", "browserId": "R05-B-yandex",
+      "title": "Optional Yandex-account synchronization", "category": "synchronization",
+      "description": "The Android listing documents access to bookmarks/sites across devices when synchronization is enabled in a Yandex account. Optional account-backed sync is a different workflow and dependency from local import/export.",
+      "platforms": ["Android; synchronization with supported account-linked devices"], "availability": "limited",
+      "sourceIds": ["R05-Y01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No account was accessed or data synchronized. Exact device pairings, data fields, retention, encryption and conflict behavior were not established."]
+    },
+    {
+      "id": "R05-F-uc-international-media", "browserId": "R05-B-uc",
+      "title": "International Android video downloads and offline organization", "category": "media-and-downloads",
+      "description": "The international Android publisher description advertises integrated video downloads, offline playback and download organization. These claims belong to package com.UCMobile.intl and are not imported into the distinct Chinese iOS feature set.",
+      "platforms": ["Android; international com.UCMobile.intl edition"], "availability": "documented",
+      "sourceIds": ["R05-U01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No download, interruption recovery, site compatibility or offline playback test was performed. Availability for particular media sources and regional editions remains unverified."]
+    },
+    {
+      "id": "R05-F-uc-international-drive", "browserId": "R05-B-uc",
+      "title": "International Android UC Drive cloud allocation", "category": "cloud-storage",
+      "description": "The international Android listing advertises UC Drive cloud storage with a 20 GB allocation. This is a publisher-stated service entitlement, not a browser-engine capability or a measured durable free allowance.",
+      "platforms": ["Android; international com.UCMobile.intl edition"], "availability": "limited",
+      "sourceIds": ["R05-U01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Eligibility, account requirements, regional terms and sustained free availability were not independently checked. No files were uploaded; matching Chinese iOS entitlement is not established."]
+    },
+    {
+      "id": "R05-F-uc-international-vpn", "browserId": "R05-B-uc",
+      "title": "International Android built-in VPN offering", "category": "network-services",
+      "description": "The international Android publisher listing advertises a built-in VPN. The consulted evidence does not resolve browser-only versus device-wide routing, quotas or actual endpoint behavior.",
+      "platforms": ["Android; international com.UCMobile.intl edition"], "availability": "limited",
+      "sourceIds": ["R05-U01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No network traffic, connection failure or IP-routing test was performed. Regional/plan scope and Chinese iOS parity are unknown; private/incognito mode by itself must not be described as hiding an IP address."]
+    },
+    {
+      "id": "R05-F-uc-international-blocking", "browserId": "R05-B-uc",
+      "title": "International Android ad and pop-up blocking", "category": "content-filtering",
+      "description": "The international Android publisher description advertises built-in ad and pop-up blocking. The documentary claim concerns available controls, without measured blocking rates or a demonstrated browsing-speed advantage.",
+      "platforms": ["Android; international com.UCMobile.intl edition"], "availability": "documented",
+      "sourceIds": ["R05-U01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No rule coverage, website breakage or performance test was run. The Chinese iOS edition, U4 engine offering and older all-platform claims are not interchangeable evidence for this feature."]
+    },
+    {
+      "id": "R05-F-uc-international-ai", "browserId": "R05-B-uc",
+      "title": "International Android AI search, translation and meeting notes", "category": "ai-and-language-services",
+      "description": "The international Android listing advertises AI-assisted search and translation plus meeting-note transcription and summarization. These are service-oriented product claims; accuracy and encryption superlatives are not evaluated outcomes.",
+      "platforms": ["Android; international com.UCMobile.intl edition"], "availability": "documented",
+      "sourceIds": ["R05-U01"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No content was uploaded, transcribed or summarized. Language coverage, processing location, retention, eligibility and Chinese iOS parity were not established."]
+    },
+    {
+      "id": "R05-F-uc-china-discovery", "browserId": "R05-B-uc",
+      "title": "Chinese iOS news, search-trend and entertainment surfaces", "category": "content-discovery",
+      "description": "The actual UCWeb publisher record in the Chinese App Store emphasizes news, search trends, video and novels. This supports a current regional iOS product with its own feature positioning rather than a global Android-only lifecycle conclusion.",
+      "platforms": ["iOS; Chinese App Store UC Browser 586871187"], "availability": "limited",
+      "sourceIds": ["R05-U04", "R05-U04a"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["The observed record requires iOS 13+ and reports version 19.3.0.3121 released 2026-11-20T02:36:07Z; no app was installed. Catalog availability and other storefronts were not tested, and the separately named speed edition is not merged here."]
+    },
+    {
+      "id": "R05-F-uc-china-playback", "browserId": "R05-B-uc",
+      "title": "Chinese iOS short-drama playback recovery and progress sync", "category": "media",
+      "description": "The Chinese UC Browser iOS current-version notes describe short-drama playback recovery, progress synchronization and player refinements. These are scoped release-note claims for that regional edition, not evidence of the international Android VPN, cloud or AI feature set.",
+      "platforms": ["iOS; Chinese App Store UC Browser 586871187"], "availability": "limited",
+      "sourceIds": ["R05-U04", "R05-U04a"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["No playback recovery or synchronization was tested. The account, content-catalog and cross-device requirements are unresolved; release notes do not prove general offline support or current engine identity."]
+    }
+  ],
+  "issues": [
+    {
+      "id": "R05-I-cromite-extension-docs",
+      "title": "Cromite Android-extension FAQ conflicts with release-pinned experimental source",
+      "kind": "source-inconsistency", "status": "needs-validation",
+      "sourceIds": ["R05-C03", "R05-C05", "R05-C06", "R05-C07"],
+      "browserIds": ["R05-B-cromite"],
+      "featureIds": ["R05-F-cromite-experimental-extensions"],
+      "upstreamUrl": null,
+      "upstreamStatus": "No dedicated upstream report of this documentation inconsistency was verified. The cited maintainer comment is release-linked change evidence only.",
+      "reportedVersions": ["Source context: v153.0.8010.37-11507ac1061b5ea227806f5e84db5a57df6ccf6a; not a runtime-confirmed affected version"],
+      "testedVersions": [], "reproduction": "source-only",
+      "steps": [
+        "The saved research read the mutable FAQ's categorical answer about Android extensions.",
+        "It resolved the latest-release API snapshot to source revision 11507ac1061b5ea227806f5e84db5a57df6ccf6a and read its experimental Android-extension patch.",
+        "It compared the patch's disabled-by-default description with the release-linked maintainer comment discussing extension fixes. No browser or extension was launched."
+      ],
+      "expected": "Platform documentation should distinguish unsupported general compatibility from a release-source implementation that is experimental and disabled by default.",
+      "observed": "The FAQ says Android extensions are unsupported, while the pinned release source contains an experimental default-off implementation and the associated changelog discusses extension fixes.",
+      "evidenceType": "source-inspected", "confidence": "high",
+      "limitations": [
+        "The inconsistency is established at document/source level, not as a reproduced browser defect. Patch presence does not establish every binary artifact's host availability or any extension's compatibility.",
+        "The patch header is dated 2025-11-06; the observed release was published 2026-09-15. Neither supplies a tested rollout matrix. The FAQ may lag implementation or use a narrower support definition.",
+        "No current Chrome comparison or new upstream submission was performed."
+      ],
+      "submission": {"status": "not-submitted", "url": null, "reason": "Converted documentary inconsistency only; artifact behavior and the maintainer's intended support definition require validation before any report."}
+    },
+    {
+      "id": "R05-I-quetta-platform-scope",
+      "title": "Quetta broad FAQ wording does not resolve iOS engine or extension support",
+      "kind": "source-inconsistency", "status": "needs-validation",
+      "sourceIds": ["R05-Q01", "R05-Q02", "R05-Q03", "R05-Q08", "R05-P01"],
+      "browserIds": ["R05-B-quetta"],
+      "featureIds": ["R05-F-quetta-android-extensions"],
+      "upstreamUrl": null, "upstreamStatus": "No dedicated upstream report or vendor clarification was verified.",
+      "reportedVersions": [], "testedVersions": [], "reproduction": "source-only",
+      "steps": [
+        "The saved research compared the generalized FAQ's Android/iOS Chromium and Chrome-extension wording with the detailed extension guide.",
+        "It retained the detailed guide's explicit Android scope and kept the separate iOS product claims platform-specific.",
+        "It consulted Apple's alternative-engine policy for context without inferring that Quetta had shipped an entitled alternative-engine edition."
+      ],
+      "expected": "Product documentation should identify the engine and extension-host availability separately for each operating system, edition and applicable region.",
+      "observed": "The FAQ uses broad cross-platform Chromium/extension language, but the detailed installation guide establishes Android support only. The consulted sources do not identify the actual iOS engine or demonstrate iOS Chrome Web Store hosting.",
+      "evidenceType": "vendor-documented", "confidence": "medium",
+      "limitations": [
+        "This is a scope ambiguity across vendor documents, not proof of an iOS implementation defect or categorical lack of extensions. No binary or installation was tested.",
+        "Apple's documented EU alternative-engine entitlements have minimum iOS 17.4/iPadOS 18 requirements; policy permission is not evidence that any named app uses an alternative engine.",
+        "No affected runtime versions, Chrome gap or new upstream report are established."
+      ],
+      "submission": {"status": "not-submitted", "url": null, "reason": "The handoff preserves an unresolved documentation scope conflict; platform-specific implementation and vendor clarification remain unverified."}
+    },
+    {
+      "id": "R05-I-quetta-data-disclosure",
+      "title": "Quetta privacy copy and Android store disclosures require edition-aware reconciliation",
+      "kind": "source-inconsistency", "status": "needs-validation",
+      "sourceIds": ["R05-Q01", "R05-Q03", "R05-Q08"],
+      "browserIds": ["R05-B-quetta"],
+      "upstreamUrl": null, "upstreamStatus": "No dedicated upstream report or adjudicated data-practice finding was verified.",
+      "reportedVersions": [], "testedVersions": [], "reproduction": "source-only",
+      "steps": [
+        "The saved research read broad no-personal-data collection wording in Quetta website copy.",
+        "It compared that wording with the Android Google Play disclosure of possible personal, app and performance data collection.",
+        "It retained both vendor descriptions without collecting traffic, inspecting private data or assuming identical Android and iOS practices."
+      ],
+      "expected": "Collection statements should identify their platform, edition, feature and service scope so that broad website promises can be interpreted alongside store disclosures.",
+      "observed": "Website copy broadly says no personal data collection, while the observed Android Play disclosure allows some personal/app/performance data collection. The consulted evidence does not establish whether the differing language describes the same edition, settings or service paths.",
+      "evidenceType": "vendor-documented", "confidence": "medium",
+      "limitations": [
+        "Both sides are vendor disclosures. This is not proof of undisclosed collection, deceptive intent or a runtime privacy violation.",
+        "Platform/edition differences may explain some wording; no network audit, account activity or data-flow measurement was performed.",
+        "The Android listing's 2026-11-20 update label does not identify a verified affected software version. No Chrome comparison or new submission was made."
+      ],
+      "submission": {"status": "not-submitted", "url": null, "reason": "Edition, feature and collection scope remain unresolved; documentary differences alone do not establish an actionable runtime defect."}
+    }
+  ],
+  "recommendationCandidates": [
+    {
+      "id": "R05-01", "title": "Disposable incoming-link sessions",
+      "kind": "hypothesis", "status": "needs-validation", "chromeBaselineStatus": "parity-unknown",
+      "description": "Investigate user-chosen private handling of external links together with an understandable disposable-session boundary and erase action. This is an investigation candidate, not a finding that Chrome lacks those capabilities.",
+      "sourceIds": ["R05-F01", "R05-A01", "R05-S01", "R05-S02", "R05-C02", "R05-G01", "R05-G02"],
+      "featureIds": ["R05-F-focus-erase", "R05-F-samsung-private-links", "R05-F-cromite-sessions", "R05-F-vanadium-navigation-privacy"],
+      "platforms": ["Android", "iOS; separate native implementation"],
+      "implementationBoundaries": {
+        "android": "Native browser session lifetime and incoming-link dispatch, with normal/private session separation; not solely a content script.",
+        "ios": "Independent native link handling, storage/session and preview behavior using the actual supported engine. Focus's erase workflow does not imply a plug-in that can govern Chrome's entire lifecycle."
+      },
+      "acceptanceCriteria": [
+        "R01 first records current Chrome Android and iOS behavior, tested version, channel, device and region separately.",
+        "A user can select the intended private destination for external links and understand which session an erase action affects.",
+        "After erase and relaunch, the intended cookies, storage, tabs, restored sessions and previews do not reappear, while normal sessions retain their intended data."
+      ],
+      "evidenceType": "hypothesis", "confidence": "medium", "reproduction": "not-run", "testedVersions": [],
+      "limitations": ["All acceptance criteria are future validation questions, not completed tests. Local disposal does not imply deletion of server records or network-address concealment.", "Vanadium's source example is GrapheneOS-specific; Samsung historical release entries do not supply a current per-build matrix. Chrome parity and feasibility remain unverified."]
+    },
+    {
+      "id": "R05-02", "title": "Understandable per-site controls",
+      "kind": "hypothesis", "status": "needs-validation", "chromeBaselineStatus": "parity-unknown",
+      "description": "Evaluate whether site-specific choices can make origin scope, persistence, exceptions and recovery from breakage easier to understand. The cited browser settings motivate usability questions without establishing missing Chrome controls.",
+      "sourceIds": ["R05-V01", "R05-C02", "R05-C03", "R05-G01", "R05-G02", "R05-Q01", "R05-A01"],
+      "featureIds": ["R05-F-via-site-controls", "R05-F-cromite-site-controls", "R05-F-vanadium-jit", "R05-F-vanadium-filtering", "R05-F-quetta-filtering"],
+      "platforms": ["Android", "iOS; actual-engine constraints apply"],
+      "implementationBoundaries": {
+        "android": "Native site settings and origin-aware state; execution controls additionally depend on engine and sometimes OS support.",
+        "ios": "Native settings limited to mechanisms supported by the actual engine and OS. Reusing a setting label does not reproduce Chromium/V8 or GrapheneOS execution guarantees."
+      },
+      "acceptanceCriteria": [
+        "R01 compares current Chrome's site settings and recovery controls separately on Android and iOS before labeling any gap.",
+        "Each control explains which origin it affects, whether it persists and how the user can reverse it; distinct origins remain distinct.",
+        "A broken site has visible exception/recovery options, and any execution-policy changes are evaluated for compatibility and performance."
+      ],
+      "evidenceType": "hypothesis", "confidence": "medium", "reproduction": "not-run", "testedVersions": [],
+      "limitations": ["No settings persistence, usability or engine behavior was tested. Quetta's filtering descriptions and Via's Android WebView settings are not evidence of identical cross-platform APIs.", "Cromite and Vanadium have explicit compatibility, incomplete-mitigation and platform limitations; these proposals make no security-superiority claim."]
+    },
+    {
+      "id": "R05-03", "title": "Mobile extension compatibility UX",
+      "kind": "hypothesis", "status": "needs-validation", "chromeBaselineStatus": "parity-unknown",
+      "description": "Investigate an extension compatibility experience that checks actual mobile functionality, permissions and lifecycle behavior. Quetta and Yandex document Android hosts; Cromite supplies experimental release-source evidence and Kiwi is a historical implementation reference.",
+      "sourceIds": ["R05-Q02", "R05-Y02", "R05-Y02a", "R05-C03", "R05-C05", "R05-C06", "R05-C07", "R05-K01", "R05-K02", "R05-P01"],
+      "featureIds": ["R05-F-quetta-android-extensions", "R05-F-yandex-android-extensions", "R05-F-cromite-experimental-extensions", "R05-F-kiwi-extensions"],
+      "platforms": ["Android", "iOS; host/API design not established by these Android examples"],
+      "implementationBoundaries": {
+        "android": "Requires a real browser extension host, supported APIs, lifecycle handling and a touch-compatible management surface. Opening a store page alone is not implementation evidence.",
+        "ios": "Requires an independently supported host/API and actual-engine design. Android branding and alternative-engine policy permission do not establish an available iOS Chrome Web Store host."
+      },
+      "acceptanceCriteria": [
+        "R01 establishes Chrome's current platform/channel/region capabilities before assigning a missing-feature status.",
+        "A supported installation exercises its main action, usable popup layout, permission scope, options and persistence rather than only a successful download.",
+        "Compatibility checks cover private-session isolation, browser restart, background suspension and resume; unsupported desktop APIs or companion-app requirements are made explicit."
+      ],
+      "evidenceType": "hypothesis", "confidence": "medium", "reproduction": "not-run", "testedVersions": [],
+      "limitations": ["No extension installation or compatibility testing was performed. Cromite's evidence is experimental/default-off and conflicts with its FAQ; Kiwi maintenance ended after January 2025.", "Code reuse needs individual license and maintenance review. Samsung approved extension apps and Via user scripts are different mechanisms, not interchangeable evidence for a general host."]
+    },
+    {
+      "id": "R05-04", "title": "Reversible, explainable content filtering",
+      "kind": "hypothesis", "status": "needs-validation", "chromeBaselineStatus": "parity-unknown",
+      "description": "Evaluate filtering controls that identify their scope and make site-specific recovery reversible. The source examples motivate clearer distinctions between network filtering, cosmetic changes and site exceptions rather than a claim of comprehensive blocking.",
+      "sourceIds": ["R05-S01", "R05-S04", "R05-C01", "R05-C03", "R05-G01", "R05-G02", "R05-Q01", "R05-A01", "R05-F07"],
+      "featureIds": ["R05-F-samsung-blockers", "R05-F-cromite-filtering", "R05-F-vanadium-filtering", "R05-F-quetta-filtering"],
+      "platforms": ["Android", "iOS; engine-specific rule integration"],
+      "implementationBoundaries": {
+        "android": "Browser-integrated rule processing and native exception controls; distinguish third-party provider apps from a built-in engine.",
+        "ios": "Use the actual engine's supported native content-rule architecture. The inspected Focus WKContentRuleList source is an app-level example, not a blocker automatically installable into Chrome."
+      },
+      "acceptanceCriteria": [
+        "R01 compares existing Chrome filtering and site exceptions by platform and edition before identifying a gap.",
+        "Users can identify, apply and reverse a site exception without unintentionally disabling every protection.",
+        "Validation distinguishes network from cosmetic filtering, records supported rule scope, and checks recovery on sites that break."
+      ],
+      "evidenceType": "hypothesis", "confidence": "medium", "reproduction": "not-run", "testedVersions": [],
+      "limitations": ["No block-rate, request, cosmetic-rule or breakage measurement was performed. Vanadium documents future cosmetic work alongside current mechanisms; source examples do not establish equivalent implementations.", "No superiority, universal anonymity or complete tracker coverage is established, and feasibility remains untested."]
+    },
+    {
+      "id": "R05-05", "title": "Tablet and one-handed browsing",
+      "kind": "hypothesis", "status": "needs-validation", "chromeBaselineStatus": "parity-unknown",
+      "description": "Investigate tablet split browsing and reachable controls using Samsung's explicitly tablet-scoped workflow as documentary inspiration. Compare existing Chrome large-screen and control-placement behavior first.",
+      "sourceIds": ["R05-S01", "R05-S02"],
+      "featureIds": ["R05-F-samsung-tabs", "R05-F-samsung-ergonomics"],
+      "platforms": ["Android phones: control placement", "Android tablets: split browsing", "iPhone/iPad: independently evaluated native UI"],
+      "implementationBoundaries": {
+        "android": "Native layout and independent tab/window state, including accessibility and keyboard insets; an ordinary webpage cannot change Chrome's tab strip.",
+        "ios": "Separate native tablet and phone layouts with their own multitasking/session behavior. Samsung's Android feature does not establish an iOS implementation or portable plug-in."
+      },
+      "acceptanceCriteria": [
+        "R01 documents current Chrome tablet/window and one-handed behavior on the actual version, device and release channel before declaring a gap.",
+        "Two pages remain independently usable through rotation, keyboard entry, tab switching and narrow split sizes.",
+        "Control placement remains reachable and accessible without hiding content or confusing which page has focus."
+      ],
+      "evidenceType": "hypothesis", "confidence": "medium", "reproduction": "not-run", "testedVersions": [],
+      "limitations": ["The Samsung listing explicitly limits Split view to tablets. Historical 2024-and-earlier release entries do not establish today's minimum version or every placement combination.", "No UI, accessibility, keyboard or rotation test was performed; iOS adaptation and Chrome parity are proposals only."]
+    },
+    {
+      "id": "R05-06", "title": "Reader, image and subtitle workflows",
+      "kind": "hypothesis", "status": "needs-validation", "chromeBaselineStatus": "parity-unknown",
+      "description": "Evaluate reading tools that preserve source context while offering image translation and word-level subtitle interactions. Via's iOS reading toolkit and Yandex's distinct Android/iPhone translation paths supply scoped documentary examples.",
+      "sourceIds": ["R05-A01", "R05-V03", "R05-Y03", "R05-Y04"],
+      "featureIds": ["R05-F-via-ios-reading", "R05-F-yandex-android-translation", "R05-F-yandex-iphone-translation", "R05-F-yandex-subtitles"],
+      "platforms": ["Android", "iOS; distinguish in-page OCR from image upload"],
+      "implementationBoundaries": {
+        "android": "Native or page-integrated reader/media interfaces; separately identify the extraction, OCR, translation and subtitle engines or services.",
+        "ios": "Independent reader and translation integrations with actual media access limits. An image-upload flow must remain distinguishable from Android in-page translated-image overlays."
+      },
+      "acceptanceCriteria": [
+        "R01 inventories current Chrome reading, translation and supported-media tools for each platform before asserting a gap.",
+        "The experience preserves source context, language and video limitations, accessibility and an immediate way to view original content.",
+        "Uploaded/remote-processed content is identified, unsupported media is handled explicitly, and subtitle setup/re-entry to fullscreen or PiP is tested."
+      ],
+      "evidenceType": "hypothesis", "confidence": "medium", "reproduction": "not-run", "testedVersions": [],
+      "limitations": ["No extraction, OCR, translation accuracy, upload, subtitle or accessibility test was performed. Publisher language counts and supported-video statements are not universal coverage guarantees.", "Remote processing, offline operation and service privacy guarantees remain unresolved; the Android and iPhone examples are not equivalent implementations."]
+    },
+    {
+      "id": "R05-07", "title": "Honest offline media state",
+      "kind": "hypothesis", "status": "needs-validation", "chromeBaselineStatus": "parity-unknown",
+      "description": "Investigate a media workspace that clearly distinguishes queued links, incomplete downloads and verified offline-playable files, with reliable recovery of permitted supported downloads. Quetta, Aloha and edition-specific UC features motivate the workflow questions.",
+      "sourceIds": ["R05-Q06", "R05-Q07", "R05-L01", "R05-A01", "R05-U01", "R05-U04"],
+      "featureIds": ["R05-F-quetta-media", "R05-F-aloha-media", "R05-F-uc-international-media", "R05-F-uc-china-playback"],
+      "platforms": ["Android", "iOS; media-site and OS restrictions apply"],
+      "implementationBoundaries": {
+        "android": "Browser, download manager, storage and media-session integration; a playlist bookmark alone is not a downloaded file.",
+        "ios": "Independent storage/download/playback integration using supported OS and website facilities, with separate PiP and background lifecycle behavior."
+      },
+      "acceptanceCriteria": [
+        "R01 compares current Chrome download, queue, recovery and offline states by platform before identifying a gap.",
+        "The UI distinguishes bookmarked URL, partial file and successfully checked offline-playable content, including after network loss and relaunch.",
+        "Interrupted supported downloads recover predictably; unsupported formats, site restrictions and DRM-restricted sources fail clearly instead of claiming offline success."
+      ],
+      "evidenceType": "hypothesis", "confidence": "medium", "reproduction": "not-run", "testedVersions": [],
+      "limitations": ["No media file was downloaded or played. Account, plan, region, format and site permissions remain relevant, and universal downloading is not proposed or established.", "UC's Chinese iOS playback notes are distinct from its international Android download offering. Aloha's paid sharing/archive facilities are not automatically free cross-platform features."]
+    },
+    {
+      "id": "R05-08", "title": "Portable local browsing data",
+      "kind": "hypothesis", "status": "needs-validation", "chromeBaselineStatus": "parity-unknown",
+      "description": "Evaluate account-optional local import/export of supported browsing data, starting from the documented bookmark workflow. Cromite's local tools contrast with Via, Aloha and Yandex's different account/service synchronization dependencies; those sync examples do not themselves prove local portability.",
+      "sourceIds": ["R05-C02", "R05-A01", "R05-Y01"],
+      "featureIds": ["R05-F-cromite-local-data", "R05-F-via-icloud", "R05-F-aloha-sync", "R05-F-yandex-sync"],
+      "platforms": ["Android", "iOS"],
+      "implementationBoundaries": {
+        "android": "Native file selection and format-aware import/export, separate from a cloud synchronization backend.",
+        "ios": "Native local-file workflows and an explicit supported-data contract, independent of whether account-backed iCloud or another synchronization service is offered."
+      },
+      "acceptanceCriteria": [
+        "R01 checks current Chrome mobile import/export and supported data types before assigning a missing-feature label.",
+        "Supported data can be exported and imported without requiring a new cloud account.",
+        "An export/import round-trip preserves supported structure and identifies unsupported fields or partial imports instead of silently losing them."
+      ],
+      "evidenceType": "hypothesis", "confidence": "medium", "reproduction": "not-run", "testedVersions": [],
+      "limitations": ["No files were exported/imported and no accounts were accessed. Field coverage, format compatibility, conflicts and security of actual exports remain untested.", "The proposal does not claim all local state is portable, nor that iCloud, Aloha-account and Yandex-account sync offer equivalent data coverage or privacy properties."]
+    },
+    {
+      "id": "R05-09", "title": "Experimental execution hardening",
+      "kind": "hypothesis", "status": "needs-validation", "chromeBaselineStatus": "parity-unknown",
+      "description": "Investigate experimental per-site execution policies and usable exceptions, with performance and compatibility evidence preceding security claims. Cromite and Vanadium document JIT policies but have materially different engine/build and OS prerequisites.",
+      "sourceIds": ["R05-C01", "R05-C02", "R05-C03", "R05-G01", "R05-G02", "R05-P01"],
+      "featureIds": ["R05-F-cromite-site-controls", "R05-F-vanadium-jit", "R05-F-vanadium-hardening"],
+      "platforms": ["Android; engine/build and sometimes OS/hardware work", "iOS; actual-engine/OS feasibility unresolved"],
+      "implementationBoundaries": {
+        "android": "Engine/build changes and possibly OS-enforced process restrictions; performance, WebAssembly and hardware support are part of feasibility, not a toolbar-only change.",
+        "ios": "A separate engine/OS design based on the actually shipped implementation. Chromium/V8 patches cannot simply be inserted into a WebKit-hosted browser; policy entitlements alone do not establish a shipped alternative."
+      },
+      "acceptanceCriteria": [
+        "R01 establishes current Chrome execution and site-isolation controls by platform/version before labeling a gap.",
+        "Measure page performance, WebAssembly behavior and representative site compatibility with the actual supported build, OS and hardware prerequisites recorded.",
+        "Per-site exceptions and recovery remain understandable and reversible; any claimed security improvement is separately evidenced rather than inferred from a setting name."
+      ],
+      "evidenceType": "hypothesis", "confidence": "medium", "reproduction": "not-run", "testedVersions": [],
+      "limitations": ["No engine build, performance benchmark, exploit-resistance test or security ranking was produced. Browser and app-WebView defaults differ in Vanadium's documentation.", "GrapheneOS-only distribution, incomplete mitigations, feature tradeoffs and patch-specific licensing remain constraints. The proposal is experimental, with no validated benefit or Chrome parity determination."]
+    },
+    {
+      "id": "R05-10", "title": "Explicit network-service scope",
+      "kind": "hypothesis", "status": "needs-validation", "chromeBaselineStatus": "parity-unknown",
+      "description": "Evaluate whether a browser-associated network service can communicate routing scope, plan limits and failure states accurately. Aloha's paid device-wide boundary and UC's less-specific international Android VPN description motivate explicit distinctions from local Incognito state.",
+      "sourceIds": ["R05-L01", "R05-A01", "R05-U01"],
+      "featureIds": ["R05-F-aloha-vpn", "R05-F-uc-international-vpn"],
+      "platforms": ["Android", "iOS; independently supported service and OS integration"],
+      "implementationBoundaries": {
+        "android": "Service infrastructure and native networking integration with an explicit traffic boundary; not simply a normal tab or page-script toggle.",
+        "ios": "Independent native networking and service design with its own supported scope and availability. Browser-only routing must not be represented as device-wide protection."
+      },
+      "acceptanceCriteria": [
+        "R01 checks current Chrome and associated service behavior, edition, plan and region before treating this as a missing capability or product recommendation.",
+        "The UI accurately distinguishes browser-only routing, device-wide routing and local Incognito storage behavior.",
+        "Supported traffic scope, plan/region limits and connection failures are validated against actual behavior; no-log, anonymity or protection claims require their own evidence."
+      ],
+      "evidenceType": "hypothesis", "confidence": "medium", "reproduction": "not-run", "testedVersions": [],
+      "limitations": ["No VPN connection, packet capture, routing failure, service audit or network-address measurement was performed. Quotas, endpoint behavior and UC's exact routing scope remain unknown.", "Aloha's free/paid scopes are not identical. This candidate does not recommend a particular network provider or establish a Chrome feature gap; implementation and operating costs were not assessed."]
+    }
+  ],
+  "limitations": [
+    "Complete means the assigned documentary handoff has been converted into sources, ten browser records, substantive features, source inconsistencies and ten proposal candidates. It does not mean unresolved engine, distribution, runtime, Chrome parity or feasibility questions have been answered.",
+    "Research is documentary and source-inspected, not hands-on: no installations, browser launches, reproductions, compatibility tests, benchmarks, VPN captures or cryptographic audits were performed.",
+    "All Chrome improvement candidates are hypotheses with parity unknown until R01 compares current Android and iOS versions separately, including device, region and channel. This lane establishes no missing Chrome feature.",
+    "Retrieval dates refer to the saved research session on 2026-11-21. Page metadata, repository creation dates, corporate founding dates and unrelated extractor dates were not promoted to publication dates. Known version-release dates are labeled as such.",
+    "Storefront/API records are snapshots. Recent source activity does not prove prompt binary security delivery, and an old release does not prove formal discontinuation. Kiwi has an explicit maintenance-ending notice; Focus has repository migrations.",
+    "Platform, package, region, device, account, plan and media-site boundaries remain attached to claims. No privacy/security/performance superiority ranking is supported."
+  ]
+}

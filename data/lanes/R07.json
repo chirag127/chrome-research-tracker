@@ -1,0 +1,1556 @@
+{
+  "schemaVersion": 1,
+  "id": "R07",
+  "title": "Chrome/Chromium UI, menus, toolbar, tab strip, context menus, and settings",
+  "agentSessionId": "ses_e018c785effea8CQ4RypYDSiZs",
+  "scope": "Publicly documented browser-chrome defects and usability complaints, including toolbar pinning and the operating-system settings surface for Chrome permissions. Excludes general web rendering, DevTools, security vulnerability hunting, and local build work.",
+  "status": "complete",
+  "researchCutoff": "2026-11-21",
+  "retrievalWindow": {
+    "from": "2026-11-21T14:13:25Z",
+    "to": "2026-11-21T14:44:47Z"
+  },
+  "summary": {
+    "primaryIssueRecords": 12,
+    "openBugRecords": 4,
+    "openFeatureRequests": 1,
+    "fixedOrVerifiedBugRecords": 5,
+    "otherClosedBugRecords": 1,
+    "closedFeatureRequests": 1,
+    "snippetOnlyMainRecords": 0,
+    "localReproductions": 0,
+    "unresolvedRelatedLeads": 2
+  },
+  "evidenceInterpretation": {
+    "observedFacts": "Issue identities, original descriptions, current status snapshots, components, timestamps, and selected linked changes were read from public primary sources. Source verification is not local reproduction.",
+    "reportedBehavior": "Issue steps, expected results, symptoms, affected versions, frequency, and workarounds are attributed to the cited reporter or contributor. All reproduction procedures in this dataset remain unexecuted locally.",
+    "engineeringClaims": "Fix and proposed-fix explanations are their authors' assessments. A merged change establishes integration into its stated branch, not successful behavior in every released binary.",
+    "confidence": "Confidence concerns the documentary support for the record and its qualifications, not an assertion of hands-on verification.",
+    "statusMethod": "Reader-mode extraction returned empty bodies for four initial issue requests. Anonymous HTTP HTML contained original descriptions and current snapshots in defrostedResourcesJspb, which were parsed as data without executing page code. Numeric statuses were decoded using the public tracker client mapping and official status definitions.",
+    "sourceIds": [
+      "R07-source-status-definitions",
+      "R07-source-tracker-status-mapping"
+    ]
+  },
+  "sources": [
+    {
+      "id": "R07-source-475853506",
+      "title": "Tab strip not scrolling after mandatory chrome update",
+      "url": "https://issues.chromium.org/issues/475853506",
+      "retrievedAt": "2026-11-21T14:17:39Z",
+      "publishedAt": "2026-01-14T18:21:44Z",
+      "updatedAt": "2026-11-04T20:32:14Z",
+      "kind": "issue-tracker",
+      "quotations": [
+        {
+          "text": "You also can't get back to tabs that have gone off the tab bar without searching for them.",
+          "attribution": "Original reporter"
+        }
+      ],
+      "limitations": [
+        "Original description and current snapshot read from public HTML; complete comment history and attachments were not read.",
+        "Initial reader-mode content was empty; direct public-data extraction recovered this record."
+      ]
+    },
+    {
+      "id": "R07-source-587381526",
+      "title": "Clicking a toolbar button moves keyboard focus onto it (native toolbar buttons don't take focus on click)",
+      "url": "https://issues.chromium.org/issues/587381526",
+      "retrievedAt": "2026-11-21T14:17:39Z",
+      "publishedAt": "2026-11-18T16:53:44Z",
+      "updatedAt": "2026-11-20T17:51:02Z",
+      "kind": "issue-tracker",
+      "quotations": [
+        {
+          "text": "Typing or Tab after a click goes somewhere unexpected.",
+          "attribution": "Engineering report"
+        }
+      ],
+      "limitations": [
+        "The reproduction requires an experimental WebUI toolbar configuration; no released build number was supplied.",
+        "Original description and current snapshot read; complete comment history was not retrieved."
+      ]
+    },
+    {
+      "id": "R07-source-365519965",
+      "title": "Chome tab group has duplicate entries",
+      "url": "https://issues.chromium.org/issues/365519965",
+      "retrievedAt": "2026-11-21T14:17:39Z",
+      "publishedAt": "2024-09-09T13:37:54Z",
+      "updatedAt": "2026-05-30T03:01:13Z",
+      "kind": "issue-tracker",
+      "quotations": [
+        {
+          "text": "My Tab group has duplicate enteries",
+          "attribution": "Original reporter; spelling preserved"
+        }
+      ],
+      "limitations": [
+        "The original report lacks a reproducible sequence and browser version; its attachment was not inspected.",
+        "Later activity does not establish reopening; the observed current status was Fixed."
+      ]
+    },
+    {
+      "id": "R07-source-387203448",
+      "title": "Context menu does not appear for empty tabstrip in immersive full screen when “Always Show Toolbar in Full Screen” is disabled on MacOS",
+      "url": "https://issues.chromium.org/issues/387203448",
+      "retrievedAt": "2026-11-21T14:17:39Z",
+      "publishedAt": "2025-01-02T11:38:34Z",
+      "updatedAt": "2026-01-05T09:48:56Z",
+      "kind": "issue-tracker",
+      "quotations": [
+        {
+          "text": "Observe that the context menu does not appear",
+          "attribution": "Original QA reproduction steps"
+        }
+      ],
+      "limitations": [
+        "A Stable-channel field says the issue does not reproduce, while the report's concluding note says it reproduces on Stable.",
+        "Current status is Not reproducible; the full closing rationale was not recovered."
+      ]
+    },
+    {
+      "id": "R07-source-496291031",
+      "title": "Double-clicking empty area of vertical tab strip does not zoom/maximize window on macOS",
+      "url": "https://issues.chromium.org/issues/496291031",
+      "retrievedAt": "2026-11-21T14:18:24Z",
+      "publishedAt": "2026-03-26T06:20:04Z",
+      "updatedAt": "2026-04-23T04:59:42Z",
+      "kind": "issue-tracker",
+      "quotations": [
+        {
+          "text": "Double-click on the empty area (below the last tab) in the vertical tab strip",
+          "attribution": "Original reporter"
+        }
+      ],
+      "limitations": [
+        "Fixed (Verified) is the upstream tracker status, not a local verification by this project.",
+        "Exact first Stable build containing the fix was not established."
+      ]
+    },
+    {
+      "id": "R07-source-564673918",
+      "title": "UI bug: Chrome tab hover cards get stuck when cursor moves to a secondary monitor.",
+      "url": "https://issues.chromium.org/issues/564673918",
+      "retrievedAt": "2026-11-21T14:18:24Z",
+      "publishedAt": "2026-09-22T04:55:58Z",
+      "updatedAt": "2026-10-21T23:46:23Z",
+      "kind": "issue-tracker",
+      "quotations": [
+        {
+          "text": "the hover card gets permanently stuck in an active, visible state.",
+          "attribution": "Original reporter"
+        }
+      ],
+      "limitations": [
+        "The reporter is unsure of the channel, and 153.0.0.0 does not establish an exact patch build.",
+        "A missed mouse-exit event is a reporter hypothesis; the related record 524087116 was unresolved."
+      ]
+    },
+    {
+      "id": "R07-source-483899631",
+      "title": "Please add a feature to remove the \"Open Link in Split View\" from the right click context menu.",
+      "url": "https://issues.chromium.org/issues/483899631",
+      "retrievedAt": "2026-11-21T14:18:24Z",
+      "publishedAt": "2026-02-12T18:46:38Z",
+      "updatedAt": "2026-09-26T00:40:45Z",
+      "kind": "issue-tracker",
+      "quotations": [
+        {
+          "text": "This leads to muscle memory doing the wrong thing",
+          "attribution": "Feature-request author"
+        }
+      ],
+      "limitations": [
+        "This is product/UX feedback classified upstream as a Feature Request and closed as Intended behavior.",
+        "Current menu ordering and configuration were not inspected in a running browser; complete closure discussion was not retrieved."
+      ]
+    },
+    {
+      "id": "R07-source-552741956",
+      "title": "Chrome 152 window rendering/input breaks after moving to another monitor and maximizing",
+      "url": "https://issues.chromium.org/issues/552741956",
+      "retrievedAt": "2026-11-21T14:18:33Z",
+      "publishedAt": "2026-08-26T16:26:44Z",
+      "updatedAt": "2026-11-14T23:21:06Z",
+      "kind": "issue-tracker",
+      "quotations": [
+        {
+          "text": "the visible UI no longer matches the actual mouse input coordinates.",
+          "attribution": "Original reporter"
+        }
+      ],
+      "limitations": [
+        "Reproduction and workaround claims refer to the reporter's Linux/X11, KDE, three-monitor configuration.",
+        "Current upstream status is Fixed (Verified); exact first public Stable binary containing all relevant fixes was not established."
+      ]
+    },
+    {
+      "id": "R07-source-504663589",
+      "title": "Feature Request: Option to lock tab groups so new tabs open outside the group",
+      "url": "https://issues.chromium.org/issues/504663589",
+      "retrievedAt": "2026-11-21T14:18:33Z",
+      "publishedAt": "2026-04-21T08:20:36Z",
+      "updatedAt": "2026-04-21T15:34:56Z",
+      "kind": "issue-tracker",
+      "quotations": [
+        {
+          "text": "The group's composition stays intentionally fixed by the user.",
+          "attribution": "Feature-request author describing desired behavior"
+        }
+      ],
+      "limitations": [
+        "The current request supplies no exact browser version or operating system.",
+        "Cross-browser prevalence and the lack of workarounds are reporter assertions, not independently verified findings."
+      ]
+    },
+    {
+      "id": "R07-source-469174762",
+      "title": "Android: Bottom toolbar gets incorrect top inset with edge-to-edge on Omnibox result page",
+      "url": "https://issues.chromium.org/issues/469174762",
+      "retrievedAt": "2026-11-21T14:18:34Z",
+      "publishedAt": "2025-12-16T08:42:41Z",
+      "updatedAt": "2026-02-12T01:44:13Z",
+      "kind": "issue-tracker",
+      "quotations": [
+        {
+          "text": "an unexpected blank space equal to the status bar height appearing above the toolbar.",
+          "attribution": "Engineering report"
+        }
+      ],
+      "limitations": [
+        "No exact browser build is supplied; the described behavior depends on edge-to-edge and bottom-toolbar configuration.",
+        "Current flag availability, defaults, and first shipping fix version were not established."
+      ]
+    },
+    {
+      "id": "R07-source-540469616",
+      "title": "Duplicate Google Chrome entries in macOS Local Network privacy settings",
+      "url": "https://issues.chromium.org/issues/540469616",
+      "retrievedAt": "2026-11-21T14:18:34Z",
+      "publishedAt": "2026-07-30T08:51:33Z",
+      "updatedAt": "2026-09-03T07:55:24Z",
+      "kind": "issue-tracker",
+      "quotations": [
+        {
+          "text": "This makes it impossible to identify which entry belongs to the current Chrome installation",
+          "attribution": "Original reporter"
+        }
+      ],
+      "limitations": [
+        "Exact macOS release, channel, and Chrome patch build are unspecified.",
+        "The report does not establish whether Chrome, macOS permission bookkeeping, or multiple installations cause the duplicated entries."
+      ]
+    },
+    {
+      "id": "R07-source-457156374",
+      "title": "Extensions installed through the registry are unable to be default_pinned",
+      "url": "https://issues.chromium.org/issues/457156374",
+      "retrievedAt": "2026-11-21T14:18:34Z",
+      "publishedAt": "2025-11-02T16:49:31Z",
+      "updatedAt": "2026-10-03T03:00:44Z",
+      "kind": "issue-tracker",
+      "quotations": [
+        {
+          "text": "After the extension is enabled, its icon does not appear on the toolbar.",
+          "attribution": "Original reporter"
+        }
+      ],
+      "limitations": [
+        "The source's Chrome version value is Any, not an established affected-version range.",
+        "The original registry recipe mixes extension identifiers and paths; it is not retained as an executable configuration."
+      ]
+    },
+    {
+      "id": "R07-source-478527840",
+      "title": "Chrome UI Regression: Removal of Tab Scrolling and Buttons Severely Impacts Multi-Tab Workflows",
+      "url": "https://issues.chromium.org/issues/478527840",
+      "retrievedAt": "2026-11-21T14:44:46Z",
+      "publishedAt": "2026-01-25T15:35:34Z",
+      "updatedAt": "2026-07-28T20:14:40Z",
+      "kind": "issue-tracker",
+      "upstreamStatus": "Duplicate",
+      "duplicateOf": "https://issues.chromium.org/issues/475853506",
+      "quotations": [
+        {
+          "text": "Please restore horizontal tab scrolling (with scroll buttons)",
+          "attribution": "Feature-request author"
+        }
+      ],
+      "limitations": [
+        "Folded into canonical record 475853506 rather than counted as another main issue.",
+        "Sweeping affected-user-count and productivity claims were not independently substantiated."
+      ]
+    },
+    {
+      "id": "R07-source-443106403",
+      "title": "No context menu when right-clicking on tabstring on macOS 26 immersive",
+      "url": "https://issues.chromium.org/issues/443106403",
+      "retrievedAt": "2026-11-21T14:44:46Z",
+      "publishedAt": "2025-09-05T03:20:47Z",
+      "updatedAt": "2026-01-09T14:33:38Z",
+      "kind": "issue-tracker",
+      "upstreamStatus": "Duplicate",
+      "duplicateOf": "https://issues.chromium.org/issues/387203448",
+      "quotations": [
+        {
+          "text": "launch edge on MacOS",
+          "attribution": "Original reproduction step"
+        }
+      ],
+      "limitations": [
+        "The reproduction explicitly names Edge. The observed duplicate relationship is not an independent Chrome reproduction.",
+        "Folded into canonical record 387203448."
+      ]
+    },
+    {
+      "id": "R07-source-492117351",
+      "title": "Split view cannot be disabled. I keep clicking on it accidentally. I never want to use split view.",
+      "url": "https://issues.chromium.org/issues/492117351",
+      "retrievedAt": "2026-11-21T14:44:46Z",
+      "publishedAt": "2026-03-12T13:54:38Z",
+      "updatedAt": "2026-03-12T16:38:38Z",
+      "kind": "issue-tracker",
+      "upstreamStatus": "Duplicate",
+      "duplicateOf": "https://issues.chromium.org/issues/483899631",
+      "quotations": [
+        {
+          "text": "Please let me turn this off!",
+          "attribution": "Original reporter"
+        }
+      ],
+      "limitations": [
+        "Folded into canonical feature request 483899631 despite this duplicate's Bug type.",
+        "Windows and version 145.0.0.0 are reported; present-day menu behavior was not tested."
+      ]
+    },
+    {
+      "id": "R07-source-40742612",
+      "title": "Ability to lock tab groups?",
+      "url": "https://issues.chromium.org/issues/40742612",
+      "retrievedAt": "2026-11-21T14:44:46Z",
+      "publishedAt": "2021-01-15T19:01:35Z",
+      "updatedAt": "2022-02-01T19:23:29Z",
+      "kind": "issue-tracker",
+      "upstreamStatus": "Won't fix (Obsolete)",
+      "quotations": [
+        {
+          "text": "any links from that group's tabs will be opened outside the group.",
+          "attribution": "Historical feature-request author describing desired behavior"
+        }
+      ],
+      "limitations": [
+        "Related historical request cited by 504663589; no formal duplicate mapping from the current request was observed.",
+        "Its Chrome 87.0.4280.141 report and Obsolete closure do not determine the current request's lifecycle."
+      ]
+    },
+    {
+      "id": "R07-source-status-definitions",
+      "title": "Issues — Google Issue Tracker",
+      "url": "https://developers.google.com/issue-tracker/concepts/issues",
+      "retrievedAt": "2026-11-21T14:20:43Z",
+      "publishedAt": "2025-02-04",
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Open issues are those that are awaiting resolution.",
+          "attribution": "Google Issue Tracker documentation"
+        },
+        {
+          "text": "Product works as intended, but could be improved through the specified changes.",
+          "attribution": "Google's definition of Feature Request"
+        }
+      ],
+      "limitations": [
+        "Publication date is the page metadata date; this general documentation does not verify any particular Chrome behavior.",
+        "Teams can use statuses differently; current issue state and source qualifications remain important."
+      ]
+    },
+    {
+      "id": "R07-source-tracker-status-mapping",
+      "title": "Public Issue Tracker client numeric status mappings",
+      "url": "https://www.gstatic.com/_/buganizer/_/js/k=buganizer.b.en_US.Hx_8ilZ1QCE.2018.O/am=AkAAYA/d=1/rs=AI3Ihhq_V2E_ndcb2iZwoKqX7T2bznB_BQ/m=c",
+      "retrievedAt": "2026-11-21T14:19:23Z",
+      "publishedAt": null,
+      "kind": "source-code",
+      "quotations": [
+        {
+          "text": "1:\"NEW\",2:\"ASSIGNED\",3:\"ACCEPTED\",4:\"FIXED\",5:\"VERIFIED\"",
+          "attribution": "Public deployed client mapping, inspected as text"
+        },
+        {
+          "text": "6:\"NOT_REPRODUCIBLE\",7:\"INTENDED_BEHAVIOR\",8:\"OBSOLETE\",9:\"INFEASIBLE\",10:\"DUPLICATE\"",
+          "attribution": "Public deployed client mapping, inspected as text"
+        }
+      ],
+      "limitations": [
+        "Publication date is unknown and the deployed bundle URL may change.",
+        "The client was read as text, not executed; it supplies decoding evidence rather than browser-defect evidence."
+      ]
+    },
+    {
+      "id": "R07-source-cl-5961164",
+      "title": "[TabGroupsSync] Cache id mapping to preserve saved state of tab groups",
+      "url": "https://chromium-review.googlesource.com/changes/5961164/detail?o=CURRENT_REVISION&o=CURRENT_COMMIT",
+      "webUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/5961164",
+      "retrievedAt": "2026-11-21T14:41:35Z",
+      "publishedAt": "2024-10-24T21:36:25Z",
+      "updatedAt": "2024-10-29T01:20:25Z",
+      "mergedAt": "2024-10-29T01:20:25Z",
+      "kind": "source-code",
+      "changeStatus": "MERGED",
+      "branch": "main",
+      "sourceRevision": "76fecc7ff6bfd49486fa617aa05d77a46ab94e93",
+      "quotations": [
+        {
+          "text": "This prevents duplicate groups from being created when we restart or crash on startup",
+          "attribution": "Fix author; line break normalized"
+        }
+      ],
+      "limitations": [
+        "Gerrit metadata and commit message were read; the full diff and runtime behavior were not evaluated.",
+        "The stated trigger is an engineering explanation, not a sequence supplied in the original complaint."
+      ]
+    },
+    {
+      "id": "R07-source-cl-5983233",
+      "title": "[M131][TabGroupsSync] Cache id mapping to preserve saved state of tab groups",
+      "url": "https://chromium-review.googlesource.com/changes/5983233/detail?o=CURRENT_REVISION&o=CURRENT_COMMIT",
+      "webUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/5983233",
+      "retrievedAt": "2026-11-21T14:41:35Z",
+      "publishedAt": "2024-10-31T16:50:22Z",
+      "updatedAt": "2024-10-31T19:00:15Z",
+      "mergedAt": "2024-10-31T19:00:15Z",
+      "kind": "source-code",
+      "changeStatus": "MERGED",
+      "branch": "refs/branch-heads/6778",
+      "sourceRevision": "7706f535cc6b9c74b6e48f4bc25437d73a393e05",
+      "quotations": [
+        {
+          "text": "Bug: 365519965",
+          "attribution": "Merged M131 backport message"
+        }
+      ],
+      "limitations": [
+        "Establishes a merged M131 branch backport, not independent testing of a released binary."
+      ]
+    },
+    {
+      "id": "R07-source-cl-8830787",
+      "title": "WebUIToolbar: no click focus for buttons + chips",
+      "url": "https://chromium-review.googlesource.com/changes/8830787/detail?o=CURRENT_REVISION&o=CURRENT_COMMIT",
+      "webUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/8830787",
+      "retrievedAt": "2026-11-21T14:41:35Z",
+      "publishedAt": "2026-11-17T13:32:03Z",
+      "updatedAt": "2026-11-20T17:50:48Z",
+      "kind": "source-code",
+      "changeStatus": "NEW",
+      "branch": "main",
+      "sourceRevision": "bf051b29af88f40a8d4a3cad2851b0e8c5ad1d87",
+      "quotations": [
+        {
+          "text": "This also fixes opening the app menu unselecting omnibox text",
+          "attribution": "Proposed-fix author"
+        }
+      ],
+      "limitations": [
+        "NEW means the observed proposal was unmerged; its fix language is not proof of a shipped correction.",
+        "Other referenced issue IDs do not establish duplicate relationships and are not additional main issues."
+      ]
+    },
+    {
+      "id": "R07-source-fix-496291031",
+      "title": "mac: Handle double-click-to-zoom on custom draggable regions",
+      "url": "https://chromium.googlesource.com/chromium/src/+/2be0ae48ad7c700ec9dca07e83e73407947cbad4",
+      "retrievedAt": "2026-11-21T14:38:37Z",
+      "publishedAt": "2026-04-21",
+      "kind": "source-code",
+      "sourceRevision": "2be0ae48ad7c700ec9dca07e83e73407947cbad4",
+      "reviewUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/7749225",
+      "quotations": [
+        {
+          "text": "Also adds a browser test that verifies double-clicking on the vertical tab strip's empty area zooms the window.",
+          "attribution": "Landed-fix author; line break normalized"
+        }
+      ],
+      "limitations": [
+        "Landed source and author-described test coverage were inspected; the test was not run by this project.",
+        "First Stable release containing the change was not established."
+      ]
+    },
+    {
+      "id": "R07-source-fix-469174762",
+      "title": "[E2E] Fix top inset consumption when omnibox is active on bottom toolbar",
+      "url": "https://chromium.googlesource.com/chromium/src/+/dd8ba744e49b4f97caa2d3eb1ff9cb5335dc04be",
+      "retrievedAt": "2026-11-21T14:38:37Z",
+      "publishedAt": "2026-01-09",
+      "kind": "source-code",
+      "sourceRevision": "dd8ba744e49b4f97caa2d3eb1ff9cb5335dc04be",
+      "reviewUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/7267746",
+      "quotations": [
+        {
+          "text": "This CL updates ToolbarPhone and Omnibox to observe edge-to-edge changes and apply the correct top padding",
+          "attribution": "Landed-fix author; line break normalized"
+        }
+      ],
+      "limitations": [
+        "The change description was read, but its linked demonstration videos were not opened.",
+        "Availability in a specific released Android build remains unverified."
+      ]
+    },
+    {
+      "id": "R07-source-fix-552741956-initial",
+      "title": "Ozone: X11: Set _NET_STARTUP_ID as UTF8_STRING",
+      "url": "https://chromium.googlesource.com/chromium/src/+/46f7721abc728d993b52cc180bf0fe00f3401260",
+      "retrievedAt": "2026-11-21T14:38:37Z",
+      "publishedAt": "2026-09-01",
+      "kind": "source-code",
+      "sourceRevision": "46f7721abc728d993b52cc180bf0fe00f3401260",
+      "reviewUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/8301193",
+      "quotations": [
+        {
+          "text": "Fixed: 552741956",
+          "attribution": "Initial landed change message"
+        }
+      ],
+      "limitations": [
+        "This initial issue-linked correction is not the full fix lineage; a later geometry-cache change was also merged."
+      ]
+    },
+    {
+      "id": "R07-source-cl-8427141",
+      "title": "[M154] Ozone: X11: Fix window resizing after NotifyStartupComplete()",
+      "url": "https://chromium-review.googlesource.com/changes/8427141/detail?o=CURRENT_REVISION&o=CURRENT_COMMIT",
+      "webUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/8427141",
+      "retrievedAt": "2026-11-21T14:44:47Z",
+      "publishedAt": "2026-09-17T17:24:13Z",
+      "updatedAt": "2026-09-17T18:55:59Z",
+      "mergedAt": "2026-09-17T18:55:59Z",
+      "kind": "source-code",
+      "changeStatus": "MERGED",
+      "branch": "refs/branch-heads/8037",
+      "sourceRevision": "8396458aadddbf810170406e3b27fa0b392c6928",
+      "originalReviewUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/8392418",
+      "quotations": [
+        {
+          "text": "X11Window::OnBoundsChanged() is never called again for the lifetime of the window",
+          "attribution": "Fix-author explanation of the defect; line break normalized"
+        }
+      ],
+      "limitations": [
+        "This proves an M154 branch merge, not the exact first public Stable binary containing the fix.",
+        "Other bug references in this change are not independently counted or asserted to be duplicates."
+      ]
+    },
+    {
+      "id": "R07-source-fix-457156374",
+      "title": "[Extensions] Fix default_pinned for registry installations",
+      "url": "https://chromium.googlesource.com/chromium/src/+/5c9ced36765132da8c3bd8de398862a47cd082e6",
+      "retrievedAt": "2026-11-21T14:38:37Z",
+      "publishedAt": "2025-12-09",
+      "kind": "source-code",
+      "sourceRevision": "5c9ced36765132da8c3bd8de398862a47cd082e6",
+      "reviewUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/7109981",
+      "quotations": [
+        {
+          "text": "A new unit test is added to specifically cover this race condition scenario.",
+          "attribution": "Landed-fix author; line break normalized"
+        }
+      ],
+      "limitations": [
+        "Author-described race correction and test coverage were not locally executed.",
+        "A later unmerged proposal describes an over-correction affecting persistence of a user unpin."
+      ]
+    },
+    {
+      "id": "R07-source-cl-7903002",
+      "title": "Extensions: Only re-evaluate default_pinned for newly installed actions",
+      "url": "https://chromium-review.googlesource.com/changes/7903002/detail?o=CURRENT_REVISION&o=CURRENT_COMMIT",
+      "webUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/7903002",
+      "retrievedAt": "2026-11-21T14:44:47Z",
+      "publishedAt": "2026-06-05T12:06:36Z",
+      "updatedAt": "2026-06-18T19:50:19Z",
+      "kind": "source-code",
+      "changeStatus": "NEW",
+      "branch": "main",
+      "sourceRevision": "b2f3a4c8d08ea8c884b27c24eebfc0072b113610",
+      "quotations": [
+        {
+          "text": "The user's unpin was silently undone on the next unrelated policy change.",
+          "attribution": "Proposed-fix author; line break normalized"
+        }
+      ],
+      "limitations": [
+        "The proposal remained NEW; neither its shipping status nor its reported regression was locally verified.",
+        "This evidence does not reopen the original Fixed issue or create a separately confirmed issue record."
+      ]
+    },
+    {
+      "id": "R07-source-split-view-help",
+      "title": "Use split view for multitasking in Chrome",
+      "url": "https://support.google.com/chrome/answer/16971124?hl=en-en&ref_topic=7439636",
+      "retrievedAt": "2026-11-21T14:40:01Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "quotations": [
+        {
+          "text": "Select Open link in split view.",
+          "attribution": "Google Chrome Help; formatting normalized"
+        },
+        {
+          "text": "Turn Allow split view drag-and-drop on left, right, or bottom edge of window off.",
+          "attribution": "Google Chrome Help; formatting normalized"
+        }
+      ],
+      "limitations": [
+        "No reliable publication or update date was exposed; the extractor's generic date was rejected.",
+        "The documented setting disables drag-and-drop initiation; the page does not say that it removes the link context-menu command."
+      ]
+    },
+    {
+      "id": "R07-source-release-fetch-gap",
+      "title": "Chrome Releases: Stable Channel Update for Desktop — October 2026",
+      "url": "https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop.html",
+      "retrievedAt": "2026-11-21",
+      "publishedAt": null,
+      "kind": "release-note",
+      "accessOutcome": "HTTP 429; primary body not retrieved",
+      "retrievalTimeNote": "Fetch attempted at approximately 14:40 UTC.",
+      "quotations": [],
+      "limitations": [
+        "This entry records a failed fetch, not verified release content.",
+        "The search snippet's date and version text were not promoted to primary-source evidence; exact first Stable fix availability remains unknown."
+      ]
+    }
+  ],
+  "browsers": [],
+  "features": [],
+  "issues": [
+    {
+      "id": "R07-issue-475853506",
+      "title": "Tab strip not scrolling after mandatory chrome update",
+      "kind": "upstream-report",
+      "status": "upstream-open",
+      "lifecycle": "open",
+      "sourceIds": [
+        "R07-source-475853506",
+        "R07-source-478527840"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/475853506",
+      "upstreamStatus": "In Progress (Accepted)",
+      "upstreamType": "Bug",
+      "statusObservedAt": "2026-11-21T14:17:39Z",
+      "reportedVersions": [
+        "144.0.7559.59",
+        "144.0.0.0"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "platforms": [
+        "macOS, arm64 in original report",
+        "Linux and Windows additionally listed in duplicate 478527840"
+      ],
+      "steps": [
+        "Open enough tabs to require tab-strip scrolling.",
+        "Attempt to scroll the tab strip and locate tabs that have moved outside the visible strip."
+      ],
+      "expected": "The reporter expects the tab strip to scroll so the active tab and other overflowed tabs remain directly reachable.",
+      "observed": "The original source reports that scrolling does not work, the current tab may have no visible strip indicator, and hidden tabs require searching.",
+      "evidenceType": "upstream-reported",
+      "confidence": "medium",
+      "component": {
+        "id": 1456118,
+        "name": "UI > Browser > TopChrome > TabStrip",
+        "sourceIds": [
+          "R07-source-475853506"
+        ]
+      },
+      "relatedRecords": [
+        {
+          "url": "https://issues.chromium.org/issues/478527840",
+          "relationship": "duplicate-of-this-issue",
+          "upstreamStatus": "Duplicate",
+          "sourceIds": [
+            "R07-source-478527840"
+          ]
+        }
+      ],
+      "recommendationCandidates": [
+        {
+          "text": "Retest current-release overflow navigation with exact tab count, window width, tab orientation, and relevant experiment configuration. Preserve this canonical record when assessing duplicate complaints.",
+          "sourceIds": [
+            "R07-source-475853506",
+            "R07-source-478527840"
+          ]
+        }
+      ],
+      "limitations": [
+        "No local reproduction; version 144.0.7559.59 is the original macOS report, while 144.0.0.0 and broader platforms come from the duplicate.",
+        "Later discussion about unified tab strips does not establish that this current In Progress record is fixed.",
+        "Complete comments, attachments, and the unresolved related ID 475858683 were not verified."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/475853506",
+        "reason": "Existing canonical upstream record; this project has not submitted a report."
+      }
+    },
+    {
+      "id": "R07-issue-587381526",
+      "title": "Clicking a toolbar button moves keyboard focus onto it (native toolbar buttons don't take focus on click)",
+      "kind": "upstream-report",
+      "status": "upstream-open",
+      "lifecycle": "open",
+      "sourceIds": [
+        "R07-source-587381526",
+        "R07-source-cl-8830787"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/587381526",
+      "upstreamStatus": "Assigned",
+      "upstreamType": "Bug",
+      "statusObservedAt": "2026-11-21T14:17:39Z",
+      "reportedVersions": [],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "platforms": [
+        "Windows",
+        "Linux"
+      ],
+      "configuration": "Source reproduction enables the experimental WebUI toolbar using --enable-features=InitialWebUI,WebUIToolbar.",
+      "steps": [
+        "In the source's experimental WebUI toolbar configuration, focus the page or omnibox.",
+        "Click a toolbar button such as Back, Reload, Home, the app menu, or an extension.",
+        "Press Tab or an arrow key."
+      ],
+      "expected": "According to the engineering report, native Views toolbar buttons retain focus in the page or omnibox after a mouse click; subsequent keyboard input continues there.",
+      "observed": "The engineering report says the clicked WebUI button receives focus, Tab and arrows navigate toolbar controls, the omnibox popup closes, and an arrow-key path can assert.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "component": {
+        "id": 1984361,
+        "name": "UI > Browser > WebUI Browser > Productionization",
+        "sourceIds": [
+          "R07-source-587381526"
+        ]
+      },
+      "fixEvidence": [
+        {
+          "url": "https://chromium-review.googlesource.com/c/chromium/src/+/8830787",
+          "changeStatus": "NEW",
+          "disposition": "Proposed fix; not merged at retrieval.",
+          "claim": "The author proposes retaining omnibox focus and avoiding app-menu clicks unselecting omnibox text.",
+          "attribution": "Proposed-fix author",
+          "sourceIds": [
+            "R07-source-cl-8830787"
+          ]
+        }
+      ],
+      "recommendationCandidates": [
+        {
+          "text": "Verify the combined mouse-then-keyboard sequence in the experimental build and check the proposal's merge status. Compare against native toolbar behavior without conflating the separate tab-order issue.",
+          "sourceIds": [
+            "R07-source-587381526",
+            "R07-source-cl-8830787"
+          ]
+        }
+      ],
+      "limitations": [
+        "No exact browser version or local reproduction is available.",
+        "This is not evidence that the default native toolbar has the same defect.",
+        "The source's claimed manual assertion was not reproduced by this project, and the linked proposal is not a shipped-fix receipt."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/587381526",
+        "reason": "Existing upstream engineering report; this project has not submitted a report."
+      }
+    },
+    {
+      "id": "R07-issue-365519965",
+      "title": "Chome tab group has duplicate entries",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "lifecycle": "closed",
+      "sourceIds": [
+        "R07-source-365519965",
+        "R07-source-cl-5961164",
+        "R07-source-cl-5983233"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/365519965",
+      "upstreamStatus": "Fixed",
+      "upstreamType": "Bug",
+      "statusObservedAt": "2026-11-21T14:17:39Z",
+      "reportedVersions": [],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "platforms": [
+        "Mac"
+      ],
+      "steps": [],
+      "expected": "The original reporter wants one tab-group entry per topic rather than duplicate entries.",
+      "observed": "The original complaint reports duplicate tab-group entries without a reproduction sequence. A linked fix describes a startup interval between restoring a group and connecting it to its saved identity.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "component": {
+        "id": 1457512,
+        "name": "UI > Browser > TopChrome > TabStrip > TabGroups",
+        "sourceIds": [
+          "R07-source-365519965"
+        ]
+      },
+      "fixEvidence": [
+        {
+          "url": "https://chromium-review.googlesource.com/c/chromium/src/+/5961164",
+          "changeStatus": "MERGED",
+          "mergedAt": "2024-10-29T01:20:25Z",
+          "branch": "main",
+          "claim": "Caching the restored group's saved identity prevents duplicate groups on restart or a crash during startup before the sync service connects it.",
+          "attribution": "Fix author",
+          "sourceIds": [
+            "R07-source-cl-5961164"
+          ]
+        },
+        {
+          "url": "https://chromium-review.googlesource.com/c/chromium/src/+/5983233",
+          "changeStatus": "MERGED",
+          "mergedAt": "2024-10-31T19:00:15Z",
+          "branch": "refs/branch-heads/6778",
+          "disposition": "M131 backport of the same change; issue metadata also lists Merged-131 and Merged-6778.",
+          "sourceIds": [
+            "R07-source-cl-5983233",
+            "R07-source-365519965"
+          ]
+        }
+      ],
+      "recommendationCandidates": [
+        {
+          "text": "Use restored tab-group identity across interrupted startup as a regression-verification target. Establish a fresh reproduction before treating present-day duplicate entries as recurrence of this Fixed issue.",
+          "sourceIds": [
+            "R07-source-365519965",
+            "R07-source-cl-5961164",
+            "R07-source-cl-5983233"
+          ]
+        }
+      ],
+      "limitations": [
+        "The original report contains no steps or browser version; engineering trigger information is attributed to the fixing change.",
+        "The attachment and full comment history were not inspected.",
+        "Activity in 2026 does not override the current Fixed status. No local reproduction or exact first shipped Stable binary was verified."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/365519965",
+        "reason": "Existing Fixed upstream record with a documented backport; this project has not submitted a report."
+      }
+    },
+    {
+      "id": "R07-issue-387203448",
+      "title": "Context menu does not appear for empty tabstrip in immersive full screen when “Always Show Toolbar in Full Screen” is disabled on MacOS",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "lifecycle": "closed",
+      "sourceIds": [
+        "R07-source-387203448",
+        "R07-source-443106403"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/387203448",
+      "upstreamStatus": "Won't fix (Not reproducible)",
+      "upstreamType": "Bug",
+      "statusObservedAt": "2026-11-21T14:17:39Z",
+      "reportedVersions": [
+        "131.0.6778.205",
+        "132.0.6834.57",
+        "133.0.6905.0",
+        "133.0.6933.0"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "platforms": [
+        "macOS, Intel and Arm Macs"
+      ],
+      "steps": [
+        "Disable Always Show Toolbar in Full Screen from the View menu.",
+        "Enter fullscreen.",
+        "Right-click a tab and compare its context menu with right-clicking an empty area of the tab strip."
+      ],
+      "expected": "The QA report expects an empty-tab-strip context menu to appear in immersive fullscreen as it does outside that mode.",
+      "observed": "The original QA report claims the tab context menu appears but the empty-strip context menu does not, with 5/5 reproduction and no Windows/Linux reproduction. The current tracker state nevertheless closes the issue as Not reproducible.",
+      "evidenceType": "upstream-reported",
+      "confidence": "medium",
+      "component": {
+        "id": 1457200,
+        "name": "UI > Browser > FullScreen",
+        "sourceIds": [
+          "R07-source-387203448"
+        ]
+      },
+      "relatedRecords": [
+        {
+          "url": "https://issues.chromium.org/issues/443106403",
+          "relationship": "duplicate-of-this-issue",
+          "upstreamStatus": "Duplicate",
+          "qualification": "Its source reproduction names Edge, not Chrome.",
+          "sourceIds": [
+            "R07-source-443106403"
+          ]
+        }
+      ],
+      "recommendationCandidates": [
+        {
+          "text": "Resolve the original Stable-channel contradiction and recheck present behavior before treating this as outstanding. Preserve the observed closed status and the Edge qualification on the duplicate.",
+          "sourceIds": [
+            "R07-source-387203448",
+            "R07-source-443106403"
+          ]
+        }
+      ],
+      "limitations": [
+        "The original Stable field says No while its final note includes Stable among reproducing builds.",
+        "The source lists macOS 11.4, 13.4, 14.6, and 15.2 configurations, but none was tested locally.",
+        "The full closing rationale was not recovered. This is not a confirmed current open defect."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/387203448",
+        "reason": "Existing closed canonical upstream record; this project has not submitted a report."
+      }
+    },
+    {
+      "id": "R07-issue-496291031",
+      "title": "Double-clicking empty area of vertical tab strip does not zoom/maximize window on macOS",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "lifecycle": "closed",
+      "sourceIds": [
+        "R07-source-496291031",
+        "R07-source-fix-496291031"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/496291031",
+      "upstreamStatus": "Fixed (Verified)",
+      "upstreamType": "Bug",
+      "statusObservedAt": "2026-11-21T14:18:24Z",
+      "reportedVersions": [
+        "148.0.7754.0"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "platforms": [
+        "macOS"
+      ],
+      "channel": "Canary",
+      "steps": [
+        "Enable vertical tabs from the tab-strip context menu.",
+        "Set the macOS window-title-bar double-click action to Fill or Zoom.",
+        "Double-click empty space below the last vertical tab.",
+        "Compare with double-clicking empty space to the right of horizontal tabs and with the Windows behavior."
+      ],
+      "expected": "The reporter expects the empty vertical strip to honor the system's title-bar double-click action, matching the horizontal-strip and Windows comparisons.",
+      "observed": "The report says double-clicking empty vertical-strip space does nothing on macOS. The current issue snapshot is Fixed (Verified), and a landed change addresses custom draggable regions.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "component": {
+        "id": 1456118,
+        "name": "UI > Browser > TopChrome > TabStrip",
+        "sourceIds": [
+          "R07-source-496291031"
+        ]
+      },
+      "fixEvidence": [
+        {
+          "url": "https://chromium.googlesource.com/chromium/src/+/2be0ae48ad7c700ec9dca07e83e73407947cbad4",
+          "reviewUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/7749225",
+          "disposition": "Landed source change, published 2026-04-21.",
+          "claim": "AppKit treats custom draggable regions differently from the native title bar. The change adds preference-aware double-click handling and a browser test; its description includes Fill, Maximize, and Minimize.",
+          "attribution": "Fix author",
+          "sourceIds": [
+            "R07-source-fix-496291031"
+          ]
+        }
+      ],
+      "recommendationCandidates": [
+        {
+          "text": "Use system-preference-aware double-click handling on custom draggable regions as a fixed regression baseline; verify each desired action in a current build.",
+          "sourceIds": [
+            "R07-source-496291031",
+            "R07-source-fix-496291031"
+          ]
+        }
+      ],
+      "limitations": [
+        "Fixed (Verified) is upstream status, not local verification.",
+        "The source's tests and OS comparisons were not run by this project; exact first Stable availability remains unknown."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/496291031",
+        "reason": "Existing Fixed (Verified) upstream record; this project has not submitted a report."
+      }
+    },
+    {
+      "id": "R07-issue-564673918",
+      "title": "UI bug: Chrome tab hover cards get stuck when cursor moves to a secondary monitor.",
+      "kind": "upstream-report",
+      "status": "upstream-open",
+      "lifecycle": "open",
+      "sourceIds": [
+        "R07-source-564673918"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/564673918",
+      "upstreamStatus": "New",
+      "upstreamType": "Bug",
+      "statusObservedAt": "2026-11-21T14:18:24Z",
+      "reportedVersions": [
+        "153.0.0.0"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "platforms": [
+        "Windows, vertically stacked monitors"
+      ],
+      "steps": [
+        "Arrange the secondary display directly above the primary display in OS display settings.",
+        "Open Chrome with multiple tabs on the lower, primary display.",
+        "Hover an inactive tab until its hover card appears.",
+        "Move the pointer rapidly upward across the display boundary to the secondary display."
+      ],
+      "expected": "The reporter expects the tab hover card to dismiss after the pointer leaves the tab strip for another display.",
+      "observed": "The reporter says the hover card stays visible over browser content and the address bar. Re-hovering the strip and moving into page content reportedly clears it.",
+      "evidenceType": "upstream-reported",
+      "confidence": "medium",
+      "component": {
+        "id": 1456768,
+        "name": "UI > Browser > TopChrome > TabStrip > HoverCards",
+        "sourceIds": [
+          "R07-source-564673918"
+        ]
+      },
+      "hypotheses": [
+        {
+          "text": "Chrome may miss a mouseleave or mouse-exit event at the display boundary.",
+          "attribution": "Reporter hypothesis, not established cause",
+          "sourceIds": [
+            "R07-source-564673918"
+          ]
+        }
+      ],
+      "recommendationCandidates": [
+        {
+          "text": "Verify current behavior with exact display geometry, scaling/DPI, pointer path, and build. Resolve related 524087116 before asserting a duplicate or a shared cause.",
+          "sourceIds": [
+            "R07-source-564673918"
+          ]
+        }
+      ],
+      "limitations": [
+        "New is an observed tracker state, not vendor confirmation of the reporter's diagnosis.",
+        "Channel is reported as Not sure; the patch version, cause, and recovery action were not locally verified.",
+        "Related issue 524087116 could not be parsed and remains outside the main inventory."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/564673918",
+        "reason": "Existing upstream user report; this project has not submitted a report."
+      }
+    },
+    {
+      "id": "R07-issue-483899631",
+      "title": "Please add a feature to remove the \"Open Link in Split View\" from the right click context menu.",
+      "kind": "feature-proposal",
+      "status": "upstream-closed",
+      "lifecycle": "closed",
+      "sourceIds": [
+        "R07-source-483899631",
+        "R07-source-492117351",
+        "R07-source-split-view-help"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/483899631",
+      "upstreamStatus": "Won't fix (Intended behavior)",
+      "upstreamType": "Feature Request",
+      "statusObservedAt": "2026-11-21T14:18:24Z",
+      "reportedVersions": [
+        "145.0.7632.45",
+        "145.0.0.0"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "platforms": [
+        "Desktop; original OS unspecified",
+        "Windows in duplicate 492117351"
+      ],
+      "channel": "Stable in the original request",
+      "steps": [
+        "Right-click a link.",
+        "Compare the Open Link in Split View position with the previously learned Open Link in new Window position."
+      ],
+      "expected": "The requester wants a preference to remove the Split View menu command or configurable menu entries that preserve efficient access to frequently used commands.",
+      "observed": "The requester reports wrong-action selection from muscle memory after a menu insertion. Upstream classifies the request as Intended behavior; official help documents the link-menu command and a separate drag-and-drop setting.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "component": {
+        "id": 1884424,
+        "name": "UI > Browser > TopChrome > TabStrip > SplitView",
+        "sourceIds": [
+          "R07-source-483899631"
+        ]
+      },
+      "relatedRecords": [
+        {
+          "url": "https://issues.chromium.org/issues/492117351",
+          "relationship": "duplicate-of-this-issue",
+          "upstreamStatus": "Duplicate",
+          "sourceIds": [
+            "R07-source-492117351"
+          ]
+        }
+      ],
+      "vendorDocumentation": [
+        {
+          "claim": "Chrome Help documents disabling Allow split view drag-and-drop on left, right, or bottom edge of window under Appearance. It does not say that this removes the link context-menu command.",
+          "sourceIds": [
+            "R07-source-split-view-help"
+          ]
+        }
+      ],
+      "recommendationCandidates": [
+        {
+          "text": "Retain this as closed product/UX feedback about menu configurability and learned positions. Do not offer the drag-and-drop toggle as a fix for context-menu placement.",
+          "sourceIds": [
+            "R07-source-483899631",
+            "R07-source-492117351",
+            "R07-source-split-view-help"
+          ]
+        }
+      ],
+      "limitations": [
+        "The feature's presence is not a confirmed implementation defect.",
+        "The original version is 145.0.7632.45; 145.0.0.0 and Windows come from the duplicate.",
+        "Present-day menu order, any additional preferences, and the full closure rationale were not verified."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/483899631",
+        "reason": "Existing closed upstream feature request; this project has not submitted product feedback or a bug report."
+      }
+    },
+    {
+      "id": "R07-issue-552741956",
+      "title": "Chrome 152 window rendering/input breaks after moving to another monitor and maximizing",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "lifecycle": "closed",
+      "sourceIds": [
+        "R07-source-552741956",
+        "R07-source-cl-8427141",
+        "R07-source-fix-552741956-initial",
+        "R07-source-release-fetch-gap"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/552741956",
+      "upstreamStatus": "Fixed (Verified)",
+      "upstreamType": "Bug",
+      "reportedVersions": [
+        "152.0.7977.64"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Start the reported Chrome 152 build in a KDE Plasma X11 session with three monitors.",
+        "Open a new window from the taskbar so that it opens on the right monitor.",
+        "Move the window to the center monitor and maximize it.",
+        "Compare the rendered controls with their actual mouse-input locations."
+      ],
+      "expected": "The reporter expects correct rendering and alignment between visible UI controls and their input coordinates after moving and maximizing the window.",
+      "observed": "The original report describes shifted or clipped content and mismatched click coordinates. The observed tracker status is Fixed (Verified), with an initial X11 property-type change and a later merged geometry-cache correction.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "limitations": [
+        "No local reproduction or comparison run was performed; Fixed (Verified) belongs to the upstream record.",
+        "The later M154 branch merge is verified, but the release-note fetch failed with HTTP 429, leaving exact first public Stable availability unresolved.",
+        "Related issue IDs listed in the main record or changes were not all read and are not asserted to be confirmed duplicates."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/552741956",
+        "reason": "Existing Fixed (Verified) upstream regression record; this project has not submitted a report."
+      },
+      "platforms": [
+        "Linux/X11, KDE Plasma, three monitors"
+      ],
+      "component": {
+        "id": 1457167,
+        "name": "UI > Browser > TopChrome > Frame",
+        "sourceIds": [
+          "R07-source-552741956"
+        ]
+      },
+      "statusObservedAt": "2026-11-21T14:18:33Z",
+      "channel": "Stable",
+      "fixEvidence": [
+        {
+          "attribution": "Fix author",
+          "claim": "Corrects the X11 _NET_STARTUP_ID property type to UTF8_STRING.",
+          "disposition": "Initial landed issue-linked fix, published 2026-09-01.",
+          "reviewUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/8301193",
+          "sourceIds": [
+            "R07-source-fix-552741956-initial"
+          ],
+          "url": "https://chromium.googlesource.com/chromium/src/+/46f7721abc728d993b52cc180bf0fe00f3401260"
+        },
+        {
+          "attribution": "Follow-up fix author",
+          "branch": "refs/branch-heads/8037",
+          "changeStatus": "MERGED",
+          "claim": "A later M154 backport preserves geometry-cache observations so bounds updates continue after startup notification, and corrects cold-start startup-token handling.",
+          "mergedAt": "2026-09-17T18:55:59Z",
+          "sourceIds": [
+            "R07-source-cl-8427141"
+          ],
+          "url": "https://chromium-review.googlesource.com/c/chromium/src/+/8427141"
+        }
+      ]
+    },
+    {
+      "id": "R07-issue-504663589",
+      "title": "Feature Request: Option to lock tab groups so new tabs open outside the group",
+      "kind": "feature-proposal",
+      "status": "upstream-open",
+      "lifecycle": "open",
+      "sourceIds": [
+        "R07-source-40742612",
+        "R07-source-504663589"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/504663589",
+      "upstreamStatus": "New",
+      "upstreamType": "Feature Request",
+      "reportedVersions": [],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Open a link in a new tab from a tab already inside a group.",
+        "Consider whether the group should keep a deliberately fixed membership or include the newly opened tab."
+      ],
+      "expected": "The requester proposes a per-group lock or containment option that sends newly opened tabs outside the group while keeping its existing membership fixed.",
+      "observed": "The requester says new tabs opened from a grouped tab are added to the group and disrupt curated groups. The current record is an open New feature request; an older similar request is closed as Obsolete.",
+      "evidenceType": "upstream-reported",
+      "confidence": "medium",
+      "limitations": [
+        "No exact current browser version, OS, or local reproduction is available.",
+        "This is a requested capability, not evidence of a violation of documented behavior.",
+        "The older request's Obsolete closure does not close the current New request. Prevalence across other browsers and no-workaround assertions were not verified."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/504663589",
+        "reason": "Existing open upstream feature request; this project has not submitted a proposal."
+      },
+      "platforms": [
+        "Desktop workflow; OS unspecified in the current request"
+      ],
+      "component": {
+        "id": 1457512,
+        "name": "UI > Browser > TopChrome > TabStrip > TabGroups",
+        "sourceIds": [
+          "R07-source-504663589"
+        ]
+      },
+      "statusObservedAt": "2026-11-21T14:18:33Z"
+    },
+    {
+      "id": "R07-issue-469174762",
+      "title": "Android: Bottom toolbar gets incorrect top inset with edge-to-edge on Omnibox result page",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "lifecycle": "closed",
+      "sourceIds": [
+        "R07-source-469174762",
+        "R07-source-fix-469174762"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/469174762",
+      "upstreamStatus": "Fixed",
+      "upstreamType": "Bug",
+      "reportedVersions": [],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Enable Customize the New Tab Page V2 and Bottom Toolbar V2 in the source's Chromium configuration, then restart.",
+        "Open a new tab page.",
+        "Use Menu > Customize new tab page > Appearance > Chrome colors and select a color.",
+        "Tap the new-tab-page search box to enter omnibox results and inspect the toolbar and status-bar insets."
+      ],
+      "expected": "The source expects correct status-bar inset consumption without extra blank padding above a bottom-positioned toolbar or suggestions overlapping the status-bar area.",
+      "observed": "The source reports a status-bar-height blank space above the bottom toolbar and incorrectly extended omnibox content. The tracker is Fixed and a landed change corrects scenario-dependent padding.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "limitations": [
+        "Exact reported build, current flag availability, and first shipping fix build are unknown.",
+        "No local reproduction or viewing of linked demonstration videos was performed."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/469174762",
+        "reason": "Existing Fixed upstream report; this project has not submitted a report."
+      },
+      "platforms": [
+        "Android Chromium"
+      ],
+      "component": {
+        "id": 1456116,
+        "name": "UI > Browser > Mobile > EdgeToEdge",
+        "sourceIds": [
+          "R07-source-469174762"
+        ]
+      },
+      "statusObservedAt": "2026-11-21T14:18:34Z",
+      "configuration": "The description identifies EdgeToEdgeOnTop and a bottom-positioned toolbar; its listed procedure enables Customize the New Tab Page V2 and Bottom Toolbar V2.",
+      "fixEvidence": [
+        {
+          "attribution": "Fix author",
+          "claim": "Updates ToolbarPhone and Omnibox to observe edge-to-edge changes and choose padding based on the active scenario instead of forwarding the NTP's inset consumption unconditionally.",
+          "disposition": "Landed source change, published 2026-01-09.",
+          "reviewUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/7267746",
+          "sourceIds": [
+            "R07-source-fix-469174762"
+          ],
+          "url": "https://chromium.googlesource.com/chromium/src/+/dd8ba744e49b4f97caa2d3eb1ff9cb5335dc04be"
+        }
+      ]
+    },
+    {
+      "id": "R07-issue-540469616",
+      "title": "Duplicate Google Chrome entries in macOS Local Network privacy settings",
+      "kind": "upstream-report",
+      "status": "upstream-open",
+      "lifecycle": "open",
+      "sourceIds": [
+        "R07-source-540469616"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/540469616",
+      "upstreamStatus": "New",
+      "upstreamType": "Bug",
+      "reportedVersions": [
+        "150.0.0.0"
+      ],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "Use Chrome and update it across multiple versions.",
+        "Inspect System Settings > Privacy & Security > Local Network for repeated Google Chrome entries.",
+        "In the reporter's procedure, compare access to a local HTTP service from Chrome and a command-line client with Chrome's permission entries disabled and enabled."
+      ],
+      "expected": "The reporter expects one stable, identifiable Chrome Local Network permission entry across updates and consistent use of the active entry.",
+      "observed": "The reporter describes multiple indistinguishable Chrome permission entries and ERR_ADDRESS_UNREACHABLE in Chrome while a command-line request succeeds. Enabling Chrome permission entries reportedly restores access.",
+      "evidenceType": "upstream-reported",
+      "confidence": "medium",
+      "limitations": [
+        "No local reproduction, patch version, exact macOS release, or independently validated root cause is available.",
+        "New status does not establish that Chrome alone owns the defect or that duplicated entries are the sole cause of failed access.",
+        "Personal network addresses and screenshots are unnecessary to the finding and are not included."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/540469616",
+        "reason": "Existing upstream user report; this project has not submitted a report."
+      },
+      "platforms": [
+        "macOS; exact OS release unspecified"
+      ],
+      "component": {
+        "id": 1457469,
+        "name": "UI > Browser",
+        "sourceIds": [
+          "R07-source-540469616"
+        ]
+      },
+      "statusObservedAt": "2026-11-21T14:18:34Z"
+    },
+    {
+      "id": "R07-issue-457156374",
+      "title": "Extensions installed through the registry are unable to be default_pinned",
+      "kind": "upstream-report",
+      "status": "upstream-closed",
+      "lifecycle": "closed",
+      "sourceIds": [
+        "R07-source-457156374",
+        "R07-source-cl-7903002",
+        "R07-source-fix-457156374"
+      ],
+      "upstreamUrl": "https://issues.chromium.org/issues/457156374",
+      "upstreamStatus": "Fixed",
+      "upstreamType": "Bug",
+      "reportedVersions": [],
+      "testedVersions": [],
+      "reproduction": "not-run",
+      "steps": [
+        "The reporter deploys an extension through the Windows registry and applies a default_pinned toolbar policy.",
+        "Launch Chrome and approve or enable the extension in the extension menu.",
+        "Inspect whether its icon is pinned beside the omnibox."
+      ],
+      "expected": "The reporter expects the registry-installed extension to pin by default on approval. The later proposed fix describes this policy as a one-time default that should preserve a user's subsequent unpin.",
+      "observed": "The original report says default pinning fails while force pinning and a Web Store installation work. A landed change addresses policy arriving after installation. A later unmerged proposal says that correction can re-pin a user-unpinned action on unrelated policy updates.",
+      "evidenceType": "upstream-reported",
+      "confidence": "high",
+      "limitations": [
+        "No exact reported browser version or local reproduction is available; Any was not converted into a fictitious version range.",
+        "The original configuration example mixes extension identifiers and registry paths, so steps here are an attributed summary rather than an executable recipe.",
+        "The later regression is a proposed-fix author's claim, not a separately confirmed open issue or a shipped correction."
+      ],
+      "submission": {
+        "status": "existing-upstream",
+        "url": "https://issues.chromium.org/issues/457156374",
+        "reason": "Existing Fixed upstream record with an unmerged follow-up proposal; this project has not submitted a report."
+      },
+      "platforms": [
+        "Windows 11; procedure also mentions Windows 10"
+      ],
+      "component": {
+        "id": 1456781,
+        "name": "Platform > Extensions > API",
+        "sourceIds": [
+          "R07-source-457156374"
+        ]
+      },
+      "statusObservedAt": "2026-11-21T14:18:34Z",
+      "fixEvidence": [
+        {
+          "attribution": "Fix author",
+          "claim": "Notifies the toolbar model when deferred extension management settings load so the install-before-policy race can apply the default pin.",
+          "disposition": "Landed original correction, published 2025-12-09.",
+          "reviewUrl": "https://chromium-review.googlesource.com/c/chromium/src/+/7109981",
+          "sourceIds": [
+            "R07-source-fix-457156374"
+          ],
+          "url": "https://chromium.googlesource.com/chromium/src/+/5c9ced36765132da8c3bd8de398862a47cd082e6"
+        },
+        {
+          "attribution": "Proposed-fix author; regression not locally reproduced",
+          "changeStatus": "NEW",
+          "claim": "The author says re-evaluating all toolbar actions over-corrected the race and undid user unpins; the proposal limits deferred re-evaluation to pending or newly installed actions.",
+          "disposition": "Unmerged follow-up; does not reopen the original Fixed tracker record.",
+          "sourceIds": [
+            "R07-source-cl-7903002"
+          ],
+          "url": "https://chromium-review.googlesource.com/c/chromium/src/+/7903002"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "This conversion reuses completed research; it adds no fresh research, browser inspection, or local reproduction.",
+    "All 12 main records have source-verified identities, current snapshots, and original descriptions. Their reported behavior is not independently verified by this project.",
+    "All testedVersions arrays are empty and all reproduction values are not-run. Source steps are attributed procedures, not test receipts.",
+    "Existing reports use existing-upstream submission state. No entry represents a submission by this project.",
+    "Original descriptions, current metadata, selected related records, and selected fixing changes were read; complete comment pagination and attachments were not retrieved.",
+    "Two related records remain unresolved outside the main issue inventory. The three verified duplicate relationships and one historical relationship are folded into their main records.",
+    "Exact first shipped Stable versions for several fixes remain unknown. M131 and M154 branch evidence is not substituted for binary or release-note verification.",
+    "The full closure rationale for the Not reproducible fullscreen report and Intended behavior Split View request was not recovered; their observed closed statuses are preserved.",
+    "Publication dates remain null when not established. Generic extraction placeholder dates were rejected.",
+    "Search-engine timeouts, off-topic filtering, empty results, and primary-source rate limits constrain recall. This is a targeted inventory, not an exhaustive or prevalence-ranked survey.",
+    "No browser or feature inventory belongs to this lane. Personal profile data, private addresses, internal links, and configuration examples unnecessary to public evidence are omitted."
+  ],
+  "recovery": {
+    "kind": "labelled-reconstruction",
+    "byteExact": false,
+    "originalReviewedSha256": "881401bc346da32e4dc2c9725bc2ca28ee99c4ee83e864c4e8de04a8a5a41f86",
+    "inputs": [
+      {
+        "label": "original-research-report",
+        "artifact": "lane-07.md",
+        "bytes": 41810,
+        "sha256": "58dbad6e827f3cacda3d7dc404e15a9a77a9658fbd57423a364fa0100a6d8e7f"
+      },
+      {
+        "label": "complete-retained-values",
+        "artifact": "recovery-records/partial-shards/R07/sections.json",
+        "bytes": 154547,
+        "sha256": "6b58272e6aae851776ecebade81e3f27b4b21020a8e8113e1ca4b5853033a3f9"
+      },
+      {
+        "label": "historical-record-inventory",
+        "artifact": "recovery-records/partial-shards/R07/projections/record-inventory.json",
+        "bytes": 2315,
+        "sha256": "fe84abef7038cb171afd563120a3385781b41fdd2b428789a5adf701daf16c42"
+      },
+      {
+        "label": "historical-generated-issue-preview",
+        "artifact": "renderer-20f-preview/ISSUES.md",
+        "bytes": 217798,
+        "sha256": "034ff75b0a97ffb60f51092bfb5c45e50951a4ee9707b7d16cb8fe61f302969d"
+      },
+      {
+        "label": "historical-generated-agent-ledger",
+        "artifact": "renderer-20f-preview/AGENTS-LEDGER.md",
+        "bytes": 261359,
+        "sha256": "e88382a43890cf7eb5db983201a8d90ebb05fa215266a8042c45f452e8ee223a"
+      }
+    ],
+    "preservedHeaderFields": [
+      "schemaVersion",
+      "id",
+      "title",
+      "agentSessionId",
+      "scope",
+      "status",
+      "researchCutoff",
+      "retrievalWindow",
+      "summary",
+      "evidenceInterpretation",
+      "sources",
+      "browsers",
+      "features"
+    ],
+    "completeRetainedSourceCount": 29,
+    "completeRetainedIssueIds": [
+      "R07-issue-475853506",
+      "R07-issue-587381526",
+      "R07-issue-365519965",
+      "R07-issue-387203448",
+      "R07-issue-496291031",
+      "R07-issue-564673918",
+      "R07-issue-483899631"
+    ],
+    "reconstructedIssueIds": [
+      "R07-issue-552741956",
+      "R07-issue-504663589",
+      "R07-issue-469174762",
+      "R07-issue-540469616",
+      "R07-issue-457156374"
+    ],
+    "limitationsOrigin": "Decoded from the R07 block of the historical generated agent ledger.",
+    "method": "Reuse all thirteen retained top-level values and seven complete issue objects. Decode the five remaining issue sections using the saved renderer format, preserving the historical record order and checking the original report for scope, issue identities and bug/feature distinctions.",
+    "normalization": [
+      "New UTF-8 JSON serialization with LF and terminal newline; no claim of original file-byte recovery.",
+      "Markdown escapes and HTML entities are inverted once. Rendered source-reference order is sorted by the renderer; original citation array order in the five reconstructed objects is unknown.",
+      "The five reconstructed platforms fields and fixEvidence fields use arrays consistent with the retained issue objects. Original singleton container shapes are not established by flattened rendering.",
+      "For the five reconstructed objects, lifecycle follows the saved open/closed status and upstreamType follows the original report and saved bug/feature classification; these are labelled semantic reconstructions."
+    ],
+    "omittedOptionalFields": [
+      {
+        "scope": "lane",
+        "fields": [
+          "unresolvedRelatedLeads",
+          "queryLog"
+        ],
+        "originalPresence": "Confirmed by the historical record-inventory otherKeys list.",
+        "reason": "Original JSON values are not retained and are not emitted by the saved preview. The original report preserves the unresolved leads and query log; this reconstruction does not invent their original JSON shape."
+      },
+      {
+        "scope": "five reconstructed issue objects",
+        "recordIds": [
+          "R07-issue-552741956",
+          "R07-issue-504663589",
+          "R07-issue-469174762",
+          "R07-issue-540469616",
+          "R07-issue-457156374"
+        ],
+        "fields": [
+          "recommendationCandidates",
+          "relatedRecords",
+          "hypotheses",
+          "vendorDocumentation"
+        ],
+        "originalPresence": "These names occur in the seven retained issue objects but are not rendered. Presence in each missing original object is unknown; this is an explicit omission boundary, not a claim that all four existed on every issue.",
+        "reason": "Unrendered optional field values and collection shapes cannot be recovered from these approved inputs. No empty arrays or invented original values are substituted. Other unknown unrendered optional keys cannot be enumerated."
+      }
+    ],
+    "boundary": "The saved complete status describes the original documentary lane. This is a non-byte-exact reconstruction with declared optional-field gaps, not fresh research, local reproduction, a new submission or proof of current browser behavior."
+  }
+}

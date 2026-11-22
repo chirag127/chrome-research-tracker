@@ -1,0 +1,1616 @@
+{
+  "schemaVersion": 1,
+  "id": "R02",
+  "title": "Mainstream browser features and lessons for Chrome",
+  "agentSessionId": "ses_e018c78a8fferGQLyoej3pKp78",
+  "scope": "Firefox, Microsoft Edge, Apple Safari, Brave, Vivaldi, Opera One, and Opera GX: documented features, engine and platform differences, lifecycle qualifications, and candidate lessons for Chrome.",
+  "status": "complete",
+  "asOf": "2026-11-21",
+  "chromeParity": "unassessed",
+  "evidenceSummary": "Converted from completed R02 research without additional web research. Observations concern official documents, not installed browsers or runtime measurements. Proposals are hypotheses pending the separately owned Chrome baseline.",
+  "datePolicy": "retrievedAt records the actual source read. publishedAt is null when an original publication date was not established. Extracted publication/update metadata is retained separately and is not promoted to a verified publication date. January-1 defaults and dates apparently taken from linked articles are discarded.",
+  "sources": [
+    {
+      "id": "R02-A1",
+      "title": "What is Blink?",
+      "url": "https://developer.chrome.com/docs/web-platform/blink",
+      "retrievedAt": "2026-11-21T14:28:22Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-11-11",
+      "kind": "vendor-documentation",
+      "limitations": ["Date is extraction metadata; original publication versus update was not established.", "Used for engine families, not Chrome feature parity. The general iOS statement is qualified by regional alternative-engine rules and R02-A2."]
+    },
+    {
+      "id": "R02-A2",
+      "title": "Why there are still no non-WebKit browsers on iOS",
+      "url": "https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules/",
+      "retrievedAt": "2026-11-21T14:36:54Z",
+      "publishedAt": "2026-11-20",
+      "kind": "vendor-documentation",
+      "limitations": ["Dated Mozilla policy commentary. Its statement about absence of launched alternative-engine browsers is a vendor observation, not an independent App Store census.", "Regional permission for alternative engines does not establish that a specific browser has shipped one."]
+    },
+    {
+      "id": "R02-F1",
+      "title": "Firefox 160.0 Release Notes",
+      "url": "https://www.firefox.com/en-US/firefox/160.0/releasenotes/",
+      "retrievedAt": "2026-11-21T14:18:34Z",
+      "publishedAt": "2026-11-10",
+      "kind": "release-note",
+      "limitations": ["Explicit versioned release date. This was the latest Firefox release inspected, not proof that no patch followed.", "Mini Window is an early version; French Smart Window tab organization is progressively rolled out."]
+    },
+    {
+      "id": "R02-F2",
+      "title": "Firefox 160.0 System Requirements",
+      "url": "https://www.firefox.com/en-US/firefox/160.0/system-requirements/",
+      "retrievedAt": "2026-11-21T14:30:55Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Version-specific desktop requirements. Generic January-1 extraction metadata was rejected.", "Does not establish mobile minimum OS versions or an ESR support horizon."]
+    },
+    {
+      "id": "R02-F3",
+      "title": "Gecko - Firefox Source Docs",
+      "url": "https://firefox-source-docs.mozilla.org/overview/gecko.html",
+      "retrievedAt": "2026-11-21T14:18:52Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Architecture documentation was read; no implementation or binary was tested.", "The extracted older date was not accepted as this mutable document's publication date."]
+    },
+    {
+      "id": "R02-F4",
+      "title": "Firefox for iOS - Firefox Source Docs",
+      "url": "https://firefox-source-docs.mozilla.org/overview/ios.html",
+      "retrievedAt": "2026-11-21T14:18:55Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated architecture documentation explicitly distinguishes WebKit from Gecko. It does not establish desktop feature parity on iOS."]
+    },
+    {
+      "id": "R02-F5",
+      "title": "Total Cookie Protection",
+      "url": "https://www.firefox.com/en-US/features/total-cookie-protection/",
+      "retrievedAt": "2026-11-21T14:18:37Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated product documentation; generic January-1 metadata was rejected.", "Mechanism, default, and exceptions are vendor-documented. Comparative privacy superiority and tracking resistance were not measured."]
+    },
+    {
+      "id": "R02-F6",
+      "title": "Multi-Account Containers Add-on Sync Feature",
+      "url": "https://blog.mozilla.org/security/2020/02/06/multi-account-containers-sync/",
+      "retrievedAt": "2026-11-21T14:24:19Z",
+      "publishedAt": "2020-02-06",
+      "kind": "vendor-documentation",
+      "limitations": ["Historical official add-on announcement establishes the documented design, not its current extension version or default installation status.", "The contemporary support page returned a challenge; its search snippet was not accepted as read documentation."]
+    },
+    {
+      "id": "R02-F7",
+      "title": "Translate a webpage with Firefox",
+      "url": "https://www.firefox.com/en-US/features/translate/",
+      "retrievedAt": "2026-11-21T14:28:04Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Product page lists supported languages and describes local processing; translation quality, network behavior, and model storage were not measured.", "Generic January-1 extraction metadata was rejected."]
+    },
+    {
+      "id": "R02-F8",
+      "title": "Firefox just got better for Chinese, Japanese and Korean speakers on Android",
+      "url": "https://blog.mozilla.org/en/firefox/cjk-translation-on-android/",
+      "retrievedAt": "2026-11-21T14:28:07Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2025-08-18",
+      "kind": "vendor-documentation",
+      "limitations": ["Fetched publication metadata and search-result dating disagreed; original publication date is not promoted as established.", "The article documents desktop/Android translation and offline use after model download; it does not establish iOS support or translation accuracy."]
+    },
+    {
+      "id": "R02-F9",
+      "title": "Vertical Tabs",
+      "url": "https://www.firefox.com/en-US/features/vertical-tabs/",
+      "retrievedAt": "2026-11-21T14:18:46Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated desktop-oriented product page. Advanced tree views and automation are described as extension capabilities, not native functionality."]
+    },
+    {
+      "id": "R02-F10",
+      "title": "Get more done with pop-out videos",
+      "url": "https://www.firefox.com/en-US/features/picture-in-picture/",
+      "retrievedAt": "2026-11-21T14:18:43Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated product page documents multiple PiP windows. Player compatibility, DRM behavior, and practical resource limits were not tested."]
+    },
+    {
+      "id": "R02-F11",
+      "title": "Edit PDFs in Firefox - Free, Secure Built-in PDF Editor",
+      "url": "https://www.firefox.com/en-US/features/pdf-editor/",
+      "retrievedAt": "2026-11-21T14:18:52Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated product documentation supports annotation/form/signature workflows, not arbitrary replacement of existing PDF text, certificate-based signing, or universal form compatibility."]
+    },
+    {
+      "id": "R02-E1",
+      "title": "Microsoft Edge release notes for Stable Channel",
+      "url": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel",
+      "retrievedAt": "2026-11-21T14:16:04Z",
+      "publishedAt": null,
+      "latestInspectedReleaseDate": "2026-11-19",
+      "kind": "release-note",
+      "limitations": ["Mutable aggregate page; November 19 is the latest inspected release-entry date, not the page's original publication date.", "Feature rollout may differ by platform/account. Planned retirement in a future version is not completed removal."]
+    },
+    {
+      "id": "R02-E2",
+      "title": "Microsoft Edge Supported Operating Systems",
+      "url": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-supported-operating-systems",
+      "retrievedAt": "2026-11-21T14:24:22Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-11-09",
+      "kind": "vendor-documentation",
+      "limitations": ["Date is extracted publication/update metadata. OS requirements vary by Edge version.", "The Windows 10 browser update commitment does not extend support for the operating system itself."]
+    },
+    {
+      "id": "R02-E3",
+      "title": "Getting started with Microsoft Edge Workspaces",
+      "url": "https://support.microsoft.com/en-us/edge/getting-started-with-microsoft-edge-workspaces",
+      "retrievedAt": "2026-11-21T14:18:58Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-10-06",
+      "kind": "vendor-documentation",
+      "limitations": ["Date is extracted publication/update metadata. The page labels some in-window behavior forthcoming while Edge 158 release notes list it as an update.", "New Workspaces is individual-use; older collaboration descriptions must not be carried forward."]
+    },
+    {
+      "id": "R02-E4",
+      "title": "Organize your ideas with Collections in Microsoft Edge",
+      "url": "https://support.microsoft.com/en-us/edge/organize-your-ideas-with-collections-in-microsoft-edge",
+      "retrievedAt": "2026-11-21T14:16:06Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-09-14",
+      "kind": "vendor-documentation",
+      "limitations": ["Current lead says unavailable from Edge 149, released June 4, 2026, but later paragraphs retain older transitional-access language.", "Retirement lead is retained alongside the inconsistency; no runtime access check was performed."]
+    },
+    {
+      "id": "R02-E5",
+      "title": "Multitask with Split Screen Browsing",
+      "url": "https://explore.microsoft.com/en-us/edge/features/split-screen",
+      "retrievedAt": "2026-11-21T14:19:07Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated product page explicitly qualifies availability by device, market, and browser version. No mobile-wide support claim is made."]
+    },
+    {
+      "id": "R02-E6",
+      "title": "Stay Organized with Vertical Tabs",
+      "url": "https://explore.microsoft.com/en-us/edge/features/vertical-tabs",
+      "retrievedAt": "2026-11-21T14:19:04Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated product documentation qualifies availability by device, market, and browser version."]
+    },
+    {
+      "id": "R02-E7",
+      "title": "Learn about performance features in Microsoft Edge",
+      "url": "https://support.microsoft.com/en-us/edge/learn-about-performance-features-in-microsoft-edge",
+      "retrievedAt": "2026-11-21T14:27:01Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-11-09",
+      "kind": "vendor-documentation",
+      "limitations": ["Date is extracted publication/update metadata. Defaults and exemptions differ by platform and mode.", "The document still describes Performance detector; R02-E1 separately announces its future retirement. Savings and responsiveness were not benchmarked."]
+    },
+    {
+      "id": "R02-E8",
+      "title": "Accessibility features in Microsoft Edge",
+      "url": "https://support.microsoft.com/en-us/accessibility/edge/accessibility-features-in-microsoft-edge",
+      "retrievedAt": "2026-11-21T14:19:07Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-09-16",
+      "kind": "vendor-documentation",
+      "limitations": ["Date is extracted publication/update metadata. Reader page eligibility and image-description languages are limited.", "Processing location, voice availability, and assistive-technology quality were not tested."]
+    },
+    {
+      "id": "R02-S1",
+      "title": "Update to the latest version of Safari",
+      "url": "https://support.apple.com/en-us/102665",
+      "retrievedAt": "2026-11-21T14:40:22Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2025-10-16",
+      "kind": "vendor-documentation",
+      "limitations": ["Date is extracted publication/update metadata. Used for OS-bound updates and Apple-only support, not a current patch version for each OS.", "The page's historical Windows release-year statement was not independently verified and is not retained as a factual finding."]
+    },
+    {
+      "id": "R02-S2",
+      "title": "WebKit Features for Safari 27.1",
+      "url": "https://webkit.org/blog/18486/webkit-features-for-safari-27-1/",
+      "retrievedAt": "2026-11-21T14:24:31Z",
+      "publishedAt": "2026-10-23",
+      "kind": "release-note",
+      "limitations": ["Article specifically concerns Safari 27.1 on iPhone Duo; it does not establish universal availability of that version on every Apple OS.", "Device Posture and Viewport Segments APIs are developer previews behind flags."]
+    },
+    {
+      "id": "R02-S3",
+      "title": "Use profiles in Safari on Mac",
+      "url": "https://support.apple.com/en-us/105100",
+      "retrievedAt": "2026-11-21T14:19:09Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2025-12-05",
+      "kind": "vendor-documentation",
+      "limitations": ["Date is extracted publication/update metadata. Profile isolation is partial: passwords, AutoFill, and several settings remain shared.", "External-link routing has specific conditions and is not a general routing rule for all links."]
+    },
+    {
+      "id": "R02-S4",
+      "title": "Share Tab Groups and collaborate in Safari on Mac",
+      "url": "https://support.apple.com/guide/safari/share-tab-groups-collaborate-safari-mac-ibrw7f189b02/mac",
+      "retrievedAt": "2026-11-21T14:24:28Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-07-16",
+      "kind": "vendor-documentation",
+      "limitations": ["Mutable Mac guide with extracted date metadata. Requires Apple Accounts, iCloud Safari, and two-factor authentication; collaboration was not exercised."]
+    },
+    {
+      "id": "R02-S5",
+      "title": "How to use Locked Private Browsing in Safari",
+      "url": "https://support.apple.com/en-us/105028",
+      "retrievedAt": "2026-11-21T14:19:12Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-10-01",
+      "kind": "vendor-documentation",
+      "limitations": ["Date is extracted publication/update metadata. Defaults differ on desktop/mobile, and audio/video playback prevents locking.", "Documentary support does not establish protection against every local observation threat."]
+    },
+    {
+      "id": "R02-S6",
+      "title": "Hide distracting items on webpages in Safari",
+      "url": "https://support.apple.com/en-us/120682",
+      "retrievedAt": "2026-11-21T14:19:16Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-06-15",
+      "kind": "vendor-documentation",
+      "limitations": ["Date is extracted publication/update metadata. Distraction Control does not permanently hide frequently changing ads/content.", "Cross-device persistence was not established; same-device profile and private-session behavior have different scope."]
+    },
+    {
+      "id": "R02-S7",
+      "title": "Use Safari web apps on Mac",
+      "url": "https://support.apple.com/en-us/104996",
+      "retrievedAt": "2026-11-21T14:28:09Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-05-27",
+      "kind": "vendor-documentation",
+      "limitations": ["Date is extracted publication/update metadata. Mac-specific web-app behavior must not be generalized to all platforms or every credential type.", "Notification support and permission are still site-dependent."]
+    },
+    {
+      "id": "R02-S8",
+      "title": "Hide distractions when reading articles in Safari on Mac",
+      "url": "https://support.apple.com/guide/safari/hide-ads-when-reading-sfri32632/mac",
+      "retrievedAt": "2026-11-21T14:30:49Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-07-16",
+      "kind": "vendor-documentation",
+      "limitations": ["Mutable Mac guide with extracted date metadata. Reader eligibility and Apple Intelligence language/region/usage restrictions are explicit.", "Hardware eligibility and summary accuracy were not established; ordinary Reader use is not necessarily AI-dependent."]
+    },
+    {
+      "id": "R02-S9",
+      "title": "Prevent cross-site tracking in Safari on Mac",
+      "url": "https://support.apple.com/guide/safari/prevent-cross-site-tracking-sfri40732/mac",
+      "retrievedAt": "2026-11-21T14:33:39Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-07-16",
+      "kind": "vendor-documentation",
+      "limitations": ["Mutable guide with extracted date metadata. Privacy mechanisms and exception handling are documented, not independently measured anonymity or superiority."]
+    },
+    {
+      "id": "R02-S10",
+      "title": "Browse privately in Safari on Apple Vision Pro",
+      "url": "https://support.apple.com/guide/apple-vision-pro/browse-the-web-privately-tan4d3bd79f8/visionos",
+      "retrievedAt": "2026-11-21T14:33:40Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-07-16",
+      "kind": "vendor-documentation",
+      "limitations": ["Vision Pro-specific guide with extracted date metadata. Private Relay requires iCloud+ and is unavailable in some countries/regions.", "Exact UI and traffic scope are not generalized to other OSes or a full-device VPN."]
+    },
+    {
+      "id": "R02-B1",
+      "title": "Brave Browser Features",
+      "url": "https://brave.com/features/",
+      "retrievedAt": "2026-11-21T14:13:32Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Product-page extraction exposed a subset of the feature catalogue. Generic date metadata was rejected.", "Blocking effectiveness and comparative privacy claims were not measured."]
+    },
+    {
+      "id": "R02-B2",
+      "title": "Browser Privacy Policy",
+      "url": "https://brave.com/privacy/browser/",
+      "retrievedAt": "2026-11-21T14:33:38Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-09-23",
+      "kind": "vendor-documentation",
+      "limitations": ["Current policy text and extracted date metadata were read. Statements describe vendor commitments, not a traffic capture or compliance audit.", "Service-specific exceptions, feedback retention, caching, and experimental AI browsing must remain distinct from general privacy headlines."]
+    },
+    {
+      "id": "R02-B3",
+      "title": "Brave Leo AI",
+      "url": "https://brave.com/leo/",
+      "retrievedAt": "2026-11-21T14:24:37Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2024-02-14",
+      "kind": "vendor-documentation",
+      "limitations": ["Extracted metadata may predate later changes to the mutable product page. Exact model versions and BYOM platform coverage were not pinned.", "Privacy headlines are qualified by R02-B2. Hosted page analysis is not local-only processing."]
+    },
+    {
+      "id": "R02-B4",
+      "title": "Brave Playlist",
+      "url": "https://brave.com/playlist/",
+      "retrievedAt": "2026-11-21T14:21:09Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2025-01-23",
+      "kind": "vendor-documentation",
+      "limitations": ["Date is extracted publication/update metadata. iPhone/iPad support is documented; desktop/Android are described as future availability.", "DRM-protected media is unsupported; saved media is not exportable and was not tested."]
+    },
+    {
+      "id": "R02-B5",
+      "title": "Brave launches Email Aliases to keep your personal email address private from websites",
+      "url": "https://brave.com/privacy-updates/39-email-aliases/",
+      "retrievedAt": "2026-11-21T14:21:12Z",
+      "publishedAt": "2026-08-27",
+      "kind": "release-note",
+      "limitations": ["Launch covers desktop 1.94 and five free aliases. Mobile support and a Premium expansion are plans in this source.", "Delivery quality is unmeasured; the post acknowledges mail may initially reach spam folders. R02-B2 qualifies retention."]
+    },
+    {
+      "id": "R02-B6",
+      "title": "New Brave Origin premium experience offers users a minimalist version of the Brave browser",
+      "url": "https://brave.com/blog/brave-origin",
+      "retrievedAt": "2026-11-21T14:16:10Z",
+      "publishedAt": "2026-06-04",
+      "documentedUpdateDates": ["2026-06-12", "2026-06-29", "2026-09-08"],
+      "kind": "release-note",
+      "limitations": ["Updated launch post distinguishes standalone compilation from in-place disabling and confirms later iOS and desktop-alias availability.", "US price and Linux-free status are vendor-listed terms, not a global checkout verification. Exact latest Brave build was not determined."]
+    },
+    {
+      "id": "R02-B7",
+      "title": "Brave VPN: The secure, fast VPN, right in your browser",
+      "url": "https://brave.com/firewall-vpn/",
+      "retrievedAt": "2026-11-21T14:30:51Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Extracted date coincided with an audit link and was not accepted as publication evidence.", "Linux remains coming soon in the read page. Listed prices, device limits, no-log claims, audit references, and throughput were not independently verified."]
+    },
+    {
+      "id": "R02-V1",
+      "title": "Download Vivaldi",
+      "url": "https://vivaldi.com/download",
+      "retrievedAt": "2026-11-21T14:27:13Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated download-page text only; no installer was downloaded. User counts and comparative marketing claims were not validated.", "Does not establish feature parity or current minimum OS versions."]
+    },
+    {
+      "id": "R02-V2",
+      "title": "Vivaldi gets more powerful and works across all devices",
+      "url": "https://vivaldi.com/blog/vivaldi-on-desktop-6-4/",
+      "retrievedAt": "2026-11-21T14:35:54Z",
+      "publishedAt": "2023-10-26",
+      "kind": "release-note",
+      "limitations": ["Historical cross-platform release, not a claim that 6.4 is current. Phone, Raspberry Pi, and automotive support do not imply desktop feature parity or all-vehicle availability."]
+    },
+    {
+      "id": "R02-V3",
+      "title": "Vivaldi 7.8: No AI Slop. Just Powerful Features.",
+      "url": "https://vivaldi.com/blog/vivaldi-on-desktop-7-8/",
+      "retrievedAt": "2026-11-21T14:21:23Z",
+      "publishedAt": "2026-01-29",
+      "kind": "release-note",
+      "limitations": ["Establishes released 7.8 desktop capabilities, not the latest version at the cutoff.", "Performance and stability rhetoric was not treated as measurement."]
+    },
+    {
+      "id": "R02-V4",
+      "title": "Workspaces - Vivaldi Browser Help",
+      "url": "https://help.vivaldi.com/desktop/tabs/workspaces/",
+      "retrievedAt": "2026-11-21T14:21:19Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2023-04-18",
+      "kind": "vendor-documentation",
+      "limitations": ["Mutable desktop help; extraction date does not date each feature. Workspaces organize tabs and do not establish cookie/account isolation.", "A workspace can be open in only one browser window at a time."]
+    },
+    {
+      "id": "R02-V5",
+      "title": "Tab Stacks - Vivaldi Browser Help",
+      "url": "https://help.vivaldi.com/desktop/tabs/tab-stacks/",
+      "retrievedAt": "2026-11-21T14:30:46Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2017-01-26",
+      "kind": "vendor-documentation",
+      "limitations": ["Mutable desktop help; old extraction metadata is not a shipping date for every current option.", "Settings can cause stacking or shortcut conflicts; no hands-on assessment was performed."]
+    },
+    {
+      "id": "R02-V6",
+      "title": "Tab Tiling in Vivaldi",
+      "url": "https://help.vivaldi.com/desktop/tabs/tab-tiling/",
+      "retrievedAt": "2026-11-21T14:21:16Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-01-29",
+      "kind": "vendor-documentation",
+      "limitations": ["Date is extracted publication/update metadata. No documented tab-count ceiling does not establish practical usability at arbitrary counts or screen sizes."]
+    },
+    {
+      "id": "R02-V7",
+      "title": "Command Chains - Vivaldi Browser Help",
+      "url": "https://help.vivaldi.com/desktop/shortcuts/command-chains/",
+      "retrievedAt": "2026-11-21T14:24:34Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2021-07-28",
+      "kind": "vendor-documentation",
+      "limitations": ["Mutable desktop help, with historical extraction metadata. Adjustable delays and a Test Chain control do not prove completion-aware or reliable automation."]
+    },
+    {
+      "id": "R02-V8",
+      "title": "Web Panels - Vivaldi Browser Help",
+      "url": "https://help.vivaldi.com/desktop/panels/web-panels/",
+      "retrievedAt": "2026-11-21T14:28:16Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2017-05-09",
+      "kind": "vendor-documentation",
+      "limitations": ["Mutable desktop help; current options are not all dated by old extraction metadata. Narrow viewports and website mobile/desktop compatibility can limit usefulness.", "Panels are not evidence of separate account storage."]
+    },
+    {
+      "id": "R02-V9",
+      "title": "Creating Notes in Vivaldi",
+      "url": "https://help.vivaldi.com/desktop/panels/notes/",
+      "retrievedAt": "2026-11-21T14:30:43Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2016-01-29",
+      "kind": "vendor-documentation",
+      "limitations": ["Mutable desktop help, not a timestamp for every feature. Export and capture are documented but attachment fidelity and sync behavior were not tested."]
+    },
+    {
+      "id": "R02-V10",
+      "title": "Panels - Vivaldi Browser Help",
+      "url": "https://help.vivaldi.com/desktop/panels/panels/",
+      "retrievedAt": "2026-11-21T14:33:40Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2016-01-29",
+      "kind": "vendor-documentation",
+      "limitations": ["Mutable desktop help with extracted date metadata. Mail/Calendar/Feeds must be enabled; third-party service prerequisites are outside this page's coverage."]
+    },
+    {
+      "id": "R02-O1",
+      "title": "Download Opera",
+      "url": "https://www.opera.com/download",
+      "retrievedAt": "2026-11-21T14:27:10Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Catalogue text was read without downloading products. Generic January-1 metadata was rejected.", "Opera One, GX, Air, Neon, and Mini are different products; mobile listings do not establish desktop feature parity."]
+    },
+    {
+      "id": "R02-O2",
+      "title": "Opera 140.0.6074.36 Stable update",
+      "url": "https://blogs.opera.com/desktop/2026/11/opera-140-0-6074-36-stable-update/",
+      "retrievedAt": "2026-11-21T14:33:39Z",
+      "publishedAt": "2026-11-18",
+      "kind": "release-note",
+      "limitations": ["Release-note evidence for Opera Stable and its Chromium revision; not an installed-version check, security-lag measurement, or GX build number."]
+    },
+    {
+      "id": "R02-O3",
+      "title": "Features - Opera Help",
+      "url": "https://help.opera.com/en/latest/features/",
+      "retrievedAt": "2026-11-21T14:13:34Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-08-31",
+      "kind": "vendor-documentation",
+      "limitations": ["Mutable multi-feature help; previously retrieved sections were reused. Date is extracted publication/update metadata.", "My Flow retains Opera Touch wording. Currency rates are reference rates. Snapshot's viewport image must not be confused with a full-page PDF."]
+    },
+    {
+      "id": "R02-O4",
+      "title": "Tab Islands - Arrange tabs in separate tab groups",
+      "url": "https://www.opera.com/features/tab-islands",
+      "retrievedAt": "2026-11-21T14:40:22Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated product page. Optional AI analysis and vertical-strip presentation are separate from basic grouping; exact platform rollout is unquantified."]
+    },
+    {
+      "id": "R02-O5",
+      "title": "Here's how Opera's Paste Protect brings you native ClickFix protection",
+      "url": "https://blogs.opera.com/security/2026/07/how-opera-paste-protect-guards-against-clipboard-attacks/",
+      "retrievedAt": "2026-11-21T14:40:22Z",
+      "publishedAt": "2026-07-02",
+      "kind": "vendor-documentation",
+      "limitations": ["Dated security-feature announcement documents defaults, platform-specific checks, and overrides.", "Detection efficacy, false-positive rates, comparative first/unique claims, and cited malware statistics were not measured or adopted."]
+    },
+    {
+      "id": "R02-O6",
+      "title": "Free VPN - Browse anywhere, privately",
+      "url": "https://www.opera.com/features/free-vpn",
+      "retrievedAt": "2026-11-21T14:36:55Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated product page; free/accountless/unlimited are vendor-listed terms, not a checkout or network test.", "Current country labels differ from older help's continental locations. Region availability, no-log audits, and throughput were not independently established."]
+    },
+    {
+      "id": "R02-O7",
+      "title": "Security and privacy - Opera Help",
+      "url": "https://help.opera.com/latest/security-and-privacy/#VPN",
+      "retrievedAt": "2026-11-21T14:35:53Z",
+      "publishedAt": null,
+      "reportedPublicationOrUpdateDate": "2026-05-18",
+      "kind": "vendor-documentation",
+      "limitations": ["Date is extracted publication/update metadata. Browser-to-server VPN scope does not establish device-wide protection or removal of cookie/account identity."]
+    },
+    {
+      "id": "R02-O8",
+      "title": "Opera system requirements - Browser for Windows, macOS and Linux",
+      "url": "https://www.opera.com/download/requirements",
+      "retrievedAt": "2026-11-21T14:30:58Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Only the title and heading were usable. Retained solely for named desktop OS families, not minimum versions or a complete support matrix.", "Generic date metadata was rejected; this is weaker coverage than a fully extracted requirements page."]
+    },
+    {
+      "id": "R02-G1",
+      "title": "Opera GX Lands on Linux",
+      "url": "https://blogs.opera.com/news/2026/03/opera-gx-lands-on-linux/",
+      "retrievedAt": "2026-11-21T14:33:39Z",
+      "publishedAt": "2026-03-19",
+      "kind": "release-note",
+      "limitations": ["Dated Linux launch confirms RAM/network controls and listed distribution families; it does not establish a Linux CPU limiter.", "Performance, privacy-superiority, and long-term support promises remain vendor claims."]
+    },
+    {
+      "id": "R02-G2",
+      "title": "Opera GX is now on Linux",
+      "url": "https://www.opera.com/gx/linux",
+      "retrievedAt": "2026-11-21T14:40:22Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Extracted older date was not accepted as publication evidence. Linux page explicitly names RAM and network limits; generic GX CPU wording is not Linux proof.", "Weekly builds and RAM savings are vendor statements, not an observed update history or benchmark."]
+    },
+    {
+      "id": "R02-G3",
+      "title": "GX Control - Control your browser's performance",
+      "url": "https://www.opera.com/gx/features/gx-control",
+      "retrievedAt": "2026-11-21T14:28:19Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated generic GX desktop product page does not provide a complete per-platform limiter matrix.", "Hard-cap adherence, gaming benefit, and suggested resource allocations were not tested."]
+    },
+    {
+      "id": "R02-G4",
+      "title": "GX Mods - Customize your browser",
+      "url": "https://www.opera.com/gx/features/mods",
+      "retrievedAt": "2026-11-21T14:24:40Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated product page describes free community mods and authoring tools. Review/permission policy and performance costs were not assessed."]
+    },
+    {
+      "id": "R02-G5",
+      "title": "Workspaces in GX - Simplify browsing with separate tab groups",
+      "url": "https://www.opera.com/gx/features/workspaces",
+      "retrievedAt": "2026-11-21T14:24:43Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated desktop-oriented product help. Tab organization is not evidence of isolated cookies, credentials, or authenticated identities."]
+    },
+    {
+      "id": "R02-G6",
+      "title": "Step into Summer with a Massive Update from GX",
+      "url": "https://blogs.opera.com/news/2026/06/step-into-summer-with-a-massive-update-from-gx/",
+      "retrievedAt": "2026-11-21T14:33:39Z",
+      "publishedAt": "2026-06-25",
+      "kind": "release-note",
+      "limitations": ["Recap separates released changes from Early Bird tests; features are not all assigned exact introducing build numbers.", "Reaktinator removal differs from hidden RGX/Video Pickup buttons. Launch-speed and efficiency claims were not benchmarked."]
+    },
+    {
+      "id": "R02-G7",
+      "title": "RGX Mode in GX - Improve online video quality",
+      "url": "https://www.opera.com/gx/features/rgx",
+      "retrievedAt": "2026-11-21T14:27:07Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated product page documents enhancement controls. HD-quality and low-resource language are vendor claims; recovered detail and processing cost were not measured."]
+    },
+    {
+      "id": "R02-G8",
+      "title": "GX Cleaner - Clear browser history and data quickly",
+      "url": "https://www.opera.com/gx/features/gx-cleaner",
+      "retrievedAt": "2026-11-21T14:24:46Z",
+      "publishedAt": null,
+      "kind": "vendor-documentation",
+      "limitations": ["Undated product help documents graded/time-scoped cleanup. Exact deletion semantics and claimed performance improvements were not tested."]
+    }
+  ],
+  "browsers": [
+    {
+      "id": "R02-browser-firefox",
+      "name": "Firefox",
+      "vendor": "Mozilla",
+      "engine": "Gecko on desktop and Android; WebKit/WKWebView on iOS/iPadOS.",
+      "platforms": ["Windows", "macOS", "GNU/Linux", "Android", "iOS/iPadOS"],
+      "lifecycle": "active",
+      "summary": "Official documentation describes per-tab identity containers, local webpage translation, cookie partitioning, vertical tabs, multiple PiP windows, and built-in PDF tools. Firefox 160.0, released November 10, 2026, is the latest dated release inspected.",
+      "sourceIds": ["R02-F1", "R02-F2", "R02-F3", "R02-F4", "R02-F5", "R02-F6", "R02-F7", "R02-F8", "R02-F9", "R02-F10", "R02-F11"],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "documentedVersion": {"version": "160.0", "releasedAt": "2026-11-10", "sourceIds": ["R02-F1"], "latestVersionClaim": false},
+      "platformQualifications": [
+        {"description": "Firefox 160 desktop requires Windows 10+, macOS 10.15+, or the listed GNU/Linux libraries.", "sourceIds": ["R02-F2"]},
+        {"description": "The iOS implementation does not use Gecko; desktop/Android engine-dependent features cannot be assumed on iOS.", "sourceIds": ["R02-F3", "R02-F4"]}
+      ],
+      "strengths": [{"description": "Tab-level identity boundaries, local translation, and reference/document tools form concrete workflows worth comparing.", "evidenceType": "hypothesis", "sourceIds": ["R02-F6", "R02-F7", "R02-F10", "R02-F11"]}],
+      "tradeoffs": [
+        {"description": "Container configuration sync requires an account; the full documented container workflow is an add-on, not proven to be bundled by default.", "sourceIds": ["R02-F6"]},
+        {"description": "Local translation requires model downloads and local processing; cookie partitioning has Storage Access API exceptions.", "sourceIds": ["R02-F5", "R02-F7", "R02-F8"]},
+        {"description": "Mini Window remains an early version in Firefox 160.", "sourceIds": ["R02-F1"]}
+      ],
+      "limitations": ["No browser runtime checks or comparative measurements.", "Current add-on version, latest patch, mobile minimum OS versions, ESR support horizon, and Mini Window rollout fraction are unknown.", "Chrome parity is unassessed."]
+    },
+    {
+      "id": "R02-browser-edge",
+      "name": "Microsoft Edge",
+      "vendor": "Microsoft",
+      "engine": "Chromium/Blink on desktop and Android; WebKit on iOS/iPadOS. Regional alternative-engine permission is not evidence of a different shipped engine.",
+      "platforms": ["Windows", "macOS", "Linux", "Android", "iOS/iPadOS"],
+      "lifecycle": "active",
+      "summary": "Edge documents project workspaces, split/vertical tabs, policy-manageable resource controls, accessibility assistance, and reversible abuse controls. The inspected Stable release is 158.0.4370.33 dated November 19, 2026; Collections and Workspaces V1 require lifecycle corrections.",
+      "sourceIds": ["R02-A1", "R02-A2", "R02-E1", "R02-E2", "R02-E3", "R02-E4", "R02-E5", "R02-E6", "R02-E7", "R02-E8"],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "documentedVersion": {"version": "158.0.4370.33", "releasedAt": "2026-11-19", "channel": "Stable", "sourceIds": ["R02-E1"], "latestVersionClaim": false},
+      "platformQualifications": [
+        {"description": "Edge 151+ requires macOS 13+. Android support requires Android 10+ on ARM. iOS support covers the two latest major releases. Supported Linux distributions are enumerated; Chromebooks are explicitly unsupported.", "sourceIds": ["R02-E2"]},
+        {"description": "Microsoft promises Edge/WebView2 updates on Windows 10 22H2 through at least October 2028 without Windows ESU enrollment; this is not Windows OS support.", "sourceIds": ["R02-E2"]},
+        {"description": "Workspaces V2 requires a signed-in Microsoft/AAD account and is documented for Windows/macOS desktop, despite the browser's broader platform support.", "sourceIds": ["R02-E3"]}
+      ],
+      "strengths": [{"description": "Policy controls, documented sleep exemptions, and accessibility tools offer concrete manageability and recovery patterns.", "evidenceType": "hypothesis", "sourceIds": ["R02-E7", "R02-E8", "R02-E1"]}],
+      "tradeoffs": [
+        {"description": "New Workspaces removes sharing, collaboration, invitations, and tab locking. Collections-to-Favorites migration preserves URLs but not notes or images.", "sourceIds": ["R02-E3", "R02-E4"]},
+        {"description": "Energy saving may cause visible slowdowns or less-smooth video; exceptions and mode-dependent timing matter.", "sourceIds": ["R02-E7"]}
+      ],
+      "limitations": ["No browser runtime or accessibility tests.", "Consumer/enterprise rollout, detailed Linux feature parity, image-description processing/retention, and Remix backend/region limits were not established.", "Chrome parity is unassessed."]
+    },
+    {
+      "id": "R02-browser-safari",
+      "name": "Apple Safari",
+      "vendor": "Apple",
+      "engine": "WebKit.",
+      "platforms": ["macOS", "iOS", "iPadOS", "visionOS"],
+      "lifecycle": "active",
+      "summary": "Safari documents OS-integrated profiles, collaborative Tab Groups, private-window locking, reversible element hiding, standalone web apps, Reader, and privacy controls. Availability is constrained by Apple OS/hardware eligibility; Private Relay and AI summaries have additional prerequisites.",
+      "sourceIds": ["R02-A1", "R02-S1", "R02-S2", "R02-S3", "R02-S4", "R02-S5", "R02-S6", "R02-S7", "R02-S8", "R02-S9", "R02-S10"],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "documentedVersion": {"version": "27.1", "releasedAt": "2026-10-23", "scope": "Inspected iPhone Duo release article only", "sourceIds": ["R02-S2"], "latestVersionClaim": false},
+      "platformQualifications": [
+        {"description": "Updates arrive through operating-system updates/upgrades. Apple no longer provides Safari updates for Windows or other non-Apple operating systems.", "sourceIds": ["R02-S1"]},
+        {"description": "The Safari 27.1 article does not establish that version as current on every Apple OS; posture/viewport-segment APIs remain flag-gated previews in that article.", "sourceIds": ["R02-S2"]}
+      ],
+      "strengths": [{"description": "Cohesive device workflows and explicit, reversible privacy/context controls supply useful comparison cases.", "evidenceType": "hypothesis", "sourceIds": ["R02-S3", "R02-S4", "R02-S5", "R02-S6", "R02-S7"]}],
+      "tradeoffs": [
+        {"description": "Profile separation does not include passwords, AutoFill, all bookmarks, or all settings; shared groups require Apple's account ecosystem.", "sourceIds": ["R02-S3", "R02-S4"]},
+        {"description": "Distraction Control is unreliable for frequently changing elements. Private-window locks have media exceptions; AI summaries and Private Relay have distinct eligibility limits.", "sourceIds": ["R02-S5", "R02-S6", "R02-S8", "R02-S10"]}
+      ],
+      "limitations": ["No runtime, privacy, or performance measurements.", "Latest patch per OS, complete Apple Intelligence eligibility, Highlights details, and cross-device persistence of hidden elements were not established.", "Chrome parity is unassessed."]
+    },
+    {
+      "id": "R02-browser-brave",
+      "name": "Brave",
+      "vendor": "Brave Software Inc.",
+      "engine": "Chromium/Blink on desktop and Android; WebKit on iOS/iPadOS. No alternate regional engine build was verified.",
+      "platforms": ["Windows", "macOS", "Linux", "Android", "iOS/iPadOS"],
+      "lifecycle": "active",
+      "summary": "Brave documents default Shields, user-held-key encrypted Sync, Leo with local/remote model options, and browser-native identity helpers. Standard Brave, paid Origin, Leo Premium, VPN, and Email Aliases have distinct prerequisites and feature sets.",
+      "sourceIds": ["R02-A1", "R02-A2", "R02-B1", "R02-B2", "R02-B3", "R02-B4", "R02-B5", "R02-B6", "R02-B7"],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "variants": [
+        {"name": "Standard Brave", "description": "Remains free and supported according to the Origin announcement.", "sourceIds": ["R02-B6"]},
+        {"name": "Brave Origin standalone", "description": "Desktop minimalist build compiles listed extras out; paid one-time offer, free on Linux.", "sourceIds": ["R02-B6"]},
+        {"name": "Brave Origin upgrade", "description": "Desktop/mobile feature-control upgrade disables listed extras by default and permits toggling; version 1.91+ is documented.", "sourceIds": ["R02-B6"]}
+      ],
+      "strengths": [{"description": "Integrated blocking, explicit key ownership, model choice, and form-level alias generation are useful privacy-boundary design patterns.", "evidenceType": "hypothesis", "sourceIds": ["R02-B1", "R02-B2", "R02-B3", "R02-B5"]}],
+      "tradeoffs": [
+        {"description": "Encrypted Sync cannot be recovered by Brave if devices/keys are lost; inactive chains expire. Playlist is iOS-limited, non-DRM, and non-exportable.", "sourceIds": ["R02-B2", "R02-B4"]},
+        {"description": "Hosted Leo transmits prompt/page or tab context; the policy permits short prompt caching and retains submitted feedback for one year. Alias forwarding retains mappings and has delivery-retry/debugging exceptions.", "sourceIds": ["R02-B2", "R02-B5"]},
+        {"description": "Origin standalone removes several features otherwise described for standard Brave. Brave Ads can appear without Rewards enabled.", "sourceIds": ["R02-B6", "R02-B2"]}
+      ],
+      "limitations": ["No runtime checks, blocking benchmarks, or independent privacy audit.", "Latest stable build, exact region/pricing restrictions, Sync onboarding, BYOM platform matrix, and future mobile-alias/desktop-Playlist/Linux-VPN dates remain unknown.", "Chrome parity is unassessed."]
+    },
+    {
+      "id": "R02-browser-vivaldi",
+      "name": "Vivaldi",
+      "vendor": "Vivaldi Technologies",
+      "engine": "Chromium/Blink on desktop and Android; WebKit on iOS/iPadOS. Exact current embedded-engine revision was not pinned.",
+      "platforms": ["Windows", "macOS", "Linux", "Android", "iOS/iPadOS", "Raspberry Pi", "Android Automotive (vehicle-specific)"],
+      "lifecycle": "active",
+      "summary": "Vivaldi combines rule-routed workspaces, hierarchical Tab Stacks, multi-way tiling, command chains, arbitrary web panels, provenance-preserving notes, and optional productivity panels. Desktop 7.8 is an inspected shipping milestone, not the asserted latest build.",
+      "sourceIds": ["R02-A1", "R02-A2", "R02-V1", "R02-V2", "R02-V3", "R02-V4", "R02-V5", "R02-V6", "R02-V7", "R02-V8", "R02-V9", "R02-V10"],
+      "evidenceType": "vendor-documented",
+      "confidence": "high",
+      "documentedVersion": {"version": "7.8", "releasedAt": "2026-01-29", "scope": "Desktop release inspected", "sourceIds": ["R02-V3"], "latestVersionClaim": false},
+      "platformQualifications": [{"description": "Current download text lists desktop OS families; the 2023 cross-platform release also lists mobile, Raspberry Pi, and Android Automotive. Car support is vehicle-specific.", "sourceIds": ["R02-V1", "R02-V2"]}],
+      "strengths": [{"description": "Composable groups, layouts, commands, and open-format notes may support persistent research workflows with fewer context switches.", "evidenceType": "hypothesis", "sourceIds": ["R02-V4", "R02-V5", "R02-V6", "R02-V7", "R02-V9"]}],
+      "tradeoffs": [
+        {"description": "Docs acknowledge one-window workspace ownership, accidental stacking, tiny tiles, narrow-site layouts, and timing delays in chains. Hibernation is a separate operation from grouping.", "sourceIds": ["R02-V4", "R02-V5", "R02-V6", "R02-V7", "R02-V8"]},
+        {"description": "Partner bookmarks and Speed Dials can earn affiliate commission, as disclosed on the download page.", "sourceIds": ["R02-V1"]},
+        {"description": "A broad configuration surface may increase discoverability and shortcut-conflict costs; this was not measured.", "evidenceType": "hypothesis", "sourceIds": ["R02-V5", "R02-V7", "R02-V10"]}
+      ],
+      "limitations": ["No configured-session benchmarks or runtime checks.", "Latest build, current minimum OS versions, phone/car feature parity, and domain-pin edge cases remain unknown.", "Chrome parity is unassessed."]
+    },
+    {
+      "id": "R02-browser-opera",
+      "name": "Opera / Opera One",
+      "vendor": "Opera",
+      "engine": "Chromium/Blink on desktop and Android; WebKit on iOS/iPadOS. Inspected Opera Stable 140.0.6074.36 identifies Chromium 157.0.8103.79.",
+      "platforms": ["Windows", "macOS", "Linux", "Android", "iOS/iPadOS"],
+      "lifecycle": "active",
+      "summary": "The flagship Opera One product documents automatic Tab Islands, split-screen composition, encrypted cross-device handoff, clipboard-abuse defenses, selection converters, browser VPN, blockers, and capture tools. Opera GX, Air, Neon, and Mini are distinct variants.",
+      "sourceIds": ["R02-A1", "R02-A2", "R02-O1", "R02-O2", "R02-O3", "R02-O4", "R02-O5", "R02-O6", "R02-O7", "R02-O8"],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "documentedVersion": {"version": "140.0.6074.36", "releasedAt": "2026-11-18", "channel": "Stable", "chromiumVersion": "157.0.8103.79", "sourceIds": ["R02-O2"], "latestVersionClaim": false},
+      "platformQualifications": [{"description": "Mobile catalogue explicitly lists Android/iOS. Desktop families appear in the official requirements-page title, but minimum-version extraction was insufficient.", "sourceIds": ["R02-O1", "R02-O8"]}],
+      "strengths": [{"description": "Contextual tab grouping, small utilities, capture, and local clipboard checks provide concrete extension-free workflow patterns to compare.", "evidenceType": "hypothesis", "sourceIds": ["R02-O3", "R02-O4", "R02-O5"]}],
+      "tradeoffs": [
+        {"description": "Flow file size/expiry limits make it a handoff buffer. Currency/timezone conversion needs unambiguous inputs and fresh reference rates.", "sourceIds": ["R02-O3"]},
+        {"description": "Clipboard checks can interrupt intended command copying; overrides exist. Browser VPN does not remove account/cookie identity or prove device-wide protection.", "sourceIds": ["R02-O5", "R02-O7"]},
+        {"description": "Ad/tracker blocking includes enablement, filter, and site-exception boundaries.", "sourceIds": ["R02-O3"]}
+      ],
+      "limitations": ["No runtime checks, detection benchmarks, VPN audit, or security-patch-lag measurement.", "Minimum OS versions, current mobile feature matrix, Flow's contemporary iOS steps, blocker defaults by platform, and VPN geography/throughput remain incomplete.", "Chrome parity is unassessed."]
+    },
+    {
+      "id": "R02-browser-opera-gx",
+      "name": "Opera GX",
+      "vendor": "Opera",
+      "engine": "Opera-family Chromium/Blink on desktop/Android and WebKit on iOS/iPadOS; a GX-specific current Chromium revision was not verified and is not copied from Opera One.",
+      "platforms": ["Windows", "macOS", "Linux", "Android", "iOS/iPadOS"],
+      "lifecycle": "active",
+      "summary": "Opera GX documents visible resource budgets, resource-heavy tab controls, modular customization, workspaces, media controls, cleanup, and upload convenience. Linux shipped March 19, 2026; its specific documentation confirms RAM/network controls rather than a CPU-limiter guarantee.",
+      "sourceIds": ["R02-A1", "R02-A2", "R02-O1", "R02-G1", "R02-G2", "R02-G3", "R02-G4", "R02-G5", "R02-G6", "R02-G7", "R02-G8"],
+      "evidenceType": "vendor-documented",
+      "confidence": "medium",
+      "platformQualifications": [
+        {"description": "Linux launch lists Debian/Ubuntu/Fedora/openSUSE-based distributions; the current product page advertises weekly builds. CPU limiter support on Linux is not established by its RAM/network wording.", "sourceIds": ["R02-G1", "R02-G2", "R02-G3"]},
+        {"description": "The catalogue lists mobile versions, but does not establish desktop limiter or mod parity on phones.", "sourceIds": ["R02-O1", "R02-G6"]}
+      ],
+      "strengths": [{"description": "Visible budgets, workspaces, and media controls may help mixed gaming/browsing sessions while exposing the browser's share of machine resources.", "evidenceType": "hypothesis", "sourceIds": ["R02-G3", "R02-G5", "R02-G6"]}],
+      "tradeoffs": [
+        {"description": "The vendor reports adjustments to prevent configurations that severely affect browsing. Closing heavy tabs and cleaning data can lose useful state.", "sourceIds": ["R02-G6", "R02-G8", "R02-G1"]},
+        {"description": "Sounds, shaders, and mods may distract or add resource use; the net effect was not measured.", "evidenceType": "hypothesis", "sourceIds": ["R02-G4"]}
+      ],
+      "limitations": ["No limiter, game-frame, media-processing, startup-speed, or cleanup runtime tests.", "Current GX build, Linux CPU-limiter availability, full mobile matrix, and mod permissions/review remain unknown.", "Chrome parity is unassessed."]
+    }
+  ],
+  "features": [
+    {
+      "id": "R02-FF-01", "browserId": "R02-browser-firefox", "reportRowId": "FF-01",
+      "title": "Total Cookie Protection", "category": "privacy",
+      "description": "Mozilla documents site-partitioned cookie jars alongside tracker blocking, built in and enabled by default in Standard Enhanced Tracking Protection.",
+      "platforms": ["Per-platform scope not established by the cited feature page"], "availability": "documented",
+      "availabilityDetails": "Storage Access API exceptions allow essential embedded content. The browser's broader platform list does not establish this feature's identical behavior on every platform.",
+      "sourceIds": ["R02-F5"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-F5", "quote": "isolates cookies into site-specific ‘cookie jars.’"}],
+      "limitations": ["Documentation only; partitioning, compatibility exceptions and tracking resistance were not tested.", "No comparative privacy score, anonymity guarantee or mobile feature parity is established."]
+    },
+    {
+      "id": "R02-FF-02", "browserId": "R02-browser-firefox", "reportRowId": "FF-02",
+      "title": "Multi-Account Containers", "category": "identity",
+      "description": "Mozilla's official add-on documentation describes separate cookie and storage identities in tabs, with sites assignable to a container.",
+      "platforms": ["Desktop"], "availability": "historical",
+      "availabilityDetails": "The retained evidence is the official 2020 add-on announcement. Desktop use is documented; configuration sync requires a Firefox account. The full container UI is not established as bundled by default.",
+      "sourceIds": ["R02-F6"], "evidenceType": "vendor-documented", "confidence": "medium", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-F6", "quote": "Each Container has its own separate storage and cookies."}],
+      "limitations": ["Historical documentary design evidence, not a current add-on-version or runtime check.", "Current extension availability, individual desktop OS behavior, mobile parity and cross-container isolation were not tested."]
+    },
+    {
+      "id": "R02-FF-03", "browserId": "R02-browser-firefox", "reportRowId": "FF-03",
+      "title": "On-device webpage translation", "category": "translation",
+      "description": "Mozilla documents locally processed webpage translation, including Chinese, Japanese and Korean on desktop and Android, with offline operation after the needed language model is downloaded.",
+      "platforms": ["Desktop", "Android"], "availability": "documented",
+      "availabilityDetails": "Language models require an initial download; supported languages are enumerated by the product page. iOS parity is not established.",
+      "sourceIds": ["R02-F7", "R02-F8"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-F7", "quote": "translations are done locally"}, {"sourceId": "R02-F8", "quote": "works offline once the language model is downloaded."}],
+      "limitations": ["No network-disabled translation or traffic-capture test was performed.", "Translation quality, model storage, local compute cost, exact language coverage by version and per-OS equivalence were not measured.", "The article's conflicting publication metadata is not used as a shipping date."]
+    },
+    {
+      "id": "R02-FF-04", "browserId": "R02-browser-firefox", "reportRowId": "FF-04",
+      "title": "Native vertical tabs", "category": "tab-management",
+      "description": "Firefox documentation describes a resizable, collapsible vertical-tab sidebar and ordinary collapsible tab groups alongside it.",
+      "platforms": ["Desktop"], "availability": "documented",
+      "availabilityDetails": "A documented desktop setting; advanced tree views and automation are extension capabilities rather than established native functionality.",
+      "sourceIds": ["R02-F9"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-F9", "quote": "tabs move into a vertical list in the sidebar."}],
+      "limitations": ["Documentation only; no layout, keyboard or large-session usability test.", "Exact minimum version, individual desktop OS behavior and mobile equivalents were not established."]
+    },
+    {
+      "id": "R02-FF-05", "browserId": "R02-browser-firefox", "reportRowId": "FF-05",
+      "title": "Multiple Picture-in-Picture video windows", "category": "media",
+      "description": "Mozilla documents multiple simultaneous always-on-top Picture-in-Picture video windows.",
+      "platforms": ["Desktop-style workflow; individual OS coverage unverified"], "availability": "documented",
+      "availabilityDetails": "The product page documents multiple windows; its unbounded promotional wording is not a measured practical window limit.",
+      "sourceIds": ["R02-F10"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-F10", "quote": "have as many picture-in-picture videos as you'd like."}],
+      "limitations": ["No runtime media test was performed.", "Player and DRM compatibility, practical resource limits, accessibility and mobile equivalence were not established."]
+    },
+    {
+      "id": "R02-FF-06", "browserId": "R02-browser-firefox", "reportRowId": "FF-06",
+      "title": "Built-in PDF forms and annotations", "category": "documents",
+      "description": "Firefox's PDF editor page documents forms, text and drawing annotations, images with alt text, highlights and comments, and stored reusable signatures.",
+      "platforms": ["Per-platform scope not established by the cited PDF page"], "availability": "documented",
+      "availabilityDetails": "The product page describes the editor as free and built in. It does not establish arbitrary replacement of existing PDF text or certificate-based signing.",
+      "sourceIds": ["R02-F11"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-F11", "quote": "Sign PDF documents with a stored signature"}],
+      "limitations": ["Documentary feature inventory only; no PDF was edited, signed or accessibility-tested.", "All-form compatibility, signature security properties, platform parity and exact minimum versions remain unverified."]
+    },
+    {
+      "id": "R02-FF-07", "browserId": "R02-browser-firefox", "reportRowId": "FF-07",
+      "title": "Early Mini Window for a tab or page region", "category": "window-management",
+      "description": "Firefox 160 release notes describe an early Mini Window that floats a whole tab or a selected page region above other windows.",
+      "platforms": ["Desktop release; per-OS rollout unquantified"], "availability": "limited",
+      "availabilityDetails": "Explicitly an early version in Firefox 160. Stable-channel documentation is not evidence of mature or universal availability.",
+      "sourceIds": ["R02-F1"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-F1", "quote": "a tab or a selected part of a page into an always-on-top window"}],
+      "limitations": ["Release-note observation only; no page-region capture or floating-window behavior was tested.", "Rollout fraction, platform equivalence, compatibility and maturity are not established."]
+    },
+    {
+      "id": "R02-ED-01", "browserId": "R02-browser-edge", "reportRowId": "ED-01",
+      "title": "Individual-use Workspaces V2", "category": "tab-management",
+      "description": "Edge Workspaces V2 organizes and restores project tabs. Edge 158 notes add same-window workspace switching, workspace pins and emoji labels.",
+      "platforms": ["Windows", "macOS"], "availability": "limited",
+      "availabilityDetails": "General support describes Edge 144+, Windows 10/11 or macOS desktop, and a signed-in Microsoft/AAD account. V2 supports individual use, not sharing, collaboration, invitations or tab locking. The support page and 158 release notes differ on switching rollout timing.",
+      "sourceIds": ["R02-E3", "R02-E1", "R02-E2"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-E3", "quote": "Supports working on multiple tasks for individual use"}, {"sourceId": "R02-E1", "quote": "switch between workspaces directly within their current browser window"}],
+      "limitations": ["No account, restore or switching workflow was exercised.", "Edge's broader Linux/mobile availability does not establish Workspaces support there; Edge 151+ also requires macOS 13+.", "V1 was disabled by default in 158; planned 159 removal is distinct from the documented V2 feature and was still future at the cutoff."]
+    },
+    {
+      "id": "R02-ED-02", "browserId": "R02-browser-edge", "reportRowId": "ED-02",
+      "title": "Split screen within one tab", "category": "window-management",
+      "description": "Edge's product documentation describes two interactive pages displayed side by side in a single browser tab.",
+      "platforms": ["Device-dependent; complete platform matrix not established"], "availability": "limited",
+      "availabilityDetails": "Documented shipped functionality with explicit device, market and browser-version variability. Universal mobile availability is not established.",
+      "sourceIds": ["R02-E5"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-E5", "quote": "two pages side by side in a single browser tab"}],
+      "limitations": ["Product documentation only; no split-screen interaction or accessibility test.", "Precise platform/version eligibility, rollout and small-screen behavior were not verified."]
+    },
+    {
+      "id": "R02-ED-03", "browserId": "R02-browser-edge", "reportRowId": "ED-03",
+      "title": "Reversible vertical-tab layout", "category": "tab-management",
+      "description": "Edge documents moving tabs to a side pane and switching between vertical and horizontal layouts.",
+      "platforms": ["Device-dependent; complete platform matrix not established"], "availability": "limited",
+      "availabilityDetails": "The product page qualifies availability by device, market and browser version.",
+      "sourceIds": ["R02-E6"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-E6", "quote": "quickly switch between vertical and horizontal layouts"}],
+      "limitations": ["Documented controls were not exercised.", "No universal desktop/mobile parity, minimum version or comparative navigation benefit is established."]
+    },
+    {
+      "id": "R02-ED-04", "browserId": "R02-browser-edge", "reportRowId": "ED-04",
+      "title": "Sleeping tabs and Energy saver", "category": "resource-management",
+      "description": "Edge documents inactivity timing, sleep exclusions, policy controls, and balanced or maximum Energy saver modes. Sleeping freezes script timers; discarding requires a full reload.",
+      "platforms": ["Windows", "macOS", "Linux"], "availability": "documented",
+      "availabilityDetails": "Desktop Energy saver documentation covers these OS families with different defaults. Energy saver can override the chosen sleep interval; exemptions and mode-dependent timing matter.",
+      "sourceIds": ["R02-E7"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-E7", "quote": "Freezing pauses a tab’s script timers"}],
+      "limitations": ["No battery, CPU, reload, call-preservation or responsiveness benchmark was run.", "The source warns of visible slowdowns or less-smooth video. Defaults are not identical across platforms and modes.", "Sleeping tabs and Energy saver must not be conflated with the separate Performance detector's planned retirement."]
+    },
+    {
+      "id": "R02-ED-05", "browserId": "R02-browser-edge", "reportRowId": "ED-05",
+      "title": "Immersive Reader and Read aloud", "category": "reading-accessibility",
+      "description": "Microsoft documents simplified article layout, theme and text controls, and spoken reading through Immersive Reader and Read aloud.",
+      "platforms": ["Per-platform equivalence not established by the accessibility page"], "availability": "limited",
+      "availabilityDetails": "Immersive Reader appears only on eligible pages. Voice, network and platform equivalence were not established.",
+      "sourceIds": ["R02-E8"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-E8", "quote": "a cleaner, simpler layout with fewer distractions"}],
+      "limitations": ["No reading, speech, screen-reader or page-eligibility tests were performed.", "Processing location, voice availability, offline operation and assistive-technology quality remain unverified."]
+    },
+    {
+      "id": "R02-ED-06", "browserId": "R02-browser-edge", "reportRowId": "ED-06",
+      "title": "Opt-in generated image descriptions", "category": "accessibility",
+      "description": "Edge's accessibility documentation describes generating text for unlabeled images for use by screen readers.",
+      "platforms": ["Per-platform availability not established by the accessibility page"], "availability": "limited",
+      "availabilityDetails": "Requires opt-in. Listed languages are English, Spanish, Japanese, Portuguese and simplified Chinese. The source does not establish on-device processing.",
+      "sourceIds": ["R02-E8"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-E8", "quote": "detect unlabeled images and generate descriptions"}],
+      "limitations": ["No generated-description correctness or screen-reader evaluation was performed.", "Processing/retention, region and exact platform coverage remain unknown; a documented assistance feature is not comprehensive accessibility conformance."]
+    },
+    {
+      "id": "R02-ED-07", "browserId": "R02-browser-edge", "reportRowId": "ED-07",
+      "title": "Reversible automatic notification revocation", "category": "security-controls",
+      "description": "Edge 158 notes describe automatically stopping notifications from a source whose notifications lead to SmartScreen-blocked scam, phishing or malware pages, with review and restoration controls.",
+      "platforms": ["Edge 158; per-platform rollout not established"], "availability": "limited",
+      "availabilityDetails": "Listed as a 158 feature update. Users can review and restore blocked sources; consumer and enterprise rollout coverage is unquantified.",
+      "sourceIds": ["R02-E1"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-E1", "quote": "automatically stops that source from sending further notifications."}],
+      "limitations": ["Release-note observation, not a locally reproduced security behavior.", "Detection efficacy, false positives, platform equivalence and restoration accessibility were not measured."]
+    },
+    {
+      "id": "R02-ED-08", "browserId": "R02-browser-edge", "reportRowId": "ED-08",
+      "title": "Remix personal webpage changes", "category": "page-customization",
+      "description": "Edge 158 notes describe personalizing supported webpages with appearance controls or natural-language requests and pausing or removing those changes within the user's browser profile.",
+      "platforms": ["Edge 158; per-platform rollout not established"], "availability": "limited",
+      "availabilityDetails": "Listed in stable 158 notes; supported-page scope and consumer rollout are unquantified. Commercial policy can disable Remix or pin its toolbar entry.",
+      "sourceIds": ["R02-E1"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-E1", "quote": "Changes remain personal to the user's browser profile"}],
+      "limitations": ["No customization, pause, removal or policy-control test was performed.", "All-site support, fully local execution, backend processing, regional eligibility and account requirements were not established."]
+    },
+    {
+      "id": "R02-SA-01", "browserId": "R02-browser-safari", "reportRowId": "SA-01",
+      "title": "Profiles with qualified external-link routing", "category": "identity",
+      "description": "Safari's Mac guide documents separate profile history, cookies, website data and Tab Groups, plus routing externally opened website links to a chosen profile under specified conditions.",
+      "platforms": ["macOS"], "availability": "limited",
+      "availabilityDetails": "Safari 17+. Passwords, AutoFill, privacy/security settings and the wider bookmark collection remain shared. Extensions are enabled separately per profile. Profile sync requires the same Apple Account and iCloud Safari.",
+      "sourceIds": ["R02-S3"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-S3", "quote": "history, cookies, and other website data are not shared between profiles."}],
+      "limitations": ["Documentary evidence only; isolation, sync and link routing were not exercised.", "The external-link rule is conditional, not a general router for all navigation. The inspected Mac guide does not establish identical mobile behavior or complete isolation of secrets and settings."]
+    },
+    {
+      "id": "R02-SA-02", "browserId": "R02-browser-safari", "reportRowId": "SA-02",
+      "title": "Collaborative Shared Tab Groups", "category": "collaboration",
+      "description": "Safari's Mac guide describes live shared-tab updates and participant access management in Shared Tab Groups.",
+      "platforms": ["macOS"], "availability": "limited",
+      "availabilityDetails": "Collaborators need Apple Account sign-in, iCloud Safari and two-factor authentication. The inspected Mac guide states up to 100 participants.",
+      "sourceIds": ["R02-S4"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-S4", "quote": "everyone sees updates in real time."}],
+      "limitations": ["No collaboration, access-revocation or participant-limit test was run.", "The documented live collaboration workflow is distinct from ordinary personal sync; cross-platform equivalence and account eligibility beyond the cited prerequisites were not established."]
+    },
+    {
+      "id": "R02-SA-03", "browserId": "R02-browser-safari", "reportRowId": "SA-03",
+      "title": "Locked Private Browsing", "category": "privacy",
+      "description": "Safari documents locking still-open private windows with device authentication when they are not in use.",
+      "platforms": ["macOS", "iOS", "iPadOS"], "availability": "limited",
+      "availabilityDetails": "Requires iOS/iPadOS 17+, or Safari 17+ on macOS Monterey 12+. Locking is default on macOS; mobile offers opt-in. Private windows do not lock while audio/video plays or before a page has loaded.",
+      "sourceIds": ["R02-S5"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-S5", "quote": "private windows can lock when you're not using them."}],
+      "limitations": ["No lock/unlock, media, screen-sharing or assistive-technology test was performed.", "This is a documented local privacy control with exceptions, not a guarantee against every local observation threat or equivalent behavior on every supported OS version."]
+    },
+    {
+      "id": "R02-SA-04", "browserId": "R02-browser-safari", "reportRowId": "SA-04",
+      "title": "Reversible Distraction Control", "category": "page-customization",
+      "description": "Safari documents hiding user-selected page elements and restoring them, with possible reuse across same-site pages and profiles on the same device.",
+      "platforms": ["macOS", "iOS", "iPadOS"], "availability": "limited",
+      "availabilityDetails": "Requires macOS 15+ or iOS/iPadOS 18+. Best suited to elements that do not change frequently. Private-session hiding is temporary; cross-device persistence was not established.",
+      "sourceIds": ["R02-S6"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-S6", "quote": "doesn't permanently hide ads or other items that update frequently."}],
+      "limitations": ["No element-hiding, restoration or persistence workflow was tested.", "The documented mechanism is not a promise of ad blocking or reliable suppression of changing content; exact per-version and cross-device behavior remains unverified."]
+    },
+    {
+      "id": "R02-SA-05", "browserId": "R02-browser-safari", "reportRowId": "SA-05",
+      "title": "Independent Dock web apps", "category": "web-apps",
+      "description": "Safari documents saving a webpage as a separately launched Dock web app with independent ongoing history, cookies, website data and settings, web-app extension settings, and notification badge support.",
+      "platforms": ["macOS"], "availability": "limited",
+      "availabilityDetails": "Requires macOS Sonoma 14+. Notifications still depend on site support and permission. The cited page describes Mac web apps rather than an all-platform installation contract.",
+      "sourceIds": ["R02-S7"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-S7", "quote": "A web app functions independently of Safari."}],
+      "limitations": ["No app installation, launch, notification or data-deletion test was performed.", "Independent ongoing browsing data does not establish isolation of every credential type or identical behavior on other Apple platforms."]
+    },
+    {
+      "id": "R02-SA-06", "browserId": "R02-browser-safari", "reportRowId": "SA-06",
+      "title": "Reader with conditional article summaries", "category": "reading-accessibility",
+      "description": "Safari's Mac guide describes distraction-reduced article reading, visual preferences and navigation for long articles, with Apple Intelligence summaries for supported pages.",
+      "platforms": ["macOS"], "availability": "limited",
+      "availabilityDetails": "Reader requires an eligible article. Apple Intelligence has language, region and possible usage limits; hardware eligibility was not verified. Ordinary Reader use is not necessarily AI-dependent.",
+      "sourceIds": ["R02-S8"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-S8", "quote": "A table of contents and summary are shown for longer articles."}],
+      "limitations": ["No Reader eligibility, summary-accuracy or accessibility test was run.", "The complete Apple Intelligence hardware/language/region matrix and per-platform equivalence remain unknown. Insufficiently extracted Highlights material is not evidence for this record."]
+    },
+    {
+      "id": "R02-SA-07", "browserId": "R02-browser-safari", "reportRowId": "SA-07",
+      "title": "Cross-site tracking and fingerprinting controls", "category": "privacy",
+      "description": "Safari's Mac guide documents cross-site tracking controls, a reduced fingerprinting surface through a simplified system configuration, and a report of blocked known trackers.",
+      "platforms": ["macOS"], "availability": "documented",
+      "availabilityDetails": "Native privacy controls have cookie/data-access exceptions and site-interaction boundaries. The inspected Mac guide does not establish identical settings or behavior on every Apple OS.",
+      "sourceIds": ["R02-S9"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-S9", "quote": "Safari presents a simplified version of your system configuration."}],
+      "limitations": ["Documented mechanisms only; no tracking-resistance, fingerprinting or compatibility test.", "No anonymity guarantee, comparative privacy score or measured superiority is established."]
+    },
+    {
+      "id": "R02-SA-08", "browserId": "R02-browser-safari", "reportRowId": "SA-08",
+      "title": "iCloud Private Relay browsing controls", "category": "network-privacy",
+      "description": "Apple's Vision Pro guide documents encrypted browsing through two separate relays and temporary per-site IP exposure controls.",
+      "platforms": ["visionOS"], "availability": "limited",
+      "availabilityDetails": "Requires paid iCloud+ and an eligible country/region. The directly inspected guide covers Vision Pro; its exact UI and network-traffic scope are not generalized to other operating systems.",
+      "sourceIds": ["R02-S10"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-S10", "quote": "traffic ... is encrypted and sent through two separate internet relays."}],
+      "limitations": ["No relay, traffic-scope, IP-exposure or regional-eligibility test was performed.", "This is not evidence of a universal full-device VPN; pricing details and all-platform feature parity were not established."]
+    },
+    {
+      "id": "R02-BR-01", "browserId": "R02-browser-brave", "reportRowId": "BR-01",
+      "title": "Built-in Shields", "category": "privacy",
+      "description": "Brave documents built-in default Shields protection with ad/tracker blocking, fingerprinting defenses, cookie controls and customization.",
+      "platforms": ["Per-platform scope not established by the cited Shields page"], "availability": "documented",
+      "availabilityDetails": "Default protection and customization are described by the product page; the browser's broader platform inventory does not establish uniform blocking behavior in every build.",
+      "sourceIds": ["R02-B1"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-B1", "quote": "Shields offer default, built-in protection"}],
+      "limitations": ["No blocking-efficacy, site-compatibility or privacy audit was performed.", "Vendor superiority language is not adopted. Exact per-platform settings, coverage and minimum versions remain unverified."]
+    },
+    {
+      "id": "R02-BR-02", "browserId": "R02-browser-brave", "reportRowId": "BR-02",
+      "title": "User-held-key encrypted Sync", "category": "synchronization",
+      "description": "Brave's privacy policy describes opt-in Sync that keeps browser data encrypted on the hosting provider, with the decryption key held by the user.",
+      "platforms": ["Per-platform Sync support not established by the cited policy"], "availability": "documented",
+      "availabilityDetails": "Brave says it cannot recover data if devices or keys are lost. Unused chains expire after 12 months and associated server data may be deleted. Accountless onboarding was not established from fetched documentation.",
+      "sourceIds": ["R02-B2"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-B2", "quote": "Only you have access to the decryption key"}],
+      "limitations": ["Policy commitments, not a cryptographic audit, recovery test or traffic capture.", "Onboarding, current platform matrix, version requirements and inactive-chain handling were not exercised; inaccessible support-page snippets are not treated as evidence."]
+    },
+    {
+      "id": "R02-BR-03", "browserId": "R02-browser-brave", "reportRowId": "BR-03",
+      "title": "Leo with local or remote model choice", "category": "ai-assistance",
+      "description": "Brave documents Leo page/PDF questions, locally retained chat history and Bring Your Own Model options for local or remote models. Standard hosted use sends prompts/context and sometimes page or tab text to a backend.",
+      "platforms": ["Desktop", "Android", "iOS"], "availability": "limited",
+      "availabilityDetails": "Free limited tier and paid Premium. The exact BYOM platform matrix and model versions were not pinned. Local chat storage is distinct from local inference.",
+      "sourceIds": ["R02-B3", "R02-B2"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-B3", "quote": "Run your own AI models, whether local or remote."}],
+      "limitations": ["No model, PDF, network or local-only processing test was performed.", "The privacy policy permits large-prompt caching for minutes and retains submitted feedback, including conversation text, for one year; marketing retention headlines are not an unconditional no-retention guarantee.", "Platform/region eligibility, actual model quality and current quotas were not fully established."]
+    },
+    {
+      "id": "R02-BR-04", "browserId": "R02-browser-brave", "reportRowId": "BR-04",
+      "title": "Playlist offline and background playback", "category": "media",
+      "description": "Brave Playlist documentation describes saving supported audio/video for offline and background playback with lock-screen controls.",
+      "platforms": ["iOS/iPadOS"], "availability": "limited",
+      "availabilityDetails": "Free and documented for iPhone/iPad. Android and desktop are described as future availability. DRM-protected services are unsupported; saved media cannot be exported or moved to another device.",
+      "sourceIds": ["R02-B4"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-B4", "quote": "played back when you don’t have an Internet connection."}],
+      "limitations": ["No media was saved or played; actual player compatibility and offline behavior were not tested.", "No shipped desktop/Android support or future delivery date is established. The workflow is not a portable media export format."]
+    },
+    {
+      "id": "R02-BR-05", "browserId": "R02-browser-brave", "reportRowId": "BR-05",
+      "title": "Email Aliases from email fields", "category": "identity",
+      "description": "Brave's desktop Email Aliases launch describes creating per-service forwarding addresses from email fields, deactivating them and keeping local notes.",
+      "platforms": ["Desktop"], "availability": "limited",
+      "availabilityDetails": "Shipped in desktop 1.94 with five free aliases and a required Brave Account. Mobile support and a Premium expansion are announced rather than established as shipped.",
+      "sourceIds": ["R02-B5", "R02-B2", "R02-B6"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-B5", "quote": "five free email aliases."}],
+      "limitations": ["No account creation, forwarding, deactivation or delivery test was performed; the launch acknowledges that mail may initially reach spam folders.", "The policy retains real-address/alias mappings, permits failed-delivery retries for up to 24 hours and limited debugging events for 14 days. These are documented service boundaries, not a finding of improper collection.", "Exact regional availability and future mobile/Premium dates remain unknown."]
+    },
+    {
+      "id": "R02-BR-06", "browserId": "R02-browser-brave", "reportRowId": "BR-06",
+      "title": "Origin minimalist edition and feature-control upgrade", "category": "product-optionality",
+      "description": "Brave Origin offers a standalone desktop edition that compiles listed extras out, and an in-place desktop/mobile upgrade that disables listed extras by default while permitting toggling.",
+      "platforms": ["Windows", "macOS", "Linux", "Android", "iOS/iPadOS"], "availability": "limited",
+      "availabilityDetails": "Vendor-listed US one-time price is $59.99, with Origin free on Linux. Standalone builds are Windows/macOS/Linux; mobile availability refers to the in-place upgrade. Version 1.91+ is documented. Standard free Brave remains supported.",
+      "sourceIds": ["R02-B6"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-B6", "quote": "The features will be compiled out of the build."}],
+      "limitations": ["No purchase, installation, upgrade or code-removal verification was performed.", "A standalone compilation differs from toggling features in an existing installation; features described for standard Brave cannot all be assigned to Origin standalone.", "US terms are not a global checkout guarantee; exact latest build, regional pricing and per-platform upgrade behavior were not established."]
+    },
+    {
+      "id": "R02-BR-07", "browserId": "R02-browser-brave", "reportRowId": "BR-07",
+      "title": "Subscription Firewall + VPN", "category": "network-privacy",
+      "description": "Brave documents Firewall + VPN as protecting traffic from apps beyond the browser.",
+      "platforms": ["Windows", "macOS", "Android", "iOS"], "availability": "limited",
+      "availabilityDetails": "Subscription service; Linux remains coming soon in the inspected page. Vendor-listed offers are $9.99 per month or $99.99 per year for up to 10 devices.",
+      "sourceIds": ["R02-B7"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-B7", "quote": "every app, even outside of Brave."}],
+      "limitations": ["No VPN installation, traffic-scope, throughput or no-log audit was performed.", "Prices, device limits and supported platforms are vendor-listed terms rather than a global checkout test. Linux delivery date and exact regional restrictions remain unknown."]
+    },
+    {
+      "id": "R02-VI-01", "browserId": "R02-browser-vivaldi", "reportRowId": "VI-01",
+      "title": "Rule-routed Workspaces", "category": "tab-management",
+      "description": "Vivaldi's desktop help documents switching project tab sets within a window, routing tabs by URL rules, and bulk hibernation and copy-links operations.",
+      "platforms": ["Desktop"], "availability": "documented",
+      "availabilityDetails": "A workspace can be open in only one browser window at a time. Grouping organizes tabs; it does not establish separate cookies or authenticated accounts. Hibernation is a separate operation.",
+      "sourceIds": ["R02-V4"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-V4", "quote": "automatically move tabs to the Workspace ... following the rules you’ve set up."}],
+      "limitations": ["Documentation only; URL routing, restoration, window ownership and hibernation were not exercised.", "The desktop workflow is not evidence of mobile or automotive parity, identity isolation, or reduced resource use from grouping alone."]
+    },
+    {
+      "id": "R02-VI-02", "browserId": "R02-browser-vivaldi", "reportRowId": "VI-02",
+      "title": "Tab Stacks and stack-wide actions", "category": "tab-management",
+      "description": "Vivaldi documents compact, two-level and accordion Tab Stacks, host-based grouping, and stack-wide save-session, tile, hibernate, pin and copy-links operations.",
+      "platforms": ["Desktop"], "availability": "documented",
+      "availabilityDetails": "Desktop settings affect drag-and-drop and double-click behavior; the documentation acknowledges accidental stacking and shortcut conflicts.",
+      "sourceIds": ["R02-V5"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-V5", "quote": "Tabs in a Tab Stack are displayed on the second level"}],
+      "limitations": ["No stack, session-restoration or keyboard interaction was tested.", "The mutable help page's older metadata is not an introduction date for every option; mobile parity and large-session usability remain unverified."]
+    },
+    {
+      "id": "R02-VI-03", "browserId": "R02-browser-vivaldi", "reportRowId": "VI-03",
+      "title": "Multi-way tab tiling", "category": "window-management",
+      "description": "Vivaldi's desktop documentation describes vertical, horizontal, grid and custom tiled-tab arrangements. The 7.8 release adds drag-to-tile and opening a link directly as a tile.",
+      "platforms": ["Desktop"], "availability": "documented",
+      "availabilityDetails": "Enhanced in desktop 7.8. The documentation states no tab-count ceiling but explicitly qualifies usability by screen size.",
+      "sourceIds": ["R02-V6", "R02-V3"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-V6", "quote": "There’s no limit to how many tabs you can tile at once"}],
+      "limitations": ["No tiling, keyboard-focus, responsiveness or small-screen test was performed.", "An undocumented count limit is not evidence of practical usability at arbitrary counts. Desktop 7.8 is an inspected shipping milestone, not the asserted latest release; phone and car parity are unknown."]
+    },
+    {
+      "id": "R02-VI-04", "browserId": "R02-browser-vivaldi", "reportRowId": "VI-04",
+      "title": "Reusable Command Chains", "category": "automation",
+      "description": "Vivaldi documents sequences of native browser commands that can be invoked from command search, keyboard shortcuts, gestures or toolbar buttons.",
+      "platforms": ["Desktop"], "availability": "documented",
+      "availabilityDetails": "User configuration includes a Test Chain control and adjustable delays. The documentation does not establish completion-aware sequencing.",
+      "sourceIds": ["R02-V7"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-V7", "quote": "A Command Chain is a group of commands executed in a sequence."}],
+      "limitations": ["No command chain was configured or executed.", "Timing-sensitive chains are not proven robust automation. Shortcut conflicts, recovery, per-platform behavior and mobile support were not assessed."]
+    },
+    {
+      "id": "R02-VI-05", "browserId": "R02-browser-vivaldi", "reportRowId": "VI-05",
+      "title": "User-selected Web Panels", "category": "panels",
+      "description": "Vivaldi's desktop help documents keeping arbitrary user-chosen websites beside the main tab, with per-panel width, zoom, mute and periodic reload controls.",
+      "platforms": ["Desktop"], "availability": "documented",
+      "availabilityDetails": "Mobile-friendly sites fit narrow panels best; desktop/mobile view switching is documented for incompatible layouts. Panels contain web content and are not automatically isolated account contexts.",
+      "sourceIds": ["R02-V8"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-V8", "quote": "simultaneously view its content alongside the tab(s) in your main window."}],
+      "limitations": ["No panel, authentication, periodic-reload or accessibility workflow was exercised.", "Site layout compatibility, resource costs, account boundaries and mobile-browser parity remain unverified."]
+    },
+    {
+      "id": "R02-VI-06", "browserId": "R02-browser-vivaldi", "reportRowId": "VI-06",
+      "title": "Provenance-preserving Notes and open-format export", "category": "research-capture",
+      "description": "Vivaldi documents capturing selected text with its webpage link, creation date and screenshot, plus append, search, Markdown and ordinary .txt/.md file export.",
+      "platforms": ["Desktop"], "availability": "documented",
+      "availabilityDetails": "The detailed capture/export workflow is desktop documentation. The download page describes syncing notes to companion mobile browsers without establishing identical mobile capture and export tools.",
+      "sourceIds": ["R02-V9", "R02-V1"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-V9", "quote": "the webpage link, the creation date, and a screenshot"}],
+      "limitations": ["No note, export or sync operation was performed.", "Attachment fidelity, sync behavior, account prerequisites and per-platform export parity were not tested; this is not an inferred cloud-only format."]
+    },
+    {
+      "id": "R02-VI-07", "browserId": "R02-browser-vivaldi", "reportRowId": "VI-07",
+      "title": "Optional productivity panels", "category": "productivity",
+      "description": "Vivaldi's desktop help describes integrated Mail, Calendar, Tasks, Feeds and Contacts panels.",
+      "platforms": ["Desktop"], "availability": "limited",
+      "availabilityDetails": "Mail, Calendar and Feeds must be enabled. Third-party accounts and services can impose their own prerequisites; no universal accountless or payment-free service claim is established.",
+      "sourceIds": ["R02-V10"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-V10", "quote": "available only when Mail, Calendar and Feeds have been enabled"}],
+      "limitations": ["No account setup, synchronization or productivity-panel workflow was exercised.", "Third-party compatibility, current service eligibility and phone/car feature parity remain unknown."]
+    },
+    {
+      "id": "R02-VI-08", "browserId": "R02-browser-vivaldi", "reportRowId": "VI-08",
+      "title": "Domain-restricted pinned tabs", "category": "tab-management",
+      "description": "Vivaldi's desktop 7.8 release documents domain restriction for pinned tabs, keeping a persistent app tab associated with its domain, and pinned Mail persistence across workspaces.",
+      "platforms": ["Desktop"], "availability": "documented",
+      "availabilityDetails": "Shipped in the inspected desktop 7.8 release. Domain restriction is a navigation behavior, not evidence of separate cookie or credential storage.",
+      "sourceIds": ["R02-V3"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-V3", "quote": "Pinned tabs now support domain restriction."}],
+      "limitations": ["Release-note evidence only; cross-domain redirects, authentication navigation and pin persistence were not tested.", "The exact latest Vivaldi version and mobile/automotive equivalents were not established."]
+    },
+    {
+      "id": "R02-OP-01", "browserId": "R02-browser-opera", "reportRowId": "OP-01",
+      "title": "Automatic Tab Islands", "category": "tab-management",
+      "description": "Opera documents automatically grouping related browsing into Tab Islands, with names, colors, collapse/expand controls and drag movement. Following links opens tabs in the same island.",
+      "platforms": ["Desktop-oriented documentation; exact platform rollout unknown"], "availability": "documented",
+      "availabilityDetails": "The feature page describes Tab Islands as enabled by default and also describes an optional vertical tab strip. Optional AI analysis of an island is a separate processing path, not necessary for grouping.",
+      "sourceIds": ["R02-O4"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-O4", "quote": "following links opens tabs in the same island."}],
+      "limitations": ["Product documentation only; grouping, movement, restoration and keyboard behavior were not tested.", "Exact platform rollout, mobile equivalents and minimum versions are unknown; optional AI analysis must not be assigned to basic grouping."]
+    },
+    {
+      "id": "R02-OP-02", "browserId": "R02-browser-opera", "reportRowId": "OP-02",
+      "title": "Split Screen with Tab Islands", "category": "window-management",
+      "description": "Opera's desktop help documents joining two tabs side by side, switching horizontal or vertical layouts and composing split views with Tab Islands.",
+      "platforms": ["Desktop"], "availability": "documented",
+      "availabilityDetails": "Moving tabs from different islands into a split creates a split outside those islands; previous group membership must not be assumed to persist.",
+      "sourceIds": ["R02-O3"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-O3", "quote": "join two tabs side by side and use them simultaneously."}],
+      "limitations": ["No split, layout, focus or island-movement workflow was exercised.", "Per-OS differences, minimum version, mobile equivalents and practical small-screen behavior remain unknown."]
+    },
+    {
+      "id": "R02-OP-03", "browserId": "R02-browser-opera", "reportRowId": "OP-03",
+      "title": "My Flow encrypted cross-device handoff", "category": "cross-device-handoff",
+      "description": "Opera documents QR pairing between desktop and mobile browsers for encrypted transfer of links, notes, media and files through My Flow.",
+      "platforms": ["Desktop", "Mobile (current iOS setup wording unresolved)"], "availability": "limited",
+      "availabilityDetails": "The help specifies files up to 10 MB that automatically disappear after 48 hours. Some setup instructions still refer to Opera Touch, so contemporary iOS steps are not established.",
+      "sourceIds": ["R02-O3"], "evidenceType": "vendor-documented", "confidence": "medium", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-O3", "quote": "the encrypted space shared between your Opera browsers"}],
+      "limitations": ["No device was paired and no transfer, encryption or expiry behavior was tested.", "The documented file buffer is not durable storage; exact current mobile support and setup steps remain unknown."]
+    },
+    {
+      "id": "R02-OP-04", "browserId": "R02-browser-opera", "reportRowId": "OP-04",
+      "title": "Local Paste Protect clipboard checks", "category": "security-controls",
+      "description": "Opera documents local clipboard-hijack warnings and blocking of copied potentially harmful commands, with a visible alert, deliberate override and trusted-site exceptions.",
+      "platforms": ["Windows", "macOS", "Linux"], "availability": "documented",
+      "availabilityDetails": "The July 2026 announcement describes default-on local checks on desktop. Platform-specific checks and exceptions apply; no command is automatically executed by the described protection.",
+      "sourceIds": ["R02-O3", "R02-O5"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-O5", "quote": "The action is blocked and the user receives an alert"}],
+      "limitations": ["Documentary security behavior only; no clipboard, malicious-command or override test was performed.", "Detection effectiveness, false positives, missed attacks, platform equivalence and comparison with Chrome or OS protections were not measured."]
+    },
+    {
+      "id": "R02-OP-05", "browserId": "R02-browser-opera", "reportRowId": "OP-05",
+      "title": "Text-selection currency, unit and time-zone conversion", "category": "contextual-utilities",
+      "description": "Opera's help documents a text-selection popup for converting currencies, measurement units and time zones.",
+      "platforms": ["Desktop help; per-OS equivalence unknown"], "availability": "documented",
+      "availabilityDetails": "Selection must include the appropriate symbol or abbreviation. Currency values are reference rates, not transaction quotes; ambiguous currency symbols use documented defaults.",
+      "sourceIds": ["R02-O3"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-O3", "quote": "convert between imperial and metric units of measurement"}],
+      "limitations": ["No conversions were run; rate freshness, ambiguous-input handling and time-zone correctness were not measured.", "Supported locales, currencies and current mobile equivalents were not fully established."]
+    },
+    {
+      "id": "R02-OP-06", "browserId": "R02-browser-opera", "reportRowId": "OP-06",
+      "title": "Free browser-scoped VPN", "category": "network-privacy",
+      "description": "Opera documents built-in browser-traffic tunneling and optional automatic connection on public networks on desktop.",
+      "platforms": ["Desktop; exact region/platform matrix unknown"], "availability": "limited",
+      "availabilityDetails": "The product page lists free, accountless and unlimited terms. The documented traffic scope is browser-to-server, not every application on the device. Current country labels differ from older help's continental locations.",
+      "sourceIds": ["R02-O6", "R02-O7"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-O6", "quote": "no account or extra apps needed."}],
+      "limitations": ["No VPN connection, traffic-scope, geography, throughput or no-log audit was performed.", "Vendor-listed terms are not a global availability guarantee. Tunneling does not remove cookie/account identity or establish full-device protection."]
+    },
+    {
+      "id": "R02-OP-07", "browserId": "R02-browser-opera", "reportRowId": "OP-07",
+      "title": "Built-in ad and tracker blockers", "category": "content-blocking",
+      "description": "Opera's help documents built-in ad/tracker blockers with per-site exceptions and filter-list controls. The 2026 Opera/GX update describes native-engine support for uBlock lists and filters.",
+      "platforms": ["Desktop documentation; platform-specific defaults unknown"], "availability": "documented",
+      "availabilityDetails": "Help describes enabling the blockers and notes some default exceptions. Do not infer that blocking is default-on everywhere or that filter support equals complete uBlock extension compatibility.",
+      "sourceIds": ["R02-O3", "R02-G6"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-O3", "quote": "Click Manage Exceptions to change site-specific preferences"}],
+      "limitations": ["No blocking, exception, filter-compatibility or website-breakage test was performed.", "Exact platform defaults, complete supported filter syntax and measured efficacy remain unknown."]
+    },
+    {
+      "id": "R02-OP-08", "browserId": "R02-browser-opera", "reportRowId": "OP-08",
+      "title": "Snapshot capture and annotation", "category": "capture-and-annotation",
+      "description": "Opera's desktop help documents region or viewport image capture with annotation, blur, arrows, highlights and text tools. It separately describes saving a full page as PDF.",
+      "platforms": ["Desktop"], "availability": "documented",
+      "availabilityDetails": "The inspected help distinguishes a visible-viewport image from a full-page PDF; the latter is not evidence of a full-page screenshot feature.",
+      "sourceIds": ["R02-O3"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-O3", "quote": "Snapshot includes editor tools"}],
+      "limitations": ["No capture, PDF export, annotation or blur/redaction test was performed.", "Per-OS support, export fidelity, accessibility and secure redaction semantics are unknown."]
+    },
+    {
+      "id": "R02-GX-01", "browserId": "R02-browser-opera-gx", "reportRowId": "GX-01",
+      "title": "GX Control resource usage and limits", "category": "resource-management",
+      "description": "GX desktop documentation describes real-time resource usage and CPU, RAM and network limiting controls. Linux-specific documentation establishes RAM and network limits only.",
+      "platforms": ["Desktop (complete limiter matrix unknown)", "Linux (RAM and network documented; CPU unknown)"], "availability": "limited",
+      "availabilityDetails": "Generic desktop CPU wording does not establish Linux CPU support. The Linux launch and product page confirm RAM/network controls; mobile limiter parity is unknown.",
+      "sourceIds": ["R02-G1", "R02-G2", "R02-G3"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-G3", "quote": "manage CPU caps ... and control network limits"}, {"sourceId": "R02-G2", "quote": "Network and RAM limiters"}],
+      "limitations": ["No resource cap, hard-limit accuracy, gaming frame-rate or responsiveness test was run.", "Linux CPU availability, current GX/Chromium version and precise mobile or per-build limiter support remain unknown."]
+    },
+    {
+      "id": "R02-GX-02", "browserId": "R02-browser-opera-gx", "reportRowId": "GX-02",
+      "title": "Hot Tabs Killer", "category": "resource-management",
+      "description": "The Linux launch and June 2026 GX recap document identifying and closing resource-heavy tabs with Hot Tabs Killer.",
+      "platforms": ["Desktop", "Linux (launch-documented)"], "availability": "documented",
+      "availabilityDetails": "Closing tabs is destructive and distinct from reversible sleeping or hibernation. The sources do not establish unsaved-state preservation.",
+      "sourceIds": ["R02-G1", "R02-G6"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-G1", "quote": "a Hot Tabs Killer, which slashes resource-hogging tabs"}],
+      "limitations": ["No tab was killed and no resource-attribution or unsaved-state test was performed.", "Resource savings, recovery behavior, minimum build and mobile support are unknown."]
+    },
+    {
+      "id": "R02-GX-03", "browserId": "R02-browser-opera-gx", "reportRowId": "GX-03",
+      "title": "Composable GX Mods", "category": "interface-customization",
+      "description": "GX documents combining community mods for themes, sounds, music, shaders, fonts and interface elements, with authoring tools.",
+      "platforms": ["Desktop; per-OS and mobile equivalence unknown"], "availability": "documented",
+      "availabilityDetails": "The shipped product page describes free community mods that users can mix and match. It does not establish the permission or review model for each mod.",
+      "sourceIds": ["R02-G4"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-G4", "quote": "mix and match different mods"}],
+      "limitations": ["No mod was installed, authored or evaluated for permissions, accessibility or resource overhead.", "Community review policy, per-platform support and performance costs remain unknown."]
+    },
+    {
+      "id": "R02-GX-04", "browserId": "R02-browser-opera-gx", "reportRowId": "GX-04",
+      "title": "Named GX Workspaces and scoped tab cycling", "category": "tab-management",
+      "description": "GX help describes named, icon-coded tab sets and a visual tab cycler restricted to the active workspace.",
+      "platforms": ["Desktop-oriented help; exact platform matrix unknown"], "availability": "documented",
+      "availabilityDetails": "The product help describes Workspaces as enabled by default. Workspace grouping is organizational and is not evidence of separate cookies, credentials or authenticated identities.",
+      "sourceIds": ["R02-G5"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-G5", "quote": "shows tabs in your current workspace"}],
+      "limitations": ["No workspace creation, tab cycling or persistence behavior was tested.", "Identity isolation, mobile equivalence and exact minimum build are not established."]
+    },
+    {
+      "id": "R02-GX-05", "browserId": "R02-browser-opera-gx", "reportRowId": "GX-05",
+      "title": "Toolbar and floating Mini Player", "category": "media",
+      "description": "The June GX recap documents a Mini Player in the toolbar or a floating window, with music pausing for other tab audio and resuming later.",
+      "platforms": ["Desktop recap; per-platform rollout unknown"], "availability": "documented",
+      "availabilityDetails": "Described among released changes. Settings control automatic appearance, floating behavior and resume timing; music services may still require their own accounts or subscriptions.",
+      "sourceIds": ["R02-G6"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-G6", "quote": "a little floating window that you can drag and drop"}],
+      "limitations": ["No media-service, audio-conflict or automatic-resume test was performed.", "Service eligibility, exact introducing build, platform parity and accessibility remain unknown."]
+    },
+    {
+      "id": "R02-GX-06", "browserId": "R02-browser-opera-gx", "reportRowId": "GX-06",
+      "title": "User-toggleable RGX image and video processing", "category": "media",
+      "description": "GX documents user controls for processing online images and video through RGX. The June recap states that hiding RGX buttons by default did not remove the feature.",
+      "platforms": ["Desktop product documentation; per-platform matrix unknown"], "availability": "documented",
+      "availabilityDetails": "Enhance videos and Enhance images are configurable. Button visibility is distinct from feature removal, and vendor HD or efficiency language does not establish recovered image detail.",
+      "sourceIds": ["R02-G7", "R02-G6"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-G7", "quote": "Enable Enhance videos and Enhance images."}],
+      "limitations": ["No image/video quality, processing-cost or resource-efficiency test was run.", "Per-platform support, content compatibility and practical benefit remain unknown; marketing enhancement claims are not measurements."]
+    },
+    {
+      "id": "R02-GX-07", "browserId": "R02-browser-opera-gx", "reportRowId": "GX-07",
+      "title": "Graded and time-scoped GX Cleaner", "category": "data-management",
+      "description": "GX Cleaner help documents graded cleanup choices and a selectable time period for deleting browser data.",
+      "platforms": ["Desktop-oriented product help; per-platform equivalence unknown"], "availability": "documented",
+      "availabilityDetails": "Broad cleanup can remove history, cookies and other useful state. Routine cleaning is not established as a necessary browsing-speed improvement.",
+      "sourceIds": ["R02-G8"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-G8", "quote": "select the time period from the menu"}],
+      "limitations": ["No browser data was deleted and no cleanup or speed benchmark was run.", "Exact deletion/recovery semantics, download-history versus file deletion, platform parity and unsaved-state handling remain unknown."]
+    },
+    {
+      "id": "R02-GX-08", "browserId": "R02-browser-opera-gx", "reportRowId": "GX-08",
+      "title": "Easy Files upload selection", "category": "file-workflows",
+      "description": "The June GX recap documents Easy Files as a quick file-selection surface for uploads and attachments, including multi-file selection improvements.",
+      "platforms": ["Desktop recap; per-platform rollout unknown"], "availability": "documented",
+      "availabilityDetails": "Described among released changes and enableable in Settings. The saved evidence does not establish exact integration with each operating system's picker.",
+      "sourceIds": ["R02-G6"], "evidenceType": "vendor-documented", "confidence": "high", "chromeParity": "unassessed",
+      "quotations": [{"sourceId": "R02-G6", "quote": "a file selector that allows you to upload and attach files quickly"}],
+      "limitations": ["No file was selected or uploaded; supported origins, privacy boundaries and system-picker integration were not tested.", "Exact introducing build, mobile support and task-efficiency benefits remain unknown."]
+    }
+  ],
+  "issues": [],
+  "lifecycleFindings": [
+    {
+      "id": "R02-LC-EDGE-COLLECTIONS", "browserId": "R02-browser-edge",
+      "title": "Collections retirement and lossy migration",
+      "description": "The support-page lead says Collections is unavailable beginning with Edge 149, released 2026-06-04. Migration to Favorites preserves URLs but not notes or images; older transitional-access instructions remain below the retirement notice.",
+      "effectiveDate": "2026-06-04", "versionScope": "Edge 149 and later",
+      "sourceIds": ["R02-E4"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Documentary retirement notice, not a runtime access or migration test.", "Stale transitional paragraphs are retained as a source inconsistency; they do not establish continuing Collections availability."]
+    },
+    {
+      "id": "R02-LC-EDGE-WORKSPACES-V1", "browserId": "R02-browser-edge",
+      "title": "Workspaces V1 disablement precedes scheduled removal",
+      "description": "Edge 158 notes disable Workspaces V1 by default and schedule full removal for 159, still future at the research cutoff. V2 is individual-use and does not support sharing, collaboration, invitations or tab locking. Its same-window switching has support-page versus release-note timing differences.",
+      "scheduledRemovalVersion": "159", "effectiveDate": null, "removalCompletionEstablished": false,
+      "sourceIds": ["R02-E1", "R02-E3"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["Disablement and planned removal are different states; no completed 159 removal is established at 2026-11-21.", "The effective date of full removal and precise V2 rollout are unknown; no workspace workflow was exercised."]
+    },
+    {
+      "id": "R02-LC-EDGE-PERFORMANCE-DETECTOR", "browserId": "R02-browser-edge",
+      "title": "Performance detector retirement is planned, not completed",
+      "description": "Edge release notes announce Performance detector retirement expected in version 164. The inspected performance support page still describes it. This planned retirement is separate from Sleeping tabs and Energy saver.",
+      "scheduledRemovalVersion": "164", "effectiveDate": null, "removalCompletionEstablished": false,
+      "sourceIds": ["R02-E1", "R02-E7"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["A future version target is not proof of removal by the 2026-11-21 cutoff.", "Exact retirement date, rollout and runtime availability remain unknown."]
+    },
+    {
+      "id": "R02-LC-GX-REMOVAL-VISIBILITY", "browserId": "R02-browser-opera-gx",
+      "title": "GX distinguishes removed features, hidden controls and Early Bird tests",
+      "description": "The 2026-06-25 recap records Reaktinator removal because of shortcut conflicts. RGX and Video Pickup buttons being hidden by default did not mean those features were removed. The recap also distinguishes shipped changes from Early Bird tests.",
+      "sourceIds": ["R02-G6"], "evidenceType": "vendor-documented", "confidence": "high",
+      "limitations": ["The recap date is not an exact introducing or removing build for every feature.", "No installed GX build, control visibility or Early Bird behavior was tested; exact current build and platform equivalence remain unknown."]
+    }
+  ],
+  "recommendationCandidates": [
+    {
+      "id": "R02-REC-FF-01", "browserId": "R02-browser-firefox",
+      "title": "Explicit per-tab identity contexts",
+      "description": "Evaluate named cookie/storage containers and deterministic per-site routing, using Mozilla's documented add-on workflow as an identity-boundary design example.",
+      "featureIds": ["R02-FF-02"], "sourceIds": ["R02-F6"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish current Chrome native and disclosed-extension identity behavior first.", "Test two concurrent accounts at one origin with unmistakable identity labels and no cross-container cookie leakage.", "Verify per-site routing and account-dependent configuration sync separately from ordinary tab grouping."],
+      "limitations": ["Proposal only; no isolation or Chrome-baseline test was performed.", "The source describes a historical official add-on design, not a verified current extension version or universally bundled UI."]
+    },
+    {
+      "id": "R02-REC-FF-02", "browserId": "R02-browser-firefox",
+      "title": "Local and offline translation contract",
+      "description": "Compare downloadable language packs, visible storage management, offline reuse and an explicit content-stays-on-device mode with Chrome's current translation baseline.",
+      "featureIds": ["R02-FF-03"], "sourceIds": ["R02-F7", "R02-F8"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish Chrome's current processing and language-pack behavior on each evaluated platform.", "After acquiring a language model, test translation with networking disabled and inspect whether page content leaves the device.", "Measure translation quality, local resource use and language-pack storage management separately."],
+      "limitations": ["Mozilla's local/offline statements are documentary; the proposed tests have not been run.", "iOS equivalence, translation performance and language quality remain unknown."]
+    },
+    {
+      "id": "R02-REC-FF-03", "browserId": "R02-browser-firefox",
+      "title": "Local document and floating-reference workflows",
+      "description": "Evaluate reusable PDF signatures and accessible annotations, multiple video Picture-in-Picture windows and a user-selected floating page region as related reference workflows.",
+      "featureIds": ["R02-FF-05", "R02-FF-06", "R02-FF-07"], "sourceIds": ["R02-F10", "R02-F11", "R02-F1"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Compare current Chrome document and floating-window capabilities with the same tasks and content.", "Test signature reuse, annotation accessibility and simultaneous video windows with explicit player/DRM and resource conditions.", "Evaluate early general-page or selected-region floating behavior separately from mature video PiP."],
+      "limitations": ["No PDF, media or capture behavior was tested.", "Firefox Mini Window is expressly early; stored PDF signatures do not establish certificate-based signing or arbitrary PDF text replacement."]
+    },
+    {
+      "id": "R02-REC-ED-01", "browserId": "R02-browser-edge",
+      "title": "Durable projects with loss-aware migrations",
+      "description": "Compare workspace persistence and same-window switching, and require full-fidelity export and a content-type migration checklist before retiring a saving or collection feature. Edge's Collections transition supplies a cautionary migration example.",
+      "featureIds": ["R02-ED-01"], "sourceIds": ["R02-E1", "R02-E3", "R02-E4"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish Chrome's current project persistence, switching, export and retirement-migration behavior.", "Test restoring project tabs and switching projects without losing their organization.", "Check exported and migrated URLs, notes, images and other content types independently; make unsupported migration losses explicit."],
+      "limitations": ["No workspace or migration test was performed; this is not a proven Chrome gap.", "Edge V2 requires sign-in and is individual-use. Collections migration preserves URLs but not notes/images, and V1 removal was still scheduled at the cutoff."]
+    },
+    {
+      "id": "R02-REC-ED-02", "browserId": "R02-browser-edge",
+      "title": "Explainable resource management",
+      "description": "Evaluate visible reasons for tab sleeping and exemptions, a clear distinction between sleep and discard, and disclosure of energy-mode effects while preserving active calls and capture.",
+      "featureIds": ["R02-ED-04"], "sourceIds": ["R02-E7"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Compare Chrome's current resource controls and explanations before classifying a gap.", "Check that users can identify why a tab sleeps, remains exempt or requires a reload after discard.", "Benchmark battery/CPU savings alongside reload costs, responsiveness and call/capture continuity under each energy mode."],
+      "limitations": ["No resource or battery benchmark was run.", "Edge's documented defaults differ by OS and mode; energy saving can override sleep timing and affect smoothness."]
+    },
+    {
+      "id": "R02-REC-ED-03", "browserId": "R02-browser-edge",
+      "title": "Accessible recovery and abuse controls",
+      "description": "Assess opt-in assistance for missing image descriptions and reversible automatic notification revocation, with clear reasons, error reporting and accessible restore controls.",
+      "featureIds": ["R02-ED-06", "R02-ED-07"], "sourceIds": ["R02-E8", "R02-E1"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish Chrome's current image-description and notification-abuse controls.", "Evaluate generated-description correctness, supported languages, processing/retention boundaries and screen-reader interaction.", "Measure notification false positives and missed abuse, and test accessible review and restoration of blocked sources."],
+      "limitations": ["No accessibility or abuse-detection test was performed.", "Edge 158 rollout is unquantified and the image-description source does not establish on-device processing; no blanket protection or accessibility-conformance claim follows."]
+    },
+    {
+      "id": "R02-REC-SA-01", "browserId": "R02-browser-safari",
+      "title": "Explain profile and installed-web-app isolation boundaries",
+      "description": "Compare profile and installed-web-app data boundaries with Chrome, make separate versus shared data visible, and evaluate deterministic routing of externally opened website links.",
+      "featureIds": ["R02-SA-01", "R02-SA-05"], "sourceIds": ["R02-S3", "R02-S7"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish current Chrome profile, installed-app and external-link routing behavior.", "Verify cookies, history, credentials, extensions and deletion semantics independently for profiles and installed web apps.", "Test whether the destination identity and shared data remain understandable when opening an external link."],
+      "limitations": ["No isolation or routing tests were performed.", "Safari profiles share passwords, AutoFill and several settings; the Mac web-app evidence must not be generalized to every credential type or OS."]
+    },
+    {
+      "id": "R02-REC-SA-02", "browserId": "R02-browser-safari",
+      "title": "Reversible distraction reduction",
+      "description": "Evaluate user-selected element hiding with persistent visible indicators, a one-action restore control and explicit scope across pages, profiles and sessions.",
+      "featureIds": ["R02-SA-04"], "sourceIds": ["R02-S6"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Compare Chrome's current native and disclosed-extension page-simplification behavior.", "Test hiding and restoring selected elements without leaving essential controls unrecoverable.", "Check same-site, same-device, profile and private-session scope, including frequently changing content."],
+      "limitations": ["No hiding or restoration workflow was tested.", "Safari Distraction Control is not documented as permanent ad blocking; cross-device persistence remains unknown."]
+    },
+    {
+      "id": "R02-REC-SA-03", "browserId": "R02-browser-safari",
+      "title": "Private-session continuity with authenticated locking",
+      "description": "Compare authenticated locking of still-open private windows and transparent exception handling on desktop and mobile.",
+      "featureIds": ["R02-SA-03"], "sourceIds": ["R02-S5"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish current Chrome private-session locking and continuity behavior by platform.", "Test lock/unlock, active media and calls, screen sharing and assistive-technology behavior separately.", "Make exceptions and platform-dependent defaults visible so users can understand when a private window remains unlocked."],
+      "limitations": ["No private-window or authentication test was performed.", "Safari's documented audio/video and not-yet-loaded-page exceptions remain part of the design boundary, not an unconditional privacy guarantee."]
+    },
+    {
+      "id": "R02-REC-SA-04", "browserId": "R02-browser-safari",
+      "title": "Collaboration that remains portable",
+      "description": "Assess shared research tab sets with explicit participant controls, export and account prerequisites, distinguishing live collaboration from synchronized personal tab groups.",
+      "featureIds": ["R02-SA-02"], "sourceIds": ["R02-S4"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish Chrome's current collaboration and personal tab-sync semantics.", "Test participant access, live tab updates and export without assuming personal sync is collaboration.", "Disclose account, two-factor-authentication and platform eligibility before evaluating portability."],
+      "limitations": ["No collaborative session or export was tested.", "Safari's Mac guide documents Apple Account, iCloud Safari and two-factor-authentication requirements and up to 100 participants; those are not measured limits or Chrome requirements."]
+    },
+    {
+      "id": "R02-REC-BR-01", "browserId": "R02-browser-brave",
+      "title": "Unified optional-feature controls",
+      "description": "Evaluate one reversible control surface for optional AI, news and revenue integrations, with upgrade-persistent preferences and clear differences between hiding UI, disabling execution and removing code.",
+      "featureIds": ["R02-BR-06"], "sourceIds": ["R02-B6"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Compare Chrome's current optional-feature controls and upgrade persistence.", "Test whether disabling a feature stops its execution rather than merely hiding its entry point, and whether changes are reversible.", "Keep compiled-out standalone features distinct from in-place toggles and separately priced services."],
+      "limitations": ["No build, toggle or upgrade behavior was tested.", "Brave Origin is a distinct paid/free-by-platform product; this proposal does not assume that a paid Chrome edition is appropriate."]
+    },
+    {
+      "id": "R02-REC-BR-02", "browserId": "R02-browser-brave",
+      "title": "Local-model choice and visible processing boundaries",
+      "description": "Compare local/remote model support and pre-send visibility of page context, with an explicit local-only mode and separate feedback-retention rules.",
+      "featureIds": ["R02-BR-03"], "sourceIds": ["R02-B3", "R02-B2"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish Chrome's current model, context-sharing and retention behavior by platform.", "Test that an explicitly local-only mode sends neither page content nor prompts to a hosted inference provider.", "Make transmitted context, short-lived caches, saved local chat and submitted feedback retention independently inspectable."],
+      "limitations": ["No inference or network test was performed; local chat history is not proof of local inference.", "Leo's hosted use transmits context and its policy qualifies caching/feedback retention. BYOM's complete platform matrix remains unknown."]
+    },
+    {
+      "id": "R02-REC-BR-03", "browserId": "R02-browser-brave",
+      "title": "Private identity helpers with recoverability",
+      "description": "Compare per-site email aliases and user-held-key sync while defining recovery, alias export/deactivation, inactive-chain expiry notices, quotas and mobile eligibility.",
+      "featureIds": ["R02-BR-02", "R02-BR-05"], "sourceIds": ["R02-B2", "R02-B5"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish Chrome's current alias, key-ownership and sync-recovery baseline.", "Evaluate key/device loss, inactive-chain expiry notices and alias deactivation/export with explicit recovery expectations.", "Disclose account requirements, quotas, address-mapping retention and mobile availability before testing identity-helper workflows."],
+      "limitations": ["No sync, alias, delivery or recovery operation was performed.", "Brave's five free desktop aliases require an account; mobile aliases remain announced. User-held keys introduce loss/recovery obligations rather than guaranteed recoverability."]
+    },
+    {
+      "id": "R02-REC-VI-01", "browserId": "R02-browser-vivaldi",
+      "title": "Composable project navigation",
+      "description": "Compare URL-routed workspaces, hierarchical groups, bulk hibernation and multi-way tiles as one persistent research workflow.",
+      "featureIds": ["R02-VI-01", "R02-VI-02", "R02-VI-03"], "sourceIds": ["R02-V4", "R02-V5", "R02-V6", "R02-V3"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish Chrome's current grouping, routing, persistence, sleep and layout capabilities separately.", "Restore and manipulate a research project without losing ordering, grouping or source context.", "Test direct open-as-tile, independent scrolling, keyboard focus, layout persistence and small-screen usability while keeping hibernation distinct from grouping."],
+      "limitations": ["No configured-session, layout or restoration test was performed.", "Vivaldi workspaces organize tabs rather than establish account isolation; one-window ownership and practical screen-size limits remain relevant."]
+    },
+    {
+      "id": "R02-REC-VI-02", "browserId": "R02-browser-vivaldi",
+      "title": "Native command palette and repeatable actions",
+      "description": "Evaluate discoverable native commands and user-defined shortcut or toolbar sequences, preferring completion-aware steps to fixed delays and making actions inspectable and reversible.",
+      "featureIds": ["R02-VI-04"], "sourceIds": ["R02-V7"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Compare Chrome's current native commands and disclosed-extension automation baseline.", "Evaluate discovery, sequence inspection, shortcut conflicts, test execution and recovery after partial actions.", "Test completion-aware sequencing under variable load rather than treating a fixed delay as evidence that an action finished."],
+      "limitations": ["No command chain or automation was executed.", "Vivaldi documents adjustable delays and a Test Chain control; completion-aware execution is a proposed improvement, not an established Vivaldi capability."]
+    },
+    {
+      "id": "R02-REC-VI-03", "browserId": "R02-browser-vivaldi",
+      "title": "Citation-preserving notes",
+      "description": "Compare selection-to-note capture carrying source URL, timestamp and optional screenshot, with ordinary plain-text/Markdown export and explicit attachment handling.",
+      "featureIds": ["R02-VI-06"], "sourceIds": ["R02-V9"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish Chrome's current note/capture and disclosed-extension workflows.", "Capture and append selected text while retaining its URL and date, then verify search and source navigation.", "Export plain text or Markdown and verify provenance and attachment fidelity independently of sync."],
+      "limitations": ["No note, export or sync test was performed.", "Vivaldi's documented .txt/.md exports and capture fields do not establish measured attachment fidelity, universal mobile parity or a cloud-only workflow."]
+    },
+    {
+      "id": "R02-REC-VI-04", "browserId": "R02-browser-vivaldi",
+      "title": "User-selected panels and stable pins",
+      "description": "Evaluate arbitrary web side panels with persistent zoom and width alongside domain-scoped pinned tabs, using Vivaldi's desktop workflows as examples.",
+      "featureIds": ["R02-VI-05", "R02-VI-08"], "sourceIds": ["R02-V8", "R02-V3"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Compare Chrome's current panel and pin behavior with the same services and navigation tasks.", "Test authentication, cross-domain navigation, accessible focus and persistent zoom/width.", "Measure resource budgets and narrow-layout behavior rather than assuming the desktop interface maps directly to mobile."],
+      "limitations": ["No panel, domain-pin or resource test was performed.", "Panels are not evidence of separate account storage; exact redirect behavior and mobile equivalents remain unknown."]
+    },
+    {
+      "id": "R02-REC-OP-01", "browserId": "R02-browser-opera",
+      "title": "Local clipboard-abuse prevention",
+      "description": "Compare current Chrome and operating-system protections with transparent local detection of potentially harmful copied commands and clipboard replacement, retaining deliberate, accessible override without automatic execution.",
+      "featureIds": ["R02-OP-04"], "sourceIds": ["R02-O5", "R02-O3"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish current Chrome and OS clipboard protections before proposing a missing defense.", "Measure missed attacks and false positives, including legitimate developer command copying.", "Test visible reasons, trusted-site exceptions and deliberate accessible override without executing a copied command automatically."],
+      "limitations": ["No clipboard attack, copy, execution or detection test was performed.", "Opera's local/default-on behavior is vendor-documented; efficacy and comparative protection remain unmeasured."]
+    },
+    {
+      "id": "R02-REC-OP-02", "browserId": "R02-browser-opera",
+      "title": "Context-aware tab workflows",
+      "description": "Compare automatic related-link grouping and split views nested within projects, with obvious and reversible group-movement rules and optional AI analysis kept separate from basic organization.",
+      "featureIds": ["R02-OP-01", "R02-OP-02"], "sourceIds": ["R02-O4", "R02-O3"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish Chrome's current automatic grouping and split-view behavior.", "Test related-link placement, naming, collapse, split creation and movement between groups with reversible outcomes.", "Check keyboard focus and whether ordinary grouping remains usable independently of AI analysis."],
+      "limitations": ["No tab or split workflow was exercised.", "Opera splits created from different islands can sit outside those islands; original membership must not be assumed to persist."]
+    },
+    {
+      "id": "R02-REC-OP-03", "browserId": "R02-browser-opera",
+      "title": "Lightweight utility belt",
+      "description": "Evaluate text-selection conversion and screenshot annotation with visible units, data provenance, explicit blur limitations and clear viewport-image versus full-page-PDF distinctions.",
+      "featureIds": ["R02-OP-05", "R02-OP-08"], "sourceIds": ["R02-O3"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Compare Chrome's current contextual conversion and capture tools against matched tasks.", "Test ambiguous symbols, units, time zones and reference-rate freshness with visible provenance.", "Verify capture scope, annotations, exported format and the distinction between cosmetic blur and secure redaction."],
+      "limitations": ["No conversion, capture or redaction test was performed.", "Opera reference exchange rates are not transaction quotes, and the cited full-page PDF passage is not proof of full-page screenshots."]
+    },
+    {
+      "id": "R02-REC-OP-04", "browserId": "R02-browser-opera",
+      "title": "Clear cross-device handoff",
+      "description": "Compare QR-paired file, note and link transfer with explicit expiry, size limits, delivery receipts and a path to durable storage instead of presenting a temporary buffer as durable sync.",
+      "featureIds": ["R02-OP-03"], "sourceIds": ["R02-O3"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish Chrome's current cross-device transfer and persistence behavior.", "Test pairing, delivery, size limits, expiry disclosure and recovery or explicit saving before content expires.", "Validate contemporary mobile setup steps and make transient handoff distinct from durable storage."],
+      "limitations": ["No transfer or pairing test was performed.", "Opera's cited help gives a 10 MB file limit and 48-hour expiry and retains Opera Touch wording. Delivery receipts and durable-storage integration are proposed acceptance criteria, not established My Flow features."]
+    },
+    {
+      "id": "R02-REC-GX-01", "browserId": "R02-browser-opera-gx",
+      "title": "Visible resource budgets and actionable attribution",
+      "description": "Compare CPU, memory and network controls with Chrome's task/performance surfaces, offering tab-level explanations and a reversible sleep action before destructive close.",
+      "featureIds": ["R02-GX-01", "R02-GX-02"], "sourceIds": ["R02-G3", "R02-G2", "R02-G1", "R02-G6"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish Chrome's current attribution, task-management and resource-control baseline on each tested OS.", "Measure cap adherence, call/media stability, browser responsiveness and the effect on external applications.", "Test understandable tab attribution, reversible sleep and explicit warnings before state-losing close operations."],
+      "limitations": ["No resource caps, game-frame rates, calls or media behavior were measured.", "GX Linux evidence confirms RAM/network limits only; CPU support there is unknown. Hot Tabs Killer closes tabs rather than proving reversible sleep."]
+    },
+    {
+      "id": "R02-REC-GX-02", "browserId": "R02-browser-opera-gx",
+      "title": "Composable customization with reset",
+      "description": "Evaluate optional theme, sound and layout modules with reduced-motion/audio defaults, a one-step reset and visible permission/performance costs rather than maximizing customization for its own sake.",
+      "featureIds": ["R02-GX-03"], "sourceIds": ["R02-G4"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Compare Chrome's current customization and reset behavior.", "Test module composition, keyboard/focus accessibility, reduced motion/audio choices and complete reset.", "Assess and disclose each module's permissions, review provenance and measured resource cost."],
+      "limitations": ["No mod or customization module was installed or tested.", "GX's permission/review model and overhead were not established; reduced-motion/audio defaults and one-step reset are proposed acceptance criteria."]
+    },
+    {
+      "id": "R02-REC-GX-03", "browserId": "R02-browser-opera-gx",
+      "title": "Safer cleanup and upload convenience",
+      "description": "Compare recency-oriented file selection, multi-select and time-scoped cleanup, requiring explicit data-type selection, protection against silent loss of unsaved state and a clear distinction between deleting download history and deleting files.",
+      "featureIds": ["R02-GX-07", "R02-GX-08"], "sourceIds": ["R02-G8", "R02-G6"], "evidenceType": "hypothesis", "confidence": "medium", "chromeParity": "unassessed",
+      "verificationNeeded": ["Establish Chrome's current file-picker and cleanup behavior before classifying a gap.", "Test multi-file selection, recency, origin privacy boundaries and integration with the system picker.", "Verify each selected cleanup type/time range, unsaved-state handling and the distinction between download-history removal and deletion of actual files."],
+      "limitations": ["No files were selected, uploaded or deleted; no cleanup benchmark was run.", "GX's exact picker privacy boundaries and deletion semantics remain unknown. The proposed safeguards are not asserted as current GX or missing Chrome behavior."]
+    }
+  ],
+  "queryLog": {
+    "retrievedAt": "2026-11-21",
+    "purpose": "Deduplicated discovery queries from completed research; snippets locate sources and do not establish shipping status, dates, prices, or rules.",
+    "routingLimitations": ["Initial default searches reported an auxiliary authenticated codex engine. Later queries explicitly selected only keyless anysearch and youcom.", "No billing or credential state was inspected; the cost of initial default routing cannot be certified. Final claims rely on official pages read, not generated search answers."],
+    "queries": [
+      "site:support.mozilla.org Firefox vertical tabs tab groups translations containers Total Cookie Protection",
+      "site:microsoft.com edge features split screen workspaces sleeping tabs immersive reader",
+      "site:apple.com safari profiles web apps highlights distraction control private browsing",
+      "site:brave.com browser features shields leo playlist talk sync",
+      "site:vivaldi.com features tab tiling workspaces command chains mail calendar",
+      "site:opera.com features tab islands split screen flow vpn aria",
+      "site:opera.com gx features limiter hot tabs killer mods",
+      "site:mozilla.org Firefox release notes November 2026 Gecko platforms",
+      "site:support.mozilla.org Firefox on device translation vertical tabs picture in picture PDF signatures",
+      "site:learn.microsoft.com deployedge 2026 release notes workspaces collections retirement",
+      "site:support.microsoft.com Microsoft Edge split screen vertical tabs sleeping tabs immersive reader Drop",
+      "site:support.apple.com Safari profiles web apps Highlights Distraction Control requirements",
+      "site:brave.com blog brave origin June 2026 premium minimalist release",
+      "site:firefox.com features translations total cookie protection multi account containers picture in picture vertical tabs",
+      "site:mozilla.org Firefox Gecko iOS WebKit Android engine",
+      "site:support.apple.com Safari use profiles web apps Highlights locked private browsing",
+      "site:help.vivaldi.com desktop tab tiling command chains web panels mail calendar notes",
+      "site:support.brave.app Brave Sync no account Leo privacy Playlist iOS Tor Windows macOS Linux",
+      "site:opera.com/gx features workspaces mods rgx cleaner panic button Windows macOS Android iOS",
+      "site:firefox.com OR site:blog.mozilla.org Firefox translations on-device Multi-Account Containers",
+      "site:learn.microsoft.com Microsoft Edge Chromium supported operating systems Linux Android iOS WebKit",
+      "site:webkit.org Safari 27.1 November 2026 features web apps",
+      "site:support.apple.com Safari web apps Mac share Tab Groups Reader summary",
+      "site:brave.com Brave Sync end to end encryption account Chromium iOS WebKit",
+      "site:vivaldi.com OR site:help.vivaldi.com November 2026 Vivaldi command chains release",
+      "site:support.apple.com Safari web apps Mac Reader summaries Highlights",
+      "site:brave.com browser Chromium WebKit iOS Sync end-to-end encryption",
+      "site:vivaldi.com OR site:help.vivaldi.com Vivaldi browser platforms Windows Linux macOS iOS Android Web Panels Notes",
+      "site:opera.com OR site:help.opera.com Opera GX Linux Windows macOS Android iOS November 2026",
+      "site:help.opera.com Opera browser Blink Chromium iOS WebKit system requirements",
+      "site:support.microsoft.com Microsoft Edge sleeping tabs manage performance",
+      "site:firefox.com OR site:blog.mozilla.org Firefox translations on-device translate locally",
+      "site:support.apple.com \"Use Safari web apps on Mac\"",
+      "site:help.vivaldi.com \"Web Panels\" \"Notes\"",
+      "site:support.apple.com Safari prevent cross-site tracking update latest version Windows visionOS",
+      "site:help.vivaldi.com notes panel Vivaldi Mail Calendar feeds",
+      "site:blogs.opera.com gaming Opera GX Linux 2026 Windows macOS",
+      "site:blogs.opera.com desktop Opera November 2026 stable",
+      "site:brave.com/privacy/browser \"Sync\" \"encrypted\""
+    ]
+  },
+  "delegation": {"childAgentIds": [], "description": "No child agents were dispatched for this lane or its conversion."},
+  "limitations": [
+    "All observations are documentary. No installed-browser, runtime, accessibility, privacy, performance, or regression tests were performed for this research.",
+    "Chrome parity is unassessed. The Chrome developer source is used only for engine-family facts; competitor advertising is not evidence that Chrome lacks a feature.",
+    "Feature availability is scoped to the cited product, platform, version, account, pricing, and rollout evidence. Active lifecycle does not mean every listed feature is mature or universally available.",
+    "Mozilla support pages returned client challenges; Brave Sync/Leo support pages returned 403. Alternative official product, architecture, blog, and policy sources were retained. Failed-page snippets were not promoted into factual records.",
+    "Safari Highlights extraction was insufficient and a separate summaries link resolved to a generic guide. Highlights-specific claims were not retained. Opera minimum OS versions could not be recovered from the requirements-page body.",
+    "Some documentation is mutable or internally inconsistent: Edge Collections contains older transitional text, Workspaces switching has support/release timing differences, and Flow retains Opera Touch wording.",
+    "Historical Containers and Vivaldi platform announcements establish documented designs, not current binary versions. Latest Brave, Vivaldi, and GX builds and Safari patch versions per OS were not pinned.",
+    "Vendor speed, RAM, battery, accuracy, privacy-superiority, no-log audit, user-count, and award claims were not independently measured or adopted as benchmark results.",
+    "Candidate recommendations are hypotheses with proposed validation criteria, not filed reports or proven Chrome defects. No upstream submissions or publication receipts exist for this lane.",
+    "Only public-source findings and research provenance are retained; private operating context, machine-specific paths, credentials, environment values, personal browsing data, and raw tool transcripts are excluded."
+  ],
+  "conversionOmissions": [
+    "Failed or insufficiently extracted pages are described as coverage limitations rather than added as duplicate or authoritative source entries.",
+    "The historical 2017 Edge mobile-engine article was an auxiliary read, not one of the report's 64 retained primary-source IDs; current engine discussion uses R02-A1 and qualified R02-A2.",
+    "The auxiliary Panic Button page and other unselected feature reads were not among the report's 54 feature entries and were not promoted into extra features.",
+    "Private workspace-policy references and local research-file locations are omitted from the public dataset. Cross-browser synthesis is represented by the source-linked per-browser recommendations and lifecycle findings rather than duplicate feature records."
+  ]
+}
