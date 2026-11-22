@@ -1,32 +1,1034 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-21",
+  "asOf": "2026-11-22",
   "scope": "Publication and reporting receipts for this project. Existing upstream reports are recorded in the research lanes.",
   "channels": [
-    {"id":"google-chromium","url":"https://crbug.com/new","purpose":"Chromium bugs and focused feature requests; search existing records before creating one.","sourceIds":["R01-S03","R01-S07"]},
-    {"id":"chrome-feedback","url":"https://support.google.com/chrome/answer/95315?hl=en&co=GENIE.Platform%3DDesktop","purpose":"Chrome More > Help > Report an issue. A feedback send is not necessarily a publicly retrievable issue.","sourceIds":["R01-S08"]},
-    {"id":"chromium-review","url":"https://chromium-review.googlesource.com/","purpose":"Upstream code review uses Gerrit and applicable contributor/CLA requirements.","sourceIds":["R01-S06"]},
-    {"id":"project-github","url":"https://github.com/chirag127/chrome-research-tracker/issues","purpose":"Public research backlog and proposal tracking owned by this project; not an official Google tracker.","sourceIds":[]}
+    {
+      "id": "google-chromium",
+      "url": "https://crbug.com/new",
+      "purpose": "Chromium bugs and focused feature requests; search existing records before creating one.",
+      "sourceIds": [
+        "R01-S03",
+        "R01-S07"
+      ]
+    },
+    {
+      "id": "chrome-feedback",
+      "url": "https://support.google.com/chrome/answer/95315?hl=en&co=GENIE.Platform%3DDesktop",
+      "purpose": "Chrome More > Help > Report an issue. A feedback send is not necessarily a publicly retrievable issue.",
+      "sourceIds": [
+        "R01-S08"
+      ]
+    },
+    {
+      "id": "chromium-review",
+      "url": "https://chromium-review.googlesource.com/",
+      "purpose": "Upstream code review uses Gerrit and applicable contributor/CLA requirements.",
+      "sourceIds": [
+        "R01-S06"
+      ]
+    },
+    {
+      "id": "project-github",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues",
+      "purpose": "Public research backlog and proposal tracking owned by this project; not an official Google tracker.",
+      "sourceIds": []
+    }
   ],
   "accessChecks": [
     {
-      "id":"ACCESS-GOOGLE-01",
-      "observedAt":"2026-11-21",
-      "requestedUrl":"https://issues.chromium.org/issues/new",
-      "result":"authentication-required",
-      "observation":"The in-app browser redirected to Google Accounts and displayed the title Sign in - Google Accounts.",
-      "redirectOrigin":"https://accounts.google.com",
-      "evidenceReference":"tool-result:call_77d14028-5874-4f2b-86b6-4b218c41e2af",
-      "limitations":["This records access in that browser session only, not every possible account or browser.","The full login URL and its session-specific query values are intentionally omitted."]
+      "id": "ACCESS-GOOGLE-01",
+      "observedAt": "2026-11-21",
+      "requestedUrl": "https://issues.chromium.org/issues/new",
+      "result": "authentication-required",
+      "observation": "The in-app browser redirected to Google Accounts and displayed the title Sign in - Google Accounts.",
+      "redirectOrigin": "https://accounts.google.com",
+      "evidenceReference": "tool-result:call_77d14028-5874-4f2b-86b6-4b218c41e2af",
+      "limitations": [
+        "This records access in that browser session only, not every possible account or browser.",
+        "The full login URL and its session-specific query values are intentionally omitted."
+      ]
     }
   ],
   "googleSubmission": {
-    "status":"blocked",
-    "receiptUrl":null,
-    "reason":"An authenticated Google reporting session is unavailable in the tested interface. Candidate-specific baseline, duplication and validation requirements also remain recorded with each proposal.",
-    "nextAction":"Sign in to the official Chromium issue tracker, then submit an individually reviewed report from the project's linked backlog with its evidence and reproduction limits.",
-    "newReportsSubmitted":0
+    "status": "blocked",
+    "receiptUrl": null,
+    "reason": "An authenticated Google reporting session is unavailable in the tested interface. Candidate-specific baseline, duplication and validation requirements also remain recorded with each proposal.",
+    "nextAction": "Sign in to the official Chromium issue tracker, then submit an individually reviewed report from the project's linked backlog with its evidence and reproduction limits.",
+    "newReportsSubmitted": 0
   },
-  "records": [],
-  "limitations":["Creating this file, a local draft, a GitHub issue, or opening the Google form is not a Google submission.","No existing upstream issue is counted as this project's newly submitted report.","No prediction of Google acceptance, prioritization or implementation is made."]
+  "records": [
+    {
+      "id": "PUB-REC-01",
+      "channelId": "project-github",
+      "trackingKey": "REC-01",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/1",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-01",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:29:45.854Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/1",
+        "number": 1,
+        "title": "[REC-01] Evaluate a supported Android extension experience",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:29:45Z",
+        "updatedAt": "2026-11-22T05:29:45Z",
+        "marker": "<!-- chrome-research-tracker:REC-01 -->",
+        "bodySha256": "51095a8fe1083e5b94d76ad229974934032be9e1de472ac6e76126ad4831672f",
+        "retainedReceiptSha256": "496b70b19a0dba84644fdfa84d46ea2ccd1f84c85f64bca3ac762f8e9daf0f65",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-02",
+      "channelId": "project-github",
+      "trackingKey": "REC-02",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/2",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-02",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:29:48.318Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/2",
+        "number": 2,
+        "title": "[REC-02] Evaluate identity-aware workspaces and predictable link routing",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:29:47Z",
+        "updatedAt": "2026-11-22T05:29:47Z",
+        "marker": "<!-- chrome-research-tracker:REC-02 -->",
+        "bodySha256": "9aeaec7a5b176292f290d01bb6161a253bbbe87ab04ac5a6cd72aa3f9e6c44fb",
+        "retainedReceiptSha256": "494e974c8fc729efd71fda92615baccfb906ef0a8a053d2bada977d00ca2154f",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-03",
+      "channelId": "project-github",
+      "trackingKey": "REC-03",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/3",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-03",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:29:51.047Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/3",
+        "number": 3,
+        "title": "[REC-03] Evaluate portable project and session structures",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:29:50Z",
+        "updatedAt": "2026-11-22T05:29:50Z",
+        "marker": "<!-- chrome-research-tracker:REC-03 -->",
+        "bodySha256": "9b45495528bdf1ded0406e0b3fea209c496a33503cd5b59ae70af797e8f78625",
+        "retainedReceiptSha256": "d01f91ce257bbdc8fb17cf0f04eb1ec182b2b53546d396d210364cc9880cb182",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-04",
+      "channelId": "project-github",
+      "trackingKey": "REC-04",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/4",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-04",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:29:53.587Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/4",
+        "number": 4,
+        "title": "[REC-04] Evaluate saved multi-pane layouts and preview promotion",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:29:53Z",
+        "updatedAt": "2026-11-22T05:29:53Z",
+        "marker": "<!-- chrome-research-tracker:REC-04 -->",
+        "bodySha256": "fd45e9ab7d15724c6fa84d847cf98201effe37d81cd018ecbaa48a2fc7d13aac",
+        "retainedReceiptSha256": "080b053ec9765f521fc9ab6edac0e561816e34eed911bc74b26db192dd0f4bc1",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-05",
+      "channelId": "project-github",
+      "trackingKey": "REC-05",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/5",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-05",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:29:55.930Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/5",
+        "number": 5,
+        "title": "[REC-05] Evaluate discoverable deterministic browser commands",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:29:55Z",
+        "updatedAt": "2026-11-22T05:29:55Z",
+        "marker": "<!-- chrome-research-tracker:REC-05 -->",
+        "bodySha256": "7ef9f67435f2c0a57842fbfab76f7d397c1bd5edc2feef5503b61250f546e67c",
+        "retainedReceiptSha256": "6e902e04f2ec4cef9b1f943fe0fad3e9bf2600ce95f4f16b071e7682bff615ad",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-06",
+      "channelId": "project-github",
+      "trackingKey": "REC-06",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/6",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-06",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:29:58.875Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/6",
+        "number": 6,
+        "title": "[REC-06] Evaluate consistent accessible menu and toolbar customization",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:29:58Z",
+        "updatedAt": "2026-11-22T05:29:58Z",
+        "marker": "<!-- chrome-research-tracker:REC-06 -->",
+        "bodySha256": "8c0b58bd4a9000c9e9c98803a84b923b2f0e9a8ed016fc4d87948c8da53f8d70",
+        "retainedReceiptSha256": "c0f369c24624a341b2e803523c1098aa873bf561128f6d57b3e07582814ca923",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-07",
+      "channelId": "project-github",
+      "trackingKey": "REC-07",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/7",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-07",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:01.492Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/7",
+        "number": 7,
+        "title": "[REC-07] Evaluate hierarchical tabs with recoverable bulk actions",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:00Z",
+        "updatedAt": "2026-11-22T05:30:00Z",
+        "marker": "<!-- chrome-research-tracker:REC-07 -->",
+        "bodySha256": "cda204f747ac0f8aebcb9f0844182c5dab64656391841688b58a0603baf52fc8",
+        "retainedReceiptSha256": "de2fe0d593a54b40ad7dc195171890969eb9bf77830b38a3cc47baa3c7cecab4",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-08",
+      "channelId": "project-github",
+      "trackingKey": "REC-08",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/8",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-08",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:03.917Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/8",
+        "number": 8,
+        "title": "[REC-08] Evaluate user-selected web panels and account-labeled app presence",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:03Z",
+        "updatedAt": "2026-11-22T05:30:03Z",
+        "marker": "<!-- chrome-research-tracker:REC-08 -->",
+        "bodySha256": "9e3ddf4dc1d9b9023316f115094440a08f73c2712b9b939b7648f6c2fdd7ae5e",
+        "retainedReceiptSha256": "84f18b4fa67e8935949ff43c711daa084ce98f00f6312e1baf7dfd7a6fa7ee9b",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-09",
+      "channelId": "project-github",
+      "trackingKey": "REC-09",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/9",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-09",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:06.278Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/9",
+        "number": 9,
+        "title": "[REC-09] Evaluate citation-preserving notes and research capture",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:05Z",
+        "updatedAt": "2026-11-22T05:30:05Z",
+        "marker": "<!-- chrome-research-tracker:REC-09 -->",
+        "bodySha256": "a366e527e1677201dcc0d1c427135124591cf09edb7a8c5aae13a9aea4569193",
+        "retainedReceiptSha256": "1b0b80c364665624c68c294735fdbfcd96c04919b2e4c59869ce7fe9a5eed468",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-10",
+      "channelId": "project-github",
+      "trackingKey": "REC-10",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/10",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-10",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:09.074Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/10",
+        "number": 10,
+        "title": "[REC-10] Evaluate discoverable capture annotation and redaction",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:08Z",
+        "updatedAt": "2026-11-22T05:30:08Z",
+        "marker": "<!-- chrome-research-tracker:REC-10 -->",
+        "bodySha256": "cf1cf73ef7ef60d33f204ef44d2992bb69c7ce457fafbd0d857b8a4b213d4cc0",
+        "retainedReceiptSha256": "c3fc06d57e5154b1cd06270eddc91eb6144f9ea2dddba69ae04fdc19d06a04bc",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-11",
+      "channelId": "project-github",
+      "trackingKey": "REC-11",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/11",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-11",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:11.962Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/11",
+        "number": 11,
+        "title": "[REC-11] Evaluate explicit local-processing choices for translation",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:11Z",
+        "updatedAt": "2026-11-22T05:30:11Z",
+        "marker": "<!-- chrome-research-tracker:REC-11 -->",
+        "bodySha256": "83a331d1ec9d912e86f7cb63f5b3a9c36ff50d92301cfa3794135a705e88e840",
+        "retainedReceiptSha256": "14529e48e2b83423e55875ea142f2fb4678942497c4d48080844ee857cee06e5",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-12",
+      "channelId": "project-github",
+      "trackingKey": "REC-12",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/12",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-12",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:14.678Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/12",
+        "number": 12,
+        "title": "[REC-12] Evaluate offline contextual help and keyboard discovery",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:14Z",
+        "updatedAt": "2026-11-22T05:30:14Z",
+        "marker": "<!-- chrome-research-tracker:REC-12 -->",
+        "bodySha256": "b34ff81df97da7dbc5bf94064bd146ec42b63c919f0ed77b36f9b875cf772c38",
+        "retainedReceiptSha256": "cac6c902e56e874afc7a85391dfd1000655b7a2a763fd6d9f35b6170b5e460a4",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-13",
+      "channelId": "project-github",
+      "trackingKey": "REC-13",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/13",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-13",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:16.989Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/13",
+        "number": 13,
+        "title": "[REC-13] Evaluate one understandable view of optional AI controls",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:16Z",
+        "updatedAt": "2026-11-22T05:30:16Z",
+        "marker": "<!-- chrome-research-tracker:REC-13 -->",
+        "bodySha256": "3a8e208c986a4c7f9fde81a4e808eceac1fe71f862b3b41f8510dcc9e1fd5bae",
+        "retainedReceiptSha256": "71fa9ba61e85d990500af662b9fe3114aec9bf88dc217d281f58be4f0ecf9425",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-14",
+      "channelId": "project-github",
+      "trackingKey": "REC-14",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/14",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-14",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:20.036Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/14",
+        "number": 14,
+        "title": "[REC-14] Evaluate visible AI context action scope and cancellation",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:19Z",
+        "updatedAt": "2026-11-22T05:30:19Z",
+        "marker": "<!-- chrome-research-tracker:REC-14 -->",
+        "bodySha256": "66a54ba834aa3aed03ef74818b09332339a655dc476ec273f54c2c1f5e3e4f21",
+        "retainedReceiptSha256": "553f4d13d5cc612d6ed966290111b4789dd470364e6172b4ccbad0a50b640d54",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-15",
+      "channelId": "project-github",
+      "trackingKey": "REC-15",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/15",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-15",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:22.766Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/15",
+        "number": 15,
+        "title": "[REC-15] Evaluate scope-aware private sessions and incoming links",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:21Z",
+        "updatedAt": "2026-11-22T05:30:21Z",
+        "marker": "<!-- chrome-research-tracker:REC-15 -->",
+        "bodySha256": "92186db99684031ed7542abc328e92216045b295e8a2b5d5458f903125ab7074",
+        "retainedReceiptSha256": "bba4a2c20de3d6295d1604347138507bffd2f62aa1bbbfdd0af9f7bae709c038",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-16",
+      "channelId": "project-github",
+      "trackingKey": "REC-16",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/16",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-16",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:25.251Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/16",
+        "number": 16,
+        "title": "[REC-16] Evaluate account-independent encrypted synchronization",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:24Z",
+        "updatedAt": "2026-11-22T05:30:24Z",
+        "marker": "<!-- chrome-research-tracker:REC-16 -->",
+        "bodySha256": "d174c8d0763dc65a093c66329cf766c2c27d3379313b5af09c3b84796233a72e",
+        "retainedReceiptSha256": "7f8371e02713f136d48d3ad7a657fd77db29907c5213bc25be5c65da11f9d346",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-17",
+      "channelId": "project-github",
+      "trackingKey": "REC-17",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/17",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-17",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:28.133Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/17",
+        "number": 17,
+        "title": "[REC-17] Evaluate truthful consent automation and privacy-signal status",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:27Z",
+        "updatedAt": "2026-11-22T05:30:27Z",
+        "marker": "<!-- chrome-research-tracker:REC-17 -->",
+        "bodySha256": "21435d32266fed59a615cbb618be7b3869f6f28fa3c3e1b71489dfb1efa96f9c",
+        "retainedReceiptSha256": "7db596b20ef58e08c69a0c5814e3b646b445d39318932c7bb0008c7657f90ea3",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-18",
+      "channelId": "project-github",
+      "trackingKey": "REC-18",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/18",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-18",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:30.637Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/18",
+        "number": 18,
+        "title": "[REC-18] Evaluate measured coherent fingerprint-resistance options",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:30Z",
+        "updatedAt": "2026-11-22T05:30:30Z",
+        "marker": "<!-- chrome-research-tracker:REC-18 -->",
+        "bodySha256": "8d1188aa0da45b495dbea4d9b4c18a1e6dc6c02bf6fdacef9e86912e79e441eb",
+        "retainedReceiptSha256": "197269cabc553981c9e8eb41d51408b1da74732476d2fb5697bac174a10b02e5",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-19",
+      "channelId": "project-github",
+      "trackingKey": "REC-19",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/19",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-19",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:33.476Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/19",
+        "number": 19,
+        "title": "[REC-19] Evaluate transparent destinations and reversible clean-link copying",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:32Z",
+        "updatedAt": "2026-11-22T05:30:32Z",
+        "marker": "<!-- chrome-research-tracker:REC-19 -->",
+        "bodySha256": "a3810d12c1efb3a21be1bacb651cdd5a93c2a6a987c27b2d2ee2e3ab2a9ae803",
+        "retainedReceiptSha256": "759229b0253fb5a419dbb638599d2098cd59f9051b5f2df3e53ec65be9aae915",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-20",
+      "channelId": "project-github",
+      "trackingKey": "REC-20",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/20",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-20",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:36.334Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/20",
+        "number": 20,
+        "title": "[REC-20] Evaluate explainable project-level resource controls",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:35Z",
+        "updatedAt": "2026-11-22T05:30:35Z",
+        "marker": "<!-- chrome-research-tracker:REC-20 -->",
+        "bodySha256": "2ed826891924862045dbd8a8897a0573cf411a85047082a8f38f55ca667f3490",
+        "retainedReceiptSha256": "5316e44efe679629f80a1119908aac6b74da8719adeb6c1359e4e6c0d3f6f029",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-21",
+      "channelId": "project-github",
+      "trackingKey": "REC-21",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/21",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-21",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:38.891Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/21",
+        "number": 21,
+        "title": "[REC-21] Evaluate reversible abuse protection with visible explanations",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:38Z",
+        "updatedAt": "2026-11-22T05:30:38Z",
+        "marker": "<!-- chrome-research-tracker:REC-21 -->",
+        "bodySha256": "d34ebfcd0e54f1331d05f34621681eaf7acc2b085435b4fc5ada643400cf050b",
+        "retainedReceiptSha256": "4a4e75e4d84cb3537745c3c3434f5c54c9c47dbbfe87ac9bec17bf410ef4a642",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-22",
+      "channelId": "project-github",
+      "trackingKey": "REC-22",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/22",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-22",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:41.302Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/22",
+        "number": 22,
+        "title": "[REC-22] Evaluate versioned feature protection and lifecycle information",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:40Z",
+        "updatedAt": "2026-11-22T05:30:40Z",
+        "marker": "<!-- chrome-research-tracker:REC-22 -->",
+        "bodySha256": "c1be63b5040c4d433fd62bfcc49748ee240e76347ff6ade5b6da6f652cf77d97",
+        "retainedReceiptSha256": "2f0dc15929500e4659a900b6d95d11b28195f3f7943dafb326883133a157978e",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-23",
+      "channelId": "project-github",
+      "trackingKey": "REC-23",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/23",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-23",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:48.381Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/23",
+        "number": 23,
+        "title": "[REC-23] Evaluate honest offline-media and reading states",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:43Z",
+        "updatedAt": "2026-11-22T05:30:43Z",
+        "marker": "<!-- chrome-research-tracker:REC-23 -->",
+        "bodySha256": "52261461239c401492f3cfe47120ede39906d53ef60109eb7a929158e202e099",
+        "retainedReceiptSha256": "ded1b72fcf8c53f8a0f9d11a447deb59b121efc98519c463de6130955d08ba8b",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REC-24",
+      "channelId": "project-github",
+      "trackingKey": "REC-24",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/24",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "recommendationId": "REC-24",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:51.269Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/24",
+        "number": 24,
+        "title": "[REC-24] Evaluate optional generic operating-system window titles",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "proposal",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:50Z",
+        "updatedAt": "2026-11-22T05:30:50Z",
+        "marker": "<!-- chrome-research-tracker:REC-24 -->",
+        "bodySha256": "bf7feb953be97335e0e260a9dca0aeb7946e73b50c98d41e64322206e552e1c8",
+        "retainedReceiptSha256": "72e7951fb7c9098a17b286fca1240f7dc3e2fda1d96049b4845a0b137cdfd4f6",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-R09-C1",
+      "channelId": "project-github",
+      "trackingKey": "R09-C1",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/25",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "issueId": "R09-C1",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:53.705Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/25",
+        "number": 25,
+        "title": "[R09-C1] Validate managed Home-button customization state",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:53Z",
+        "updatedAt": "2026-11-22T05:30:53Z",
+        "marker": "<!-- chrome-research-tracker:R09-C1 -->",
+        "bodySha256": "8b90cb484161b509be22136c105ede5b4dfc1cc3ae354d83705fd6cb62726859",
+        "retainedReceiptSha256": "6cbc6f5f228cfc200f44938d48e067a30dc4f2f274d91e154db80c9a7cc93a5a",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-R09-C2",
+      "channelId": "project-github",
+      "trackingKey": "R09-C2",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/26",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "issueId": "R09-C2",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:56.117Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/26",
+        "number": 26,
+        "title": "[R09-C2] Validate Toolbar WebUI fixture compatibility with the data-URI icon contract",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:55Z",
+        "updatedAt": "2026-11-22T05:30:55Z",
+        "marker": "<!-- chrome-research-tracker:R09-C2 -->",
+        "bodySha256": "54d3f35f6312141264f23c358376fc7ac2f9875fc11e67445bb31f58278c6a74",
+        "retainedReceiptSha256": "d6fb549f567fafaf48675398d531ba0bd5e568a6942aeab4ef80ab1b545dc51c",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-R09-H1",
+      "channelId": "project-github",
+      "trackingKey": "R09-H1",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/27",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "issueId": "R09-H1",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:30:58.421Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/27",
+        "number": 27,
+        "title": "[R09-H1] Validate overflow-menu action identity across pin-order changes",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:30:57Z",
+        "updatedAt": "2026-11-22T05:30:57Z",
+        "marker": "<!-- chrome-research-tracker:R09-H1 -->",
+        "bodySha256": "fbc77ae0cf55cad86347e94b6adf4e828e5e623362742491e39838b52d25c2e4",
+        "retainedReceiptSha256": "b2fa1ba2e206c59fc20583453d8901be9872653398ef70457f7dd52998d240d0",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-R09-H2",
+      "channelId": "project-github",
+      "trackingKey": "R09-H2",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/28",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "issueId": "R09-H2",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:31:01.490Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/28",
+        "number": 28,
+        "title": "[R09-H2] Validate hidden-first action visibility updates in Customize Toolbar",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:31:00Z",
+        "updatedAt": "2026-11-22T05:31:00Z",
+        "marker": "<!-- chrome-research-tracker:R09-H2 -->",
+        "bodySha256": "67da838d2b37b8e27b5a5312fe350d5ecf408055debb8ca6a98ef16a26a3f456",
+        "retainedReceiptSha256": "031409c0611c84a88a3e22418b482fd5c1df4cda4969146b69a87420e3fe114c",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-R09-H3",
+      "channelId": "project-github",
+      "trackingKey": "R09-H3",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/29",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "issueId": "R09-H3",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:31:04.396Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/29",
+        "number": 29,
+        "title": "[R09-H3] Validate live enabled state in an open toolbar overflow menu",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "needs-validation",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:31:03Z",
+        "updatedAt": "2026-11-22T05:31:03Z",
+        "marker": "<!-- chrome-research-tracker:R09-H3 -->",
+        "bodySha256": "fd988d807ed8a8d8e93c19d4d39d825b909e9208a4549fa649baa25b4d18769b",
+        "retainedReceiptSha256": "b8c310bdfba3a4f081a14f86d2235d4ed642443dd5f753c51b3fda31bfea0a76",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-BUILD-01",
+      "channelId": "project-github",
+      "trackingKey": "BUILD-01",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/30",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:31:10.135Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/30",
+        "number": 30,
+        "title": "[BUILD-01] Historical Chromium build attempt — cancelled before compilation",
+        "state": "closed",
+        "stateReason": "not_planned",
+        "labels": [
+          "cancelled",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:31:06Z",
+        "updatedAt": "2026-11-22T05:31:09Z",
+        "marker": "<!-- chrome-research-tracker:BUILD-01 -->",
+        "bodySha256": "7b16c02cbfd051de0f33fe3607406eaea6c6a13895c7c060de870eb0f4ca8dbc",
+        "retainedReceiptSha256": "5fbfa8df61e2336ce56fd8f3a9c7da1e15ae8657a86346bfb38ceee320fec361",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "PUB-REPORTING-01",
+      "channelId": "project-github",
+      "trackingKey": "REPORTING-01",
+      "status": "submitted",
+      "url": "https://github.com/chirag127/chrome-research-tracker/issues/31",
+      "reason": "Published as independent project research tracking. This is not a Google submission, a reproduced defect, or an implementation commitment.",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T05:31:12.857Z",
+        "reference": "https://github.com/chirag127/chrome-research-tracker/issues/31",
+        "number": 31,
+        "title": "[REPORTING-01] Track upstream reporting authentication and candidate validation",
+        "state": "open",
+        "stateReason": null,
+        "labels": [
+          "blocked",
+          "research"
+        ],
+        "author": "chirag127",
+        "createdAt": "2026-11-22T05:31:12Z",
+        "updatedAt": "2026-11-22T05:31:12Z",
+        "marker": "<!-- chrome-research-tracker:REPORTING-01 -->",
+        "bodySha256": "d537dad779445a15757b53dc2da49a9feb634abeef0ed3fa2d1c9ea75aac63b5",
+        "retainedReceiptSha256": "cea4d5dc2ac11a20728d1825c5df2e01096230d91d881f5e7a1173df5f8ac0ea",
+        "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
+      },
+      "googleSubmission": false
+    }
+  ],
+  "limitations": [
+    "Creating this file, a local draft, a GitHub issue, or opening the Google form is not a Google submission.",
+    "No existing upstream issue is counted as this project's newly submitted report.",
+    "No prediction of Google acceptance, prioritization or implementation is made."
+  ],
+  "publication": {
+    "status": "verified",
+    "repository": "chirag127/chrome-research-tracker",
+    "completedAt": "2026-11-22T05:31:12.864Z",
+    "totalProjectIssues": 31,
+    "openProjectIssues": 30,
+    "closedProjectIssues": 1,
+    "newGoogleReports": 0,
+    "researchCommit": "d61d6fc420994613b78b3f9cb6a99013cd3d42eb",
+    "researchCommitUrl": "https://github.com/chirag127/chrome-research-tracker/commit/d61d6fc420994613b78b3f9cb6a99013cd3d42eb",
+    "researchTree": "92a1f29b07e749f8cbe7e208e8a55147b1d57343",
+    "researchReadbackAt": "2026-11-22T05:26:18.770Z",
+    "payloadSha256": "bbb130a0a9b79f498b7d18f8a9f62a409a769f02312bb8bfc082f499cfa091ff",
+    "interpretation": "Receipt status records successful publication to the named channel. Open and closed describe the independently tracked GitHub items; neither implies upstream acceptance."
+  }
 }

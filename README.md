@@ -32,6 +32,17 @@ The validated snapshot contains **47 browser/project records, 286 feature record
 
 The catalogue is a substantial, bounded investigation, not a claim to cover every browser or every Chrome issue. Vendor descriptions are not measured privacy, security, speed or battery rankings. The issue ledger distinguishes already reported or fixed problems from candidates requiring reproduction.
 
+## Published backlog
+
+The [research publication](https://github.com/chirag127/chrome-research-tracker/commit/d61d6fc420994613b78b3f9cb6a99013cd3d42eb) and **31 project tracking issues** were read back from GitHub on 22 November 2026. Each issue's URL, title, body digest, labels and observed state are retained in [publication receipts](data/submissions.json).
+
+- **24 feature proposals:** [REC-01](https://github.com/chirag127/chrome-research-tracker/issues/1) through [REC-24](https://github.com/chirag127/chrome-research-tracker/issues/24).
+- **Five source investigations:** [R09-C1](https://github.com/chirag127/chrome-research-tracker/issues/25), [R09-C2](https://github.com/chirag127/chrome-research-tracker/issues/26), [R09-H1](https://github.com/chirag127/chrome-research-tracker/issues/27), [R09-H2](https://github.com/chirag127/chrome-research-tracker/issues/28), and [R09-H3](https://github.com/chirag127/chrome-research-tracker/issues/29).
+- **Build history:** [BUILD-01](https://github.com/chirag127/chrome-research-tracker/issues/30), closed as not planned after the later cancellation.
+- **Google reporting prerequisite:** [REPORTING-01](https://github.com/chirag127/chrome-research-tracker/issues/31), open with the recorded authentication and candidate-validation requirements.
+
+At publication, 30 items were open and one was closed. These are research tasks, not 31 newly discovered defects or Google submissions.
+
 ## Reporting to Google
 
 Chromium's official GitHub mirror has issues disabled. Use [Chromium's issue tracker](https://crbug.com/new) for focused reports, [Chrome's feedback instructions](https://support.google.com/chrome/answer/95315?hl=en) for product feedback, and [Gerrit](https://chromium-review.googlesource.com/) for upstream code review.

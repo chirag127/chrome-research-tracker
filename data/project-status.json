@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-11-22",
-  "overallStatus": "research-verified-publication-in-progress",
+  "overallStatus": "published-with-google-reporting-blocked",
   "repositories": [
-    {"role":"research-tracker","url":"https://github.com/chirag127/chrome-research-tracker","visibility":"public","verification":"GitHub API confirmed public visibility, issues enabled and main default branch after creation.","contentPublication":"initial repository created; research-content push pending"},
+    {"role":"research-tracker","url":"https://github.com/chirag127/chrome-research-tracker","visibility":"public","verification":"Fresh GitHub repository, main-ref, commit and recursive-tree GETs confirmed public visibility and all 33 published file entries.","contentPublication":"published-and-readback-verified","researchCommit":"d61d6fc420994613b78b3f9cb6a99013cd3d42eb","researchCommitUrl":"https://github.com/chirag127/chrome-research-tracker/commit/d61d6fc420994613b78b3f9cb6a99013cd3d42eb","researchTree":"92a1f29b07e749f8cbe7e208e8a55147b1d57343","readbackAt":"2026-11-22T05:26:18.770Z"},
     {"role":"historical-source-fork","url":"https://github.com/chirag127/chromium","status":"deleted-by-later-owner-request","parent":"chromium/chromium","verification":"Creation was verified before the later authorized deletion. This URL records historical provenance, not a currently available fork.","sourceAuthority":"https://github.com/chromium/chromium"}
   ],
   "research": {"snapshotDate":"2026-11-21","status":"all-ten-lanes-validated-and-reviewed","originalResearchLanes":10,"lastVerifiedCorpus":{"browserRecords":47,"alternativeRecords":46,"featureRecords":286,"sourceRecords":403,"issueRecords":38,"verifiedAt":"2026-11-22T04:57:12.389Z","scope":"Integrated recovered/reconstructed corpus; counts describe records, not necessarily distinct products across research lanes."},"issueClassification":{"existingUpstreamFamilies":24,"alternativeBrowserDocumentaryInconsistencies":9,"focusedSourceAuditCandidates":5,"locallyReproducedDefects":0},"byteExactRestoredShards":["R02","R05","R06","R10"],"assembledReconstructedShards":["R01","R03","R04","R07","R08","R09"],"remainingConversionShards":[],"scope":"Chrome baseline, mainstream/privacy/productivity/mobile/independent alternatives, existing upstream reports, pinned toolbar source and one installed executable.","limitations":["The catalogue is bounded and extensible; it does not enumerate every browser or every Chrome issue.","Original research completion is separate from dataset validation, local reproduction and publication.","Reconstructed shards retain original dates, identifiers and explicit recovery metadata; original serialization and some optional unrendered metadata remain unavailable."]},
   "recommendations": {"path":"data/recommendations.json","status":"validated-research-proposals","count":24,"interpretation":"Editorial proposals with credited Chrome baselines, comparator citations, acceptance criteria and tradeoffs; not implementation commitments."},
+  "projectTracking": {"status":"published-and-readback-verified","url":"https://github.com/chirag127/chrome-research-tracker/issues","recordsPath":"data/submissions.json","completedAt":"2026-11-22T05:31:12.864Z","totalIssues":31,"openIssues":30,"closedIssues":1,"recommendationIssues":24,"sourceInvestigationIssues":5,"buildAndReportingIssues":2,"newGoogleReports":0,"interpretation":"Independent project backlog. Every receipt was checked with a separate issue GET; publication does not establish reproduction, upstream acceptance or implementation."},
   "build": {
     "status":"cancelled-by-later-owner-request",
     "reason":"The owner's later removal of the personal Chromium fork and source/depot_tools checkouts superseded the earlier full-build scope.",
@@ -24,23 +25,25 @@
       {"id":"chrome-build","status":"cancelled-before-start","exitCode":null}
     ],
     "historicalEvidence":{"artifact":"build-status.json","sha256":"bc2ce031da126533a9df8b3a1ea5c9b570b0f2e8b9da40e4a745ce145c7fa29a","retention":"local-only","scope":"Finalized historical build manifest; no compiled artifact."},
+    "trackingIssue":"https://github.com/chirag127/chrome-research-tracker/issues/30",
     "remainingAuthorizedBuildActions":[],
     "limitations":["Installed tools and downloaded dependencies are not a compiled Chromium browser.","The SDK wrapper exit code was not retained; the installer-log exit and installed-file checks are separate evidence.","Stage summaries describe retained evidence, not live process status.","The source and tool checkouts and personal fork were subsequently removed. A new build would require renewed scope."]
   },
-  "googleReporting": {"status":"blocked","recordsPath":"data/submissions.json","newReportsSubmitted":0,"reason":"The tested official reporting interface required Google sign-in. Candidate-specific validation and duplicate research also remain explicit."},
+  "googleReporting": {"status":"blocked","recordsPath":"data/submissions.json","trackingIssue":"https://github.com/chirag127/chrome-research-tracker/issues/31","newReportsSubmitted":0,"reason":"The tested official reporting interface required Google sign-in. Candidate-specific validation and duplicate research also remain explicit.","nextAction":"Use a signed-in official reporting session after completing the chosen candidate's baseline, reproduction and duplicate checks."},
   "verification": {
-    "status":"assembled-corpus-checks-passed",
+    "status":"research-publication-checks-passed",
+    "verifiedResearchCommit":"d61d6fc420994613b78b3f9cb6a99013cd3d42eb",
     "nodeVersion":"v26.13.0",
     "requiredCommands":["npm test","npm run validate","node scripts/render.mjs --check"],
     "results":[
-      {"command":"npm test","finishedAt":"2026-11-22T04:57:13.384Z","exitCode":0,"tests":76,"passed":76,"failed":0,"skipped":0},
-      {"command":"npm run validate","finishedAt":"2026-11-22T04:57:12.389Z","exitCode":0,"lanes":10,"errors":0},
-      {"command":"node scripts/render.mjs --check","finishedAt":"2026-11-22T04:57:11.406Z","exitCode":0,"reports":5}
+      {"command":"npm test","finishedAt":"2026-11-22T05:11:26.500Z","exitCode":0,"tests":76,"passed":76,"failed":0,"skipped":0},
+      {"command":"npm run validate","finishedAt":"2026-11-22T05:11:24.793Z","exitCode":0,"lanes":10,"errors":0},
+      {"command":"node scripts/render.mjs --check","finishedAt":"2026-11-22T05:11:22.479Z","exitCode":0,"reports":5}
     ],
     "toolingSha256":{"validator":"cba60062ac6ba0d01647313a8ea6c162128a6ed99986624f6fa70c3db85a57eb","validatorTests":"cbc9dfeaabe3301a0a0fa86246960bf5c98226287692c7217511f23ef310a0d1","renderer":"28458cbc051dde14f84d707d7f6f22659cdca50bdae21cf3bfc373b76566dbbc","rendererTests":"99f626fba0a2a6a653b1950b4f1db5ad172a7f68ba4c9825d4c4a79ffaf6d7a9"},
-    "independentReview":"Reviewed tooling corrections and all six reconstructed lanes have no unresolved actionable findings within their recorded coverage. Research fidelity review is distinct from live source retrieval and browser testing.",
-    "limitations":["These dated results cover the assembled corpus before publication-receipt and contributor-summary updates; local verification receipts retain the complete tested file hashes.","Validation checks evidence structure and consistency. It does not re-fetch cited websites, reproduce browser defects, or validate a Chromium build."]
+    "independentReview":"Reviewed tooling corrections, all six reconstructed lanes and the five generated reports have no unresolved actionable findings within recorded coverage. The report audit checked all 625 local links and 490 linked fragments, core record/source coverage, recovery notices and contact footers.",
+    "limitations":["These dated results cover the identified research commit before this publication-receipt/status update; retained local verification receipts bind each subsequent check to its tested file hashes.","Validation checks evidence structure and consistency. It does not re-fetch cited websites, reproduce browser defects, or validate a Chromium build.","Report-link review is static; hosted browser rendering and external URL reachability are outside that verdict."]
   },
-  "remaining": ["Publish research content and project tracking issues, preserving exact receipts.","Use an authenticated Google reporting session for individually validated, duplicate-checked submissions."],
+  "remaining": ["Complete candidate-specific baseline, reproduction and duplicate checks before any upstream report.","Use an authenticated Google reporting session for individually validated, duplicate-checked submissions."],
   "credentialValuesIncluded": false
 }
