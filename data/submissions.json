@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-11-22",
-  "scope": "Publication and reporting receipts for this project. Existing upstream reports are recorded in the research lanes.",
+  "scope": "Publication and reporting outcomes for this project. Preparation text is single-sourced in data/reporting-preparation.json. Public issue/comment receipts, sender-side email observations and product-feedback dispatches retain distinct meanings. Existing upstream reports are recorded in the research lanes.",
   "channels": [
     {
       "id": "google-chromium",
@@ -33,6 +33,33 @@
       "url": "https://github.com/chirag127/chrome-research-tracker/issues",
       "purpose": "Public research backlog and proposal tracking owned by this project; not an official Google tracker.",
       "sourceIds": []
+    },
+    {
+      "id": "owner-orion",
+      "url": "https://github.com/kagisearch/kagi-docs/issues",
+      "purpose": "Orion documentation corrections in the official Kagi documentation repository.",
+      "sourceIds": ["R06-O2", "R06-O4"],
+      "intakeEvidence": {"url": "https://github.com/kagisearch/kagi-docs/blob/main/README.md", "observedAt": "2026-11-22T14:48:22.626Z"}
+    },
+    {
+      "id": "owner-mullvad",
+      "url": "https://github.com/mullvad/mullvad-browser/issues/19",
+      "purpose": "Documentation follow-up on the existing completed Mullvad Browser rename discussion.",
+      "sourceIds": ["R03-S-M2", "R03-S-M3"],
+      "intakeEvidence": {"url": "https://github.com/mullvad/mullvad-browser/issues/19", "observedAt": "2026-11-22T14:49:59Z"}
+    },
+    {
+      "id": "owner-nyxt",
+      "url": "https://github.com/atlas-engineer/nyxt/issues/1191",
+      "purpose": "Release-qualified Nyxt documentation follow-up on the existing documentation-status discussion.",
+      "sourceIds": ["R06-N1", "R06-N2", "R06-N3", "R06-N4", "R06-N5"]
+    },
+    {
+      "id": "owner-cromite",
+      "url": "https://github.com/uazo/cromite/discussions/categories/q-a",
+      "purpose": "Cromite support-definition questions through the project's Q&A category.",
+      "sourceIds": ["R05-C03", "R05-C05", "R05-C06", "R05-C07"],
+      "intakeEvidence": {"url": "https://github.com/uazo/cromite/discussions/categories/q-a", "observedAt": "2026-11-22T14:50:56.192Z"}
     }
   ],
   "accessChecks": [
@@ -48,14 +75,43 @@
         "This records access in that browser session only, not every possible account or browser.",
         "The full login URL and its session-specific query values are intentionally omitted."
       ]
+    },
+    {
+      "id": "ACCESS-GOOGLE-02",
+      "observedAt": "2026-11-22",
+      "requestedUrl": "https://crbug.com/new",
+      "result": "authenticated-form-reached",
+      "observation": "The existing signed-in Chrome session reached the Chromium issue wizard and its supported contributor/manual entry form.",
+      "evidenceReference": "tool-result:call_9074c384-56f5-441e-a9b3-a0dd38ab3ee2",
+      "limitations": [
+        "This supersedes the historical sign-in blocker only for the inspected session.",
+        "Reaching the form does not establish a submitted issue or permission for every component."
+      ]
+    },
+    {
+      "id": "ACCESS-GOOGLE-03",
+      "observedAt": "2026-11-22T14:56:55.252Z",
+      "result": "human-verification-required",
+      "observation": "Two source-only follow-up comments were prepared on existing Chromium threads. Comment remained disabled, and the inspected C2 reCAPTCHA control showed an unchecked human-verification checkbox.",
+      "evidenceReferences": [
+        "tool-result:call_1888d155-0387-4a5c-bfdd-69f031dc6ecd",
+        "tool-result:call_efdbaf1f-ffed-4064-a85f-fbe8e3357a30",
+        "tool-result:call_91e1c149-a347-4b19-bf3c-2ba3563f06dc"
+      ],
+      "limitations": [
+        "No Comment or Create action was dispatched in this preparation.",
+        "The prepared text is not a submission receipt; human verification must be completed manually."
+      ]
     }
   ],
   "googleSubmission": {
     "status": "blocked",
     "receiptUrl": null,
-    "reason": "An authenticated Google reporting session is unavailable in the tested interface. Candidate-specific baseline, duplication and validation requirements also remain recorded with each proposal.",
-    "nextAction": "Sign in to the official Chromium issue tracker, then submit an individually reviewed report from the project's linked backlog with its evidence and reproduction limits.",
-    "newReportsSubmitted": 0
+    "countScope": "Chromium tracker issues and comments with verified permalinks. Native product-feedback uploads are recorded separately in feedbackDispatches.",
+    "reason": "Authenticated Chromium form access is now verified. The prepared source follow-ups are blocked by human verification; individual feature requests retain their duplicate and scope dispositions.",
+    "nextAction": "Complete the reCAPTCHA manually in the prepared reporting tab, then reconcile the stable research marker before sending once and verifying the actual issue or comment permalink.",
+    "newReportsSubmitted": 0,
+    "countScope": "Verified new Chromium tracker issue/comment receipts. Product-feedback dispatch outcomes are recorded separately and are not tracker receipts."
   },
   "records": [
     {
@@ -1009,8 +1065,243 @@
         "verification": "A separate GitHub issue GET matched the prepared title, normalized body digest, desired state and required labels before this receipt was saved."
       },
       "googleSubmission": false
+    },
+    {
+      "id": "OWNER-ORION-20261122",
+      "channelId": "owner-orion",
+      "trackingKey": "R06-I-ORION-SUPPORT-DOCS",
+      "issueId": "R06-I-ORION-SUPPORT-DOCS",
+      "status": "submitted",
+      "url": "https://github.com/kagisearch/kagi-docs/issues/1059",
+      "reason": "Published a documentation request to label the end of Kagi's Linux updates beside the installation instructions. No executable or updater defect is claimed.",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T15:20:45.944Z",
+        "reference": "https://github.com/kagisearch/kagi-docs/issues/1059",
+        "kind": "issue",
+        "id": 6544101597,
+        "number": 1059,
+        "title": "Orion Linux installation guide: label the end of Kagi updates",
+        "createdAt": "2026-11-22T15:20:45Z",
+        "bodySha256": "f3d08a643a413f8326f4a203e0285d1bb22427908fc5011af5b531647fb216bb",
+        "retainedReceiptSha256": "12aa95d30c55e5b888d0401a7785303363e875b1d509326decafc32de8fb40f8",
+        "verification": "A separate GitHub issue GET matched the prepared title, stable research marker and body digest."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "OWNER-MULLVAD-20261122",
+      "channelId": "owner-mullvad",
+      "trackingKey": "R03-I01",
+      "issueId": "R03-I01",
+      "status": "submitted",
+      "url": "https://github.com/mullvad/mullvad-browser/issues/19#issuecomment-7081241584",
+      "reason": "Published the remaining hard-facts website wording as a comment on the completed rename discussion. This does not ask for the product rename again or establish DNS/reset runtime behavior.",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T15:21:33.544Z",
+        "reference": "https://github.com/mullvad/mullvad-browser/issues/19#issuecomment-7081241584",
+        "kind": "comment",
+        "id": 7081241584,
+        "createdAt": "2026-11-22T15:21:32Z",
+        "bodySha256": "ca38a0989671b8327dbc9ba95c719d77101e49e54f99e2e0ffd80b2560d148c7",
+        "retainedReceiptSha256": "4977c6d76446e6da873c1c9829d45eb5283b2f1d1924e0c80d9989e7d37fe29a",
+        "verification": "A separate GitHub comment GET matched the stable research marker and prepared body digest."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "OWNER-NYXT-20261122",
+      "channelId": "owner-nyxt",
+      "trackingKey": "R06-I-NYXT-VERSIONED-DOCS",
+      "issueId": "R06-I-NYXT-VERSIONED-DOCS",
+      "status": "submitted",
+      "url": "https://github.com/atlas-engineer/nyxt/issues/1191#issuecomment-7081250809",
+      "reason": "Published release-qualified renderer and macOS package context on the existing documentation-status issue. Package availability remains distinct from platform support maturity and tested signing/runtime behavior.",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T15:22:17.933Z",
+        "reference": "https://github.com/atlas-engineer/nyxt/issues/1191#issuecomment-7081250809",
+        "kind": "comment",
+        "id": 7081250809,
+        "createdAt": "2026-11-22T15:22:17Z",
+        "bodySha256": "bdb09b852740c910760121ab1d250362d21720b84e7a610e7d1f313e3f591802",
+        "retainedReceiptSha256": "428141a63c5bfce4e66fa7771f718911f6368573be344e8b8dea7a9730e527a8",
+        "verification": "A separate GitHub comment GET matched the stable research marker and prepared body digest."
+      },
+      "googleSubmission": false
+    },
+    {
+      "id": "OWNER-CROMITE-20261122",
+      "channelId": "owner-cromite",
+      "trackingKey": "R05-I-cromite-extension-docs",
+      "issueId": "R05-I-cromite-extension-docs",
+      "status": "submitted",
+      "url": "https://github.com/uazo/cromite/discussions/3139",
+      "reason": "Published a Q&A asking whether the FAQ's support definition excludes the default-off Android extension experiment. This is not a reproduced browser bug or a claim of production extension compatibility.",
+      "receipt": {
+        "verified": true,
+        "observedAt": "2026-11-22T15:26:39.605Z",
+        "reference": "https://github.com/uazo/cromite/discussions/3139",
+        "kind": "discussion",
+        "id": "D_kwDOD15akc4ArZB2",
+        "number": 3139,
+        "title": "FAQ clarification: Android extension support versus the default-off experiment",
+        "createdAt": "2026-11-22T15:26:38Z",
+        "bodySha256": "4954c82de29512d9a560ab2d9a25a09eb2b2f11af596fb10abda414a987050dd",
+        "retainedReceiptSha256": "5ae943812193fd17e591b156ea45ed3f3bfa6f50b5cd46d61cee42eeb2f27fd6",
+        "verification": "A separate GitHub discussion query matched the Q&A category, prepared title, stable research marker and body digest."
+      },
+      "googleSubmission": false
     }
   ],
+  "emailDispatches": [
+    {
+      "id": "EMAIL-QUETTA-20261122",
+      "issueId": "R05-I-quetta-platform-scope",
+      "status": "sent-message-readback-verified",
+      "recipient": "support@quetta.net",
+      "subject": "FAQ clarification: separate Android extension support from iOS availability",
+      "dispatchedAt": "2026-11-22T16:06:59.339Z",
+      "bodySha256": "aca7d153585af94a048f067dc0c6ac041bda5ce7ac8c41856be8965a290ffdee",
+      "evidence": {"kind": "sender-sent-message", "verified": true, "observedAt": "2026-11-22T16:16:00.892Z", "artifact": "email-quetta-write.json", "sha256": "4aa9a32596cdeecb025c84f0026ef592ca85ce9224e44d8cb1781be2a8bd3e0e", "retention": "local-only", "verification": "After one Send, an independently reopened in:sent result matched recipient, subject, research marker and normalized full body."},
+      "publicReceiptUrl": null,
+      "recipientAcceptance": "unknown",
+      "googleSubmission": false,
+      "limitations": ["Sender-side Sent evidence does not establish support-team receipt, response or a public issue.", "The email contains a documentation question, not a tested iOS engine or extension claim."]
+    },
+    {
+      "id": "EMAIL-FALKON-20261122",
+      "issueId": "R06-I-FALKON-RELEASE-SURFACES",
+      "status": "sent-message-readback-verified",
+      "recipient": "kde-www@kde.org",
+      "subject": "apps.kde.org Falkon feed: include the release dates already shown on the app page",
+      "dispatchedAt": "2026-11-22T16:27:11.987Z",
+      "bodySha256": "1a3dad0ec5b04e802fdbe95c48044e01a4dd7d7a2c649a579987bffa9eaa8546",
+      "evidence": {"kind": "sender-sent-message", "verified": true, "observedAt": "2026-11-22T16:31:31.189Z", "artifact": "email-falkon-write.json", "sha256": "81f80d74bafa96035f9bc3a0f84451876967688a8379111e141ef4c4ad187e26", "retention": "local-only", "verification": "After one Send, an independently reopened in:sent result matched recipient, subject, research marker and normalized full body."},
+      "publicReceiptUrl": null,
+      "recipientAcceptance": "unknown",
+      "googleSubmission": false,
+      "limitations": ["Mailing-list acceptance, moderation and any public archive permalink remain unverified.", "The email concerns RSS omission of already-published dates; no application or feed-reader failure is claimed."]
+    },
+    {
+      "id": "EMAIL-LYNX-20261122",
+      "issueId": "R06-I-LYNX-DATE-CONFLICT",
+      "status": "sent-message-readback-verified",
+      "recipient": "dickey@invisible-island.net",
+      "subject": "Lynx 2.9.3 release page: clarify the Last Updated footer",
+      "dispatchedAt": "2026-11-22T16:34:22.296Z",
+      "bodySha256": "28e920f75312508c64ff6e370b860f8bb1caa11e5de6b6b819093834347d3a31",
+      "evidence": {"kind": "sender-sent-message", "verified": true, "observedAt": "2026-11-22T16:36:48.140Z", "artifact": "email-lynx-write.json", "sha256": "42535949132ce7120b61471c45b2a5651b57fd4889ddcaa68d83cdd6f4476722", "retention": "local-only", "verification": "After one Send, an independently reopened in:sent result matched recipient, subject, research marker and normalized full body."},
+      "publicReceiptUrl": null,
+      "recipientAcceptance": "unknown",
+      "googleSubmission": false,
+      "limitations": ["No recipient acknowledgment or public issue receipt has been verified.", "Release date and page-edit date remain distinct; the email invents no replacement date and claims no executable test."]
+    }
+  ],
+  "feedbackDispatches": [
+    {
+      "id": "FEEDBACK-REC-05-20261122",
+      "recommendationId": "REC-05",
+      "status": "feedback-upload-verified",
+      "channelId": "chrome-feedback",
+      "reservedAt": "2026-11-22T16:29:19.148Z",
+      "originalBodySha256": "3bba5e618b44607f2c73453ab7cef2da38a032e4c98dc0badb09f15469a5cd8c",
+      "descriptionSha256": "1c1b79eaa58e2f112b713758a8945d76d773d581c39962cf718139aa983e0105",
+      "descriptionLength": 1211,
+      "runtime": {"browser": "Google Chrome", "version": "158.0.8127.37", "platform": "Windows", "isolatedProfile": true, "headless": true},
+      "invocation": {"method": "chrome.feedbackPrivate.sendFeedback({description}, false)", "count": 1, "attemptedAt": "2026-11-22T16:47:08.654Z", "completedAt": "2026-11-22T16:47:11.252Z", "callbackStatus": "success", "landingPageType": "normal", "userSuppliedFields": ["description"], "loadSystemInfo": false},
+      "transport": {"verified": true, "endpoint": "https://www.google.com/tools/feedback/chrome/__submit", "method": "POST", "httpStatus": 204, "responseAt": "2026-11-22T16:47:11.622Z", "capturedFeedbackPostCount": 1, "requestSpecificNetworkErrors": [], "verification": "Finalized private capture correlates the collector POST and HTTP 204 response on one URL_REQUEST source within the recorded invocation."},
+      "evidence": {"kind": "native-feedback-upload", "verified": true, "observedAt": "2026-11-22T16:53:24.290Z", "artifact": "rec05-delivery-evidence.json", "sha256": "a0a67d11a34b205c284d01f3962011b4e8ef423c76fa5eca37c95c0deea5de51", "retention": "local-only"},
+      "trackerReceiptUrl": null,
+      "humanTriage": "unknown",
+      "reason": "The separately requested standalone product-feedback dispatch consumed its one-time reservation. One native API invocation returned success and one correlated collector POST received HTTP 204. No REC-05-specific tracker challenge or previous Google write was recorded at release.",
+      "nextAction": "Retain this completed upload and do not send REC-05 again through another channel. Any later triage or tracker receipt needs its own evidence.",
+      "limitations": ["Feedback upload success does not establish human review or a Chromium issue/comment permalink.", "Hashes identify the exact supplied title plus two newlines and the full qualified draft body; Chrome redaction and serialization mean exact wire bytes remain unverified.", "Only description was supplied and system-information loading was false; Chrome-generated protocol metadata still applies. Raw network logs remain private.", "The C1/C2 human-verification gate and REC-01/REC-07 commenting restrictions do not change."]
+    }
+  ],
+  "reportingFollowup": {
+    "asOf": "2026-11-22",
+    "preparationPath": "data/reporting-preparation.json",
+    "scope": "Current disposition for every saved item. The preparation dataset owns draft text, original citations, destinations and bounded duplicate evidence. Receipt IDs below resolve within this file; no receipt is copied into the preparation dataset.",
+    "summary": {"items": 62, "existingUpstreamFamilies": 24, "preparedTrackerItems": 21, "blockedSourceComments": 2, "restrictedMatchingRequests": 2, "heldHypotheses": 3, "receiptBackedOwnerReports": 4, "sentOwnerEmails": 3, "uploadedProductFeedback": 1, "supersededOrCorrected": 2, "newChromiumTrackerReceipts": 0},
+    "statusMeaning": {
+      "prepared-tracker": "Qualified draft exists; the official tracker workflow remains unsent. Select its actual component where needed and resolve form/access requirements before one send. The source-comment challenge was not independently tested on every feature form.",
+      "blocked-human-verification": "The source comment is filled in its existing thread, with Comment disabled behind manual human verification. No Comment action was dispatched.",
+      "held-existing-restricted": "The requested outcome is already covered by a matching thread with restricted commenting. Do not refile the same request.",
+      "held-evidence": "The stated reachability or intended-behavior question remains unresolved; no outgoing defect claim is ready.",
+      "existing-upstream": "Retain the canonical report and original attribution; no new report or useful new reproduction is established.",
+      "submitted": "A new project-authored owner issue, comment or discussion has a separately verified public receipt below.",
+      "sent-email": "The reviewed message was sent once and separately read back in Sent. Recipient acceptance and a public receipt remain unknown.",
+      "feedback-upload-verified": "One native product-feedback invocation and its correlated HTTP 204 upload are verified. No tracker permalink or human-triage receipt is established; do not resend.",
+      "superseded": "Current platform/optional-collection qualifications supersede the earlier reporting premise; actual collection remains unmeasured.",
+      "source-correction-retained": "The research already uses the migrated canonical source; no additional owner report is justified."
+    },
+    "records": [
+      {"itemId": "REC-01", "status": "held-existing-restricted", "submissionRecordId": null},
+      {"itemId": "REC-02", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-03", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-04", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-05", "status": "feedback-upload-verified", "submissionRecordId": null, "feedbackDispatchId": "FEEDBACK-REC-05-20261122"},
+      {"itemId": "REC-06", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-07", "status": "held-existing-restricted", "submissionRecordId": null},
+      {"itemId": "REC-08", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-09", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-10", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-11", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-12", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-13", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-14", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-15", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-16", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-17", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-18", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-19", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-20", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-21", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-22", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-23", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "REC-24", "status": "prepared-tracker", "submissionRecordId": null},
+      {"itemId": "R09-C1", "status": "blocked-human-verification", "submissionRecordId": null},
+      {"itemId": "R09-C2", "status": "blocked-human-verification", "submissionRecordId": null},
+      {"itemId": "R09-H1", "status": "held-evidence", "submissionRecordId": null},
+      {"itemId": "R09-H2", "status": "held-evidence", "submissionRecordId": null},
+      {"itemId": "R09-H3", "status": "held-evidence", "submissionRecordId": null},
+      {"itemId": "R03-I01", "status": "submitted", "submissionRecordId": "OWNER-MULLVAD-20261122"},
+      {"itemId": "R05-I-cromite-extension-docs", "status": "submitted", "submissionRecordId": "OWNER-CROMITE-20261122"},
+      {"itemId": "R05-I-quetta-platform-scope", "status": "sent-email", "submissionRecordId": null, "emailDispatchId": "EMAIL-QUETTA-20261122"},
+      {"itemId": "R05-I-quetta-data-disclosure", "status": "superseded", "submissionRecordId": null},
+      {"itemId": "R06-I-ORION-SUPPORT-DOCS", "status": "submitted", "submissionRecordId": "OWNER-ORION-20261122"},
+      {"itemId": "R06-I-NYXT-VERSIONED-DOCS", "status": "submitted", "submissionRecordId": "OWNER-NYXT-20261122"},
+      {"itemId": "R06-I-FALKON-RELEASE-SURFACES", "status": "sent-email", "submissionRecordId": null, "emailDispatchId": "EMAIL-FALKON-20261122"},
+      {"itemId": "R06-I-DILLO-CANONICAL-SOURCE", "status": "source-correction-retained", "submissionRecordId": null},
+      {"itemId": "R06-I-LYNX-DATE-CONFLICT", "status": "sent-email", "submissionRecordId": null, "emailDispatchId": "EMAIL-LYNX-20261122"},
+      {"itemId": "R07-issue-475853506", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R07-issue-587381526", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R07-issue-365519965", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R07-issue-387203448", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R07-issue-496291031", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R07-issue-564673918", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R07-issue-483899631", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R07-issue-552741956", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R07-issue-504663589", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R07-issue-469174762", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R07-issue-540469616", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R07-issue-457156374", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R08-01", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R08-02", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R08-03", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R08-04", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R08-05", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R08-06", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R08-07", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R08-08", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R08-09", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R08-10", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R08-11", "status": "existing-upstream", "submissionRecordId": null},
+      {"itemId": "R08-12", "status": "existing-upstream", "submissionRecordId": null}
+    ]
+  },
   "limitations": [
     "Creating this file, a local draft, a GitHub issue, or opening the Google form is not a Google submission.",
     "No existing upstream issue is counted as this project's newly submitted report.",

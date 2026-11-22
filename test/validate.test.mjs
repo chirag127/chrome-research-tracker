@@ -5,7 +5,7 @@ import { spawnSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { isRealDate, isSafeUrl, screenPublicText, validateDataset } from '../scripts/validate.mjs';
+import { isRealDate, isSafeUrl, screenPublicText, validateDataset, validateRepository } from '../scripts/validate.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const contract = JSON.parse(await readFile(join(root, 'data/contract.json'), 'utf8'));
@@ -43,6 +43,76 @@ function runtimeWithUnrunFollowup() {
     limitations: ['Source follow-up remains unrun.'],
   };
 }
+
+function reportingFixture() {
+  const input = fixture();
+  const existing = upstreamIssue();
+  existing.upstreamUrl = existing.submission.url = input.lanes[6].sources[0].url = 'https://issues.chromium.org/issues/123456789';
+  input.lanes[6].issues.push(existing);
+  const sourceIssue = (id, kind = 'source-inconsistency') => {
+    const record = {
+      ...upstreamIssue(), id, title: `Saved observation ${id}`, kind, status: 'needs-validation',
+      sourceIds: [`${id.slice(0, 3)}-S1`], upstreamUrl: null, upstreamStatus: null,
+      reportedVersions: [], testedVersions: [], reproduction: 'source-only', steps: [],
+      evidenceType: kind === 'hypothesis' ? 'hypothesis' : 'source-inspected',
+      submission: { status: 'not-submitted', url: null, reason: 'Research only.' },
+    };
+    input.lanes.find(lane => lane.id === id.slice(0, 3)).issues.push(record);
+    return record;
+  };
+  const recommendations = ['REC-01', 'REC-02', 'REC-03'].map(id => ({
+    id, title: `Proposed capability ${id}`, priority: 'P1', category: 'navigation', target: 'Chrome desktop',
+    status: 'needs-validation', chromeParity: 'partial-baseline', chromeBaselineFeatureIds: ['R01-F1'],
+    comparatorFeatureIds: ['R02-F1'], chromeBaseline: 'Existing related capability.', sourceIds: ['R01-S1', 'R02-S1'],
+    proposal: 'Evaluate a refinement.', acceptanceCriteria: ['Measure against the baseline.'],
+    tradeoffs: ['More UI complexity.'], limitations: ['Not a proven gap.'],
+  }));
+  input.recommendations = { schemaVersion: 1, asOf: '2026-11-21', scope: 'Editorial synthesis.', recommendations };
+  const prepared = (original, preparationGroup, preparationStatus, proposedAction, destination, type = null) => ({
+    itemId: original.id, originalTitle: original.title, kind: original.kind ?? 'feature-proposal',
+    preparationGroup, preparationStatus, proposedAction, destination, rationale: 'A bounded preparation decision.',
+    originalSourceIds: [...original.sourceIds],
+    evidence: [{ url: 'https://example.test/research', observedAt: '2026-11-22T10:00:00Z', observation: 'Compared public documentation.', limits: 'No runtime check or exhaustive duplicate search.' }],
+    limits: ['Preparation only; consult the submission ledger before acting.'],
+    draft: type === null ? null : { type, body: 'Evidence-qualified proposed follow-up.', ...(['create-issue', 'create-discussion', 'email'].includes(proposedAction) ? { title: 'A focused inquiry' } : {}) },
+  });
+  const records = [
+    prepared(recommendations[0], 'recommendation', 'ready-feature-request', 'create-issue', { url: 'https://issues.chromium.org/issues/new?noWizard=true' }, 'Feature Request'),
+    prepared(recommendations[1], 'recommendation', 'ready-feature-comment', 'comment', { url: 'https://issues.chromium.org/issues/234567891' }, 'Feature Request follow-up'),
+    prepared(recommendations[2], 'recommendation', 'held-existing-restricted', 'none', { url: 'https://issues.chromium.org/issues/234567892' }),
+    prepared(sourceIssue('R09-C1'), 'source-candidate', 'ready-source-comment', 'comment', { url: 'https://issues.chromium.org/issues/345678912' }, 'Source-only comment'),
+    prepared(sourceIssue('R09-H1', 'hypothesis'), 'source-candidate', 'held-hypothesis', 'none', null),
+    prepared(sourceIssue('R03-I1'), 'owner-documentation', 'ready-owner-issue', 'create-issue', { url: 'https://github.com/example/browser-docs/issues/new/choose' }, 'Documentation issue'),
+    prepared(sourceIssue('R03-I2'), 'owner-documentation', 'ready-owner-comment', 'comment', { url: 'https://github.com/example/browser-docs/issues/7' }, 'Documentation comment'),
+    prepared(sourceIssue('R03-I3'), 'owner-documentation', 'ready-owner-discussion', 'create-discussion', { url: 'https://github.com/example/browser-docs/discussions/categories/q-a', category: 'Q&A' }, 'Support-definition question'),
+    prepared(sourceIssue('R03-I4'), 'owner-documentation', 'ready-owner-email', 'email', { email: 'support@example.test', informationUrl: 'https://example.test/contact' }, 'Documentation email'),
+    prepared(sourceIssue('R03-I5'), 'owner-documentation', 'superseded-no-report', 'none', null),
+    prepared(existing, 'existing-upstream', 'existing-upstream-reuse', 'none', { url: existing.upstreamUrl }),
+  ];
+  records[1].existingIssue = { status: 'Assigned', observedAt: '2026-11-22T10:00:00Z', commentFieldEnabled: true };
+  records[2].existingIssue = { status: 'Assigned', observedAt: '2026-11-22T10:00:00Z', access: 'Limited commenting', commentFieldEnabled: false };
+  records[10].existingIssue = { status: existing.upstreamStatus, observedAt: '2026-11-21' };
+  input.reportingPreparation = {
+    schemaVersion: 1, asOf: '2026-11-22T12:00:00Z', sourceResearchCommit: 'a'.repeat(40), scope: 'Saved issues and recommendations.',
+    submissionLedger: 'data/submissions.json',
+    evidenceBoundary: {
+      delivery: 'Delivery is recorded separately.', research: 'Original source dates are retained.', claims: 'Documentary evidence is not runtime evidence.',
+      duplicates: 'Searches are bounded.', components: 'Only observed component IDs are included.', continuity: 'Original research remains authoritative.', drafts: 'Drafts are preparation only.',
+    },
+    summary: {
+      totalItems: 11, savedIssues: 8, savedRecommendations: 3,
+      existingUpstreamFamilies: { total: 1, bugReports: 1, featureRequests: 0, proposedAction: 'none' },
+      recommendations: { total: 3, createIssue: 1, comment: 1, heldExistingRestricted: 1 },
+      sourceCandidates: { total: 2, sourceOnlyComments: 1, heldHypotheses: 1 },
+      otherBrowsers: { total: 5, readyOwnerInquiries: 4, githubIssue: 1, githubComments: 1, githubDiscussion: 1, email: 1, supersededOrNoReport: 1 },
+      proposedActions: { 'create-issue': 2, comment: 3, 'create-discussion': 1, email: 1, none: 4 }, actionableDrafts: 7,
+    },
+    records,
+  };
+  return input;
+}
+
+const preparedRecord = (input, id) => input.reportingPreparation.records.find(record => record.itemId === id);
 
 const codes = result => result.errors.map(error => error.code);
 
@@ -365,6 +435,218 @@ test('cross-lane comparison references and explicit-gap claims require their evi
   proposal.comparatorFeatureIds = ['R02-F1'];
   proposal.chromeParity = 'documented-gap';
   assert.ok(codes(validateDataset(input)).includes('gap-evidence'));
+});
+
+test('reporting preparation covers a smaller corpus without changing inputs or submission counts', () => {
+  const input = reportingFixture();
+  input.reportingPreparation.records.reverse();
+  preparedRecord(input, 'REC-01').originalSourceIds.reverse();
+  preparedRecord(input, 'REC-01').draft.body = 'An independently revised, evidence-qualified feature request.';
+  const before = JSON.stringify(input);
+  const result = validateDataset(input);
+  assert.deepEqual(result.errors, []);
+  assert.equal(result.counts.newSubmissions, 0);
+  assert.equal(JSON.stringify(input), before);
+  delete input.reportingPreparation;
+  assert.deepEqual(validateDataset(input).errors, [], 'The supplemental preparation dataset remains optional.');
+});
+
+test('reporting preparation detects missing issue and recommendation coverage', () => {
+  for (const id of ['R09-C1', 'REC-01']) {
+    const input = reportingFixture();
+    assert.deepEqual(validateDataset(input).errors, [], 'Start from valid evidence.');
+    input.reportingPreparation.records = input.reportingPreparation.records.filter(record => record.itemId !== id);
+    assert.ok(codes(validateDataset(input)).includes('preparation-coverage'), id);
+  }
+});
+
+test('reporting preparation cannot replace a saved item with a duplicate or a foreign ID', () => {
+  for (const id of ['REC-02', 'REC-missing']) {
+    const input = reportingFixture();
+    preparedRecord(input, 'REC-01').itemId = id;
+    const result = validateDataset(input);
+    assert.ok(codes(result).includes('preparation-coverage'));
+    if (id === 'REC-02') assert.ok(codes(result).includes('duplicate-id'));
+  }
+});
+
+test('reporting preparation preserves original identity and source membership', () => {
+  for (const [field, value, code] of [
+    ['originalTitle', 'Unrelated title', 'preparation-identity'],
+    ['kind', 'hypothesis', 'preparation-identity'],
+    ['preparationGroup', 'owner-documentation', 'preparation-group'],
+    ['originalSourceIds', ['R01-S1', 'R03-S1'], 'preparation-sources'],
+    ['originalSourceIds', ['R01-S1', 'R02-missing'], 'reference'],
+    ['originalSourceIds', ['R01-S1', 'R01-S1'], 'duplicate-reference'],
+    ['originalSourceIds', [], 'references'],
+  ]) {
+    const input = reportingFixture();
+    preparedRecord(input, 'REC-01')[field] = value;
+    assert.ok(codes(validateDataset(input)).includes(code), `${field}: ${code}`);
+  }
+});
+
+test('reporting preparation keeps existing feature requests in their upstream family', () => {
+  const input = reportingFixture();
+  input.lanes[6].issues[0].kind = preparedRecord(input, 'R07-I1').kind = 'feature-proposal';
+  Object.assign(input.reportingPreparation.summary.existingUpstreamFamilies, { bugReports: 0, featureRequests: 1 });
+  assert.deepEqual(validateDataset(input).errors, []);
+  preparedRecord(input, 'R07-I1').destination.url = 'https://issues.chromium.org/issues/987654321';
+  assert.ok(codes(validateDataset(input)).includes('existing-upstream'));
+});
+
+test('reporting preparation evidence requires bounded dates, safe URLs and explicit limits', () => {
+  for (const [field, value, code] of [
+    ['observedAt', '2026-02-30', 'date'],
+    ['observedAt', '2026-11-22T12:00:00.0001Z', 'date-order'],
+    ['url', 'https://example.test/?access_token=synthetic', 'url'],
+    ['limits', '', 'type'],
+    ['observation', null, 'type'],
+    ['sourceSha256', 'not-a-digest', 'digest'],
+  ]) {
+    const input = reportingFixture();
+    preparedRecord(input, 'R09-C1').evidence[0][field] = value;
+    assert.ok(codes(validateDataset(input)).includes(code), `${field}: ${code}`);
+  }
+  const input = reportingFixture();
+  preparedRecord(input, 'REC-02').existingIssue.observedAt = '2026-11-23';
+  assert.ok(codes(validateDataset(input)).includes('date-order'));
+  preparedRecord(input, 'REC-02').existingIssue.observedAt = '2026-11-22';
+  input.reportingPreparation.asOf = '2026-11-22';
+  assert.deepEqual(validateDataset(input).errors, [], 'Date-only preparation dates retain day precision.');
+});
+
+test('reporting preparation destinations must fit their proposed action and owner', () => {
+  for (const [id, destination, code] of [
+    ['REC-01', { url: 'https://fixture:synthetic@issues.chromium.org/issues/new' }, 'url'],
+    ['REC-01', { url: 'https://issues.chromium.org/issues/123456789' }, 'preparation-destination'],
+    ['REC-02', { url: 'https://issues.chromium.org/issues/new' }, 'preparation-destination'],
+    ['REC-02', { url: 'https://github.com/example/browser-docs/issues/7' }, 'preparation-destination'],
+    ['R03-I1', { email: 'support@example.test' }, 'preparation-destination'],
+    ['R03-I3', { url: 'https://github.com/example/browser-docs/issues/new' }, 'preparation-destination'],
+    ['R03-I4', { url: 'https://example.test/contact' }, 'preparation-destination'],
+    ['R03-I4', { email: 'support@example.test\r\nBcc: other@example.test' }, 'preparation-destination'],
+    ['R09-H1', { url: 'https://issues.chromium.org/issues/123456789' }, 'preparation-destination'],
+  ]) {
+    const input = reportingFixture();
+    preparedRecord(input, id).destination = destination;
+    assert.ok(codes(validateDataset(input)).includes(code), `${id}: ${code}`);
+  }
+});
+
+test('reporting preparation held and existing records cannot carry drafts or outgoing actions', () => {
+  for (const id of ['REC-03', 'R09-H1', 'R03-I5', 'R07-I1']) {
+    const input = reportingFixture();
+    const record = preparedRecord(input, id);
+    record.draft = { type: 'Feature Request follow-up', body: 'An outgoing comment.' };
+    assert.ok(codes(validateDataset(input)).includes('preparation-draft'), id);
+    record.draft = null;
+    record.proposedAction = 'comment';
+    assert.ok(codes(validateDataset(input)).includes('preparation-action'), id);
+  }
+  const input = reportingFixture();
+  preparedRecord(input, 'REC-02').existingIssue.commentFieldEnabled = false;
+  assert.ok(codes(validateDataset(input)).includes('preparation-action'), 'Explicit commenting restrictions must be retained.');
+});
+
+test('reporting preparation ready drafts retain their evidence type and required content', () => {
+  for (const [id, field, value] of [
+    ['R09-C1', 'type', 'Runtime bug report'],
+    ['R03-I1', 'type', 'Source-only comment'],
+    ['REC-01', 'body', ''],
+    ['REC-01', 'title', null],
+    ['R03-I4', 'title', ''],
+  ]) {
+    const input = reportingFixture();
+    preparedRecord(input, id).draft[field] = value;
+    assert.ok(codes(validateDataset(input)).includes('preparation-draft'), `${id}.${field}`);
+  }
+  const input = reportingFixture();
+  preparedRecord(input, 'R09-H1').preparationStatus = 'ready-source-comment';
+  assert.ok(codes(validateDataset(input)).includes('preparation-kind'), 'A held hypothesis cannot be promoted by relabelling its state.');
+});
+
+test('reporting preparation summary counts are independently derived for every group', () => {
+  for (const keys of [
+    ['totalItems'], ['savedIssues'], ['savedRecommendations'], ['actionableDrafts'],
+    ['existingUpstreamFamilies', 'bugReports'], ['existingUpstreamFamilies', 'proposedAction'],
+    ['recommendations', 'createIssue'], ['sourceCandidates', 'heldHypotheses'],
+    ['otherBrowsers', 'readyOwnerInquiries'], ['proposedActions', 'none'],
+  ]) {
+    const input = reportingFixture();
+    const parent = keys.slice(0, -1).reduce((value, key) => value[key], input.reportingPreparation.summary);
+    parent[keys.at(-1)] = parent[keys.at(-1)] === 'none' ? 'comment' : 99;
+    assert.ok(codes(validateDataset(input)).includes('preparation-count'), keys.join('.'));
+  }
+});
+
+test('reporting preparation rejects delivery fields and structured runtime overclaims', () => {
+  for (const [location, key, value] of [
+    ['root', 'receiptUrl', 'https://example.test/receipts/1'],
+    ['record', 'deliveryStatus', 'sent'],
+    ['record', 'status', 'submitted'],
+    ['record', 'submission', verifiedSubmission('https://example.test/receipts/1')],
+    ['record', 'runtimeConfirmed', true],
+    ['draft', 'sentAt', '2026-11-22T11:00:00Z'],
+    ['evidence', 'receipt', { verified: true }],
+    ['summary', 'newReportsSubmitted', 1],
+  ]) {
+    const input = reportingFixture();
+    const record = preparedRecord(input, 'R09-C1');
+    const target = { root: input.reportingPreparation, record, draft: record.draft, evidence: record.evidence[0], summary: input.reportingPreparation.summary }[location];
+    target[key] = value;
+    const result = validateDataset(input);
+    assert.ok(codes(result).includes('preparation-field'), `${location}.${key}`);
+    assert.equal(result.counts.newSubmissions, 0);
+  }
+});
+
+test('reporting preparation reports malformed objects and metadata without throwing', () => {
+  for (const mutate of [
+    input => { input.reportingPreparation = null; },
+    input => { input.reportingPreparation.sourceResearchCommit = 'short'; },
+    input => { input.reportingPreparation.submissionLedger = 'elsewhere.json'; },
+    input => { input.reportingPreparation.evidenceBoundary = []; },
+    input => { input.reportingPreparation.summary = null; },
+    input => { input.reportingPreparation.records = {}; },
+    input => { input.reportingPreparation.records[0] = null; },
+    input => { preparedRecord(input, 'REC-01').preparationStatus = { toString: null, valueOf: null }; },
+    input => { preparedRecord(input, 'REC-01').originalSourceIds = null; },
+    input => { preparedRecord(input, 'REC-01').evidence = []; },
+    input => { preparedRecord(input, 'REC-01').evidence[0] = null; },
+    input => { preparedRecord(input, 'REC-01').limits = []; },
+    input => { preparedRecord(input, 'REC-01').destination = []; },
+    input => { preparedRecord(input, 'REC-01').destination.component = null; },
+    input => { preparedRecord(input, 'REC-01').draft = true; },
+    input => { preparedRecord(input, 'REC-02').existingIssue = null; },
+    input => { preparedRecord(input, 'REC-01').relatedCanonical = []; },
+  ]) {
+    const input = reportingFixture();
+    mutate(input);
+    let result;
+    assert.doesNotThrow(() => { result = validateDataset(input); });
+    assert.ok(result.errors.length > 0);
+  }
+});
+
+test('repository validation loads and screens decoded reporting preparation strings', async t => {
+  const base = join(tmpdir(), 'opencode');
+  await mkdir(base, { recursive: true });
+  const sandbox = await mkdtemp(join(base, 'chrome-reporting-validator-'));
+  t.after(() => rm(sandbox, { recursive: true, force: true }));
+  const input = reportingFixture();
+  const privateMarker = 'C:\\Users\\fixture-user\\profile';
+  preparedRecord(input, 'REC-01').draft.body = privateMarker;
+  await mkdir(join(sandbox, 'data/lanes'), { recursive: true });
+  await Promise.all([
+    writeFile(join(sandbox, 'data/contract.json'), JSON.stringify(input.contract)),
+    writeFile(join(sandbox, 'data/recommendations.json'), JSON.stringify(input.recommendations)),
+    writeFile(join(sandbox, 'data/reporting-preparation.json'), JSON.stringify(input.reportingPreparation).replace('fixture-user', 'fixture-\\u0075ser')),
+    ...input.lanes.map(lane => writeFile(join(sandbox, `data/lanes/${lane.id}.json`), JSON.stringify(lane))),
+  ]);
+  const result = await validateRepository(sandbox);
+  assert.deepEqual(result.errors.map(({ path, code }) => ({ path, code })), [{ path: 'data/reporting-preparation.json', code: 'private-path' }]);
+  assert.ok(!JSON.stringify(result).includes(privateMarker));
 });
 
 test('Markdown URL labels and escaped source snippets are screened without mistaking escapes for credentials', () => {

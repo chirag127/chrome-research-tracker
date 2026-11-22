@@ -381,7 +381,7 @@ export function validateDataset(data, { allowPartial = false } = {}) {
   }
   validateSupplements(c, data, indexes, contract, allowPartial);
   for (const [key, value] of Object.entries(data)) {
-    if (key !== 'lanes' && value !== undefined) c.result.errors.push(...screenPublicData(value, `data/${safeSegment(key)}.json`));
+    if (key !== 'lanes' && value !== undefined) c.result.errors.push(...screenPublicData(value, `data/${key === 'reportingPreparation' ? 'reporting-preparation' : safeSegment(key)}.json`));
   }
   data.lanes.forEach((lane, index) => c.result.errors.push(...screenPublicData(lane, LANES.includes(lane?.id) ? `data/lanes/${lane.id}.json` : `data/lanes[${index}]`)));
   c.result.counts.newSubmissions = c.receipts.size;
@@ -540,12 +540,171 @@ function validateSubmissions(c, value, indexes, contract) {
   }
 }
 
+function validateReportingPreparation(c, value, indexes) {
+  const path = 'data/reporting-preparation.json';
+  const fields = (record, required, optional, at) => {
+    if (!c.required(record, required, at)) return false;
+    const allowed = new Set([...required, ...optional]);
+    for (const key of Object.keys(record)) c.check(allowed.has(key), `${at}.${safeSegment(key)}`, 'preparation-field', 'Field is not part of the preparation schema; delivery and receipt records belong in the submission ledger.');
+    return true;
+  };
+  const observedDate = (date, at) => {
+    c.date(date, at);
+    if (isRealDate(date) && isRealDate(value.asOf)) c.check(dateOnOrBefore(date, value.asOf), at, 'date-order', 'An observation cannot be after the preparation as-of date.');
+  };
+  if (!fields(value, ['schemaVersion', 'asOf', 'sourceResearchCommit', 'scope', 'submissionLedger', 'evidenceBoundary', 'summary', 'records'], [], path)) return;
+  c.check(value.schemaVersion === 1, `${path}.schemaVersion`, 'version', 'Expected schema version 1.');
+  c.date(value.asOf, `${path}.asOf`);
+  c.check(typeof value.sourceResearchCommit === 'string' && /^[a-f0-9]{40}$/i.test(value.sourceResearchCommit), `${path}.sourceResearchCommit`, 'revision', 'Expected the full source research commit ID.');
+  c.check(text(value.scope), `${path}.scope`, 'type', 'Expected a nonblank preparation scope.');
+  c.check(value.submissionLedger === 'data/submissions.json', `${path}.submissionLedger`, 'preparation-ledger', 'Submission outcomes must remain single-sourced in data/submissions.json.');
+  const boundaries = ['delivery', 'research', 'claims', 'duplicates', 'components', 'continuity', 'drafts'];
+  if (fields(value.evidenceBoundary, boundaries, [], `${path}.evidenceBoundary`)) {
+    for (const key of boundaries) c.check(text(value.evidenceBoundary[key]), `${path}.evidenceBoundary.${key}`, 'type', 'Expected an explicit evidence boundary.');
+  }
+  if (!c.check(Array.isArray(value.records), `${path}.records`, 'type', 'Expected preparation records.')) return;
+
+  const states = new Map([
+    ['ready-feature-request', ['recommendation', 'feature-proposal', 'create-issue', 'Feature Request']],
+    ['ready-feature-comment', ['recommendation', 'feature-proposal', 'comment', 'Feature Request follow-up']],
+    ['held-existing-restricted', ['recommendation', 'feature-proposal', 'none', null]],
+    ['ready-source-comment', ['source-candidate', 'source-inconsistency', 'comment', 'Source-only comment']],
+    ['held-hypothesis', ['source-candidate', 'hypothesis', 'none', null]],
+    ['ready-owner-issue', ['owner-documentation', 'source-inconsistency', 'create-issue', 'Documentation issue']],
+    ['ready-owner-comment', ['owner-documentation', 'source-inconsistency', 'comment', 'Documentation comment']],
+    ['ready-owner-discussion', ['owner-documentation', 'source-inconsistency', 'create-discussion', 'Support-definition question']],
+    ['ready-owner-email', ['owner-documentation', 'source-inconsistency', 'email', 'Documentation email']],
+    ['superseded-no-report', ['owner-documentation', 'source-inconsistency', 'none', null]],
+    ['existing-upstream-reuse', ['existing-upstream', null, 'none', null]],
+  ]);
+  const actions = ['create-issue', 'comment', 'create-discussion', 'email', 'none'];
+  const originals = new Map([...indexes.issues, ...indexes.recommendations]);
+  const seen = new Set();
+  value.records.forEach((record, index) => {
+    const at = `${path}.records[${index}]`;
+    if (!fields(record, ['itemId', 'originalTitle', 'kind', 'preparationGroup', 'preparationStatus', 'proposedAction', 'destination', 'rationale', 'originalSourceIds', 'evidence', 'limits', 'draft'], ['existingIssue', 'relatedCanonical'], at)) return;
+    c.check(text(record.itemId) && record.itemId === record.itemId.trim(), `${at}.itemId`, 'id', 'Expected a saved issue or recommendation ID.');
+    c.check(!seen.has(record.itemId), `${at}.itemId`, 'duplicate-id', 'A saved item can have only one preparation record.');
+    seen.add(record.itemId);
+    const original = originals.get(record.itemId);
+    c.check(original !== undefined, `${at}.itemId`, 'preparation-coverage', 'Preparation must reference a saved issue or recommendation.');
+    if (original) {
+      const recommendation = indexes.recommendations.has(record.itemId);
+      const upstream = original.kind === 'upstream-report' || ['upstream-open', 'upstream-closed'].includes(original.status) || original.evidenceType === 'upstream-reported';
+      const group = recommendation ? 'recommendation' : upstream ? 'existing-upstream' : original.id.startsWith('R09-') || original.kind === 'hypothesis' ? 'source-candidate' : 'owner-documentation';
+      c.check(record.originalTitle === original.title && record.kind === (recommendation ? 'feature-proposal' : original.kind), at, 'preparation-identity', 'Preparation must preserve the saved title and kind.');
+      c.check(record.preparationGroup === group, `${at}.preparationGroup`, 'preparation-group', 'Preparation group must agree with the saved item provenance.');
+      if (strings(record.originalSourceIds, 1) && strings(original.sourceIds, 1)) c.check(record.originalSourceIds.length === original.sourceIds.length && record.originalSourceIds.every(id => original.sourceIds.includes(id)), `${at}.originalSourceIds`, 'preparation-sources', 'Original source references must match the saved item without additions or omissions.');
+      if (group === 'existing-upstream') c.check(isSafeUrl(original.upstreamUrl) && resourceUrl(record.destination?.url) === resourceUrl(original.upstreamUrl), `${at}.destination`, 'existing-upstream', 'Reuse must retain the saved upstream issue URL.');
+    }
+    references(c, record.originalSourceIds, `${at}.originalSourceIds`, indexes.sources);
+    c.check(text(record.rationale), `${at}.rationale`, 'type', 'Expected a bounded preparation rationale.');
+    c.texts(record.limits, `${at}.limits`, 1);
+    c.enum(record.proposedAction, actions, `${at}.proposedAction`);
+    const state = states.get(record.preparationStatus);
+    if (c.check(state !== undefined, `${at}.preparationStatus`, 'enum', 'Expected a supported preparation status.')) {
+      const [group, kind, action] = state;
+      c.check(record.preparationGroup === group, `${at}.preparationGroup`, 'preparation-group', 'Preparation status must belong to its group.');
+      if (kind !== null) c.check(record.kind === kind, `${at}.kind`, 'preparation-kind', 'Preparation status must retain the source-only, hypothesis or feature-request kind.');
+      c.check(record.proposedAction === action, `${at}.proposedAction`, 'preparation-action', 'The proposed action must agree with preparation status.');
+    }
+    if (c.check(Array.isArray(record.evidence) && record.evidence.length > 0, `${at}.evidence`, 'type', 'Expected nonempty, bounded documentary evidence.')) record.evidence.forEach((entry, i) => {
+      const location = `${at}.evidence[${i}]`;
+      if (!fields(entry, ['url', 'observedAt', 'observation', 'limits'], ['sourceSha256'], location)) return;
+      c.url(entry.url, `${location}.url`);
+      observedDate(entry.observedAt, `${location}.observedAt`);
+      for (const key of ['observation', 'limits']) c.check(text(entry[key]), `${location}.${key}`, 'type', 'Expected nonblank documentary evidence and limitations.');
+      if (own(entry, 'sourceSha256')) c.check(digest(entry.sourceSha256), `${location}.sourceSha256`, 'digest', 'Expected a source SHA-256.');
+    });
+    for (const key of ['existingIssue', 'relatedCanonical']) {
+      if (!own(record, key)) continue;
+      const metadata = record[key], location = `${at}.${key}`;
+      const required = key === 'existingIssue' ? ['status', 'observedAt'] : ['publicIssueUrl', 'status', 'canonicalIssueId', 'canonicalAccess', 'observedAt', 'limits'];
+      const optional = key === 'existingIssue' ? ['type', 'access', 'commentFieldEnabled', 'commentBoxVisible', 'canonicalIssueId', 'canonicalAccess', 'relatedIssueId', 'scope'] : [];
+      if (!fields(metadata, required, optional, location)) continue;
+      observedDate(metadata.observedAt, `${location}.observedAt`);
+      for (const field of ['status', 'type', 'access', 'canonicalAccess', 'scope', 'limits']) if (own(metadata, field)) c.check(text(metadata[field]), `${location}.${field}`, 'type', 'Expected nonblank upstream context.');
+      for (const field of ['canonicalIssueId', 'relatedIssueId']) if (own(metadata, field)) c.check(typeof metadata[field] === 'string' && /^[1-9]\d*$/.test(metadata[field]), `${location}.${field}`, 'id', 'Expected an upstream numeric issue ID.');
+      for (const field of ['commentFieldEnabled', 'commentBoxVisible']) if (own(metadata, field)) c.check(typeof metadata[field] === 'boolean', `${location}.${field}`, 'type', 'Expected an observed boolean.');
+      if (key === 'relatedCanonical') c.url(metadata.publicIssueUrl, `${location}.publicIssueUrl`);
+      if (key === 'existingIssue' && (metadata.commentFieldEnabled === false || metadata.commentBoxVisible === false || ['Limited commenting', 'Access denied', 'Restricted'].includes(metadata.access))) {
+        c.check(record.proposedAction === 'none' && record.draft === null, at, 'preparation-action', 'A restricted destination cannot have an outgoing action or draft.');
+      }
+    }
+
+    const destination = record.destination;
+    if (['held-hypothesis', 'superseded-no-report'].includes(record.preparationStatus)) {
+      c.check(destination === null, `${at}.destination`, 'preparation-destination', 'Held hypotheses and superseded records have no outgoing destination.');
+    } else if (fields(destination, [], ['url', 'email', 'informationUrl', 'component', 'observedComponentTag', 'observedComponentTags', 'suggestedOwningArea', 'componentSelection', 'category'], `${at}.destination`)) {
+      if (record.proposedAction === 'email') {
+        c.check(typeof destination.email === 'string' && /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+$/.test(destination.email) && !own(destination, 'url'), `${at}.destination`, 'preparation-destination', 'Email preparation needs one plain recipient address, without URL routing or header content.');
+      } else {
+        c.url(destination.url, `${at}.destination.url`);
+        c.check(!own(destination, 'email'), `${at}.destination`, 'preparation-destination', 'Non-email preparation requires URL routing.');
+        if (isSafeUrl(destination.url)) {
+          const url = new URL(destination.url);
+          let route = true;
+          if (['recommendation', 'source-candidate'].includes(record.preparationGroup)) {
+            route = url.origin === 'https://issues.chromium.org' && (record.proposedAction === 'create-issue' ? /^\/issues\/new\/?$/ : /^\/issues\/[1-9]\d*\/?$/).test(url.pathname);
+          } else if (record.preparationGroup === 'owner-documentation') {
+            const routes = new Map([
+              ['create-issue', /^\/[^/]+\/[^/]+\/issues\/new(?:\/choose)?\/?$/],
+              ['comment', /^\/[^/]+\/[^/]+\/issues\/[1-9]\d*\/?$/],
+              ['create-discussion', /^\/[^/]+\/[^/]+\/discussions\/(?:new|categories\/[^/]+)\/?$/],
+            ]);
+            route = url.origin === 'https://github.com' && Boolean(routes.get(record.proposedAction)?.test(url.pathname));
+          }
+          c.check(route, `${at}.destination`, 'preparation-destination', 'Destination must match the proposed action and reporting owner.');
+        }
+      }
+      if (own(destination, 'informationUrl')) c.url(destination.informationUrl, `${at}.destination.informationUrl`);
+      for (const key of ['observedComponentTag', 'suggestedOwningArea', 'componentSelection', 'category']) if (own(destination, key)) c.check(text(destination[key]), `${at}.destination.${key}`, 'type', 'Expected nonblank routing context.');
+      if (own(destination, 'observedComponentTags')) c.texts(destination.observedComponentTags, `${at}.destination.observedComponentTags`, 1);
+      if (own(destination, 'component') && fields(destination.component, ['id', 'name', 'basis'], [], `${at}.destination.component`)) {
+        c.check(Number.isSafeInteger(destination.component.id) && destination.component.id > 0, `${at}.destination.component.id`, 'type', 'Expected a positive observed component ID.');
+        for (const key of ['name', 'basis']) c.check(text(destination.component[key]), `${at}.destination.component.${key}`, 'type', 'A component needs its name and observation basis.');
+      }
+    }
+    if (state?.[2] === 'none' || record.proposedAction === 'none') c.check(record.draft === null, `${at}.draft`, 'preparation-draft', 'Held and existing records must not have an outgoing draft.');
+    else if (c.check(object(record.draft), `${at}.draft`, 'preparation-draft', 'An actionable preparation needs an evidence-qualified draft.')) {
+      fields(record.draft, ['type', 'body'], ['title', 'marker'], `${at}.draft`);
+      c.check(record.draft.type === state?.[3] && text(record.draft.body), `${at}.draft`, 'preparation-draft', 'Draft type and nonblank body must agree with the preparation evidence boundary.');
+      if (['create-issue', 'create-discussion', 'email'].includes(record.proposedAction) || own(record.draft, 'title')) c.check(text(record.draft.title), `${at}.draft.title`, 'preparation-draft', 'A new issue, discussion or email needs a nonblank title.');
+      if (own(record.draft, 'marker')) c.check(text(record.draft.marker), `${at}.draft.marker`, 'preparation-draft', 'Expected a nonblank draft marker.');
+    }
+  });
+  c.check(value.records.length === originals.size && seen.size === originals.size && [...originals.keys()].every(id => seen.has(id)), `${path}.records`, 'preparation-coverage', 'Every saved issue and recommendation needs exactly one preparation record.');
+
+  const records = value.records.filter(object);
+  const group = name => records.filter(record => record.preparationGroup === name);
+  const count = (items, key, expected) => items.filter(record => record[key] === expected).length;
+  const upstream = group('existing-upstream'), recommendations = group('recommendation'), candidates = group('source-candidate'), owners = group('owner-documentation');
+  const expected = {
+    totalItems: originals.size, savedIssues: indexes.issues.size, savedRecommendations: indexes.recommendations.size,
+    existingUpstreamFamilies: { total: upstream.length, bugReports: count(upstream, 'kind', 'upstream-report'), featureRequests: count(upstream, 'kind', 'feature-proposal'), proposedAction: 'none' },
+    recommendations: { total: recommendations.length, createIssue: count(recommendations, 'proposedAction', 'create-issue'), comment: count(recommendations, 'proposedAction', 'comment'), heldExistingRestricted: count(recommendations, 'preparationStatus', 'held-existing-restricted') },
+    sourceCandidates: { total: candidates.length, sourceOnlyComments: count(candidates, 'preparationStatus', 'ready-source-comment'), heldHypotheses: count(candidates, 'preparationStatus', 'held-hypothesis') },
+    otherBrowsers: { total: owners.length, readyOwnerInquiries: owners.filter(record => actions.includes(record.proposedAction) && record.proposedAction !== 'none').length, githubIssue: count(owners, 'proposedAction', 'create-issue'), githubComments: count(owners, 'proposedAction', 'comment'), githubDiscussion: count(owners, 'proposedAction', 'create-discussion'), email: count(owners, 'proposedAction', 'email'), supersededOrNoReport: count(owners, 'preparationStatus', 'superseded-no-report') },
+    proposedActions: Object.fromEntries(actions.map(action => [action, count(records, 'proposedAction', action)])),
+    actionableDrafts: records.filter(record => actions.includes(record.proposedAction) && record.proposedAction !== 'none' && object(record.draft)).length,
+  };
+  const counts = (actual, expected, at) => {
+    if (!fields(actual, Object.keys(expected), [], at)) return;
+    for (const [key, entry] of Object.entries(expected)) {
+      if (object(entry)) counts(actual[key], entry, `${at}.${key}`);
+      else c.check(actual[key] === entry, `${at}.${key}`, 'preparation-count', 'Summary must match source coverage and saved preparation decisions.');
+    }
+  };
+  counts(value.summary, expected, `${path}.summary`);
+}
+
 function validateSupplements(c, data, indexes, contract) {
   if (own(data, 'recommendations')) validateRecommendations(c, data.recommendations, indexes);
   if (own(data, 'agents')) validateAgents(c, data.agents);
   if (own(data, 'environment')) validateEnvironment(c, data.environment);
   if (own(data, 'runtime')) validateRuntime(c, data.runtime, contract);
   if (own(data, 'submissions')) validateSubmissions(c, data.submissions, indexes, contract);
+  if (own(data, 'reportingPreparation')) validateReportingPreparation(c, data.reportingPreparation, indexes);
   if (own(data, 'projectStatus')) {
     const value = data.projectStatus;
     const path = 'data/project-status.json';
@@ -594,7 +753,7 @@ export async function validateRepository(root = ROOT, options = {}) {
       }
     }
   } catch { errors.push(issue('data/lanes', 'read', 'Lane directory is missing, linked or unreadable.')); }
-  for (const [key, filename] of Object.entries({ recommendations: 'recommendations', agents: 'agents', environment: 'environment', runtime: 'runtime', submissions: 'submissions', projectStatus: 'project-status' })) {
+  for (const [key, filename] of Object.entries({ recommendations: 'recommendations', agents: 'agents', environment: 'environment', runtime: 'runtime', submissions: 'submissions', projectStatus: 'project-status', reportingPreparation: 'reporting-preparation' })) {
     const value = await readJson(`data/${filename}.json`);
     if (value !== undefined) data[key] = value;
   }

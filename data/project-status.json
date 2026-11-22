@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-11-22",
-  "overallStatus": "published-with-google-reporting-blocked",
+  "overallStatus": "research-published-reporting-partial",
   "repositories": [
     {"role":"research-tracker","url":"https://github.com/chirag127/chrome-research-tracker","visibility":"public","verification":"Fresh GitHub repository, main-ref, commit and recursive-tree GETs confirmed public visibility and all 33 published file entries.","contentPublication":"published-and-readback-verified","researchCommit":"d61d6fc420994613b78b3f9cb6a99013cd3d42eb","researchCommitUrl":"https://github.com/chirag127/chrome-research-tracker/commit/d61d6fc420994613b78b3f9cb6a99013cd3d42eb","researchTree":"92a1f29b07e749f8cbe7e208e8a55147b1d57343","readbackAt":"2026-11-22T05:26:18.770Z"},
     {"role":"historical-source-fork","url":"https://github.com/chirag127/chromium","status":"deleted-by-later-owner-request","parent":"chromium/chromium","verification":"Creation was verified before the later authorized deletion. This URL records historical provenance, not a currently available fork.","sourceAuthority":"https://github.com/chromium/chromium"}
@@ -29,9 +29,10 @@
     "remainingAuthorizedBuildActions":[],
     "limitations":["Installed tools and downloaded dependencies are not a compiled Chromium browser.","The SDK wrapper exit code was not retained; the installer-log exit and installed-file checks are separate evidence.","Stage summaries describe retained evidence, not live process status.","The source and tool checkouts and personal fork were subsequently removed. A new build would require renewed scope."]
   },
-  "googleReporting": {"status":"blocked","recordsPath":"data/submissions.json","trackingIssue":"https://github.com/chirag127/chrome-research-tracker/issues/31","newReportsSubmitted":0,"reason":"The tested official reporting interface required Google sign-in. Candidate-specific validation and duplicate research also remain explicit.","nextAction":"Use a signed-in official reporting session after completing the chosen candidate's baseline, reproduction and duplicate checks."},
+  "googleReporting": {"status":"blocked-human-verification","recordsPath":"data/submissions.json","trackingIssue":"https://github.com/chirag127/chrome-research-tracker/issues/31","newReportsSubmitted":0,"reason":"Authenticated official Chromium access is verified. Two source-only follow-up comments are prepared on existing threads, but the inspected reCAPTCHA requires manual human verification before sending. Feature requests retain individual duplicate and scope dispositions.","nextAction":"Complete the human-verification challenge in the prepared Chromium tab; reconcile the research marker before one send and verify the actual comment or issue permalink."},
+  "reportingFollowup": {"asOf":"2026-11-22","preparationPath":"data/reporting-preparation.json","outcomesPath":"data/submissions.json","itemsAccountedFor":62,"featurePreparation":{"proposedCreates":14,"proposedComments":8,"restrictedMatchingRequests":2},"existingUpstreamFamiliesRetained":24,"sourceOnlyCommentsBlocked":2,"conditionalHypothesesHeld":3,"ownerReporting":{"publicReceipts":4,"senderVerifiedEmails":3,"supersededOrCorrectedNoReport":2},"productFeedback":{"recommendationId":"REC-05","status":"feedback-upload-verified","verifiedUploads":1,"trackerReceiptUrl":null,"humanTriage":"unknown"},"interpretation":"Preparation counts describe proposed actions, not sends. Public owner receipts, sender-side email observations and product-feedback uploads have separate meanings. Google reporting counts cover Chromium tracker permalinks; the one native feedback upload is recorded separately. The original research dates and recovery provenance remain unchanged."},
   "verification": {
-    "status":"research-publication-checks-passed",
+    "status":"historical-research-publication-checks-passed",
     "verifiedResearchCommit":"d61d6fc420994613b78b3f9cb6a99013cd3d42eb",
     "nodeVersion":"v26.13.0",
     "requiredCommands":["npm test","npm run validate","node scripts/render.mjs --check"],
@@ -44,6 +45,6 @@
     "independentReview":"Reviewed tooling corrections, all six reconstructed lanes and the five generated reports have no unresolved actionable findings within recorded coverage. The report audit checked all 625 local links and 490 linked fragments, core record/source coverage, recovery notices and contact footers.",
     "limitations":["These dated results cover the identified research commit before this publication-receipt/status update; retained local verification receipts bind each subsequent check to its tested file hashes.","Validation checks evidence structure and consistency. It does not re-fetch cited websites, reproduce browser defects, or validate a Chromium build.","Report-link review is static; hosted browser rendering and external URL reachability are outside that verdict."]
   },
-  "remaining": ["Complete candidate-specific baseline, reproduction and duplicate checks before any upstream report.","Use an authenticated Google reporting session for individually validated, duplicate-checked submissions."],
+  "remaining": ["Complete the observed human-verification challenge manually before sending the prepared Chromium source follow-ups; retain verified permalinks for actual submissions.","Continue the 21 other prepared feature requests/comments through their actual official forms and retain individual receipts; do not refile REC-01 or REC-07's restricted matching requests or resend the completed REC-05 feedback.","Keep the three conditional R09 hypotheses held until their stated reachability and behavior questions are resolved.","Recipient acceptance, replies and public archive receipts for the three sent owner emails remain unknown; do not resend merely because no public receipt is available."],
   "credentialValuesIncluded": false
 }
